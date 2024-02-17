@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class RBMovement : MonoBehaviour
 {
     #region references
     private Transform _myTransform;
@@ -49,7 +49,7 @@ public class Movement : MonoBehaviour
     public void Blink() //Teletransporta al objeto en la direccion de su movimiento con el rango definido en BlinkRange
     {
         TeleportTo(new Vector2(_myTransform.position.x, _myTransform.position.y)
-            + movementDirection*blinkRange);
+            + movementDirection * blinkRange);
     }
 
     void Awake()
@@ -58,10 +58,12 @@ public class Movement : MonoBehaviour
         _myRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        movementDirection =new Vector2(xAxis, yAxis).normalized;
-        _myRigidbody.velocity = movementDirection* movementSpeed;
+        movementDirection = new Vector2(xAxis, yAxis).normalized;
+
+        _myRigidbody.MovePosition(new Vector2(_myTransform.position.x, _myTransform.position.y) 
+            + movementDirection* movementSpeed*Time.fixedDeltaTime);
     }
 
 }

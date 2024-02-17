@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class DELETEinputPrueba : MonoBehaviour
 {
-    private Movement movement;
+    private RBMovement movement;
     // Start is called before the first frame update
     void Awake()
     {
-        movement = GetComponent<Movement>();
+        movement = GetComponent<RBMovement>();
     }
 
     // Update is called once per frame
