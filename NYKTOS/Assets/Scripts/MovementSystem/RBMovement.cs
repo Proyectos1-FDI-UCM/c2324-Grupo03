@@ -58,12 +58,14 @@ public class RBMovement : MonoBehaviour
         _myRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+     
         movementDirection = new Vector2(xAxis, yAxis).normalized;
+        print(movementDirection);
 
         _myRigidbody.MovePosition(new Vector2(_myTransform.position.x, _myTransform.position.y) 
-            + movementDirection* movementSpeed*Time.deltaTime);
+            + movementDirection * movementSpeed * Time.fixedDeltaTime);
     }
 
 }
