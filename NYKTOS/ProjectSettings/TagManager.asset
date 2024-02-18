@@ -50,9 +50,12 @@ TagManager:
   - name: Walls
     uniqueID: 2633470467
     locked: 0
-  - name: Extras
+  - name: Extras tiles
     uniqueID: 1586853493
     locked: 0
   - name: Character
     uniqueID: 3063081767
+    locked: 0
+  - name: Extra deco
+    uniqueID: 2265986543
     locked: 0
