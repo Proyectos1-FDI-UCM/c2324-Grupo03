@@ -26,12 +26,12 @@ public class RBMovement : MonoBehaviour
     private float blinkRange = 10f;
     #endregion
 
-    public void xAxisMovement(int num) //Ajustar el movimiento en xAxis (-1,0,1)
+    public void xAxisMovement(float num) //Ajustar el movimiento en xAxis (-1,0,1)
     {
         xAxis = num;
     }
 
-    public void yAxisMovement(int num) //Ajustar el movimiento en yAxis (-1,0,1)
+    public void yAxisMovement(float num) //Ajustar el movimiento en yAxis (-1,0,1)
     {
         yAxis = num;
     }

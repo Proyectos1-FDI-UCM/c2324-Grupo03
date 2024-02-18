@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 1716314489}
   - component: {fileID: 1716314488}
   - component: {fileID: 1716314487}
+  - component: {fileID: 1716314493}
   - component: {fileID: 1716314486}
   - component: {fileID: 1716314491}
   - component: {fileID: 1716314490}
@@ -280,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 23e4e1ba8a12a8c4592bf97aee2430f4, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: be9f3fd42d1fb604ab2253caedcf7a80, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -295,10 +296,10 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1716314485}
-        m_TargetAssemblyTypeName: MovementComponent, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1716314493}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -307,62 +308,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 41898fa3-441d-456c-81ed-6dcd52d68f31
-    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+    m_ActionId: de971e49-c76e-409f-b94f-eb4d3a2759e1
+    m_ActionName: Gameplay/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 19bcdadd-c46e-48aa-b09f-f07a107bb6ec
-    m_ActionName: Player/Look[/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7dfdd7dd-75d5-4aa5-a7a0-6fd1a47a51c4
-    m_ActionName: Player/Fire[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 617a45ed-0d97-4e23-9c36-49bdcbd83b90
-    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 553c83a0-5bd4-427a-a114-27c55e5c210d
-    m_ActionName: UI/Submit[/Keyboard/enter]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: db494784-f264-4373-823e-e3d85687d5e8
-    m_ActionName: UI/Cancel[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4fa57b24-cf02-42c7-b30f-764ad8e7dab1
-    m_ActionName: UI/Point[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 281e73ca-8224-4a33-9f27-c309a6009f55
-    m_ActionName: UI/Click[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 89f3191e-1b54-46c6-b0e4-b64002271622
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7468456f-7b91-4d9c-813e-b1206cc15a09
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ca47edab-a302-48ac-9528-ea3e63c9ab5d
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 85539fe9-79e9-483f-9ae7-307010acff1d
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: af36e32d-23f7-4a59-8c9f-28821344791f
-    m_ActionName: UI/TrackedDeviceOrientation
+    m_ActionId: cb9a6344-9ac6-4dd5-870f-9054462ae9c2
+    m_ActionName: Gameplay/Look[/Mouse/position]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1716314492}
-        m_TargetAssemblyTypeName: MovementComponent, Assembly-CSharp
+      - m_Target: {fileID: 1716314493}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: Blink
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -371,8 +328,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 10e15bb8-a4ba-4a7b-9639-375760e90012
-    m_ActionName: Player/Blink[/Keyboard/shift]
+    m_ActionId: 744e3eae-f001-4a03-91e1-9f112750dc7c
+    m_ActionName: Gameplay/Blink[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: accaff3d-59b2-4925-bcee-a3c726c63918
+    m_ActionName: Gameplay/PrimaryAttack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6d687d5d-2c26-42ba-9c19-a09ef1d7973b
+    m_ActionName: Gameplay/SecondaryAttack[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -385,12 +350,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716314485}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0e7a382721ad3144854f9f5a12b1088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
+  movementSpeed: 3
   blinkRange: 3
 --- !u!212 &1716314488
 SpriteRenderer:
@@ -528,13 +493,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716314485}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f176090eff47044caa58a555cb6f2e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 1
   blinkRange: 5
+--- !u!114 &1716314493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716314485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34b9cc239eddd0947b9e8b34857ad094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
