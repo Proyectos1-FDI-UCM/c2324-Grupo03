@@ -23,7 +23,7 @@ public class RBMovement : MonoBehaviour
     }
 
     [SerializeField]
-    private float blinkRange = 10f;
+    private float blinkRange = 2f;
     #endregion
 
     public void xAxisMovement(float num) //Ajustar el movimiento en xAxis (-1,0,1)
