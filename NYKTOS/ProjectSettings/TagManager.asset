@@ -41,15 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Extras fondo
+    uniqueID: 2284133431
+    locked: 0
   - name: Ground
     uniqueID: 492057959
     locked: 0
   - name: Walls
     uniqueID: 2633470467
     locked: 0
-  - name: Character
-    uniqueID: 3063081767
-    locked: 0
   - name: Extras
     uniqueID: 1586853493
+    locked: 0
+  - name: Character
+    uniqueID: 3063081767
     locked: 0
