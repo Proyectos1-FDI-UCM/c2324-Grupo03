@@ -5,10 +5,12 @@ using UnityEngine;
 public class DELETEinputPrueba : MonoBehaviour
 {
     private RBMovement movement;
+    private WeaponHandler weaponHandler;
     // Start is called before the first frame update
     void Awake()
     {
         movement = GetComponent<RBMovement>();
+        weaponHandler = GetComponent<WeaponHandler>();
     }
 
     // Update is called once per frame
@@ -46,6 +48,18 @@ public class DELETEinputPrueba : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 movement.Blink();
+            }
+        }
+
+        if(weaponHandler != null)
+        {
+            if(Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                weaponHandler.CallPrimaryUse(0);
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                weaponHandler.CallSecondaryUse(0);
             }
         }
     }
