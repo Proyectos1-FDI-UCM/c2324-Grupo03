@@ -123,7 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &38074137
+--- !u!4 &324870809 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1434337140434607675, guid: b5783c2e60b2b6a4eb206ffa426cc0ef, type: 3}
+  m_PrefabInstance: {fileID: 2033654927}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1853207456
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,10 +136,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 38074141}
-  - component: {fileID: 38074140}
-  - component: {fileID: 38074139}
-  - component: {fileID: 38074138}
+  - component: {fileID: 1853207461}
+  - component: {fileID: 1853207460}
+  - component: {fileID: 1853207459}
+  - component: {fileID: 1853207458}
+  - component: {fileID: 1853207457}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -142,13 +148,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &38074138
+--- !u!114 &1853207457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 38074137}
+  m_GameObject: {fileID: 1853207456}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe7f1eab72137e45a1a2d649f9a2dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 324870809}
+--- !u!114 &1853207458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853207456}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07fc48fdc29b6e84d8954b29a0c5f372, type: 3}
@@ -156,21 +175,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 324870809}
   incrementalTime: 5
---- !u!81 &38074139
+--- !u!81 &1853207459
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 38074137}
+  m_GameObject: {fileID: 1853207456}
   m_Enabled: 1
---- !u!20 &38074140
+--- !u!20 &1853207460
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 38074137}
+  m_GameObject: {fileID: 1853207456}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -215,26 +234,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &38074141
+--- !u!4 &1853207461
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 38074137}
+  m_GameObject: {fileID: 1853207456}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.14142334, y: 0.22426392, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &324870809 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1434337140434607675, guid: b5783c2e60b2b6a4eb206ffa426cc0ef, type: 3}
-  m_PrefabInstance: {fileID: 2033654927}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2033654927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -437,6 +451,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 38074141}
+  - {fileID: 1853207461}
   - {fileID: 7793205245387341987}
   - {fileID: 2033654927}
