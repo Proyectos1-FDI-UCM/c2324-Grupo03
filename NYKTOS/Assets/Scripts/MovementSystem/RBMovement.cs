@@ -10,16 +10,15 @@ public class RBMovement : MonoBehaviour
     #endregion
 
     #region properties
-    private Vector2 movementDirection = Vector2.zero; //Direccion del movimiento normalizada, dandose en las ocho direcciones
     private float xAxis = 0f;
     private float yAxis = 0f;
     #endregion
 
     #region parameters
     public float movementSpeed = 1f;
-    public Vector2 pMovementDirection //Valor publico de lectura de movementDirection
+    public Vector2 movementDirection //Valor publico de lectura de movementDirection
     {
-        get { return movementDirection; }
+        get { return _myRigidbody.velocity.normalized; }
     }
 
     [SerializeField]
@@ -29,11 +28,13 @@ public class RBMovement : MonoBehaviour
     public void xAxisMovement(float num) //Ajustar el movimiento en xAxis (-1,0,1)
     {
         xAxis = num;
+        _myRigidbody.velocity = new Vector2(xAxis, yAxis).normalized*movementSpeed;
     }
 
     public void yAxisMovement(float num) //Ajustar el movimiento en yAxis (-1,0,1)
     {
         yAxis = num;
+        _myRigidbody.velocity = new Vector2(xAxis, yAxis).normalized * movementSpeed;
     }
 
     public void MoveTo() 
@@ -58,14 +59,9 @@ public class RBMovement : MonoBehaviour
         _myRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-     
-        movementDirection = new Vector2(xAxis, yAxis).normalized;
         print(movementDirection);
-
-        _myRigidbody.MovePosition(new Vector2(_myTransform.position.x, _myTransform.position.y) 
-            + movementDirection * movementSpeed * Time.fixedDeltaTime);
     }
 
 }
