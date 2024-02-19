@@ -22,8 +22,8 @@ public class CameraComponent : MonoBehaviour
     private float followBlinkTime = 1f;
 
     //Esta variables no estan serializadas porque su modificación provocaría un lerp continuo o que no haga lerp nunca.
-    private float distanceToPlayer = 0.25f;
-    private float distanceToCamera = 0.25f;
+    private float distanceToPlayer = 0.4f;
+    private float distanceToCamera = 0.4f;
 
     //Esta variable sirve para medir el tiempo que queramos que duré el lerp (modificar para que quedé bien con el BlinkRange que se le ponga al player)
     //A menor tiempo, mayor duración del lerp
@@ -46,7 +46,7 @@ public class CameraComponent : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    void LateUpdate()
     {
         //Sacando la distancia entre el jugador y cámara
         Distance = Vector2.Distance(_myTransform.position, _player.position);
@@ -56,7 +56,6 @@ public class CameraComponent : MonoBehaviour
         {
             //Reseteo del tiempo del lerp
             followBlinkTime = 1f;
-            
         }
 
         //Mientras este en estado de lerp, un cronometro llevará la cuenta de lo que tardé en volver al movimiento sin lerp de cámara
@@ -77,7 +76,7 @@ public class CameraComponent : MonoBehaviour
         {
             MovementBlink();
             //Si el tiempo del lerp aumenta, la cámara se acercará mas rapido al jugador, hasta llegar a una Distance < 0.5
-            followBlinkTime += incrementalTime /10;
+            followBlinkTime += incrementalTime/20 ;
             changetoBlink = true;
         }
     }
