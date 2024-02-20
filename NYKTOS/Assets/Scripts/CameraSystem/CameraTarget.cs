@@ -9,7 +9,7 @@ public class CameraTarget : MonoBehaviour
     [SerializeField] 
     private Transform _player;
     [SerializeField] 
-    private float limit;
+    private float limit = 2f;
 
     private Transform _myTransform;
     // Start is called before the first frame update
