@@ -50,7 +50,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""type"": ""Button"",
                     ""id"": ""744e3eae-f001-4a03-91e1-9f112750dc7c"",
                     ""expectedControlType"": ""Button"",
-                    ""processors"": """",
+                    ""processors"": ""Clamp"",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
@@ -300,7 +300,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""SecondaryAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

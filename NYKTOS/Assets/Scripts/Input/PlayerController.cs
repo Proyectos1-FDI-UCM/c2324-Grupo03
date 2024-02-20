@@ -17,6 +17,19 @@ public class PlayerController : MonoBehaviour
     // private WeaponHandler _weaponHandler;
     #endregion
 
+    #region enableInput
+    // activar/desactivar el input del jugador
+    private void OnEnable()
+    {
+        _playerControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _playerControls.Disable();
+    }
+    #endregion
+
     public void Blink(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -33,18 +46,21 @@ public class PlayerController : MonoBehaviour
         _playerMovement.yAxisMovement(input.y);
     }
 
-    #region enableInput
-    // activar/desactivar el input del jugador
-    private void OnEnable()
+    public void Look(InputAction.CallbackContext context)
     {
-        _playerControls.Enable();
+           // Falta script de mirar en la dirección 
     }
 
-    private void OnDisable()
+    public void PrimaryAttack(InputAction.CallbackContext context)
     {
-        _playerControls.Disable();
+        // Realizar el ataque simple
     }
-    #endregion
+
+    public void SecondaryAttack(InputAction.CallbackContext context)
+    {
+        // Realizar el ataque especial
+    }
+
 
     void Awake()
     {
@@ -58,11 +74,5 @@ public class PlayerController : MonoBehaviour
 
         _playerControls.Player.Move.performed += Move;
         _playerControls.Player.Blink.performed += Blink;
-    }
-
-    
-    void Update()
-    {
-        
     }
 }
