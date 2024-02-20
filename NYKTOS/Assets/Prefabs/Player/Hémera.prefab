@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e7a382721ad3144854f9f5a12b1088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  movementSpeed: 6
   blinkRange: 1
 --- !u!114 &1284640727703898027
 MonoBehaviour:
@@ -190,7 +190,19 @@ MonoBehaviour:
     m_ActionId: de971e49-c76e-409f-b94f-eb4d3a2759e1
     m_ActionName: Gameplay/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1284640727703898027}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Look
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: cb9a6344-9ac6-4dd5-870f-9054462ae9c2
     m_ActionName: Gameplay/Look[/Mouse/position]
   - m_PersistentCalls:
@@ -210,11 +222,35 @@ MonoBehaviour:
     m_ActionId: 744e3eae-f001-4a03-91e1-9f112750dc7c
     m_ActionName: Gameplay/Blink[/Keyboard/shift]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1284640727703898027}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: PrimaryAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: accaff3d-59b2-4925-bcee-a3c726c63918
     m_ActionName: Gameplay/PrimaryAttack[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1284640727703898027}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: SecondaryAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6d687d5d-2c26-42ba-9c19-a09ef1d7973b
     m_ActionName: Gameplay/SecondaryAttack[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
