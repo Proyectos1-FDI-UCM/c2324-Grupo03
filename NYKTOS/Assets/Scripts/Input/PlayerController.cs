@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     #region references
     // Referencia a la clase creada a partir del ActionMap
     private PlayerControls _playerControls;
-
+    private BlinkComponent _blinkComponent;
     private RBMovement _playerMovement;
     // private WeaponHandler _weaponHandler;
     #endregion
@@ -34,9 +34,9 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            _playerMovement.Blink();
+            _blinkComponent.Blink();
+            print("a"); //SE LLAMA DOS VECES AL INPUT AQUI
         }
-        //_playerMovement.Blink();
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -65,12 +65,12 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         _playerControls = new PlayerControls();
-
     }
 
     void Start()
     {
         _playerMovement = GetComponent<RBMovement>();
+        _blinkComponent = GetComponent<BlinkComponent>();
 
         _playerControls.Player.Move.performed += Move;
         _playerControls.Player.Blink.performed += Blink;

@@ -6,11 +6,13 @@ public class DELETEinputPrueba : MonoBehaviour
 {
     private RBMovement movement;
     private WeaponHandler weaponHandler;
+    private BlinkComponent blinkComponent;
     // Start is called before the first frame update
     void Awake()
     {
         movement = GetComponent<RBMovement>();
         weaponHandler = GetComponent<WeaponHandler>();
+        blinkComponent = GetComponentInChildren<BlinkComponent>();
     }
 
     // Update is called once per frame
@@ -47,7 +49,7 @@ public class DELETEinputPrueba : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                movement.Blink();
+                blinkComponent.Blink();
             }
         }
 

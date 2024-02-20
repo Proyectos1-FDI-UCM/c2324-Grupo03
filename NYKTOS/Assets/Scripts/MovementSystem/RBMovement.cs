@@ -20,9 +20,6 @@ public class RBMovement : MonoBehaviour
     {
         get { return _myRigidbody.velocity.normalized; }
     }
-
-    [SerializeField]
-    private float blinkRange = 2f;
     #endregion
 
     public void xAxisMovement(float num) //Ajustar el movimiento en xAxis (-1,0,1)
@@ -47,12 +44,6 @@ public class RBMovement : MonoBehaviour
         _myTransform.position = position;
     }
 
-    public void Blink() //Teletransporta al objeto en la direccion de su movimiento con el rango definido en BlinkRange
-    {
-        TeleportTo(new Vector2(_myTransform.position.x, _myTransform.position.y)
-            + movementDirection * blinkRange);
-    }
-
     void Awake()
     {
         _myTransform = transform;
@@ -61,7 +52,7 @@ public class RBMovement : MonoBehaviour
 
     private void Update()
     {
-        print(movementDirection);
+        
     }
 
 }
