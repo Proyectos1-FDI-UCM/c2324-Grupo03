@@ -12,6 +12,7 @@ public class BlinkComponent : MonoBehaviour
 
     #region properties
     private Ray ray;
+    private RaycastHit hit;
     #endregion
 
     #region parameters
@@ -30,7 +31,8 @@ public class BlinkComponent : MonoBehaviour
             }
             else //caso contrario -----> se teleporta al punto de colision del raycast con la pared (un poco menos quizas para que no se encalle)
             {
-
+                Physics.Raycast(ray, out hit, blinkRange, whatLayerToDetect);
+                rbMovement.TeleportTo(hit.point);
             }
         }
     }

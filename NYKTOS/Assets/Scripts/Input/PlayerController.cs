@@ -32,10 +32,10 @@ public class PlayerController : MonoBehaviour
 
     public void Blink(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.started)
         {
             _blinkComponent.Blink();
-            print("Blink: " + gameObject.name ); //SE LLAMA DOS VECES AL INPUT AQUI
+            print("a" ); //SE LLAMA DOS VECES AL INPUT AQUI
         }
     }
 
