@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - TerrainCollision
   - Water
   - UI
-  - 
-  - 
+  - OutOfBounds
+  - Buildings
   - 
   - 
   - 
