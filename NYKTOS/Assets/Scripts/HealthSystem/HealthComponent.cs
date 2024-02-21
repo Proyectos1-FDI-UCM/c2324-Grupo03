@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
 {
+    #region references
+    private EnemyDeath _enemyDeath;
+    #endregion
     #region parameters
     [SerializeField]
     private int _maxHealth = 6;
@@ -19,10 +22,10 @@ public class HealthComponent : MonoBehaviour
 
     private void Update()
     {
-        
+    
     }
 
-    void Damage(int damage)
+    public void Damage(int damage)
     {
         _currentHealth -= damage;
 
@@ -32,7 +35,7 @@ public class HealthComponent : MonoBehaviour
         }
     }
 
-    void Heal (int heal)
+    public void Heal (int heal)
     {
         _currentHealth += heal;
 
@@ -44,7 +47,10 @@ public class HealthComponent : MonoBehaviour
 
     void Muerte()
     {
-
+        if (GetComponent<EnemyDeath>() != null)
+        {
+            _enemyDeath.Die();
+        }
     }
 }
 
