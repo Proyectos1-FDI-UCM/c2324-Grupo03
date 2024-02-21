@@ -1,19 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class EnemyMovtest : MonoBehaviour
-{
-    // Start is called before the first frame update
-    [SerializeField] Transform _playertransfom;
-    private float speed = 2f;
+public class EnemyAI : MonoBehaviour {
 
-   
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, _playertransfom.transform.position, speed * Time.deltaTime);
+    private GameObject _target;
+    [SerializeField]
+    private NavMeshAgent agent;
+
+    void Start() {
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+        _target = GameObject.FindGameObjectWithTag("Player");
 
     }
 
+    // Update is called once per frame
+    void Update() {
+
+        agent.SetDestination(_target.transform.position);
+
+
+    }
 }
