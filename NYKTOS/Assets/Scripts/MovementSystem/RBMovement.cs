@@ -18,20 +18,23 @@ public class RBMovement : MonoBehaviour
     public float movementSpeed = 1f;
     public Vector2 movementDirection //Valor publico de lectura de movementDirection
     {
-        get { return _myRigidbody.velocity.normalized; }
+        get { return privateMovementDirection; }
     }
+    private Vector2 privateMovementDirection;
     #endregion
 
     public void xAxisMovement(float num) //Ajustar el movimiento en xAxis (-1,0,1)
     {
         xAxis = num;
-        _myRigidbody.velocity = new Vector2(xAxis, yAxis).normalized*movementSpeed;
+        privateMovementDirection = new Vector2(xAxis, yAxis).normalized;
+        _myRigidbody.velocity = privateMovementDirection * movementSpeed;
     }
 
     public void yAxisMovement(float num) //Ajustar el movimiento en yAxis (-1,0,1)
     {
         yAxis = num;
-        _myRigidbody.velocity = new Vector2(xAxis, yAxis).normalized * movementSpeed;
+        privateMovementDirection = new Vector2(xAxis, yAxis).normalized;
+        _myRigidbody.velocity = privateMovementDirection * movementSpeed;
     }
 
     public void MoveTo() 
