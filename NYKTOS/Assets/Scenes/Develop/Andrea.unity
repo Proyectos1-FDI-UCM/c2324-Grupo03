@@ -293,6 +293,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: _cooldown1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: _cooldown.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: _cooldown.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: _cooldown.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: _cooldown2._cooldownTime
+      value: 4.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: _BlinkCooldown._cooldownTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: _PrimaryAttackCooldown._cooldownTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3385171631580939238, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
       propertyPath: m_Name
       value: Player

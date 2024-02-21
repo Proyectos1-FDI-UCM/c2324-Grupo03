@@ -14,6 +14,14 @@ public class PlayerController : MonoBehaviour
     private PlayerControls _playerControls;
     private BlinkComponent _blinkComponent;
     private RBMovement _playerMovement;
+
+    [SerializeField]
+    private Cooldown _BlinkCooldown;
+    [SerializeField]
+    private Cooldown _PrimaryAttackCooldown;
+    [SerializeField]
+    private Cooldown _SecondaryAttackCooldown;
+
     // private WeaponHandler _weaponHandler;
     #endregion
 
@@ -32,9 +40,10 @@ public class PlayerController : MonoBehaviour
 
     public void Blink(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && !_BlinkCooldown.IsCooling())
         {
             _blinkComponent.Blink();
+            _BlinkCooldown.StartCooldown();
         }
     }
 
@@ -47,12 +56,17 @@ public class PlayerController : MonoBehaviour
 
     public void Look(InputAction.CallbackContext context)
     {
-           // Falta script de mirar en la dirección 
+        Vector2 input = context.ReadValue<Vector2>();
+        // Metodo para mirar en la dirección 
     }
 
     public void PrimaryAttack(InputAction.CallbackContext context)
     {
-        // Realizar el ataque simple
+        if(context.started && !_PrimaryAttackCooldown.IsCooling())
+        {
+            // Realizar el ataque simple
+            _PrimaryAttackCooldown.StartCooldown();
+        }
     }
 
     public void SecondaryAttack(InputAction.CallbackContext context)
