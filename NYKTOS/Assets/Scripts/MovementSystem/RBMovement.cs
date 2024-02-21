@@ -57,5 +57,14 @@ public class RBMovement : MonoBehaviour
     {
         
     }
+    #region fixes
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<Collider2D>() != null)
+        {
+            _myRigidbody.velocity = privateMovementDirection * movementSpeed;
+        }
+    }
+    #endregion
 
 }
