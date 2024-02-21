@@ -46,5 +46,6 @@ public class BlinkComponent : MonoBehaviour
     {
         ray = new Ray(_myTransform.position, rbMovement.movementDirection);
         Debug.DrawRay(ray.origin, ray.direction*blinkRange);
+        
     }
 }

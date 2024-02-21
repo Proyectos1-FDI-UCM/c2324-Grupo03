@@ -8,22 +8,26 @@ public class BlinkHitbox : MonoBehaviour
     [SerializeField] private BlinkComponent blinkComponent;
     private Transform _hitboxTransform;
     private RBMovement rbMovement;
+    private SpriteRenderer renderer;
     #endregion
 
     public bool isColliding = false;
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == blinkComponent.whatLayerToDetect)
+        //el numero de capa de whatLayerToDetect, es decir, TerrainCollision, es 3. OutOfBounds es 6.
+        if (collision.gameObject.layer == 3 || collision.gameObject.layer == 6)
         {
             isColliding = true;
+            renderer.color = Color.red;
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == blinkComponent.whatLayerToDetect)
+        if (collision.gameObject.layer == 3 || collision.gameObject.layer == 6)
         {
             isColliding = false;
+            renderer.color = Color.green;
         }
     }
 
@@ -33,12 +37,11 @@ public class BlinkHitbox : MonoBehaviour
         rbMovement = GetComponentInParent<RBMovement>();
         _hitboxTransform = transform;
         _hitboxTransform.localPosition = Vector3.zero;
+        renderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
         _hitboxTransform.localPosition = rbMovement.movementDirection * blinkComponent.blinkRange;
-        print (rbMovement.movementDirection * blinkComponent.blinkRange);
-        
     }
 }
