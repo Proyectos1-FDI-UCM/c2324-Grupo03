@@ -50,8 +50,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""type"": ""Button"",
                     ""id"": ""744e3eae-f001-4a03-91e1-9f112750dc7c"",
                     ""expectedControlType"": ""Button"",
-                    ""processors"": ""Clamp"",
-                    ""interactions"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -256,7 +256,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Blink"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
