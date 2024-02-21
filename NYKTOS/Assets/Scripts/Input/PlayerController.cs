@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             _blinkComponent.Blink();
-            print("a" ); //SE LLAMA DOS VECES AL INPUT AQUI
         }
     }
 

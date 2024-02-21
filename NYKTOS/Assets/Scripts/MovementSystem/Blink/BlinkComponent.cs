@@ -11,13 +11,13 @@ public class BlinkComponent : MonoBehaviour
     #endregion
 
     #region properties
-    private Ray ray;
-    private RaycastHit hit;
+    private Ray2D ray;
+    private RaycastHit2D hit;
     #endregion
 
     #region parameters
     [SerializeField] public float blinkRange = 2f;
-    [SerializeField] public LayerMask whatLayerToDetect;
+    [SerializeField] public LayerMask[] whatLayerToDetect = new LayerMask[3]; //deteccion de las capas terrain collider, out of bounds y buildings
     #endregion
 
     public void Blink()
@@ -31,8 +31,22 @@ public class BlinkComponent : MonoBehaviour
             }
             else //caso contrario -----> se teleporta al punto de colision del raycast con la pared (un poco menos quizas para que no se encalle)
             {
-                Physics.Raycast(ray, out hit, blinkRange, whatLayerToDetect);
-                rbMovement.TeleportTo(hit.point);
+                Vector2 closest = new Vector2(blinkRange, blinkRange);
+                Vector2 closestHit = Vector2.zero;
+                for (int i = 0; i < whatLayerToDetect.Length; i++) //ENTRE TODAS LAS CAPAS, BUSCA LA COLISION MAS CERCANA CON EL RAYCAST PARA TELEPORTARSE A ELLA
+                {
+                    hit = Physics2D.Raycast(ray.origin, ray.direction, blinkRange, whatLayerToDetect[i]);
+
+                    Vector2 distanceToPlayer = new Vector2(hit.point.x - _myTransform.position.x, hit.point.y - _myTransform.position.y); //distancia del player
+
+                    if ( distanceToPlayer.magnitude < closest.magnitude)
+                    {
+                        closest = distanceToPlayer;
+                        closestHit = hit.point;
+                    }
+                }
+                if (closestHit != Vector2.zero)
+                    rbMovement.TeleportTo(closestHit - 0.5f * rbMovement.movementDirection);
             }
         }
     }
@@ -46,8 +60,9 @@ public class BlinkComponent : MonoBehaviour
 
     private void Update()
     {
-        ray = new Ray(_myTransform.position, rbMovement.movementDirection);
-        Debug.DrawRay(ray.origin, ray.direction*blinkRange);
+        ray = new Ray2D(_myTransform.position, rbMovement.movementDirection);
+        Debug.DrawRay(ray.origin, ray.direction * blinkRange);
+
         
     }
 }

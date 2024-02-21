@@ -374,8 +374,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blinkRange: 2
   whatLayerToDetect:
-    serializedVersion: 2
+  - serializedVersion: 2
     m_Bits: 8
+  - serializedVersion: 2
+    m_Bits: 128
+  - serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &6714065208488291323
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,4 +514,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.5
