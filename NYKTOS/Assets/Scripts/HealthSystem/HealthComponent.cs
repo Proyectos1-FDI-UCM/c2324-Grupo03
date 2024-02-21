@@ -12,6 +12,7 @@ public class HealthComponent : MonoBehaviour
     private int _maxHealth = 6;
     [SerializeField]
     private int _currentHealth;
+    private bool _inmune = false;
     #endregion
 
     // Start is called before the first frame update
@@ -27,12 +28,16 @@ public class HealthComponent : MonoBehaviour
 
     public void Damage(int damage)
     {
-        _currentHealth -= damage;
-
-        if (_currentHealth <= 0)
+        if (!_inmune) 
         {
-            Muerte();
+            _currentHealth -= damage;
+
+            if (_currentHealth <= 0)
+            {
+                Muerte();
+            }
         }
+        
     }
 
     public void Heal (int heal)
