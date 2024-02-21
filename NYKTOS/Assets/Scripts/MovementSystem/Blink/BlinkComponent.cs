@@ -46,7 +46,7 @@ public class BlinkComponent : MonoBehaviour
                     }
                 }
                 if (closestHit != Vector2.zero)
-                    rbMovement.TeleportTo(closestHit - 0.5f * rbMovement.movementDirection);
+                    rbMovement.TeleportTo(closestHit - 0.25f * rbMovement.movementDirection);
             }
         }
     }
