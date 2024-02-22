@@ -53,9 +53,15 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();
- 
+        
         _playerMovement.xAxisMovement(input.x);
         _playerMovement.yAxisMovement(input.y);
+
+        if(context.canceled)
+        {
+            _playerMovement.xAxisMovement(0);
+            _playerMovement.yAxisMovement(0);
+        }
     }
 
     public void Look(InputAction.CallbackContext context)
