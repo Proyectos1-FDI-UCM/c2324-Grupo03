@@ -25,7 +25,7 @@ public class WeaponClub : MonoBehaviour, IWeapon
         //se requiere instanciar el objeto a la rotacion de direction, pero como es un barrido tomara la direccion de direction-attackAngleRange
 
         GameObject currentHitbox = 
-            Instantiate(attackHitbox, _myTransform.position + 0.25f * new Vector3 (direction.x, direction.y, 0), Quaternion.Euler(0, 0, DirectionAngle(direction) + attackAngleRange/2));
+            Instantiate(attackHitbox, _myTransform.position, Quaternion.Euler(0, 0, DirectionAngle(direction) + attackAngleRange/2));
         
         ClubHitboxBehaviour behaviour = currentHitbox.GetComponent<ClubHitboxBehaviour>();
         
@@ -41,7 +41,26 @@ public class WeaponClub : MonoBehaviour, IWeapon
 
     private float DirectionAngle(Vector2 direction) //saca el angulo de la direccion dando por sentado que el modulo de la direccion es 1
     {
-        return Mathf.Asin(direction.y);
+        float rad;
+        if (direction.x >= 0 && direction.y >= 0)
+        {
+            rad = Mathf.Asin(Mathf.Abs(direction.y));
+        }
+        else if (direction.x <=0 && direction.y >= 0)
+        {
+            rad = Mathf.Asin(Mathf.Abs(direction.y))+ Mathf.PI/2;
+        }
+        else if (direction.x <=0 && direction.y <= 0)
+        {
+            rad = Mathf.Asin(Mathf.Abs(direction.y)) + Mathf.PI;
+        }
+        else
+        {
+            rad = Mathf.Asin(Mathf.Abs(direction.y)) + ((3 * Mathf.PI) / 2);
+        }
+        
+        print(rad* Mathf.Rad2Deg);
+        return (rad * Mathf.Rad2Deg);
     }
     private void Awake()
     {
