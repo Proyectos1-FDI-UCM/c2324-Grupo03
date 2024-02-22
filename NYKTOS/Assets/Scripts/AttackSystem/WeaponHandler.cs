@@ -20,7 +20,17 @@ public class WeaponHandler : MonoBehaviour
 
     private void Awake() //Borrar esto mas adelante !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     {
-        weapon[0] = GetComponent<WeaponNothing>();
+        weapon[0] = GetComponent<WeaponClub>();
     }
 
+    //BORRAR
+    private void Update()
+    {
+        print('1');
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            print('a');
+            CallPrimaryUse(0, Vector2.right);
+        }
+    }
 }

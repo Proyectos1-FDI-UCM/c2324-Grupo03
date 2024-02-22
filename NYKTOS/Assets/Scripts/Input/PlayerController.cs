@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private BlinkComponent _blinkComponent;
     private RBMovement _playerMovement;
     private LookDirection _lookDirection;
+    private WeaponHandler _weaponHandler;
 
     [SerializeField]
     private Cooldown _BlinkCooldown;
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();
-        Debug.Log(input);
+ 
         _playerMovement.xAxisMovement(input.x);
         _playerMovement.yAxisMovement(input.y);
     }
@@ -60,7 +61,6 @@ public class PlayerController : MonoBehaviour
     public void Look(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();
-        Debug.Log(input);
         _lookDirection.SetLookDirection(input);
     }
 
@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour
         _playerMovement = GetComponent<RBMovement>();
         _blinkComponent = GetComponent<BlinkComponent>();
         _lookDirection = GetComponent<LookDirection>();
+        _weaponHandler = GetComponent<WeaponHandler>();
 
         _playerControls.Player.Move.performed += Move;
         _playerControls.Player.Blink.performed += Blink;
