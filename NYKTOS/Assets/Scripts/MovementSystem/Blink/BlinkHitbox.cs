@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlinkHitbox : MonoBehaviour
 {
     #region references
-    [SerializeField] private BlinkComponent blinkComponent;
+    private BlinkComponent blinkComponent;
     private Transform _hitboxTransform;
     private RBMovement rbMovement;
     private SpriteRenderer renderer;
@@ -42,6 +42,6 @@ public class BlinkHitbox : MonoBehaviour
 
     private void Update()
     {
-        _hitboxTransform.localPosition = rbMovement.movementDirection * blinkComponent.blinkRange;
+        _hitboxTransform.localPosition = blinkComponent.blinkDirection * blinkComponent.blinkRange;
     }
 }
