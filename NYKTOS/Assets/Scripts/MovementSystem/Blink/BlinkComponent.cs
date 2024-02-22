@@ -13,6 +13,7 @@ public class BlinkComponent : MonoBehaviour
     #region properties
     private Ray2D ray;
     private RaycastHit2D hit;
+    public Vector2 blinkDirection = Vector2.zero; //blink direction va a ser la direccion hacia donde apunta el blink. es lo mismo que rbMovement.movementDirection solo que sin poder ser vector zero.
     #endregion
 
     #region parameters
@@ -27,7 +28,7 @@ public class BlinkComponent : MonoBehaviour
             if (!blinkHitbox.isColliding) //caso de que la hitbox no colisione con la pared ------> se teleporta a la distancia maxima del blink
             {
                 rbMovement.TeleportTo(new Vector2 (_myTransform.position.x, _myTransform.position.y) 
-                    + rbMovement.movementDirection * blinkRange);
+                    + blinkDirection * blinkRange);
             }
             else //caso contrario -----> se teleporta al punto de colision del raycast con la pared (un poco menos quizas para que no se encalle)
             {
@@ -46,7 +47,7 @@ public class BlinkComponent : MonoBehaviour
                     }
                 }
                 if (closestHit != Vector2.zero)
-                    rbMovement.TeleportTo(closestHit - 0.25f * rbMovement.movementDirection);
+                    rbMovement.TeleportTo(closestHit - 0.25f * blinkDirection);
             }
         }
     }
@@ -63,6 +64,12 @@ public class BlinkComponent : MonoBehaviour
         ray = new Ray2D(_myTransform.position, rbMovement.movementDirection);
         Debug.DrawRay(ray.origin, ray.direction * blinkRange);
 
-        
+
+        #region blinkDirection
+        if (rbMovement != null && rbMovement.movementDirection!= Vector2.zero)
+        {
+            blinkDirection = rbMovement.movementDirection;
+        }
+        #endregion
     }
 }
