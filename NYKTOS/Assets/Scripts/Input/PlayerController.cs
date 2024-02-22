@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         if(context.started && !_PrimaryAttackCooldown.IsCooling())
         {
-            // Realizar el ataque simple
+            _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
             _PrimaryAttackCooldown.StartCooldown();
         }
     }
@@ -94,5 +94,6 @@ public class PlayerController : MonoBehaviour
         _playerControls.Player.Move.performed += Move;
         _playerControls.Player.Blink.performed += Blink;
         _playerControls.Player.Look.performed += Look;
+        _playerControls.Player.PrimaryAttack.performed += PrimaryAttack;
     }
 }
