@@ -315,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
       propertyPath: _BlinkCooldown._cooldownTime
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
       propertyPath: _PrimaryAttackCooldown._cooldownTime
