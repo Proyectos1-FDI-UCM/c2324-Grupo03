@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class WeaponNothing : MonoBehaviour, IWeapon
 {
-    public void PrimaryUse()
+    public void PrimaryUse(Vector2 direction)
     {
         Debug.Log("PrimaryAttack");
     }
 
-    public void SecondaryUse()
+    public void SecondaryUse(Vector2 direction)
     {
         Debug.Log("SecondaryAttack");
     }

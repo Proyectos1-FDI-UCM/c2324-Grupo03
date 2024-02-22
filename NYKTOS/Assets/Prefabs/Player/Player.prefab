@@ -409,6 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ee194e42963d945a8d121e4ca583b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blinkDirection: {x: 0, y: 0}
   blinkRange: 2
   whatLayerToDetect:
   - serializedVersion: 2
@@ -616,7 +617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 344007d65a9fdeb46a00731259c97e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blinkComponent: {fileID: 0}
   isColliding: 0
 --- !u!58 &7002030945697892041
 CircleCollider2D:
