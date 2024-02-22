@@ -12,8 +12,10 @@ public class PlayerController : MonoBehaviour
     #region references
     // Referencia a la clase creada a partir del ActionMap
     private PlayerControls _playerControls;
+
     private BlinkComponent _blinkComponent;
     private RBMovement _playerMovement;
+    private LookDirection _lookDirection;
 
     [SerializeField]
     private Cooldown _BlinkCooldown;
@@ -50,6 +52,7 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();
+        Debug.Log(input);
         _playerMovement.xAxisMovement(input.x);
         _playerMovement.yAxisMovement(input.y);
     }
@@ -57,7 +60,8 @@ public class PlayerController : MonoBehaviour
     public void Look(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();
-        // Metodo para mirar en la dirección 
+        Debug.Log(input);
+        _lookDirection.SetLookDirection(input);
     }
 
     public void PrimaryAttack(InputAction.CallbackContext context)
@@ -84,8 +88,10 @@ public class PlayerController : MonoBehaviour
     {
         _playerMovement = GetComponent<RBMovement>();
         _blinkComponent = GetComponent<BlinkComponent>();
+        _lookDirection = GetComponent<LookDirection>();
 
         _playerControls.Player.Move.performed += Move;
         _playerControls.Player.Blink.performed += Blink;
+        _playerControls.Player.Look.performed += Look;
     }
 }
