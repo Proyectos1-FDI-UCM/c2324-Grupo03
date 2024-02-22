@@ -149,6 +149,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b9cc239eddd0947b9e8b34857ad094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _BlinkCooldown:
+    _cooldownTime: 2
+  _PrimaryAttackCooldown:
+    _cooldownTime: 10
+  _SecondaryAttackCooldown:
+    _cooldownTime: 10
 --- !u!114 &5023334086552178363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,7 +427,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6714065208488291323}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
