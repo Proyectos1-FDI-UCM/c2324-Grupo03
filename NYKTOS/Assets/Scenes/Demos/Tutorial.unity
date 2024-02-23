@@ -220,17 +220,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
-      propertyPath: _BlinkCooldown._cooldownTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
-      propertyPath: _PrimaryAttackCooldown._cooldownTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
-      propertyPath: _SecondaryAttackCooldown._cooldownTime
-      value: 5
+    - target: {fileID: 2200422515332983850, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3385171631580939238, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
       propertyPath: m_Name
@@ -276,6 +268,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7901438816017310829, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: decreaseFactor
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9036229547608970073, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -297,6 +297,10 @@ PrefabInstance:
     - target: {fileID: 1084242728902340590, guid: d042e5632ae2ff440997bd7b50085dfa, type: 3}
       propertyPath: m_Name
       value: NavMesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084242728902340590, guid: d042e5632ae2ff440997bd7b50085dfa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6956265534694123477, guid: d042e5632ae2ff440997bd7b50085dfa, type: 3}
       propertyPath: m_VoxelSize
@@ -379,6 +383,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 83139623828886701, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 999407573560517799, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: m_Name
       value: Tutorial_levelV2

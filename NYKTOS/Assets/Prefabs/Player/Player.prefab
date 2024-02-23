@@ -219,7 +219,6 @@ MonoBehaviour:
   minLightRadius: 1.5
   increaseFactor: 2
   decreaseFactor: 1
-  insideLightAreas: 0
 --- !u!1 &3385171631580939238
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,11 +290,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _BlinkCooldown:
-    _cooldownTime: 2
-  _PrimaryAttackCooldown:
     _cooldownTime: 0.5
+  _PrimaryAttackCooldown:
+    _cooldownTime: 1
   _SecondaryAttackCooldown:
-    _cooldownTime: 10
+    _cooldownTime: 5
 --- !u!114 &5023334086552178363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,7 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blinkDirection: {x: 0, y: 0}
-  blinkRange: 2
+  blinkRange: 3
   whatLayerToDetect:
   - serializedVersion: 2
     m_Bits: 8
@@ -511,14 +510,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.009000713, y: 0.121546745}
-      - {x: -0.29507563, y: 0.05271691}
-      - {x: -0.27186614, y: -0.25520968}
-      - {x: -0.046159334, y: -0.5491459}
-      - {x: 0.018023133, y: -0.5509101}
-      - {x: 0.07617072, y: -0.54875404}
-      - {x: 0.29839256, y: -0.29469305}
-      - {x: 0.31998062, y: 0.07196929}
+    - - {x: -0.009000713, y: 0.08319895}
+      - {x: -0.27042344, y: 0.0417604}
+      - {x: -0.23625746, y: -0.27986184}
+      - {x: -0.043420203, y: -0.5190155}
+      - {x: 0.023501366, y: -0.5180406}
+      - {x: 0.07617072, y: -0.5213628}
+      - {x: 0.26004478, y: -0.29743215}
+      - {x: 0.27615458, y: 0.036360644}
   m_UseDelaunayMesh: 0
 --- !u!95 &3176177197675962967
 Animator:
