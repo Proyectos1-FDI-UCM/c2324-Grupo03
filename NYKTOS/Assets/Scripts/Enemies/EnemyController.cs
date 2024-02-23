@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAI : MonoBehaviour {
-
+public class EnemyController : MonoBehaviour {
+    //  Codigo de Maria :p
+    #region references
     private GameObject _target;
-    [SerializeField]
-    private NavMeshAgent agent;
-
+    [SerializeField] private NavMeshAgent agent;
+    #endregion
     void Start() {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -22,4 +22,6 @@ public class EnemyAI : MonoBehaviour {
 
 
     }
+    //  fin codigo de Maria :)
+
 }
