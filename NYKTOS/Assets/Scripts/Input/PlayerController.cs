@@ -9,6 +9,7 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class PlayerController : MonoBehaviour
 {
+    
     #region references
     // Referencia a la clase creada a partir del ActionMap
     private PlayerControls _playerControls;
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour
     private Cooldown _PrimaryAttackCooldown;
     [SerializeField]
     private Cooldown _SecondaryAttackCooldown;
+
+   
 
     // private WeaponHandler _weaponHandler;
     #endregion
@@ -46,7 +49,9 @@ public class PlayerController : MonoBehaviour
         if (context.started && !_BlinkCooldown.IsCooling())
         {
             _blinkComponent.Blink();
+            
             _BlinkCooldown.StartCooldown();
+            
         }
     }
 
@@ -88,6 +93,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         _playerControls = new PlayerControls();
+        
     }
 
     void Start()
@@ -101,5 +107,6 @@ public class PlayerController : MonoBehaviour
         _playerControls.Player.Blink.performed += Blink;
         _playerControls.Player.Look.performed += Look;
         _playerControls.Player.PrimaryAttack.performed += PrimaryAttack;
+        
     }
 }

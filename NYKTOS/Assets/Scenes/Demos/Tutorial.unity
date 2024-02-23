@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.999833
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
@@ -223,6 +223,10 @@ PrefabInstance:
     - target: {fileID: 3385171631580939238, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3629605777245254002, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: blinkRange
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6534088897598437012, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
       propertyPath: m_LocalPosition.x

@@ -8,6 +8,7 @@ public class BlinkComponent : MonoBehaviour
     private RBMovement rbMovement;
     private Transform _myTransform;
     private BlinkHitbox blinkHitbox;
+    
     #endregion
 
     #region properties
@@ -25,6 +26,8 @@ public class BlinkComponent : MonoBehaviour
     {
         if (blinkHitbox != null)
         {
+            
+
             if (!blinkHitbox.isColliding) //caso de que la hitbox no colisione con la pared ------> se teleporta a la distancia maxima del blink
             {
                 rbMovement.TeleportTo(new Vector2 (_myTransform.position.x, _myTransform.position.y) 
@@ -49,6 +52,8 @@ public class BlinkComponent : MonoBehaviour
                 if (closestHit != Vector2.zero)
                     rbMovement.TeleportTo(closestHit - 0.25f * blinkDirection);
             }
+
+            
         }
     }
 
@@ -57,6 +62,8 @@ public class BlinkComponent : MonoBehaviour
         rbMovement = GetComponent<RBMovement>();    
         _myTransform = transform;
         blinkHitbox = GetComponentInChildren<BlinkHitbox>();
+        
+        
     }
 
     private void Update()
