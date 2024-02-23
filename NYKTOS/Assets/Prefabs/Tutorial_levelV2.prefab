@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2578298522510657207}
   - component: {fileID: 4345259377578032313}
   - component: {fileID: 3301131533627736170}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Altar Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
