@@ -42,25 +42,10 @@ public class WeaponClub : MonoBehaviour, IWeapon
     private float DirectionAngle(Vector2 direction) //saca el angulo de la direccion dando por sentado que el modulo de la direccion es 1
     {
         float rad;
-        if (direction.x >= 0 && direction.y >= 0)
-        {
-            rad = Mathf.Asin(Mathf.Abs(direction.y));
-        }
-        else if (direction.x <=0 && direction.y >= 0)
-        {
-            rad = Mathf.Asin(Mathf.Abs(direction.y))+ Mathf.PI/2;
-        }
-        else if (direction.x <=0 && direction.y <= 0)
-        {
-            rad = Mathf.Asin(Mathf.Abs(direction.y)) + Mathf.PI;
-        }
-        else
-        {
-            rad = Mathf.Asin(Mathf.Abs(direction.y)) + ((3 * Mathf.PI) / 2);
-        }
         
-        print(rad* Mathf.Rad2Deg);
-        return (rad * Mathf.Rad2Deg);
+        
+        print(Mathf.Atan2(direction.y,direction.x)* Mathf.Rad2Deg);
+        return (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
     }
     private void Awake()
     {
