@@ -98,7 +98,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5847144808090115009}
   - component: {fileID: 5392703533161318980}
-  - component: {fileID: 1908989761634208321}
   m_Layer: 0
   m_Name: GameplayCameraTarget
   m_TagString: Untagged
@@ -161,15 +160,3 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 8561174047369490974}
---- !u!114 &1908989761634208321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6614395453940055683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
