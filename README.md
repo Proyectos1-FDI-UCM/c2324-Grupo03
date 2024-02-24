@@ -2,7 +2,7 @@
 
 ## Indice
 
-1. [Links de utilidad]
+1. [Links de utilidad](#links-de-utilidad)
 2. [Workflow de trabajo](#workflow-de-trabajo)
 3. [Como revisar una historia de usuario](#workflow-de-revisión)
 4. [Tipos de escenas](#tipos_de_escenas)
