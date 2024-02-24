@@ -23,6 +23,8 @@
 - [(Libro) Patrones de Programación de Videojuegos](http://gameprogrammingpatterns.com/contents.html)
 - [Principios SOLID de la programación orientada a objetos](https://es.wikipedia.org/wiki/SOLID)
 
+---
+
 ## Workflow de trabajo
 
 1. Elegir historia que esté en el hito y sprint actual preferiblemente. **Elige según prioridad**
