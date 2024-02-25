@@ -13,11 +13,13 @@ public class PlayerController : MonoBehaviour
     #region references
     // Referencia a la clase creada a partir del ActionMap
     private PlayerControls _playerControls;
-
+    
     private BlinkComponent _blinkComponent;
     private RBMovement _playerMovement;
     private LookDirection _lookDirection;
     private WeaponHandler _weaponHandler;
+
+    private Camera mainCamera;
 
     [SerializeField]
     private Cooldown _BlinkCooldown;
@@ -63,10 +65,18 @@ public class PlayerController : MonoBehaviour
 
     public void Look(InputAction.CallbackContext context)
     {
-        //Vector2 input = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
-        Vector2 input = context.ReadValue<Vector2>();
-        Debug.Log(input);
-        //Debug.Log("Convertido: " + input);
+        Vector2 input;
+        if(context.control.device is Mouse)
+        {
+            Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue()); //apaño chungo, cambiar luego
+            Vector2 playerPosition = _playerMovement.transform.position;
+            input = (mousePosition- playerPosition).normalized;
+        }
+        else
+        {
+            input = context.ReadValue<Vector2>();
+        }
+       
         _lookDirection.SetLookDirection(input);
     }
 
@@ -97,6 +107,7 @@ public class PlayerController : MonoBehaviour
         _blinkComponent = GetComponent<BlinkComponent>();
         _lookDirection = GetComponent<LookDirection>();
         _weaponHandler = GetComponent<WeaponHandler>();
+        mainCamera= Camera.main;
 
         _playerControls.Player.Move.performed += Move;
         _playerControls.Player.Move.canceled += Move;

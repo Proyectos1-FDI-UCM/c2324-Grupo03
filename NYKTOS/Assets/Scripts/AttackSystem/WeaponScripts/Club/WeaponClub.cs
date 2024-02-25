@@ -24,6 +24,7 @@ public class WeaponClub : MonoBehaviour, IWeapon
         //se requiere instanciar el objeto a la rotacion de direction, pero como es un barrido tomara la direccion de direction-attackAngleRange
         GameObject currentHitbox = 
             Instantiate(attackHitbox, _myTransform.position, Quaternion.Euler(0, 0, DirectionAngle(direction) + attackAngleRange/2));
+        currentHitbox.transform.parent = _myTransform;
         
         ClubHitboxBehaviour behaviour = currentHitbox.GetComponent<ClubHitboxBehaviour>();
         
