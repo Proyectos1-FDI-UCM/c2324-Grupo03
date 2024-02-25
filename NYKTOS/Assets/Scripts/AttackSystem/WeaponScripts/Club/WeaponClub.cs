@@ -21,9 +21,7 @@ public class WeaponClub : MonoBehaviour, IWeapon
     #endregion
     public void PrimaryUse(Vector2 direction)
     {
-        Debug.Log("estoy en el prime");
         //se requiere instanciar el objeto a la rotacion de direction, pero como es un barrido tomara la direccion de direction-attackAngleRange
-
         GameObject currentHitbox = 
             Instantiate(attackHitbox, _myTransform.position, Quaternion.Euler(0, 0, DirectionAngle(direction) + attackAngleRange/2));
         

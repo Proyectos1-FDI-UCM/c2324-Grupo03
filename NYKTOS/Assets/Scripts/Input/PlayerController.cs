@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     public void Blink(InputAction.CallbackContext context)
     {
-        if (context.started && !_BlinkCooldown.IsCooling())
+        if (context.performed && !_BlinkCooldown.IsCooling())
         {
             _blinkComponent.Blink();
             
@@ -61,23 +61,17 @@ public class PlayerController : MonoBehaviour
         
         _playerMovement.xAxisMovement(input.x);
         _playerMovement.yAxisMovement(input.y);
-
-        if(context.canceled)
-        {
-            _playerMovement.xAxisMovement(0);
-            _playerMovement.yAxisMovement(0);
-        }
     }
 
     public void Look(InputAction.CallbackContext context)
     {
-        Vector2 input = context.ReadValue<Vector2>();
+        Vector2 input = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
         _lookDirection.SetLookDirection(input);
     }
 
     public void PrimaryAttack(InputAction.CallbackContext context)
     {
-        if(context.started && !_PrimaryAttackCooldown.IsCooling())
+        if(context.performed && !_PrimaryAttackCooldown.IsCooling())
         {
             _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
             _PrimaryAttackCooldown.StartCooldown();
@@ -104,9 +98,11 @@ public class PlayerController : MonoBehaviour
         _weaponHandler = GetComponent<WeaponHandler>();
 
         _playerControls.Player.Move.performed += Move;
+        _playerControls.Player.Move.canceled += Move;
         _playerControls.Player.Blink.performed += Blink;
         _playerControls.Player.Look.performed += Look;
         _playerControls.Player.PrimaryAttack.performed += PrimaryAttack;
+        _playerControls.Player.SecondaryAttack.performed += SecondaryAttack;
         
     }
 }
