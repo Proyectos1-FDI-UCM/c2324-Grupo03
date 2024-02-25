@@ -1,8 +1,10 @@
 using UnityEngine;
 
+// Codigo de Iker :D
+//Este codigo es para aplicar a un objeto por separado que tenga un renderer, aplicarle el material Inversion
 public class CambioMaterial : MonoBehaviour
 {
-    public Material nuevoMaterial; // El nuevo material que deseas aplicar al objeto
+    public Material nuevoMaterial;
     private Material MaterialPorDefecto;
     [SerializeField]
     private bool Noche;
@@ -33,10 +35,8 @@ public class CambioMaterial : MonoBehaviour
 
     void CambiarMaterial()
     {
-        // Asegúrate de tener un material nuevo para aplicar
         if (nuevoMaterial != null && Noche)
         {
-            // Asigna el nuevo material al objeto
             renderer.material = nuevoMaterial;
         }
         else if (nuevoMaterial != null && !Noche)

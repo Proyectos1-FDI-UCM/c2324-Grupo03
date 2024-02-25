@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 8747869469173157414}
   - component: {fileID: 7254790959946574717}
   - component: {fileID: 7733355820751254532}
+  - component: {fileID: 7439441490672008979}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -2305,6 +2306,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TileModifiers: []
+--- !u!114 &7439441490672008979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421255883411783196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ae50ca5648bb245a303efe75533a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nuevoMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+  Noche: 0
 --- !u!1 &459851003450573691
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,6 +2336,7 @@ GameObject:
   - component: {fileID: 5885878473529367196}
   - component: {fileID: 4847993374385205940}
   - component: {fileID: 3391994995234606509}
+  - component: {fileID: 2739931452152668739}
   m_Layer: 3
   m_Name: Walls
   m_TagString: Untagged
@@ -3727,6 +3743,20 @@ MonoBehaviour:
   - tile: {fileID: 11400000, guid: 848fa7af4ab6e7940ab9cb25245fcf88, type: 2}
     overrideArea: 0
     area: 0
+--- !u!114 &2739931452152668739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459851003450573691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ae50ca5648bb245a303efe75533a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nuevoMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+  Noche: 0
 --- !u!1 &999407573560517799
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,6 +3820,7 @@ GameObject:
   - component: {fileID: 4082751497574938138}
   - component: {fileID: 4877378181511317793}
   - component: {fileID: 2030337861429772151}
+  - component: {fileID: 609776188959568778}
   m_Layer: 0
   m_Name: PlaceHolder 2
   m_TagString: Untagged
@@ -3925,6 +3956,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &609776188959568778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192135471970981493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ae50ca5648bb245a303efe75533a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nuevoMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+  Noche: 0
 --- !u!1 &1705286220271124963
 GameObject:
   m_ObjectHideFlags: 0
@@ -3935,6 +3980,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4351186116143408543}
   - component: {fileID: 7234732147273779836}
+  - component: {fileID: 5886403898574358262}
   m_Layer: 0
   m_Name: Arbusto2
   m_TagString: Untagged
@@ -4009,6 +4055,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5886403898574358262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705286220271124963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ae50ca5648bb245a303efe75533a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nuevoMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+  Noche: 0
 --- !u!1 &1875828526505922401
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,6 +4079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7462018972069770910}
   - component: {fileID: 6786719710046385029}
+  - component: {fileID: 5367206567178823500}
   m_Layer: 0
   m_Name: Arbol2
   m_TagString: Untagged
@@ -4093,6 +4154,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5367206567178823500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875828526505922401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ae50ca5648bb245a303efe75533a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nuevoMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+  Noche: 0
 --- !u!1 &3301381822585082361
 GameObject:
   m_ObjectHideFlags: 0
@@ -4281,6 +4356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7629359085084172523}
   - component: {fileID: 2159623893497808689}
+  - component: {fileID: 147131441911957834}
   m_Layer: 0
   m_Name: Arbusto1
   m_TagString: Untagged
@@ -4355,6 +4431,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &147131441911957834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3545186312741371185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ae50ca5648bb245a303efe75533a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nuevoMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+  Noche: 0
 --- !u!1 &5036013270883069716
 GameObject:
   m_ObjectHideFlags: 0
@@ -4400,6 +4490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8265322791110490126}
   - component: {fileID: 3851528587450006642}
+  - component: {fileID: 5072260089393712281}
   m_Layer: 0
   m_Name: Arbusto2
   m_TagString: Untagged
@@ -4474,6 +4565,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5072260089393712281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5235396056474734902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ae50ca5648bb245a303efe75533a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nuevoMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+  Noche: 0
 --- !u!1 &5287233901635010103
 GameObject:
   m_ObjectHideFlags: 0
@@ -4681,6 +4786,7 @@ GameObject:
   - component: {fileID: 9213430745464743362}
   - component: {fileID: 8417360058994311108}
   - component: {fileID: 6315550480502323919}
+  - component: {fileID: 8032940532193792298}
   m_Layer: 3
   m_Name: Extras
   m_TagString: Untagged
@@ -5032,6 +5138,20 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 6240985316219405999}
+--- !u!114 &8032940532193792298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6240985316219405999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ae50ca5648bb245a303efe75533a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nuevoMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+  Noche: 0
 --- !u!1 &6480509210915462261
 GameObject:
   m_ObjectHideFlags: 0
@@ -5044,6 +5164,7 @@ GameObject:
   - component: {fileID: 7080517453920381767}
   - component: {fileID: 5775793540506485372}
   - component: {fileID: 5893881739763179041}
+  - component: {fileID: 8489511476208518700}
   m_Layer: 0
   m_Name: PlaceHolder 1
   m_TagString: Untagged
@@ -5179,6 +5300,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8489511476208518700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6480509210915462261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ae50ca5648bb245a303efe75533a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nuevoMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+  Noche: 0
 --- !u!1 &6785667112453186501
 GameObject:
   m_ObjectHideFlags: 0
