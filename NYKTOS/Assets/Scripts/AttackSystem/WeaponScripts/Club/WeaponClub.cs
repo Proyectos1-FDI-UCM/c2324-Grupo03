@@ -42,7 +42,7 @@ public class WeaponClub : MonoBehaviour, IWeapon
         float rad;
         
         
-        print(Mathf.Atan2(direction.y,direction.x)* Mathf.Rad2Deg);
+        //print(Mathf.Atan2(direction.y,direction.x)* Mathf.Rad2Deg);
         return (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
     }
     private void Awake()

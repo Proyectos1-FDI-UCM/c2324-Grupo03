@@ -48,10 +48,8 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed && !_BlinkCooldown.IsCooling())
         {
-            _blinkComponent.Blink();
-            
-            _BlinkCooldown.StartCooldown();
-            
+            _blinkComponent.Blink();            
+            _BlinkCooldown.StartCooldown();            
         }
     }
 
@@ -65,7 +63,10 @@ public class PlayerController : MonoBehaviour
 
     public void Look(InputAction.CallbackContext context)
     {
-        Vector2 input = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
+        //Vector2 input = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
+        Vector2 input = context.ReadValue<Vector2>();
+        Debug.Log(input);
+        //Debug.Log("Convertido: " + input);
         _lookDirection.SetLookDirection(input);
     }
 
