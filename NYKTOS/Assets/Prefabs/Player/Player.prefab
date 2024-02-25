@@ -417,8 +417,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ee194e42963d945a8d121e4ca583b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityHitbox: {fileID: 3481668439861505499}
   blinkDirection: {x: 0, y: 0}
-  blinkRange: 3
+  blinkRange: 2
   whatLayerToDetect:
   - serializedVersion: 2
     m_Bits: 8
@@ -426,6 +427,7 @@ MonoBehaviour:
     m_Bits: 128
   - serializedVersion: 2
     m_Bits: 64
+  playerHitboxDissapearingTime: 0.2
 --- !u!114 &-1504753601656162217
 MonoBehaviour:
   m_ObjectHideFlags: 0

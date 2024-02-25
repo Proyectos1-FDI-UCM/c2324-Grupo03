@@ -8,7 +8,8 @@ public class BlinkComponent : MonoBehaviour
     private RBMovement rbMovement;
     private Transform _myTransform;
     private BlinkHitbox blinkHitbox;
-    
+    [SerializeField]
+    private Collider2D entityHitbox;
     #endregion
 
     #region properties
@@ -20,14 +21,15 @@ public class BlinkComponent : MonoBehaviour
     #region parameters
     [SerializeField] public float blinkRange = 2f;
     [SerializeField] public LayerMask[] whatLayerToDetect = new LayerMask[3]; //deteccion de las capas terrain collider, out of bounds y buildings
+
+    [SerializeField] private float playerHitboxDissapearingTime;
     #endregion
 
     public void Blink()
     {
         if (blinkHitbox != null)
         {
-            
-
+            entityHitbox.enabled = false;
             if (!blinkHitbox.isColliding) //caso de que la hitbox no colisione con la pared ------> se teleporta a la distancia maxima del blink
             {
                 rbMovement.TeleportTo(new Vector2 (_myTransform.position.x, _myTransform.position.y) 
@@ -53,8 +55,13 @@ public class BlinkComponent : MonoBehaviour
                     rbMovement.TeleportTo(closestHit - 0.25f * blinkDirection);
             }
 
-            
+            Invoke("ActivatePlayerHitbox", playerHitboxDissapearingTime);
         }
+    }
+
+    private void ActivatePlayerHitbox()
+    {
+        entityHitbox.enabled= true;
     }
 
     private void Awake()
@@ -62,7 +69,6 @@ public class BlinkComponent : MonoBehaviour
         rbMovement = GetComponent<RBMovement>();    
         _myTransform = transform;
         blinkHitbox = GetComponentInChildren<BlinkHitbox>();
-        
         
     }
 
@@ -78,5 +84,6 @@ public class BlinkComponent : MonoBehaviour
             blinkDirection = rbMovement.movementDirection;
         }
         #endregion
+
     }
 }
