@@ -13,6 +13,11 @@ public class ClubHitboxBehaviour : MonoBehaviour
     public float angleVelocity;
     #endregion
 
+    #region weaponProperties
+    public int weaponDamage = 0;
+    public int damageType = 0;
+    #endregion
+
     #region references
     private Transform _myTransform;
     #endregion
@@ -28,6 +33,34 @@ public class ClubHitboxBehaviour : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<HealthComponent>() != null) //QUITAR VIDA
+        {
+            HealthComponent healthComponent = collision.gameObject.GetComponent<HealthComponent>();
+
+            healthComponent.Damage(weaponDamage);
+        }
+
+        if (collision.gameObject.GetComponent<RBMovement>() != null) //KNOCKBACK
+        {
+            RBMovement rBMovement = collision.gameObject.GetComponent<RBMovement>();
+            rBMovement.Knockback(_myTransform.position);
+        }
+
+        if (damageType == 1 && collision.gameObject.GetComponent<SetOnFireDebuff>()) //DAÑO DE FUEGO
+        {
+            SetOnFireDebuff setOnFire = collision.gameObject.GetComponent<SetOnFireDebuff>();
+            setOnFire.enabled = true;
+        }
+
+        else if (damageType == 2 && collision.gameObject.GetComponent<SlowDebuff>()) //RALENTIZAR
+        {
+            SlowDebuff slow = collision.gameObject.GetComponent<SlowDebuff>();
+            slow.enabled = true;
         }
     }
 

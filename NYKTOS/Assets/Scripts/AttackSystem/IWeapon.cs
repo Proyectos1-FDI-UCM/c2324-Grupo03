@@ -10,5 +10,18 @@ public interface IWeapon
     /// </summary>
     /// <param name="direction"></param>
     void PrimaryUse(Vector2 direction);
+
     void SecondaryUse(Vector2 direction); //En caso de solo querer un ataque, en la llamada de este metodo no se escribe nada
+
+    /// <summary>
+    /// 0 si no es nada, 1 si es daño de fuego, 2 si es paralización.
+    /// Se requiere crear una variable en la que se setea a 0 en cada script de arma.
+    /// </summary>
+    void SetDamageType(int damageType);
+
+    /// <summary>
+    /// Se añade daño al arma, es decir, le suma al daño ya existente del arma el número entero que se le pasa.
+    /// </summary>
+    //void AddWeaponDamage(int num);
+
 }

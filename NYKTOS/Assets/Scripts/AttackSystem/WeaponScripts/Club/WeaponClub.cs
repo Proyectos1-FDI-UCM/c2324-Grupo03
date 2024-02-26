@@ -14,11 +14,14 @@ public class WeaponClub : MonoBehaviour, IWeapon
     [SerializeField]
     private float attackAngleRange = 30f; //area del barrido en grados, es decir, tamano del barrido
     [SerializeField] private float angleVelocity = 1f;
-    #endregion
-
-    #region properties
 
     #endregion
+
+    #region weaponProperties
+    [SerializeField] private int damageType = 0;
+    [SerializeField] private int weaponDamage = 1;
+    #endregion
+
     public void PrimaryUse(Vector2 direction)
     {
         //se requiere instanciar el objeto a la rotacion de direction, pero como es un barrido tomara la direccion de direction-attackAngleRange
@@ -28,14 +31,24 @@ public class WeaponClub : MonoBehaviour, IWeapon
         
         ClubHitboxBehaviour behaviour = currentHitbox.GetComponent<ClubHitboxBehaviour>();
         
+        //set up de la direccion y barrido
         behaviour.attackAngleRange = attackAngleRange;
         behaviour.currentAngle = DirectionAngle(direction) + attackAngleRange / 2;
         behaviour.angleVelocity = angleVelocity;
+
+        //set up del dano y su tipo
+        behaviour.damageType = damageType;
+        behaviour.weaponDamage = weaponDamage;
     }
 
     public void SecondaryUse(Vector2 direction)
     {
 
+    }
+
+    public void SetDamageType(int num)
+    {
+        damageType = num;
     }
 
     private float DirectionAngle(Vector2 direction) //saca el angulo de la direccion dando por sentado que el modulo de la direccion es 1

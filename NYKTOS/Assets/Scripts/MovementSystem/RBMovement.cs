@@ -21,6 +21,7 @@ public class RBMovement : MonoBehaviour
         get { return privateMovementDirection; }
     }
     private Vector2 privateMovementDirection;
+    [SerializeField] private float knockBackSpeed = 10f;
     #endregion
 
     public void xAxisMovement(float num) //Ajustar el movimiento en xAxis (-1,0,1)
@@ -53,10 +54,13 @@ public class RBMovement : MonoBehaviour
         _myRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    public void Knockback(Vector2 pushPosition)
     {
-        
+        Vector2 knockbackDirection = (new Vector2 (_myTransform.position.x, _myTransform.position.y) - pushPosition).normalized;
+
+        _myRigidbody.velocity = knockbackDirection * knockBackSpeed;
     }
+
     #region fixes
     private void OnCollisionExit2D(Collision2D collision)
     {
