@@ -58,7 +58,7 @@ public class SpawnManager : MonoBehaviour {
             }
             
         }
-        //spawnLimit += 2; //para que aumente la cantidad de enemigos en la siguiente wave
+        spawnLimit += 2; //para que aumente la cantidad de enemigos en la siguiente wave
         _spawEnemyWave = false;//deja de spawnear hasta que digan otra cosa
        
     }

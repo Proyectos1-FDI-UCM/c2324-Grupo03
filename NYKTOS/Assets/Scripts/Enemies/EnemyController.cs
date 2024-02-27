@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour {
     void Update() {
 
         agent.SetDestination(_target.transform.position);
-        if (Time.time > nextActionTime) {
+        if (Time.time > nextActionTime) {//para hacer daño
             _healthComponent.Damage(2);
             nextActionTime = Time.time + period;
         }
