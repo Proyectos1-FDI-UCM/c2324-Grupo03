@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 
@@ -28,9 +29,32 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Cooldown _SecondaryAttackCooldown;
 
-   
+
 
     // private WeaponHandler _weaponHandler;
+    #endregion
+
+    #region properties
+    /// <summary>
+    /// Estado en el que se encuentra el jugador. 0=Idle/Running. 1=Attacking. 2=OnKnockback.
+    /// </summary>
+    private int playerState = 0;
+    #endregion
+
+    #region simpleStateMachine
+    public void SetState(int num)
+    {
+        if (num >=0 && num <=2) //rango de el numero de estados
+        {
+            playerState = num;
+        }
+    }
+
+    public void SetIdleState()
+    {
+        playerState = 0;
+
+    }
     #endregion
 
     #region enableInput
@@ -48,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
     public void Blink(InputAction.CallbackContext context)
     {
-        if (context.performed && !_BlinkCooldown.IsCooling())
+        if (context.performed && !_BlinkCooldown.IsCooling() && playerState==0)
         {
             _blinkComponent.Blink();            
             _BlinkCooldown.StartCooldown();            
@@ -58,9 +82,12 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();
-        
-        _playerMovement.xAxisMovement(input.x);
-        _playerMovement.yAxisMovement(input.y);
+        if (playerState ==0)
+        {
+            _playerMovement.xAxisMovement(input.x);
+            _playerMovement.yAxisMovement(input.y);
+        }
+       
     }
 
     public void Look(InputAction.CallbackContext context)
@@ -82,10 +109,15 @@ public class PlayerController : MonoBehaviour
 
     public void PrimaryAttack(InputAction.CallbackContext context)
     {
-        if(context.performed && !_PrimaryAttackCooldown.IsCooling())
+        if(context.performed && !_PrimaryAttackCooldown.IsCooling() && playerState ==0)
         {
             _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
             _PrimaryAttackCooldown.StartCooldown();
+
+            SetState(1);
+            Invoke("SetIdleState", _PrimaryAttackCooldown.cooldownTime);
+            _playerMovement.xAxisMovement(0);
+            _playerMovement.yAxisMovement(0);
         }
     }
 
