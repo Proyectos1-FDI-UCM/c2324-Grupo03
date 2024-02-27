@@ -7,20 +7,23 @@ public class RBMovement : MonoBehaviour
     #region references
     private Transform _myTransform;
     private Rigidbody2D _myRigidbody;
+    private PlayerStateMachine _playerState;
     #endregion
 
     #region properties
     private float xAxis = 0f;
-    private float yAxis = 0f;
-    #endregion
-
-    #region parameters
-    public float movementSpeed = 1f;
+    private float yAxis = 0f;    
+    
+    private Vector2 privateMovementDirection;
     public Vector2 movementDirection //Valor publico de lectura de movementDirection
     {
         get { return privateMovementDirection; }
     }
-    private Vector2 privateMovementDirection;
+    #endregion
+
+    #region parameters
+    public float movementSpeed = 1f;
+
     [SerializeField] private float knockBackSpeed = 10f;
     #endregion
 
@@ -52,6 +55,7 @@ public class RBMovement : MonoBehaviour
     {
         _myTransform = transform;
         _myRigidbody = GetComponent<Rigidbody2D>();
+        _playerState = GetComponent<PlayerStateMachine>();
     }
 
     public void Knockback(Vector2 pushPosition)

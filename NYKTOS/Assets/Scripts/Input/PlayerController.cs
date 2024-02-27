@@ -30,32 +30,30 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Cooldown _SecondaryAttackCooldown;
 
-
-
-    // private WeaponHandler _weaponHandler;
+    private PlayerStateMachine _playerState;
     #endregion
 
     #region properties
     /// <summary>
     /// Estado en el que se encuentra el jugador. 0=Idle/Running. 1=Attacking. 2=OnKnockback.
     /// </summary>
-    private int playerState = 0;
+    //private int playerState = 0;
     #endregion
 
     #region simpleStateMachine
-    public void SetState(int num)
-    {
-        if (num >=0 && num <=2) //rango de el numero de estados
-        {
-            playerState = num;
-        }
-    }
+    //public void SetState(int num)
+    //{
+    //    if (num >=0 && num <=2) //rango de el numero de estados
+    //    {
+    //        playerState = num;
+    //    }
+    //}
 
-    public void SetIdleState()
-    {
-        playerState = 0;
+    //public void SetIdleState()
+    //{
+    //    playerState = 0;
 
-    }
+    //}
     #endregion
 
     #region enableInput
@@ -73,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
     public void Blink(InputAction.CallbackContext context)
     {
-        if (context.performed && !_BlinkCooldown.IsCooling() && playerState==0)
+        if (context.performed && !_BlinkCooldown.IsCooling())
         {
             _blinkComponent.Blink();            
             _BlinkCooldown.StartCooldown();            
@@ -83,12 +81,9 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();
-        if (playerState ==0)
-        {
-            _playerMovement.xAxisMovement(input.x);
-            _playerMovement.yAxisMovement(input.y);
-        }
-       
+        _playerMovement.xAxisMovement(input.x);
+        _playerMovement.yAxisMovement(input.y);
+        Debug.Log("Me estoy moviendo");
     }
 
     public void Look(InputAction.CallbackContext context)
@@ -110,15 +105,13 @@ public class PlayerController : MonoBehaviour
 
     public void PrimaryAttack(InputAction.CallbackContext context)
     {
-        if(context.performed && !_PrimaryAttackCooldown.IsCooling() && playerState ==0)
+        if(context.performed && !_PrimaryAttackCooldown.IsCooling())
         {
             _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
             _PrimaryAttackCooldown.StartCooldown();
 
-            SetState(1);
-            Invoke("SetIdleState", _PrimaryAttackCooldown.cooldownTime);
-            _playerMovement.xAxisMovement(0);
-            _playerMovement.yAxisMovement(0);
+            //SetState(1);
+            Invoke(nameof(_playerState.SetIdleState), _PrimaryAttackCooldown.cooldownTime);
         }
     }
 
@@ -146,6 +139,7 @@ public class PlayerController : MonoBehaviour
         _lookDirection = GetComponent<LookDirection>();
         _weaponHandler = GetComponent<WeaponHandler>();
         mainCamera= Camera.main;
+        _playerState = GetComponent<PlayerStateMachine>();
 
         _playerControls.Player.Move.performed += Move;
         _playerControls.Player.Move.canceled += Move;
