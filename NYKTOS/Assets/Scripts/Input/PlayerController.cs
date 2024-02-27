@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -94,6 +95,11 @@ public class PlayerController : MonoBehaviour
         // Realizar el ataque especial
     }
 
+    public void EnvInteraction(InputAction.CallbackContext context)
+    {
+        // Interactuar con el entorno
+    }
+
 
     void Awake()
     {
@@ -115,6 +121,6 @@ public class PlayerController : MonoBehaviour
         _playerControls.Player.Look.performed += Look;
         _playerControls.Player.PrimaryAttack.performed += PrimaryAttack;
         _playerControls.Player.SecondaryAttack.performed += SecondaryAttack;
-        
+        _playerControls.Player.Environment.performed += EnvInteraction;
     }
 }
