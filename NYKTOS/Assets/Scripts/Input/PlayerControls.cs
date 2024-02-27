@@ -71,6 +71,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Hold(duration=1)"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Environment"",
+                    ""type"": ""Button"",
+                    ""id"": ""0450bbe5-d435-4a6a-b4f2-535de8fbb591"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -326,6 +335,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""464d1009-80ec-4338-a75c-5cf64baaacbe"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Environment"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""117e5e47-fcc8-4396-ae4b-f0cd3f3e77d9"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Environment"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -362,6 +393,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Blink = m_Player.FindAction("Blink", throwIfNotFound: true);
         m_Player_PrimaryAttack = m_Player.FindAction("PrimaryAttack", throwIfNotFound: true);
         m_Player_SecondaryAttack = m_Player.FindAction("SecondaryAttack", throwIfNotFound: true);
+        m_Player_Environment = m_Player.FindAction("Environment", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -428,6 +460,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Blink;
     private readonly InputAction m_Player_PrimaryAttack;
     private readonly InputAction m_Player_SecondaryAttack;
+    private readonly InputAction m_Player_Environment;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -437,6 +470,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Blink => m_Wrapper.m_Player_Blink;
         public InputAction @PrimaryAttack => m_Wrapper.m_Player_PrimaryAttack;
         public InputAction @SecondaryAttack => m_Wrapper.m_Player_SecondaryAttack;
+        public InputAction @Environment => m_Wrapper.m_Player_Environment;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -461,6 +495,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SecondaryAttack.started += instance.OnSecondaryAttack;
             @SecondaryAttack.performed += instance.OnSecondaryAttack;
             @SecondaryAttack.canceled += instance.OnSecondaryAttack;
+            @Environment.started += instance.OnEnvironment;
+            @Environment.performed += instance.OnEnvironment;
+            @Environment.canceled += instance.OnEnvironment;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -480,6 +517,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SecondaryAttack.started -= instance.OnSecondaryAttack;
             @SecondaryAttack.performed -= instance.OnSecondaryAttack;
             @SecondaryAttack.canceled -= instance.OnSecondaryAttack;
+            @Environment.started -= instance.OnEnvironment;
+            @Environment.performed -= instance.OnEnvironment;
+            @Environment.canceled -= instance.OnEnvironment;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -522,5 +562,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnBlink(InputAction.CallbackContext context);
         void OnPrimaryAttack(InputAction.CallbackContext context);
         void OnSecondaryAttack(InputAction.CallbackContext context);
+        void OnEnvironment(InputAction.CallbackContext context);
     }
 }
