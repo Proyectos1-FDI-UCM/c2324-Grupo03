@@ -642,8 +642,8 @@ MonoBehaviour:
   - {fileID: 431619894}
   - {fileID: 902268917}
   - {fileID: 1350160612}
-  spawnRate: 1
-  spawnLimit: 2
+  spawnRate: 2
+  spawnLimit: 3
 --- !u!1 &902268916
 GameObject:
   m_ObjectHideFlags: 0

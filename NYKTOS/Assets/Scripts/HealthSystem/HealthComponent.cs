@@ -6,7 +6,6 @@ public class HealthComponent : MonoBehaviour
 {
     #region references
     private EnemyDeath _enemyDeath;
-    private SpawnManager _spawnManager;
     #endregion
     #region parameters
     [SerializeField]
@@ -22,7 +21,6 @@ public class HealthComponent : MonoBehaviour
         _currentHealth = _maxHealth;
         //MAria
         _enemyDeath = GetComponent<EnemyDeath>();
-        _spawnManager = GetComponent<SpawnManager>();
     }
 
     private void Update()
