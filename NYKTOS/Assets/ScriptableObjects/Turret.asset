@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eda6a3b1894dcb48a9c647caa3eb380, type: 3}
   m_Name: Turret
   m_EditorClassIdentifier: 
-  _defenseType: 0
-  Health: 0
-  MaxHealth: 0
+  _defenseType: 2
+  _health: 0
   built: 0

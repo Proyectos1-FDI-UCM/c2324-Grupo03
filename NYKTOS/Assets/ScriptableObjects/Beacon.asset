@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Beacon
   m_EditorClassIdentifier: 
   _defenseType: 0
-  Health: 0
-  MaxHealth: 0
+  _health: 0
   built: 0
