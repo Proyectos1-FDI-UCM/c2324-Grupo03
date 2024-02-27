@@ -8,13 +8,20 @@ public class FovController : MonoBehaviour
     #region parameters
 
     [SerializeField]
-    public float maxLightRadius = 3.5f;
+    private float maxLightRadius = 3.5f;
     [SerializeField]
-    public float minLightRadius = 1.5f;
+    private float minLightRadius = 1.5f;
     [SerializeField]
-    public float increaseFactor = 2f;
+    private float increaseMultiplier = 1f;
+
     [SerializeField]
-    public float decreaseFactor = 1f;
+    private float fearModifyUnit = 1f;
+
+    [SerializeField]
+    private float provokedMultiplier = 2f;
+
+    [SerializeField]
+    private float provokedFearMax = 10f;
 
     #endregion
 
@@ -26,7 +33,31 @@ public class FovController : MonoBehaviour
 
     #region properties
 
+    /// <summary>
+    /// Miedo inducido por los enemigos
+    /// 
+    /// Está serializado para hacer pruebas, esto hay que quitarlo una vez se pruebe
+    /// </summary>
+    [SerializeField]
+    public float provokedFear = 0f;
+
     private int insideLightAreas = 0;
+
+    #endregion
+
+    #region methods
+
+    
+    public void ProvokeFear(float newFear)
+    {
+        provokedFear = 
+            Mathf.Clamp
+            (
+                provokedFear + newFear,
+                0.0f,
+                provokedFearMax
+            );
+    }
 
     #endregion
 
@@ -49,30 +80,45 @@ public class FovController : MonoBehaviour
     void Start() 
     {
         playerLight = GetComponent<Light2D>();
+
+        playerLight.pointLightOuterRadius = maxLightRadius;
     }
 
-    void Update() {
+    void Update() 
+    {
+        float currentDelta = Time.deltaTime;
+        float fovModifier;
 
-        float currentRadius = playerLight.pointLightOuterRadius;
-
-        if (insideLightAreas > 0 ) 
+        if (insideLightAreas > 0) 
         {
-            playerLight.pointLightOuterRadius = 
-                Mathf.Clamp 
-                (
-                    currentRadius + (increaseFactor * Time.deltaTime), 
-                    minLightRadius, 
-                    maxLightRadius
-                );
+            fovModifier = fearModifyUnit * increaseMultiplier * currentDelta;
         }
-        else {
-            playerLight.pointLightOuterRadius = 
-                Mathf.Clamp 
-                (
-                    currentRadius - (decreaseFactor * Time.deltaTime), 
-                    minLightRadius, 
-                    maxLightRadius
-                );
+        else
+        {
+            fovModifier = 
+            (
+                (provokedFear > 0f)
+                ? 
+                    Mathf.Clamp
+                    (
+                        provokedFear - (fearModifyUnit * provokedMultiplier * currentDelta), 
+                        fearModifyUnit * currentDelta, 
+                        fearModifyUnit * provokedMultiplier * currentDelta
+                    )
+                : 
+                    fearModifyUnit * currentDelta        
+            ) * -1;
+                
+
+            provokedFear = (provokedFear > 0) ? provokedFear + fovModifier : 0f;
         }
+
+        playerLight.pointLightOuterRadius = 
+            Mathf.Clamp
+            (
+                playerLight.pointLightOuterRadius + fovModifier, 
+                minLightRadius, 
+                maxLightRadius
+            );
     }
 }
