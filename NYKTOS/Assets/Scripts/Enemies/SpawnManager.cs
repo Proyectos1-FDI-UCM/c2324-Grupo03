@@ -14,15 +14,13 @@ public class Wave {
 public class SpawnManager : MonoBehaviour {
    
     #region parameters
-    [SerializeField] Wave[] waves;
-    [SerializeField] private Transform[] _spawnPoints;
+    [SerializeField] Wave[] waves; //las waves
+    [SerializeField] private Transform[] _spawnPoints; //transform de los distintos spawners
     private Wave _currentWave; //la wave que estamos
     private int _currentWaveNumber; //numero de la wave
     [SerializeField] private float spawnRate = 1f; //tiempo entre los spaw
     private bool _isGameActive = true; //para saber si el juego esta activo
     private bool _spawEnemyWave = true; //para empezar los spawns
-    
-    
     
     
     // guarrería de Marco para testing
@@ -34,44 +32,42 @@ public class SpawnManager : MonoBehaviour {
 
     #endregion
     #region methods
-    private IEnumerator SpawnEnemyRoutine() {
+    private IEnumerator SpawnEnemyRoutine() { //corutina de spawneo
         WaitForSeconds wait = new WaitForSeconds(spawnRate); //se espera el tiempo qe pongas en spawRate
         while (_isGameActive && _spawEnemyWave) {
-            if (currentSpawned  < spawnLimit) {
+            if (currentSpawned  < spawnLimit) { // si hay menos enemigos que el limite spawnea
                 GameObject enemyToSpawn = _currentWave.enemyPrefab[Random.Range(0, _currentWave.enemyPrefab.Length)];//entre los prebs de los enemigos elige uno y no spawnea
                 Transform spawnPos = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
                 Instantiate(enemyToSpawn, spawnPos.position, Quaternion.identity); //cambiar el transform para que no sea un pto especifico.
 
                 currentSpawned++;
-                _currentWave.noOfEnemies--;
-
+                _currentWave.noOfEnemies--; //disminuye la cantidad de enemigos que tienen que spawnear
             }
            
             yield return wait;
-            if (_currentWave.noOfEnemies == 0) {
+            if (_currentWave.noOfEnemies <= 0) { //si no queda enemigos acaba
                 _spawEnemyWave = false;
             }
 
-           
             if (_isGameActive == false) {
                 break;
             }
-            
         }
         spawnLimit += 2; //para que aumente la cantidad de enemigos en la siguiente wave
         _spawEnemyWave = false;//deja de spawnear hasta que digan otra cosa
-       
+        _currentWaveNumber++;
+
     }
 
-    private void StartGameSpawning() { 
+    private void StartGameSpawning() { //la primera wave
         //_spawnManager.SpawnNextWave();
         StartCoroutine(SpawnEnemyRoutine());
     }
 
     private void StartEnemySpawning() { //metodo para que a cada 2 rondas(o como querais) se incremente la dificultad
         if (_currentWaveNumber % 2 == 0) { 
-            spawnRate -= 0.2f;
-            if(spawnRate<= 0.4f){ 
+            spawnRate -= 0.2f; //mas rapido
+            if(spawnRate<= 0.4f){ //para que no se haga 0
                 spawnRate = 0.4f;
             }
         }
@@ -106,9 +102,8 @@ public class SpawnManager : MonoBehaviour {
         GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         currentSpawned = totalEnemies.Length;
         Debug.Log("Enemigos en pantalla: " + currentSpawned);
-        if (totalEnemies.Length <= 0 && !_spawEnemyWave) {
-            if (_currentWaveNumber + 1 < waves.Length) {
-                _currentWaveNumber++;
+        if (totalEnemies.Length <= 0 && !_spawEnemyWave) { //si no es la primera wave y quedan enemigos por seren spawneadoss
+            if (_currentWaveNumber + 1 <= waves.Length) { // si aun no se acabo las waves
                 EnableNextWaveSpawning();
                 StartEnemySpawning(); //para que empiece
             } else {

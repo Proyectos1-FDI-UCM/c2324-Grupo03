@@ -518,6 +518,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3840556519978332288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: currentMovementSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5023334086552178363, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
       propertyPath: m_NotificationBehavior
       value: 3

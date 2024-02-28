@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AltarComponent : MonoBehaviour, IAltarAttributes
+public class AltarComponent : MonoBehaviour
 {
     // Codigo de Iker y Andrea :D
 
@@ -26,11 +26,4 @@ public class AltarComponent : MonoBehaviour, IAltarAttributes
         
     }
 
-    //Codigo de Iker
-    //Obtención de datos de la interfaz IAltarAttributes
-    public Vector3 GetAltarPosition()
-    {
-        return _myTransform.position;
-    }
-    //Fin Codigo de Iker
 }

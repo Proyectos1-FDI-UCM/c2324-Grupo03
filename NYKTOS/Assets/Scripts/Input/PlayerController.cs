@@ -10,7 +10,7 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 // Código de Andrea <3
 
-public class PlayerController : MonoBehaviour, IPlayerAttributes
+public class PlayerController : MonoBehaviour
 {
     
     #region references
@@ -111,8 +111,11 @@ public class PlayerController : MonoBehaviour, IPlayerAttributes
             _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
             _PrimaryAttackCooldown.StartCooldown();
 
-            //SetState(1);
+            _playerState.SetState(1);
             Invoke(nameof(_playerState.SetIdleState), _PrimaryAttackCooldown.cooldownTime);
+
+            _playerMovement.StopMoving(); // Deja de moverse mientras ataca
+            StartCoroutine(WaitToMove(_PrimaryAttackCooldown.cooldownTime)); // Cuando termina el ataque vuelve a moverse
         }
     }
 
@@ -124,6 +127,13 @@ public class PlayerController : MonoBehaviour, IPlayerAttributes
     public void EnvInteraction(InputAction.CallbackContext context)
     {
         // Interactuar con el entorno
+    }
+
+    IEnumerator WaitToMove(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        _playerMovement.ResetSpeed();
+        _playerMovement.Move();
     }
 
 
@@ -151,12 +161,4 @@ public class PlayerController : MonoBehaviour, IPlayerAttributes
         _playerControls.Player.SecondaryAttack.performed += SecondaryAttack;
         _playerControls.Player.Environment.performed += EnvInteraction;
     }
-
-    //Codigo de Iker
-    //Obtención de datos de la interfaz IPlayerAttributes
-    public Vector3 GetPlayerPosition()
-    {
-        return _myTransform.position;
-    }
-    //Fin Codigo de Iker
 }

@@ -36,13 +36,21 @@ public class ClubHitboxBehaviour : MonoBehaviour
         }
     }
 
+   /* private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+   */
+
+    //Creo que es mejor hacer que los collider de los enemigos sean trigers, porque el ataque se raya.
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<HealthComponent>() != null) //QUITAR VIDA
+        
+        if (collision.gameObject.TryGetComponent(out HealthComponent health)) //QUITAR VIDA
         {
-            HealthComponent healthComponent = collision.gameObject.GetComponent<HealthComponent>();
-
-            healthComponent.Damage(weaponDamage);
+            health.Damage(weaponDamage);
+            //Javi ha hecho una corrección a este código para que sea más limpio. Dejo este de ejemplo :)
         }
 
         if (collision.gameObject.GetComponent<RBMovement>() != null) //KNOCKBACK
