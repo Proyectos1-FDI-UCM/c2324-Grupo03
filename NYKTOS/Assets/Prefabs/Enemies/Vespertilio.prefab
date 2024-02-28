@@ -134,6 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 946411748639861310}
+  playerController: {fileID: 0}
+  altarComponent: {fileID: 0}
 --- !u!95 &4158959368464912200
 Animator:
   serializedVersion: 5
@@ -189,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fcb5a4b321af3b439cd5a8709d4a68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 6
+  _maxHealth: 8
   _currentHealth: 6
 --- !u!114 &-4177679607614234445
 MonoBehaviour:
