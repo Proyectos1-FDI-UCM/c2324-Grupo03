@@ -7,7 +7,6 @@ public class RBMovement : MonoBehaviour
     #region references
     private Transform _myTransform;
     private Rigidbody2D _myRigidbody;
-    private PlayerStateMachine _playerState;
     #endregion
 
     #region properties
@@ -24,7 +23,12 @@ public class RBMovement : MonoBehaviour
     #region parameters
     public float movementSpeed = 1f;
 
-    [SerializeField] private float knockBackSpeed = 10f;
+    [SerializeField] private float _knockBackSpeed = 10f;
+    public float knockBackTime
+    {
+        get { return _knockBackTime; }
+    }
+    [SerializeField] private float _knockBackTime = 0.5f;
     #endregion
 
     public void xAxisMovement(float num) //Ajustar el movimiento en xAxis (-1,0,1)
@@ -41,7 +45,6 @@ public class RBMovement : MonoBehaviour
 
     public void Move() 
     {
-        Debug.Log("me muevoo");
         privateMovementDirection = new Vector2(xAxis, yAxis).normalized;
         _myRigidbody.velocity = privateMovementDirection * movementSpeed;
     }
@@ -55,14 +58,19 @@ public class RBMovement : MonoBehaviour
     {
         _myTransform = transform;
         _myRigidbody = GetComponent<Rigidbody2D>();
-        _playerState = GetComponent<PlayerStateMachine>();
     }
 
+    public void StopVelocity()
+    {
+        _myRigidbody.velocity = Vector2.zero;
+    }
     public void Knockback(Vector2 pushPosition)
     {
         Vector2 knockbackDirection = (new Vector2 (_myTransform.position.x, _myTransform.position.y) - pushPosition).normalized;
 
-        _myRigidbody.velocity = knockbackDirection * knockBackSpeed;
+        _myRigidbody.velocity = knockbackDirection * _knockBackSpeed;
+
+        Invoke("StopVelocity", _knockBackTime);
     }
 
     #region fixes

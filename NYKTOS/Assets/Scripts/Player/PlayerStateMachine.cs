@@ -22,6 +22,9 @@ public class PlayerStateMachine : MonoBehaviour
     #endregion
 
     #region simpleStateMachine
+    /// <summary>
+    /// Estado en el que se encuentra el jugador. 0=Idle/Running. 1=Attacking. 2=OnKnockback.
+    /// </summary>
     public void SetState(int num)
     {
         if (num >= 0 && num <= 2) //rango de el numero de estados

@@ -80,7 +80,18 @@ public class PlayerController : MonoBehaviour
     {
         _playerMovement.xAxisMovement(vector.x);
         _playerMovement.yAxisMovement(vector.y);
-        Debug.Log("Me estoy moviendo");
+    }
+
+    public void CallKnockback(Vector2 pushPosition)
+    {
+        _playerState.SetState(2);
+        _playerMovement.Knockback(pushPosition);
+
+        if (_playerState.playerState == 1) //si el jugador esta atacando y recibe un golpe, se realiza knockback y se cancela el retorno a idle (es llamado mas adelante)
+        {
+            _playerState.CancelInvoke("SetIdleState");
+        }
+        _playerState.Invoke("SetIdleState", _playerMovement.knockBackTime);
     }
 
     public void Look(InputAction.CallbackContext context)
@@ -102,14 +113,17 @@ public class PlayerController : MonoBehaviour
 
     public void PrimaryAttack(InputAction.CallbackContext context)
     {
-        if(context.performed && !_PrimaryAttackCooldown.IsCooling())
+        if(context.performed && !_PrimaryAttackCooldown.IsCooling() && _playerState.playerState == 0)
         {
             _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
             _PrimaryAttackCooldown.StartCooldown();
 
             CallMove(Vector2.zero);
             _playerState.SetState(1);
+
+            
             _playerState.Invoke("SetIdleState", _PrimaryAttackCooldown.cooldownTime);
+
         }
     }
 
