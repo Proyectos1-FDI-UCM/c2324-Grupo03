@@ -24,13 +24,13 @@ public class FovController : MonoBehaviour
 
     [Range(0.0f,1.0f)]
     [SerializeField]
-    private float internalLightProportion = 1f;
+    private float internalLightProportion = 0.98f;
 
     /// <summary>
     /// Radio máximo de iluminación del FOV
     /// </summary>
     [SerializeField]
-    private float maxLightRadius = 3.5f;
+    private float maxLightRadius = 4f;
 
     /// <summary>
     /// Radio mínimo de iluminación del FOV
@@ -42,25 +42,25 @@ public class FovController : MonoBehaviour
     /// Multiplicador que se aplica al incrementar el FOV
     /// </summary>
     [SerializeField]
-    private float increaseMultiplier = 1f;
+    private float increaseMultiplier = 8f;
 
     /// <summary>
     /// Unidad mínima de incremento y decremento del FOV
     /// </summary>
     [SerializeField]
-    private float fearModifyUnit = 1f;
+    private float fearModifyUnit = 0.25f;
 
     /// <summary>
     /// Multiplicador de decremento cuando existe "miedo provocado"
     /// </summary>
     [SerializeField]
-    private float provokedMultiplier = 2f;
+    private float provokedMultiplier = 24f;
 
     /// <summary>
     /// Cantidad máxima de miedo provocado, no puede ser mayor que maxLightRadius - minLightRadius 
     /// </summary>
     [SerializeField]
-    private float provokedFearMax = 2f;
+    private float provokedFearMax = 1f;
 
     #endregion
 
@@ -114,7 +114,7 @@ public class FovController : MonoBehaviour
     /// <param name="other"></param>
     void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.GetComponent<Light2D>() != null) 
+        if (other.GetComponent<LightAreaComponent>() != null) 
         {
             insideLightAreas++;
         }
@@ -126,7 +126,7 @@ public class FovController : MonoBehaviour
     /// <param name="other"></param>
     void OnTriggerExit2D(Collider2D other) 
     {
-        if (other.GetComponent<Light2D>() != null) 
+        if (other.GetComponent<LightAreaComponent>() != null) 
         {
             insideLightAreas--;
         }
@@ -175,7 +175,10 @@ public class FovController : MonoBehaviour
                 minLightRadius, 
                 maxLightRadius
             );
+
+        playerLight.pointLightInnerRadius = playerLight.pointLightOuterRadius * internalLightProportion;
     }
+
 
     void OnValidate()
     {
@@ -184,7 +187,10 @@ public class FovController : MonoBehaviour
         minLightRadius = Mathf.Max(0f, minLightRadius);
         maxLightRadius = Mathf.Max(minLightRadius, maxLightRadius);
 
-        provokedFearMax = Mathf.Clamp(provokedFear, 0f, maxLightRadius - minLightRadius);
+        //GetComponent<Light2D>().pointLightOuterRadius = maxLightRadius;
+        //GetComponent<Light2D>().pointLightInnerRadius = maxLightRadius * internalLightProportion;
+
+        provokedFearMax = Mathf.Clamp(provokedFearMax, 0f, maxLightRadius - minLightRadius);
         provokedMultiplier = Mathf.Max(1.0f, provokedMultiplier);
         
         #endif

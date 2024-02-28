@@ -1,6 +1,11 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
+/// <summary>
+/// Este componente centraliza Light2D y CircleCollider2D de tal forma
+/// que se pueden modificar ambos en este mismo componente con los parámetros
+/// serializables, el único propósito de esta clase es tener facilidad de control
+/// </summary>
 [RequireComponent(typeof(Light2D))]
 [RequireComponent(typeof(CircleCollider2D))]
 public class LightAreaComponent : MonoBehaviour
@@ -12,7 +17,7 @@ public class LightAreaComponent : MonoBehaviour
 
     [SerializeField]
     [Range(0.0f, 1.0f)]
-    private float internalRadiusPercentageOffset = 0.95f;
+    private float internalRadiusPercentageOffset = 0.98f;
 
     [SerializeField]
     [Range(0.0f, 1.0f)]
@@ -22,14 +27,15 @@ public class LightAreaComponent : MonoBehaviour
 
     #region references
 
-    #region properties
-
-    const float CIRCLE_COLLIDER_EQUIVALENCY = 0.92f;
+    private Light2D lightComponent;
+    private CircleCollider2D colliderComponent;
 
     #endregion
 
-    private Light2D lightComponent;
-    private CircleCollider2D colliderComponent;
+    #region properties
+
+    [SerializeField]
+    const float CIRCLE_COLLIDER_EQUIVALENCY = 0.92f;
 
     #endregion
 
@@ -53,19 +59,9 @@ public class LightAreaComponent : MonoBehaviour
     private void UpdateLightarea()
     {
         lightComponent.pointLightOuterRadius = lightRadius;
-        lightComponent.pointLightInnerRadius = 0.95f;
+        lightComponent.pointLightInnerRadius = lightRadius * internalRadiusPercentageOffset;
         
         colliderComponent.radius = lightRadius * CIRCLE_COLLIDER_EQUIVALENCY * colliderPercentageOffset;
-    }
-
-    public void AugmentArea()
-    {
-
-    }
-
-    public void DecreaseArea()
-    {
-
     }
 
     #endregion
