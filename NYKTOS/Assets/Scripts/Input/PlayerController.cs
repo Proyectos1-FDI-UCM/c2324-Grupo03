@@ -10,7 +10,7 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 // Código de Andrea <3
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IKnockback
 {
     
     #region references
@@ -59,8 +59,8 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed && !_BlinkCooldown.IsCooling())
         {
-            _blinkComponent.Blink();            
-            _BlinkCooldown.StartCooldown();            
+            _blinkComponent.Blink();
+            _BlinkCooldown.StartCooldown();
         }
     }
 
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
         _playerMovement.yAxisMovement(vector.y);
     }
 
-    public void CallKnockback(Vector2 pushPosition)
+    public void CallKnockback(Vector2 pushPosition) //cambia los estados del jugador y llama a callknockback
     {
         _playerState.SetState(2);
         _playerMovement.Knockback(pushPosition);
