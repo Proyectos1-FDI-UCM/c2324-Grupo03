@@ -35,26 +35,11 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region properties
-    /// <summary>
-    /// Estado en el que se encuentra el jugador. 0=Idle/Running. 1=Attacking. 2=OnKnockback.
-    /// </summary>
-    //private int playerState = 0;
-    #endregion
-
-    #region simpleStateMachine
-    //public void SetState(int num)
-    //{
-    //    if (num >=0 && num <=2) //rango de el numero de estados
-    //    {
-    //        playerState = num;
-    //    }
-    //}
-
-    //public void SetIdleState()
-    //{
-    //    playerState = 0;
-
-    //}
+    public Vector2 _inputMovement
+    {
+        get { return _privateMovement; }
+    }
+    private Vector2 _privateMovement = Vector2.zero;
     #endregion
 
     #region enableInput
@@ -82,8 +67,19 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();
-        _playerMovement.xAxisMovement(input.x);
-        _playerMovement.yAxisMovement(input.y);
+        _privateMovement = input;
+
+        if (_playerState.playerState == 0)
+        {
+            CallMove(input);
+        }
+
+    }
+
+    public void CallMove(Vector2 vector)
+    {
+        _playerMovement.xAxisMovement(vector.x);
+        _playerMovement.yAxisMovement(vector.y);
         Debug.Log("Me estoy moviendo");
     }
 
@@ -111,11 +107,9 @@ public class PlayerController : MonoBehaviour
             _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
             _PrimaryAttackCooldown.StartCooldown();
 
+            CallMove(Vector2.zero);
             _playerState.SetState(1);
-            Invoke(nameof(_playerState.SetIdleState), _PrimaryAttackCooldown.cooldownTime);
-
-            _playerMovement.StopMoving(); // Deja de moverse mientras ataca
-            StartCoroutine(WaitToMove(_PrimaryAttackCooldown.cooldownTime)); // Cuando termina el ataque vuelve a moverse
+            _playerState.Invoke("SetIdleState", _PrimaryAttackCooldown.cooldownTime);
         }
     }
 
@@ -128,14 +122,6 @@ public class PlayerController : MonoBehaviour
     {
         // Interactuar con el entorno
     }
-
-    IEnumerator WaitToMove(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        _playerMovement.ResetSpeed();
-        _playerMovement.Move();
-    }
-
 
     void Awake()
     {

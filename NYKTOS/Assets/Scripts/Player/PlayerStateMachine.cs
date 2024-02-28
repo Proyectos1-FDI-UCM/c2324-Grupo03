@@ -6,6 +6,9 @@ using UnityEngine.Playables;
 
 public class PlayerStateMachine : MonoBehaviour
 {
+    #region references
+    private PlayerController _playerController;
+    #endregion
 
     #region properties
     /// <summary>
@@ -30,7 +33,12 @@ public class PlayerStateMachine : MonoBehaviour
     public void SetIdleState()
     {
         _playerState = 0;
-
+        _playerController.CallMove(_playerController._inputMovement);
     }
     #endregion
+
+    private void Awake()
+    {
+        _playerController = GetComponent<PlayerController>();
+    }
 }

@@ -22,18 +22,10 @@ public class RBMovement : MonoBehaviour
     #endregion
 
     #region parameters
-    public float currentMovementSpeed = 1f;
-    public float previousSpeed;
+    public float movementSpeed = 1f;
 
     [SerializeField] private float knockBackSpeed = 10f;
     #endregion
-
-    public void ResetSpeed()
-    {
-        currentMovementSpeed = previousSpeed;
-    }
-
-    
 
     public void xAxisMovement(float num) //Ajustar el movimiento en xAxis (-1,0,1)
     {
@@ -51,14 +43,7 @@ public class RBMovement : MonoBehaviour
     {
         Debug.Log("me muevoo");
         privateMovementDirection = new Vector2(xAxis, yAxis).normalized;
-        _myRigidbody.velocity = privateMovementDirection * currentMovementSpeed;
-    }
-
-    public void StopMoving()
-    {
-        previousSpeed = currentMovementSpeed;
-        currentMovementSpeed = 0;
-        Move();
+        _myRigidbody.velocity = privateMovementDirection * movementSpeed;
     }
 
     public void TeleportTo(Vector2 position) //Pone la posicion del jugador en las coordenadas que se le pasan
@@ -85,7 +70,7 @@ public class RBMovement : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Collider2D>() != null)
         {
-            _myRigidbody.velocity = privateMovementDirection * currentMovementSpeed;
+            _myRigidbody.velocity = privateMovementDirection * movementSpeed;
         }
     }
     #endregion
