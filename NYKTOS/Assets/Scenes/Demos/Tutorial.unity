@@ -1316,6 +1316,7 @@ GameObject:
   - component: {fileID: 1915516462}
   - component: {fileID: 1915516461}
   - component: {fileID: 1915516460}
+  - component: {fileID: 1915516464}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -1406,6 +1407,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1915516464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915516459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f12e0878d2466241b0a0e360fda839b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textoCrystalA: {fileID: 0}
+  _textoCrystalM: {fileID: 0}
+  _textoCrystalC: {fileID: 0}
+  _weaponPalo: {fileID: 0}
+  _weaponCetro: {fileID: 0}
+  _hearts:
+  - {fileID: 180832251}
+  - {fileID: 921660580}
+  - {fileID: 135023629}
+  - {fileID: 1198654151}
+  - {fileID: 1453146433}
+  _fullHeart: {fileID: 21300000, guid: d8f40d6b94578d44d975b5f73c915811, type: 3}
+  _halfHeart: {fileID: 21300000, guid: 715d71f7de74161438fd9590584197fc, type: 3}
+  health: 0
 --- !u!1 &1920847874 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6047903314213855648, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
