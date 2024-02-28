@@ -87,10 +87,10 @@ public class EnemyController : MonoBehaviour {
         }
         //Fin Codigo de Iker
 
-        if (Time.time > nextActionTime) {//para hacer daño
+        /*if (Time.time > nextActionTime) {//para hacer daño
             _healthComponent.Damage(2);
             nextActionTime = Time.time + period;
-        }
+        }*/
     }
     //  fin codigo de Maria :)
 
