@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e7a382721ad3144854f9f5a12b1088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMovementSpeed: 1
+  currentMovementSpeed: 6
   previousSpeed: 0
   knockBackSpeed: 10
 --- !u!114 &1574447697511335288
@@ -298,7 +298,7 @@ MonoBehaviour:
   _BlinkCooldown:
     _cooldownTime: 0.5
   _PrimaryAttackCooldown:
-    _cooldownTime: 1
+    _cooldownTime: 0.25
   _SecondaryAttackCooldown:
     _cooldownTime: 5
 --- !u!114 &5023334086552178363

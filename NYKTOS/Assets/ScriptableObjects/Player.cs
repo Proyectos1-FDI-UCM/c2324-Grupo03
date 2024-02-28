@@ -13,7 +13,7 @@ public class Player : ScriptableObject
     }
 
     public int numYcrystal;
-
+    
     public int numMcrystal;
 
     public int numCcrystal;
