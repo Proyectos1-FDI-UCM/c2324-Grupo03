@@ -133,7 +133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.38561532
+      value: 0.38561526
       objectReference: {fileID: 0}
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.y
@@ -193,15 +193,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0
+      value: 0.125
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.99952596
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.99857956
+      value: 0.7502967
       objectReference: {fileID: 0}
     - target: {fileID: 8073207824159548778, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_ShowDebugText
@@ -457,7 +457,7 @@ PrefabInstance:
       objectReference: {fileID: 1728673686}
     - target: {fileID: 5847144808090115009, guid: 2a0fede60110d6c418162d6a4a113208, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.38561532
+      value: 0.38561526
       objectReference: {fileID: 0}
     - target: {fileID: 5847144808090115009, guid: 2a0fede60110d6c418162d6a4a113208, type: 3}
       propertyPath: m_LocalPosition.y
@@ -616,6 +616,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3538798870894649329, guid: bf08d08f9369627478bd84a31587354d, type: 3}
+      propertyPath: spawnLimit
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538798870894649329, guid: bf08d08f9369627478bd84a31587354d, type: 3}
+      propertyPath: waves.Array.data[0].noOfEnemies
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538798870894649329, guid: bf08d08f9369627478bd84a31587354d, type: 3}
+      propertyPath: waves.Array.data[1].noOfEnemies
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538798870894649329, guid: bf08d08f9369627478bd84a31587354d, type: 3}
+      propertyPath: waves.Array.data[2].noOfEnemies
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5491051203290055545, guid: bf08d08f9369627478bd84a31587354d, type: 3}
       propertyPath: m_Name
       value: Spawner
