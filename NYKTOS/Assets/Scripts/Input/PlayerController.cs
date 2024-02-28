@@ -10,7 +10,7 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 // Código de Andrea <3
 
-public class PlayerController : MonoBehaviour, IPlayerAttributes
+public class PlayerController : MonoBehaviour
 {
     
     #region references
@@ -161,12 +161,4 @@ public class PlayerController : MonoBehaviour, IPlayerAttributes
         _playerControls.Player.SecondaryAttack.performed += SecondaryAttack;
         _playerControls.Player.Environment.performed += EnvInteraction;
     }
-
-    //Codigo de Iker
-    //Obtención de datos de la interfaz IPlayerAttributes
-    public Vector3 GetPlayerPosition()
-    {
-        return _myTransform.position;
-    }
-    //Fin Codigo de Iker
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Wall
   m_EditorClassIdentifier: 
   _defenseType: 1
-  _health: 0
+  _health: 100
   built: 0

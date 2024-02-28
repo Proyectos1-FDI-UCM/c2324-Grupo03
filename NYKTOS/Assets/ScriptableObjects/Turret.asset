@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Turret
   m_EditorClassIdentifier: 
   _defenseType: 2
-  _health: 0
+  _health: 80
   built: 0
