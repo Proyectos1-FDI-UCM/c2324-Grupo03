@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
@@ -9,13 +10,13 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 // Código de Andrea <3
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IPlayerAttributes
 {
     
     #region references
     // Referencia a la clase creada a partir del ActionMap
     private PlayerControls _playerControls;
-    
+    private Transform _myTransform;
     private BlinkComponent _blinkComponent;
     private RBMovement _playerMovement;
     private LookDirection _lookDirection;
@@ -134,6 +135,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        _myTransform = transform;
         _playerMovement = GetComponent<RBMovement>();
         _blinkComponent = GetComponent<BlinkComponent>();
         _lookDirection = GetComponent<LookDirection>();
@@ -149,4 +151,12 @@ public class PlayerController : MonoBehaviour
         _playerControls.Player.SecondaryAttack.performed += SecondaryAttack;
         _playerControls.Player.Environment.performed += EnvInteraction;
     }
+
+    //Codigo de Iker
+    //Obtención de datos de la interfaz IPlayerAttributes
+    public Vector3 GetPlayerPosition()
+    {
+        return _myTransform.position;
+    }
+    //Fin Codigo de Iker
 }
