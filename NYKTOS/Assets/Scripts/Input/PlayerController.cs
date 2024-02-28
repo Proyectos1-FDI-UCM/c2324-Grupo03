@@ -111,8 +111,11 @@ public class PlayerController : MonoBehaviour, IPlayerAttributes
             _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
             _PrimaryAttackCooldown.StartCooldown();
 
-            //SetState(1);
+            _playerState.SetState(1);
             Invoke(nameof(_playerState.SetIdleState), _PrimaryAttackCooldown.cooldownTime);
+
+            _playerMovement.StopMoving(); // Deja de moverse mientras ataca
+            StartCoroutine(WaitToMove(_PrimaryAttackCooldown.cooldownTime)); // Cuando termina el ataque vuelve a moverse
         }
     }
 
@@ -124,6 +127,13 @@ public class PlayerController : MonoBehaviour, IPlayerAttributes
     public void EnvInteraction(InputAction.CallbackContext context)
     {
         // Interactuar con el entorno
+    }
+
+    IEnumerator WaitToMove(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        _playerMovement.ResetSpeed();
+        _playerMovement.Move();
     }
 
 
