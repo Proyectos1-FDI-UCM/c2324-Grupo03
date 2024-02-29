@@ -2,46 +2,39 @@ using UnityEngine;
 
 // Codigo de Iker :D
 //Este codigo es para aplicar a un objeto por separado que tenga un renderer, aplicarle el material Inversion
+[RequireComponent(typeof(SpriteRenderer))]
 public class CambioMaterial : MonoBehaviour
 {
-    public Material nuevoMaterial;
-    private Material MaterialPorDefecto;
+    /*
+        Mierdas que voy haciendo: (~ Marco)
+
+        - Cambiados nombres varios
+
+        - Puesto defaultMaterial en privado y serializado
+
+        - Eliminado timer
+
+        - Eliminado update entero
+    */
+
     [SerializeField]
-    private bool Noche;
-    private float Timer = 4f;
-    Renderer renderer;
+    private Material defaultMaterial;
+
+    SpriteRenderer currentSpriteRenderer;
 
     void Start()
     {
-        renderer = GetComponent<Renderer>();
-        if (renderer == null)
-        {
-            Debug.LogError("El objeto no tiene un componente Renderer.");
-            return;
-        }
-        MaterialPorDefecto = renderer.material;
+        currentSpriteRenderer = GetComponent<SpriteRenderer>();
+        currentSpriteRenderer.material = defaultMaterial;
+
+        //InversionEvent inversorEvent = InversionManager.Instance().getEvent();
+
+        //// Suscribir un método al evento
+        //inversorEvent += CambiarMaterial;
     }
 
-    private void Update()
+    private void CambiarMaterial()
     {
-        Timer -= Time.deltaTime;
-        if (Timer <= 0)
-        {
-            Noche = !Noche;
-            Timer = 4f;
-        }
-        CambiarMaterial();
-    }
-
-    void CambiarMaterial()
-    {
-        if (nuevoMaterial != null && Noche)
-        {
-            renderer.material = nuevoMaterial;
-        }
-        else if (nuevoMaterial != null && !Noche)
-        {
-            renderer.material = MaterialPorDefecto;
-        }
+        //currentSpriteRenderer = InversionManager.Instance().getCycleMaterial;
     }
 }
