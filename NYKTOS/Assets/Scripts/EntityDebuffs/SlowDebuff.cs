@@ -18,15 +18,25 @@ public class SlowDebuff : MonoBehaviour
     {
         Invoke(nameof(Deactivate), deactivateDebuffTime);
         _myRBMovement.ChangeSpeed(_myRBMovement.movementSpeed * speedMultiplier, deactivateDebuffTime);
+
+        renderer.color = Color.cyan;
     }
     private void Deactivate()
     {
         this.enabled = false;
+
+        renderer.color = Color.white;
     }
 
     private void Awake()
     {
         _myRBMovement = GetComponent<RBMovement>();
         this.enabled = false;
+
+        renderer = GetComponent<SpriteRenderer>();
     }
+
+    #region debug
+    private SpriteRenderer renderer;
+    #endregion
 }

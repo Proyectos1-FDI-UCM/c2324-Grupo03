@@ -4,6 +4,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
 
+public enum PlayerState
+{
+    Idle, Attacking, OnKnockback
+}
+
 public class PlayerStateMachine : MonoBehaviour
 {
     #region references
@@ -11,31 +16,23 @@ public class PlayerStateMachine : MonoBehaviour
     #endregion
 
     #region properties
-    /// <summary>
-    /// Estado en el que se encuentra el jugador. 0=Idle/Running. 1=Attacking. 2=OnKnockback.
-    /// </summary>
-    private int _playerState = 0;
-    public int playerState
+    public PlayerState playerState
     {
         get {return _playerState; }
     }
+    private PlayerState _playerState = PlayerState.Idle;
     #endregion
 
     #region simpleStateMachine
-    /// <summary>
-    /// Estado en el que se encuentra el jugador. 0=Idle/Running. 1=Attacking. 2=OnKnockback.
-    /// </summary>
-    public void SetState(int num)
+ 
+    public void SetState(PlayerState state)
     {
-        if (num >= 0 && num <= 2) //rango de el numero de estados
-        {
-            _playerState = num;
-        }
+        _playerState = state;
     }
 
     public void SetIdleState()
     {
-        _playerState = 0;
+        _playerState = PlayerState.Idle;
         _playerController.CallMove(_playerController._inputMovement);
     }
     #endregion

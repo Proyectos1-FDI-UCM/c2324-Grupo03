@@ -17,7 +17,7 @@ public interface IWeapon
     /// 0 si no es nada, 1 si es daño de fuego, 2 si es paralización.
     /// Se requiere crear una variable en la que se setea a 0 en cada script de arma.
     /// </summary>
-    void SetDamageType(int damageType);
+    void SetDamageType(AttackType attack);
 
     /// <summary>
     /// Se añade daño al arma, es decir, le suma al daño ya existente del arma el número entero que se le pasa.

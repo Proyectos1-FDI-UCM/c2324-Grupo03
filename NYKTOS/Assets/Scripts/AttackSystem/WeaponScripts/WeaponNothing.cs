@@ -14,7 +14,7 @@ public class WeaponNothing : MonoBehaviour, IWeapon
         Debug.Log("SecondaryAttack");
     }
 
-    public void SetDamageType(int num)
+    public void SetDamageType(AttackType attack)
     {
 
     }

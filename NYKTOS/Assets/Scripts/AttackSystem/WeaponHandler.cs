@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum AttackType
+{
+    Default, Fire, Slow
+}
+
 public class WeaponHandler : MonoBehaviour
 {
     

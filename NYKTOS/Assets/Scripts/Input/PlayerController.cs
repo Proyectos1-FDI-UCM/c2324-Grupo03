@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour, IKnockback
         Vector2 input = context.ReadValue<Vector2>();
         _privateMovement = input;
 
-        if (_playerState.playerState == 0)
+        if (_playerState.playerState == PlayerState.Idle)
         {
             CallMove(input);
         }
@@ -87,12 +87,12 @@ public class PlayerController : MonoBehaviour, IKnockback
 
     public void CallKnockback(Vector2 pushPosition) //cambia los estados del jugador y llama a callknockback
     {
-        if(_playerState.playerState == 0 ||  _playerState.playerState == 1)
+        if(_playerState.playerState == PlayerState.Idle ||  _playerState.playerState == PlayerState.Attacking)
         {
-            _playerState.SetState(2);
+            _playerState.SetState(PlayerState.OnKnockback);
             _playerMovement.Knockback(pushPosition);
 
-            if (_playerState.playerState == 1) //si el jugador esta atacando y recibe un golpe, se realiza knockback y se cancela el retorno a idle (es llamado mas adelante)
+            if (_playerState.playerState == PlayerState.Attacking) //si el jugador esta atacando y recibe un golpe, se realiza knockback y se cancela el retorno a idle (es llamado mas adelante)
             {
                 _playerState.CancelInvoke("SetIdleState");
             }
@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour, IKnockback
             _PrimaryAttackCooldown.StartCooldown();
 
             CallMove(Vector2.zero);
-            _playerState.SetState(1);
+            _playerState.SetState(PlayerState.Attacking);
 
             
             _playerState.Invoke("SetIdleState", _PrimaryAttackCooldown.cooldownTime);

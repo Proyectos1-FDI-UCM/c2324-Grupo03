@@ -18,7 +18,7 @@ public class WeaponClub : MonoBehaviour, IWeapon
     #endregion
 
     #region weaponProperties
-    [SerializeField] private int damageType = 0;
+    [SerializeField] private AttackType attackType;
     [SerializeField] private int weaponDamage = 1;
     #endregion
 
@@ -37,7 +37,7 @@ public class WeaponClub : MonoBehaviour, IWeapon
         behaviour.angleVelocity = angleVelocity;
 
         //set up del dano y su tipo
-        behaviour.damageType = damageType;
+        behaviour.attackType = attackType;
         behaviour.weaponDamage = weaponDamage;
     }
 
@@ -46,9 +46,9 @@ public class WeaponClub : MonoBehaviour, IWeapon
 
     }
 
-    public void SetDamageType(int num)
+    public void SetDamageType(AttackType attack)
     {
-        damageType = num;
+        attackType = attack;
     }
 
     private float DirectionAngle(Vector2 direction) //saca el angulo de la direccion dando por sentado que el modulo de la direccion es 1

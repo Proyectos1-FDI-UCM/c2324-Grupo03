@@ -567,7 +567,7 @@ MonoBehaviour:
   attackHitbox: {fileID: 3679065653297175454, guid: c6593a0b651be4f46bd3bf884546eaec, type: 3}
   attackAngleRange: 70
   angleVelocity: 500
-  damageType: 0
+  attackType: 0
   weaponDamage: 1
 --- !u!114 &3016302921365856093
 MonoBehaviour:
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3385171631580939238}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34df9feb4f4bf3a4aab4cd1ad3e4f151, type: 3}
   m_Name: 

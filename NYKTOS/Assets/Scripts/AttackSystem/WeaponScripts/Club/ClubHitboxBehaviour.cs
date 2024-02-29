@@ -15,7 +15,7 @@ public class ClubHitboxBehaviour : MonoBehaviour
 
     #region weaponProperties
     public int weaponDamage = 0;
-    public int damageType = 0;
+    public AttackType attackType;
     #endregion
 
     #region references
@@ -50,12 +50,12 @@ public class ClubHitboxBehaviour : MonoBehaviour
             iKnockback.CallKnockback(_myTransform.position);
         }
 
-        if (damageType == 1 && collision.gameObject.TryGetComponent( out SetOnFireDebuff setOnFire)) //DAÑO DE FUEGO
+        if (attackType == AttackType.Fire && collision.gameObject.TryGetComponent( out SetOnFireDebuff setOnFire)) //DAÑO DE FUEGO
         {
             setOnFire.enabled = true;
         }
 
-        else if (damageType == 2 && collision.gameObject.TryGetComponent(out SlowDebuff slow)) //RALENTIZAR
+        else if (attackType == AttackType.Slow && collision.gameObject.TryGetComponent(out SlowDebuff slow)) //RALENTIZAR
         {
             slow.enabled = true;
         }

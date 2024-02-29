@@ -18,6 +18,7 @@ public class SetOnFireDebuff : MonoBehaviour
     #endregion
     private void OnEnable()
     {
+        renderer.color = Color.magenta;
         Invoke(nameof(Deactivate), deactivateDebuffTime);
         StartCoroutine(Burn());
     }
@@ -25,6 +26,7 @@ public class SetOnFireDebuff : MonoBehaviour
     private void Deactivate()
     {
         this.enabled = false;
+        renderer.color = Color.white;
     }
 
     IEnumerator Burn()
@@ -40,6 +42,12 @@ public class SetOnFireDebuff : MonoBehaviour
     private void Awake()
     {
         _myHealthComponent = GetComponent<HealthComponent>();
+        renderer = GetComponent<SpriteRenderer>();
         this.enabled = false;
     }
+
+    #region debug
+    private SpriteRenderer renderer;
+    #endregion
+
 }
