@@ -20,8 +20,9 @@ public class EnemyController : MonoBehaviour {
     [SerializeField] 
     private NavMeshAgent agent;
     private Transform _myTransform;
-    private HealthComponent _healthComponent;
-
+    private Animator _animator;
+    [SerializeField] private float nextAction = 0.0f;
+    private float periodo = 0.7f;
     //Codigo de Iker
     private GameObject _player;
     private GameObject _altarTutorial;
@@ -32,22 +33,21 @@ public class EnemyController : MonoBehaviour {
 
 
     void Start() {
-
+        _animator = GetComponent<Animator>();
         _myTransform = transform;
         agent = GetComponent<NavMeshAgent>();
-        _healthComponent = GetComponent<HealthComponent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        nextActionTime = Time.time + period;
+        nextAction = Time.time + periodo;
+
         // Codigo de Iker
         _player = IAManager.Instance.player;
         _altarTutorial = IAManager.Instance.altartutorial;
         //GameObject specificAltar = IAManager.Instance.altar[0];
         // Fin Codigo de Iker
-
     }
 
-    
+
 
     // Update is called once per frame
     void Update() {
@@ -74,6 +74,8 @@ public class EnemyController : MonoBehaviour {
         if (distanceEnemyPlayer < _minDistance && distanceEnemyPlayer > _minDistanceToAttack)
         {
             agent.SetDestination(playerPosition);
+
+            
         } 
         //Si esta lo suficientemente lejos del jugador, tomara de prioridad el altar mas cercano
         else if (distanceEnemyPlayer > _minDistance)
@@ -87,8 +89,24 @@ public class EnemyController : MonoBehaviour {
             agent.SetDestination(transform.position);
         }
         //Fin Codigo de Iker
+          
+        
+        Vector3 movementDirection = agent.velocity.normalized; //direccion de dnd va
 
+        if (Time.time > nextAction) //en realidad cuando vea a Link
+        {
+            _animator.SetFloat("xAxis", movementDirection.x);
+            _animator.SetFloat("yAxis", movementDirection.y);
+
+            nextAction = Time.time + periodo;
+        }
+        
+
+       
     }
+}
+
+
     //  fin codigo de Maria :)
 
-}
+
