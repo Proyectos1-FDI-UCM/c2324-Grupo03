@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Reporting;
 using UnityEngine;
 
 public class RBMovement : MonoBehaviour
@@ -11,8 +12,13 @@ public class RBMovement : MonoBehaviour
 
     #region properties
     private float xAxis = 0f;
-    private float yAxis = 0f;    
-    
+    private float yAxis = 0f;
+    /// <summary>
+    /// Velocidad actual del jugador. Es la que resulta de los calculos, y siempre debe volver al valor de movementSpeed.
+    /// </summary>
+    private float currentSpeed;
+
+
     private Vector2 privateMovementDirection;
     public Vector2 movementDirection //Valor publico de lectura de movementDirection
     {
@@ -21,7 +27,14 @@ public class RBMovement : MonoBehaviour
     #endregion
 
     #region parameters
-    public float movementSpeed = 1f;
+    /// <summary>
+    /// Velocidad seteada de la entidad. Nunca cambia.
+    /// </summary>
+    [SerializeField] private float _movementSpeed = 5f;
+    /// <summary>
+    /// Variable de la velocidad base de la entidad. Es constante, es decir, aunque la velocidad actual sea distinta, movementSpeed siempre sera igual a la velocidad base.
+    /// </summary>
+    public float movementSpeed { get { return _movementSpeed; } }
 
     [SerializeField] private float _knockBackSpeed = 10f;
     public float knockBackTime
@@ -46,7 +59,7 @@ public class RBMovement : MonoBehaviour
     public void Move() 
     {
         privateMovementDirection = new Vector2(xAxis, yAxis).normalized;
-        _myRigidbody.velocity = privateMovementDirection * movementSpeed;
+        _myRigidbody.velocity = privateMovementDirection * currentSpeed;
     }
 
     public void TeleportTo(Vector2 position) //Pone la posicion del jugador en las coordenadas que se le pasan
@@ -58,7 +71,21 @@ public class RBMovement : MonoBehaviour
     {
         _myTransform = transform;
         _myRigidbody = GetComponent<Rigidbody2D>();
+        currentSpeed = _movementSpeed;
     }
+    #region cambios de velocidad
+    public void ChangeSpeed(float newSpeed, float time)
+    {
+        currentSpeed = newSpeed;
+
+        Invoke(nameof(ResetSpeed), time);
+    }
+
+    private void ResetSpeed()
+    {
+        currentSpeed = _movementSpeed;
+    }
+    #endregion
 
     public void StopVelocity()
     {
@@ -78,7 +105,7 @@ public class RBMovement : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Collider2D>() != null)
         {
-            _myRigidbody.velocity = privateMovementDirection * movementSpeed;
+            _myRigidbody.velocity = privateMovementDirection * currentSpeed;
         }
     }
     #endregion

@@ -40,5 +40,6 @@ public class SetOnFireDebuff : MonoBehaviour
     private void Awake()
     {
         _myHealthComponent = GetComponent<HealthComponent>();
+        this.enabled = false;
     }
 }
