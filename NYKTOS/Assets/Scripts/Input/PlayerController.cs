@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     private Vector2 _privateMovement = Vector2.zero;
 
     [SerializeField]
-    private float _interactionRange;
+    private float _interactionRange = 5;
     #endregion
 
     #region enableInput
@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     }
     #endregion
 
+    #region movement
     public void Blink(InputAction.CallbackContext context)
     {
         if (context.performed && !_BlinkCooldown.IsCooling())
@@ -117,7 +118,9 @@ public class PlayerController : MonoBehaviour, IKnockback
        
         _lookDirection.SetLookDirection(input);
     }
+    #endregion
 
+    #region combat
     public void PrimaryAttack(InputAction.CallbackContext context)
     {
         if(context.performed && !_PrimaryAttackCooldown.IsCooling() && _playerState.playerState == 0)
@@ -139,6 +142,9 @@ public class PlayerController : MonoBehaviour, IKnockback
         // Realizar el ataque especial
     }
 
+    #endregion
+
+    #region interactions
     public void Interact(InputAction.CallbackContext context)
     {
         if(Physics.Raycast(_myTransform.position, _lookDirection.lookDirection, out RaycastHit hit, _interactionRange))
@@ -149,6 +155,10 @@ public class PlayerController : MonoBehaviour, IKnockback
             }
         }
     }
+
+    public void QuitInteraction() { }
+
+    #endregion
 
     void Awake()
     {

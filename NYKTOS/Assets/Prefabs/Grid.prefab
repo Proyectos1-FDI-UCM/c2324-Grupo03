@@ -4219,6 +4219,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6ebbff7f258b742ab2eefcc5eecda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  internalLightProportion: 0.98
+  maxLightRadius: 4
+  minLightRadius: 1.5
+  increaseMultiplier: 8
+  fearModifyUnit: 0.25
+  provokedMultiplier: 24
+  provokedFearMax: 1
+  provokedFear: 0
 --- !u!1 &5039114443428842669
 GameObject:
   m_ObjectHideFlags: 0
@@ -5187,6 +5195,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1705684140096474648, guid: d7958894a2812054d901ebb479698baa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5337446678321250982}
+    - targetCorrespondingSourceObject: {fileID: 1705684140096474648, guid: d7958894a2812054d901ebb479698baa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 247558550639957665}
   m_SourcePrefab: {fileID: 100100000, guid: d7958894a2812054d901ebb479698baa, type: 3}
 --- !u!4 &5428529064251010288 stripped
 Transform:
@@ -5214,3 +5225,16 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &247558550639957665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8987653275412642479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c0abb319d0d2b478714b5f15e4a7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defenseMenu: {fileID: 0}
