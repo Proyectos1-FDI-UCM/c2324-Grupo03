@@ -51,7 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Environment",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "0450bbe5-d435-4a6a-b4f2-535de8fbb591",
                     "expectedControlType": "Button",
@@ -321,7 +321,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Environment",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -332,7 +332,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Environment",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -73,7 +73,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Environment"",
+                    ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""0450bbe5-d435-4a6a-b4f2-535de8fbb591"",
                     ""expectedControlType"": ""Button"",
@@ -343,7 +343,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Environment"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -354,7 +354,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Environment"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -398,7 +398,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Blink = m_Player.FindAction("Blink", throwIfNotFound: true);
         m_Player_PrimaryAttack = m_Player.FindAction("PrimaryAttack", throwIfNotFound: true);
         m_Player_SecondaryAttack = m_Player.FindAction("SecondaryAttack", throwIfNotFound: true);
-        m_Player_Environment = m_Player.FindAction("Environment", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -465,7 +465,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Blink;
     private readonly InputAction m_Player_PrimaryAttack;
     private readonly InputAction m_Player_SecondaryAttack;
-    private readonly InputAction m_Player_Environment;
+    private readonly InputAction m_Player_Interact;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -475,7 +475,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Blink => m_Wrapper.m_Player_Blink;
         public InputAction @PrimaryAttack => m_Wrapper.m_Player_PrimaryAttack;
         public InputAction @SecondaryAttack => m_Wrapper.m_Player_SecondaryAttack;
-        public InputAction @Environment => m_Wrapper.m_Player_Environment;
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -500,9 +500,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SecondaryAttack.started += instance.OnSecondaryAttack;
             @SecondaryAttack.performed += instance.OnSecondaryAttack;
             @SecondaryAttack.canceled += instance.OnSecondaryAttack;
-            @Environment.started += instance.OnEnvironment;
-            @Environment.performed += instance.OnEnvironment;
-            @Environment.canceled += instance.OnEnvironment;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -522,9 +522,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SecondaryAttack.started -= instance.OnSecondaryAttack;
             @SecondaryAttack.performed -= instance.OnSecondaryAttack;
             @SecondaryAttack.canceled -= instance.OnSecondaryAttack;
-            @Environment.started -= instance.OnEnvironment;
-            @Environment.performed -= instance.OnEnvironment;
-            @Environment.canceled -= instance.OnEnvironment;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -576,6 +576,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnBlink(InputAction.CallbackContext context);
         void OnPrimaryAttack(InputAction.CallbackContext context);
         void OnSecondaryAttack(InputAction.CallbackContext context);
-        void OnEnvironment(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

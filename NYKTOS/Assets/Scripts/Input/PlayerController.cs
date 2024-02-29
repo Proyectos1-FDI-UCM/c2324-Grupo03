@@ -40,6 +40,9 @@ public class PlayerController : MonoBehaviour, IKnockback
         get { return _privateMovement; }
     }
     private Vector2 _privateMovement = Vector2.zero;
+
+    [SerializeField]
+    private float _interactionRange;
     #endregion
 
     #region enableInput
@@ -136,9 +139,15 @@ public class PlayerController : MonoBehaviour, IKnockback
         // Realizar el ataque especial
     }
 
-    public void EnvInteraction(InputAction.CallbackContext context)
+    public void Interact(InputAction.CallbackContext context)
     {
-        // Interactuar con el entorno
+        if(Physics.Raycast(_myTransform.position, _lookDirection.lookDirection, out RaycastHit hit, _interactionRange))
+        {
+            if(hit.collider.gameObject.TryGetComponent(out IInteractable interactableObject))
+            {
+                interactableObject.Interact();
+            }
+        }
     }
 
     void Awake()
@@ -157,12 +166,14 @@ public class PlayerController : MonoBehaviour, IKnockback
         mainCamera= Camera.main;
         _playerState = GetComponent<PlayerStateMachine>();
 
+
+        // No estoy segura de si esto va aquí o en el OnEnable()
         _playerControls.Player.Move.performed += Move;
         _playerControls.Player.Move.canceled += Move;
         _playerControls.Player.Blink.performed += Blink;
         _playerControls.Player.Look.performed += Look;
         _playerControls.Player.PrimaryAttack.performed += PrimaryAttack;
         _playerControls.Player.SecondaryAttack.performed += SecondaryAttack;
-        _playerControls.Player.Environment.performed += EnvInteraction;
+        _playerControls.Player.Interact.performed += Interact;
     }
 }
