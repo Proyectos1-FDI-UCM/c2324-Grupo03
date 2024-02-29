@@ -28,7 +28,7 @@ public class ClubHitboxBehaviour : MonoBehaviour
         currentAngle = currentAngle - angleVelocity * Time.deltaTime;
         if (currentAngle >= maxAngle)
         {
-            _myTransform.rotation =Quaternion.Euler(0,0,currentAngle);
+            _myTransform.rotation = Quaternion.Euler(0,0,currentAngle);
         }
         else
         {
@@ -45,21 +45,18 @@ public class ClubHitboxBehaviour : MonoBehaviour
             //Javi ha hecho una corrección a este código para que sea más limpio. Dejo este de ejemplo :)
         }
 
-        if (collision.gameObject.GetComponent<IKnockback>() != null) //KNOCKBACK
+        if (collision.gameObject.TryGetComponent(out IKnockback iKnockback)) //KNOCKBACK
         {
-            IKnockback iKnockback = collision.gameObject.GetComponent<IKnockback>();
             iKnockback.CallKnockback(_myTransform.position);
         }
 
-        if (damageType == 1 && collision.gameObject.GetComponent<SetOnFireDebuff>()) //DAÑO DE FUEGO
+        if (damageType == 1 && collision.gameObject.TryGetComponent( out SetOnFireDebuff setOnFire)) //DAÑO DE FUEGO
         {
-            SetOnFireDebuff setOnFire = collision.gameObject.GetComponent<SetOnFireDebuff>();
             setOnFire.enabled = true;
         }
 
-        else if (damageType == 2 && collision.gameObject.GetComponent<SlowDebuff>()) //RALENTIZAR
+        else if (damageType == 2 && collision.gameObject.TryGetComponent(out SlowDebuff slow)) //RALENTIZAR
         {
-            SlowDebuff slow = collision.gameObject.GetComponent<SlowDebuff>();
             slow.enabled = true;
         }
     }
