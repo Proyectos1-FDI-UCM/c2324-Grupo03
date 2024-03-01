@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: -8710662808315005469}
   - component: {fileID: 1629973156513498330}
   m_Layer: 0
-  m_Name: Vespertilio
+  m_Name: Vespertilio Antiguo
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
