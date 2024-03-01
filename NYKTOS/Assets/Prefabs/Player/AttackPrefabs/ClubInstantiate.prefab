@@ -133,8 +133,8 @@ MonoBehaviour:
   attackAngleRange: 0
   currentAngle: 0
   angleVelocity: 0
-  weaponDamage: 1
-  damageType: 0
+  weaponDamage: 2
+  attackType: 0
 --- !u!61 &-451886541323965697
 BoxCollider2D:
   m_ObjectHideFlags: 0
