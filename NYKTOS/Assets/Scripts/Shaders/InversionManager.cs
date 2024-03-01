@@ -3,13 +3,13 @@ using UnityEngine;
 public class InversionManager : MonoBehaviour
 {
 
-    public delegate void MiEventoDelegate();
-    private event MiEventoDelegate MiEvento;
+    public delegate void LightSwapDelegate();
+    private event LightSwapDelegate sEvent;
 
-    public MiEventoDelegate evento
+    public LightSwapDelegate swapEvent
     {
-        get { return MiEvento; }
-        set { MiEvento = value; }
+        get { return sEvent; }
+        set { sEvent = value; }
     }
 
     static private InversionManager _instance; 
@@ -19,29 +19,29 @@ public class InversionManager : MonoBehaviour
     }
 
     [SerializeField]
-    private bool swap = false;
+    private bool swapStatus = false;
     public bool getSwap
     {
-        get { return swap; }
+        get { return swapStatus; }
     } 
 
     public void SetSwap(bool state){
-        swap = state;
-        if (MiEvento != null)
+        swapStatus = state;
+        if (swapEvent != null)
         {
-            MiEvento();
+            swapEvent();
         }
     }
 
     // Metodo para debuggear
-    [ContextMenu("Swap")]
-    public void Swap()
+    [ContextMenu("ForceSwap")]
+    public void ForceSwap()
     {
-        swap = swap ? false : true;
+        swapStatus = swapStatus ? false : true;
 
-        if (MiEvento != null)
+        if (swapEvent != null)
         {
-            MiEvento();
+            swapEvent();
         }
     }
 

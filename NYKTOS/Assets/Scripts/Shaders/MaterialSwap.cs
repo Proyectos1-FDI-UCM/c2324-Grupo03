@@ -35,7 +35,7 @@ public class CambioMaterial : MonoBehaviour
         currentRenderer = GetComponent<Renderer>();
         currentRenderer.material = defaultMaterial;
 
-        InversionManager.Instance.evento += ChangeMaterial;
+        InversionManager.Instance.swapEvent += ChangeMaterial;
     }
 
     private void ChangeMaterial()
