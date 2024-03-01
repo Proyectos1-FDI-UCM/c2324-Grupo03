@@ -13,6 +13,8 @@ public class HealthComponent : MonoBehaviour
     [SerializeField]
     private int _currentHealth;
     private bool _inmune = false;
+    [SerializeField]
+    private float _inmTime;
     #endregion
 
     // Start is called before the first frame update
@@ -25,28 +27,32 @@ public class HealthComponent : MonoBehaviour
 
     private void Update()
     {
-    
+
     }
 
     public void Damage(int damage)
     {
-        if (!_inmune) 
+        if (!_inmune)
         {
             _currentHealth -= damage;
+            _inmune = true;
 
             if (_currentHealth <= 0)
             {
                 Muerte();
             }
+
+            Invoke(nameof(DisableInm), _inmTime);
         }
-        
+
     }
 
-    public void Heal (int heal)
+    public void Heal(int heal)
     {
         _currentHealth += heal;
 
-        if(_currentHealth >_maxHealth) 
+
+        if (_currentHealth > _maxHealth)
         {
             _currentHealth = _maxHealth;
         }
@@ -58,6 +64,11 @@ public class HealthComponent : MonoBehaviour
         {
             _enemyDeath.Die();
         }
+    }
+
+    void DisableInm()
+    {
+        _inmune = false;
     }
 }
 
