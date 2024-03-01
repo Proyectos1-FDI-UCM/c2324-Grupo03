@@ -9,25 +9,26 @@ public class EnemyController : MonoBehaviour {
     private float period = 2f;
 
     //Codigo de Iker
-    //Distancia minima para perseguir al jugador
-    private float _minDistance = 4.0f;
     //Distancia minima para que no atraviese al jugador y prepare el ataque
-    private float _minDistanceToAttack = 1.0f;
+    [SerializeField]
+    private float _minDistanceToAttackPlayer = 1f;
+    [SerializeField]
+    private float _minDistanceToAttackAltar = 1.25f;
     //Fin Codigo de Iker
     #endregion
 
     #region references
     [SerializeField] 
     private NavMeshAgent agent;
-    private Transform _myTransform;
     private Animator _animator;
     [SerializeField] private float nextAction = 0.0f;
     private float periodo = 0.7f;
     //Codigo de Iker
-    private GameObject _player;
+    private Transform _myTransform;
+    private Transform _playerTransform;
     private GameObject _altarTutorial;
-    Vector3 playerPosition;
-    Vector3 altarPosition;
+    private bool LejosPlayer = true;
+    private bool LejosAltar = true;
     //Fin Codigo de Iker
     #endregion
 
@@ -41,56 +42,70 @@ public class EnemyController : MonoBehaviour {
         nextAction = Time.time + periodo;
 
         // Codigo de Iker
-        _player = IAManager.Instance.player;
         _altarTutorial = IAManager.Instance.altartutorial;
-        //GameObject specificAltar = IAManager.Instance.altar[0];
         // Fin Codigo de Iker
     }
 
+    public void PlayerDetected(Transform transform)
+    {
+        _playerTransform = transform;
+    }
 
+    public void PlayerNotDetected(Transform transform)
+    {
+        _playerTransform = null;
+    }
 
     // Update is called once per frame
     void Update() {
 
         //Codigo de Iker
-        //Toma el Vector3 del jugador y del altar a partir del GameManager
-        if (altarPosition != null && playerPosition != null)
+        //Distancia del enemigo al altar
+        float distanceEnemyAltar = Vector3.Distance(_myTransform.position, _altarTutorial.transform.position);
+
+        //Distancia del enemigo al jugador
+        float distanceEnemyPlayer;
+        if (_playerTransform != null)
         {
-            playerPosition = _player.transform.position;
-            altarPosition = _altarTutorial.transform.position;
-            //NOTA: NullReferenceException aquí, lee lo de abajo
+            distanceEnemyPlayer = Vector3.Distance(_myTransform.position, _playerTransform.position);
+        } else
+        {
+            distanceEnemyPlayer = 100.0f;
+        }
+        
+        //Condiciones de prioridad
+        if (_playerTransform != null && LejosPlayer && LejosAltar)
+        {
+            agent.SetDestination(_playerTransform.position);
+        }
+        else if (_playerTransform == null && LejosPlayer && LejosAltar)
+        {
+            agent.SetDestination(_altarTutorial.transform.position);
+            //Nota: en caso de NullReferenceException, copiar el objeto IAManager de la escena de Iker y pegar en tu escena
+        }
+
+        //Condicion de parada
+        if (distanceEnemyPlayer > _minDistanceToAttackPlayer)
+        {
+            LejosPlayer = true;
+        } else
+        {
+            LejosPlayer = false;
+        }
+
+        if (distanceEnemyAltar > _minDistanceToAttackAltar)
+        {
+            LejosAltar = true;
         }
         else
         {
-            Debug.Log("Copia el objeto IAManager de la escena Iker y pegalo en tu escena");
+            LejosAltar = false;
         }
 
-        //Distancia del enemigo al jugador
-        float distanceEnemyPlayer = Vector3.Distance(_myTransform.position, playerPosition);
-        //Distancia del enemigo al altar, creo que es redundante
-        float distanceEnemyAltar = Vector3.Distance(_myTransform.position, altarPosition);
-
-        // Si esta lo suficientemente cerca del jugador, se acerca a el hasta que pueda atacarlo
-        if (distanceEnemyPlayer < _minDistance && distanceEnemyPlayer > _minDistanceToAttack)
-        {
-            agent.SetDestination(playerPosition);
-
-            
-        } 
-        //Si esta lo suficientemente lejos del jugador, tomara de prioridad el altar mas cercano
-        else if (distanceEnemyPlayer > _minDistance)
-        {
-            agent.SetDestination(altarPosition);
-        }
-        // Si esta al lado del jugador se para para prepararse para atacar
-        else if (distanceEnemyPlayer <= _minDistanceToAttack)
-        {
-            //SE QUEDA QUIETO, QUE LOCURA
-            agent.SetDestination(transform.position);
-        }
+        if (!LejosPlayer && _playerTransform != null) agent.SetDestination(_myTransform.position);
+        if (!LejosAltar) agent.SetDestination(_myTransform.position);
         //Fin Codigo de Iker
-          
-        
+
         Vector3 movementDirection = agent.velocity.normalized; //direccion de dnd va
 
         if (Time.time > nextAction) //en realidad cuando vea a Link
