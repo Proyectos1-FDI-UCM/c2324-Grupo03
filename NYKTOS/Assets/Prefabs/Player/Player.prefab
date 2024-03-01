@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6ebbff7f258b742ab2eefcc5eecda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  internalLightProportion: 0.98
+  internalLightProportion: 0.76
   maxLightRadius: 4
   minLightRadius: 1.5
   increaseMultiplier: 8
@@ -305,6 +305,7 @@ MonoBehaviour:
     _cooldownTime: 0.25
   _SecondaryAttackCooldown:
     _cooldownTime: 5
+  _interactionRange: 5
 --- !u!114 &5023334086552178363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,7 +569,7 @@ MonoBehaviour:
   attackAngleRange: 70
   angleVelocity: 500
   attackType: 0
-  weaponDamage: 1
+  weaponDamage: 3
 --- !u!114 &3016302921365856093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,8 +621,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fcb5a4b321af3b439cd5a8709d4a68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 6
+  _maxHealth: 10
   _currentHealth: 0
+  _inmTime: 2
 --- !u!114 &1455830291752922567
 MonoBehaviour:
   m_ObjectHideFlags: 0
