@@ -11,7 +11,7 @@ public class Wave {
     public float spawnInterval;
 }
 
-public class SpawnManager : MonoBehaviour {
+public class SpawnEnemy : MonoBehaviour {
    
     #region parameters
     [SerializeField] Wave[] waves; //las waves
