@@ -5125,6 +5125,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1748120460498934648}
     m_Modifications:
+    - target: {fileID: 840606231092150756, guid: e1f24b024931df84e9c820c068720048, type: 3}
+      propertyPath: m_Radius
+      value: 3.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315961862854788373, guid: e1f24b024931df84e9c820c068720048, type: 3}
+      propertyPath: lightRadius
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315961862854788373, guid: e1f24b024931df84e9c820c068720048, type: 3}
+      propertyPath: internalRadiusPercentageOffset
+      value: 0.869
+      objectReference: {fileID: 0}
     - target: {fileID: 1736677066963637335, guid: e1f24b024931df84e9c820c068720048, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -5171,11 +5183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5321148773877959482, guid: e1f24b024931df84e9c820c068720048, type: 3}
       propertyPath: m_PointLightInnerRadius
-      value: 4.7999997
+      value: 3.476
       objectReference: {fileID: 0}
     - target: {fileID: 5321148773877959482, guid: e1f24b024931df84e9c820c068720048, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
