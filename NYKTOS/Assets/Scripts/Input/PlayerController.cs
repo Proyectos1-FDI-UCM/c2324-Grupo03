@@ -1,14 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 
-
-// Código de Andrea <3
 
 public class PlayerController : MonoBehaviour, IKnockback
 {
@@ -40,9 +33,11 @@ public class PlayerController : MonoBehaviour, IKnockback
         get { return _privateMovement; }
     }
     private Vector2 _privateMovement = Vector2.zero;
+    #endregion
 
+    #region parameters
     [SerializeField]
-    private float _interactionRange = 5;
+    private float _interactionRange = 5f;
     #endregion
 
     #region enableInput
@@ -108,7 +103,7 @@ public class PlayerController : MonoBehaviour, IKnockback
         if(context.control.device is Mouse)
         {
             Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue()); //apaño chungo, cambiar luego
-            Vector2 playerPosition = _playerMovement.transform.position;
+            Vector2 playerPosition = _myTransform.position;
             input = (mousePosition- playerPosition).normalized;
         }
         else
@@ -147,11 +142,28 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region interactions
     public void Interact(InputAction.CallbackContext context)
     {
-        if(Physics.Raycast(_myTransform.position, _lookDirection.lookDirection, out RaycastHit hit, _interactionRange))
+        //Debug.Log("Interactuando");
+
+        int maxColliders = 40;
+        Collider[] hitColliders = new Collider[maxColliders];
+        int numColliders = Physics.OverlapSphereNonAlloc(_myTransform.position, _interactionRange, hitColliders);
+
+
+        for(int i = 0; i < numColliders && _playerState.playerState == PlayerState.Idle; i++)
         {
-            if(hit.collider.gameObject.TryGetComponent(out IInteractable interactableObject))
+            // Hacer producto escalar entre el vector lookDirection y el del player-edificio. Devuelve el coseno del ángulo que forman
+            // Si el producto está entre [- raiz(3)/4, +raiz(3)/4] == Ángulo entre [-15º, +15º] == cono de 30º --> interactuar con el objeto
+            
+            Vector3 targetDir = (hitColliders[i].transform.position - _myTransform.position).normalized;
+            float dotProduct = Vector3.Dot(_lookDirection.lookDirection, targetDir);
+            Debug.Log($"collider nº {i}:" + dotProduct);
+
+            if ((dotProduct > - Math.Sqrt(3)/4 || dotProduct < Math.Sqrt(3)/4) 
+                && hitColliders[i].gameObject.TryGetComponent(out IInteractable interactableObject))
             {
+                Debug.Log("edificio encontrado");
                 interactableObject.Interact();
+                // Desde el objeto, cambiar el estado del player a OnMenu o algo así
             }
         }
     }
@@ -175,7 +187,6 @@ public class PlayerController : MonoBehaviour, IKnockback
         _weaponHandler = GetComponent<WeaponHandler>();
         mainCamera= Camera.main;
         _playerState = GetComponent<PlayerStateMachine>();
-
 
         // No estoy segura de si esto va aquí o en el OnEnable()
         _playerControls.Player.Move.performed += Move;

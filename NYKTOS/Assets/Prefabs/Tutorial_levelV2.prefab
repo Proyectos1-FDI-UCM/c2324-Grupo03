@@ -4781,6 +4781,7 @@ GameObject:
   - component: {fileID: 5775793540506485372}
   - component: {fileID: 5893881739763179041}
   - component: {fileID: 8489511476208518700}
+  - component: {fileID: 7364682486584842659}
   m_Layer: 0
   m_Name: PlaceHolder 1
   m_TagString: Untagged
@@ -4930,6 +4931,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultMaterial: {fileID: 2100000, guid: 62000017cbdf07944a1d5c37af893e15, type: 2}
   swapMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+--- !u!114 &7364682486584842659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6480509210915462261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c0abb319d0d2b478714b5f15e4a7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defenseMenu: {fileID: 0}
 --- !u!1 &7011166630832327692
 GameObject:
   m_ObjectHideFlags: 0

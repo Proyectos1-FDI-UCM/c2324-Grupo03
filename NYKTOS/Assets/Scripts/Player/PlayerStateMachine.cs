@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 
 public enum PlayerState
 {
-    Idle, Attacking, OnKnockback
+    Idle, Attacking, OnKnockback, OnMenu
 }
 
 public class PlayerStateMachine : MonoBehaviour

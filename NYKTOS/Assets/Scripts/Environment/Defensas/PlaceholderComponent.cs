@@ -14,11 +14,13 @@ public class PlaceholderComponent : MonoBehaviour, IInteractable
     public void Interact()
     {
         _playerControls.Player.Disable();
+        _playerControls.UI.Enable();
         _defenseMenu.enabled = true;
     }
 
     public void QuitInteraction()
     {
+        _playerControls.UI.Disable();
         _playerControls.Player.Enable();
         _defenseMenu.enabled = false;
     }
