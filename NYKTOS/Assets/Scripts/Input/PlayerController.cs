@@ -150,17 +150,15 @@ public class PlayerController : MonoBehaviour, IKnockback
 
         for(int i = 0; i < numColliders && _playerState.playerState == PlayerState.Idle; i++)
         {
-            // Hacer producto escalar entre el vector lookDirection y el del player-edificio. Devuelve el coseno del ángulo que forman
-            // Si el producto está entre [- raiz(3)/4, + raiz(3)/4] == Ángulo entre [-15º, +15º] == cono de 30º --> interactuar con el objeto
-            
+            // Hacer producto escalar entre el vector lookDirection y el del player-edificio. Devuelve el coseno del ángulo que forman            
             Vector3 targetDir = (hitColliders[i].transform.position - _myTransform.position).normalized;
             float dotProduct = Vector3.Dot(_lookDirection.lookDirection, targetDir);
             float angle = Mathf.Acos(dotProduct);
 
+            // Cono interacción de 45º
             if (angle > - Math.PI/8 && angle < Math.PI/8
                 && hitColliders[i].gameObject.TryGetComponent(out IInteractable interactableObject))
             {
-                //Debug.Log("edificio encontrado " + hitColliders[i].gameObject.name);
                 interactableObject.Interact();
                 // Desde el objeto, cambiar el estado del player a OnMenu o algo así
             }
