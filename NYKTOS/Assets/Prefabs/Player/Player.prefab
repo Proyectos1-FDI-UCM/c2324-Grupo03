@@ -771,7 +771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deathskin: {fileID: 6758919315837710540}
   _aliveskin: {fileID: 6222676936956634352}
-  _blinkComponent: {fileID: 3629605777245254002}
+  alive: 1
 --- !u!1 &6714065208488291323
 GameObject:
   m_ObjectHideFlags: 0
