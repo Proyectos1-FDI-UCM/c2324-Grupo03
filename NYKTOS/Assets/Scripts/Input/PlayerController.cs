@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region movement
     public void Blink(InputAction.CallbackContext context)
     {
-        if (context.performed && !_BlinkCooldown.IsCooling())
+        if (_playerState.playerState == PlayerState.Idle && !_BlinkCooldown.IsCooling())
         {
             _blinkComponent.Blink();
             _BlinkCooldown.StartCooldown();
@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region combat
     public void PrimaryAttack(InputAction.CallbackContext context)
     {
-        if(context.performed && !_PrimaryAttackCooldown.IsCooling() && _playerState.playerState == 0)
+        if(_playerState.playerState == PlayerState.Idle && !_PrimaryAttackCooldown.IsCooling())
         {
             _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
             _PrimaryAttackCooldown.StartCooldown();
@@ -126,9 +126,7 @@ public class PlayerController : MonoBehaviour, IKnockback
             CallMove(Vector2.zero);
             _playerState.SetState(PlayerState.Attacking);
 
-            
-            _playerState.Invoke("SetIdleState", _PrimaryAttackCooldown.cooldownTime);
-
+            _playerState.Invoke(nameof(_playerState.SetIdleState), _PrimaryAttackCooldown.cooldownTime);
         }
     }
 
@@ -164,15 +162,11 @@ public class PlayerController : MonoBehaviour, IKnockback
             }
         }
     }
-
-    public void QuitInteraction() { }
-
     #endregion
 
     void Awake()
     {
-        _playerControls = new PlayerControls();
-        
+        _playerControls = new PlayerControls();        
     }
 
     void Start()
