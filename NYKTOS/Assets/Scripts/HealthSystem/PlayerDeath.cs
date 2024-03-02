@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private SpriteRenderer _deathskin;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    private SpriteRenderer _aliveskin;
+    
+
+    public bool alive = true;
+
+    public void Death()
     {
-        
+       _aliveskin.enabled = false;
+       _deathskin.enabled = true;
+       alive = false;
+       
     }
 }

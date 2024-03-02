@@ -10,6 +10,7 @@ public class HealthComponent : MonoBehaviour
     [SerializeField]
     private UIManager _UIManager;
     private EnemyDeath _enemyDeath;
+    private PlayerDeath _playerDeath;
     
     #endregion
     #region parameters
@@ -33,6 +34,7 @@ public class HealthComponent : MonoBehaviour
         _currentHealth = _maxHealth;
         //MAria
         _enemyDeath = GetComponent<EnemyDeath>();
+        _playerDeath = GetComponent<PlayerDeath>();
         
     }
 
@@ -50,6 +52,7 @@ public class HealthComponent : MonoBehaviour
 
             if (_currentHealth <= 0)
             {
+                _currentHealth = 0;
                 Muerte();
             }
             
@@ -76,6 +79,10 @@ public class HealthComponent : MonoBehaviour
         if (GetComponent<EnemyDeath>() != null)
         {
             _enemyDeath.Die();
+        }
+        else if (GetComponent<PlayerDeath>() != null)
+        {
+            _playerDeath.Death();
         }
     }
 

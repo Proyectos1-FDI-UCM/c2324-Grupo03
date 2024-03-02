@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     private RBMovement _playerMovement;
     private LookDirection _lookDirection;
     private WeaponHandler _weaponHandler;
+    private PlayerDeath _playerDeath;
 
     private Camera mainCamera;
 
@@ -56,7 +57,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region movement
     public void Blink(InputAction.CallbackContext context)
     {
-        if (context.performed && !_BlinkCooldown.IsCooling())
+        if (context.performed && !_BlinkCooldown.IsCooling() && _playerDeath.alive)
         {
             _blinkComponent.Blink();
             _BlinkCooldown.StartCooldown();
@@ -118,7 +119,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region combat
     public void PrimaryAttack(InputAction.CallbackContext context)
     {
-        if(context.performed && !_PrimaryAttackCooldown.IsCooling() && _playerState.playerState == 0)
+        if(context.performed && !_PrimaryAttackCooldown.IsCooling() && _playerState.playerState == 0 && _playerDeath.alive)
         {
             _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
             _PrimaryAttackCooldown.StartCooldown();
@@ -186,6 +187,7 @@ public class PlayerController : MonoBehaviour, IKnockback
         _weaponHandler = GetComponent<WeaponHandler>();
         mainCamera= Camera.main;
         _playerState = GetComponent<PlayerStateMachine>();
+        _playerDeath = GetComponent<PlayerDeath>();
 
         // No estoy segura de si esto va aquí o en el OnEnable()
         _playerControls.Player.Move.performed += Move;
