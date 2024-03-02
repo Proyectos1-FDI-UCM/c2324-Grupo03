@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour
     {
         _weaponPalo.enabled = true;
         _weaponCetro.enabled = false;
+        
     }
 
     public void CrystalA(int _numCrysA)
@@ -62,7 +63,7 @@ public class UIManager : MonoBehaviour
     }
 
     //public void Hearts(int health)
-    void Update()
+    public void Hearts(int health)
     {
         for (int i = 0; i < 5; i++)
         {
