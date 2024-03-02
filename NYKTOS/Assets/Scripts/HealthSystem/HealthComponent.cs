@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class HealthComponent : MonoBehaviour
 {
     #region references
+
+    [SerializeField]
+    private UIManager _UIManager;
     private EnemyDeath _enemyDeath;
+    
     #endregion
     #region parameters
     [SerializeField]
@@ -17,12 +22,18 @@ public class HealthComponent : MonoBehaviour
     private float _inmTime;
     #endregion
 
+    #region events
+    
+
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     {
         _currentHealth = _maxHealth;
         //MAria
         _enemyDeath = GetComponent<EnemyDeath>();
+        
     }
 
     private void Update()
@@ -41,8 +52,9 @@ public class HealthComponent : MonoBehaviour
             {
                 Muerte();
             }
-
+            
             Invoke(nameof(DisableInm), _inmTime);
+            _UIManager.Hearts(_currentHealth);
         }
 
     }
@@ -56,6 +68,7 @@ public class HealthComponent : MonoBehaviour
         {
             _currentHealth = _maxHealth;
         }
+        _UIManager.Hearts(_currentHealth);
     }
 
     void Muerte()

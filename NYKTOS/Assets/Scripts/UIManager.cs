@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+
+
 
 public class UIManager : MonoBehaviour
 {
+    #region references
+
+
     [SerializeField]
     private TMP_Text _textoCrystalA;
 
@@ -28,9 +34,11 @@ public class UIManager : MonoBehaviour
     private Sprite _fullHeart;
 
     [SerializeField]
-    private Sprite _halfHeart; 
+    private Sprite _halfHeart;
 
-    public int health;
+    #endregion
+
+    
 
 
 
@@ -39,6 +47,7 @@ public class UIManager : MonoBehaviour
     {
         _weaponPalo.enabled = true;
         _weaponCetro.enabled = false;
+        
         
     }
 
