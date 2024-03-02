@@ -9,21 +9,19 @@ public class PlaceholderComponent : MonoBehaviour, IInteractable
     private Canvas _defenseMenu;
 
     private PlayerControls _playerControls;
+    private BuildingStateMachine _state;
     #endregion
 
     public void Interact()
     {
         Debug.Log("hola soy un placeholder");
-        _playerControls.Player.Disable();
-        _playerControls.UI.Enable();
-        _defenseMenu.enabled = true;
-    }
-
-    public void QuitInteraction()
-    {
-        _playerControls.UI.Disable();
-        _playerControls.Player.Enable();
-        _defenseMenu.enabled = false;
+        if(_state.buildingState == BuildingStateMachine.BuildingState.NotBuilt)
+        {
+            Debug.Log("Estoy destruido");
+            _playerControls.Player.Disable();
+            _playerControls.UI.Enable();
+            _defenseMenu.enabled = true;
+        }
     }
 
     // Start is called before the first frame update
@@ -33,8 +31,8 @@ public class PlaceholderComponent : MonoBehaviour, IInteractable
     }
 
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        _state = GetComponent<BuildingStateMachine>();
     }
 }
