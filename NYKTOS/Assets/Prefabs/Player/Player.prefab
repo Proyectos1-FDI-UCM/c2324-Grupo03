@@ -300,12 +300,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _BlinkCooldown:
-    _cooldownTime: 0.5
+    _cooldownTime: 1
   _PrimaryAttackCooldown:
-    _cooldownTime: 0.25
+    _cooldownTime: 0.5
   _SecondaryAttackCooldown:
     _cooldownTime: 5
-  _interactionRange: 5
+  _interactionRange: 2
 --- !u!114 &5023334086552178363
 MonoBehaviour:
   m_ObjectHideFlags: 0

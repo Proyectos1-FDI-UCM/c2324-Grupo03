@@ -244,11 +244,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23088732}
   m_CullTransparentMesh: 1
---- !u!1 &68953313 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3385171631580939238, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
-  m_PrefabInstance: {fileID: 2079621826}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &193924180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -669,31 +664,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6534088897598437012, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
   m_PrefabInstance: {fileID: 2079621826}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1168038080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68953313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0c7667be3f1ad84283954b90e37b9cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lookDirection: {x: 0, y: -1}
---- !u!114 &1168038091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68953313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3d93a3c8821364280df3b742ce7b3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1181838857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,6 +1055,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial_levelV2
       objectReference: {fileID: 0}
+    - target: {fileID: 1192135471970981493, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1748120460498934648, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1124,6 +1098,14 @@ PrefabInstance:
     - target: {fileID: 1748120460498934648, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480509210915462261, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175719141236239338, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7364682486584842659, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: _defenseMenu
@@ -1605,6 +1587,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 678919822}
     - target: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: _interactionRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
       propertyPath: _cooldown.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -1688,20 +1674,13 @@ PrefabInstance:
       propertyPath: minLightRadius
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6800576876400449408, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6534088897598437012, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
       insertIndex: -1
       addedObject: {fileID: 602629026}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3385171631580939238, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1168038080}
-    - targetCorrespondingSourceObject: {fileID: 3385171631580939238, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1168038091}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

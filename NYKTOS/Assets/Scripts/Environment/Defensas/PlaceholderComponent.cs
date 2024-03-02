@@ -13,6 +13,7 @@ public class PlaceholderComponent : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        Debug.Log("hola soy un placeholder");
         _playerControls.Player.Disable();
         _playerControls.UI.Enable();
         _defenseMenu.enabled = true;
@@ -26,9 +27,9 @@ public class PlaceholderComponent : MonoBehaviour, IInteractable
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        _playerControls = new PlayerControls();
     }
 
     // Update is called once per frame
