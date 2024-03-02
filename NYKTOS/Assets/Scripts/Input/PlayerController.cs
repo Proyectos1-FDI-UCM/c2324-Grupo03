@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     private RBMovement _playerMovement;
     private LookDirection _lookDirection;
     private WeaponHandler _weaponHandler;
+    private PlayerDeath _playerDeath;
 
     private Camera mainCamera;
 
@@ -178,6 +179,7 @@ public class PlayerController : MonoBehaviour, IKnockback
         _weaponHandler = GetComponent<WeaponHandler>();
         mainCamera= Camera.main;
         _playerState = GetComponent<PlayerStateMachine>();
+        _playerDeath = GetComponent<PlayerDeath>();
 
         // No estoy segura de si esto va aquí o en el OnEnable()
         _playerControls.Player.Move.performed += Move;
