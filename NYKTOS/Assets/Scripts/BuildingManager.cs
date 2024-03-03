@@ -43,7 +43,9 @@ public class BuildingManager : MonoBehaviour
 
     private void BuildDefense()
     {
-        Instantiate(_selectedDefense,_currentPlaceholder.transform.position,Quaternion.identity);
+        GameObject defense = Instantiate(_selectedDefense,_currentPlaceholder.transform.position,Quaternion.identity);
+        defense.GetComponent<DefenseComponent>().placeholder = _currentPlaceholder;
+
         _currentPlaceholder.GetComponent<BuildingStateMachine>().SetState(BuildingStateMachine.BuildingState.Built);
         _currentPlaceholder.GetComponent<PlaceholderComponent>().CloseMenu();
     }

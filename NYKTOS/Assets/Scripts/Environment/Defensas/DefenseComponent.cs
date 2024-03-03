@@ -13,6 +13,14 @@ public class DefenseComponent : MonoBehaviour
     [SerializeField]
     private Defense Defense;
 
+    private GameObject _placeholder;
+
+    public GameObject placeholder
+    {
+        get { return _placeholder; }
+        set { _placeholder = value; }
+    }
+
     public int Health;
     public int MaxHealth;
 
