@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Script de Iker y Marco
+/// </summary>
 [CreateAssetMenu(fileName = "InversionEffect", menuName = "InversionEffect", order = 1)]
 public class InversionEffect : ScriptableObject
 {
@@ -22,6 +25,10 @@ public class InversionEffect : ScriptableObject
     private UnityEvent<bool> inversionEvent = new UnityEvent<bool>();
     public UnityEvent<bool> InversionEvent => inversionEvent;
     
+    /// <summary>
+    /// Lanza el evento inversionEvent
+    /// </summary>
+    /// <param name="inversionStatus"></param>
     private void Invert(bool inversionStatus) => inversionEvent.Invoke(inversionStatus);
 
     void OnValidate()

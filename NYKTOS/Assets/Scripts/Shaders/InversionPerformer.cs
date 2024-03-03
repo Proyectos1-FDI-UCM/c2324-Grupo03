@@ -4,6 +4,7 @@ using UnityEngine;
 /// Cambia su material en base a un evento de una instancia 
 /// del scriptable object InversionEffect
 /// 
+/// Script de Iker y Marco
 /// </summary>
 [RequireComponent(typeof(Renderer))]
 public class InversionPerformer : MonoBehaviour
