@@ -20,9 +20,11 @@ public class BuildingManager : MonoBehaviour
     { get { return _selectedDefense; } 
       set { _selectedDefense = value; } 
     }
-
     #endregion
 
+    #region parameters
+    private float _offsetNotWall = 0.9f;
+    #endregion
 
     #region building prefabs
     [SerializeField]
@@ -43,13 +45,27 @@ public class BuildingManager : MonoBehaviour
 
     private void BuildDefense()
     {
-        GameObject defense = Instantiate(_selectedDefense,_currentPlaceholder.transform.position,Quaternion.identity);
+        if (_selectedDefense == _beacon || _selectedDefense == _turret)
+        {
+            _selectedDefense.transform.position = new Vector2(_currentPlaceholder.transform.position.x, _currentPlaceholder.transform.position.y + _offsetNotWall);
+        }
+        else
+        {
+            _selectedDefense.transform.position = _currentPlaceholder.transform.position;
+        }
+
+        GameObject defense = Instantiate(_selectedDefense,_selectedDefense.transform.position,Quaternion.identity);
         defense.GetComponent<DefenseComponent>().placeholder = _currentPlaceholder;
 
         _currentPlaceholder.GetComponent<BuildingStateMachine>().SetState(BuildingStateMachine.BuildingState.Built);
         _currentPlaceholder.GetComponent<PlaceholderComponent>().CloseMenu();
     }
 
+    private void DestroyDefense()
+    {
+        _currentPlaceholder.GetComponent<BuildingStateMachine>().SetState(BuildingStateMachine.BuildingState.NotBuilt);
+        //Destroy(_selectedDefense);
+    }
     public void BuildTurret()
     {
         SetBuilding(_turret);
@@ -80,6 +96,6 @@ public class BuildingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

@@ -12,7 +12,10 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     [SerializeField]
     private PlayerController _player;
     private BuildingStateMachine _state;
+    [SerializeField]
+    private BuildingManager _manager;
     #endregion
+
     public void OpenMenu()
     {
         if(_state.buildingState == BuildingStateMachine.BuildingState.NotBuilt)
@@ -20,6 +23,7 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
             _player.playerControls.Player.Disable();
             _player.playerControls.UI.Enable();
             _defenseMenu.SetActive(true);
+            UpdateCurrentPlaceHolder();
         }
     }
 
@@ -35,10 +39,14 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
         CloseMenu(context);
     }
 
+    public void UpdateCurrentPlaceHolder()
+    {
+        _manager.CurrentPlaceholder = gameObject;
+    }
+
     void Start()
     {
         _state = GetComponent<BuildingStateMachine>();
-
         _player.playerControls.UI.CloseMenu.performed += CloseMenu;
     }
 }

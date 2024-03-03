@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8187920211794077780}
   - component: {fileID: 4245633356719883235}
   - component: {fileID: 6415412090681918761}
+  - component: {fileID: 231234243632601056}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8365187515372501195}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7, y: 3.08, z: 0}
+  m_LocalPosition: {x: -6.5225487, y: -1.8000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -100,3 +101,19 @@ MonoBehaviour:
   Defense: {fileID: 11400000, guid: 2085ebeb6dd550b41aa277819b7cdbda, type: 2}
   Health: 0
   MaxHealth: 0
+--- !u!114 &231234243632601056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8365187515372501195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fcb5a4b321af3b439cd5a8709d4a68d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _UIManager: {fileID: 0}
+  _maxHealth: 15
+  _currentHealth: 0
+  _inmTime: 1
