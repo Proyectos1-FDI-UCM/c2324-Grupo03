@@ -13,14 +13,8 @@ MonoBehaviour:
   m_Name: Wave 1
   m_EditorClassIdentifier: 
   waveName: Wave 1
-  noOfEnemies: -4
+  noOfEnemies: 4
   enemies:
-  - enemyPrefab: {fileID: 2995607884255851843, guid: ebeff8dda23b3ea42a069c5ffcdf7315, type: 3}
-    enemyCost: 1
-  - enemyPrefab: {fileID: 2995607884255851843, guid: ebeff8dda23b3ea42a069c5ffcdf7315, type: 3}
-    enemyCost: 1
-  - enemyPrefab: {fileID: 2995607884255851843, guid: ebeff8dda23b3ea42a069c5ffcdf7315, type: 3}
-    enemyCost: 1
   - enemyPrefab: {fileID: 2995607884255851843, guid: ebeff8dda23b3ea42a069c5ffcdf7315, type: 3}
     enemyCost: 1
   spawnPoints:
