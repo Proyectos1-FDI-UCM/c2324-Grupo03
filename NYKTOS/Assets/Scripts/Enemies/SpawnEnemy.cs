@@ -4,25 +4,16 @@ using TMPro.EditorUtilities;
 using UnityEngine;
 [System.Serializable]
 //  Codigo de Maria :p
-public class Wave {
-    public string waveName;
-    public int noOfEnemies;
-    public GameObject[] enemyPrefab; //lista de los enemigos
-    public float spawnInterval;
-}
-
 public class SpawnEnemy : MonoBehaviour {
-   
+
     #region parameters
-    [SerializeField] Wave[] waves; //las waves
-    [SerializeField] private Transform[] _spawnPoints; //transform de los distintos spawners
-    private Wave _currentWave; //la wave que estamos
+    [SerializeField] WaveManager[] waves; //las waves
+   private WaveManager _currentWave; //la wave que estamos
     private int _currentWaveNumber; //numero de la wave
     [SerializeField] private float spawnRate = 1f; //tiempo entre los spaw
     private bool _isGameActive = true; //para saber si el juego esta activo
     private bool _spawEnemyWave = true; //para empezar los spawns
-    
-    
+
     // guarrería de Marco para testing
     [SerializeField] private int spawnLimit = 1; //maximo de enemigos en el juego(comentarios de Maria)
     private int currentSpawned = 0; //cuantos enemigos en el momento(comentarios de Maria)
@@ -36,8 +27,8 @@ public class SpawnEnemy : MonoBehaviour {
         WaitForSeconds wait = new WaitForSeconds(spawnRate); //se espera el tiempo qe pongas en spawRate
         while (_isGameActive && _spawEnemyWave) {
             if (currentSpawned  < spawnLimit) { // si hay menos enemigos que el limite spawnea
-                GameObject enemyToSpawn = _currentWave.enemyPrefab[Random.Range(0, _currentWave.enemyPrefab.Length)];//entre los prebs de los enemigos elige uno y no spawnea
-                Transform spawnPos = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
+                GameObject enemyToSpawn = _currentWave.enemies[Random.Range(0, _currentWave.enemies.Length)].enemyPrefab;//entre los prebs de los enemigos elige uno y no spawnea
+                Transform spawnPos = _currentWave.spawnPoints[Random.Range(0, _currentWave.spawnPoints.Length)];
                 Instantiate(enemyToSpawn, spawnPos.position, Quaternion.identity); //cambiar el transform para que no sea un pto especifico.
 
                 currentSpawned++;
@@ -98,7 +89,6 @@ public class SpawnEnemy : MonoBehaviour {
         if (_currentWaveNumber >= 0 && _currentWaveNumber < waves.Length) {
             _currentWave = waves[_currentWaveNumber];
         }
-
         GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         currentSpawned = totalEnemies.Length;
         Debug.Log("Enemigos en pantalla: " + currentSpawned);
