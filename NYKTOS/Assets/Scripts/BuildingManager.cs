@@ -6,6 +6,7 @@ public class BuildingManager : MonoBehaviour
 {
 
     #region properties
+    [SerializeField]
     private GameObject _currentPlaceholder;
 
     public GameObject CurrentPlaceholder
@@ -14,7 +15,6 @@ public class BuildingManager : MonoBehaviour
         set { _currentPlaceholder = value; }
     }
 
-    [SerializeField]
     private GameObject _selectedDefense;
     public GameObject selectedDefense 
     { get { return _selectedDefense; } 
@@ -36,7 +36,7 @@ public class BuildingManager : MonoBehaviour
     #endregion
 
     #region methods
-    public void SetBuilding(GameObject building)
+    private void SetBuilding(GameObject building)
     {
         _selectedDefense = building;
     }
@@ -44,6 +44,26 @@ public class BuildingManager : MonoBehaviour
     private void BuildDefense()
     {
         Instantiate(_selectedDefense,_currentPlaceholder.transform.position,Quaternion.identity);
+        _currentPlaceholder.GetComponent<BuildingStateMachine>().SetState(BuildingStateMachine.BuildingState.Built);
+        _currentPlaceholder.GetComponent<PlaceholderComponent>().CloseMenu();
+    }
+
+    public void BuildTurret()
+    {
+        SetBuilding(_turret);
+        BuildDefense();
+    }    
+    
+    public void BuildBeacon()
+    {
+        SetBuilding(_beacon);
+        BuildDefense();
+    }    
+    
+    public void BuildWall()
+    {
+        SetBuilding(_wall);
+        BuildDefense();
     }
 
 

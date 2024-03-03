@@ -23,19 +23,17 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
         }
     }
 
-    public void CloseMenu(InputAction.CallbackContext context)
+    public void CloseMenu()
     {
         _defenseMenu.SetActive(false);
         _player.playerControls.UI.Disable();
         _player.playerControls.Player.Enable();
     }
-
-    public void TryBuildDefense(InputAction.CallbackContext context) 
-    {
-        Debug.Log("hola hola " + gameObject.name);    
     
+    public void CloseMenu(InputAction.CallbackContext context)
+    {
+        CloseMenu(context);
     }
-
 
     void Start()
     {
