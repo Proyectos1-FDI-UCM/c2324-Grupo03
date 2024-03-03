@@ -352,6 +352,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "CloseMenu",
+                    "type": "Button",
+                    "id": "5b40348e-b4b6-409d-aa92-e94143246a55",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Submit",
                     "type": "Button",
                     "id": "ed993669-a0d4-4ba3-9d8e-d4e4cb55a940",
@@ -701,10 +710,21 @@
                 {
                     "name": "",
                     "id": "635e945d-0a95-44b9-8a31-515a53318c7d",
-                    "path": "*/{Submit}",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Keyboard",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "58913a41-f2cf-4fdd-a8ee-fcf575c72191",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -849,6 +869,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d761aa97-51c2-49ff-9813-aa5162777e21",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "CloseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43484ff6-3396-4cc7-b82b-23b176deb19b",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CloseMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

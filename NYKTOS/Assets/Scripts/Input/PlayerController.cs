@@ -9,6 +9,12 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region references
     // Referencia a la clase creada a partir del ActionMap
     private PlayerControls _playerControls;
+
+    public PlayerControls playerControls { 
+        get { return _playerControls; } 
+        set { _playerControls = value; }
+    }
+
     private Transform _myTransform;
     private BlinkComponent _blinkComponent;
     private RBMovement _playerMovement;
