@@ -21,7 +21,9 @@
 ### Texto
 
 - [(Libro) Patrones de Programación de Videojuegos](http://gameprogrammingpatterns.com/contents.html)
+- [Patrones de programación aplicados a Unity](https://unity.com/es/resources/level-up-your-code-with-game-programming-patterns)
 - [Principios SOLID de la programación orientada a objetos](https://es.wikipedia.org/wiki/SOLID)
+
 
 ---
 

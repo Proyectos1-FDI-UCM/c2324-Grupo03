@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 // Codigo de Iker :D
@@ -6,22 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Renderer))]
 public class CambioMaterial : MonoBehaviour
 {
-    /*
-        Mierdas que voy haciendo: (~ Marco)
 
-        - Cambiados nombres varios
-
-        - Puesto defaultMaterial en privado y serializado
-
-        - Eliminado timer
-
-        - Eliminado update entero
-        
-        - Añadido metodo change material
-
-        - Suscrito changeMaterial a un evento de InversionManager
-
-        */
+    [SerializeField] 
+    InversionEffect inversionEffect;
 
     [SerializeField]
     private Material defaultMaterial;
@@ -35,12 +21,12 @@ public class CambioMaterial : MonoBehaviour
         currentRenderer = GetComponent<Renderer>();
         currentRenderer.material = defaultMaterial;
 
-        InversionManager.Instance.swapEvent += ChangeMaterial;
+        inversionEffect.InversionEvent.AddListener(ChangeMaterial);
     }
 
-    private void ChangeMaterial()
+    private void ChangeMaterial(bool swapCondition)
     {
-        if (InversionManager.Instance.getSwap) 
+        if (swapCondition) 
         {
             currentRenderer.material = swapMaterial;
         }
