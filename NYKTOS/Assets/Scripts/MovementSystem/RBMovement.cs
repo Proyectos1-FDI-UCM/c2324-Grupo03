@@ -44,13 +44,20 @@ public class RBMovement : MonoBehaviour
     [SerializeField] private float _knockBackTime = 0.5f;
     #endregion
 
-    public void xAxisMovement(float num) //Ajustar el movimiento en xAxis (-1,0,1)
+    /// <summary>
+    ///Ajustar el movimiento en xAxis (-1,0,1)
+    /// </summary>
+    /// <param name="num"></param>
+    public void xAxisMovement(float num) 
     {
         xAxis = num;
         Move();
     }
-
-    public void yAxisMovement(float num) //Ajustar el movimiento en yAxis (-1,0,1)
+    /// <summary>
+    ///Ajustar el movimiento en yAxis (-1,0,1)
+    /// </summary>
+    /// <param name="num"></param>
+    public void yAxisMovement(float num)
     {
         yAxis = num;
         Move();
