@@ -1,18 +1,24 @@
 using UnityEngine;
 
-// Codigo de Iker :D
-//Este codigo es para aplicar a un objeto por separado que tenga un renderer, aplicarle el material Inversion
+/// <summary>
+/// Cambia su material en base a un evento de una instancia 
+/// del scriptable object InversionEffect
+/// 
+/// </summary>
 [RequireComponent(typeof(Renderer))]
-public class CambioMaterial : MonoBehaviour
+public class InversionPerformer : MonoBehaviour
 {
 
+    /// <summary>
+    /// Instancia de scriptable object que lanza el evento
+    /// </summary>
     [SerializeField] 
     InversionEffect inversionEffect;
 
     [SerializeField]
     private Material defaultMaterial;
     [SerializeField]
-    private Material swapMaterial;
+    private Material inversionMaterial;
 
     Renderer currentRenderer;
 
@@ -21,6 +27,7 @@ public class CambioMaterial : MonoBehaviour
         currentRenderer = GetComponent<Renderer>();
         currentRenderer.material = defaultMaterial;
 
+        // Suscribe el método ChangeMaterial al evento del scriptable object en inversionEffect
         inversionEffect.InversionEvent.AddListener(ChangeMaterial);
     }
 
@@ -28,7 +35,7 @@ public class CambioMaterial : MonoBehaviour
     {
         if (swapCondition) 
         {
-            currentRenderer.material = swapMaterial;
+            currentRenderer.material = inversionMaterial;
         }
         else
         {
