@@ -20,6 +20,7 @@ public class BuildingManager : MonoBehaviour
         set { _currentPlaceholder = value; }
     }
 
+    [SerializeField]
     private Buildings _selectedBuilding;
 
     #endregion
