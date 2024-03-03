@@ -8,12 +8,12 @@ public class SpawnEnemy : MonoBehaviour {
 
     #region parameters
     [SerializeField] WaveInfo[] waves; //las waves
-   private WaveInfo _currentWave; //la wave que estamos
+    private WaveInfo _currentWave; //la wave que estamos
     private int _currentWaveNumber; //numero de la wave
     [SerializeField] private float spawnRate = 1f; //tiempo entre los spaw
     private bool _isGameActive = true; //para saber si el juego esta activo
     private bool _spawEnemyWave = true; //para empezar los spawns
-
+    private int _totalEnemies;
     // guarrería de Marco para testing
     [SerializeField] private int spawnLimit = 1; //maximo de enemigos en el juego(comentarios de Maria)
     private int currentSpawned = 0; //cuantos enemigos en el momento(comentarios de Maria)
@@ -32,11 +32,11 @@ public class SpawnEnemy : MonoBehaviour {
                 Instantiate(enemyToSpawn, spawnPos.position, Quaternion.identity); //cambiar el transform para que no sea un pto especifico.
 
                 currentSpawned++;
-                _currentWave.noOfEnemies--; //disminuye la cantidad de enemigos que tienen que spawnear
+                _totalEnemies--; //disminuye la cantidad de enemigos que tienen que spawnear
             }
            
             yield return wait;
-            if (_currentWave.noOfEnemies <= 0) { //si no queda enemigos acaba
+            if (_totalEnemies <= 0) { //si no queda enemigos acaba
                 _spawEnemyWave = false;
             }
 
@@ -84,6 +84,8 @@ public class SpawnEnemy : MonoBehaviour {
         _currentWaveNumber = 0; 
         _currentWave = waves[_currentWaveNumber]; // Inicializa _currentWave
         StartGameSpawning();
+        _totalEnemies = _currentWave.noOfEnemies;
+        Debug.Log("1: " + waves[0].noOfEnemies + " 2: " + waves[1].noOfEnemies + " 3: "+ waves[2].noOfEnemies);
     }
     void Update() {
         if (_currentWaveNumber >= 0 && _currentWaveNumber < waves.Length) {
@@ -94,6 +96,7 @@ public class SpawnEnemy : MonoBehaviour {
         Debug.Log("Enemigos en pantalla: " + currentSpawned);
         if (totalEnemies.Length <= 0 && !_spawEnemyWave) { //si no es la primera wave y quedan enemigos por seren spawneadoss
             if (_currentWaveNumber + 1 <= waves.Length) { // si aun no se acabo las waves
+                _totalEnemies = _currentWave.noOfEnemies;
                 EnableNextWaveSpawning();
                 StartEnemySpawning(); //para que empiece
             } else {
@@ -104,7 +107,7 @@ public class SpawnEnemy : MonoBehaviour {
             StopCoroutine(SpawnEnemyRoutine());
         }
 
-        //Debug.Log(_currentWaveNumber);
+        Debug.Log("wave: " + _currentWaveNumber + " tamaño del array de waves: " + waves.Length);
     }
     //  fin codigo de Maria :)
 }

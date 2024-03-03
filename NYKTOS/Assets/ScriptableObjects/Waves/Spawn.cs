@@ -6,7 +6,6 @@ using UnityEngine;
 public class WaveInfo : ScriptableObject {
     public string waveName;
     public int noOfEnemies;
-    public int totalEnemies { get { return noOfEnemies; } }
     public Enemy[] enemies; // Array of enemies for this wave
     public Transform[] spawnPoints; // Array of spawn points for this wave
     public float spawnInterval = 1f; // Interval between spawns
