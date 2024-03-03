@@ -1,36 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class PlaceholderComponent : MonoBehaviour, IInteractable
+public class PlaceholderComponent : MonoBehaviour, IBuilding
 {
     #region references
     [SerializeField]
-    private Canvas _defenseMenu;
+    private GameObject _defenseMenu;
 
-    private PlayerControls _playerControls;
+    [SerializeField]
+    private PlayerInput _playerInput;
     private BuildingStateMachine _state;
     #endregion
-
-    public void Interact()
+    public void OpenMenu()
     {
-        Debug.Log("hola soy un placeholder");
         if(_state.buildingState == BuildingStateMachine.BuildingState.NotBuilt)
         {
-            Debug.Log("Estoy destruido");
-            _playerControls.Player.Disable();
-            _playerControls.UI.Enable();
-            _defenseMenu.enabled = true;
+            //_playerControls.Player.Disable();
+            //_playerControls.UI.Enable();
+            _playerInput.SwitchCurrentActionMap("UI");
+            _defenseMenu.SetActive(true);
         }
     }
 
-    // Start is called before the first frame update
-    void Awake()
+    public void CloseMenu()
     {
-        _playerControls = new PlayerControls();
+        _defenseMenu.SetActive(false);
+        _playerInput.SwitchCurrentActionMap("Player");
     }
 
-    // Update is called once per frame
     void Start()
     {
         _state = GetComponent<BuildingStateMachine>();
