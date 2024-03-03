@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class BuildingManager : MonoBehaviour
 {
-    public enum Buildings
-    {
-        Beacon,
-        Wall,
-        Turret
-    }
 
     #region properties
     private GameObject _currentPlaceholder;
@@ -21,7 +15,11 @@ public class BuildingManager : MonoBehaviour
     }
 
     [SerializeField]
-    private Buildings _selectedBuilding;
+    private GameObject _selectedDefense;
+    public GameObject selectedDefense 
+    { get { return _selectedDefense; } 
+      set { _selectedDefense = value; } 
+    }
 
     #endregion
 
@@ -38,11 +36,15 @@ public class BuildingManager : MonoBehaviour
     #endregion
 
     #region methods
-    public void SetBuilding(Buildings building)
+    public void SetBuilding(GameObject building)
     {
-        _selectedBuilding = building;
+        _selectedDefense = building;
     }
 
+    private void BuildDefense()
+    {
+        Instantiate(_selectedDefense,_currentPlaceholder.transform.position,Quaternion.identity);
+    }
 
 
     #endregion

@@ -42,6 +42,5 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
         _state = GetComponent<BuildingStateMachine>();
 
         _player.playerControls.UI.CloseMenu.performed += CloseMenu;
-        _player.playerControls.UI.Submit.started += TryBuildDefense;
     }
 }
