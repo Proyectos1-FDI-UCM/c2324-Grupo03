@@ -7,8 +7,8 @@ using UnityEngine;
 public class SpawnEnemy : MonoBehaviour {
 
     #region parameters
-    [SerializeField] WaveManager[] waves; //las waves
-   private WaveManager _currentWave; //la wave que estamos
+    [SerializeField] WaveInfo[] waves; //las waves
+   private WaveInfo _currentWave; //la wave que estamos
     private int _currentWaveNumber; //numero de la wave
     [SerializeField] private float spawnRate = 1f; //tiempo entre los spaw
     private bool _isGameActive = true; //para saber si el juego esta activo
