@@ -62,6 +62,44 @@ public class RBMovement : MonoBehaviour
         yAxis = num;
         Move();
     }
+    public void OrthogonalMovement(Vector2 vector)
+    {
+        vector = vector.normalized;
+
+        
+        
+        int x;
+        int y;
+
+        
+        if (vector.x >-0.50f && vector.x < 0.50f)
+        {
+            x = 0;
+        }
+        else if (vector.x > 0)
+        {
+            x = 1;
+        }
+        else x = -1;
+
+        if (vector.y > -0.50f && vector.y < 0.50f)
+        {
+            y = 0;
+        }
+        else if (vector.y > 0)
+        {
+            y = 1;
+        }
+        else y = -1;
+
+        
+
+        Debug.DrawRay(_myTransform.position, new Vector2 (x,y).normalized, Color.green);
+
+        xAxisMovement(x);
+        yAxisMovement(y);
+
+    }
 
     public void Move() 
     {

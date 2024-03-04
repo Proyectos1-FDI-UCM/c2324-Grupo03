@@ -14,6 +14,10 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
     private RBMovement _rbMovement;
     #endregion
 
+    #region parameters
+    [SerializeField] float _entityReactionTime = 0.4f;
+    #endregion
+
     #region properties
     private Vector2 direction = Vector2.zero;
     #endregion
@@ -24,9 +28,9 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
         NavMesh.CalculatePath(transform.position, _targetTransform.position, NavMesh.AllAreas,_path); //calculo de camino a tomar
 
         direction = (_path.corners[1] - _myTransform.position).normalized;
-        
-        _rbMovement.xAxisMovement(direction.x);
-        _rbMovement.yAxisMovement(direction.y);
+
+        if(!IsInvoking(nameof(Move)))
+        Invoke(nameof(Move), _entityReactionTime);
 
         //debug
         for (int i =0; i<_path.corners.Length - 1; i++)
@@ -35,6 +39,11 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
             
         }
         
+    }
+
+    private void Move()
+    {
+        _rbMovement.OrthogonalMovement(direction);
     }
 
     private void Start()
