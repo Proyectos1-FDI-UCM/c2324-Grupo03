@@ -9,10 +9,11 @@ public class HealthComponent : MonoBehaviour
 
     [SerializeField]
     private UIManager _UIManager;
-    private EnemyDeath _enemyDeath;
-    private PlayerDeath _playerDeath;
+    [SerializeField]
+    private IDeath _deathComponent;
     
     #endregion
+
     #region parameters
     [SerializeField]
     private int _maxHealth = 6;
@@ -24,7 +25,6 @@ public class HealthComponent : MonoBehaviour
     #endregion
 
     #region events
-    
 
     #endregion
 
@@ -33,14 +33,8 @@ public class HealthComponent : MonoBehaviour
     {
         _currentHealth = _maxHealth;
         //MAria
-        _enemyDeath = GetComponent<EnemyDeath>();
-        _playerDeath = GetComponent<PlayerDeath>();
-        
-    }
-
-    private void Update()
-    {
-
+        _deathComponent = GetComponent<IDeath>();
+        _deathComponent.Talk();
     }
 
     public void Damage(int damage)
@@ -53,7 +47,9 @@ public class HealthComponent : MonoBehaviour
             if (_currentHealth <= 0)
             {
                 _currentHealth = 0;
-                Muerte();
+
+                // Cosa marco, me he cargado el metodo morir
+                _deathComponent.Death();
             }
             
             Invoke(nameof(DisableInm), _inmTime);
@@ -74,24 +70,8 @@ public class HealthComponent : MonoBehaviour
         _UIManager.Hearts(_currentHealth);
     }
 
-    void Muerte()
-    {
-        if (GetComponent<EnemyDeath>() != null)
-        {
-            _enemyDeath.Die();
-        }
-        else if (GetComponent<PlayerDeath>() != null)
-        {
-            _playerDeath.Death();
-        }
-    }
-
     void DisableInm()
     {
         _inmune = false;
     }
 }
-
-
-   
-   

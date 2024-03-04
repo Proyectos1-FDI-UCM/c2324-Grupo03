@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDeath : MonoBehaviour
+public class PlayerDeath : MonoBehaviour, IDeath
 {
     #region references
     private PlayerStateMachine _playerState;
@@ -17,8 +17,6 @@ public class PlayerDeath : MonoBehaviour
 
     public bool alive = true;
 
-
-
     public void Death()
     {
        _aliveskin.enabled = false;
@@ -26,8 +24,8 @@ public class PlayerDeath : MonoBehaviour
        alive = false;
     }
 
-    private void Start()
+    public void Talk()
     {
-        
+        Debug.Log("Me ejecuto, me muero en efecto!");
     }
 }
