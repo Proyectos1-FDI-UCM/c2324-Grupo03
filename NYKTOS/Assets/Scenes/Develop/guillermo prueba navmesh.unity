@@ -381,8 +381,12 @@ MonoBehaviour:
   enterBehaviours: []
   updateBehaviours:
   - _behaviour: {fileID: 1092209355}
-  exitBehaviours: []
-  possibleStates: []
+  exitBehaviours:
+  - _behaviour: {fileID: 1800384176}
+  possibleStates:
+  - state: {fileID: 742815469}
+    enterConditions:
+    - _condition: {fileID: 747175262}
 --- !u!4 &441638260
 Transform:
   m_ObjectHideFlags: 0
@@ -594,13 +598,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd925eae5ad73243a17684a41483d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enterBehaviours:
-  - _behaviour: {fileID: 4639882}
+  enterBehaviours: []
   updateBehaviours: []
-  exitBehaviours:
-  - _behaviour: {fileID: 1800384176}
+  exitBehaviours: []
   possibleStates:
-  - state: {fileID: 980055361}
+  - state: {fileID: 441638259}
     enterConditions:
     - _condition: {fileID: 747175262}
 --- !u!4 &742815470
@@ -721,7 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e7a382721ad3144854f9f5a12b1088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 5
+  _movementSpeed: 3
   _knockBackSpeed: 10
   _knockBackTime: 0.5
 --- !u!212 &748149197
@@ -834,7 +836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7334615348419602419, guid: d042e5632ae2ff440997bd7b50085dfa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.69062185
+      value: -0.56
       objectReference: {fileID: 0}
     - target: {fileID: 7334615348419602419, guid: d042e5632ae2ff440997bd7b50085dfa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1163,6 +1165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a3025c62d53bbb428191717d6397a11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _targetTransform: {fileID: 645015017}
 --- !u!1 &1198654149
 GameObject:
   m_ObjectHideFlags: 0
