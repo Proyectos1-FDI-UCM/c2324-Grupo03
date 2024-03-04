@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4004844034647497879}
   - component: {fileID: 6390619183078054513}
   - component: {fileID: 3002347042876014140}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Altar light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 4231714337945789496}
   - component: {fileID: -1877561005422046040}
   - component: {fileID: 2673179871819196354}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Beacon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
