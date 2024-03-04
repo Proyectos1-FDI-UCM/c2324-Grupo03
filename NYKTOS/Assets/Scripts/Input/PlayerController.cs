@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region movement
     public void Blink(InputAction.CallbackContext context)
     {
-        if (_playerState.playerState == PlayerState.Idle && !_BlinkCooldown.IsCooling())
+        if (_playerState.playerState == PlayerState.Idle && !_BlinkCooldown.IsCooling()&& _playerDeath.alive)
         {
             _blinkComponent.Blink();
             _BlinkCooldown.StartCooldown();
@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region combat
     public void PrimaryAttack(InputAction.CallbackContext context)
     {
-        if(_playerState.playerState == PlayerState.Idle && !_PrimaryAttackCooldown.IsCooling())
+        if(_playerState.playerState == PlayerState.Idle && !_PrimaryAttackCooldown.IsCooling()&& _playerDeath.alive)
         {
             _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
             _PrimaryAttackCooldown.StartCooldown();
