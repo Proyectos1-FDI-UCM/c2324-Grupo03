@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour {
     #region parameters
     private float nextActionTime = 0.0f;
     private float period = 2f;
+    private Vector2 lastMoveDirection;
 
     //Codigo de Iker
     //Distancia minima para que no atraviese al jugador y prepare el ataque
@@ -40,7 +41,7 @@ public class EnemyController : MonoBehaviour {
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         nextAction = Time.time + periodo;
-
+        lastMoveDirection = Vector2.zero;
         // Codigo de Iker
         _altarTutorial = IAManager.Instance.altartutorial;
         // Fin Codigo de Iker
@@ -106,18 +107,20 @@ public class EnemyController : MonoBehaviour {
         if (!LejosAltar) agent.SetDestination(_myTransform.position);
         //Fin Codigo de Iker
 
-        Vector3 movementDirection = agent.velocity.normalized; //direccion de dnd va
-
-        if (Time.time > nextAction) //en realidad cuando vea a Link
+        Vector2 movementDirection = agent.velocity.normalized; //direccion de dnd va
+        if (movementDirection.magnitude > 0) // Si se esta moviendo
         {
-            _animator.SetFloat("xAxis", movementDirection.x);
-            _animator.SetFloat("yAxis", movementDirection.y);
+            lastMoveDirection = movementDirection; 
+        }
+        if (Time.time > nextAction) 
+        {
+            _animator.SetFloat("xAxis", lastMoveDirection.x);
+            _animator.SetFloat("yAxis", lastMoveDirection.y);
 
             nextAction = Time.time + periodo;
         }
-        
 
-       
+
     }
 }
 
