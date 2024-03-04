@@ -17,7 +17,7 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
 
         for (int i =0; i<_path.corners.Length - 1; i++)
         {
-            Debug.DrawLine(_path.corners[i], _path.corners[i+1]);
+            Debug.DrawLine(_path.corners[i], _path.corners[i+1], Color.red);
         }
         
     }
