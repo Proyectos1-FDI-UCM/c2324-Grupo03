@@ -187,8 +187,8 @@ public class FovController : MonoBehaviour
         minLightRadius = Mathf.Max(0f, minLightRadius);
         maxLightRadius = Mathf.Max(minLightRadius, maxLightRadius);
 
-        //GetComponent<Light2D>().pointLightOuterRadius = maxLightRadius;
-        //GetComponent<Light2D>().pointLightInnerRadius = maxLightRadius * internalLightProportion;
+        GetComponent<Light2D>().pointLightOuterRadius = maxLightRadius;
+        GetComponent<Light2D>().pointLightInnerRadius = maxLightRadius * internalLightProportion;
 
         provokedFearMax = Mathf.Clamp(provokedFearMax, 0f, maxLightRadius - minLightRadius);
         provokedMultiplier = Mathf.Max(1.0f, provokedMultiplier);
