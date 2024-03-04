@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6ebbff7f258b742ab2eefcc5eecda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  internalLightProportion: 0.76
+  internalLightProportion: 0.9
   maxLightRadius: 4
   minLightRadius: 1.5
   increaseMultiplier: 8
@@ -771,7 +771,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deathskin: {fileID: 6758919315837710540}
   _aliveskin: {fileID: 6222676936956634352}
-  alive: 1
 --- !u!1 &6714065208488291323
 GameObject:
   m_ObjectHideFlags: 0
