@@ -1172,6 +1172,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7175719141236239338, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: m_Name
+      value: Placeholders
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175719141236239338, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
