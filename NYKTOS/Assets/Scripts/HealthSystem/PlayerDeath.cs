@@ -23,9 +23,4 @@ public class PlayerDeath : MonoBehaviour, IDeath
        _deathskin.enabled = true;
        alive = false;
     }
-
-    public void Talk()
-    {
-        Debug.Log("Me ejecuto, me muero en efecto!");
-    }
 }
