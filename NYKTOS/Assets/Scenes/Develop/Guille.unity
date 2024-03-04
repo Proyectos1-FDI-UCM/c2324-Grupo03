@@ -973,6 +973,9 @@ MonoBehaviour:
   - state: {fileID: 1532365810}
     enterConditions:
     - _condition: {fileID: 1798068043}
+  - state: {fileID: 1532365810}
+    enterConditions:
+    - _condition: {fileID: 1798068043}
 --- !u!1 &2146547702
 GameObject:
   m_ObjectHideFlags: 0
