@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingDeath : MonoBehaviour
+public class BuildingDeath : MonoBehaviour, IDeath
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,10 @@ public class BuildingDeath : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Death()
+    {
+        Destroy(gameObject);
     }
 }

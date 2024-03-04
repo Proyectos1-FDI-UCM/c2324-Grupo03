@@ -1,13 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class EnemyDeath : MonoBehaviour
+public class EnemyDeath : MonoBehaviour, IDeath
 {
-    
-    public void Die()
+    public void Death()
     {
-        Destroy(this.gameObject);
         
+        Destroy(gameObject);
+
+    }
+
+    public void Talk()
+    {
+        Debug.Log("Soy un enemigo!!");
     }
 }

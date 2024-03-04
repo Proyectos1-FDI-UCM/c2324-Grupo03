@@ -9,9 +9,11 @@ public class DefenseComponent : MonoBehaviour
     //CONSTRUCCION AUTOMATICA CON UN BOOLEANO
     //SI ESTA CONSTRUIDO, ATRAE ENEMIGOS, ACTIVA VIDA Y NO SE PUEDE INTERACTUAR CON EL HASTA QUE SEA DESTRUIDO (ALTARHEALTHCOMPONENT)
     //SI ESTA DESTRUIDO, YA NO ATRAE ENEMIGOS, DESACTIVA EL FACTOR VIDA SE PUEDE INTERACTUAR CON EL (EN ESTE COMPONENTE)
-    
+
     [SerializeField]
     private Defense Defense;
+    private HealthComponent _healthComponent;
+    private BuildingManager _buildingManager;
 
     private GameObject _placeholder;
 
@@ -34,6 +36,6 @@ public class DefenseComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
