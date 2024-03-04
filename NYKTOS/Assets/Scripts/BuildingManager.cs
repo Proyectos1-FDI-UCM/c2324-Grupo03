@@ -64,7 +64,7 @@ public class BuildingManager : MonoBehaviour
         defense.GetComponent<DefenseComponent>().placeholder = _currentPlaceholder;
 
         _currentPlaceholder.GetComponent<BuildingStateMachine>().SetState(BuildingStateMachine.BuildingState.Built);
-        _healthComponent = _selectedDefense.GetComponent<HealthComponent>();
+        //_healthComponent = _selectedDefense.GetComponent<HealthComponent>();
         _currentPlaceholder.GetComponent<PlaceholderComponent>().CloseMenu();
     }
 
@@ -103,6 +103,7 @@ public class BuildingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         crono -= Time.deltaTime;
         if ( crono <= 0 && UnaVez)
         {
@@ -110,5 +111,6 @@ public class BuildingManager : MonoBehaviour
             Debug.Log("Destrusion");
             UnaVez = false;
         }
+        */
     }
 }

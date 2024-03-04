@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 643342028368166306}
   - component: {fileID: -1376661180403403818}
   - component: {fileID: 5907301624563599305}
+  - component: {fileID: 5704790404100528850}
   m_Layer: 7
   m_Name: PlaceHolder
   m_TagString: Untagged
@@ -160,5 +161,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ae50ca5648bb245a303efe75533a1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inversionEffect: {fileID: 0}
   defaultMaterial: {fileID: 2100000, guid: 62000017cbdf07944a1d5c37af893e15, type: 2}
-  swapMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+  inversionMaterial: {fileID: 0}
+--- !u!114 &5704790404100528850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705684140096474648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c0abb319d0d2b478714b5f15e4a7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defenseMenu: {fileID: 0}
+  _player: {fileID: 0}
+  _buildingManager: {fileID: 0}
