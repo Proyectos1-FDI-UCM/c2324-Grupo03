@@ -12,8 +12,6 @@ public class DefenseComponent : MonoBehaviour
 
     [SerializeField]
     private Defense Defense;
-    private HealthComponent _healthComponent;
-    private BuildingManager _buildingManager;
 
     private GameObject _placeholder;
 
@@ -31,6 +29,7 @@ public class DefenseComponent : MonoBehaviour
     {
         MaxHealth = Defense.health;
         Health = Defense.health;
+        
     }
 
     // Update is called once per frame
