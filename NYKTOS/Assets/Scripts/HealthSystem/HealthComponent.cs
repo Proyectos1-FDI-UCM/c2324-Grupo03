@@ -11,6 +11,7 @@ public class HealthComponent : MonoBehaviour
     private UIManager _UIManager;
     private EnemyDeath _enemyDeath;
     private PlayerDeath _playerDeath;
+    private BuildingDeath _buildingDeath;
     
     #endregion
     #region parameters
@@ -35,12 +36,19 @@ public class HealthComponent : MonoBehaviour
         //MAria
         _enemyDeath = GetComponent<EnemyDeath>();
         _playerDeath = GetComponent<PlayerDeath>();
+        //Iker
+        _buildingDeath = GetComponent<BuildingDeath>();
         
     }
 
     private void Update()
     {
 
+    }
+
+    public int GetHealth()
+    {
+        return _maxHealth;
     }
 
     public void Damage(int damage)
@@ -83,6 +91,10 @@ public class HealthComponent : MonoBehaviour
         else if (GetComponent<PlayerDeath>() != null)
         {
             _playerDeath.Death();
+        }
+        else if (GetComponent<BuildingDeath>() != null)
+        {
+            _buildingDeath.DestroyBuilding();
         }
     }
 

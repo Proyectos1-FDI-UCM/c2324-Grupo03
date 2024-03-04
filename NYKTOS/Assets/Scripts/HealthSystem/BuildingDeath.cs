@@ -15,4 +15,9 @@ public class BuildingDeath : MonoBehaviour
     {
         
     }
+
+    public void DestroyBuilding()
+    {
+        Destroy(this.gameObject);
+    }
 }
