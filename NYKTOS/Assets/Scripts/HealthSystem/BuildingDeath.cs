@@ -18,11 +18,6 @@ public class BuildingDeath : MonoBehaviour, IDeath
 
     public void Death()
     {
-
-    }
-    
-    public void Talk()
-    {
-        Debug.Log("Soy un edificio de 70 toneladas!!");
+        Destroy(gameObject);
     }
 }

@@ -34,7 +34,6 @@ public class HealthComponent : MonoBehaviour
         _currentHealth = _maxHealth;
         //MAria
         _deathComponent = GetComponent<IDeath>();
-        _deathComponent.Talk();
     }
 
     public void Damage(int damage)
