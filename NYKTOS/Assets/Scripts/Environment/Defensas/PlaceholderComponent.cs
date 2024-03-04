@@ -13,7 +13,7 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     private PlayerController _player;
     private BuildingStateMachine _state;
     [SerializeField]
-    private BuildingManager _manager;
+    private BuildingManager _buildingManager;
     #endregion
 
     public void OpenMenu()
@@ -39,9 +39,9 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
         CloseMenu(context);
     }
 
-    public void UpdateCurrentPlaceHolder()
+    private void UpdateCurrentPlaceHolder()
     {
-        _manager.CurrentPlaceholder = gameObject;
+        _buildingManager.CurrentPlaceholder = gameObject;
     }
 
     void Start()

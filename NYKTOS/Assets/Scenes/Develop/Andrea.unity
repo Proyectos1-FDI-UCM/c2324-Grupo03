@@ -274,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 1168038072}
     - target: {fileID: 5847144808090115009, guid: 2a0fede60110d6c418162d6a4a113208, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.38561592
+      value: 0.38561586
       objectReference: {fileID: 0}
     - target: {fileID: 5847144808090115009, guid: 2a0fede60110d6c418162d6a4a113208, type: 3}
       propertyPath: m_LocalPosition.y
@@ -337,7 +337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &254104225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -865,7 +865,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.38561592
+      value: 0.38561586
       objectReference: {fileID: 0}
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.y
@@ -921,7 +921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9989418
+      value: 0.9996779
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
@@ -951,7 +951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _defenseMenu: {fileID: 1478461365}
   _player: {fileID: 1168038086}
-  _manager: {fileID: 488698919}
+  _buildingManager: {fileID: 488698919}
 --- !u!114 &1393173070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -988,7 +988,6 @@ GameObject:
   - component: {fileID: 1478461368}
   - component: {fileID: 1478461367}
   - component: {fileID: 1478461366}
-  - component: {fileID: 1478461370}
   m_Layer: 5
   m_Name: Defense Menu
   m_TagString: Untagged
@@ -1081,18 +1080,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1478461370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1478461365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44ef6a6a5055d9a4cb7e4c205a794224, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1656030346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,6 +1172,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7175719141236239338, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: m_Name
+      value: Placeholders
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175719141236239338, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
@@ -1204,6 +1195,10 @@ PrefabInstance:
       propertyPath: _playerInput
       value: 
       objectReference: {fileID: 1168038085}
+    - target: {fileID: 7364682486584842659, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: _buildingManager
+      value: 
+      objectReference: {fileID: 488698919}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
