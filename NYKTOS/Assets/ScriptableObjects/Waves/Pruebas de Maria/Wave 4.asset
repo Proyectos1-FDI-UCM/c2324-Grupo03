@@ -18,7 +18,7 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 2995607884255851843, guid: ebeff8dda23b3ea42a069c5ffcdf7315, type: 3}
     enemyCost: 1
   spawnPoints:
-  - {fileID: 4557447369605956969, guid: e8187ea0a6fb5054f9ad589cc2adb79f, type: 3}
+  - {fileID: 7636367360641643750, guid: 9cbbc8df0a7cec840b71c6164355de6d, type: 3}
+  - {fileID: 6435064924502702993, guid: d873e5ff5a93d574ca806f9e089cdd18, type: 3}
   - {fileID: 4194124685820595815, guid: 72d3e98cde226ba4f9869820872f3b09, type: 3}
-  - {fileID: 117437832724053775, guid: 8e17a7a74be14504da1e2227e8e74e23, type: 3}
   spawnInterval: 1
