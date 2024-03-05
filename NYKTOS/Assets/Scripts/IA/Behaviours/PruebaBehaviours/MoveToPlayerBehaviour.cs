@@ -25,20 +25,23 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
     public void PerformBehaviour()
     {
         
-        NavMesh.CalculatePath(transform.position, _targetTransform.position, NavMesh.AllAreas,_path); //calculo de camino a tomar
-
-        direction = (_path.corners[1] - _myTransform.position).normalized;
-
-        if(!IsInvoking(nameof(Move)))
-        Invoke(nameof(Move), _entityReactionTime);
-
-        //debug
-        for (int i =0; i<_path.corners.Length - 1; i++)
+        if (NavMesh.CalculatePath(transform.position, _targetTransform.position, NavMesh.AllAreas, _path)) //calculo de camino a tomar
         {
-            Debug.DrawLine(_path.corners[i], _path.corners[i+1], Color.red);
-            
-        }
-        
+            direction = (_path.corners[1] - _myTransform.position).normalized;
+
+            if (!IsInvoking(nameof(Move)))
+                Invoke(nameof(Move), _entityReactionTime);
+
+            //debug
+            for (int i = 0; i < _path.corners.Length - 1; i++)
+            {
+                Debug.DrawLine(_path.corners[i], _path.corners[i + 1], Color.red);
+
+            }
+
+        } 
+
+
     }
 
     private void Move()

@@ -45,9 +45,16 @@ public class ClubHitboxBehaviour : MonoBehaviour
             //Javi ha hecho una corrección a este código para que sea más limpio. Dejo este de ejemplo :)
         }
 
-        if (collision.gameObject.TryGetComponent(out IKnockback iKnockback)) //KNOCKBACK
+        if (collision.gameObject.transform.parent.GetComponentsInChildren<IKnockback>()!= null)
         {
-            iKnockback.CallKnockback(_myTransform.position);
+            
+            IKnockback[] iknockbackChildren = collision.gameObject.transform.parent.GetComponentsInChildren<IKnockback>();
+
+            for (int i = 0; i< iknockbackChildren.Length; i++)
+            {
+                iknockbackChildren[i].CallKnockback(_myTransform.position);
+            }
+            
         }
 
         if (attackType == AttackType.Fire && collision.gameObject.TryGetComponent( out SetOnFireDebuff setOnFire)) //DAÑO DE FUEGO
