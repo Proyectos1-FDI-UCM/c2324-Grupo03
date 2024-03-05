@@ -29,9 +29,9 @@ public class InversionEffect : ScriptableObject
     /// Lanza el evento inversionEvent
     /// </summary>
     /// <param name="inversionStatus"></param>
-    private void Invert(bool inversionStatus) => inversionEvent.Invoke(inversionStatus);
+    public void Invert(bool inversionStatus) => inversionEvent.Invoke(inversionStatus);
 
-    void OnValidate()
+    public void OnValidate()
     {
         Invert(_inversionStatus);
     }
