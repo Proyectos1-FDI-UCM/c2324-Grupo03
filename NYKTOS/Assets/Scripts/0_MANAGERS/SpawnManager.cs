@@ -23,11 +23,12 @@ public class SpawnManager : MonoBehaviour
         return _isNight;
     }
 
-    public bool SpawnEnemies() { 
-        return _spawnEnemyWave;
+    public void SpawnEnemies() { 
+        _spawnEnemyWave = true;
     }
     public int GetWaveNumber(int sum) {  //nos da el numero de la wave si la queremos en la ui
         return _currentWaveNumber += sum;
+        Debug.Log(_currentWaveNumber);
     }
 
    
@@ -39,7 +40,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         _spawnEnemy.WaveSet();
-        _isNight = false;
+        //_isNight = false;
         _currentWaveNumber =0;
     }
 
@@ -49,7 +50,7 @@ public class SpawnManager : MonoBehaviour
         if (_spawnEnemy != null && _isNight && _spawnEnemyWave) {
             _spawnEnemy.StartEnemySpawning();
             _spawnEnemyWave = false;
-            Debug.Log("aa");
+            //Debug.Log("aa");
         }
         
 
