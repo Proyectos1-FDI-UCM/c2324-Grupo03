@@ -68,11 +68,6 @@ public class BuildingManager : MonoBehaviour
         _currentPlaceholder.GetComponent<PlaceholderComponent>().CloseMenu();
     }
 
-    private void DestroyDefense()
-    {
-        _currentPlaceholder.GetComponent<BuildingStateMachine>().SetState(BuildingStateMachine.BuildingState.NotBuilt);
-        //_healthComponent.Damage(_healthimposter);
-    }
     public void BuildTurret()
     {
         SetBuilding(_turret);
@@ -103,14 +98,6 @@ public class BuildingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        crono -= Time.deltaTime;
-        if ( crono <= 0 && UnaVez)
-        {
-            DestroyDefense();
-            Debug.Log("Destrusion");
-            UnaVez = false;
-        }
-        */
+
     }
 }

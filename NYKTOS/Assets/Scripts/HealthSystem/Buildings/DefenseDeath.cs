@@ -25,10 +25,7 @@ public class DefenseDeath : MonoBehaviour, IDeath
 
     public void Death()
     {
-        //Arreglar el estado construido/destruido
         Destroy(gameObject);
-        Debug.Log("Morido");
         _placeholderState.SetState(BuildingStateMachine.BuildingState.NotBuilt);
-        Debug.Log(_placeholderState.buildingState);
     }
 }
