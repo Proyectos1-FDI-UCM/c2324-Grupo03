@@ -9,8 +9,7 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     [SerializeField]
     private MenuManager _menuManager;
 
-    [SerializeField]
-    private PlayerController _player;
+
     private BuildingStateMachine _state;
     [SerializeField]
     private BuildingManager _buildingManager;
@@ -20,24 +19,12 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     {
         if(_state.buildingState == BuildingStateMachine.BuildingState.NotBuilt)
         {
-            _player.playerControls.Player.Disable();
-            _player.playerControls.UI.Enable();
             _menuManager.OpenMenu(0);
             UpdateCurrentPlaceHolder();
         }
     }
 
-    public void CloseMenu()
-    {
-        _menuManager.CloseMenu();
-        _player.playerControls.UI.Disable();
-        _player.playerControls.Player.Enable();
-    }
-    
-    public void CloseMenu(InputAction.CallbackContext context)
-    {
-        CloseMenu();
-    }
+    public void CloseMenu() => _menuManager.CloseMenu();
 
     private void UpdateCurrentPlaceHolder()
     {
@@ -47,6 +34,5 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     void Start()
     {
         _state = GetComponent<BuildingStateMachine>();
-        _player.playerControls.UI.CloseMenu.performed += CloseMenu;
     }
 }

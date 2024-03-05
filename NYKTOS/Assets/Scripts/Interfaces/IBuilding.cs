@@ -7,5 +7,5 @@ public interface IBuilding
 {
     public void OpenMenu();
 
-    public void CloseMenu(InputAction.CallbackContext context);
+    public void CloseMenu();
 }
