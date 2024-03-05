@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//MARIA
 [CreateAssetMenu(fileName = "New Wave", menuName = "Wave System/Wave", order = 1)]
 public class WaveInfo : ScriptableObject {
     public string waveName;
@@ -20,3 +20,4 @@ public class Enemy {
 public class EnemyTierCostSpawner {
     public int MaximumMoney;
 }
+//FIN MARIA
