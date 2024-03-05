@@ -7,7 +7,7 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
 {
     #region references
     [SerializeField]
-    private GameObject _defenseMenu;
+    private MenuManager _menuManager;
 
     [SerializeField]
     private PlayerController _player;
@@ -22,21 +22,21 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
         {
             _player.playerControls.Player.Disable();
             _player.playerControls.UI.Enable();
-            _defenseMenu.SetActive(true);
+            _menuManager.OpenMenu(0);
             UpdateCurrentPlaceHolder();
         }
     }
 
     public void CloseMenu()
     {
-        _defenseMenu.SetActive(false);
+        _menuManager.CloseMenu();
         _player.playerControls.UI.Disable();
         _player.playerControls.Player.Enable();
     }
     
     public void CloseMenu(InputAction.CallbackContext context)
     {
-        CloseMenu(context);
+        CloseMenu();
     }
 
     private void UpdateCurrentPlaceHolder()
