@@ -16,13 +16,13 @@ public class RBMovement : MonoBehaviour
     /// <summary>
     /// Velocidad actual del jugador. Es la que resulta de los calculos, y siempre debe volver al valor de movementSpeed.
     /// </summary>
-    private float currentSpeed;
+    private float _addedSpeed = 0f;
 
 
-    private Vector2 privateMovementDirection;
+    private Vector2 _movementDirection;
     public Vector2 movementDirection //Valor publico de lectura de movementDirection
     {
-        get { return privateMovementDirection; }
+        get { return _movementDirection; }
     }
     #endregion
 
@@ -92,8 +92,6 @@ public class RBMovement : MonoBehaviour
         }
         else y = -1;
 
-        
-
         Debug.DrawRay(_myTransform.position, new Vector2 (x,y).normalized, Color.green);
 
         xAxisMovement(x);
@@ -103,8 +101,8 @@ public class RBMovement : MonoBehaviour
 
     public void Move() 
     {
-        privateMovementDirection = new Vector2(xAxis, yAxis).normalized;
-        _myRigidbody.velocity = privateMovementDirection * currentSpeed;
+        _movementDirection = new Vector2(xAxis, yAxis).normalized;
+        _myRigidbody.velocity = _movementDirection * (_movementSpeed + _addedSpeed);
     }
 
     public void TeleportTo(Vector2 position) //Pone la posicion del jugador en las coordenadas que se le pasan
@@ -116,19 +114,18 @@ public class RBMovement : MonoBehaviour
     {
         _myTransform = transform;
         _myRigidbody = GetComponent<Rigidbody2D>();
-        currentSpeed = _movementSpeed;
     }
     #region cambios de velocidad
-    public void ChangeSpeed(float newSpeed, float time)
+    public void AddSpeed(float addSpeed, float time)
     {
-        currentSpeed = newSpeed;
+        _addedSpeed = addSpeed;
 
         Invoke(nameof(ResetSpeed), time);
     }
 
     private void ResetSpeed()
     {
-        currentSpeed = _movementSpeed;
+        _addedSpeed = 0;
     }
     #endregion
 
@@ -150,7 +147,7 @@ public class RBMovement : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Collider2D>() != null)
         {
-            _myRigidbody.velocity = privateMovementDirection * currentSpeed;
+            _myRigidbody.velocity = _movementDirection * (_movementSpeed + _addedSpeed);
         }
     }
     #endregion
