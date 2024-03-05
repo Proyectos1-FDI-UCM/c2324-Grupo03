@@ -360,10 +360,10 @@ GameObject:
   - component: {fileID: 436317021198750490}
   - component: {fileID: 3016302921365856093}
   - component: {fileID: 6800576876400449408}
-  - component: {fileID: 4920501686148597465}
   - component: {fileID: 5767895529976162651}
-  - component: {fileID: 1455830291752922567}
   - component: {fileID: 3702319650464414860}
+  - component: {fileID: 4920501686148597465}
+  - component: {fileID: 1455830291752922567}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -712,21 +712,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3d93a3c8821364280df3b742ce7b3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4920501686148597465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3385171631580939238}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e27187d652f42fa41b40a05abe54c86a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deactivateDebuffTime: 2
-  numberOfHitsBeforeDeactivation: 4
-  burnDamage: 1
 --- !u!114 &5767895529976162651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,20 +728,6 @@ MonoBehaviour:
   _maxHealth: 10
   _currentHealth: 0
   _inmTime: 2
---- !u!114 &1455830291752922567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3385171631580939238}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34df9feb4f4bf3a4aab4cd1ad3e4f151, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deactivateDebuffTime: 2
-  speedMultiplier: 0.5
 --- !u!114 &3702319650464414860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,6 +742,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deathskin: {fileID: 6758919315837710540}
   _aliveskin: {fileID: 6222676936956634352}
+  alive: 1
+--- !u!114 &4920501686148597465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3385171631580939238}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27187d652f42fa41b40a05abe54c86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deactivateDebuffTime: 2
+  numberOfHitsBeforeDeactivation: 4
+  burnDamage: 1
+--- !u!114 &1455830291752922567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3385171631580939238}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34df9feb4f4bf3a4aab4cd1ad3e4f151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deactivateDebuffTime: 2
+  speedMultiplier: 0.5
 --- !u!1 &6714065208488291323
 GameObject:
   m_ObjectHideFlags: 0

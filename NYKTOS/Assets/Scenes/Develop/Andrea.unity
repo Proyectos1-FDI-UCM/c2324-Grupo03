@@ -256,6 +256,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23088732}
   m_CullTransparentMesh: 1
+--- !u!1 &183912393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3385171631580939238, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+  m_PrefabInstance: {fileID: 2079621826}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &193924180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -700,7 +705,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5023334086552178363, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
   m_PrefabInstance: {fileID: 2079621826}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 183912393}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
@@ -711,7 +716,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
   m_PrefabInstance: {fileID: 2079621826}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 183912393}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34b9cc239eddd0947b9e8b34857ad094, type: 3}
@@ -1118,6 +1123,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1656030347}
+  - component: {fileID: 1656030349}
+  - component: {fileID: 1656030348}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1140,6 +1147,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1656030348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656030346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f12e0878d2466241b0a0e360fda839b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textoCrystalA: {fileID: 1687346639}
+  _textoCrystalM: {fileID: 1216370410}
+  _textoCrystalC: {fileID: 1151964835}
+  _weaponPalo: {fileID: 23088735}
+  _weaponCetro: {fileID: 23088735}
+  _hearts: []
+  _fullHeart: {fileID: 21300000, guid: d8f40d6b94578d44d975b5f73c915811, type: 3}
+  _halfHeart: {fileID: 21300000, guid: 715d71f7de74161438fd9590584197fc, type: 3}
+--- !u!114 &1656030349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656030346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42000225d7b5dae4ea293f0a20ba428c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 183912393}
+  _altar: {fileID: 0}
 --- !u!1001 &1665761427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1199,6 +1240,10 @@ PrefabInstance:
     - target: {fileID: 6480509210915462261, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544441048625905143, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: m_Name
+      value: Nexus
       objectReference: {fileID: 0}
     - target: {fileID: 7175719141236239338, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: m_Name
@@ -1836,6 +1881,10 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[15].m_ActionName
       value: UI/TrackedDeviceOrientation
       objectReference: {fileID: 0}
+    - target: {fileID: 5767895529976162651, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: _UIManager
+      value: 
+      objectReference: {fileID: 1656030348}
     - target: {fileID: 6534088897598437012, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.38561615

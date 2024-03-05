@@ -21,7 +21,7 @@ public class AltarComponent : MonoBehaviour, IBuilding
     {
         if(_state.buildingState == BuildingStateMachine.BuildingState.NotBuilt)
         {
-            Debug.Log("hola soy un altar");
+            Debug.Log("hola soy un altar sin reparar");
             // Activar menú construcción
         }
         else { } // Activar menú potenciar armas
@@ -34,11 +34,4 @@ public class AltarComponent : MonoBehaviour, IBuilding
     {
         _state = GetComponent<BuildingStateMachine>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 }
