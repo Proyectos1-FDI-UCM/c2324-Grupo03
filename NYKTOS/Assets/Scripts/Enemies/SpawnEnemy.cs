@@ -49,8 +49,8 @@ public class SpawnEnemy : MonoBehaviour {
         }
         spawnLimit += 2; //para que aumente la cantidad de enemigos en la siguiente wave
         _spawnEnemyWave = false;//deja de spawnear hasta que digan otra cosa
-        _spawnManager.GetWaveNumber(1);
-        WaveSet();
+        _currentWaveNumber = _spawnManager.GetWaveNumber(1);
+        //WaveSet();
 
     }
 
@@ -67,7 +67,7 @@ public class SpawnEnemy : MonoBehaviour {
             }
         }
 
-        Debug.Log("bb");
+        //Debug.Log("bb");
         StartCoroutine(SpawnEnemyRoutine());//para que se inicie
     }
     /*public int GetWaveNumber() {  //nos da el numero de la wave si la queremos en la ui
@@ -127,13 +127,16 @@ public class SpawnEnemy : MonoBehaviour {
         
         GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         currentSpawned = totalEnemies.Length; //para saber cuantos enemigos hay en pantalla
-        Debug.Log("Enemigos en pantalla: " + currentSpawned);
-
+        //Debug.Log("Enemigos en pantalla: " + currentSpawned);
+        //Debug.Log("Wave: " + _currentWaveNumber);
         if (totalEnemies.Length <= 0 && !_spawnEnemyWave) { //si no es la primera wave y quedan enemigos por seren spawneadoss
             if (_currentWaveNumber + 1 <= waves.Length) { // si aun no se acabo las waves
+                _currentWave = waves[_currentWaveNumber];
                 _totalEnemies = _currentWave.noOfEnemies;
                 _spawnManager.EnableNextWaveSpawning();
-                StartEnemySpawning(); //para que empiece
+                _spawnEnemyWave = true;
+                //StartEnemySpawning(); //para que empiece
+                Debug.Log("ProxWave");
             } else {
                 Debug.Log("Acabo el juego");
             }

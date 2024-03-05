@@ -7,7 +7,6 @@ public class BuildingManager : MonoBehaviour
 {
 
     #region properties
-    [SerializeField]
     private GameObject _currentPlaceholder;
 
     public GameObject CurrentPlaceholder
