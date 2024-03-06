@@ -14,7 +14,6 @@ public class SpawnEnemy : MonoBehaviour {
     private WaveInfo _currentWave; //la wave que estamos
     private int _currentWaveNumber; //numero de la wave
     [SerializeField] private float spawnRate = 1f; //tiempo entre los spaw
-    private bool _isGameActive = true; //para saber si el juego esta activo
     private bool _spawnEnemyWave = true; //para empezar los spawns
     private int _totalEnemies; //cuenta el total del array
     // guarrería de Marco para testing
@@ -28,28 +27,23 @@ public class SpawnEnemy : MonoBehaviour {
     #region methods
     private IEnumerator SpawnEnemyRoutine() { //corutina de spawneo
         WaitForSeconds wait = new WaitForSeconds(spawnRate); //se espera el tiempo qe pongas en spawRate
-        while (_isGameActive && _spawnEnemyWave) {
-            if (currentSpawned  < spawnLimit) { // si hay menos enemigos que el limite spawnea
-                
-                GameObject enemyToSpawn = _currentWave.enemies[Random.Range(0, _currentWave.enemies.Length)].enemyPrefab;//entre los prebs de los enemigos elige uno y no spawnea
-                //Transform spawnPos = _currentWave.[Random.Range(0, _currentWave.spawnerPriority.Length)];
-                
-                //Instantiate(enemyToSpawn, spawnPos.position, Quaternion.identity); //cambiar el transform para que no sea un pto especifico.
+        while (_spawnEnemyWave && waves != null) {
+            if (currentSpawned  < spawnLimit) { // si hay menos enemigos que el limite, spawnea
+                for (int i = 0; i < _currentWave.spawnerPriority.Length; i++) {
+                    for (int j = 0; j < _currentWave.spawnerPriority[i].howManyEnemies; j++) {
 
-                if (enemyToSpawn != null)
-                {
+                        if (_totalEnemies <= 0) { //si no queda enemigos acaba
+                            _spawnEnemyWave = false;
+                        }
 
+                        GameObject enemyToSpawn = GetRandomEnemy();
+                        Transform spawnPos = _currentWave.spawnerPriority[i].SpawnPoints[Random.Range(0, _currentWave.spawnerPriority[i].SpawnPoints.Length)].spawnerPoints;
+
+                        Instantiate(enemyToSpawn, spawnPos.position, Quaternion.identity);
+                        _totalEnemies--;
+                        yield return wait;
+                    }
                 }
-                //currentSpawned++;
-                _totalEnemies--; //disminuye la cantidad de enemigos que tienen que spawnear
-            }
-            yield return wait;
-            if (_totalEnemies <= 0) { //si no queda enemigos acaba
-                _spawnEnemyWave = false;
-            }
-
-            if (_isGameActive == false) {
-                break;
             }
         }
         spawnLimit += 2; //para que aumente la cantidad de enemigos en la siguiente wave
@@ -57,6 +51,28 @@ public class SpawnEnemy : MonoBehaviour {
         _currentWaveNumber = _spawnManager.GetWaveNumber(1);       
     }
 
+    private GameObject GetRandomEnemy() {
+        int totalWeight = 0;
+        foreach (var enemy in _currentWave.enemies) {
+            totalWeight += enemy.number;
+        }
+
+        int randomWeight = Random.Range(0, totalWeight);
+        foreach (var enemy in _currentWave.enemies) {
+            if (randomWeight < enemy.number)
+                return enemy.enemyPrefab;
+            randomWeight -= enemy.number;
+        }
+
+        return null;
+    }
+    private int CountTotalEnemies() {
+        int totalEnemies = 0;
+        foreach (var enemy in _currentWave.enemies) {
+            totalEnemies += enemy.number;
+        }
+        return totalEnemies;
+    }
     public void StartEnemySpawning() { //metodo para que a cada 2 rondas(o como querais) se incremente la dificultad
         if (_spawnManager.GetWaveNumber(0) % 2 == 0) { 
             spawnRate -= 0.2f; //mas rapido
@@ -72,12 +88,10 @@ public class SpawnEnemy : MonoBehaviour {
         if (_spawnManager.GetWaveNumber(0) >= 0 && _spawnManager.GetWaveNumber(0) < waves.Length) {
             _currentWave = waves[_spawnManager.GetWaveNumber(0)]; //avanzar prox wave
         }
-        _totalEnemies = CountEnemies();
-        //Debug.Log("Enemigos en pantalla: " + currentSpawned);
+        _totalEnemies = CountTotalEnemies();
+        Debug.Log("Enemigos en pantalla: " + currentSpawned);
         Debug.Log("Enemigos en la wave " + _currentWaveNumber + ": " + _totalEnemies);
-        if (!_isGameActive) {
-            StopCoroutine(SpawnEnemyRoutine());
-        }
+        
     }
 
     private int CountEnemies() {
@@ -97,7 +111,7 @@ public class SpawnEnemy : MonoBehaviour {
         if (totalEnemies.Length <= 0 && !_spawnEnemyWave) { //si no es la primera wave y quedan enemigos por seren spawneadoss
             if (_currentWaveNumber + 1 <= waves.Length) { // si aun no se acabo las waves
                 _currentWave = waves[_currentWaveNumber];
-                _totalEnemies = CountEnemies();
+                _totalEnemies = CountTotalEnemies();
                 _spawnManager.EnableNextWaveSpawning();
                 _spawnEnemyWave = true;
                 Debug.Log("ProxWave");
@@ -105,8 +119,6 @@ public class SpawnEnemy : MonoBehaviour {
                 Debug.Log("Acabo el juego");
             }
         }
-
-
     }
     //  fin codigo de Maria :)
 }

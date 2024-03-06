@@ -45,7 +45,7 @@ public class ClubHitboxBehaviour : MonoBehaviour
             //Javi ha hecho una corrección a este código para que sea más limpio. Dejo este de ejemplo :)
         }
 
-        if (collision.gameObject.transform.parent.GetComponentsInChildren<IKnockback>()!= null)
+        if (collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.GetComponentInChildren<IKnockback>()!= null)
         {
             
             IKnockback[] iknockbackChildren = collision.gameObject.transform.parent.GetComponentsInChildren<IKnockback>();

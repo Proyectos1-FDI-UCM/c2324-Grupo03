@@ -8,7 +8,7 @@ public class KnockbackTimeCondition : MonoBehaviour, ICondition
     private float currentTime = 0f;
     public bool Validate(GameObject _object)
     {
-        print(currentTime);
+        
         if (currentTime < _rbMovement.knockBackTime)
         {
             currentTime += Time.deltaTime;
