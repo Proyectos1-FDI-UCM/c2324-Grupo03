@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
 {
     #region references
 
+    [SerializeField]
+    private Canvas _pauseMenu;
 
     [SerializeField]
     private TMP_Text _textoCrystalA;
@@ -94,6 +96,24 @@ public class UIManager : MonoBehaviour
         {
             _hearts[health/ 2].sprite = _halfHeart;
         }
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        _pauseMenu.enabled = false;
+        Debug.Log("Hola");
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        _pauseMenu.enabled = false;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
 }
