@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class EnemyTargeting : MonoBehaviour
 {
+    //IMPORTANTE: Poner estado de parada del enemigo cuando este a una distancia muy cercana al jugador con la maquina de estados
+
+    //Guia de lo que necesita guille en su escena
+    //Necesita poner el IAManager y poner el altar y el jugador
+    //Importante el IAManager tiene que ser un objeto vacío creado desde cero, sino dará nullreferenceexceiption.
+    //Ponerle este script al vespertilio con la maquina de estados y ponerle el transform del jugador (el de nexo no hace falta)
+
+
     #region references
     private IAManager _IAManager;
     private MoveToPlayerBehaviour _MoveToMyObjective;
@@ -14,6 +22,7 @@ public class EnemyTargeting : MonoBehaviour
     [SerializeField]
     private Transform _playerTransform;
     private Transform _defenseTransform;
+    private GameObject _altar;
     private Transform _altarTransform;
     [SerializeField]
     private Transform _nexusTransform;
@@ -45,9 +54,14 @@ public class EnemyTargeting : MonoBehaviour
     {
         //Hay que ponerle este script al prefab del vespertilio, el move to player behauviour es un estado que se encuentra dentro del enemigo
         _MoveToMyObjective = GetComponentInChildren<MoveToPlayerBehaviour>();
-        //Hacer el _targettransform publico implica que pueda interactuar el enemyDetects con el moveToPlayerBehauviour
-        //_ObjectiveTransform = _MoveToMyObjective._targetTransform.transform;
+        //Hacer el _targetTransform publico implica que pueda interactuar el enemyDetects con el moveToPlayerBehauviour
+        _ObjectiveTransform = _MoveToMyObjective._targetTransform.transform;
         _myTransform = transform;
+        _altar = IAManager.Instance.altartutorial;
+        
+        _playerTransform = FindObjectOfType<PlayerController>().transform;
+        _altarTransform = _altar.transform;
+        
     }
 
     // Update is called once per frame
@@ -57,14 +71,47 @@ public class EnemyTargeting : MonoBehaviour
         PreferedDefense();
 
         DistanceToPlayer = Vector2.Distance(_myTransform.position, _playerTransform.position);
-        DistanceToDefense = Vector2.Distance(_myTransform.position, _defenseTransform.position);
-        DistanceToAltar = Vector2.Distance(_myTransform.position, _altarTransform.position);
-        DistanceToNexus = Vector2.Distance(_myTransform.position, _nexusTransform.position);
+        //DistanceToDefense = Vector2.Distance(_myTransform.position, _defenseTransform.position);
+        DistanceToAltar = Vector2.Distance(_myTransform.position, _altar.transform.position);
+        //DistanceToNexus = Vector2.Distance(_myTransform.position, _nexusTransform.position);
 
         //Hay que encontrar una manera de poder distrubuir la prioridad de manera mas efectiva
         //Prioridad general para Vespertilio, hacer una condición para detectar el tipo de enemigo y ejecutar el metodo correspondiente
-        VespertilioPriority(DistanceToPlayer,DistanceToDefense,DistanceToAltar,DistanceToNexus);
+        VespertilioPriorityTutorialAltar(DistanceToPlayer,DistanceToAltar);
     }
+
+    private void VespertilioPriorityTutorialAltar(float DistanceToPlayer, float DistanceToAltar)
+    {
+        if (DistanceToPlayer < DistanceToAltar)
+        {
+            _ObjectiveTransform = _playerTransform;
+            _MoveToMyObjective._targetTransform = _ObjectiveTransform;
+            _MoveToMyObjective.PerformBehaviour();
+        }
+        else
+        {
+            _ObjectiveTransform = _altarTransform;
+            _MoveToMyObjective._targetTransform = _ObjectiveTransform;
+            _MoveToMyObjective.PerformBehaviour();
+        }
+    }
+
+    private void VespertilioPriorityTutorial(float DistanceToPlayer, float DistanceToDefense, float DistanceToAltar)
+    {
+        if (DistanceToPlayer < DistanceToDefense && DistanceToPlayer < DistanceToAltar)
+        {
+            _ObjectiveTransform = _playerTransform;
+        }
+        else if (DistanceToDefense < DistanceToPlayer && DistanceToDefense < DistanceToAltar)
+        {
+            _ObjectiveTransform = _defenseTransform;
+        }
+        else
+        {
+            _ObjectiveTransform = _altarTransform;
+        }
+    }
+
 
     private void VespertilioPriority(float DistanceToPlayer, float DistanceToDefense, float DistanceToAltar, float DistanceToNexus)
     {
@@ -103,6 +150,7 @@ public class EnemyTargeting : MonoBehaviour
     private Transform PreferedAltar()
     {
         //Acceder a todos los altares con un array y decidir la más cercana para que se tome en cuenta en el update
+        _altarTransform = _altar.transform;
         return _altarTransform;
     }
 }

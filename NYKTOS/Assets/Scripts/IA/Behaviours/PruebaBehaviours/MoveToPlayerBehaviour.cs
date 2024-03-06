@@ -9,7 +9,8 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
     #region references
     private NavMeshPath _path;
     [SerializeField]
-    private Transform _targetTransform;
+    //Note de Iker: Guille te tuve que poner esto publico para que el script EnemyTargeting acceda a él, si no es posible se busca otra solución
+    public Transform _targetTransform;
     private Transform _myTransform;
     private RBMovement _rbMovement;
     #endregion
