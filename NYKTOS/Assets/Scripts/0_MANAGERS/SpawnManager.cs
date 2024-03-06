@@ -7,7 +7,7 @@ public class SpawnManager : MonoBehaviour
     // Maria aaaaaaaaa
     
     #region references
-    [SerializeField] private SpawnEnemy _spawnEnemy;
+    private SpawnEnemy _spawnEnemy;
     #endregion
 
     #region parameters
@@ -33,6 +33,7 @@ public class SpawnManager : MonoBehaviour
         if (state == GameState.Night)
         {
             EnableNextWaveSpawning();
+            Debug.Log("Empieza Wave");
         }
         else
         { 

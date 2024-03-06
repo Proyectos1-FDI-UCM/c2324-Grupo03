@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecea0c9cd6663447bc7e6188cec3484, type: 3}
   m_Name: Wave 1
   m_EditorClassIdentifier: 
-  waveName: Wave 1
   enemies:
   - enemyPrefab: {fileID: 2995607884255851843, guid: ebeff8dda23b3ea42a069c5ffcdf7315, type: 3}
     number: 10
@@ -20,11 +19,15 @@ MonoBehaviour:
     number: 2
   - enemyPrefab: {fileID: 2995607884255851843, guid: fc6ba0abecdf77b4e8f07c794446fee6, type: 3}
     number: 3
+  - enemyPrefab: {fileID: 9115406418041549723, guid: f23fd54662b938a4ca910c55f451540a, type: 3}
+    number: 4
   spawnerPriority:
   - Spawner: {fileID: 9072681348986049957, guid: ee7207c47f067164e9e4b860c21dafdf, type: 3}
-    priority: 100
+    priority: 50
+    howManyEnemies: 0
   - Spawner: {fileID: 6482162086371876534, guid: 9f5fab326313af64ea60765610e47973, type: 3}
-    priority: 0
+    priority: 50
+    howManyEnemies: 0
   - Spawner: {fileID: 3242464760262046882, guid: d58faae4f5c13684e8562dd5ff694d9a, type: 3}
     priority: 0
-  spawnInterval: 1
+    howManyEnemies: 0
