@@ -529,6 +529,54 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6d687d5d-2c26-42ba-9c19-a09ef1d7973b
     m_ActionName: Gameplay/SecondaryAttack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0450bbe5-d435-4a6a-b4f2-535de8fbb591
+    m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 78ee7f4c-475c-4e46-bdb0-9acb34bb5e0e
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ed993669-a0d4-4ba3-9d8e-d4e4cb55a940
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3011c57c-d44f-421d-b95a-6f375a489799
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 806e4239-5ce5-4409-a589-05bfccf4f699
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 344e7fd0-9a0d-4d80-a9a2-248d45fd2a76
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 753686c7-e933-448e-bbb5-a3ff8eee3eb1
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 583023d3-209a-400e-a72a-2eb2f98476d4
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fc31b691-b705-4970-9a77-6d0109cbd454
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 84424e59-c69c-4a92-9299-001739fb4cba
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 84861023-3193-4f9f-93b6-b2e2c715a950
+    m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5b40348e-b4b6-409d-aa92-e94143246a55
+    m_ActionName: UI/CloseMenu[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6540767692440480682}
   - component: {fileID: 9142010433756476327}
   - component: {fileID: 7870783667756657704}
+  - component: {fileID: 8708895035124243018}
+  - component: {fileID: 4451555629660728161}
   m_Layer: 0
   m_Name: PlaceHolder 1
   m_TagString: Untagged
@@ -161,8 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ae50ca5648bb245a303efe75533a1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inversionEffect: {fileID: 0}
   defaultMaterial: {fileID: 2100000, guid: 62000017cbdf07944a1d5c37af893e15, type: 2}
-  swapMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+  inversionMaterial: {fileID: 0}
 --- !u!114 &7870783667756657704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,4 +178,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c0abb319d0d2b478714b5f15e4a7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defenseMenu: {fileID: 0}
+  _menuManager: {fileID: 0}
+  _buildingManager: {fileID: 0}
+--- !u!114 &8708895035124243018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972155126267881982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9dfb7a72df3a44eaff93b7fd3d9210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4451555629660728161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972155126267881982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc6f5bd79cd8dc48a05ed7befae8537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
