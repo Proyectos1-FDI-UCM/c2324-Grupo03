@@ -47,8 +47,10 @@ public class UIManager : MonoBehaviour
     {
         _weaponPalo.enabled = true;
         _weaponCetro.enabled = false;
-        
-        
+        Hearts(10);
+
+
+
     }
 
     public void CrystalA(int _numCrysA)
