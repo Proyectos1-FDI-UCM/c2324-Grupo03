@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.049275365
+      value: 0.013100437
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -189,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.90000004
+      value: 0.9739356
       objectReference: {fileID: 0}
     - target: {fileID: 8073207824159548778, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_WorldUpOverride
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1245556776}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -632,7 +632,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1245556776}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -665,7 +665,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1245556776}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -988,7 +988,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1245556776}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1188,7 +1188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1009826474478415505, guid: b128eb4d6bc81024dac6d3499cb8110c, type: 3}
       propertyPath: Defenses.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1009826474478415505, guid: b128eb4d6bc81024dac6d3499cb8110c, type: 3}
       propertyPath: Altars.Array.data[0]
@@ -1350,7 +1350,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1245556776}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -4246,10 +4246,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnManager: {fileID: 518743904}
   waves:
+  - {fileID: 11400000, guid: 433fc76ac3c814446b4481f89ef473fa, type: 2}
   - {fileID: 11400000, guid: ee8fb51ccb1f0cd46b1a2eed4d078393, type: 2}
   - {fileID: 11400000, guid: bc0ee9a741a4039448440ce062b770c0, type: 2}
   - {fileID: 11400000, guid: f5eda95d8862f4342ba6354fc167c346, type: 2}
-  - {fileID: 11400000, guid: 433fc76ac3c814446b4481f89ef473fa, type: 2}
   - {fileID: 11400000, guid: fa39d0f4d660a4f43b7d827edc6e13d2, type: 2}
   - {fileID: 11400000, guid: a4672c83470270e44888eb50dd0cbff9, type: 2}
   - {fileID: 11400000, guid: 17e703da52c5ca841989c35e96020d71, type: 2}

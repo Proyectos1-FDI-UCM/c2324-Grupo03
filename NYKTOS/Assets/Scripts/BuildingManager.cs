@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class BuildingManager : MonoBehaviour
 {
+    #region references
+    [SerializeField]
+    private MenuManager _menuManager;
+
+    #endregion
 
     #region properties
     private GameObject _currentPlaceholder;
@@ -43,6 +48,8 @@ public class BuildingManager : MonoBehaviour
     #endregion
 
     #region methods
+
+    #region build defenses
     private void SetBuilding(GameObject building)
     {
         _selectedDefense = building;
@@ -84,19 +91,15 @@ public class BuildingManager : MonoBehaviour
         SetBuilding(_wall);
         BuildDefense();
     }
+    #endregion
 
+    public void StartNight()
+    {
+        _menuManager.CloseMenu();
+        // Que se llame al manager encargado de cambiar la noche
+        GameManager.Instance.UpdateGameState(GameState.Night);
+    }
 
     #endregion
 
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
