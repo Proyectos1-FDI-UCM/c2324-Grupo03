@@ -39,7 +39,7 @@ public class ClubHitboxBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if (collision.gameObject.TryGetComponent(out HealthComponent health)) //QUITAR VIDA
+        if (collision.transform.parent.gameObject.TryGetComponent(out HealthComponent health)) //QUITAR VIDA
         {
             health.Damage(weaponDamage);
             //Javi ha hecho una corrección a este código para que sea más limpio. Dejo este de ejemplo :)
@@ -57,7 +57,7 @@ public class ClubHitboxBehaviour : MonoBehaviour
             
         }
 
-        if (attackType == AttackType.Fire && collision.gameObject.transform.parent.TryGetComponent( out SetOnFireDebuff setOnFire)) //DAÑO DE FUEGO
+        if (attackType == AttackType.Fire && collision.transform.parent.gameObject.TryGetComponent( out SetOnFireDebuff setOnFire)) //DAÑO DE FUEGO
         {
             setOnFire.enabled = true;
         }

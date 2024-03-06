@@ -732,8 +732,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackHitbox: {fileID: 3679065653297175454, guid: c6593a0b651be4f46bd3bf884546eaec, type: 3}
-  attackAngleRange: 70
-  angleVelocity: 400
+  attackAngleRange: 60
+  angleVelocity: 300
   attackType: 0
   weaponDamage: 3
 --- !u!114 &3016302921365856093
@@ -819,7 +819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deactivateDebuffTime: 2
-  speedMultiplier: 0.5
+  speedAdder: 0.5
 --- !u!1 &6714065208488291323
 GameObject:
   m_ObjectHideFlags: 0
