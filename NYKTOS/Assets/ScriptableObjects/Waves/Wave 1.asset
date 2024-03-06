@@ -13,14 +13,18 @@ MonoBehaviour:
   m_Name: Wave 1
   m_EditorClassIdentifier: 
   waveName: Wave 1
-  noOfEnemies: 3
   enemies:
   - enemyPrefab: {fileID: 2995607884255851843, guid: ebeff8dda23b3ea42a069c5ffcdf7315, type: 3}
-    MaximumMoney: 3
-  - enemyPrefab: {fileID: 2995607884255851843, guid: ebeff8dda23b3ea42a069c5ffcdf7315, type: 3}
-    MaximumMoney: 2
-  spawnPoints:
-  - {fileID: 4557447369605956969, guid: e8187ea0a6fb5054f9ad589cc2adb79f, type: 3}
-  - {fileID: 4194124685820595815, guid: 72d3e98cde226ba4f9869820872f3b09, type: 3}
-  - {fileID: 117437832724053775, guid: 8e17a7a74be14504da1e2227e8e74e23, type: 3}
+    number: 10
+  - enemyPrefab: {fileID: 2995607884255851843, guid: 7a0fe095d4642f64d9ed062430355779, type: 3}
+    number: 2
+  - enemyPrefab: {fileID: 2995607884255851843, guid: fc6ba0abecdf77b4e8f07c794446fee6, type: 3}
+    number: 3
+  spawnerPriority:
+  - Spawner: {fileID: 9072681348986049957, guid: ee7207c47f067164e9e4b860c21dafdf, type: 3}
+    priority: 100
+  - Spawner: {fileID: 6482162086371876534, guid: 9f5fab326313af64ea60765610e47973, type: 3}
+    priority: 0
+  - Spawner: {fileID: 3242464760262046882, guid: d58faae4f5c13684e8562dd5ff694d9a, type: 3}
+    priority: 0
   spawnInterval: 1
