@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        _state = GameState.StartScreen;
+        
     }
 }
 

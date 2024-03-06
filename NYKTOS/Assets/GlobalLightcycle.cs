@@ -15,7 +15,7 @@ public class GlobalLightcycle : MonoBehaviour
 
         GameManager.Instance.GameStateChanged.AddListener(GlobalLightSwitch);
 
-        _globalLight.intensity = (GameManager.Instance.State == GameState.Day) ? 1 : 0;
+        _globalLight.intensity = (GameManager.Instance.State == GameState.Night) ? 0f : 1f;
     }
 
     void GlobalLightSwitch(GameState state)
@@ -26,6 +26,7 @@ public class GlobalLightcycle : MonoBehaviour
         }
         else if (state == GameState.Day)
         {
+            
             _globalLight.intensity = 1;
         }
     }
