@@ -26,7 +26,7 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
     public void PerformBehaviour()
     {
         
-        if (NavMesh.CalculatePath(transform.position, _targetTransform.position, NavMesh.AllAreas, _path)) //calculo de camino a tomar
+        if (NavMesh.CalculatePath(transform.position, _targetTransform.position, NavMesh.AllAreas, _path) && _path.corners.Length > 1) //calculo de camino a tomar
         {
             direction = (_path.corners[1] - _myTransform.position).normalized;
 

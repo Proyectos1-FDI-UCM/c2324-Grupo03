@@ -57,12 +57,12 @@ public class ClubHitboxBehaviour : MonoBehaviour
             
         }
 
-        if (attackType == AttackType.Fire && collision.gameObject.TryGetComponent( out SetOnFireDebuff setOnFire)) //DAÑO DE FUEGO
+        if (attackType == AttackType.Fire && collision.gameObject.transform.parent.TryGetComponent( out SetOnFireDebuff setOnFire)) //DAÑO DE FUEGO
         {
             setOnFire.enabled = true;
         }
 
-        else if (attackType == AttackType.Slow && collision.gameObject.TryGetComponent(out SlowDebuff slow)) //RALENTIZAR
+        else if (attackType == AttackType.Slow && collision.transform.parent.gameObject.TryGetComponent(out SlowDebuff slow)) //RALENTIZAR
         {
             slow.enabled = true;
         }
