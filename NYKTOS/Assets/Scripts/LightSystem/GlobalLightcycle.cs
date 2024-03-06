@@ -7,27 +7,31 @@ using UnityEngine.Rendering.Universal;
 public class GlobalLightcycle : MonoBehaviour
 {
 
+    [SerializeField]
+    private InversionEffect _inversionEffect;
+
     private Light2D _globalLight;
     // Start is called before the first frame update
     void Start()
     {
         _globalLight = GetComponent<Light2D>();
 
-        GameManager.Instance.GameStateChanged.AddListener(GlobalLightSwitch);
+        GameManager.Instance.GameStateChanged.AddListener(GlobalLightcycleGameStateListener);
 
-        _globalLight.intensity = (GameManager.Instance.State == GameState.Night) ? 0f : 1f;
+        GlobalLightcycleGameStateListener(GameManager.Instance.State);
     }
 
-    void GlobalLightSwitch(GameState state)
+    private void GlobalLightcycleGameStateListener(GameState state)
     {
         if(state == GameState.Night)
         {
             _globalLight.intensity = 0;
+            _inversionEffect.Invert(true);
         }
         else if (state == GameState.Day)
         {
-            
             _globalLight.intensity = 1;
+            _inversionEffect.Invert(false);
         }
     }
 }

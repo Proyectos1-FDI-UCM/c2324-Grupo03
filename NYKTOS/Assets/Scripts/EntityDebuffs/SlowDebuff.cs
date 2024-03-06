@@ -11,13 +11,13 @@ public class SlowDebuff : MonoBehaviour
 
     #region parameters
     [SerializeField] private float deactivateDebuffTime = 2f;
-    [SerializeField] private float speedMultiplier = 0.5f;
+    [SerializeField] private float speedAdder = 0.5f;
     #endregion
 
     private void OnEnable()
     {
         Invoke(nameof(Deactivate), deactivateDebuffTime);
-        _myRBMovement.AddSpeed(_myRBMovement.movementSpeed * speedMultiplier, deactivateDebuffTime);
+        _myRBMovement.AddSpeed(speedAdder, deactivateDebuffTime);
 
         renderer.color = Color.cyan;
     }
