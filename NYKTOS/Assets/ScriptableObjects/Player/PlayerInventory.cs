@@ -1,25 +1,70 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "PlayerInventory", menuName = "PlayerInventory", order = 1)]
 public class PlayerInventory : ScriptableObject
 {
-    public int yellowCrystals = 10;
+    [SerializeField]
+    private int amarilloCristales = 10;
+    public int Amarillo
+    {
+        get
+        {
+            return amarilloCristales;
+        }
+        set
+        {
+            amarilloCristales = value;
+            InvokeInventoryUpdate();
+        }
+    }
     
-    public int magentaCrystals = 0;
+    [SerializeField]
+    private int magentaCristales = 0;
+    public int Magenta
+    {
+        get
+        {
+            return magentaCristales;
+        }
+        set
+        {
+            magentaCristales = value;
+            InvokeInventoryUpdate();
+        }
+    }
+    
+    [SerializeField]
+    private int cianCristales = 0;
+    public int Cian
+    {
+        get
+        {
+            return cianCristales;
+        }
+        set
+        {
+            cianCristales = value;
+            InvokeInventoryUpdate();
+        }
+    }
 
-    public int cyanCrystals = 0;
+    private UnityEvent inventoryUpdateEvent = new UnityEvent();
+    public UnityEvent InventoryUpdate => inventoryUpdateEvent;
+
+    private void InvokeInventoryUpdate() => inventoryUpdateEvent.Invoke();
 
     [ContextMenu("Reset")]
     public void Reset(){
-        yellowCrystals = 0;
-        magentaCrystals = 0;
-        cyanCrystals = 0;
+        amarilloCristales = 0;
+        magentaCristales = 0;
+        cianCristales = 0;
     }
 
-    public void Start()
+    public void OnValidate()
     {
-       
+        InvokeInventoryUpdate();
     }
 }

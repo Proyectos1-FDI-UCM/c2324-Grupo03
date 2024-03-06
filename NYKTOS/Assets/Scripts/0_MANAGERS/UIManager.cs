@@ -5,8 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-
-
 public class UIManager : MonoBehaviour
 {
     #region references
@@ -51,14 +49,18 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         _weaponPalo.enabled = true;
-        _weaponCetro.enabled = false;
-        _textoCrystalA.text = _playerInventory.yellowCrystals.ToString();
-        _textoCrystalC.text = _playerInventory.cyanCrystals.ToString();
-        _textoCrystalM.text = _playerInventory.magentaCrystals.ToString();
-       
+        //_weaponCetro.enabled = false;
 
+        UpdateFromInventory();
 
+        _playerInventory.InventoryUpdate.AddListener(UpdateFromInventory);
+    }
 
+    private void UpdateFromInventory()
+    {
+        _textoCrystalA.text = _playerInventory.Amarillo.ToString();
+        _textoCrystalC.text = _playerInventory.Cian.ToString();
+        _textoCrystalM.text = _playerInventory.Magenta.ToString();
     }
 
     public void CrystalA(int _numCrysA)

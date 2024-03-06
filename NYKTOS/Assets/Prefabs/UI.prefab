@@ -2072,6 +2072,7 @@ MonoBehaviour:
   - {fileID: 1657663529135521307}
   _fullHeart: {fileID: 21300000, guid: d8f40d6b94578d44d975b5f73c915811, type: 3}
   _halfHeart: {fileID: 21300000, guid: 715d71f7de74161438fd9590584197fc, type: 3}
+  _playerInventory: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
 --- !u!1 &5792381498265529093
 GameObject:
   m_ObjectHideFlags: 0
