@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4004844034647497879}
   - component: {fileID: 6390619183078054513}
   - component: {fileID: 3002347042876014140}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Altar light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ Transform:
   m_GameObject: {fileID: 5698021183704277950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.517639, y: -1.8000001, z: 0}
+  m_LocalPosition: {x: 6.557639, y: -1.8000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

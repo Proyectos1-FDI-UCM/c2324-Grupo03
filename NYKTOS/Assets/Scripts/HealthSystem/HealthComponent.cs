@@ -11,6 +11,8 @@ public class HealthComponent : MonoBehaviour
     private UIManager _UIManager;
     [SerializeField]
     private IDeath _deathComponent;
+
+    private PlayerController _playerController;
     
     #endregion
 
@@ -34,6 +36,8 @@ public class HealthComponent : MonoBehaviour
         _currentHealth = _maxHealth;
         //MAria
         _deathComponent = GetComponent<IDeath>();
+
+        _playerController = GetComponent<PlayerController>();
     }
 
     public void Damage(int damage)
@@ -52,7 +56,11 @@ public class HealthComponent : MonoBehaviour
             }
             
             Invoke(nameof(DisableInm), _inmTime);
-            _UIManager.Hearts(_currentHealth);
+            if(_playerController != null)
+            {
+                _UIManager.Hearts(_currentHealth);
+            }
+            
         }
 
     }
@@ -66,7 +74,11 @@ public class HealthComponent : MonoBehaviour
         {
             _currentHealth = _maxHealth;
         }
-        _UIManager.Hearts(_currentHealth);
+        if( _playerController != null)
+        {
+            _UIManager.Hearts(_currentHealth);
+        }
+        
     }
 
     void DisableInm()
