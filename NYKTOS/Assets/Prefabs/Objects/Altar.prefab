@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1736677066963637335}
   - component: {fileID: 377660294336565810}
   - component: {fileID: -714603560521859625}
+  - component: {fileID: 385102886414655994}
+  - component: {fileID: 1095843587919477912}
   m_Layer: 7
   m_Name: Altar
   m_TagString: Untagged
@@ -92,6 +94,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14e899ebec7e5c347b4dea646c7f538e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _menuManager: {fileID: 0}
+--- !u!114 &385102886414655994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848161920891998007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc6f5bd79cd8dc48a05ed7befae8537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1095843587919477912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848161920891998007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9dfb7a72df3a44eaff93b7fd3d9210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2835409899050321356
