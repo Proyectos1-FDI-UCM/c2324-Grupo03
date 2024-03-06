@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,6 @@ public class BuildingManager : MonoBehaviour
 {
 
     #region properties
-    [SerializeField]
     private GameObject _currentPlaceholder;
 
     public GameObject CurrentPlaceholder
@@ -20,10 +20,15 @@ public class BuildingManager : MonoBehaviour
     { get { return _selectedDefense; } 
       set { _selectedDefense = value; } 
     }
+
+    private HealthComponent _healthComponent;
     #endregion
 
     #region parameters
     private float _offsetNotWall = 0.9f;
+    private int _healthimposter = 40;
+    private float crono = 3f;
+    private bool UnaVez = true;
     #endregion
 
     #region building prefabs
@@ -58,14 +63,10 @@ public class BuildingManager : MonoBehaviour
         defense.GetComponent<DefenseComponent>().placeholder = _currentPlaceholder;
 
         _currentPlaceholder.GetComponent<BuildingStateMachine>().SetState(BuildingStateMachine.BuildingState.Built);
+        //_healthComponent = _selectedDefense.GetComponent<HealthComponent>();
         _currentPlaceholder.GetComponent<PlaceholderComponent>().CloseMenu();
     }
 
-    private void DestroyDefense()
-    {
-        _currentPlaceholder.GetComponent<BuildingStateMachine>().SetState(BuildingStateMachine.BuildingState.NotBuilt);
-        //Destroy(_selectedDefense);
-    }
     public void BuildTurret()
     {
         SetBuilding(_turret);

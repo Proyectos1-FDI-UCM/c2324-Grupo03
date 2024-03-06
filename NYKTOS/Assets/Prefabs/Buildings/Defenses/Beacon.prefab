@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 2765375172260880578}
   - component: {fileID: 4231714337945789496}
   - component: {fileID: -1877561005422046040}
-  - component: {fileID: 2673179871819196354}
+  - component: {fileID: -2807852702877065543}
   m_Layer: 7
   m_Name: Beacon
   m_TagString: Untagged
@@ -164,7 +164,7 @@ Transform:
   m_GameObject: {fileID: 5698021183704277950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.5225487, y: -1.8000001, z: 0}
+  m_LocalPosition: {x: 6.5374513, y: -1.7600001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -289,7 +289,7 @@ MonoBehaviour:
   _maxHealth: 10
   _currentHealth: 0
   _inmTime: 1
---- !u!114 &2673179871819196354
+--- !u!114 &-2807852702877065543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -298,6 +298,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5698021183704277950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d9867fdbcf0f8142af6711b16ea682a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ae1686ef5cd7e643aefd8976a498370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

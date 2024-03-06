@@ -17,7 +17,7 @@ public class SlowDebuff : MonoBehaviour
     private void OnEnable()
     {
         Invoke(nameof(Deactivate), deactivateDebuffTime);
-        _myRBMovement.ChangeSpeed(_myRBMovement.movementSpeed * speedMultiplier, deactivateDebuffTime);
+        _myRBMovement.AddSpeed(_myRBMovement.movementSpeed * speedMultiplier, deactivateDebuffTime);
 
         renderer.color = Color.cyan;
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing.Text;
@@ -79,7 +80,7 @@ public class State : MonoBehaviour
 
             if (!condition) i++;
         }
-        if (i < possibleStates.Length)
+        if (condition)
         nextState = possibleStates[i].state;
         return condition;
     }

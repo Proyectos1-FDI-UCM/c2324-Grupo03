@@ -9,9 +9,14 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
     #region references
     private NavMeshPath _path;
     [SerializeField]
-    private Transform _targetTransform;
+    //Note de Iker: Guille te tuve que poner esto publico para que el script EnemyTargeting acceda a él, si no es posible se busca otra solución
+    public Transform _targetTransform;
     private Transform _myTransform;
     private RBMovement _rbMovement;
+    #endregion
+
+    #region parameters
+    [SerializeField] float _entityReactionTime = 0.4f;
     #endregion
 
     #region properties
@@ -21,20 +26,28 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
     public void PerformBehaviour()
     {
         
-        NavMesh.CalculatePath(transform.position, _targetTransform.position, NavMesh.AllAreas,_path); //calculo de camino a tomar
-
-        direction = (_path.corners[1] - _myTransform.position).normalized;
-        
-        _rbMovement.xAxisMovement(direction.x);
-        _rbMovement.yAxisMovement(direction.y);
-
-        //debug
-        for (int i =0; i<_path.corners.Length - 1; i++)
+        if (NavMesh.CalculatePath(transform.position, _targetTransform.position, NavMesh.AllAreas, _path)) //calculo de camino a tomar
         {
-            Debug.DrawLine(_path.corners[i], _path.corners[i+1], Color.red);
-            
-        }
-        
+            direction = (_path.corners[1] - _myTransform.position).normalized;
+
+            if (!IsInvoking(nameof(Move)))
+                Invoke(nameof(Move), _entityReactionTime);
+
+            //debug
+            for (int i = 0; i < _path.corners.Length - 1; i++)
+            {
+                Debug.DrawLine(_path.corners[i], _path.corners[i + 1], Color.red);
+
+            }
+
+        } 
+
+
+    }
+
+    private void Move()
+    {
+        _rbMovement.OrthogonalMovement(direction);
     }
 
     private void Start()
