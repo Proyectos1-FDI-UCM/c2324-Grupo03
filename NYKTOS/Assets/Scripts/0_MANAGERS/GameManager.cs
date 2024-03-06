@@ -20,9 +20,6 @@ public class GameManager : MonoBehaviour
     private UnityEvent<GameState> _gameStateChanged = new UnityEvent<GameState>();
     public UnityEvent<GameState> GameStateChanged => _gameStateChanged;
 
-    [SerializeField]
-    private InversionEffect _inversionEffect;
-
     public void UpdateGameState(GameState newState)
     {
         _state = newState;
@@ -34,10 +31,8 @@ public class GameManager : MonoBehaviour
             case GameState.Config:
                 break;
             case GameState.Day:
-                _inversionEffect.Invert(false);
                 break;
             case GameState.Night:
-                _inversionEffect.Invert(true);
                 break;
             case GameState.Pause:
                 break;
@@ -66,9 +61,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Start()
+    void OnValidate()
     {
-        
+        _gameStateChanged.Invoke(State);
     }
 }
 
