@@ -5,19 +5,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Wave", menuName = "Wave System/Wave", order = 1)]
 public class WaveInfo : ScriptableObject {
     public string waveName;
-    public int noOfEnemies;
     public Enemy[] enemies; // Array of enemies for this wave
-    public Transform[] spawnPoints; // Array of spawn points for this wave
+    public SpawnerPriority[] spawnerPriority; //Prioridades del spawner
     public float spawnInterval = 1f; // Interval between spawns
 }
 
 [System.Serializable]
-public class Enemy {
+public struct Enemy {
     public GameObject enemyPrefab; // Prefab of the enemy
-    public int enemyCost; // Cost of the enemy
+    public int number; // numero de cuantos de ese bicho en esa wave
 }
 [System.Serializable]
-public class EnemyTierCostSpawner {
-    public int MaximumMoney;
-}
+public struct SpawnerPriority {
+    public GameObject Spawner;
+    public int priority;
+} 
+
 //FIN MARIA
