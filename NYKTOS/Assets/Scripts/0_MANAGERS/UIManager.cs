@@ -38,6 +38,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Sprite _halfHeart;
 
+    [SerializeField]
+    private PlayerInventory _playerInventory;
+
     #endregion
 
     
@@ -49,6 +52,9 @@ public class UIManager : MonoBehaviour
     {
         _weaponPalo.enabled = true;
         _weaponCetro.enabled = false;
+        _textoCrystalA.text = _playerInventory.yellowCrystals.ToString();
+        _textoCrystalC.text = _playerInventory.cyanCrystals.ToString();
+        _textoCrystalM.text = _playerInventory.magentaCrystals.ToString();
        
 
 

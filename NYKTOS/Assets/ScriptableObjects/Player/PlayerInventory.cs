@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerInventory", menuName = "PlayerInventory", order = 1)]
 public class PlayerInventory : ScriptableObject
 {
-    public int yellowCrystals = 0;
+    public int yellowCrystals = 10;
     
     public int magentaCrystals = 0;
 
@@ -18,4 +18,8 @@ public class PlayerInventory : ScriptableObject
         cyanCrystals = 0;
     }
 
+    public void Start()
+    {
+       
+    }
 }
