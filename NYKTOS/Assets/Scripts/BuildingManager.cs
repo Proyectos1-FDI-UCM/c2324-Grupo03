@@ -34,6 +34,10 @@ public class BuildingManager : MonoBehaviour
     private int _healthimposter = 40;
     private float crono = 3f;
     private bool UnaVez = true;
+
+    [SerializeField]
+    private int _nightLenght = 10;
+
     #endregion
 
     #region building prefabs
@@ -100,6 +104,12 @@ public class BuildingManager : MonoBehaviour
         _menuManager.CloseMenu();
         // Que se llame al manager encargado de cambiar la noche
         GameManager.Instance.UpdateGameState(GameState.Night);
+        Invoke(nameof(EndNight), _nightLenght);
+    }
+
+    public void EndNight()
+    {
+        GameManager.Instance.UpdateGameState(GameState.Day);
     }
 
     #endregion
