@@ -24,8 +24,8 @@ public class WeaponHandler : MonoBehaviour
         weapon[num].SecondaryUse(direction);
     }
 
-    private void Awake() //Borrar esto mas adelante !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    public void SetWeapon(int num, IWeapon iweapon)
     {
-        weapon[0] = GetComponent<WeaponClub>();
+        weapon[num] = iweapon;
     }
 }

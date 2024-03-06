@@ -8,6 +8,7 @@ public class WeaponClub : MonoBehaviour, IWeapon
     [SerializeField]
     private GameObject attackHitbox;
     private Transform _myTransform;
+    private WeaponHandler _weaponHandler;
     #endregion
 
     #region parameters
@@ -62,9 +63,10 @@ public class WeaponClub : MonoBehaviour, IWeapon
     private void Awake()
     {
         _myTransform = transform;
+        _weaponHandler = GetComponent<WeaponHandler>();
     }
-    private void Update()
+    private void OnEnable()
     {
-        
+        _weaponHandler.SetWeapon(0, this);
     }
 }
