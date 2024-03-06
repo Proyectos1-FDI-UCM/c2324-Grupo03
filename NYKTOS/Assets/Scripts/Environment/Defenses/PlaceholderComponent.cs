@@ -35,4 +35,8 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     {
         _state = GetComponent<BuildingStateMachine>();
     }
+    void Awake()
+    {
+        _buildingManager.IncreasePlaceholderNumber();
+    }
 }

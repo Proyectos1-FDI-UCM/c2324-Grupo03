@@ -69,6 +69,8 @@ public class BuildingManager : MonoBehaviour
         GameObject defense = Instantiate(_selectedDefense,_selectedDefense.transform.position,Quaternion.identity);
         defense.GetComponent<DefenseComponent>().placeholder = _currentPlaceholder;
 
+        AddBuilding(defense);
+
         _currentPlaceholder.GetComponent<BuildingStateMachine>().SetState(BuildingStateMachine.BuildingState.Built);
         //_healthComponent = _selectedDefense.GetComponent<HealthComponent>();
         _currentPlaceholder.GetComponent<PlaceholderComponent>().CloseMenu();
@@ -102,4 +104,51 @@ public class BuildingManager : MonoBehaviour
 
     #endregion
 
+    #region buildingArray
+    /// <summary>
+    /// Array que contiene todos los gameObjects de edificios. 
+    /// ¡ATENCION! Su longitud debe ser BuildingManager.buildingNumber
+    /// </summary>
+    public GameObject[] buildingArray { get { return _buildingArray; } }
+    private GameObject[] _buildingArray;
+
+    private int _placeholderNumber = 0;
+    public int buildingNumber { get { return _buildingNumber; } }
+    private int _buildingNumber = 0;
+
+    public void IncreasePlaceholderNumber()
+    {
+        _placeholderNumber++;
+    }
+
+    private void AddBuilding(GameObject _object)
+    {
+        _buildingArray[_buildingNumber] = _object;
+        _buildingNumber++;
+    }
+
+    public void RemoveBuilding(GameObject _object)
+    {
+        bool found = false;
+        int i = 0; //la posicion del edificio encontrado
+        while (i< _buildingNumber && !found)
+        {
+            found = _object == _buildingArray[i];
+            if (!found) i++;
+        }
+
+        for (; i< _buildingNumber-1; i++)
+        {
+            _buildingArray[i] = _buildingArray[i+1];
+        }
+
+        _buildingNumber--;
+    }
+
+    private void Awake()
+    {
+        _buildingArray = new GameObject[_placeholderNumber];
+    }
+
+    #endregion
 }
