@@ -6,6 +6,18 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    /// <summary>
+    /// Listado de los menús del juego. ASIGNAR EN ESTE ORDEN (sujeto a cambios)
+    /// 
+    /// 0 - Defensas (placeholder)
+    /// 1 - Nexo
+    /// 2 - Reparación altares (altar)
+    /// 3 - Evolucionar arma (altar)
+    /// 4 - Efecto especial arma (altar)
+    /// 5 - PAUSA
+    /// </summary>
+
+
     #region references
     [SerializeField]
     private GameObject[] _menuList;

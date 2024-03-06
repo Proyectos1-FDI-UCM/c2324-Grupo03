@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7870783667756657704}
   - component: {fileID: 8708895035124243018}
   - component: {fileID: 4451555629660728161}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlaceHolder 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5972155126267881982}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.7401876, y: -1.3348584, z: 0.7425326}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -163,9 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ae50ca5648bb245a303efe75533a1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inversionEffect: {fileID: 0}
+  inversionEffect: {fileID: 11400000, guid: dd9cd442df7e2b1428b388442011f85c, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 62000017cbdf07944a1d5c37af893e15, type: 2}
-  inversionMaterial: {fileID: 0}
+  inversionMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
 --- !u!114 &7870783667756657704
 MonoBehaviour:
   m_ObjectHideFlags: 0
