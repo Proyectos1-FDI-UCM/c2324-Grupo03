@@ -6,7 +6,6 @@ public class PlayerDeath : MonoBehaviour, IDeath
 {
     #region references
     private PlayerStateMachine _playerState;
-    private HealthComponent _health;
     #endregion
 
 
@@ -23,7 +22,6 @@ public class PlayerDeath : MonoBehaviour, IDeath
        _aliveskin.enabled = false;
        _deathskin.enabled = true;
        alive = false;
-       _playerState.SetState(PlayerState.Dead);
     }
 
     public void Revive()
@@ -31,13 +29,5 @@ public class PlayerDeath : MonoBehaviour, IDeath
         _aliveskin.enabled = true;
         _deathskin.enabled = false;
         alive = true;
-        _playerState.SetState(PlayerState.Idle);
-        _health.MaxHealth();
-    }
-
-    void Start()
-    {
-        _health = GetComponent<HealthComponent>();
-        _playerState = GetComponent<PlayerStateMachine>();
     }
 }

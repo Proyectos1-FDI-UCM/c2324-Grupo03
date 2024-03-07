@@ -16,7 +16,7 @@ public class AltarComponent : MonoBehaviour, IBuilding
 
     public void OpenMenu()
     {
-        if(_state.buildingState == BuildingStateMachine.BuildingState.NotBuilt && GameManager.Instance.State == GameState.Day)
+        if(_state.buildingState == BuildingStateMachine.BuildingState.NotBuilt)
         {
             Debug.Log("hola soy un altar sin reparar");
             // Activar menú construcción
