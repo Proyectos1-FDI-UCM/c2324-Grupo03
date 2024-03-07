@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region movement
     public void Blink(InputAction.CallbackContext context)
     {
-        if (_playerState.playerState == PlayerState.Idle && !_BlinkCooldown.IsCooling()&& _playerDeath.alive)
+        if (PlayerStateMachine.playerState == PlayerState.Idle && !_BlinkCooldown.IsCooling() && PlayerStateMachine.playerState != PlayerState.Dead)
         {
             _blinkComponent.Blink();
             _BlinkCooldown.StartCooldown();
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour, IKnockback
         Vector2 input = context.ReadValue<Vector2>();
         _privateMovement = input;
 
-        if (_playerState.playerState == PlayerState.Idle || _playerState.playerState == PlayerState.Dead)
+        if (PlayerStateMachine.playerState == PlayerState.Idle)
         {
             CallMove(input);
         }
@@ -91,12 +91,12 @@ public class PlayerController : MonoBehaviour, IKnockback
 
     public void CallKnockback(Vector2 pushPosition) //cambia los estados del jugador y llama a callknockback
     {
-        if(_playerState.playerState == PlayerState.Idle ||  _playerState.playerState == PlayerState.Attacking)
+        if(PlayerStateMachine.playerState == PlayerState.Idle ||  PlayerStateMachine.playerState == PlayerState.Attacking)
         {
             _playerState.SetState(PlayerState.OnKnockback);
             _playerMovement.Knockback(pushPosition);
 
-            if (_playerState.playerState == PlayerState.Attacking) //si el jugador esta atacando y recibe un golpe, se realiza knockback y se cancela el retorno a idle (es llamado mas adelante)
+            if (PlayerStateMachine.playerState == PlayerState.Attacking) //si el jugador esta atacando y recibe un golpe, se realiza knockback y se cancela el retorno a idle (es llamado mas adelante)
             {
                 _playerState.CancelInvoke("SetIdleState");
             }
@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region combat
     public void PrimaryAttack(InputAction.CallbackContext context)
     {
-        if(_playerState.playerState == PlayerState.Idle && !_PrimaryAttackCooldown.IsCooling()&& _playerDeath.alive)
+        if(PlayerStateMachine.playerState == PlayerState.Idle && !_PrimaryAttackCooldown.IsCooling()&& PlayerStateMachine.playerState != PlayerState.Dead)
         {
             _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
             _PrimaryAttackCooldown.StartCooldown();
@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour, IKnockback
         Collider2D[] hitColliders = new Collider2D[maxColliders];
         int numColliders = Physics2D.OverlapCircleNonAlloc(_myTransform.position, _interactionRange, hitColliders, 1 << 7);
 
-        for (int i = 0; i < numColliders && (_playerState.playerState == PlayerState.Idle || _playerState.playerState == PlayerState.Dead); i++)
+        for (int i = 0; i < numColliders && PlayerStateMachine  .playerState == PlayerState.Idle; i++)
         {
             // Hacer producto escalar entre el vector lookDirection y el del player-edificio. Devuelve el coseno del ángulo que forman            
             Vector3 targetDir = (hitColliders[i].transform.position - _myTransform.position).normalized;

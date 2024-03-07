@@ -16,13 +16,11 @@ public class PlayerDeath : MonoBehaviour, IDeath
     [SerializeField]
     private SpriteRenderer _aliveskin;
 
-    public bool alive = true;
-
     public void Death()
     {
        _aliveskin.enabled = false;
        _deathskin.enabled = true;
-       alive = false;
+       _playerState.SetState(PlayerState.Dead);
        _playerState.SetState(PlayerState.Dead);
     }
 
@@ -30,7 +28,6 @@ public class PlayerDeath : MonoBehaviour, IDeath
     {
         _aliveskin.enabled = true;
         _deathskin.enabled = false;
-        alive = true;
         _playerState.SetState(PlayerState.Idle);
         _health.MaxHealth();
     }
