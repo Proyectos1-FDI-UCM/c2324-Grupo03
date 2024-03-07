@@ -22,7 +22,6 @@ public class TargetPriorityCondition : MonoBehaviour, ICondition
 
     public bool Validate(GameObject game)
     {
-        print(_enemyPriorityComponent.toNearestBuildingPath.corners.Length);
         if (_enemyPriorityComponent.toNearestBuildingPath.corners.Length > 0)
         {
             Vector3 _nearestBuilding = _enemyPriorityComponent.toNearestBuildingPath.corners[_enemyPriorityComponent.toNearestBuildingPath.corners.Length - 1];

@@ -562,8 +562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c777e1596f38a874aab2f317d3377f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waitUntilAttacking: 0.2
-  _hitboxAppearingTime: 0.5
+  _waitUntilAttacking: 0.5
+  _hitboxAppearingTime: 0.3
   attackType: 0
   weaponDamage: 1
   _vespertilioAttackHitbox: {fileID: 6919465541366467843, guid: 8ae27c9322cbbda43990443b041fd24c, type: 3}
