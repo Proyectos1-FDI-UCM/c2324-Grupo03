@@ -108,15 +108,13 @@ public class UIManager : MonoBehaviour
 
     public void Pause()
     {
-        Time.timeScale = 0;
-        _pauseMenu.enabled = true;
-        
+        Time.timeScale = 0;        
     }
 
     public void Resume()
     {
         Time.timeScale = 1;
-        _pauseMenu.enabled = false;
+        MenuManager.Instance.CloseMenu();
     }
 
     public void Quit()
