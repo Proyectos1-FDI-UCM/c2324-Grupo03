@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
         get { return _instance; }
     }
 
+    [SerializeField]
+    private PlayerInventory inventory;
 
     [SerializeField]
     private GameState _state;
@@ -76,6 +78,12 @@ public class GameManager : MonoBehaviour
         {
             _instance = this;
         }
+
+    }
+
+    void Start()
+    {
+        inventory.Reset();
     }
 
     void OnValidate()
