@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour, IKnockback
         Vector2 input = context.ReadValue<Vector2>();
         _privateMovement = input;
 
-        if (_playerState.playerState == PlayerState.Idle)
+        if (_playerState.playerState == PlayerState.Idle || _playerState.playerState == PlayerState.Dead)
         {
             CallMove(input);
         }
@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour, IKnockback
         Collider2D[] hitColliders = new Collider2D[maxColliders];
         int numColliders = Physics2D.OverlapCircleNonAlloc(_myTransform.position, _interactionRange, hitColliders, 1 << 7);
 
-        for (int i = 0; i < numColliders && _playerState.playerState == PlayerState.Idle; i++)
+        for (int i = 0; i < numColliders && (_playerState.playerState == PlayerState.Idle || _playerState.playerState == PlayerState.Dead); i++)
         {
             // Hacer producto escalar entre el vector lookDirection y el del player-edificio. Devuelve el coseno del ángulo que forman            
             Vector3 targetDir = (hitColliders[i].transform.position - _myTransform.position).normalized;

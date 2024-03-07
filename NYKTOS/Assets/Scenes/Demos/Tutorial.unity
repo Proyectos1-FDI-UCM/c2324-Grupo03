@@ -234,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.38561526
+      value: 0.38561532
       objectReference: {fileID: 0}
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.y
@@ -298,15 +298,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.0030978934
+      value: 0.004016064
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 1
+      value: 1.0005646
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9924786
+      value: 0.9929952
       objectReference: {fileID: 0}
     - target: {fileID: 8073207824159548778, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_ShowDebugText
@@ -348,6 +348,10 @@ PrefabInstance:
       propertyPath: _UIManager
       value: 
       objectReference: {fileID: 1468414745}
+    - target: {fileID: 5767895529976162651, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: _maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6534088897598437012, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.38561615
@@ -650,6 +654,14 @@ PrefabInstance:
       propertyPath: _playerDeath
       value: 
       objectReference: {fileID: 645015022}
+    - target: {fileID: 6341304757576681484, guid: ebeff8dda23b3ea42a069c5ffcdf7315, type: 3}
+      propertyPath: _buildTransform
+      value: 
+      objectReference: {fileID: 1740481787}
+    - target: {fileID: 6341304757576681484, guid: ebeff8dda23b3ea42a069c5ffcdf7315, type: 3}
+      propertyPath: _playerTransform
+      value: 
+      objectReference: {fileID: 645015017}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -925,6 +937,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2538237894399091131, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 645015022}
+    - target: {fileID: 2538237894399091131, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: _nightLength
       value: 180
       objectReference: {fileID: 0}
@@ -932,6 +948,10 @@ PrefabInstance:
       propertyPath: _menuManager
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6173224355726370582, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: _UIManager
+      value: 
+      objectReference: {fileID: 1468414745}
     - target: {fileID: 7257835641261950391, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: _menuManager
       value: 
@@ -987,7 +1007,7 @@ PrefabInstance:
       objectReference: {fileID: 1728673686}
     - target: {fileID: 5847144808090115009, guid: 2a0fede60110d6c418162d6a4a113208, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.38561526
+      value: 0.38561532
       objectReference: {fileID: 0}
     - target: {fileID: 5847144808090115009, guid: 2a0fede60110d6c418162d6a4a113208, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1151,6 +1171,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2224ec9d387f5c45a885d6c13a40221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1740481787 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6588363401860245143, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+  m_PrefabInstance: {fileID: 1560564398}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1845432402
 PrefabInstance:
   m_ObjectHideFlags: 0
