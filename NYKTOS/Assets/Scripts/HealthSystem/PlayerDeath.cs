@@ -23,4 +23,11 @@ public class PlayerDeath : MonoBehaviour, IDeath
        _deathskin.enabled = true;
        alive = false;
     }
+
+    public void Revive()
+    {
+        _aliveskin.enabled = true;
+        _deathskin.enabled = false;
+        alive = true;
+    }
 }
