@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class ImageControllerScript : MonoBehaviour
 {
     [SerializeField]
+    private GameObject _allTutorials;
+    [SerializeField]
     private List<GameObject> _tutorials;
     [SerializeField]
     private float _appearTime = 2f;
@@ -20,8 +22,13 @@ public class ImageControllerScript : MonoBehaviour
 
     IEnumerator AppearAndDisappearImages()
     {
+        
         foreach (GameObject tutorial in _tutorials)
         {
+            if (GameManager.Instance.State != GameState.Night)
+            {
+                _allTutorials.SetActive(false);
+            }
             yield return new WaitForSeconds(_disappearTime);
 
             tutorial.SetActive(true); // Hace que la imagen aparezca

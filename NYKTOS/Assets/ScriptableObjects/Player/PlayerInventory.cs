@@ -68,10 +68,5 @@ public class PlayerInventory : ScriptableObject
         InvokeInventoryUpdate();
     }
 
-    public void Awake()
-    {
-        amarilloCristales = 10;
-        cianCristales = 0;
-        magentaCristales=0;
-    }
+   
 }

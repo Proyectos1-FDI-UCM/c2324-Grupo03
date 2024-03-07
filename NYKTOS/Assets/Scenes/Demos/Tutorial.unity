@@ -259,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.38561532
+      value: 0.38561526
       objectReference: {fileID: 0}
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.y
@@ -537,14 +537,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 198865889361225123, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: _appearTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 198865889361225123, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: _disappearTime
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2251676366952122962, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -649,30 +641,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 7148458610234947385, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_Colors.m_SelectedColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8164742710672307575, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8164742710672307575, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OverrideSorting
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197871321677472121, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_Colors.m_SelectedColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197871321677472121, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_Colors.m_SelectedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197871321677472121, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_Colors.m_SelectedColor.r
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -734,10 +702,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86989611e3687ee4698eb398f41ced80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventory: {fileID: 0}
-  _beaconPrice: 0
-  _wallPrice: 0
-  _turretPrice: 0
+  _inventory: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
+  _beaconPrice: 3
+  _wallPrice: 5
+  _turretPrice: 10
   _beacon: {fileID: 5698021183704277950, guid: ece877d2ae7f77e4e87569d26f5af709, type: 3}
   _wall: {fileID: 6636109488734167412, guid: 52d33308eeb816c42abd9072de80b08d, type: 3}
   _turret: {fileID: 8365187515372501195, guid: 2de64088f6ec78342b5c1ae62919387a, type: 3}
@@ -859,7 +827,7 @@ PrefabInstance:
       objectReference: {fileID: 1728673686}
     - target: {fileID: 5847144808090115009, guid: 2a0fede60110d6c418162d6a4a113208, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.38561532
+      value: 0.38561526
       objectReference: {fileID: 0}
     - target: {fileID: 5847144808090115009, guid: 2a0fede60110d6c418162d6a4a113208, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1024,7 +992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2224ec9d387f5c45a885d6c13a40221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nightLength: 10
+  _nightLength: 180
 --- !u!1001 &2068729078
 PrefabInstance:
   m_ObjectHideFlags: 0
