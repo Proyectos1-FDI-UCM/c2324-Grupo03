@@ -139,7 +139,7 @@ public class BuildingManager : MonoBehaviour
         _placeholderNumber++;
     }
 
-    private void AddBuilding(GameObject obj)
+    public void AddBuilding(GameObject obj)
     {
         _buildingArray[_buildingNumber] = obj;
         _buildingNumber++;

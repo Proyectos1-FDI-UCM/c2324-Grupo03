@@ -10,7 +10,7 @@ public class EnemyPriorityComponent : MonoBehaviour
     //la funcion de este script es de calcular el camino del jugador y el del edificio mas cercano
     #region properties
     private Transform _playerTransform { get { return PlayerController.playerTransform; } }
-    private GameObject[] _buildingArray { get { return BuildingManager.Instance.buildingArray; } }
+    private GameObject[] _buildingArray { get { return BuildingManager.Instance.buildingArray; } }  
     private int _buildingNumber { get { return BuildingManager.Instance.buildingNumber; } }
 
     private Transform _myTransform;
@@ -23,22 +23,15 @@ public class EnemyPriorityComponent : MonoBehaviour
     public NavMeshPath toNearestBuildingPath { get { return _toNearestBuildingPath; } }
 
     #endregion
-
-    [SerializeField]
-    private PlayerDeath _playerDeath;
     
     private void Update()
     {
         //PLAYER PATH CALCULATION
-
-        if (_playerDeath.alive)
-        {
-            NavMesh.CalculatePath(_myTransform.position, PlayerController.playerTransform.position, NavMesh.AllAreas, _toPlayerPath);
-        }
-        
+        NavMesh.CalculatePath(_myTransform.position, PlayerController.playerTransform.position, NavMesh.AllAreas, _toPlayerPath);
 
         //NEAREST BUILDING PATH CALCULATION
         _toNearestBuildingPath = CalculateNearestBuildingPath();
+
     }
 
     private NavMeshPath CalculateNearestBuildingPath()

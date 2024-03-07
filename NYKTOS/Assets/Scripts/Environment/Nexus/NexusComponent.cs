@@ -30,4 +30,9 @@ public class NexusComponent : MonoBehaviour, IBuilding
     {
         GameManager.Instance.UpdateGameState(GameState.Day);
     }
+
+    private void Start()
+    {
+        BuildingManager.Instance.AddBuilding(this.gameObject);
+    }
 }
