@@ -28,4 +28,9 @@ public class WeaponHandler : MonoBehaviour
     {
         weapon[num] = iweapon;
     }
+
+    public void Awake()
+    {
+        SetWeapon(0, GetComponent<IWeapon>());
+    }
 }

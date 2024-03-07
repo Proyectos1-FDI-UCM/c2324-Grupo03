@@ -12,9 +12,6 @@ public class AltarComponent : MonoBehaviour, IBuilding
 
     #region references
     private BuildingStateMachine _state;
-
-    [SerializeField]
-    private MenuManager _menuManager;
     #endregion
 
     public void OpenMenu()
@@ -27,7 +24,7 @@ public class AltarComponent : MonoBehaviour, IBuilding
         else { } // Activar menú potenciar armas
     }
 
-    public void CloseMenu() => _menuManager.CloseMenu();
+    public void CloseMenu() => MenuManager.Instance.CloseMenu();
 
 
     void Start()
