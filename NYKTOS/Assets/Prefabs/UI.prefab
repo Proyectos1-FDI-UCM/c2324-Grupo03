@@ -3846,6 +3846,7 @@ GameObject:
   - component: {fileID: 3060626913212143727}
   - component: {fileID: 1387597065684619325}
   - component: {fileID: 2095457240719268927}
+  - component: {fileID: 198865889361225123}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -3969,6 +3970,27 @@ MonoBehaviour:
   _fullHeart: {fileID: 21300000, guid: d8f40d6b94578d44d975b5f73c915811, type: 3}
   _halfHeart: {fileID: 21300000, guid: 715d71f7de74161438fd9590584197fc, type: 3}
   _playerInventory: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
+--- !u!114 &198865889361225123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5560129167899508117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201766466df924f40a82cef8db1ece5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorials:
+  - {fileID: 8159629763359443647}
+  - {fileID: 3840581593429452642}
+  - {fileID: 7343310849403412369}
+  - {fileID: 5422448026057480528}
+  - {fileID: 5639194030168647118}
+  - {fileID: 6745979292825273751}
+  _appearTime: 1
+  _disappearTime: 1
 --- !u!1 &5639194030168647118
 GameObject:
   m_ObjectHideFlags: 0
@@ -3984,7 +4006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6613824051454081324
 RectTransform:
   m_ObjectHideFlags: 0
