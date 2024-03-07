@@ -11,7 +11,7 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
 
     public void OpenMenu()
     {
-        if(_state.buildingState == BuildingStateMachine.BuildingState.NotBuilt)
+        if(_state.buildingState == BuildingStateMachine.BuildingState.NotBuilt && GameManager.Instance.State == GameState.Day)
         {
             MenuManager.Instance.OpenMenu(2);
             UpdateCurrentPlaceHolder();
