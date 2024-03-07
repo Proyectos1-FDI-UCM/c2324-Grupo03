@@ -33,7 +33,7 @@ public class EnemyAnimation : MonoBehaviour {
             Idle(movementDirection);
             nextActionTime += period;
         } 
-        if(_attacking)AttackingAni();
+        
     }
 }
 //MARIA
