@@ -1,52 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpawnManager : MonoBehaviour
 {
-    // Maria aaaaaaaaa
-    
-    #region references
-    private SpawnEnemy _spawnEnemy;
-    #endregion
+    [SerializeField]
+    private NightWaves[] _nightList;
 
-    #region parameters
-    static private int _currentWaveNumber; //numero de la wave
-    #endregion
+    [SerializeField]
+    private int _currentNight;
 
+    [SerializeField]
+    private int _currentWave;
 
-    #region methods
+    [SerializeField]
+    private int _currentWavePoints;
 
-    public int GetWaveNumber(int sum) {  //nos da el numero de la wave si la queremos en la ui
-        return _currentWaveNumber += sum;
-        Debug.Log(_currentWaveNumber);
-    }
+    private UnityEvent initializeSpawners = new UnityEvent();
+    public UnityEvent InitializeSpawners;
 
-   
-    public void EnableNextWaveSpawning() { //ui o lo que sea inicia los spawners
-        _spawnEnemy.StartEnemySpawning();
-    }
-    #endregion
+    private WavePool currentPool;
 
-    private void SpawnerEnabler(GameState state)
+    void InitializeNight()
     {
-        if (state == GameState.Night)
-        {
-            EnableNextWaveSpawning();
-            Debug.Log("Empieza Wave");
-        }
-        else
-        { 
-            
-        }
+        // TODO
+        // Aquí va el cálculo de puntos a gastar para esta noche, me da palo 
 
-    }
 
-    // Start is called before the first frame update
-    void Start() {
-        _spawnEnemy.WaveSet();
-        _currentWaveNumber =0;
-        GameManager.Instance.GameStateChanged.AddListener(SpawnerEnabler);
-    }
+    } 
 }
-//Fin Maria
