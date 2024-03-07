@@ -7,11 +7,15 @@ public class NexusComponent : MonoBehaviour, IBuilding
     #region parameters
     [SerializeField]
     private int _nightLength = 180;
+
+    [SerializeField]
+    private PlayerDeath _player;
     #endregion
 
     public void OpenMenu()
     {
-        MenuManager.Instance.OpenMenu(1);
+        if(GameManager.Instance.State == GameState.Day) MenuManager.Instance.OpenMenu(1);
+        else _player.Revive();
     }
 
     public void CloseMenu() => MenuManager.Instance.CloseMenu();
