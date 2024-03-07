@@ -11,7 +11,6 @@ public class WeaponVespertilioAttack : MonoBehaviour, IWeapon
     #region parameters
     [SerializeField] private float _waitUntilAttacking = 0.2f;
     [SerializeField] private float _hitboxAppearingTime = 0.5f;
-    
     #endregion
 
     #region weaponProperties
@@ -19,10 +18,13 @@ public class WeaponVespertilioAttack : MonoBehaviour, IWeapon
     [SerializeField] private int weaponDamage = 1;
     #endregion
 
+    private bool startedCoroutine = false;
+
     [SerializeField]
     private GameObject _vespertilioAttackHitbox;
     public void PrimaryUse(Vector2 direction)
     {
+        if(!startedCoroutine)
         StartCoroutine(VespertilioAttack(direction));
     }
     public void SecondaryUse(Vector2 direction)
@@ -39,6 +41,7 @@ public class WeaponVespertilioAttack : MonoBehaviour, IWeapon
 
     private IEnumerator VespertilioAttack(Vector2 direction)
     {
+        startedCoroutine = true;
         yield return new WaitForSeconds(_waitUntilAttacking);
 
         GameObject currentHitbox =
@@ -52,6 +55,7 @@ public class WeaponVespertilioAttack : MonoBehaviour, IWeapon
         Destroy(currentHitbox);
 
         yield return new WaitForSeconds(1- (_waitUntilAttacking + _hitboxAppearingTime));
+        startedCoroutine = false;
     }
     private float DirectionAngle(Vector2 direction) //saca el angulo de la direccion dando por sentado que el modulo de la direccion es 1
     {
