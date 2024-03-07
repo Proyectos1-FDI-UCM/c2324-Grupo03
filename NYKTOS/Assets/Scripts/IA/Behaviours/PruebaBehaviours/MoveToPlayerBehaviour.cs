@@ -7,9 +7,9 @@ using UnityEngine.AI;
 public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
 {
     #region references
-    private NavMeshPath _path;
     private Transform _myTransform;
     private RBMovement _rbMovement;
+    private EnemyPriorityComponent _enemyPriorityComponent;
     #endregion
 
     #region parameters
@@ -23,17 +23,17 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
     public void PerformBehaviour()
     {
         
-        if (NavMesh.CalculatePath(transform.position, PlayerController.playerTransform.position, NavMesh.AllAreas, _path) && _path.corners.Length > 1) //calculo de camino a tomar
+        if (_enemyPriorityComponent.toPlayerPath.corners.Length > 1) //calculo de camino a tomar
         {
-            direction = (_path.corners[1] - _myTransform.position).normalized;
+            direction = (_enemyPriorityComponent.toPlayerPath.corners[1] - _myTransform.position).normalized;
 
             if (!IsInvoking(nameof(Move)))
                 Invoke(nameof(Move), _entityReactionTime);
 
             //debug
-            for (int i = 0; i < _path.corners.Length - 1; i++)
+            for (int i = 0; i < _enemyPriorityComponent.toPlayerPath.corners.Length - 1; i++)
             {
-                Debug.DrawLine(_path.corners[i], _path.corners[i + 1], Color.red);
+                Debug.DrawLine(_enemyPriorityComponent.toPlayerPath.corners[i], _enemyPriorityComponent.toPlayerPath.corners[i + 1], Color.red);
 
             }
 
@@ -49,8 +49,8 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
 
     private void Start()
     {
-        _path = new NavMeshPath();
         _myTransform = transform;
         _rbMovement = GetComponentInParent<RBMovement>();
+        _enemyPriorityComponent = GetComponentInParent<EnemyPriorityComponent>();
     }
 }
