@@ -219,7 +219,7 @@ MonoBehaviour:
   maxLightRadius: 4
   minLightRadius: 2
   increaseMultiplier: 8
-  fearModifyUnit: 0.25
+  fearModifyUnit: 0.4
   provokedMultiplier: 24
   provokedFearMax: 1
   provokedFear: 0
@@ -775,7 +775,7 @@ MonoBehaviour:
   _UIManager: {fileID: 0}
   _maxHealth: 10
   _currentHealth: 0
-  _inmTime: 2
+  _inmTime: 0.5
 --- !u!114 &3702319650464414860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,7 +790,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deathskin: {fileID: 6758919315837710540}
   _aliveskin: {fileID: 6222676936956634352}
-  alive: 1
 --- !u!114 &4920501686148597465
 MonoBehaviour:
   m_ObjectHideFlags: 0
