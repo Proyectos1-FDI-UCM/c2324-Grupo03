@@ -29,21 +29,19 @@ public class SpawnEnemy : MonoBehaviour {
         WaitForSeconds wait = new WaitForSeconds(spawnRate); //se espera el tiempo qe pongas en spawRate
         while (_spawnEnemyWave && waves != null) {
             if (currentSpawned  < spawnLimit) { // si hay menos enemigos que el limite, spawnea
-                for (int i = 0; i < _currentWave.spawnerPriority.Length; i++) {
-                    for (int j = 0; j < _currentWave.spawnerPriority[i].howManyEnemies; j++) {
-
+                
                         if (_totalEnemies <= 0) { //si no queda enemigos acaba
                             _spawnEnemyWave = false;
                         }
 
                         GameObject enemyToSpawn = GetRandomEnemy();
-                        Transform spawnPos = _currentWave.spawnerPriority[i].SpawnPoints[Random.Range(0, _currentWave.spawnerPriority[i].SpawnPoints.Length)].spawnerPoints;
+                        //Transform spawnPos = _currentWave.spawnerPriority[i].SpawnPoints[Random.Range(0, _currentWave.spawnerPriority[i].SpawnPoints.Length)].spawnerPoints;
 
-                        Instantiate(enemyToSpawn, spawnPos.position, Quaternion.identity);
+                        //Instantiate(enemyToSpawn, spawnPos.position, Quaternion.identity);
                         _totalEnemies--;
                         yield return wait;
-                    }
-                }
+                    
+                
             }
         }
         spawnLimit += 2; //para que aumente la cantidad de enemigos en la siguiente wave
