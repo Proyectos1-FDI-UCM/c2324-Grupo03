@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour, IKnockback
 
     #endregion
 
-    #region interactions
+    #region other actions
     public void Interact(InputAction.CallbackContext context)
     {
         int maxColliders = 10;
@@ -168,6 +168,12 @@ public class PlayerController : MonoBehaviour, IKnockback
             }
         }
     }
+
+    public void PauseGame(InputAction.CallbackContext context)
+    {
+        MenuManager.Instance.OpenMenu(0);
+    }
+
     #endregion
 
     void Awake()
@@ -194,5 +200,6 @@ public class PlayerController : MonoBehaviour, IKnockback
         _playerControls.Player.PrimaryAttack.performed += PrimaryAttack;
         _playerControls.Player.SecondaryAttack.performed += SecondaryAttack;
         _playerControls.Player.Interact.performed += Interact;
+        _playerControls.Player.Pause.performed += PauseGame;
     }
 }

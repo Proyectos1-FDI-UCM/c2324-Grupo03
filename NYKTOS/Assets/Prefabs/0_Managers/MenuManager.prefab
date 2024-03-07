@@ -47,7 +47,9 @@ MonoBehaviour:
   _menuList:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   _firstSelected:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   _player: {fileID: 0}

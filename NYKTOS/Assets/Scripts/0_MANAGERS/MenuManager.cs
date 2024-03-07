@@ -9,12 +9,12 @@ public class MenuManager : MonoBehaviour
     /// <summary>
     /// Listado de los menús del juego. ASIGNAR EN ESTE ORDEN (sujeto a cambios)
     /// 
-    /// 0 - Defensas (placeholder)
+    /// 0 - PAUSA
     /// 1 - Nexo
-    /// 2 - Reparación altares (altar)
-    /// 3 - Evolucionar arma (altar)
-    /// 4 - Efecto especial arma (altar)
-    /// 5 - PAUSA
+    /// 2 - Defensas (placeholder)
+    /// 3 - Reparación altares (altar destruido)
+    /// 4 - Evolucionar arma (altar reparado)
+    /// 5 - Efecto especial arma (altar reparado)
     /// </summary>
 
 

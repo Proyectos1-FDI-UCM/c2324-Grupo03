@@ -13,7 +13,7 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     {
         if(_state.buildingState == BuildingStateMachine.BuildingState.NotBuilt)
         {
-            MenuManager.Instance.OpenMenu(0);
+            MenuManager.Instance.OpenMenu(2);
             UpdateCurrentPlaceHolder();
         }
     }
