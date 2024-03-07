@@ -131,38 +131,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 198865889361225123, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: _appearTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 198865889361225123, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: _disappearTime
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2251676366952122962, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 217604219}
-    - target: {fileID: 2251676366952122962, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartNight
-      objectReference: {fileID: 0}
     - target: {fileID: 2451551596797387636, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 750791261}
-    - target: {fileID: 2451551596797387636, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 2834099331420654490, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 488698919}
-    - target: {fileID: 2834099331420654490, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuildWall
-      objectReference: {fileID: 0}
     - target: {fileID: 3783585067294783666, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -247,62 +227,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 488698919}
-    - target: {fileID: 4496728085888225263, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuildTurret
-      objectReference: {fileID: 0}
     - target: {fileID: 5347833623864877841, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 488698919}
-    - target: {fileID: 5347833623864877841, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuildBeacon
-      objectReference: {fileID: 0}
     - target: {fileID: 5560129167899508117, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 7148458610234947385, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_Colors.m_SelectedColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7148458610234947385, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 420996946}
-    - target: {fileID: 7148458610234947385, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Quit
-      objectReference: {fileID: 0}
-    - target: {fileID: 7148458610234947385, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197871321677472121, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_Colors.m_SelectedColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197871321677472121, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_Colors.m_SelectedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197871321677472121, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_Colors.m_SelectedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197871321677472121, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 420996946}
     - target: {fileID: 9197871321677472121, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Resume
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197871321677472121, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 420996946}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -84,12 +84,6 @@ public class BuildingManager : MonoBehaviour
         _currentPlaceholder.GetComponent<BuildingStateMachine>().SetState(BuildingStateMachine.BuildingState.Built);
         MenuManager.Instance.CloseMenu();
     }
-
-    public void BuildTurret()
-    {
-        SetBuilding(_turret);
-        BuildDefense();
-    }    
     
     public void BuildBeacon()
     {
@@ -100,13 +94,27 @@ public class BuildingManager : MonoBehaviour
             SetBuilding(_beacon);
             BuildDefense();
         }
-
+        // else => Mensaje de no suficientes cristales?
     }    
     
     public void BuildWall()
     {
-        SetBuilding(_wall);
-        BuildDefense();
+        if(_inventory.Amarillo >= _wallPrice)
+        {
+            SetBuilding(_wall);
+            BuildDefense();
+        }
+        // else => Mensaje de no suficientes cristales?
+    }
+
+    public void BuildTurret()
+    {
+        if(_inventory.Amarillo >= _turretPrice)
+        {
+            SetBuilding(_turret);
+            BuildDefense();
+        }
+        // else => Mensaje de no suficientes cristales?
     }
     #endregion
 
