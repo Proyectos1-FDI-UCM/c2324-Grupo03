@@ -63,6 +63,7 @@ public class MenuManager : MonoBehaviour
     public void CloseMenu(InputAction.CallbackContext context)
     {
         CloseMenu();
+        GameManager.Instance.Resume();
     }
 
 

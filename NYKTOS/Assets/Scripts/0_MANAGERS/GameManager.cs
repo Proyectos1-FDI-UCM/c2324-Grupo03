@@ -48,6 +48,23 @@ public class GameManager : MonoBehaviour
         _gameStateChanged.Invoke(newState);
     }
 
+    public void Pause()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        MenuManager.Instance.CloseMenu();
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+
     // Aplicación de singletón
     void Awake()
     {

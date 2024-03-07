@@ -172,6 +172,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     public void PauseGame(InputAction.CallbackContext context)
     {
         MenuManager.Instance.OpenMenu(0);
+        GameManager.Instance.Pause();
     }
 
     #endregion

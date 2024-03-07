@@ -11,6 +11,12 @@ public class BuildingManager : MonoBehaviour
         get { return _instance; }
     }
 
+    #region references
+    [SerializeField]
+    private PlayerInventory _inventory;
+    #endregion
+
+
     #region properties
     private GameObject _currentPlaceholder;
 
@@ -29,6 +35,15 @@ public class BuildingManager : MonoBehaviour
 
     #region parameters
     private float _offsetNotWall = 0.9f;
+
+    [SerializeField]
+    private int _beaconPrice;
+
+    [SerializeField]
+    private int _wallPrice;
+
+    [SerializeField]
+    private int _turretPrice;
     #endregion
 
     #region building prefabs
@@ -78,8 +93,14 @@ public class BuildingManager : MonoBehaviour
     
     public void BuildBeacon()
     {
-        SetBuilding(_beacon);
-        BuildDefense();
+        // El faro cuesta x cristales amarillos
+        if (_inventory.Amarillo >= _beaconPrice)
+        {
+            _inventory.Amarillo -= _beaconPrice;
+            SetBuilding(_beacon);
+            BuildDefense();
+        }
+
     }    
     
     public void BuildWall()
