@@ -109,8 +109,8 @@ public class UIManager : MonoBehaviour
     public void Pause()
     {
         Time.timeScale = 0;
-        _pauseMenu.enabled = false;
-        Debug.Log("Hola");
+        _pauseMenu.enabled = true;
+        
     }
 
     public void Resume()
