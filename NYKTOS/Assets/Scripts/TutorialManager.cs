@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class ImageControllerScript : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class ImageControllerScript : MonoBehaviour
     {
         
             yield return StartCoroutine(AppearAndDisappearImages());
-        
+            _allTutorials.SetActive(true);
     }
 
     IEnumerator AppearAndDisappearImages()
@@ -25,10 +26,11 @@ public class ImageControllerScript : MonoBehaviour
         
         foreach (GameObject tutorial in _tutorials)
         {
-            if (GameManager.Instance.State != GameState.Night)
+            if (GameManager.Instance.State == GameState.Night)
             {
                 _allTutorials.SetActive(false);
             }
+
             yield return new WaitForSeconds(_disappearTime);
 
             tutorial.SetActive(true); // Hace que la imagen aparezca
