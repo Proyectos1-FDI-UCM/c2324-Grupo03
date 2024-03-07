@@ -6,7 +6,7 @@ public class NexusComponent : MonoBehaviour, IBuilding
 {
     #region parameters
     [SerializeField]
-    private int _nightLength = 10;
+    private int _nightLength = 180;
     #endregion
 
     public void OpenMenu()
