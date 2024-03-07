@@ -30,7 +30,7 @@ public class VespertilioAttackHitbox : MonoBehaviour
 
             for (int i = 0; i < iknockbackChildren.Length; i++)
             {
-                iknockbackChildren[i].CallKnockback(_myTransform.position);
+                iknockbackChildren[i].CallKnockback(_myTransform.parent.position);
             }
 
         }
