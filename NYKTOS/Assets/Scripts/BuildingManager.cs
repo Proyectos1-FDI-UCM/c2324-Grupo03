@@ -167,9 +167,7 @@ public class BuildingManager : MonoBehaviour
     void Awake()
     {
         if (_instance != null) Destroy(gameObject);
-        else _instance = this;
-
-       
+        else _instance = this;       
     }
 
     void Start()

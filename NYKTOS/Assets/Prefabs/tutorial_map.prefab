@@ -4699,8 +4699,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3194094596050529965}
-  m_Layer: 0
-  m_Name: Edificios
+  m_Layer: 7
+  m_Name: Placeholders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5010,7 +5010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1848161920891998007, guid: e1f24b024931df84e9c820c068720048, type: 3}
       propertyPath: m_Name
-      value: Altar
+      value: Nexus
       objectReference: {fileID: 0}
     - target: {fileID: 5321148773877959482, guid: e1f24b024931df84e9c820c068720048, type: 3}
       propertyPath: m_PointLightInnerRadius
@@ -5020,11 +5020,33 @@ PrefabInstance:
       propertyPath: m_PointLightOuterRadius
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -714603560521859625, guid: e1f24b024931df84e9c820c068720048, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1848161920891998007, guid: e1f24b024931df84e9c820c068720048, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2538237894399091131}
   m_SourcePrefab: {fileID: 100100000, guid: e1f24b024931df84e9c820c068720048, type: 3}
+--- !u!1 &6544441048625905143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1848161920891998007, guid: e1f24b024931df84e9c820c068720048, type: 3}
+  m_PrefabInstance: {fileID: 4861489614960931520}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2538237894399091131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6544441048625905143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2224ec9d387f5c45a885d6c13a40221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nightLength: 10
 --- !u!4 &6588363401860245143 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1736677066963637335, guid: e1f24b024931df84e9c820c068720048, type: 3}

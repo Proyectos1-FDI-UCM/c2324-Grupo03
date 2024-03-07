@@ -159,8 +159,8 @@ public class PlayerController : MonoBehaviour, IKnockback
             float dotProduct = Vector3.Dot(_lookDirection.lookDirection, targetDir);
             float angle = Mathf.Acos(dotProduct);
 
-            // Cono interacción de 45º
-            if (angle > - Math.PI/8 && angle < Math.PI/8
+            // Cono interacción de 60º
+            if (angle > - Math.PI/6 && angle < Math.PI/6
                 && hitColliders[i].gameObject.TryGetComponent(out IInteractable interactableObject))
             {
                 interactableObject.Interact();
