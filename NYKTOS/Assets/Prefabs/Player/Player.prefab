@@ -594,7 +594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ee194e42963d945a8d121e4ca583b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityHitbox: {fileID: 0}
+  entityHitbox: {fileID: 8410641752796733455}
   blinkDirection: {x: 0, y: 0}
   blinkRange: 2
   whatLayerToDetect:
