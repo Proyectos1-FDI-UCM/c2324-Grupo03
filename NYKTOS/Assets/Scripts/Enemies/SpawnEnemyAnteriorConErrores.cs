@@ -7,7 +7,7 @@ using UnityEngine;
 public class SpawnEnemy : MonoBehaviour {
 
     [SerializeField] private SpawnManager _spawnManager;
-
+    /*
 
     #region parameters
     [SerializeField] WaveInfo[] waves; //las waves
@@ -119,4 +119,6 @@ public class SpawnEnemy : MonoBehaviour {
         }
     }
     //  fin codigo de Maria :)
+
+    */
 }

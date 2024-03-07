@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1212329465091545511}
   - component: {fileID: 4773479469194531190}
   - component: {fileID: 7343186112409939183}
+  - component: {fileID: 2107182961006078376}
   m_Layer: 11
   m_Name: VespertilioAttackHitbox
   m_TagString: Untagged
@@ -130,3 +131,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2107182961006078376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919465541366467843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3247430c039d3844b94ac1cf0ce34eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 0
+  attackType: 0
