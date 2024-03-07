@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour, IKnockback
         Vector2 input = context.ReadValue<Vector2>();
         _privateMovement = input;
 
-        if (PlayerStateMachine.playerState == PlayerState.Idle)
+        if (PlayerStateMachine.playerState == PlayerState.Idle || PlayerStateMachine.playerState == PlayerState.Dead)
         {
             CallMove(input);
         }
