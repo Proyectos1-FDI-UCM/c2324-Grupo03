@@ -1558,8 +1558,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Resume
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: CloseMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4149,8 +4149,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+      - m_Target: {fileID: 4298316833115079426, guid: ce5bdf79bedf41b4b89259fe4028b543, type: 3}
+        m_TargetAssemblyTypeName: NexusComponent, Assembly-CSharp
         m_MethodName: CloseMenu
         m_Mode: 1
         m_Arguments:
@@ -4995,7 +4995,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8327685732680950553, guid: ebf2404ddbe1f8f4f9f8a61831e432c5, type: 3}
         m_TargetAssemblyTypeName: BuildingManager, Assembly-CSharp
         m_MethodName: BuildBeacon
         m_Mode: 1
@@ -5367,7 +5367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3347638708454370267
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5550,7 +5550,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8327685732680950553, guid: ebf2404ddbe1f8f4f9f8a61831e432c5, type: 3}
         m_TargetAssemblyTypeName: BuildingManager, Assembly-CSharp
         m_MethodName: BuildTurret
         m_Mode: 1
@@ -7284,7 +7284,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8327685732680950553, guid: ebf2404ddbe1f8f4f9f8a61831e432c5, type: 3}
         m_TargetAssemblyTypeName: BuildingManager, Assembly-CSharp
         m_MethodName: BuildWall
         m_Mode: 1
