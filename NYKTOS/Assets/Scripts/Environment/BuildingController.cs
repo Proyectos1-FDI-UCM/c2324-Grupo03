@@ -6,10 +6,11 @@ public class BuildingController : MonoBehaviour, IInteractable
 {
     #region references
     private BuildingStateMachine _buildingState;
+    
     #endregion
     public void Interact()
     {
-        if (TryGetComponent(out IBuilding building)) building.OpenMenu();
+        if (TryGetComponent(out IBuilding building) && GameManager.Instance.State != GameState.Night) building.OpenMenu();
     }
 
     // Start is called before the first frame update

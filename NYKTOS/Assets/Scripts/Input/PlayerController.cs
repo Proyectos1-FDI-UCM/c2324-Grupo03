@@ -15,7 +15,8 @@ public class PlayerController : MonoBehaviour, IKnockback
         set { _playerControls = value; }
     }
 
-    private Transform _myTransform;
+    private static Transform _myTransform;
+    public static Transform playerTransform { get { return _myTransform; } }
     private BlinkComponent _blinkComponent;
     private RBMovement _playerMovement;
     private LookDirection _lookDirection;
