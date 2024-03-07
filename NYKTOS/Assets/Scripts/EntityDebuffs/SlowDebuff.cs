@@ -33,7 +33,7 @@ public class SlowDebuff : MonoBehaviour
         _myRBMovement = GetComponent<RBMovement>();
         this.enabled = false;
 
-        renderer = GetComponent<SpriteRenderer>();
+        renderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     #region debug
