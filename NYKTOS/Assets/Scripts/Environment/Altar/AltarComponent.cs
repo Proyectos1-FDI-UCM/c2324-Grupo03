@@ -30,5 +30,6 @@ public class AltarComponent : MonoBehaviour, IBuilding
     void Start()
     {
         _state = GetComponent<BuildingStateMachine>();
+        BuildingManager.Instance.AddBuilding(this.gameObject);
     }
 }
