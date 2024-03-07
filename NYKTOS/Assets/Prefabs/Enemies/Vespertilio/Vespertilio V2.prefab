@@ -305,7 +305,6 @@ GameObject:
   - component: {fileID: 6047305640081515741}
   - component: {fileID: 7059409480465428519}
   - component: {fileID: 4851813190612923432}
-  - component: {fileID: 3363087672107413521}
   - component: {fileID: 8144526789684626196}
   - component: {fileID: 2957165754310691341}
   - component: {fileID: 8164607075338182922}
@@ -313,6 +312,7 @@ GameObject:
   - component: {fileID: 4839788181568266410}
   - component: {fileID: 8478231694944484909}
   - component: {fileID: 6341304757576681484}
+  - component: {fileID: 3629676020130989107}
   m_Layer: 9
   m_Name: Vespertilio V2
   m_TagString: Enemy
@@ -428,55 +428,6 @@ MonoBehaviour:
   _movementSpeed: 2
   _knockBackSpeed: 10
   _knockBackTime: 0.2
---- !u!60 &3363087672107413521
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2995607884255851843}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 1024
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0.0625, z: 0, w: 0.15625}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.0571115, y: -0.03524232}
-      - {x: -0.29681832, y: -0.2345042}
-      - {x: -0.09459013, y: -0.37621343}
-      - {x: 0.21629643, y: -0.244569}
-  m_UseDelaunayMesh: 0
 --- !u!114 &8144526789684626196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,6 +555,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0259965fc6d9d45940e245707f7382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &3629676020130989107
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2995607884255851843}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 1024
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.15
 --- !u!1 &3223959979754271057
 GameObject:
   m_ObjectHideFlags: 0
