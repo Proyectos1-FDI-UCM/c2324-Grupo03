@@ -10,15 +10,13 @@ public class NexusComponent : MonoBehaviour, IBuilding
 
     [SerializeField]
     private GameObject _player;
-
-    private PlayerStateMachine _playerState;
     private PlayerDeath _playerDeath;
     #endregion
 
     public void OpenMenu()
     {
         if(GameManager.Instance.State == GameState.Day) MenuManager.Instance.OpenMenu(1);
-        else if(_playerState.playerState == PlayerState.Dead) _playerDeath.Revive();
+        else if(PlayerStateMachine.playerState == PlayerState.Dead) _playerDeath.Revive();
     }
 
     public void CloseMenu() => MenuManager.Instance.CloseMenu();
@@ -39,6 +37,5 @@ public class NexusComponent : MonoBehaviour, IBuilding
         BuildingManager.Instance.AddBuilding(this.gameObject);
         
         _playerDeath = _player.GetComponent<PlayerDeath>();
-        _playerState = _player.GetComponent<PlayerStateMachine>();
     }
 }
