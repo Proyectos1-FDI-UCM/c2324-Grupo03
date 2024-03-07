@@ -48,7 +48,10 @@ public class WeaponVespertilioAttack : MonoBehaviour, IWeapon
             Instantiate(_vespertilioAttackHitbox, 
             _myTransform.position + new Vector3(direction.normalized.x, direction.normalized.y, 0), 
             Quaternion.Euler(0, 0, DirectionAngle(direction)));
+
         currentHitbox.transform.parent = _myTransform;
+        currentHitbox.GetComponent<VespertilioAttackHitbox>().attackDamage = weaponDamage;
+        currentHitbox.GetComponent <VespertilioAttackHitbox>().attackType = attackType;
 
         yield return new WaitForSeconds(_hitboxAppearingTime);
 
