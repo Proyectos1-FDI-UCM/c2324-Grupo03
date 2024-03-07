@@ -1000,7 +1000,7 @@ PrefabInstance:
     - target: {fileID: 2538237894399091131, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: _player
       value: 
-      objectReference: {fileID: 645015022}
+      objectReference: {fileID: 327102155}
     - target: {fileID: 2538237894399091131, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: _nightLength
       value: 180
@@ -1009,6 +1009,10 @@ PrefabInstance:
       propertyPath: _menuManager
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6173224355726370582, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: _UIManager
+      value: 
+      objectReference: {fileID: 1468414745}
     - target: {fileID: 7257835641261950391, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: _menuManager
       value: 
