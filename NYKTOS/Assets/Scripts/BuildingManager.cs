@@ -37,13 +37,13 @@ public class BuildingManager : MonoBehaviour
     private float _offsetNotWall = 0.9f;
 
     [SerializeField]
-    private int _beaconPrice;
+    private int _beaconPrice = 0;
 
     [SerializeField]
-    private int _wallPrice;
+    private int _wallPrice = 0;
 
     [SerializeField]
-    private int _turretPrice;
+    private int _turretPrice = 0;
     #endregion
 
     #region building prefabs
@@ -131,8 +131,8 @@ public class BuildingManager : MonoBehaviour
     private GameObject[] _buildingArray;
 
     private int _placeholderNumber = 0;
-    public int buildingNumber { get { return _buildingNumber; } }
     private int _buildingNumber = 0;
+    public int buildingNumber { get { return _buildingNumber; } }
 
     public void IncreasePlaceholderNumber()
     {
