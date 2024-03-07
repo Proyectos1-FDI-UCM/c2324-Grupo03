@@ -32,7 +32,8 @@ public class EnemyAnimation : MonoBehaviour {
         if (Time.time >= nextActionTime && !_attacking) {
             Idle(movementDirection);
             nextActionTime += period;
-        } else AttackingAni();
+        } 
+        if(_attacking)AttackingAni();
     }
 }
 //MARIA
