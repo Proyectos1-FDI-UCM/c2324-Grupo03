@@ -8,9 +8,6 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
 {
     #region references
     private NavMeshPath _path;
-    [SerializeField]
-    //Note de Iker: Guille te tuve que poner esto publico para que el script EnemyTargeting acceda a él, si no es posible se busca otra solución
-    public Transform _targetTransform;
     private Transform _myTransform;
     private RBMovement _rbMovement;
     #endregion
@@ -26,7 +23,7 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
     public void PerformBehaviour()
     {
         
-        if (NavMesh.CalculatePath(transform.position, _targetTransform.position, NavMesh.AllAreas, _path) && _path.corners.Length > 1) //calculo de camino a tomar
+        if (NavMesh.CalculatePath(transform.position, PlayerController.playerTransform.position, NavMesh.AllAreas, _path) && _path.corners.Length > 1) //calculo de camino a tomar
         {
             direction = (_path.corners[1] - _myTransform.position).normalized;
 
