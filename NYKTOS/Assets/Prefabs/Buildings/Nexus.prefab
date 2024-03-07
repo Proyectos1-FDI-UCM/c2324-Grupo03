@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 6758670540616618826}
   - component: {fileID: 6315878374668799528}
   - component: {fileID: 4298316833115079426}
+  - component: {fileID: -3869516557664234671}
   m_Layer: 7
   m_Name: Nexus
   m_TagString: Untagged
@@ -440,6 +441,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nightLength: 10
+--- !u!114 &-3869516557664234671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699026262588079495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fcb5a4b321af3b439cd5a8709d4a68d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _UIManager: {fileID: 0}
+  _maxHealth: 30
+  _currentHealth: 0
+  _inmTime: 0
 --- !u!1 &9208401374501779324
 GameObject:
   m_ObjectHideFlags: 0
