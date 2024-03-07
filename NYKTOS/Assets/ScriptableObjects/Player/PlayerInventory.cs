@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -58,7 +59,7 @@ public class PlayerInventory : ScriptableObject
 
     [ContextMenu("Reset")]
     public void Reset(){
-        amarilloCristales = 0;
+        amarilloCristales = 5;
         magentaCristales = 0;
         cianCristales = 0;
     }
@@ -68,5 +69,4 @@ public class PlayerInventory : ScriptableObject
         InvokeInventoryUpdate();
     }
 
-   
 }
