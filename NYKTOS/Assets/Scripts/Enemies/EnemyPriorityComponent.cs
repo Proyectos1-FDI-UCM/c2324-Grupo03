@@ -24,11 +24,18 @@ public class EnemyPriorityComponent : MonoBehaviour
 
     #endregion
 
+    [SerializeField]
+    private PlayerDeath _playerDeath;
     
     private void Update()
     {
         //PLAYER PATH CALCULATION
-        NavMesh.CalculatePath(_myTransform.position, PlayerController.playerTransform.position, NavMesh.AllAreas, _toPlayerPath);
+
+        if (_playerDeath.alive)
+        {
+            NavMesh.CalculatePath(_myTransform.position, PlayerController.playerTransform.position, NavMesh.AllAreas, _toPlayerPath);
+        }
+        
 
         //NEAREST BUILDING PATH CALCULATION
         _toNearestBuildingPath = CalculateNearestBuildingPath();
