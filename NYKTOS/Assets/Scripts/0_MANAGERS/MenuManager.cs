@@ -35,6 +35,7 @@ public class MenuManager : MonoBehaviour
     private PlayerController _player;
     #endregion
 
+    // Menú activo actualmente. Por si hiciese falta acceder a él desde fuera
     private int _menuId = -1;
 
     public void OpenMenu(int newId)
@@ -53,7 +54,7 @@ public class MenuManager : MonoBehaviour
 
     public void CloseMenu()
     {
-        _menuList[_menuId].SetActive(false);
+        foreach (GameObject menu in _menuList) menu.SetActive(false);
         _menuId = -1;
 
         _player.playerControls.UI.Disable();
