@@ -42,7 +42,7 @@ public class SetOnFireDebuff : MonoBehaviour
     private void Awake()
     {
         _myHealthComponent = GetComponent<HealthComponent>();
-        renderer = GetComponent<SpriteRenderer>();
+        renderer = GetComponentInChildren<SpriteRenderer>();
         this.enabled = false;
     }
 

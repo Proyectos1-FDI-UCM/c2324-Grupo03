@@ -13,12 +13,12 @@ TagManager:
   - Water
   - UI
   - OutOfBounds
-  - Buildings
+  - Building
+  - Player
+  - Enemy
+  - PlayerAttack
+  - EnemyAttack
   - Light
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

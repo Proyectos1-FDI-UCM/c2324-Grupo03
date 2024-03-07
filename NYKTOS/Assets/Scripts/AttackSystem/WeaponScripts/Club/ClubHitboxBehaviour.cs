@@ -38,31 +38,30 @@ public class ClubHitboxBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.gameObject.TryGetComponent(out HealthComponent health)) //QUITAR VIDA
         {
             health.Damage(weaponDamage);
             //Javi ha hecho una corrección a este código para que sea más limpio. Dejo este de ejemplo :)
         }
 
-        if (collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.GetComponentInChildren<IKnockback>()!= null)
+        if (collision.gameObject.GetComponentInChildren<IKnockback>()!= null)
         {
             
-            IKnockback[] iknockbackChildren = collision.gameObject.transform.parent.GetComponentsInChildren<IKnockback>();
+            IKnockback[] iknockbackChildren = collision.gameObject.GetComponentsInChildren<IKnockback>();
 
             for (int i = 0; i< iknockbackChildren.Length; i++)
             {
-                iknockbackChildren[i].CallKnockback(_myTransform.parent.transform.position);
+                iknockbackChildren[i].CallKnockback(_myTransform.position);
             }
             
         }
 
-        if (attackType == AttackType.Fire && collision.gameObject.transform.parent.TryGetComponent( out SetOnFireDebuff setOnFire)) //DAÑO DE FUEGO
+        if (attackType == AttackType.Fire && collision.gameObject.TryGetComponent( out SetOnFireDebuff setOnFire)) //DAÑO DE FUEGO
         {
             setOnFire.enabled = true;
         }
 
-        else if (attackType == AttackType.Slow && collision.transform.parent.gameObject.TryGetComponent(out SlowDebuff slow)) //RALENTIZAR
+        else if (attackType == AttackType.Slow && collision.gameObject.TryGetComponent(out SlowDebuff slow)) //RALENTIZAR
         {
             slow.enabled = true;
         }

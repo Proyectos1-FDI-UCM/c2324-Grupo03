@@ -18,6 +18,12 @@ public class MenuManager : MonoBehaviour
     /// </summary>
 
 
+    private static MenuManager _instance;
+    public static MenuManager Instance
+    {
+        get { return _instance; }
+    }
+
     #region references
     [SerializeField]
     private GameObject[] _menuList;
@@ -57,6 +63,13 @@ public class MenuManager : MonoBehaviour
     public void CloseMenu(InputAction.CallbackContext context)
     {
         CloseMenu();
+    }
+
+
+    void Awake()
+    {
+        if (_instance != null) Destroy(gameObject);
+        else _instance = this;
     }
 
     private void Start()

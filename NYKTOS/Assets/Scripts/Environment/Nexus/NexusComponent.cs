@@ -4,32 +4,26 @@ using UnityEngine;
 
 public class NexusComponent : MonoBehaviour, IBuilding
 {
-    #region references
+    #region parameters
     [SerializeField]
-    private MenuManager _menuManager;
-
-
-    private BuildingStateMachine _state;
-    [SerializeField]
-    private BuildingManager _buildingManager;
+    private int _nightLength = 10;
     #endregion
 
     public void OpenMenu()
     {
-        _menuManager.OpenMenu(1);
+        MenuManager.Instance.OpenMenu(1);
     }
 
-    public void CloseMenu() => _menuManager.CloseMenu();
+    public void CloseMenu() => MenuManager.Instance.CloseMenu();
 
-
-    void Start()
+    public void StartNight()
     {
-        _state = GetComponent<BuildingStateMachine>();
+        MenuManager.Instance.CloseMenu();
+        GameManager.Instance.UpdateGameState(GameState.Night);
+        Invoke(nameof(EndNight), _nightLength);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void EndNight()
     {
-        
+        GameManager.Instance.UpdateGameState(GameState.Day);
     }
 }

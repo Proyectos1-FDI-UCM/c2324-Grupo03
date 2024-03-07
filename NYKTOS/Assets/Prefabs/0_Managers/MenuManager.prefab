@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9037747048712828760
+--- !u!1 &4687515283968375054
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5353472143539705181}
-  - component: {fileID: 7862402475609943978}
+  - component: {fileID: 1198264081051741184}
+  - component: {fileID: 4908613825644664339}
   m_Layer: 0
-  m_Name: BuildingManager
+  m_Name: MenuManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5353472143539705181
+--- !u!4 &1198264081051741184
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9037747048712828760}
+  m_GameObject: {fileID: 4687515283968375054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3090703, y: 0.607961, z: 0.34851795}
+  m_LocalPosition: {x: -1.2588438, y: 1.8122126, z: 0.34453633}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7862402475609943978
+--- !u!114 &4908613825644664339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9037747048712828760}
+  m_GameObject: {fileID: 4687515283968375054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86989611e3687ee4698eb398f41ced80, type: 3}
+  m_Script: {fileID: 11500000, guid: 11e19937666ae364087806329433b131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentPlaceholder: {fileID: 0}
-  _beacon: {fileID: 5698021183704277950, guid: ece877d2ae7f77e4e87569d26f5af709, type: 3}
-  _wall: {fileID: 6636109488734167412, guid: 52d33308eeb816c42abd9072de80b08d, type: 3}
-  _turret: {fileID: 8365187515372501195, guid: 2de64088f6ec78342b5c1ae62919387a, type: 3}
+  _menuList:
+  - {fileID: 0}
+  - {fileID: 0}
+  _firstSelected:
+  - {fileID: 0}
+  - {fileID: 0}
+  _player: {fileID: 0}

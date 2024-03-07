@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class BuildingManager : MonoBehaviour
 {
-    #region references
-    [SerializeField]
-    private MenuManager _menuManager;
-
-    #endregion
+    private static BuildingManager _instance;
+    public static BuildingManager Instance
+    {
+        get { return _instance; }
+    }
 
     #region properties
     private GameObject _currentPlaceholder;
@@ -25,19 +25,10 @@ public class BuildingManager : MonoBehaviour
     { get { return _selectedDefense; } 
       set { _selectedDefense = value; } 
     }
-
-    private HealthComponent _healthComponent;
     #endregion
 
     #region parameters
     private float _offsetNotWall = 0.9f;
-    private int _healthimposter = 40;
-    private float crono = 3f;
-    private bool UnaVez = true;
-
-    [SerializeField]
-    private int _nightLenght = 10;
-
     #endregion
 
     #region building prefabs
@@ -76,8 +67,7 @@ public class BuildingManager : MonoBehaviour
         AddBuilding(defense);
 
         _currentPlaceholder.GetComponent<BuildingStateMachine>().SetState(BuildingStateMachine.BuildingState.Built);
-        //_healthComponent = _selectedDefense.GetComponent<HealthComponent>();
-        _currentPlaceholder.GetComponent<PlaceholderComponent>().CloseMenu();
+        MenuManager.Instance.CloseMenu();
     }
 
     public void BuildTurret()
@@ -99,18 +89,7 @@ public class BuildingManager : MonoBehaviour
     }
     #endregion
 
-    public void StartNight()
-    {
-        _menuManager.CloseMenu();
-        // Que se llame al manager encargado de cambiar la noche
-        GameManager.Instance.UpdateGameState(GameState.Night);
-        Invoke(nameof(EndNight), _nightLenght);
-    }
 
-    public void EndNight()
-    {
-        GameManager.Instance.UpdateGameState(GameState.Day);
-    }
 
     #endregion
 
@@ -131,19 +110,19 @@ public class BuildingManager : MonoBehaviour
         _placeholderNumber++;
     }
 
-    private void AddBuilding(GameObject _object)
+    private void AddBuilding(GameObject obj)
     {
-        _buildingArray[_buildingNumber] = _object;
+        _buildingArray[_buildingNumber] = obj;
         _buildingNumber++;
     }
 
-    public void RemoveBuilding(GameObject _object)
+    public void RemoveBuilding(GameObject obj)
     {
         bool found = false;
         int i = 0; //la posicion del edificio encontrado
         while (i< _buildingNumber && !found)
         {
-            found = _object == _buildingArray[i];
+            found = obj == _buildingArray[i];
             if (!found) i++;
         }
 
@@ -154,11 +133,22 @@ public class BuildingManager : MonoBehaviour
 
         _buildingNumber--;
     }
+    #endregion
 
-    private void Awake()
+    void Awake()
+    {
+        if (_instance != null) Destroy(gameObject);
+        else _instance = this;
+
+       
+    }
+
+    void Start()
     {
         _buildingArray = new GameObject[_placeholderNumber];
     }
 
-    #endregion
+
+
+
 }

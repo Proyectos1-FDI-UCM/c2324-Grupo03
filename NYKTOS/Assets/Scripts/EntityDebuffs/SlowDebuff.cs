@@ -11,7 +11,7 @@ public class SlowDebuff : MonoBehaviour
 
     #region parameters
     [SerializeField] private float deactivateDebuffTime = 2f;
-    [SerializeField] private float speedAdder = 0.5f;
+    [SerializeField] private float speedAdder = -10f;
     #endregion
 
     private void OnEnable()

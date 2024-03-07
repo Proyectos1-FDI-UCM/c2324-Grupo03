@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7441528965784792294}
   - component: {fileID: 7208483608700829794}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ClubHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3725545234969929191}
   - component: {fileID: -6462949424891473725}
   - component: {fileID: -451886541323965697}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ClubInstantiate
   m_TagString: Untagged
   m_Icon: {fileID: 0}

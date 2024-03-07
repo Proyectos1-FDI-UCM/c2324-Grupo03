@@ -118,7 +118,11 @@ public class RBMovement : MonoBehaviour
     #region cambios de velocidad
     public void AddSpeed(float addSpeed, float time)
     {
-        _addedSpeed = addSpeed;
+        if (addSpeed > -_movementSpeed)
+        {
+            _addedSpeed = addSpeed;
+        }
+        else _addedSpeed = -_movementSpeed;
 
         Invoke(nameof(ResetSpeed), time);
     }
