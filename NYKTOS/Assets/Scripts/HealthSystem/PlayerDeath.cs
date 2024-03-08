@@ -7,6 +7,9 @@ public class PlayerDeath : MonoBehaviour, IDeath
     #region references
     private PlayerStateMachine _playerState;
     private HealthComponent _health;
+    [SerializeField]
+    private UIManager _UImanager;
+    
     #endregion
 
 
@@ -22,6 +25,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
        _deathskin.enabled = true;
        _playerState.SetState(PlayerState.Dead);
        _playerState.SetState(PlayerState.Dead);
+        _UImanager.DeathScreenOn();
     }
 
     public void Revive()
@@ -30,6 +34,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
         _deathskin.enabled = false;
         _playerState.SetState(PlayerState.Idle);
         _health.MaxHealth();
+        _UImanager.DeathScreenOff();
     }
 
     void Start()

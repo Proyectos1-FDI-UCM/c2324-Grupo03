@@ -84,6 +84,7 @@ public class HealthComponent : MonoBehaviour
     public void MaxHealth()
     {
         _currentHealth = _maxHealth;
+        _UIManager.Hearts(_currentHealth);
     }
 
     void DisableInm()

@@ -10,6 +10,9 @@ public class UIManager : MonoBehaviour
     #region references
 
     [SerializeField]
+    private GameObject _deathScreen;
+
+    [SerializeField]
     private Canvas _pauseMenu;
 
     [SerializeField]
@@ -41,7 +44,11 @@ public class UIManager : MonoBehaviour
 
     #endregion
 
-    
+    static private UIManager _instance;
+    public static UIManager Instance
+    {
+        get { return _instance; }
+    }
 
 
 
@@ -106,5 +113,14 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void DeathScreenOn()
+    {
+        _deathScreen.SetActive(true);
+    }
+
+    public void DeathScreenOff()
+    {
+        _deathScreen.SetActive(false);
+    }
 
 }

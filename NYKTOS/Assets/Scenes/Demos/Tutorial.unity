@@ -359,11 +359,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8073207824159548778, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_ShowDebugText
@@ -397,6 +397,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3702319650464414860, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: _UImanager
+      value: 
+      objectReference: {fileID: 1468414745}
     - target: {fileID: 5306559183688326251, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
       propertyPath: fearModifyUnit
       value: 0.4
@@ -730,38 +734,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 198865889361225123, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: _appearTime
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 985473007702262297, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2251676366952122962, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1740481782}
-    - target: {fileID: 2251676366952122962, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartNight
+    - target: {fileID: 2547425705757282434, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2349632063534572537, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c07891a9777695748b618a17f4121903, type: 3}
-    - target: {fileID: 2687412689048694701, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a8818774dd6d27a429da8e906bc0eb06, type: 3}
     - target: {fileID: 2834099331420654490, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1710886527}
-    - target: {fileID: 2834099331420654490, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuildWall
-      objectReference: {fileID: 0}
     - target: {fileID: 3783585067294783666, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -846,18 +830,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1710886527}
-    - target: {fileID: 4496728085888225263, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuildTurret
-      objectReference: {fileID: 0}
     - target: {fileID: 5347833623864877841, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1710886527}
-    - target: {fileID: 5347833623864877841, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuildBeacon
-      objectReference: {fileID: 0}
     - target: {fileID: 5560129167899508117, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
       propertyPath: m_Name
       value: UI
@@ -866,26 +842,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 584722620}
-    - target: {fileID: 7343310849403412369, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8159629763359443647, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9197871321677472121, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 584722620}
-    - target: {fileID: 9197871321677472121, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Resume
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197871321677472121, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
