@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 //MARIA
 [CreateAssetMenu(fileName = "New Night", menuName = "Wave System/Night", order = 1)]
-public class NightWaves : ScriptableObject {
-    public WavePool wavePoolList;
+public class NightWave : ScriptableObject {
+    public Wave[] wavePoolList;
 }
 
 [System.Serializable]
-public struct WavePool
+public struct Wave
 {
-    public SubWave[] subWaveList;
     public int wavePoolDistributionFactor;
+    public SubWave[] subWaveList;
 }
 
+[System.Serializable]
 public struct SubWave
 {
+    public int spawnerScore;
     public SpawnerType spawnerType;
     public Enemy[] enemyPool;
-    public int spawnerDistributionFactor;
 }
 
 [System.Serializable]
@@ -27,6 +28,8 @@ public struct Enemy {
     public int number; // numero de cuantos de ese bicho en la iteración de la wave
 }
 
+
+[System.Serializable]
 public enum SpawnerType
 {
     Amarillo,
@@ -34,5 +37,4 @@ public enum SpawnerType
     CianExtremo,
     MagentaIntermedio,
     MagentaExtremo
-
 }
