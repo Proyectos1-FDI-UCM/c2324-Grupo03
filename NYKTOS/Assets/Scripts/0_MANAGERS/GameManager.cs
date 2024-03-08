@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Pause:
                 break;
+            case GameState.Lose:
+                break;
+            case GameState.Win:
+                break;
             default:
                 throw new ArgumentOutOfRangeException
                 (
@@ -101,6 +105,8 @@ public enum GameState
     Config,
     Day,
     Night,
-    Pause
+    Pause,
+    Lose,
+    Win
 }
 
