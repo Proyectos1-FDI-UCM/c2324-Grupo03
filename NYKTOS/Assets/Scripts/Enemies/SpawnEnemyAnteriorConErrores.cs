@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro.EditorUtilities;
+
 using UnityEngine;
 [System.Serializable]
 //  Codigo de Maria :p

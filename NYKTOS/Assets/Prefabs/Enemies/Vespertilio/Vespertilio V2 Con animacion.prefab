@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 6492623987634389823}
   - component: {fileID: 1064330345574997959}
   - component: {fileID: 1456599500323373222}
-  - component: {fileID: 31625203842163926}
+  - component: {fileID: -8690803934187916815}
   m_Layer: 9
   m_Name: Vespertilio V2 Con animacion
   m_TagString: Enemy
@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df4ef2d7cc69f243bc12dadb9466ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &31625203842163926
+--- !u!114 &-8690803934187916815
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -613,7 +613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0259965fc6d9d45940e245707f7382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attacking: 0
 --- !u!1 &2735563232479702109
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,8 +6,7 @@ using System;
 public class ImageControllerScript : MonoBehaviour
 {
 
-    [SerializeField]
-    private GameObject _deathScreen;
+    
     
     [SerializeField]
     private GameObject _allTutorials;

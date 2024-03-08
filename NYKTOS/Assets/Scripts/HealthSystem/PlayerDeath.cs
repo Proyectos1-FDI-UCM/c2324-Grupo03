@@ -24,7 +24,6 @@ public class PlayerDeath : MonoBehaviour, IDeath
        _aliveskin.enabled = false;
        _deathskin.enabled = true;
        _playerState.SetState(PlayerState.Dead);
-       _playerState.SetState(PlayerState.Dead);
         _UImanager.DeathScreenOn();
     }
 

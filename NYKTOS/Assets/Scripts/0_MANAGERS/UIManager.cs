@@ -44,11 +44,7 @@ public class UIManager : MonoBehaviour
 
     #endregion
 
-    static private UIManager _instance;
-    public static UIManager Instance
-    {
-        get { return _instance; }
-    }
+    
 
 
 
