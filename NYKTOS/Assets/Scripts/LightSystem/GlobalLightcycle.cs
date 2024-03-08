@@ -16,12 +16,12 @@ public class GlobalLightcycle : MonoBehaviour
     {
         _globalLight = GetComponent<Light2D>();
 
-        GameManager.Instance.GameStateChanged.AddListener(GlobalLightcycleGameStateListener);
+        GameManager.Instance.GameStateChanged.AddListener(GameStateListener);
 
-        GlobalLightcycleGameStateListener(GameManager.Instance.State);
+        GameStateListener(GameManager.Instance.State);
     }
 
-    private void GlobalLightcycleGameStateListener(GameState state)
+    private void GameStateListener(GameState state)
     {
         if(state == GameState.Night)
         {
