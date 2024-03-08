@@ -16,15 +16,15 @@ public class PlayerStateMachine : MonoBehaviour
     #endregion
 
     #region properties
+    static private PlayerState _playerState = PlayerState.Idle;
     static public PlayerState playerState
     {
-        get {return _playerState; }
+        get { return _playerState; }
     }
-    static private PlayerState _playerState = PlayerState.Idle;
     #endregion
 
     #region simpleStateMachine
- 
+
     public void SetState(PlayerState state)
     {
         _playerState = state;

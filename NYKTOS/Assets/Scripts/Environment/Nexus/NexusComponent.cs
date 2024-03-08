@@ -30,6 +30,7 @@ public class NexusComponent : MonoBehaviour, IBuilding
     public void EndNight()
     {
         GameManager.Instance.UpdateGameState(GameState.Day);
+        _playerDeath.Revive();
     }
 
     private void Start()

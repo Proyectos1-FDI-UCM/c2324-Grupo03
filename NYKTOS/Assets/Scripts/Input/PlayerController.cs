@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region movement
     public void Blink(InputAction.CallbackContext context)
     {
-        if (PlayerStateMachine.playerState == PlayerState.Idle && !_BlinkCooldown.IsCooling() && PlayerStateMachine.playerState != PlayerState.Dead)
+        if (PlayerStateMachine.playerState == PlayerState.Idle && !_BlinkCooldown.IsCooling())
         {
             _blinkComponent.Blink();
             _BlinkCooldown.StartCooldown();
@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour, IKnockback
         Collider2D[] hitColliders = new Collider2D[maxColliders];
         int numColliders = Physics2D.OverlapCircleNonAlloc(_myTransform.position, _interactionRange, hitColliders, 1 << 7);
 
-        for (int i = 0; i < numColliders && PlayerStateMachine  .playerState == PlayerState.Idle; i++)
+        for (int i = 0; i < numColliders && (PlayerStateMachine.playerState == PlayerState.Idle  || PlayerStateMachine.playerState == PlayerState.Dead); i++)
         {
             // Hacer producto escalar entre el vector lookDirection y el del player-edificio. Devuelve el coseno del ángulo que forman            
             Vector3 targetDir = (hitColliders[i].transform.position - _myTransform.position).normalized;
