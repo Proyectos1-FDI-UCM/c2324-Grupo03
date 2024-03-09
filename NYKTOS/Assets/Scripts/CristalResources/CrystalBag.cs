@@ -1,13 +1,15 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using UnityEditor;
 using UnityEngine;
 
 public class CrystalBag : MonoBehaviour
 {
+    private bool ObtainedCrystal = false;
+    //public Collider2D _playerCollider;
     //Necesitamos el CrystalPrefab aquí
-
     public GameObject droppedItemPrefab;
     //En la lista de Cristales ponemos todos los cristales creados con el ScriptableObject CrystalResources
     public List<ResourceCrystal> CrystalList = new List<ResourceCrystal>();
@@ -50,12 +52,25 @@ public class CrystalBag : MonoBehaviour
             GameObject CrystalGameObject = Instantiate(droppedItemPrefab, spawnPosition, Quaternion.identity);
             CrystalGameObject.GetComponent<SpriteRenderer>().sprite = droppedCrystal.CristalSprite;
 
+            /*
             float dropForce = 20f;
             Vector2 dropDirection = new Vector2(Random.Range(-1f,1f), Random.Range(-1f,1f));
             CrystalGameObject.GetComponent<Rigidbody2D>().AddForce(dropDirection * dropForce, ForceMode2D.Impulse);
+            */
 
             int DissapearTime = droppedCrystal.dissapearTime;
             Destroy(CrystalGameObject,DissapearTime);
+
+            if (ObtainedCrystal)
+            {
+                Destroy(CrystalGameObject);
+
+            }
         }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+       //if (_playerCollider != null) ObtainedCrystal = true;
     }
 }
