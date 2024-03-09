@@ -175,22 +175,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildingManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8327685732680950553, guid: ebf2404ddbe1f8f4f9f8a61831e432c5, type: 3}
-      propertyPath: _inventory
-      value: 
-      objectReference: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
-    - target: {fileID: 8327685732680950553, guid: ebf2404ddbe1f8f4f9f8a61831e432c5, type: 3}
-      propertyPath: _wallPrice
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8327685732680950553, guid: ebf2404ddbe1f8f4f9f8a61831e432c5, type: 3}
-      propertyPath: _beaconPrice
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8327685732680950553, guid: ebf2404ddbe1f8f4f9f8a61831e432c5, type: 3}
-      propertyPath: _turretPrice
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -252,6 +236,14 @@ PrefabInstance:
     - target: {fileID: 3983642246170334203, guid: 64a242fa460722d47a278480195ff466, type: 3}
       propertyPath: m_Name
       value: Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265521018662020170, guid: 64a242fa460722d47a278480195ff466, type: 3}
+      propertyPath: _spawnTimeMax
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265521018662020170, guid: 64a242fa460722d47a278480195ff466, type: 3}
+      propertyPath: _spawnTimeMin
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -999,10 +991,6 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 645015017}
-    - target: {fileID: 5392703533161318980, guid: 2a0fede60110d6c418162d6a4a113208, type: 3}
-      propertyPath: m_ComponentOwner
-      value: 
-      objectReference: {fileID: 1728673686}
     - target: {fileID: 5847144808090115009, guid: 2a0fede60110d6c418162d6a4a113208, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.38561532
@@ -1052,11 +1040,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a0fede60110d6c418162d6a4a113208, type: 3}
---- !u!4 &1728673686 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8561174047369490974, guid: 2a0fede60110d6c418162d6a4a113208, type: 3}
-  m_PrefabInstance: {fileID: 1728673685}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1730442872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,10 +1160,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 597035040440653500, guid: fa637d713407ae646be950ea06b9ea7c, type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
     - target: {fileID: 3118647721046626855, guid: fa637d713407ae646be950ea06b9ea7c, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1243,25 +1222,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 327102155}
     - target: {fileID: 1009826474478415505, guid: b128eb4d6bc81024dac6d3499cb8110c, type: 3}
-      propertyPath: Altars.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1009826474478415505, guid: b128eb4d6bc81024dac6d3499cb8110c, type: 3}
-      propertyPath: Defenses.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1009826474478415505, guid: b128eb4d6bc81024dac6d3499cb8110c, type: 3}
       propertyPath: Altars.Array.data[0]
       value: 
       objectReference: {fileID: 1740481768}
-    - target: {fileID: 1009826474478415505, guid: b128eb4d6bc81024dac6d3499cb8110c, type: 3}
-      propertyPath: Defenses.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1009826474478415505, guid: b128eb4d6bc81024dac6d3499cb8110c, type: 3}
-      propertyPath: Defenses.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6690339601672779592, guid: b128eb4d6bc81024dac6d3499cb8110c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.18660894
