@@ -7,10 +7,14 @@ using UnityEngine;
 
 public class CrystalBag : MonoBehaviour
 {
+    private float dropForce = 20f;
     private bool ObtainedCrystal = false;
     //public Collider2D _playerCollider;
     //Necesitamos el CrystalPrefab aquí
     public GameObject droppedItemPrefab;
+    private GameObject crystalGameObject;
+    [SerializeField]
+    private GameObject _player;
     //En la lista de Cristales ponemos todos los cristales creados con el ScriptableObject CrystalResources
     public List<ResourceCrystal> CrystalList = new List<ResourceCrystal>();
     
@@ -49,28 +53,43 @@ public class CrystalBag : MonoBehaviour
         ResourceCrystal droppedCrystal = GetDroppedCrystals();
         if (droppedCrystal != null)
         {
-            GameObject CrystalGameObject = Instantiate(droppedItemPrefab, spawnPosition, Quaternion.identity);
-            CrystalGameObject.GetComponent<SpriteRenderer>().sprite = droppedCrystal.CristalSprite;
+            crystalGameObject = Instantiate(droppedItemPrefab, spawnPosition, Quaternion.identity);
+            crystalGameObject.GetComponent<SpriteRenderer>().sprite = droppedCrystal.CristalSprite;
 
             /*
-            float dropForce = 20f;
+            Vector2 PlayerPosition = player.transform.position;
             Vector2 dropDirection = new Vector2(Random.Range(-1f,1f), Random.Range(-1f,1f));
-            CrystalGameObject.GetComponent<Rigidbody2D>().AddForce(dropDirection * dropForce, ForceMode2D.Impulse);
+            crystalGameObject.GetComponent<Rigidbody2D>().AddForce(dropDirection * dropForce, ForceMode2D.Impulse);
             */
 
             int DissapearTime = droppedCrystal.dissapearTime;
-            Destroy(CrystalGameObject,DissapearTime);
+            Destroy(crystalGameObject,DissapearTime);
 
             if (ObtainedCrystal)
             {
-                Destroy(CrystalGameObject);
-
+                Destroy(crystalGameObject);
             }
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
+    {
+       if (crystalGameObject != null)
+        {
+            Vector2 DirectionToPlayer = _player.transform.position - transform.position;
+            crystalGameObject.GetComponent<Rigidbody2D>().AddForceAtPosition(DirectionToPlayer * dropForce, _player.transform.position);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
        //if (_playerCollider != null) ObtainedCrystal = true;
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        //if (_playerCollider == null) ObtainedCrystal = false;
+    }
+
+
 }
