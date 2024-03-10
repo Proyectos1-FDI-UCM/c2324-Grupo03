@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MagentaCrystal
   m_EditorClassIdentifier: 
   CristalSprite: {fileID: 1369962793, guid: c968038defd8c614e8da7b2c85c5ac6c, type: 3}
-  CristalName: MagentaCrystal
+  CristalName: MC
   dropChance: 30
   dissapearTime: 3

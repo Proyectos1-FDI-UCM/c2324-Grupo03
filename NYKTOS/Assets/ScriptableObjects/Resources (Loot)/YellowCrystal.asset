@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: YellowCrystal
   m_EditorClassIdentifier: 
   CristalSprite: {fileID: 818453920, guid: c968038defd8c614e8da7b2c85c5ac6c, type: 3}
-  CristalName: YellowCrystal
+  CristalName: YC
   dropChance: 100
   dissapearTime: 5
