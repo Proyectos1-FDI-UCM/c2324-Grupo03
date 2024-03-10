@@ -6,11 +6,14 @@ using System.Drawing.Text;
 using UnityEditor;
 using UnityEngine;
 
+
 //Codigo de Iker :D
 public class CrystalBag : MonoBehaviour
 {
     private float dropForce = 20f;
     private bool ObtainedCrystal = false;
+    [SerializeField]
+    private PlayerInventory inventory;
     //public Collider2D _playerCollider;
     //Necesitamos el CrystalPrefab aquí
     public GameObject droppedItemPrefab;
@@ -22,7 +25,9 @@ public class CrystalBag : MonoBehaviour
     private GameObject crystalGameObject;
     //En la lista de Cristales ponemos todos los cristales creados con el ScriptableObject CrystalResources
     public List<ResourceCrystal> CrystalList = new List<ResourceCrystal>();
-    
+    private List<GameObject> clonedCrystals = new List<GameObject>();
+
+
     //Esto usa la logica del porcentaje, toma un numero aleatorio entre 1 y 100.
     //Se recopila la lista de cristales con su probabilidad que puede soltar el enemigo.
     //Dependiendo del tipo de enemigo podemos poner los cristales que nosotros queramos que dropee //FALTA HACER CAMBIO DE PROBABILIDAD
@@ -60,10 +65,57 @@ public class CrystalBag : MonoBehaviour
         {
             crystalGameObject = Instantiate(droppedItemPrefab, spawnPosition, Quaternion.identity);
             crystalGameObject.GetComponent<SpriteRenderer>().sprite = droppedCrystal.CristalSprite;
-
+            clonedCrystals.Add(crystalGameObject);
             int DissapearTime = _droppedCrystal.dissapearTime;
             Destroy(crystalGameObject,DissapearTime);
         }
     }
 
+    public void InteractWithCrystalClones()
+    {
+        foreach (GameObject clone in clonedCrystals)
+        {
+            GetComponent<CrystalBag>();
+        }
+    }
+    /*
+    public void WhatCrystalITook()
+    {
+        foreach (ResourceCrystal crystal in CrystalList)
+        {
+            if (crystal.CristalName == "YC")
+            {
+                inventory.Amarillo++;
+                inventory.OnValidate();
+            } 
+            else if (crystal.CristalName == "CC")
+            {
+                inventory.Cian++;
+                inventory.OnValidate();
+            }
+            else if (crystal.CristalName == "MC")
+            {
+                inventory.Magenta++;
+                inventory.OnValidate();
+            }
+
+        }
+    }
+    
+    
+    public bool YellowCrystal(bool Yellow)
+    {
+        return Yellow;
+    }
+
+    public bool CyanCrystal(bool Cyan)
+    {
+        return Cyan;
+    }
+
+    public bool MagentaCrystal(bool Magenta)
+    {
+        return Magenta;
+    }
+    */
 }

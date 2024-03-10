@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -5,51 +6,55 @@ using UnityEngine.Rendering;
 public class CrystalController : MonoBehaviour
 {
     private Animator _myAnimator;
-    //SERVIRA PARA HACER LA REFERENCIA CON QUE TIPO DE CRISTAL HEMOS TOCADO
-    [SerializeField]
+    //Se hace la referencia para cada clon desde CrystalBag
     private CrystalBag _crystalBag;
     private GameObject _crystalPrefab;
     [SerializeField]
     private GameObject _player;
-    private Collider2D _AttractionArea;
-    //CORREGIR PARA QUE SE ATRAIGA CON UN BOOL PRODUCIDO POR EL TRIGGERCOLLIDER DE UN AREA DE UN GAMEOBJECT HIJO DEL PLAYER, PARA SEPARAR COLLIDERS
     private bool _Atracted;
     private float dropForce = 1f;
     private bool ObtainedCrystal = false;
+
+    private float MinimalDistanceToObtain = 0.3f;
+
     [SerializeField]
     private PlayerInventory inventory;
-
+    //private string CrystalName;
     void Start()
     {
-        //CORREGIR
-        _crystalBag = FindObjectOfType<CrystalBag>();
         _crystalPrefab = gameObject;
         //CORREGIR
+        //_crystalBag = FindObjectOfType<CrystalBag>();
         _player = FindObjectOfType<PlayerController>().gameObject;
         _myAnimator = GetComponent<Animator>();
-        _AttractionArea = GetComponentInChildren<Collider2D>();
+        /*
+        ResourceCrystal TypeofCrystal = GetComponent<ResourceCrystal>();
+        CrystalName = TypeofCrystal.CristalName;
+        */
+
     }
 
     void Update()
     {
-        //LA ATRACCION POR EL MOMENTO ES AUTOMATICA, SE NECESITA HACER CON LA CONDICIÓN
-        if (_AttractionArea != null)
+        float DistanceToPlayerNumber = Vector2.Distance(_player.transform.position, transform.position);
+
+        if (_Atracted)
         {
             _myAnimator.enabled = false;
             Vector2 DirectionToPlayer = _player.transform.position - transform.position;
             _crystalPrefab.GetComponent<Rigidbody2D>().AddForce(DirectionToPlayer * dropForce,ForceMode2D.Impulse);
         }
 
+        if (DistanceToPlayerNumber <= MinimalDistanceToObtain)
+        {
+            ObtainedCrystal = true;
+        }
+
         if (ObtainedCrystal)
         {
+            inventory.Amarillo++;
+            inventory.OnValidate();
             Destroy(_crystalPrefab);
-            if (inventory != null)
-            {
-                //SOLO RECOGE CRISTALES AMARILLOS DE MOMENTO
-                inventory.Amarillo++;
-                inventory.OnValidate();
-            }
-
         }
     }
 
@@ -57,7 +62,21 @@ public class CrystalController : MonoBehaviour
     {
         if (collision.gameObject == _player)
         {
-            ObtainedCrystal = true;
+            Debug.Log("Encontré al jugador!");
+            _Atracted = true;
         }
     }
+
+    /*
+    private void WhatCrystal()
+    {
+        if (_crystalBag == null)
+        {
+            Debug.Log("no tengo mochilita");
+        }
+        
+        _crystalBag.WhatCrystalITook();
+    }
+    */
+
 }
