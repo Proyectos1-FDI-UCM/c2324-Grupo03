@@ -5,6 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Night", menuName = "Wave System/Night", order = 1)]
 public class NightWave : ScriptableObject {
     public Wave[] wavePoolList;
+    public int RequiredYellowCrystals;
+    public int RequiredCyanCrystals;
+    public int RequiredMagentaCrystals;
+    public int YellowProbability;
+    public int CyanProbability;
+    public int MagentaProbability;
 }
 
 [System.Serializable]

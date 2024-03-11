@@ -7,6 +7,47 @@ using UnityEngine.Events;
 
 public class SpawnManager : MonoBehaviour
 {
+    #region Crystals
+    private int _CurrentRequiredYellow;
+    public int CurrentRequiredYellow
+    {
+        get { return _CurrentRequiredYellow; }
+        set { _CurrentRequiredYellow = value; }
+    }
+
+    private int _CurrentRequiredCyan;
+    public int CurrentRequiredCyan
+    {
+        get { return _CurrentRequiredCyan; }
+        set { _CurrentRequiredCyan = value; }
+    }
+
+    private int _CurrentRequiredMagenta;
+    public int CurrentRequiredMagenta
+    {
+        get { return _CurrentRequiredMagenta; }
+        set { _CurrentRequiredMagenta = value; }
+    }
+
+    private int _ProbabilityYellow;
+    public int ProbabilityYellow
+    {
+        get { return _ProbabilityYellow; }
+        set { _ProbabilityYellow = value; }
+    } 
+    private int _ProbabilityCyan;
+    public int ProbabilyCyan
+    {
+        get { return _ProbabilityCyan; }
+        set { _ProbabilityCyan = value; }
+    }
+    private int _ProbabilityMagenta;
+    public int ProbabilyMagenta
+    {
+        get { return _ProbabilityMagenta; }
+        set { _ProbabilityMagenta = value; }
+    }
+    #endregion
 
     static private SpawnManager _instance;
     public static SpawnManager Instance
@@ -61,7 +102,12 @@ public class SpawnManager : MonoBehaviour
         // Aquí va el cálculo de puntos a gastar para esta noche, me da palo 
 
         _currentWave = 0;
-
+        CurrentRequiredYellow = _nightList[_currentNight].RequiredYellowCrystals;
+        CurrentRequiredCyan = _nightList[_currentNight].RequiredCyanCrystals;
+        CurrentRequiredMagenta = _nightList[_currentNight].RequiredMagentaCrystals;
+        ProbabilityYellow = _nightList[_currentNight].YellowProbability;
+        ProbabilyCyan = _nightList[_currentNight].CyanProbability;
+        ProbabilyMagenta = _nightList[_currentNight].MagentaProbability;
         InitializeWave();
     }
 

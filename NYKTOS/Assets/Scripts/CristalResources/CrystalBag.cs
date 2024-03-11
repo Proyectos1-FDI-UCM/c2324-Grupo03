@@ -27,6 +27,17 @@ public class CrystalBag : MonoBehaviour
     public List<ResourceCrystal> CrystalList = new List<ResourceCrystal>();
     private List<GameObject> clonedCrystals = new List<GameObject>();
 
+    private SpawnManager _spawnManager;
+
+    private int amarillosObligatorios;
+    private int cianesObligatorios;
+    private int magentasObligatorios;
+    private int probAmarillo;
+    private int probCian;
+    private int probMagenta;
+    private bool RecursosObligatorios = true;
+
+    private int sumaCristalesObligatorios;
 
     //Esto usa la logica del porcentaje, toma un numero aleatorio entre 1 y 100.
     //Se recopila la lista de cristales con su probabilidad que puede soltar el enemigo.
@@ -34,15 +45,70 @@ public class CrystalBag : MonoBehaviour
     //Entonces para cada Crystal de la lootList toma una condición en la que si el numero random es menor que la probabilidad puesta, se añade ese cristal.
     ResourceCrystal GetDroppedCrystals()
     {
-        
         int RandomNumber = Random.Range(1, 101);
         List<ResourceCrystal> possibleCrystal = new List<ResourceCrystal>();
-        foreach (ResourceCrystal item in CrystalList)
+        
+        if (amarillosObligatorios == 0 && cianesObligatorios == 0 && magentasObligatorios == 0) RecursosObligatorios = false;
+
+        if (RecursosObligatorios)
         {
-            if (RandomNumber <= item.dropChance)
+            if (amarillosObligatorios > 0)
             {
-                possibleCrystal.Add(item);
+                if (RandomNumber <= probAmarillo || cianesObligatorios == 0 || magentasObligatorios == 0)
+                {
+                    possibleCrystal.Add(CrystalList[0]);
+                    _spawnManager.CurrentRequiredYellow--;
+                    amarillosObligatorios--;
+                }
             }
+            else if (cianesObligatorios > 0 || amarillosObligatorios == 0 || magentasObligatorios == 0)
+            {
+                if (RandomNumber <= probCian)
+                {
+                    possibleCrystal.Add(CrystalList[1]);
+                    _spawnManager.CurrentRequiredCyan--;
+                    cianesObligatorios--;
+                }
+            }
+            else if (magentasObligatorios > 0 || amarillosObligatorios == 0 || cianesObligatorios == 0)
+            {
+                if (RandomNumber <= probMagenta)
+                {
+                    possibleCrystal.Add(CrystalList[2]);
+                    _spawnManager.CurrentRequiredMagenta--;
+                    magentasObligatorios--;
+                }
+            }
+            else
+            {
+                possibleCrystal.Add(CrystalList[0]);
+            }
+        } 
+        else
+        {
+            if (RandomNumber <= probCian)
+            {
+                possibleCrystal.Add(CrystalList[1]);
+            }
+            else if (RandomNumber <= probMagenta)
+            {
+                possibleCrystal.Add(CrystalList[2]);
+            }
+            else if (RandomNumber <= probAmarillo)
+            {
+                possibleCrystal.Add(CrystalList[0]);
+            }
+            else
+            {
+                possibleCrystal.Add(CrystalList[0]);
+            }
+
+            /*
+            foreach (ResourceCrystal item in CrystalList)
+            {
+                if (RandomNumber <= item.dropChance) possibleCrystal.Add(item);
+            }
+            */
         }
 
         //Esto es para que elija solo un drop para tirar entre todos
@@ -78,6 +144,18 @@ public class CrystalBag : MonoBehaviour
             GetComponent<CrystalBag>();
         }
     }
+
+    private void Start()
+    {
+        _spawnManager = SpawnManager.Instance;
+
+        amarillosObligatorios = _spawnManager.CurrentRequiredYellow;
+        cianesObligatorios = _spawnManager.CurrentRequiredYellow;
+        magentasObligatorios = _spawnManager.CurrentRequiredYellow;
+
+        sumaCristalesObligatorios = amarillosObligatorios + cianesObligatorios + magentasObligatorios;
+    }
+
     /*
     public void WhatCrystalITook()
     {
