@@ -102,12 +102,12 @@ public class SpawnManager : MonoBehaviour
         // Aquí va el cálculo de puntos a gastar para esta noche, me da palo 
 
         _currentWave = 0;
-        CurrentRequiredYellow = _nightList[_currentNight].RequiredYellowCrystals;
-        CurrentRequiredCyan = _nightList[_currentNight].RequiredCyanCrystals;
-        CurrentRequiredMagenta = _nightList[_currentNight].RequiredMagentaCrystals;
-        ProbabilityYellow = _nightList[_currentNight].YellowProbability;
-        ProbabilyCyan = _nightList[_currentNight].CyanProbability;
-        ProbabilyMagenta = _nightList[_currentNight].MagentaProbability;
+        _CurrentRequiredYellow = _nightList[_currentNight].RequiredYellowCrystals;
+        _CurrentRequiredCyan = _nightList[_currentNight].RequiredCyanCrystals;
+        _CurrentRequiredMagenta = _nightList[_currentNight].RequiredMagentaCrystals;
+        _ProbabilityYellow = _nightList[_currentNight].YellowProbability;
+        _ProbabilityCyan = _nightList[_currentNight].CyanProbability;
+        _ProbabilityMagenta = _nightList[_currentNight].MagentaProbability;
         InitializeWave();
     }
 
@@ -116,6 +116,8 @@ public class SpawnManager : MonoBehaviour
     {
         // TODO
         // Aquí va el cálculo de puntos a gastar para esta wave, me da palo 
+
+
 
         currentPool = _nightList[_currentNight].wavePoolList[_currentWave];
 

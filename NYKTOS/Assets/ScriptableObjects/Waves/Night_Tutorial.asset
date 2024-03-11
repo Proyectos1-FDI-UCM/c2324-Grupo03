@@ -20,3 +20,9 @@ MonoBehaviour:
       enemyPool:
       - enemyPrefab: {fileID: 2995607884255851843, guid: ebeff8dda23b3ea42a069c5ffcdf7315, type: 3}
         number: 20
+  RequiredYellowCrystals: 5
+  RequiredCyanCrystals: 5
+  RequiredMagentaCrystals: 5
+  YellowProbability: 100
+  CyanProbability: 100
+  MagentaProbability: 100
