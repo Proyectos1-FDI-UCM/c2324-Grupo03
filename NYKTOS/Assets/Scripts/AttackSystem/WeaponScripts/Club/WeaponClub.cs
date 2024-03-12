@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponClub : MonoBehaviour, IWeapon
+public class WeaponClub : Weapon
 {
     #region references
     [SerializeField]
@@ -18,12 +18,7 @@ public class WeaponClub : MonoBehaviour, IWeapon
 
     #endregion
 
-    #region weaponProperties
-    [SerializeField] private AttackType attackType;
-    [SerializeField] private int weaponDamage = 1;
-    #endregion
-
-    public void PrimaryUse(Vector2 direction)
+    public override void PrimaryUse(Vector2 direction)
     {
         //se requiere instanciar el objeto a la rotacion de direction, pero como es un barrido tomara la direccion de direction-attackAngleRange
         GameObject currentHitbox = 
@@ -39,19 +34,15 @@ public class WeaponClub : MonoBehaviour, IWeapon
 
         //set up del dano y su tipo
         behaviour.attackType = attackType;
-        behaviour.weaponDamage = weaponDamage;
+        behaviour.weaponDamage = damage;
     }
 
-    public void SecondaryUse(Vector2 direction)
+    public override void SecondaryUse(Vector2 direction)
     {
 
     }
-
-    public void SetDamageType(AttackType attack)
-    {
-        attackType = attack;
-    }
-
+    
+    
     private float DirectionAngle(Vector2 direction) //saca el angulo de la direccion dando por sentado que el modulo de la direccion es 1
     {
         float rad;

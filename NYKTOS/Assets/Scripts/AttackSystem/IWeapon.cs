@@ -23,5 +23,25 @@ public interface IWeapon
     /// Se añade daño al arma, es decir, le suma al daño ya existente del arma el número entero que se le pasa.
     /// </summary>
     //void AddWeaponDamage(int num);
+    
+}
 
+public abstract class Weapon : MonoBehaviour, IWeapon
+{
+    public int damage { get {  return _damage; } }
+    [SerializeField]
+    private int _damage = 0;
+
+    [SerializeField]
+    private AttackType _attackType = AttackType.Default;
+    public AttackType attackType { get { return _attackType; } }
+
+    public abstract void PrimaryUse(Vector2 direction);
+
+    public abstract void SecondaryUse(Vector2 direction);
+
+    public void SetDamageType(AttackType attack)
+    {
+        _attackType = attack;
+    }
 }

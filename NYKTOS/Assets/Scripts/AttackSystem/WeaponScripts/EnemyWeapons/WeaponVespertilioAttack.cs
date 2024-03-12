@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponVespertilioAttack : MonoBehaviour, IWeapon
+public class WeaponVespertilioAttack : Weapon
 {
     #region references
     private Transform _myTransform;
@@ -13,31 +13,19 @@ public class WeaponVespertilioAttack : MonoBehaviour, IWeapon
     [SerializeField] private float _hitboxAppearingTime = 0.5f;
     #endregion
 
-    #region weaponProperties
-    [SerializeField] private AttackType attackType;
-    [SerializeField] private int weaponDamage = 1;
-    #endregion
-
     private bool startedCoroutine = false;
 
     [SerializeField]
     private GameObject _vespertilioAttackHitbox;
-    public void PrimaryUse(Vector2 direction)
+    public override void PrimaryUse(Vector2 direction)
     {
         if(!startedCoroutine)
         StartCoroutine(VespertilioAttack(direction));
     }
-    public void SecondaryUse(Vector2 direction)
+    public override void SecondaryUse(Vector2 direction)
     {
 
     }
-
-    public void SetDamageType(AttackType damageType)
-    {
-        attackType = damageType;
-    }
-
-
 
     private IEnumerator VespertilioAttack(Vector2 direction)
     {
@@ -50,7 +38,7 @@ public class WeaponVespertilioAttack : MonoBehaviour, IWeapon
             Quaternion.Euler(0, 0, DirectionAngle(direction)));
 
         currentHitbox.transform.parent = _myTransform;
-        currentHitbox.GetComponent<VespertilioAttackHitbox>().attackDamage = weaponDamage;
+        currentHitbox.GetComponent<VespertilioAttackHitbox>().attackDamage = damage;
         currentHitbox.GetComponent <VespertilioAttackHitbox>().attackType = attackType;
 
         yield return new WaitForSeconds(_hitboxAppearingTime);
@@ -62,10 +50,6 @@ public class WeaponVespertilioAttack : MonoBehaviour, IWeapon
     }
     private float DirectionAngle(Vector2 direction) //saca el angulo de la direccion dando por sentado que el modulo de la direccion es 1
     {
-        float rad;
-
-
-        //print(Mathf.Atan2(direction.y,direction.x)* Mathf.Rad2Deg);
         return (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
     }
 
