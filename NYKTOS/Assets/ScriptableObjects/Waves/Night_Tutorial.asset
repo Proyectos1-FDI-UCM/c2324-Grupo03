@@ -18,8 +18,12 @@ MonoBehaviour:
     - spawnerScore: 20
       spawnerType: 0
       enemyPool:
-      - enemyPrefab: {fileID: 2995607884255851843, guid: ebeff8dda23b3ea42a069c5ffcdf7315, type: 3}
+      - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
         number: 20
+      - enemyPrefab: {fileID: 2995607884255851843, guid: d8c473e7050ef8c46b2ec38c10a3742e, type: 3}
+        number: 5
+      - enemyPrefab: {fileID: 2995607884255851843, guid: 38f20b988c1a0a44d8ce40e706951027, type: 3}
+        number: 5
   RequiredYellowCrystals: 5
   RequiredCyanCrystals: 5
   RequiredMagentaCrystals: 5
