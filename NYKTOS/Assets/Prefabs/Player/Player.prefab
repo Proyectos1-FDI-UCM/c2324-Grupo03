@@ -731,11 +731,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eeb6f22ae89f1848a6e70f6732ed9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 3
+  _attackType: 0
   attackHitbox: {fileID: 3679065653297175454, guid: c6593a0b651be4f46bd3bf884546eaec, type: 3}
   attackAngleRange: 60
   angleVelocity: 300
-  attackType: 0
-  weaponDamage: 3
 --- !u!114 &3016302921365856093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,6 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1faa86bce976241a81d77f27cf7d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _UImanager: {fileID: 0}
   _deathskin: {fileID: 6758919315837710540}
   _aliveskin: {fileID: 6222676936956634352}
 --- !u!114 &4920501686148597465
