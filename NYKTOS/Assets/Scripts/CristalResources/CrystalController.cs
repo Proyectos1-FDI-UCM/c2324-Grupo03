@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -18,6 +19,9 @@ public class CrystalController : MonoBehaviour
     private float MinimalDistanceToObtain = 0.3f;
 
     [SerializeField]
+    List<ResourceCrystal> possibleCrystal = new List<ResourceCrystal>();
+
+    [SerializeField]
     private PlayerInventory inventory;
     //private string CrystalName;
     void Start()
@@ -28,7 +32,7 @@ public class CrystalController : MonoBehaviour
         _player = FindObjectOfType<PlayerController>().gameObject;
         _myAnimator = GetComponent<Animator>();
         /*
-        ResourceCrystal TypeofCrystal = GetComponent<ResourceCrystal>();
+
         CrystalName = TypeofCrystal.CristalName;
         */
 
@@ -37,6 +41,8 @@ public class CrystalController : MonoBehaviour
     void Update()
     {
         float DistanceToPlayerNumber = Vector2.Distance(_player.transform.position, transform.position);
+        Sprite spriteCrystal = _crystalPrefab.GetComponent<SpriteRenderer>().sprite;
+
 
         if (_Atracted)
         {
@@ -51,9 +57,24 @@ public class CrystalController : MonoBehaviour
         }
 
         if (ObtainedCrystal)
-        {
-            inventory.Amarillo++;
-            inventory.OnValidate();
+        {    
+            
+            if (possibleCrystal[0].CristalSprite == spriteCrystal)
+            {
+                inventory.Amarillo++;
+                inventory.OnValidate();
+            }
+            else if (possibleCrystal[1].CristalSprite == spriteCrystal)
+            {
+                inventory.Magenta++;
+                inventory.OnValidate();
+            }
+            else if (possibleCrystal[2].CristalSprite == spriteCrystal)
+            {
+                inventory.Cian++;
+                inventory.OnValidate();
+            }
+            
             Destroy(_crystalPrefab);
         }
     }

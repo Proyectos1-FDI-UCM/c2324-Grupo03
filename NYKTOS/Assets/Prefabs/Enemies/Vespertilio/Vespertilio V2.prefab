@@ -645,6 +645,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b5b8014c89569f746ad3efa6fa1d8eaa, type: 2}
   - {fileID: 11400000, guid: f5c611acfb209cf49ac3f3f9b2f2274e, type: 2}
   _spawnManager: {fileID: 0}
+  _nightList:
+  - {fileID: 11400000, guid: b4ada286ed58a514e94b2f24d17f5eb3, type: 2}
 --- !u!1 &3223959979754271057
 GameObject:
   m_ObjectHideFlags: 0

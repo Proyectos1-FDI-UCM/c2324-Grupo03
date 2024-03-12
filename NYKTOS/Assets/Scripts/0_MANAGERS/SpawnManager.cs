@@ -36,13 +36,13 @@ public class SpawnManager : MonoBehaviour
         set { _ProbabilityYellow = value; }
     } 
     private int _ProbabilityCyan;
-    public int ProbabilyCyan
+    public int ProbabilityCyan
     {
         get { return _ProbabilityCyan; }
         set { _ProbabilityCyan = value; }
     }
     private int _ProbabilityMagenta;
-    public int ProbabilyMagenta
+    public int ProbabilityMagenta
     {
         get { return _ProbabilityMagenta; }
         set { _ProbabilityMagenta = value; }
@@ -102,12 +102,7 @@ public class SpawnManager : MonoBehaviour
         // Aquí va el cálculo de puntos a gastar para esta noche, me da palo 
 
         _currentWave = 0;
-        _CurrentRequiredYellow = _nightList[_currentNight].RequiredYellowCrystals;
-        _CurrentRequiredCyan = _nightList[_currentNight].RequiredCyanCrystals;
-        _CurrentRequiredMagenta = _nightList[_currentNight].RequiredMagentaCrystals;
-        _ProbabilityYellow = _nightList[_currentNight].YellowProbability;
-        _ProbabilityCyan = _nightList[_currentNight].CyanProbability;
-        _ProbabilityMagenta = _nightList[_currentNight].MagentaProbability;
+
         InitializeWave();
     }
 
@@ -116,7 +111,12 @@ public class SpawnManager : MonoBehaviour
     {
         // TODO
         // Aquí va el cálculo de puntos a gastar para esta wave, me da palo 
-
+        CurrentRequiredYellow = _nightList[_currentNight].RequiredYellowCrystals;
+        CurrentRequiredCyan = _nightList[_currentNight].RequiredCyanCrystals;
+        CurrentRequiredMagenta = _nightList[_currentNight].RequiredMagentaCrystals;
+        ProbabilityYellow = _nightList[_currentNight].YellowProbability;
+        ProbabilityCyan = _nightList[_currentNight].CyanProbability;
+        ProbabilityMagenta = _nightList[_currentNight].MagentaProbability;
 
 
         currentPool = _nightList[_currentNight].wavePoolList[_currentWave];

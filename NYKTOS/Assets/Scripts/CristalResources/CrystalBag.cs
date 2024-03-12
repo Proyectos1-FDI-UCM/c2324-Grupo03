@@ -30,15 +30,15 @@ public class CrystalBag : MonoBehaviour
     [SerializeField]
     private SpawnManager _spawnManager;
 
-    private int amarillosObligatorios;
-    private int cianesObligatorios;
-    private int magentasObligatorios;
+    //private int amarillosObligatorios;
+    //private int cianesObligatorios;
+    //private int magentasObligatorios;
     private int probAmarillo;
     private int probCian;
     private int probMagenta;
     private bool RecursosObligatorios = true;
 
-    private int sumaCristalesObligatorios;
+    //private int sumaCristalesObligatorios;
 
     //Esto usa la logica del porcentaje, toma un numero aleatorio entre 1 y 100.
     //Se recopila la lista de cristales con su probabilidad que puede soltar el enemigo.
@@ -46,6 +46,7 @@ public class CrystalBag : MonoBehaviour
     //Entonces para cada Crystal de la lootList toma una condición en la que si el numero random es menor que la probabilidad puesta, se añade ese cristal.
     ResourceCrystal GetDroppedCrystals()
     {
+        
         int RandomNumber = Random.Range(1, 101);
         List<ResourceCrystal> possibleCrystal = new List<ResourceCrystal>();
         // EN CRYSTALLIST
@@ -53,58 +54,58 @@ public class CrystalBag : MonoBehaviour
         // 1 MAGENTA
         // 2 CIAN
 
-        if (amarillosObligatorios == 0 && cianesObligatorios == 0 && magentasObligatorios == 0) RecursosObligatorios = false;
+        if (_spawnManager.CurrentRequiredYellow == 0 && _spawnManager.CurrentRequiredCyan == 0 && _spawnManager.CurrentRequiredMagenta == 0) RecursosObligatorios = false;
 
         if (RecursosObligatorios)
         {
-            Debug.Log("Recurso obligatorio");
-            if (amarillosObligatorios > 0)
+            print("Cristal obligatorio");
+            if (_spawnManager.CurrentRequiredYellow > 0/*&& RandomNumber <= probAmarillo*/)
             {
-                if (RandomNumber <= probAmarillo /*|| cianesObligatorios == 0 && magentasObligatorios == 0*/)
-                {
-                    possibleCrystal.Add(CrystalList[0]);
-                    _spawnManager.CurrentRequiredYellow--;
-                    amarillosObligatorios--;
-                }
+                possibleCrystal.Add(CrystalList[0]);
+                _spawnManager.CurrentRequiredYellow--;
+                //amarillosObligatorios--;
+                print("Amarillo obligatorio");
+               
             }
-            else if (cianesObligatorios > 0 /*|| amarillosObligatorios == 0 && magentasObligatorios == 0*/)
+            else if (_spawnManager.CurrentRequiredCyan > 0/* && RandomNumber <= probCian*/)
             {
-                if (RandomNumber <= probCian)
-                {
-                    possibleCrystal.Add(CrystalList[2]);
-                    _spawnManager.CurrentRequiredCyan--;
-                    cianesObligatorios--;
-                }
+                possibleCrystal.Add(CrystalList[2]);
+                _spawnManager.CurrentRequiredCyan--;
+                //cianesObligatorios--;
+                print("Cian obligatorio");
             }
-            else if (magentasObligatorios > 0 /*|| amarillosObligatorios == 0 && cianesObligatorios == 0*/)
+            else if (_spawnManager.CurrentRequiredMagenta > 0/* && RandomNumber <= probMagenta*/)
             {
-                if (RandomNumber <= probMagenta)
-                {
-                    possibleCrystal.Add(CrystalList[1]);
-                    _spawnManager.CurrentRequiredMagenta--;
-                    magentasObligatorios--;
-                }
+                possibleCrystal.Add(CrystalList[1]);
+                _spawnManager.CurrentRequiredMagenta--;
+                //magentasObligatorios--;
+                print("Magenta obligatorio");
             }
             else
             {
+                print("No contemple probabilidad");
                 possibleCrystal.Add(CrystalList[0]);
             }
+            
         } 
-        else
+        
+        if (!RecursosObligatorios)
         {
+            print("Cristal aleatorio");
+
+            //RANDOM DEPENDIENDO DEL DROPCHANCE DEL SCRIPTABLE OBJECT
             /*
-            Debug.Log("Recurso aleatorio");
             foreach (ResourceCrystal item in CrystalList)
             {
                 if (RandomNumber <= item.dropChance) possibleCrystal.Add(item);
             }
             */
-            print(RandomNumber);
-            print(probMagenta);
-            print(probCian);
-            if (RandomNumber <= probCian) possibleCrystal.Add(CrystalList[1]);
-            else if (RandomNumber <= probMagenta) possibleCrystal.Add(CrystalList[2]);
-            else possibleCrystal.Add(CrystalList[0]);
+
+            //COMPLETAMENTE RANDOM
+            int RandomNumberCrystalRandom = Random.Range(0, 3);
+            if (RandomNumberCrystalRandom == 0) possibleCrystal.Add(CrystalList[0]);
+            else if (RandomNumberCrystalRandom == 1) possibleCrystal.Add(CrystalList[1]);
+            else possibleCrystal.Add(CrystalList[2]);
 
 
         }
@@ -143,18 +144,16 @@ public class CrystalBag : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
-        //_spawnManager = SpawnManager.Instance;
+        _spawnManager = SpawnManager.Instance;
 
-        amarillosObligatorios = SpawnManager.Instance.CurrentRequiredYellow;
-        cianesObligatorios = SpawnManager.Instance.CurrentRequiredYellow;
-        magentasObligatorios = SpawnManager.Instance.CurrentRequiredYellow;
-        probAmarillo = SpawnManager.Instance.ProbabilityYellow;
-        probCian = SpawnManager.Instance.ProbabilyCyan;
-        probMagenta = SpawnManager.Instance.ProbabilyMagenta;
-
-        sumaCristalesObligatorios = amarillosObligatorios + cianesObligatorios + magentasObligatorios;
+        //amarillosObligatorios = _spawnManager.CurrentRequiredYellow;
+        //cianesObligatorios = _spawnManager.CurrentRequiredYellow;
+        //magentasObligatorios = _spawnManager.CurrentRequiredYellow;
+        probAmarillo = _spawnManager.ProbabilityYellow;
+        probCian = _spawnManager.ProbabilityCyan;
+        probMagenta = _spawnManager.ProbabilityMagenta;
     }
 
     /*
