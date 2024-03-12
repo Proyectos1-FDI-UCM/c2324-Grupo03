@@ -18,9 +18,9 @@ public class EnemyAnimation : MonoBehaviour {
 
     void Start() {
         _animator = GetComponent<Animator>();
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponentInParent<Rigidbody2D>();
         _myTransform = GetComponent<Transform>();
-        _priorityComponent = GetComponent<EnemyPriorityComponent>();
+        _priorityComponent = GetComponentInParent<EnemyPriorityComponent>();
     }
     void Update() {
         // Get the velocity vector of the Rigidbody

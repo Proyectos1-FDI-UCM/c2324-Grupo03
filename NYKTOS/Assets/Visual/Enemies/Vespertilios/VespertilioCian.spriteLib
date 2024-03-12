@@ -32,7 +32,7 @@ MonoBehaviour:
       m_Hash: 714423708
       m_Sprite: {fileID: -2332276389051944082, guid: d3d8bf32f180a924b85a2730d972398d, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: 9021334789441516589, guid: 781ec49665f09034db8a154da55d9632, type: 3}
+      m_SpriteOverride: {fileID: 803612947774363711, guid: 404aee549109fdd4cbf3b8410d01ae14, type: 3}
     m_FromMain: 1
     m_EntryOverrideCount: 1
   - m_Name: WalkRigth
@@ -43,7 +43,7 @@ MonoBehaviour:
       m_Hash: 77290672
       m_Sprite: {fileID: 2442449622100761073, guid: d3d8bf32f180a924b85a2730d972398d, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: 8645981941660676717, guid: 781ec49665f09034db8a154da55d9632, type: 3}
+      m_SpriteOverride: {fileID: 2789268321611041672, guid: 404aee549109fdd4cbf3b8410d01ae14, type: 3}
     m_FromMain: 1
     m_EntryOverrideCount: 1
   - m_Name: WalkLeft
@@ -54,7 +54,7 @@ MonoBehaviour:
       m_Hash: 496110858
       m_Sprite: {fileID: 7382277127620102300, guid: d3d8bf32f180a924b85a2730d972398d, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: -1483016174485638602, guid: 781ec49665f09034db8a154da55d9632, type: 3}
+      m_SpriteOverride: {fileID: 6063073994801234747, guid: 404aee549109fdd4cbf3b8410d01ae14, type: 3}
     m_FromMain: 1
     m_EntryOverrideCount: 1
   - m_Name: AttackRigth
@@ -65,7 +65,7 @@ MonoBehaviour:
       m_Hash: 77290672
       m_Sprite: {fileID: 2442449622100761073, guid: d3d8bf32f180a924b85a2730d972398d, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: 8645981941660676717, guid: 781ec49665f09034db8a154da55d9632, type: 3}
+      m_SpriteOverride: {fileID: 2789268321611041672, guid: 404aee549109fdd4cbf3b8410d01ae14, type: 3}
     - m_Name: 2
       m_Hash: 450215437
       m_Sprite: {fileID: 3744449010413359365, guid: d3d8bf32f180a924b85a2730d972398d, type: 3}
@@ -84,9 +84,9 @@ MonoBehaviour:
     m_OverrideEntries:
     - m_Name: VespertilioSpritesV2-Sheet_8
       m_Hash: 323585336
-      m_Sprite: {fileID: -2893983319954735807, guid: d3d8bf32f180a924b85a2730d972398d, type: 3}
+      m_Sprite: {fileID: 7382277127620102300, guid: d3d8bf32f180a924b85a2730d972398d, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: -1483016174485638602, guid: 781ec49665f09034db8a154da55d9632, type: 3}
+      m_SpriteOverride: {fileID: 6063073994801234747, guid: 404aee549109fdd4cbf3b8410d01ae14, type: 3}
     - m_Name: VespertilioSpritesV2-Sheet_7
       m_Hash: 66492585
       m_Sprite: {fileID: 8862203197085108652, guid: d3d8bf32f180a924b85a2730d972398d, type: 3}
@@ -100,5 +100,5 @@ MonoBehaviour:
     m_FromMain: 1
     m_EntryOverrideCount: 1
   m_PrimaryLibraryGUID: e072301de7d0b12479a59999d262bbdd
-  m_ModificationHash: 638458774663125960
+  m_ModificationHash: 638458810357647592
   m_Version: 1
