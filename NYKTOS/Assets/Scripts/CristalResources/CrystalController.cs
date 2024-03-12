@@ -7,6 +7,9 @@ using UnityEngine.Rendering;
 public class CrystalController : MonoBehaviour
 {
     private Animator _myAnimator;
+    private Transform _myTransform;
+    [SerializeField]
+    private float AttractionForce = 3f;
     //Se hace la referencia para cada clon desde CrystalBag
     private CrystalBag _crystalBag;
     private GameObject _crystalPrefab;
@@ -31,8 +34,8 @@ public class CrystalController : MonoBehaviour
         //_crystalBag = FindObjectOfType<CrystalBag>();
         _player = FindObjectOfType<PlayerController>().gameObject;
         _myAnimator = GetComponent<Animator>();
+        _myTransform = transform;
         /*
-
         CrystalName = TypeofCrystal.CristalName;
         */
 
@@ -40,15 +43,19 @@ public class CrystalController : MonoBehaviour
 
     void Update()
     {
-        float DistanceToPlayerNumber = Vector2.Distance(_player.transform.position, transform.position);
+        float DistanceToPlayerNumber = Vector2.Distance(_player.transform.position, _myTransform.position);
         Sprite spriteCrystal = _crystalPrefab.GetComponent<SpriteRenderer>().sprite;
 
 
         if (_Atracted)
         {
             _myAnimator.enabled = false;
-            Vector2 DirectionToPlayer = _player.transform.position - transform.position;
-            _crystalPrefab.GetComponent<Rigidbody2D>().AddForce(DirectionToPlayer * dropForce,ForceMode2D.Impulse);
+            Vector3 playerposition = new Vector3(_player.transform.position.x,_player.transform.position.y,_player.transform.position.z);
+            Vector3 DirectionToPlayer = playerposition - _myTransform.position;
+            _myTransform.position += DirectionToPlayer * AttractionForce * Time.deltaTime;
+            
+            //Apuntes para el futuro, el enemigo que viene como proyectil con una fuera como esta puede quedar muy bien y se puede esquivar con facilidad
+            //_crystalPrefab.GetComponent<Rigidbody2D>().AddForce(DirectionToPlayer * dropForce,ForceMode2D.Impulse);
         }
 
         if (DistanceToPlayerNumber <= MinimalDistanceToObtain)

@@ -23,6 +23,6 @@ MonoBehaviour:
   RequiredYellowCrystals: 5
   RequiredCyanCrystals: 5
   RequiredMagentaCrystals: 5
-  YellowProbability: 100
-  CyanProbability: 100
-  MagentaProbability: 100
+  YellowProbability: 80
+  CyanProbability: 40
+  MagentaProbability: 40
