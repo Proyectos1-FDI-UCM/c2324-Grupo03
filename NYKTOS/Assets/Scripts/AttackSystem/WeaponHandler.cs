@@ -11,7 +11,7 @@ public enum AttackType
 public class WeaponHandler : MonoBehaviour
 {
     
-    private IWeapon[] weapon = new IWeapon[1]; //cantidad de armas que puede llevar a la vez
+    private Weapon[] weapon = new Weapon[1]; //cantidad de armas que puede llevar a la vez
     
     
     public void CallPrimaryUse(int num, Vector2 direction)
@@ -24,13 +24,13 @@ public class WeaponHandler : MonoBehaviour
         weapon[num].SecondaryUse(direction);
     }
 
-    public void SetWeapon(int num, IWeapon iweapon)
+    public void SetWeapon(int num, Weapon setWeapon)
     {
-        weapon[num] = iweapon;
+        weapon[num] = setWeapon;
     }
 
     public void Awake()
     {
-        SetWeapon(0, GetComponent<IWeapon>());
+        SetWeapon(0, GetComponent<Weapon>());
     }
 }
