@@ -5,14 +5,15 @@ using UnityEngine;
 public class StateHandler : MonoBehaviour
 {
     [SerializeField]
-    private State currentState;
+    private State _currentState;
+    public State currentState { get { return _currentState; } }
     private State nextState;
 
     private void Update()
     {
-        currentState.OnUpdateState();
+        _currentState.OnUpdateState();
 
-        if (currentState.CheckConditions(ref nextState))
+        if (_currentState.CheckConditions(ref nextState))
         {
             ChangeState();
         }
@@ -20,8 +21,8 @@ public class StateHandler : MonoBehaviour
 
     private void ChangeState()
     {
-        currentState.OnExitState();
-        currentState = nextState;
-        currentState.OnEnterState();
+        _currentState.OnExitState();
+        _currentState = nextState;
+        _currentState.OnEnterState();
     }
 }
