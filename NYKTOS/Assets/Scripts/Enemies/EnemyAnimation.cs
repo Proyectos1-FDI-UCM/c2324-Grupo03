@@ -23,22 +23,26 @@ public class EnemyAnimation : MonoBehaviour {
         _priorityComponent = GetComponentInParent<EnemyPriorityComponent>();
     }
     void Update() {
-        // Get the velocity vector of the Rigidbody
-        Vector2 velocity = _rigidbody.velocity;
-        float distanceToPlayer = Vector3.Magnitude(PlayerController.playerTransform.position - _myTransform.position);
-        float distanceToBuild = Vector3.Magnitude(_priorityComponent.toNearestBuildingPath.corners[_priorityComponent.toNearestBuildingPath.corners.Length-1] - _myTransform.position);
-        // Calculate the direction of movement (normalized vector)
-        Vector2 movementDirection = velocity.normalized;
-        if (Time.time >= nextActionTime) {
-            Idle(movementDirection);
-            nextActionTime += period;
-        }
-        if (distanceToPlayer < 1f || distanceToBuild <1f) {
-            _animator.Play("Attacking");
-        
-        }
-        
-    }
+        if (_priorityComponent.toNearestBuildingPath.corners.Length > 1)
+        {
+            // Get the velocity vector of the Rigidbody
+            Vector2 velocity = _rigidbody.velocity;
+            float distanceToPlayer = Vector3.Magnitude(PlayerController.playerTransform.position - _myTransform.position);
+            float distanceToBuild = Vector3.Magnitude(_priorityComponent.toNearestBuildingPath.corners[_priorityComponent.toNearestBuildingPath.corners.Length - 1] - _myTransform.position);
+            // Calculate the direction of movement (normalized vector)
+            Vector2 movementDirection = velocity.normalized;
+            if (Time.time >= nextActionTime)
+            {
+                Idle(movementDirection);
+                nextActionTime += period;
+            }
+            if (distanceToPlayer < 1f || distanceToBuild < 1f)
+            {
+                _animator.Play("Attacking");
 
+            }
+
+        }
+    }
 }
 //MARIA
