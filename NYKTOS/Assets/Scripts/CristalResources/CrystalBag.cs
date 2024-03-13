@@ -107,12 +107,14 @@ public class CrystalBag : MonoBehaviour
             if (RandomNumberCrystalRandom == 0 && RandomProbabilityCrystalRandom <= _spawnManager.ProbabilityYellow) possibleCrystal.Add(CrystalList[0]);
             else if (RandomNumberCrystalRandom == 1 && RandomProbabilityCrystalRandom <= _spawnManager.ProbabilityMagenta) possibleCrystal.Add(CrystalList[1]);
             else if (RandomNumberCrystalRandom == 2 && RandomProbabilityCrystalRandom <= _spawnManager.ProbabilityCyan) possibleCrystal.Add(CrystalList[2]);
+            /*
             else
             {
                 if (RandomNumberCrystalRandom == 0) possibleCrystal.Add(CrystalList[1]);
                 else if (RandomNumberCrystalRandom == 1) possibleCrystal.Add(CrystalList[2]);
                 else possibleCrystal.Add(CrystalList[0]);
             }
+            */
 
             /*
             //RANDOM DEPENDIENDO DEL DROPCHANCE DEL SCRIPTABLE OBJECT

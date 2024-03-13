@@ -59,17 +59,17 @@ public class CrystalController : MonoBehaviour
         if (ObtainedCrystal)
         {    
             
-            if (possibleCrystal[0].CristalSprite == spriteCrystal)
+            if (possibleCrystal[0].CristalSprite == spriteCrystal && inventory.Amarillo <= 99)
             {
                 inventory.Amarillo++;
                 inventory.OnValidate();
             }
-            else if (possibleCrystal[1].CristalSprite == spriteCrystal)
+            else if (possibleCrystal[1].CristalSprite == spriteCrystal && inventory.Magenta <= 99)
             {
                 inventory.Magenta++;
                 inventory.OnValidate();
             }
-            else if (possibleCrystal[2].CristalSprite == spriteCrystal)
+            else if (possibleCrystal[2].CristalSprite == spriteCrystal && inventory.Cian <= 99)
             {
                 inventory.Cian++;
                 inventory.OnValidate();
