@@ -13,7 +13,7 @@ public class CrystalController : MonoBehaviour
     //Se hace la referencia para cada clon desde CrystalBag
     private CrystalBag _crystalBag;
     private GameObject _crystalPrefab;
-    private Transform _player;
+    private GameObject _player;
     private bool _Atracted;
     private float dropForce = 1f;
     private bool ObtainedCrystal = false;
@@ -29,7 +29,7 @@ public class CrystalController : MonoBehaviour
     void Start()
     {
         _crystalPrefab = gameObject;
-        _player = PlayerController.playerTransform;
+        _player = PlayerController.playerTransform.gameObject;
         _myAnimator = GetComponent<Animator>();
         _myTransform = transform;
     }
@@ -43,8 +43,8 @@ public class CrystalController : MonoBehaviour
         if (_Atracted)
         {
             _myAnimator.enabled = false;
-            Vector3 playerposition = new Vector3(_player.transform.position.x,_player.transform.position.y,_player.transform.position.z);
-            Vector3 DirectionToPlayer = playerposition - _myTransform.position;
+            //Vector3 playerposition = new Vector3(_player.transform.position.x,_player.transform.position.y,_player.transform.position.z);
+            Vector3 DirectionToPlayer = (_player.transform.position - _myTransform.position).normalized;
             _myTransform.position += DirectionToPlayer * AttractionForce * Time.deltaTime;
             
             //Apuntes para el futuro, el enemigo que viene como proyectil con una fuera como esta puede quedar muy bien y se puede esquivar con facilidad
