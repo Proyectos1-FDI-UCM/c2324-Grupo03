@@ -21,6 +21,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
 
     public void Death()
     {
+        Debug.Log("He morio!");
        _aliveskin.enabled = false;
        _deathskin.enabled = true;
        _playerState.SetState(PlayerState.Dead);
@@ -29,10 +30,11 @@ public class PlayerDeath : MonoBehaviour, IDeath
 
     public void Revive()
     {
+        Debug.Log("He revivio!");
         _aliveskin.enabled = true;
         _deathskin.enabled = false;
-        _playerState.SetState(PlayerState.Idle);
         _health.MaxHealth();
+        _playerState.SetState(PlayerState.Idle);
         _UImanager.DeathScreenOff();
     }
 

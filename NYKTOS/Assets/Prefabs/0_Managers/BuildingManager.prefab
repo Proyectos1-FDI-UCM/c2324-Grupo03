@@ -51,3 +51,4 @@ MonoBehaviour:
   _beacon: {fileID: 5698021183704277950, guid: ece877d2ae7f77e4e87569d26f5af709, type: 3}
   _wall: {fileID: 6636109488734167412, guid: 52d33308eeb816c42abd9072de80b08d, type: 3}
   _turret: {fileID: 8365187515372501195, guid: 2de64088f6ec78342b5c1ae62919387a, type: 3}
+  numberOfNexus: 1

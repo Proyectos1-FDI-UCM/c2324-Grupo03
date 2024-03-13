@@ -130,6 +130,8 @@ public class BuildingManager : MonoBehaviour
     public GameObject[] buildingArray { get { return _buildingArray; } }
     private GameObject[] _buildingArray;
 
+    [SerializeField]
+    private int numberOfNexus = 0;
     private int _placeholderNumber = 0;
     private int _buildingNumber = 0;
     public int buildingNumber { get { return _buildingNumber; } }
@@ -141,6 +143,7 @@ public class BuildingManager : MonoBehaviour
 
     public void AddBuilding(GameObject obj)
     {
+        print(obj);
         _buildingArray[_buildingNumber] = obj;
         _buildingNumber++;
     }
@@ -167,15 +170,18 @@ public class BuildingManager : MonoBehaviour
     void Awake()
     {
         if (_instance != null) Destroy(gameObject);
-        else _instance = this;       
-    }
+        else _instance = this;
 
-    void Start()
-    {
+
+        _placeholderNumber = numberOfNexus;
+
         _buildingArray = new GameObject[_placeholderNumber];
     }
 
+    private void Start()
+    {
 
-
+        
+    }
 
 }

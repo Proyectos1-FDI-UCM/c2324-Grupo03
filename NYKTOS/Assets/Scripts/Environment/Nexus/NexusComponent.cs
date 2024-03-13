@@ -33,10 +33,17 @@ public class NexusComponent : MonoBehaviour, IBuilding
         _playerDeath.Revive();
     }
 
+    private void Awake()
+    {
+        BuildingManager.Instance.IncreasePlaceholderNumber();
+        
+        _playerDeath = _player.GetComponent<PlayerDeath>();
+    }
+
     private void Start()
     {
         BuildingManager.Instance.AddBuilding(this.gameObject);
-        
-        _playerDeath = _player.GetComponent<PlayerDeath>();
+
+
     }
 }

@@ -12,9 +12,15 @@ public class BuildingOnAttackRangeCondition : MonoBehaviour, ICondition
     [SerializeField] private float attackRange = 1.5f;
     public bool Validate(GameObject game)
     {
-        float distanceToBuilding = Vector3.Magnitude(_enemyPriorityComponent.toNearestBuildingPath.corners[_enemyPriorityComponent.toNearestBuildingPath.corners.Length-1] - _myTransform.position);
+        if (_enemyPriorityComponent.toNearestBuildingPath.corners.Length > 0) 
+        {
+            float distanceToBuilding = Vector3.Magnitude(_enemyPriorityComponent.toNearestBuildingPath.corners[_enemyPriorityComponent.toNearestBuildingPath.corners.Length - 1] - _myTransform.position);
 
-        return distanceToBuilding <= attackRange;
+            return distanceToBuilding <= attackRange;
+        }
+
+        else return false;
+        
     }
 
     private void Awake()

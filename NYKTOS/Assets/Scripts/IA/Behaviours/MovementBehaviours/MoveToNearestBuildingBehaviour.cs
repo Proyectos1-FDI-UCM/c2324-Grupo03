@@ -25,7 +25,7 @@ public class MoveToNearestBuildingBehaviour : MonoBehaviour, IBehaviour
         {
             direction = (_enemyPriorityComponent.toNearestBuildingPath.corners[1] - _myTransform.position).normalized;
 
-            print(_enemyPriorityComponent.toNearestBuildingPath.corners[1]);
+            //print(_enemyPriorityComponent.toNearestBuildingPath.corners[1]);
 
             if (!IsInvoking(nameof(Move)))
                 Invoke(nameof(Move), _entityReactionTime);
