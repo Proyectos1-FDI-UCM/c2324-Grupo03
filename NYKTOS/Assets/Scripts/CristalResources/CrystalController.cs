@@ -13,8 +13,7 @@ public class CrystalController : MonoBehaviour
     //Se hace la referencia para cada clon desde CrystalBag
     private CrystalBag _crystalBag;
     private GameObject _crystalPrefab;
-    [SerializeField]
-    private GameObject _player;
+    private Transform _player;
     private bool _Atracted;
     private float dropForce = 1f;
     private bool ObtainedCrystal = false;
@@ -30,15 +29,9 @@ public class CrystalController : MonoBehaviour
     void Start()
     {
         _crystalPrefab = gameObject;
-        //CORREGIR
-        //_crystalBag = FindObjectOfType<CrystalBag>();
-        _player = FindObjectOfType<PlayerController>().gameObject;
+        _player = PlayerController.playerTransform;
         _myAnimator = GetComponent<Animator>();
         _myTransform = transform;
-        /*
-        CrystalName = TypeofCrystal.CristalName;
-        */
-
     }
 
     void Update()
