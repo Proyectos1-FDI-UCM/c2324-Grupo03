@@ -175,22 +175,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildingManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8327685732680950553, guid: ebf2404ddbe1f8f4f9f8a61831e432c5, type: 3}
-      propertyPath: _inventory
-      value: 
-      objectReference: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
-    - target: {fileID: 8327685732680950553, guid: ebf2404ddbe1f8f4f9f8a61831e432c5, type: 3}
-      propertyPath: _wallPrice
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8327685732680950553, guid: ebf2404ddbe1f8f4f9f8a61831e432c5, type: 3}
-      propertyPath: _beaconPrice
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8327685732680950553, guid: ebf2404ddbe1f8f4f9f8a61831e432c5, type: 3}
-      propertyPath: _turretPrice
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -950,6 +934,10 @@ PrefabInstance:
       propertyPath: _UIManager
       value: 
       objectReference: {fileID: 1468414745}
+    - target: {fileID: 6544441048625905143, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7257835641261950391, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: _menuManager
       value: 
