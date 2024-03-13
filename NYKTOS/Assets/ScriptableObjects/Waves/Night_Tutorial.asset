@@ -20,9 +20,9 @@ MonoBehaviour:
       enemyPool:
       - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
         number: 20
-      - enemyPrefab: {fileID: 2995607884255851843, guid: d8c473e7050ef8c46b2ec38c10a3742e, type: 3}
+      - enemyPrefab: {fileID: 2995607884255851843, guid: de59b7703dbfbd34d9baa5ec508c6051, type: 3}
         number: 5
-      - enemyPrefab: {fileID: 2995607884255851843, guid: 38f20b988c1a0a44d8ce40e706951027, type: 3}
+      - enemyPrefab: {fileID: 2995607884255851843, guid: 3f1ddf2df639d254b95953d14be08653, type: 3}
         number: 5
   RequiredYellowCrystals: 5
   RequiredCyanCrystals: 5
