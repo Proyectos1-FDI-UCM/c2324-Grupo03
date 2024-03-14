@@ -26,7 +26,6 @@ public class AltarComponent : MonoBehaviour, IBuilding
 
     public void CloseMenu() => MenuManager.Instance.CloseMenu();
 
-
     void Start()
     {
         _state = GetComponent<BuildingStateMachine>();

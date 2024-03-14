@@ -28,6 +28,5 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     void Start()
     {
         _state = GetComponent<BuildingStateMachine>();
-        BuildingManager.Instance.IncreasePlaceholderNumber();
     }
 }

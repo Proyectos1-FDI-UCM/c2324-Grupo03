@@ -35,7 +35,6 @@ public class NexusComponent : MonoBehaviour, IBuilding
 
     private void Awake()
     {
-        BuildingManager.Instance.IncreasePlaceholderNumber();
         
         _playerDeath = _player.GetComponent<PlayerDeath>();
     }
@@ -43,7 +42,5 @@ public class NexusComponent : MonoBehaviour, IBuilding
     private void Start()
     {
         BuildingManager.Instance.AddBuilding(this.gameObject);
-
-
     }
 }

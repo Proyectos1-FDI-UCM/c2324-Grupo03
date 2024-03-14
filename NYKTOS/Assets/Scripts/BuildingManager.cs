@@ -127,43 +127,18 @@ public class BuildingManager : MonoBehaviour
     /// Array que contiene todos los gameObjects de edificios. 
     /// ¡ATENCION! Su longitud debe ser BuildingManager.buildingNumber
     /// </summary>
-    public GameObject[] buildingArray { get { return _buildingArray; } }
-    private GameObject[] _buildingArray;
-
-    [SerializeField]
-    private int numberOfNexus = 0;
-    private int _placeholderNumber = 0;
-    private int _buildingNumber = 0;
-    public int buildingNumber { get { return _buildingNumber; } }
-
-    public void IncreasePlaceholderNumber()
-    {
-        _placeholderNumber++;
-    }
+    public List<GameObject> buildingArray { get { return _buildingArray; } }
+    private List<GameObject> _buildingArray = new List<GameObject>();
 
     public void AddBuilding(GameObject obj)
     {
         print(obj);
-        _buildingArray[_buildingNumber] = obj;
-        _buildingNumber++;
+        _buildingArray.Add(obj);
     }
 
     public void RemoveBuilding(GameObject obj)
     {
-        bool found = false;
-        int i = 0; //la posicion del edificio encontrado
-        while (i< _buildingNumber && !found)
-        {
-            found = obj == _buildingArray[i];
-            if (!found) i++;
-        }
-
-        for (; i< _buildingNumber-1; i++)
-        {
-            _buildingArray[i] = _buildingArray[i+1];
-        }
-
-        _buildingNumber--;
+        _buildingArray.Remove(obj);
     }
     #endregion
 
@@ -171,17 +146,6 @@ public class BuildingManager : MonoBehaviour
     {
         if (_instance != null) Destroy(gameObject);
         else _instance = this;
-
-
-        _placeholderNumber = numberOfNexus;
-
-        _buildingArray = new GameObject[_placeholderNumber];
-    }
-
-    private void Start()
-    {
-
-        
     }
 
 }
