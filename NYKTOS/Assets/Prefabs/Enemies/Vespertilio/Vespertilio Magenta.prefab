@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
-  _attackType: 0
+  _attackType: 1
   _waitUntilAttacking: 0.5
   _hitboxAppearingTime: 0.3
   _vespertilioAttackHitbox: {fileID: 6919465541366467843, guid: 8ae27c9322cbbda43990443b041fd24c, type: 3}
