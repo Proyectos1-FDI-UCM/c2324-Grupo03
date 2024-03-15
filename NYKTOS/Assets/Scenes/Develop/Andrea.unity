@@ -605,7 +605,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
   m_PrefabInstance: {fileID: 2079621826}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1395921103}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34b9cc239eddd0947b9e8b34857ad094, type: 3}
@@ -688,17 +688,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
---- !u!114 &1422409270 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3702319650464414860, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+--- !u!1 &1395921103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3385171631580939238, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
   m_PrefabInstance: {fileID: 2079621826}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b1faa86bce976241a81d77f27cf7d8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1432510382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -815,7 +809,7 @@ PrefabInstance:
     - target: {fileID: 2538237894399091131, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: _player
       value: 
-      objectReference: {fileID: 1422409270}
+      objectReference: {fileID: 1395921103}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -832,6 +826,14 @@ PrefabInstance:
     - target: {fileID: 3385171631580939238, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023334086552178363, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionId
+      value: cd2220cd-7d9a-4da6-b6cf-8109eb9cad20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023334086552178363, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionName
+      value: Player/Pause[/Keyboard/escape]
       objectReference: {fileID: 0}
     - target: {fileID: 5767895529976162651, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
       propertyPath: _UIManager

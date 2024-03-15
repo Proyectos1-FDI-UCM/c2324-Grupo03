@@ -263,7 +263,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "Mouse",
                     "action": "PrimaryAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -285,7 +285,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard;Mouse",
+                    "groups": "Mouse",
                     "action": "SecondaryAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -384,7 +384,7 @@
                     "path": "<XInputController>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
