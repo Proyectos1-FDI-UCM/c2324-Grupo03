@@ -4242,7 +4242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 32
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
@@ -4309,7 +4309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201766466df924f40a82cef8db1ece5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deathScreen: {fileID: 0}
   _allTutorials: {fileID: 1044915258316279029}
   _tutorials:
   - {fileID: 8159629763359443647}
