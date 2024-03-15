@@ -20,6 +20,7 @@ public class BuildingDeath : MonoBehaviour, IDeath
 
     public void Death()
     {
+        BuildingManager.Instance.RemoveBuilding(this.gameObject);
         Destroy(gameObject);
     }
 }
