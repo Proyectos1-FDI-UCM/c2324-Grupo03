@@ -51,7 +51,7 @@ public class CrystalController : MonoBehaviour
             //_crystalPrefab.GetComponent<Rigidbody2D>().AddForce(DirectionToPlayer * dropForce,ForceMode2D.Impulse);
         }
 
-        if (DistanceToPlayerNumber <= MinimalDistanceToObtain)
+        if (DistanceToPlayerNumber <= MinimalDistanceToObtain && PlayerStateMachine.playerState != PlayerState.Dead)
         {
             ObtainedCrystal = true;
         }
@@ -81,7 +81,7 @@ public class CrystalController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == _player)
+        if (collision.gameObject == _player && PlayerStateMachine.playerState != PlayerState.Dead)
         {
             Debug.Log("Encontré al jugador!");
             _Atracted = true;

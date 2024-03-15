@@ -11,6 +11,7 @@ public class AttackBuildingBehaviour : MonoBehaviour, IBehaviour
     #endregion
     public void PerformBehaviour()
     {
+        if (_enemyPriorityComponent.toNearestBuildingPath.corners.Length >0)
         _weaponHandler.CallPrimaryUse(0, _enemyPriorityComponent.toNearestBuildingPath.corners[_enemyPriorityComponent.toNearestBuildingPath.corners.Length - 1] - _myTransform.position);
     }
 
