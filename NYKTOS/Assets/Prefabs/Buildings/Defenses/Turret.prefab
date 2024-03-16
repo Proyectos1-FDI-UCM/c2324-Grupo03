@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3860987603375412316}
   - component: {fileID: 1345979096228488380}
   - component: {fileID: 2038564241460201507}
+  - component: {fileID: 564212205808741402}
   m_Layer: 9
   m_Name: ShootTurret
   m_TagString: Untagged
@@ -98,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437619f05cca17c478e9d8a9eaf45f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetEnemy: {fileID: 3400646623835191142, guid: 24251535301804b4fb158da86df63da5, type: 3}
 --- !u!58 &2038564241460201507
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -111,10 +111,10 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 7679
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -134,6 +134,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -1.5}
   serializedVersion: 2
   m_Radius: 3.68
+--- !u!114 &564212205808741402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793698140916843799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a41cf6ef4668149961a89616f96a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _proyectil: {fileID: 6319034383733598113, guid: 6e7602240de51db4db05903b118ec7dd, type: 3}
 --- !u!1 &3502096605917638403
 GameObject:
   m_ObjectHideFlags: 0
