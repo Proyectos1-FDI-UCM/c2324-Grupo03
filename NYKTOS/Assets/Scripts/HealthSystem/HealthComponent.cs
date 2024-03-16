@@ -7,13 +7,15 @@ public class HealthComponent : MonoBehaviour
 {
     #region references
 
+    private HealthBar healthBar;
     [SerializeField]
     private UIManager _UIManager;
     [SerializeField]
     private IDeath _deathComponent;
 
     private PlayerController _playerController;
-    
+    private DefenseComponent _defenseComponent;
+    private bool _isDefense = false;
     #endregion
 
     #region parameters
@@ -38,15 +40,18 @@ public class HealthComponent : MonoBehaviour
         _deathComponent = GetComponent<IDeath>();
 
         _playerController = GetComponent<PlayerController>();
+
+        healthBar = GetComponentInChildren<HealthBar>();
     }
 
     public void Damage(int damage)
     {
+
         if (!_inmune)
         {
             _currentHealth -= damage;
             _inmune = true;
-
+            
             if (_currentHealth <= 0)
             {
                 _currentHealth = 0;
@@ -62,6 +67,12 @@ public class HealthComponent : MonoBehaviour
             }
             
         }
+
+        if (healthBar != null)
+        {
+            healthBar.UpdateHealthBar(_maxHealth, _currentHealth);
+        }
+        
 
     }
 
