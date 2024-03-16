@@ -8,6 +8,7 @@ public class HealthComponent : MonoBehaviour
     #region references
 
     private HealthBar healthBar;
+    private GameObject HealthBarGameObject;
     [SerializeField]
     private UIManager _UIManager;
     [SerializeField]
@@ -42,6 +43,13 @@ public class HealthComponent : MonoBehaviour
         _playerController = GetComponent<PlayerController>();
 
         healthBar = GetComponentInChildren<HealthBar>();
+
+        if (healthBar != null)
+        {
+            HealthBarGameObject = GetComponentInChildren<HealthBar>().gameObject;
+            HealthBarGameObject.SetActive(false);
+        }
+
     }
 
     public void Damage(int damage)
@@ -51,7 +59,11 @@ public class HealthComponent : MonoBehaviour
         {
             _currentHealth -= damage;
             _inmune = true;
-            
+            if (HealthBarGameObject != null)
+            {
+                HealthBarGameObject.SetActive(true);
+            }
+
             if (_currentHealth <= 0)
             {
                 _currentHealth = 0;
@@ -68,7 +80,7 @@ public class HealthComponent : MonoBehaviour
             
         }
 
-        if (healthBar != null)
+        if (healthBar != null && HealthBarGameObject != null)
         {
             healthBar.UpdateHealthBar(_maxHealth, _currentHealth);
         }
@@ -96,6 +108,10 @@ public class HealthComponent : MonoBehaviour
     {
         _currentHealth = _maxHealth;
         _UIManager.Hearts(_currentHealth);
+        if (HealthBarGameObject != null)
+        {
+            HealthBarGameObject.SetActive(false);
+        }
     }
 
     void DisableInm()
