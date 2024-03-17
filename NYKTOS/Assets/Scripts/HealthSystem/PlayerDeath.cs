@@ -38,9 +38,31 @@ public class PlayerDeath : MonoBehaviour, IDeath
         _UImanager.DeathScreenOff();
     }
 
+    private void DayRevive(GameState state)
+    {
+        if(state == GameState.Day)
+        {
+            _aliveskin.enabled = true;
+            _deathskin.enabled = false;
+            _health.MaxHealth();
+            _playerState.SetState(PlayerState.Idle);
+            _UImanager.DeathScreenOff();
+        }
+    }
+
     void Start()
     {
         _health = GetComponent<HealthComponent>();
         _playerState = GetComponent<PlayerStateMachine>();
+     
+        GameManager.Instance.GameStateChanged.AddListener(DayRevive);
+        /* 
+        
+        Marco:
+        
+        DayRevive se ejecuta cada vez que haya un cambio de estado
+        en el game manager
+
+        */     
     }
 }

@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     private PlayerInventory inventory;
 
     [SerializeField]
+    private SaveData save;
+
+    [SerializeField]
     private GameState _state;
     public GameState State => _state;
 
@@ -33,6 +36,7 @@ public class GameManager : MonoBehaviour
             case GameState.Config:
                 break;
             case GameState.Day:
+                SaveProgress();
                 break;
             case GameState.Night:
                 break;
@@ -70,6 +74,10 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    private void SaveProgress()
+    {
+        //TO DO
+    }
 
     // Aplicación de singletón
     void Awake()
