@@ -19,6 +19,8 @@ public class CrystalController : MonoBehaviour
     private bool ObtainedCrystal = false;
 
     private float MinimalDistanceToObtain = 0.3f;
+    private float cooldownVelocityCrystal = 0.2f;
+    private float principalCooldownVelocityCrystal;
 
     [SerializeField]
     List<ResourceCrystal> possibleCrystal = new List<ResourceCrystal>();
@@ -32,6 +34,7 @@ public class CrystalController : MonoBehaviour
         _player = PlayerController.playerTransform.gameObject;
         _myAnimator = GetComponent<Animator>();
         _myTransform = transform;
+        principalCooldownVelocityCrystal = cooldownVelocityCrystal;
     }
 
     void Update()
@@ -42,16 +45,22 @@ public class CrystalController : MonoBehaviour
 
         if (_Atracted)
         {
+            cooldownVelocityCrystal -= Time.deltaTime;
+            if (cooldownVelocityCrystal < 0)
+            {
+                AttractionForce++;
+                cooldownVelocityCrystal = principalCooldownVelocityCrystal;
+            }
             _myAnimator.enabled = false;
             //Vector3 playerposition = new Vector3(_player.transform.position.x,_player.transform.position.y,_player.transform.position.z);
-            Vector3 DirectionToPlayer = (_player.transform.position - _myTransform.position).normalized;
-            _myTransform.position += DirectionToPlayer * AttractionForce * Time.deltaTime;
-            
+            Vector3 directionToPlayer = (_player.transform.position - _myTransform.position).normalized;
+            Vector3 velocity = directionToPlayer * AttractionForce * Time.deltaTime;
+            _myTransform.position += velocity;
             //Apuntes para el futuro, el enemigo que viene como proyectil con una fuera como esta puede quedar muy bien y se puede esquivar con facilidad
             //_crystalPrefab.GetComponent<Rigidbody2D>().AddForce(DirectionToPlayer * dropForce,ForceMode2D.Impulse);
         }
 
-        if (DistanceToPlayerNumber <= MinimalDistanceToObtain)
+        if (DistanceToPlayerNumber <= MinimalDistanceToObtain && PlayerStateMachine.playerState != PlayerState.Dead)
         {
             ObtainedCrystal = true;
         }
@@ -81,7 +90,7 @@ public class CrystalController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == _player)
+        if (collision.gameObject == _player && PlayerStateMachine.playerState != PlayerState.Dead)
         {
             Debug.Log("Encontré al jugador!");
             _Atracted = true;

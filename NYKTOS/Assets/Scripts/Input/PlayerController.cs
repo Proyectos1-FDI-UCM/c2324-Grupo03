@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,12 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region references
     // Referencia a la clase creada a partir del ActionMap
     private PlayerControls _playerControls;
+
+    private PlayerInput _playerInput;
+
+    private string previousScheme;
+    private const string gamepadScheme = "Gamepad";
+    private const string mouseScheme = "Mouse";
 
     public PlayerControls playerControls { 
         get { return _playerControls; } 
@@ -53,13 +60,37 @@ public class PlayerController : MonoBehaviour, IKnockback
     private void OnEnable()
     {
         _playerControls.Enable();
+
+        _playerControls.Player.Move.performed += Move;
+        _playerControls.Player.Move.canceled += Move;
+        _playerControls.Player.Blink.performed += Blink;
+        _playerControls.Player.Look.performed += Look;
+        _playerControls.Player.PrimaryAttack.performed += PrimaryAttack;
+        _playerControls.Player.SecondaryAttack.performed += SecondaryAttack;
+        _playerControls.Player.Interact.performed += Interact;
+        _playerControls.Player.Pause.performed += PauseGame;
+
+        _playerInput.onControlsChanged += OnControlsChanged;
     }
 
     private void OnDisable()
     {
         _playerControls.Disable();
+
+        _playerControls.Player.Move.performed -= Move;
+        _playerControls.Player.Move.canceled -= Move;
+        _playerControls.Player.Blink.performed -= Blink;
+        _playerControls.Player.Look.performed -= Look;
+        _playerControls.Player.PrimaryAttack.performed -= PrimaryAttack;
+        _playerControls.Player.SecondaryAttack.performed -= SecondaryAttack;
+        _playerControls.Player.Interact.performed -= Interact;
+        _playerControls.Player.Pause.performed -= PauseGame;
+
+        _playerInput.onControlsChanged -= OnControlsChanged;
     }
     #endregion
+
+    #region actions
 
     #region movement
     public void Blink(InputAction.CallbackContext context)
@@ -108,15 +139,15 @@ public class PlayerController : MonoBehaviour, IKnockback
     public void Look(InputAction.CallbackContext context)
     {
         Vector2 input;
-        if(context.control.device is Mouse)
+        if(previousScheme == gamepadScheme)
+        {
+            input = context.ReadValue<Vector2>();
+        }
+        else 
         {
             Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue()); //apaño chungo, cambiar luego
             Vector2 playerPosition = _myTransform.position;
             input = (mousePosition- playerPosition).normalized;
-        }
-        else
-        {
-            input = context.ReadValue<Vector2>();
         }
        
         _lookDirection.SetLookDirection(input);
@@ -177,13 +208,33 @@ public class PlayerController : MonoBehaviour, IKnockback
 
     #endregion
 
+    #region controls
+    private void OnControlsChanged(PlayerInput input)
+    {
+        Debug.Log(_playerInput.currentControlScheme);
+        if(_playerInput.currentControlScheme == gamepadScheme && previousScheme != gamepadScheme)
+        {
+            previousScheme = gamepadScheme;
+            Cursor.visible = false;
+        }
+        else if (_playerInput.currentControlScheme != gamepadScheme)
+        {
+            previousScheme = _playerInput.currentControlScheme;
+            Cursor.visible = true;
+        }
+    }
+    #endregion
+
+    #endregion
+
     void Awake()
     {
-        _playerControls = new PlayerControls();        
+        _playerControls = new PlayerControls();
+        _playerInput = GetComponent<PlayerInput>();
     }
 
     void Start()
-    {
+    {      
         _myTransform = transform;
         _playerMovement = GetComponent<RBMovement>();
         _blinkComponent = GetComponent<BlinkComponent>();
@@ -193,14 +244,6 @@ public class PlayerController : MonoBehaviour, IKnockback
         _playerState = GetComponent<PlayerStateMachine>();
         _playerDeath = GetComponent<PlayerDeath>();
 
-        // No estoy segura de si esto va aquí o en el OnEnable()
-        _playerControls.Player.Move.performed += Move;
-        _playerControls.Player.Move.canceled += Move;
-        _playerControls.Player.Blink.performed += Blink;
-        _playerControls.Player.Look.performed += Look;
-        _playerControls.Player.PrimaryAttack.performed += PrimaryAttack;
-        _playerControls.Player.SecondaryAttack.performed += SecondaryAttack;
-        _playerControls.Player.Interact.performed += Interact;
-        _playerControls.Player.Pause.performed += PauseGame;
+        previousScheme = _playerInput.currentControlScheme;
     }
 }

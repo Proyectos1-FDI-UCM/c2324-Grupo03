@@ -101,6 +101,7 @@ public class BuildingManager : MonoBehaviour
     {
         if(_inventory.Amarillo >= _wallPrice)
         {
+            _inventory.Amarillo -= _wallPrice;
             SetBuilding(_wall);
             BuildDefense();
         }
@@ -111,6 +112,7 @@ public class BuildingManager : MonoBehaviour
     {
         if(_inventory.Amarillo >= _turretPrice)
         {
+            _inventory.Amarillo -= _turretPrice;
             SetBuilding(_turret);
             BuildDefense();
         }

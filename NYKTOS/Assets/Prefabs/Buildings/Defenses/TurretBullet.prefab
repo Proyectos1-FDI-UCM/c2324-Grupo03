@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6636109488734167412
+--- !u!1 &6319034383733598113
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1701674298402512821}
-  - component: {fileID: 2420700129767483592}
-  - component: {fileID: 1362368791488443951}
-  - component: {fileID: -5776077699872071573}
-  - component: {fileID: 3095633297598776579}
-  - component: {fileID: 4662344353517924233}
-  m_Layer: 7
-  m_Name: Wall
+  - component: {fileID: 2704664505961854213}
+  - component: {fileID: 1992386474686631986}
+  - component: {fileID: 378857901454802127}
+  - component: {fileID: 8256038190736253120}
+  m_Layer: 0
+  m_Name: TurretBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1701674298402512821
+--- !u!4 &2704664505961854213
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636109488734167412}
+  m_GameObject: {fileID: 6319034383733598113}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.582361, y: -2.6751416, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 5.851, y: -2.247, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2420700129767483592
+--- !u!212 &1992386474686631986
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636109488734167412}
+  m_GameObject: {fileID: 6319034383733598113}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -77,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -2028980753
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 70c8c94122efa6f47b56c22c700c00e2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 378629f6334832f429ec45827b37847d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,44 +86,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1362368791488443951
+--- !u!114 &378857901454802127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636109488734167412}
+  m_GameObject: {fileID: 6319034383733598113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16381709d15edf04693cedfccec2453c, type: 3}
+  m_Script: {fileID: 11500000, guid: 04fa4db071bb64f44bd706fb44cf33b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Defense: {fileID: 11400000, guid: 3048208e4256a1b4ab05b7544afa7535, type: 2}
-  Health: 0
-  MaxHealth: 0
---- !u!114 &-5776077699872071573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636109488734167412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fcb5a4b321af3b439cd5a8709d4a68d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _UIManager: {fileID: 0}
-  _maxHealth: 20
-  _currentHealth: 0
-  _inmTime: 1
---- !u!58 &3095633297598776579
+  BulletVelocity: 10
+  BulletDamage: 2
+--- !u!58 &8256038190736253120
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636109488734167412}
+  m_GameObject: {fileID: 6319034383733598113}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -153,16 +134,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &4662344353517924233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636109488734167412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ae1686ef5cd7e643aefd8976a498370, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Radius: 0.15
