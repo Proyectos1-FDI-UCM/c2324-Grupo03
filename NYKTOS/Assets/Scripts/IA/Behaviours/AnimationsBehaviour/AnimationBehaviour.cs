@@ -9,7 +9,7 @@ public class AnimationBehaviour : MonoBehaviour, IBehaviour
     private Rigidbody2D _rigidbody;
     private enum AnimationType
     {
-        Attacking, Walking, Dying
+        Attacking, Walking, Dying, SpawnHijas
     }
     [SerializeField]
     private AnimationType _animationType;
@@ -25,7 +25,9 @@ public class AnimationBehaviour : MonoBehaviour, IBehaviour
                 _animator.Play("Attacking");
             } else if (_animationType == AnimationType.Walking && !isOnCoolDown) {
                 StartCoroutine(Walk());
-            } else if (_animationType == AnimationType.Dying) { }
+            } else if (_animationType == AnimationType.Dying) {
+            } else if (_animationType == AnimationType.SpawnHijas) { 
+            }
         }
     }
 
