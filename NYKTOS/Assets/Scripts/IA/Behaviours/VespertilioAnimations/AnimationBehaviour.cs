@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class AnimationAttackBehaviour : MonoBehaviour, IBehaviour
+public class AnimationBehaviour : MonoBehaviour, IBehaviour
 {
 
     private Rigidbody2D _rigidbody;
@@ -25,7 +25,7 @@ public class AnimationAttackBehaviour : MonoBehaviour, IBehaviour
                 _animator.Play("Attacking");
             } else if (_animationType == AnimationType.Walking && !isOnCoolDown) {
                 StartCoroutine(Walk());
-            } else if (_animationType == AnimationType.Attacking) { }
+            } else if (_animationType == AnimationType.Dying) { }
         }
     }
 
