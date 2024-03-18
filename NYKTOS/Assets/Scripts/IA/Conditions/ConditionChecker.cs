@@ -7,6 +7,9 @@ public class ConditionChecker
 {
     [SerializeField]
     private GameObject _condition;
+
+    [SerializeField]
+    private bool _negate = false;
     private ICondition _icondition;
 
     private bool _initialized = false;
@@ -19,7 +22,11 @@ public class ConditionChecker
             _initialized = true;
         }
 
-        return _icondition.Validate(_object);
+        if (!_negate)
+        {
+            return _icondition.Validate(_object);
+        }
+        else return !_icondition.Validate(_object);
     }
 
 }

@@ -32,9 +32,7 @@ public class WeaponClub : Weapon
         behaviour.currentAngle = DirectionAngle(direction) + attackAngleRange / 2;
         behaviour.angleVelocity = angleVelocity;
 
-        //set up del dano y su tipo
-        behaviour.attackType = attackType;
-        behaviour.weaponDamage = damage;
+        behaviour.SetStats(damage, attackType);
     }
 
     public override void SecondaryUse(Vector2 direction)

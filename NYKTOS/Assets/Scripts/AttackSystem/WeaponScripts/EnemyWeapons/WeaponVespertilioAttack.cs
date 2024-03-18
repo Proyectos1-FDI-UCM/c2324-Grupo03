@@ -38,8 +38,7 @@ public class WeaponVespertilioAttack : Weapon
             Quaternion.Euler(0, 0, DirectionAngle(direction)));
 
         currentHitbox.transform.parent = _myTransform;
-        currentHitbox.GetComponent<VespertilioAttackHitbox>().attackDamage = damage;
-        currentHitbox.GetComponent <VespertilioAttackHitbox>().attackType = attackType;
+        currentHitbox.GetComponent<VespertilioAttackHitbox>().SetStats(damage, attackType);
 
         yield return new WaitForSeconds(_hitboxAppearingTime);
 

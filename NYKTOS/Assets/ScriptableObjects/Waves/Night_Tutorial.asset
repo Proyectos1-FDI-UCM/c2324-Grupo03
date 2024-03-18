@@ -24,6 +24,8 @@ MonoBehaviour:
         number: 5
       - enemyPrefab: {fileID: 2995607884255851843, guid: 3f1ddf2df639d254b95953d14be08653, type: 3}
         number: 5
+      - enemyPrefab: {fileID: 3477185432724126219, guid: bd9ce6ea559b24446809069ef53c706f, type: 3}
+        number: 2
   RequiredYellowCrystals: 5
   RequiredCyanCrystals: 5
   RequiredMagentaCrystals: 5

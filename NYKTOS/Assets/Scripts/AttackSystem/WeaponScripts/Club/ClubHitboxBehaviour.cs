@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClubHitboxBehaviour : MonoBehaviour
+public class ClubHitboxBehaviour : WeaponBehaviour
 {
     #region properties
     //SE HACE LA ROTACION DESDE EL ANGULO QUE SE LE PASA HASTA EL ANGULO QUE SE LE PASA + ATTACKANGLERANGE
@@ -11,11 +11,6 @@ public class ClubHitboxBehaviour : MonoBehaviour
     public float currentAngle = 0f; //angulo en el que se encuentra la hitbox
     private float maxAngle;
     public float angleVelocity;
-    #endregion
-
-    #region weaponProperties
-    public int weaponDamage = 0;
-    public AttackType attackType;
     #endregion
 
     #region references
@@ -38,33 +33,8 @@ public class ClubHitboxBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out HealthComponent health)) //QUITAR VIDA
-        {
-            health.Damage(weaponDamage);
-            //Javi ha hecho una corrección a este código para que sea más limpio. Dejo este de ejemplo :)
-        }
-
-        if (collision.gameObject.GetComponentInChildren<IKnockback>()!= null)
-        {
-            
-            IKnockback[] iknockbackChildren = collision.gameObject.GetComponentsInChildren<IKnockback>();
-
-            for (int i = 0; i< iknockbackChildren.Length; i++)
-            {
-                iknockbackChildren[i].CallKnockback(_myTransform.position);
-            }
-            
-        }
-
-        if (attackType == AttackType.Fire && collision.gameObject.TryGetComponent( out SetOnFireDebuff setOnFire)) //DAÑO DE FUEGO
-        {
-            setOnFire.enabled = true;
-        }
-
-        else if (attackType == AttackType.Slow && collision.gameObject.TryGetComponent(out SlowDebuff slow)) //RALENTIZAR
-        {
-            slow.enabled = true;
-        }
+        Damage(collision);
+        Knockback(collision, _myTransform);
     }
 
     private void Awake()
