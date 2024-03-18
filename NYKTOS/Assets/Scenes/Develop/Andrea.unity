@@ -600,17 +600,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6534088897598437012, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
   m_PrefabInstance: {fileID: 2079621826}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1168038086 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1574447697511335288, guid: 1ec6d60b65a8d0d4eb8514c4112f9756, type: 3}
-  m_PrefabInstance: {fileID: 2079621826}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395921103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34b9cc239eddd0947b9e8b34857ad094, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1392775034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1004,7 +993,7 @@ PrefabInstance:
     - target: {fileID: 4908613825644664339, guid: 634513026cb2e5549bd3b27ec9f3227e, type: 3}
       propertyPath: _player
       value: 
-      objectReference: {fileID: 1168038086}
+      objectReference: {fileID: 1395921103}
     - target: {fileID: 4908613825644664339, guid: 634513026cb2e5549bd3b27ec9f3227e, type: 3}
       propertyPath: _menuList.Array.data[0]
       value: 

@@ -185,14 +185,8 @@ public class PlayerController : MonoBehaviour, IKnockback
 
         for (int i = 0; i < numColliders && (PlayerStateMachine.playerState == PlayerState.Idle  || PlayerStateMachine.playerState == PlayerState.Dead); i++)
         {
-            // Hacer producto escalar entre el vector lookDirection y el del player-edificio. Devuelve el coseno del ángulo que forman            
-            Vector3 targetDir = (hitColliders[i].transform.position - _myTransform.position).normalized;
-            float dotProduct = Vector3.Dot(_lookDirection.lookDirection, targetDir);
-            float angle = Mathf.Acos(dotProduct);
-
-            // Cono interacción de 60º
-            if (angle > - Math.PI/6 && angle < Math.PI/6
-                && hitColliders[i].gameObject.TryGetComponent(out IInteractable interactableObject))
+            
+            if (hitColliders[i].gameObject.TryGetComponent(out IInteractable interactableObject))
             {
                 interactableObject.Interact();
                 // Desde el objeto, cambiar el estado del player a OnMenu o algo así

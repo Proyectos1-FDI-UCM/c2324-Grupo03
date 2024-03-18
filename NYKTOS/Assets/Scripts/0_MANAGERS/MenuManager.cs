@@ -32,7 +32,10 @@ public class MenuManager : MonoBehaviour
     private Button[] _firstSelected;
 
     [SerializeField]
-    private PlayerController _player;
+    private GameObject _player;
+
+    private PlayerController _playerController;
+    private PlayerStateMachine _playerStateMachine;
     #endregion
 
     // Menú activo actualmente. Por si hiciese falta acceder a él desde fuera
@@ -47,8 +50,9 @@ public class MenuManager : MonoBehaviour
             _menuList[_menuId].SetActive(true);
             _firstSelected[_menuId].Select();
 
-            _player.playerControls.Player.Disable();
-            _player.playerControls.UI.Enable();
+            _playerStateMachine.SetState(PlayerState.OnMenu);
+            _playerController.playerControls.Player.Disable();
+            _playerController.playerControls.UI.Enable();
         }
     }
 
@@ -57,8 +61,9 @@ public class MenuManager : MonoBehaviour
         foreach (GameObject menu in _menuList) menu.SetActive(false);
         _menuId = -1;
 
-        _player.playerControls.UI.Disable();
-        _player.playerControls.Player.Enable();
+        _playerStateMachine.SetState(PlayerState.Idle);
+        _playerController.playerControls.UI.Disable();
+        _playerController.playerControls.Player.Enable();
     }
 
     public void CloseMenu(InputAction.CallbackContext context)
@@ -76,6 +81,9 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        _player.playerControls.UI.CloseMenu.performed += CloseMenu;
+        _playerController = _player.GetComponent<PlayerController>();
+        _playerStateMachine = _player.GetComponent<PlayerStateMachine>();
+
+        _playerController.playerControls.UI.CloseMenu.performed += CloseMenu;
     }
 }
