@@ -4,7 +4,7 @@ using UnityEngine;
 //MARIA
 [CreateAssetMenu(fileName = "New Night", menuName = "Wave System/Night", order = 1)]
 public class NightWave : ScriptableObject {
-    public Wave[] wavePoolList;
+    public Wave[] waves;
     public int RequiredYellowCrystals;
     public int RequiredCyanCrystals;
     public int RequiredMagentaCrystals;
@@ -16,16 +16,7 @@ public class NightWave : ScriptableObject {
 [System.Serializable]
 public struct Wave
 {
-    public int wavePoolDistributionFactor;
-    public SubWave[] subWaveList;
-}
-
-[System.Serializable]
-public struct SubWave
-{
-    public int spawnerScore;
-    public SpawnerType spawnerType;
-    public Enemy[] enemyPool;
+    public Dictionary<SpawnerType, (int, Enemy[])> SpawnerData;
 }
 
 [System.Serializable]

@@ -28,18 +28,16 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private List<Enemy> _remainingEnemyPool = new List<Enemy>();
 
-    void SetupSpawner(SpawnerType type, int score, Enemy[] enemyPool)
+    public void SetupSpawner(int score, Enemy[] enemyPool)
     {
-        if(type == _spawnerType){
-            _spawnScore = score;
-            _curentSpawnScore = score;
-            _enemyPool = enemyPool;
-            _remainingEnemyPool = enemyPool.ToList<Enemy>();
+        GameplayManager.Instance.RegisterSpawner();
+        
+        _spawnScore = score;
+        _curentSpawnScore = score;
+        _enemyPool = enemyPool;
+        _remainingEnemyPool = enemyPool.ToList();
 
         _spawnEnabled = true;
-
-        enabled = true;
-        }
     }
 
     void StopSpawner()
@@ -53,15 +51,13 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnManager.Instance.InitializeSpawners.AddListener(SetupSpawner);
-        SpawnManager.Instance.StopSpawners.AddListener(StopSpawner);
+        GameplayManager.Instance.StopSpawners.AddListener(StopSpawner);
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Este código que he hecho es una puta guarrada, hay que refactorizar un huevo
-        if(SpawnManager.Instance.ConcurrentEnemies < SpawnManager.Instance.MaxEnemies)
+        if(GameplayManager.Instance.ConcurrentEnemies < GameplayManager.Instance.MaxEnemies)
         {
             if (_spawnEnabled) 
             {
@@ -79,8 +75,6 @@ public class EnemySpawner : MonoBehaviour
                 }
                 else if (_remainingEnemyPool.Count == 0 && _curentSpawnScore < _spawnScore)
                 {
-                    // TODO fin de la wave
-
                     _remainingEnemyPool = _enemyPool.ToList();
                 }
                 else
@@ -97,7 +91,13 @@ public class EnemySpawner : MonoBehaviour
                     );
 
                     _curentSpawnScore--;
-                    SpawnManager.Instance.ConcurrentEnemies++;
+
+                    if(_curentSpawnScore <= 0)
+                    {
+                        GameplayManager.Instance.UnregisterSpawner();
+                    }
+
+                    GameplayManager.Instance.AddConcurrentEnemy();
 
                     _currentSpawnTime = random.NextDouble() * (_spawnTimeMax - _spawnTimeMin + _spawnTimeMin);
                     _spawnEnabled = false;

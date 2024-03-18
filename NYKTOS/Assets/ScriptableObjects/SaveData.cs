@@ -7,7 +7,7 @@ public class SaveData : ScriptableObject
 {
     [SerializeField]
     private int _night = 0;
-    private int Night 
+    public int Night 
     {
         get{return _night;}
     }

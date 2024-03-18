@@ -17,7 +17,7 @@ public class CrystalBag : MonoBehaviour
     [SerializeField]
     private PlayerInventory inventory;
     //public Collider2D _playerCollider;
-    //Necesitamos el CrystalPrefab aquí
+    //Necesitamos el CrystalPrefab aquï¿½
     public GameObject droppedItemPrefab;
     private ResourceCrystal _droppedCrystal;
     public ResourceCrystal droppedCrystal
@@ -29,14 +29,14 @@ public class CrystalBag : MonoBehaviour
     public List<ResourceCrystal> CrystalList = new List<ResourceCrystal>();
     private List<GameObject> clonedCrystals = new List<GameObject>();
 
-    private SpawnManager _spawnManager;
+    private GameplayManager _spawnManager;
 
     private bool RecursosObligatorios = true;
 
     //Esto usa la logica del porcentaje, toma un numero aleatorio entre 1 y 100.
     //Se recopila la lista de cristales con su probabilidad que puede soltar el enemigo.
     //Dependiendo del tipo de enemigo podemos poner los cristales que nosotros queramos que dropee //FALTA HACER CAMBIO DE PROBABILIDAD
-    //Entonces para cada Crystal de la lootList toma una condición en la que si el numero random es menor que la probabilidad puesta, se añade ese cristal.
+    //Entonces para cada Crystal de la lootList toma una condiciï¿½n en la que si el numero random es menor que la probabilidad puesta, se aï¿½ade ese cristal.
     ResourceCrystal GetDroppedCrystals()
     {
         //int RandomNumber = Random.Range(0,3);
@@ -175,7 +175,7 @@ public class CrystalBag : MonoBehaviour
 
     private void Awake()
     {
-        _spawnManager = SpawnManager.Instance;
+        _spawnManager = GameplayManager.Instance;
 
         //amarillosObligatorios = _spawnManager.CurrentRequiredYellow;
         //cianesObligatorios = _spawnManager.CurrentRequiredYellow;

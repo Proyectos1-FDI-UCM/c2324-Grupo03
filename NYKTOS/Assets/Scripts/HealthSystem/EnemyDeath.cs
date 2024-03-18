@@ -17,7 +17,7 @@ public class EnemyDeath : MonoBehaviour, IDeath
 
     public void Death()
     {
-        SpawnManager.Instance.ConcurrentEnemies--;
+        GameplayManager.Instance.ConcurrentEnemies--;
         GetComponent<CrystalBag>().InstantiateCrystal(transform.position);
         Destroy(gameObject);
     }
