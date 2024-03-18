@@ -304,8 +304,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _UIManager: {fileID: 2095457240719268927, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
-  _maxHealth: 4
-  _currentHealth: 4
+  _maxHealth: 3
+  _currentHealth: 3
   _inmTime: 0.1
 --- !u!114 &9042502102976828159
 MonoBehaviour:
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e7a382721ad3144854f9f5a12b1088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 2
+  _movementSpeed: 3
   _knockBackSpeed: 10
   _knockBackTime: 0.2
 --- !u!114 &3284386616162239011
@@ -508,9 +508,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.029503882, y: -0.110147625}
   serializedVersion: 2
-  m_Radius: 0.15
+  m_Radius: 0.09689298
 --- !u!114 &3341963500009074883
 MonoBehaviour:
   m_ObjectHideFlags: 0
