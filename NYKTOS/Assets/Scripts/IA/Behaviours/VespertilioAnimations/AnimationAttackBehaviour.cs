@@ -21,13 +21,11 @@ public class AnimationAttackBehaviour : MonoBehaviour, IBehaviour
     {
         if (_animator != null)
         {
-            if (_animationType == AnimationType.Attacking)
-            {
+            if (_animationType == AnimationType.Attacking) {
                 _animator.Play("Attacking");
-            }
-            else if (_animationType == AnimationType.Walking && !isOnCoolDown){
+            } else if (_animationType == AnimationType.Walking && !isOnCoolDown) {
                 StartCoroutine(Walk());
-            }
+            } else if (_animationType == AnimationType.Attacking) { }
         }
     }
 
