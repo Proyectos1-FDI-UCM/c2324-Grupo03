@@ -99,6 +99,17 @@ MonoBehaviour:
       m_SpriteOverride: {fileID: -771615457, guid: 72246801a7e41fa44863485869c66da8, type: 3}
     m_FromMain: 0
     m_EntryOverrideCount: 1
+  - m_Name: AttackUp
+    m_Hash: 369843209
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: New Label
+      m_Hash: 259326342
+      m_Sprite: {fileID: 1458165970, guid: 72246801a7e41fa44863485869c66da8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1458165970, guid: 72246801a7e41fa44863485869c66da8, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 638463858065391886
+  m_ModificationHash: 638463878739982060
   m_Version: 1
