@@ -44,6 +44,11 @@ public class GameplayManager : MonoBehaviour
         _concurrentEnemies++;
     }
 
+    public void RemoveConcurrentEnemy()
+    {
+        _concurrentEnemies--;
+    }
+
     private int _currentWaveNumber = 0;
 
     #endregion
