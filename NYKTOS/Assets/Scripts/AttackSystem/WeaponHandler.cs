@@ -29,6 +29,11 @@ public class WeaponHandler : MonoBehaviour
         weapon[num] = setWeapon;
     }
 
+    public void SetDamageType(int num, AttackType attackType)
+    {
+        weapon[num].SetDamageType(attackType);
+    }
+
     public void Awake()
     {
         SetWeapon(0, GetComponent<Weapon>());

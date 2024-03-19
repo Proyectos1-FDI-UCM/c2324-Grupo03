@@ -125,10 +125,6 @@ public class BuildingManager : MonoBehaviour
     #endregion
 
     #region buildingArray
-    /// <summary>
-    /// Array que contiene todos los gameObjects de edificios. 
-    /// ¡ATENCION! Su longitud debe ser BuildingManager.buildingNumber
-    /// </summary>
     public List<GameObject> buildingArray { get { return _buildingArray; } }
     private List<GameObject> _buildingArray = new List<GameObject>();
 
