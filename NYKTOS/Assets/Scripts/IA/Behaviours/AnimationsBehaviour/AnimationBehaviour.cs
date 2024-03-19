@@ -17,16 +17,17 @@ public class AnimationBehaviour : MonoBehaviour, IBehaviour
 
     public void PerformBehaviour()
     {
-        if (_animator != null)
-        {
+        if (_animator != null) {
             if (_animationType == AnimationType.Attacking) _animator.Play("Attacking");
             else if (_animationType == AnimationType.Walking && !isOnCoolDown) StartCoroutine(Walk());
             //else if (_animationType == AnimationType.Dying) 
             else if (_animationType == AnimationType.SpawnHijas) {
                 Debug.Log("Spawneando Hijas");
-                _animator.Play("SpawnHijas"); 
-            
+                _animator.Play("SpawnHijas");
+
             }
+        } else {
+            Debug.Log(this.name + "No ha encontrado el animator");
         }
     }
 
@@ -37,7 +38,7 @@ public class AnimationBehaviour : MonoBehaviour, IBehaviour
 
     private void Start()
     {
-        _animator = GetComponentInParent<HealthComponent>().GetComponent<Animator>();
+        _animator = GetComponentInParent<HealthComponent>().GetComponentInChildren<Animator>();
     }
 
     private bool isOnCoolDown=false;
