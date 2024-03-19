@@ -13,8 +13,6 @@ public class AnimationBehaviour : MonoBehaviour, IBehaviour
     }
     [SerializeField]
     private AnimationType _animationType;
-
-    [SerializeField]
     private Animator _animator;
 
     public void PerformBehaviour()
@@ -35,6 +33,11 @@ public class AnimationBehaviour : MonoBehaviour, IBehaviour
     void Awake()
     {
         _rigidbody = GetComponentInParent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        _animator = GetComponentInParent<HealthComponent>().GetComponent<Animator>();
     }
 
     private bool isOnCoolDown=false;
