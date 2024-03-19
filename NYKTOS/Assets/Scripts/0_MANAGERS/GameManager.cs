@@ -58,6 +58,11 @@ public class GameManager : MonoBehaviour
         _gameStateChanged.Invoke(newState);
     }
 
+    public void UpdateGamestateByInt(int state)
+    {
+        
+    }
+
     public void Pause()
     {
         Time.timeScale = 0;
@@ -109,12 +114,12 @@ public class GameManager : MonoBehaviour
 /// </summary>
 public enum GameState
 {
-    StartScreen,
-    Config,
-    Day,
-    Night,
-    Pause,
-    Lose,
-    Win
+    StartScreen = 0,
+    Config = 1,
+    Day = 2,
+    Night = 3,
+    Pause = 4,
+    Lose = 5,
+    Win = 6
 }
 

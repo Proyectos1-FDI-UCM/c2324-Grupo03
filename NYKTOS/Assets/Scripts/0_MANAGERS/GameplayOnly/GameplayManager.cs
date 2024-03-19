@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -99,7 +96,7 @@ public class GameplayManager : MonoBehaviour
     }
 
     private UnityEvent _stopSpawners = new UnityEvent();
-    public UnityEvent StopSpawners => _stopSpawners;
+    public UnityEvent StopSpawners => _stopSpawners; 
 
     public void RegisterSpawner()
     {
@@ -123,7 +120,8 @@ public class GameplayManager : MonoBehaviour
 
     public void StartNight()
     {
-        GameManager.Instance.UpdateGameState(GameState.Night);
+        //GameManager.Instance.UpdateGameState(GameState.Night);
+
         Invoke(nameof(EndNight), _nightLength);
         
         // Aquí se debería inicializar el reloj
@@ -158,13 +156,25 @@ public class GameplayManager : MonoBehaviour
 
     void InitializeWave()
     {
-        foreach(var data in _nightList[_saveData.Night].waves[_currentWaveNumber].SpawnerData)
+        Wave currentWave = _nightList[_saveData.Night].waves[_currentWaveNumber];
+
+        foreach(SubWave subWave in currentWave.subWaves)
         {
-            if (_spawnerList.TryGetValue(data.Key, out EnemySpawner spawner))
+            if (_spawnerList.TryGetValue(subWave.type, out EnemySpawner spawner))
             {
-                (int points, Enemy[] pool) = data.Value;
-                spawner.SetupSpawner(points, pool);
+                spawner.SetupSpawner(subWave.pool);
             }
+        }
+
+        Invoke(nameof(AdvanceWave), currentWave.time);
+    }
+
+    void AdvanceWave()
+    {
+        if(_currentWaveNumber < _nightList[_saveData.Night].waves.Length)     
+        {
+            _currentWaveNumber ++;
+            InitializeWave();
         }
     }
 
@@ -172,7 +182,7 @@ public class GameplayManager : MonoBehaviour
     {
         if(state == GameState.Night)
         {
-            InitializeWave();
+            StartNight();
         }
         else
         {

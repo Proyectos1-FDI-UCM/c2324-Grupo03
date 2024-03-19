@@ -16,7 +16,14 @@ public class NightWave : ScriptableObject {
 [System.Serializable]
 public struct Wave
 {
-    public Dictionary<SpawnerType, (int, Enemy[])> SpawnerData;
+    public int time;
+    public SubWave[] subWaves;
+}
+
+[System.Serializable]
+public struct SubWave {
+    public SpawnerType type;
+    public Enemy[] pool;
 }
 
 [System.Serializable]

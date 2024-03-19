@@ -19,21 +19,16 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private SpawnerType _spawnerType;
 
-    private int _spawnScore = 0;
-    private int _curentSpawnScore = 0;
-
     [SerializeField]
     private Enemy[] _enemyPool;
 
     [SerializeField]
     private List<Enemy> _remainingEnemyPool = new List<Enemy>();
 
-    public void SetupSpawner(int score, Enemy[] enemyPool)
+    public void SetupSpawner(Enemy[] enemyPool)
     {
         GameplayManager.Instance.RegisterSpawner();
         
-        _spawnScore = score;
-        _curentSpawnScore = score;
         _enemyPool = enemyPool;
         _remainingEnemyPool = enemyPool.ToList();
 
@@ -43,9 +38,6 @@ public class EnemySpawner : MonoBehaviour
     void StopSpawner()
     {
         _spawnEnabled = false;
-
-        _spawnScore = 0;
-        _curentSpawnScore = 0;
     }
 
     // Start is called before the first frame update
