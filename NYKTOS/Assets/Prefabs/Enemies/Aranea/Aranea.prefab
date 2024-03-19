@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationType: 3
-  _animator: {fileID: 6624416739627373185}
 --- !u!1 &2683016789316417445
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +172,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3277679713479116382}
+  - {fileID: 6175323476911555473}
   - {fileID: 3399931161153121125}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -673,7 +672,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationType: 2
-  _animator: {fileID: 6624416739627373185}
 --- !u!1 &5423786949828986890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,8 +1073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationType: 1
-  _animator: {fileID: 6624416739627373185}
---- !u!1001 &4163451574318212943
+--- !u!1001 &4685998209810293376
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1126,20 +1123,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7910182305999288244, guid: fb1b6cd3bd4f58247bc67a7cbbe297d8, type: 3}
       propertyPath: m_Name
-      value: Sprite
+      value: DefaultAraneaSR
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1b6cd3bd4f58247bc67a7cbbe297d8, type: 3}
---- !u!4 &3277679713479116382 stripped
+--- !u!4 &6175323476911555473 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1493828867585630481, guid: fb1b6cd3bd4f58247bc67a7cbbe297d8, type: 3}
-  m_PrefabInstance: {fileID: 4163451574318212943}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &6624416739627373185 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7073231730649544142, guid: fb1b6cd3bd4f58247bc67a7cbbe297d8, type: 3}
-  m_PrefabInstance: {fileID: 4163451574318212943}
+  m_PrefabInstance: {fileID: 4685998209810293376}
   m_PrefabAsset: {fileID: 0}
