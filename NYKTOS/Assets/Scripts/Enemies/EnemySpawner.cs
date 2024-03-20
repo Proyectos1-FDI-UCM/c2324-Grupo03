@@ -30,7 +30,21 @@ public class EnemySpawner : MonoBehaviour
         _enemyPool = enemyPool;
         _remainingEnemyPool = enemyPool.ToList();
 
-        _spawnEnabled = true;
+        if(_enemyPool.Length > 0) 
+        {
+            bool enemyDetected = false; 
+
+            foreach(var enemy in enemyPool)
+            {
+                enemyDetected = true;
+            }
+            
+            _spawnEnabled = enemyDetected;
+        }
+        else
+        {
+            _spawnEnabled = false;
+        }
     }
 
     void StopSpawner()
@@ -51,14 +65,6 @@ public class EnemySpawner : MonoBehaviour
         {
             if (_spawnEnabled) 
             {
-                foreach(Enemy enemy in _remainingEnemyPool)
-                {
-                    if(enemy.number <= 0)
-                    {
-                        _remainingEnemyPool.Remove(enemy);
-                    }
-                }
-
                 if(_remainingEnemyPool.Count == 0)
                 {
                     _remainingEnemyPool = _enemyPool.ToList();
@@ -69,12 +75,20 @@ public class EnemySpawner : MonoBehaviour
                     
                     int enemySpawnPos = random.Next(0, _remainingEnemyPool.Count);
 
-                    Instantiate
-                    (
-                        _remainingEnemyPool[enemySpawnPos].enemyPrefab, 
-                        transform.GetChild(random.Next(0,  transform.childCount)).position,
-                        Quaternion.identity
-                    );
+                    if(_remainingEnemyPool[enemySpawnPos].number > 0)
+                    {
+                        Instantiate
+                        (
+                            _remainingEnemyPool[enemySpawnPos].enemyPrefab, 
+                            transform.GetChild(random.Next(0,  transform.childCount)).position,
+                            Quaternion.identity
+                        );
+
+                        if (_remainingEnemyPool[enemySpawnPos].number <= 0)
+                        {
+                            _remainingEnemyPool.RemoveAt(enemySpawnPos);
+                        }
+                    }
 
                     GameplayManager.Instance.AddConcurrentEnemy();
 

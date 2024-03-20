@@ -32,7 +32,6 @@ public class EnemyVariant : MonoBehaviour
         {
             if (attack == AttackType.Slow)
             {
-
                 spriteLibrary.spriteLibraryAsset = _cyanSprite;
             }
             else if (attack == AttackType.Fire)

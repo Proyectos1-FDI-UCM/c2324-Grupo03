@@ -713,7 +713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d2a40677b258ef42a671ca838d58a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  condition: 0
 --- !u!1 &3728570930061637456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,14 +1096,14 @@ MonoBehaviour:
       _negate: 0
   - state: {fileID: 1796942724870437284}
     enterConditions:
-    - _condition: {fileID: 8753892263087635454}
-      _negate: 0
+    - _condition: {fileID: 3623409473598153532}
+      _negate: 1
     - _condition: {fileID: 8868372072783126819}
       _negate: 0
   - state: {fileID: 1796942724870437284}
     enterConditions:
-    - _condition: {fileID: 7171252206007880503}
-      _negate: 0
+    - _condition: {fileID: 8868372072783126819}
+      _negate: 1
 --- !u!1 &4229374777918861587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,50 +1351,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationType: 0
---- !u!1 &7171252206007880503
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1551994808002199387}
-  - component: {fileID: 5821590576651847508}
-  m_Layer: 0
-  m_Name: PlayerIsDeadCondition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1551994808002199387
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7171252206007880503}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.3346434, y: 2.404039, z: 0.033632353}
-  m_LocalScale: {x: 2, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8943403299432361633}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5821590576651847508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7171252206007880503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3710542e6ae389c4fa051e3e044ea598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7289374016579705479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,9 +1565,7 @@ Transform:
   - {fileID: 2169618921567054960}
   - {fileID: 3496188486886586205}
   - {fileID: 436265365108272359}
-  - {fileID: 1125584935843287082}
   - {fileID: 7180006911817906894}
-  - {fileID: 1551994808002199387}
   m_Father: {fileID: 4261393046184380584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8727781194401955778
@@ -1651,51 +1604,6 @@ Transform:
   - {fileID: 1607768696943232126}
   m_Father: {fileID: 4261393046184380584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8753892263087635454
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1125584935843287082}
-  - component: {fileID: 2454821049670737}
-  m_Layer: 0
-  m_Name: BuildingCloserCondition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1125584935843287082
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8753892263087635454}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8943403299432361633}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2454821049670737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8753892263087635454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d2a40677b258ef42a671ca838d58a29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  condition: 1
 --- !u!1 &8868372072783126819
 GameObject:
   m_ObjectHideFlags: 0
