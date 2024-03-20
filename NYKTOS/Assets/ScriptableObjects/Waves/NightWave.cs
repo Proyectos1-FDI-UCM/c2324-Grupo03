@@ -30,6 +30,8 @@ public struct SubWave {
 public struct Enemy {
     public GameObject enemyPrefab; // Prefab of the enemy
     public int number; // numero de cuantos de ese bicho en la iteración de la wave
+
+    public SpawnerType tipo;
 }
 
 

@@ -10,7 +10,7 @@ public enum AttackType
 
 public class WeaponHandler : MonoBehaviour
 {
-    
+   [SerializeField]
     private Weapon[] weapon = new Weapon[1]; //cantidad de armas que puede llevar a la vez
     
     
@@ -32,10 +32,5 @@ public class WeaponHandler : MonoBehaviour
     public void SetDamageType(int num, AttackType attackType)
     {
         weapon[num].SetDamageType(attackType);
-    }
-
-    public void Awake()
-    {
-        SetWeapon(0, GetComponent<Weapon>());
     }
 }
