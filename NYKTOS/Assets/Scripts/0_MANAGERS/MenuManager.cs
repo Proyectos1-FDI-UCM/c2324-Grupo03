@@ -53,6 +53,7 @@ public class MenuManager : MonoBehaviour
             _playerStateMachine.SetState(PlayerState.OnMenu);
             _playerController.playerControls.Player.Disable();
             _playerController.playerControls.UI.Enable();
+            _playerController.CallMove(Vector2.zero);
         }
     }
 
