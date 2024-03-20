@@ -22,7 +22,7 @@ public class AnimationBehaviour : MonoBehaviour, IBehaviour
             else if (_animationType == AnimationType.Walking && !isOnCoolDown) StartCoroutine(Walk());
             else if (_animationType == AnimationType.Dying) _animator.Play("Dying");
             else if (_animationType == AnimationType.SpawnHijas) {
-                Debug.Log("Spawneando Hijas");
+                //Debug.Log("Spawneando Hijas");
                 _animator.Play("SpawnHijas");
             }
         } else {

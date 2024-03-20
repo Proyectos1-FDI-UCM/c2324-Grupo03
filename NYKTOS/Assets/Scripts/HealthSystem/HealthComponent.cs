@@ -119,7 +119,4 @@ public class HealthComponent : MonoBehaviour
         _inmune = false;
     }
 
-    public int ObtenerCurrentHealth() { 
-        return _currentHealth;
-    } 
 }
