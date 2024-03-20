@@ -20,11 +20,10 @@ public class AnimationBehaviour : MonoBehaviour, IBehaviour
         if (_animator != null) {
             if (_animationType == AnimationType.Attacking) _animator.Play("Attacking");
             else if (_animationType == AnimationType.Walking && !isOnCoolDown) StartCoroutine(Walk());
-            //else if (_animationType == AnimationType.Dying) 
+            else if (_animationType == AnimationType.Dying) _animator.Play("Dying");
             else if (_animationType == AnimationType.SpawnHijas) {
                 Debug.Log("Spawneando Hijas");
                 _animator.Play("SpawnHijas");
-
             }
         } else {
             Debug.Log(this.name + "No ha encontrado el animator");
