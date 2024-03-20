@@ -278,7 +278,7 @@ MonoBehaviour:
   _magentaSprite: {fileID: 7108339969198208228, guid: 6bafd26a38b332d44b2e2df524dcef56, type: 3}
   _cyanSprite: {fileID: 7108339969198208228, guid: e689802cabbd79d4dbeabc1d7d6413db, type: 3}
   debug: 1
-  _attackType: 1
+  _attackType: 0
 --- !u!114 &4015552127664935905
 MonoBehaviour:
   m_ObjectHideFlags: 0
