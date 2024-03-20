@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnAraneasBehaviour : MonoBehaviour, IBehaviour 
 {
-
     [SerializeField] private GameObject _araneaHijaPrefab;
     private Transform _araneaMadreTransform;
     public float spawnInterval = 5f; 
@@ -19,7 +18,7 @@ public class SpawnAraneasBehaviour : MonoBehaviour, IBehaviour
             SpawnSpider(); // Spawnear una araña hija
             timer = 0f;
             _currentHijas++;
-            Debug.Log("Hijas: " + _currentHijas);
+            //Debug.Log("Hijas: " + _currentHijas);
         }
 
     }

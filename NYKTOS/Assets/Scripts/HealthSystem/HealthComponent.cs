@@ -37,7 +37,7 @@ public class HealthComponent : MonoBehaviour
     void Start()
     {
         _currentHealth = _maxHealth;
-        //MAria
+        
         _deathComponent = GetComponent<IDeath>();
 
         _playerController = GetComponent<PlayerController>();
@@ -118,4 +118,5 @@ public class HealthComponent : MonoBehaviour
     {
         _inmune = false;
     }
+
 }

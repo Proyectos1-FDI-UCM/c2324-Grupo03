@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -126,11 +128,20 @@ public class PlayerController : MonoBehaviour, IKnockback
 
             if (PlayerStateMachine.playerState == PlayerState.Attacking) //si el jugador esta atacando y recibe un golpe, se realiza knockback y se cancela el retorno a idle (es llamado mas adelante)
             {
-                _playerState.CancelInvoke("SetIdleState");
+                _playerState.CancelInvoke(nameof(_playerState.SetIdleState));
             }
-            _playerState.Invoke("SetIdleState", _playerMovement.knockBackTime);
+            _playerState.Invoke(nameof(_playerState.SetIdleState), _playerMovement.knockBackTime);
+            StartCoroutine(CallMoveOnNextFramePlusSeconds(GetComponent<SlowDebuff>().slowTime));
+
         }
         
+    }
+
+    private IEnumerator CallMoveOnNextFramePlusSeconds(float secs)
+    {
+        yield return new WaitForNextFrameUnit();
+        yield return new WaitForSeconds(secs);
+        CallMove(_privateMovement);
     }
 
     public void Look(InputAction.CallbackContext context)
@@ -159,9 +170,12 @@ public class PlayerController : MonoBehaviour, IKnockback
             _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
             _PrimaryAttackCooldown.StartCooldown();
 
-            CallMove(Vector2.zero);
-            _playerState.SetState(PlayerState.Attacking);
+            print(_playerMovement.movementSpeed / 2);
 
+            _playerMovement.AddSpeed(-_playerMovement.movementSpeed /1.5f, _PrimaryAttackCooldown.cooldownTime);
+            CallMove(_privateMovement);
+
+            _playerState.SetState(PlayerState.Attacking);
             _playerState.Invoke(nameof(_playerState.SetIdleState), _PrimaryAttackCooldown.cooldownTime);
         }
     }
