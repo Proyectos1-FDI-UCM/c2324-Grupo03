@@ -73,7 +73,7 @@ public class BuildingManager : MonoBehaviour
         }
         else
         {
-            _selectedDefense.transform.position = _currentPlaceholder.transform.position;
+            _selectedDefense.transform.position = new Vector2(_currentPlaceholder.transform.position.x, _currentPlaceholder.transform.position.y + _offsetNotWall/2);
         }
 
         GameObject defense = Instantiate(_selectedDefense,_selectedDefense.transform.position,Quaternion.identity);

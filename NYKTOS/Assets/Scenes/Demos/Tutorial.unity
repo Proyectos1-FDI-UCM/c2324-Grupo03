@@ -246,6 +246,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a242fa460722d47a278480195ff466, type: 3}
+--- !u!114 &400330716 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5265521018662020170, guid: 64a242fa460722d47a278480195ff466, type: 3}
+  m_PrefabInstance: {fileID: 400330715}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053b16ca748b43b499337dfdff90ad44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &447714882 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2451551596797387636, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
@@ -343,15 +354,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.117132865
+      value: 0.0028169013
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 1
+      value: 0.99920833
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.766954
+      value: 0.9920734
       objectReference: {fileID: 0}
     - target: {fileID: 8073207824159548778, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_ShowDebugText
@@ -728,6 +739,14 @@ PrefabInstance:
       propertyPath: _saveData
       value: 
       objectReference: {fileID: 11400000, guid: a5b71e18e6c9f454f90c0df5b843680a, type: 2}
+    - target: {fileID: 5015746854596542813, guid: afdeb34b74d44614d913086a88a9ce0f, type: 3}
+      propertyPath: _spawnerEditorList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015746854596542813, guid: afdeb34b74d44614d913086a88a9ce0f, type: 3}
+      propertyPath: _spawnerEditorList.Array.data[0].spawner
+      value: 
+      objectReference: {fileID: 400330716}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

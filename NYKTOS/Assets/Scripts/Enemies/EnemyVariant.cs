@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D.Animation;
 
 public class EnemyVariant : MonoBehaviour
 {
     [SerializeField]
-    GameObject _defaultSprite;
+    SpriteLibraryAsset _magentaSprite;
     [SerializeField]
-    GameObject _magentaSprite;
-    [SerializeField]
-    GameObject _cyanSprite;
+    SpriteLibraryAsset _cyanSprite;
 
     #region debug
     [Header("DEBUG")]
@@ -28,21 +27,21 @@ public class EnemyVariant : MonoBehaviour
             weaponHandler.SetDamageType(0, attack);
         }
 
-        if (attack == AttackType.Default)
+        SpriteLibrary spriteLibrary = GetComponentInChildren<SpriteLibrary>();
+        if (spriteLibrary != null)
         {
-            Instantiate(_defaultSprite, transform);
-        }
-        else if (attack == AttackType.Slow)
-        {
-            Instantiate(_cyanSprite, transform);
-        }
-        else if (attack == AttackType.Fire)
-        {
-            Instantiate(_magentaSprite, transform);
+            if (attack == AttackType.Slow)
+            {
+                spriteLibrary.spriteLibraryAsset = _cyanSprite;
+            }
+            else if (attack == AttackType.Fire)
+            {
+                spriteLibrary.spriteLibraryAsset = _magentaSprite;
+            }
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         if (debug)
         {

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +9,10 @@ public class GameplayManager : MonoBehaviour
     #region references
     [SerializeField]
     private SaveData _saveData;
+
+
+    [SerializeField]
+    private SpawnerWithType[] _spawnerEditorList;
 
     [SerializeField]
     private Dictionary<SpawnerType, EnemySpawner> _spawnerList;
@@ -104,21 +109,26 @@ public class GameplayManager : MonoBehaviour
         
         // Aquí se debería inicializar el reloj
 
-        NightWave currentnight = _nightList[_saveData.Night];
+        if(_saveData.Night < _nightList.Length)
+        {
+            NightWave currentnight = _nightList[_saveData.Night];
 
-        _currentRequiredYellow = currentnight.RequiredYellowCrystals;
-        _currentRequiredCyan = currentnight.RequiredCyanCrystals;
-        _currentRequiredMagenta = currentnight.RequiredMagentaCrystals;
-        _probabilityYellow = currentnight.YellowProbability;
-        _probabilityCyan = currentnight.CyanProbability;
-        _probabilityMagenta = currentnight.MagentaProbability;
+            _currentRequiredYellow = currentnight.RequiredYellowCrystals;
+            _currentRequiredCyan = currentnight.RequiredCyanCrystals;
+            _currentRequiredMagenta = currentnight.RequiredMagentaCrystals;
+            _probabilityYellow = currentnight.YellowProbability;
+            _probabilityCyan = currentnight.CyanProbability;
+            _probabilityMagenta = currentnight.MagentaProbability;
 
-        _currentWaveNumber = 0;
+            _currentWaveNumber = 0;
 
-        InitializeWave();
+            if(currentnight.waves.Length > 0)
+            {
+                InitializeWave();
+            }
+        }
     }
 
-    // Limite de noche, lo marca el numero de noches añadidas en la lista
     public void EndNight()
     {
         if(_saveData.Night >= _nightList.Length)
@@ -178,11 +188,20 @@ public class GameplayManager : MonoBehaviour
         else
         {
             _instance = this;
+
+            GameManager.Instance.GameStateChanged.AddListener(GameStateListener);
+
+            foreach(SpawnerWithType data in _spawnerEditorList)
+            {
+                _spawnerList.Add(data.type, data.spawner);
+            }
         }
     }
+}
 
-    void Start()
-    {
-        GameManager.Instance.GameStateChanged.AddListener(GameStateListener);
-    }
+[System.Serializable]
+public struct SpawnerWithType
+{
+    public SpawnerType type;
+    public EnemySpawner spawner;
 }

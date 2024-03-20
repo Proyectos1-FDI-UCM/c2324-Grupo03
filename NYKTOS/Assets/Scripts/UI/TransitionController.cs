@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -5,7 +6,20 @@ using UnityEngine.UI;
 //Codigo de Iker :D
 public class TransitionController : MonoBehaviour
 {
+    public enum Transitions
+    {
+        Transition1,
+        Transition2,
+        Transition3,
+        Transition4
+    }
+    [SerializeField]
+    private Transitions TransitionType;
+
+
     private Image image;
+    [SerializeField]
+    private GameObject _thisObject;
     private Animator animator;
 
     [SerializeField]
@@ -17,6 +31,9 @@ public class TransitionController : MonoBehaviour
     
     //Para pruebas
     public bool Transition = false;
+    public bool Transition2 = false;
+    public bool Transition3 = false;
+    public bool Transition4 = false;
     private bool isTransitioning = false;
     private bool isTransitioningLerp = false;
     private bool isDarkTransition = false;
@@ -26,28 +43,49 @@ public class TransitionController : MonoBehaviour
 
     private void Update()
     {
-        if (Transition && !isTransitioning && Opacity100)
+        if (Transition && !isTransitioning && Opacity100 && TransitionType == Transitions.Transition1)
         {
             TransitionToDark();
-            //TransitionToDarkInstant();
-            //TransitionToDarkLerp();
-
-
         }
-        else if (!Transition && !isTransitioning && Opacity100)
+        else if (!Transition && !isTransitioning && Opacity100 && TransitionType == Transitions.Transition1)
         {
             TransitionToNormal();
-            //TransitionToNormalInstant();
-            //TransitionToNormalLerp();
+        }
+
+        if (Transition2 && !isTransitioning && Opacity100 && TransitionType == Transitions.Transition2)
+        {
+            InstantTransitionToDark();
+        }
+        else if (!Transition2 && !isTransitioning && Opacity100 && TransitionType == Transitions.Transition2)
+        {
+            InstantTransitionToNormal();
+        }
+
+        if (Transition3 && !isTransitioning && Opacity100 && TransitionType == Transitions.Transition3)
+        {
+            HalfTimeTransitionToDark();
+        }
+        else if (!Transition3 && !isTransitioning && Opacity100 && TransitionType == Transitions.Transition3)
+        {
+            HalfTimeTransitionToNormal();
+        }
+
+        if (Transition4 &&  !isTransitioning && Opacity100 && TransitionType == Transitions.Transition4)
+        {
+            TrueTransitionToDark();
+        }
+        else if (!Transition4 && !isTransitioning && Opacity100 && TransitionType == Transitions.Transition4)
+        {
+            TrueTransitionToNormal();
         }
 
         /*
-        if (animator.GetBool("Transition") == true && animator.GetBool("Dark") == true)
+        if (Transition5 && !isTransitioning && Opacity100 && TransitionType == Transitions.Transition5)
         {
             TransitionToDarkAnimator();
         }
 
-        if (animator.GetBool("Transition") == true && animator.GetBool("Light") == true)
+        if (!Transition5 && !isTransitioning && Opacity100 && TransitionType == Transitions.Transition5)
         {
             TransitionToNormalAnimator();
         }
@@ -93,32 +131,32 @@ public class TransitionController : MonoBehaviour
     }
     //Fin pruebas
 
+    private void Awake()
+    {
+        image = _thisObject.GetComponentInChildren<Image>();
+    }
+
     private void Start()
     {
-        image = GetComponent<Image>();
         Invoke("ActiveOpacity", TransitionDuration);
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void ActiveOpacity()
     {
-        Color color = image.color;
-        color.a = fullOpacity;
-        image.color = color;
         Opacity100 = true;
-        //image.gameObject.SetActive(true);
+        _thisObject.SetActive(true);
+        InstantTransitionToNormal();
         print("Opacidad activada");
     }
 
     //PRIMERA TRANSICION
-
     public void TransitionToDark()
     {
         print("Cambiando a oscuro");
         isTransitioning = true;
         image.CrossFadeAlpha(fullOpacity, TransitionDuration, false);
         Invoke("EndTransition", TransitionDuration);
-
     }
 
     public void TransitionToNormal()
@@ -132,20 +170,69 @@ public class TransitionController : MonoBehaviour
     //FIN PRIMERA TRANSICION
 
     //SEGUNDA TRANSICION
-    public void TransitionToDarkInstant()
+    public void InstantTransitionToNormal()
     {
-        float opacity = Mathf.Lerp(originalOpacity, fullOpacity, TransitionDuration);
-        image.color = new Color(image.color.r, image.color.g, image.color.b, opacity);
+        image.CrossFadeAlpha(originalOpacity, 0, false);
     }
 
-    public void TransitionToNormalInstant()
+    public void InstantTransitionToDark()
     {
-        float opacity = Mathf.Lerp(fullOpacity, originalOpacity, TransitionDuration);
-        image.color = new Color(image.color.r, image.color.g, image.color.b, opacity);
+        image.CrossFadeAlpha(fullOpacity,0, false);
     }
     //FIN SEGUNDA TRANSICION
 
     //TERCERA TRANSICION
+    public void HalfTimeTransitionToNormal()
+    {
+        image.CrossFadeAlpha(originalOpacity, TransitionDuration / 2, false);
+    }
+
+    public void HalfTimeTransitionToDark()
+    {
+        image.CrossFadeAlpha(fullOpacity, TransitionDuration / 2, false);
+    }
+    //FIN TERCERA TRANSICION
+
+    //CUARTA TRANSICION
+    public void TrueTransitionToNormal()
+    {
+        image.CrossFadeAlpha(originalOpacity, TransitionDuration, true);
+    }
+
+    public void TrueTransitionToDark()
+    {
+        image.CrossFadeAlpha(fullOpacity, TransitionDuration, true);
+    }
+    //FIN CUARTA TRANSICION
+
+    //QUINTA TRANSICION
+    public void TransitionToDarkAnimator()
+    {
+        animator.SetBool("Transition", true);
+        animator.SetBool("Dark", true);
+        Invoke("ResetAnimator", 1f);
+        isTransitioning = true;
+    }
+
+    public void TransitionToNormalAnimator()
+    {
+        animator.SetBool("Transition", true);
+        animator.SetBool("Light", true);
+        Invoke("ResetAnimator", 1f);
+        isTransitioning = true;
+    }
+
+    public void ResetAnimator()
+    {
+        animator.SetBool("Transition", false);
+        animator.SetBool("Dark", false);
+        animator.SetBool("Light", false);
+        isTransitioning = false;
+    }
+
+    //FIN QUINTA TRANSICION
+
+    //SEXTA TRANSICION
     public void TransitionToDarkLerp()
     {
         startTime = Time.time;
@@ -161,33 +248,7 @@ public class TransitionController : MonoBehaviour
         isDarkTransition = false;
         endTransition = false;
     }
-    //FIN TERCERA TRANSICION
-
-    //CUARTA TRANSICION
-    /*
-    public void TransitionToDarkAnimator()
-    {
-        animator.SetBool("Transition", true);
-        animator.SetBool("Dark", true);
-        Invoke("ResetAnimator", 1f);
-    }
-
-    public void TransitionToNormalAnimator()
-    {
-        animator.SetBool("Transition", true);
-        animator.SetBool("Light", true);
-        Invoke("ResetAnimator", 1f);
-    }
-
-    public void ResetAnimator()
-    {
-        animator.SetBool("Transition", false);
-        animator.SetBool("Dark", false);
-        animator.SetBool("Light", false);
-    }
-    */
-    //FIN CUARTA TRANSICION
-
+    //FIN SEXTA TRANSICION
     private void EndTransition()
     {
         isTransitioning = false;
