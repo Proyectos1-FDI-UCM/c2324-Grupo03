@@ -12,20 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2754ec2fc757c244879b4eab2001418, type: 3}
   m_Name: Night_Tutorial
   m_EditorClassIdentifier: 
-  wavePoolList:
-  - wavePoolDistributionFactor: 1
-    subWaveList:
-    - spawnerScore: 20
-      spawnerType: 0
-      enemyPool:
+  waves:
+  - time: 30
+    subWaves:
+    - type: 0
+      pool:
       - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
-        number: 20
-      - enemyPrefab: {fileID: 2995607884255851843, guid: de59b7703dbfbd34d9baa5ec508c6051, type: 3}
-        number: 5
-      - enemyPrefab: {fileID: 2995607884255851843, guid: 3f1ddf2df639d254b95953d14be08653, type: 3}
-        number: 5
-      - enemyPrefab: {fileID: 3477185432724126219, guid: bd9ce6ea559b24446809069ef53c706f, type: 3}
-        number: 2
+        number: 3
   RequiredYellowCrystals: 5
   RequiredCyanCrystals: 5
   RequiredMagentaCrystals: 5
