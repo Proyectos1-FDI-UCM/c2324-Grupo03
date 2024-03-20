@@ -24,7 +24,7 @@ public class AltarComponent : MonoBehaviour, IBuilding
         else { } // Activar menú potenciar armas
     }
 
-    public void CloseMenu() => MenuManager.Instance.CloseMenu();
+    public void CloseMenu() => MenuManager.Instance.CloseAllMenus();
 
     void Start()
     {

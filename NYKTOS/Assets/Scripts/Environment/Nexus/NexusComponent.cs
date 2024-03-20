@@ -13,7 +13,7 @@ public class NexusComponent : MonoBehaviour, IBuilding
     {
         if(GameManager.Instance.State == GameState.Day) 
         {
-            MenuManager.Instance.OpenMenu(1);
+            MenuManager.Instance.OpenNexusMenu();
         }
         else if (PlayerStateMachine.playerState == PlayerState.Dead) 
         {
@@ -21,7 +21,7 @@ public class NexusComponent : MonoBehaviour, IBuilding
         }
     }
 
-    public void CloseMenu() => MenuManager.Instance.CloseMenu();
+    public void CloseMenu() => MenuManager.Instance.CloseAllMenus();
 
     private void Awake()
     {

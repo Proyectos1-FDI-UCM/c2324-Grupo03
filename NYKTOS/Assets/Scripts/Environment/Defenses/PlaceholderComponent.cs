@@ -13,12 +13,12 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     {
         if(_state.buildingState == BuildingStateMachine.BuildingState.NotBuilt && GameManager.Instance.State == GameState.Day)
         {
-            MenuManager.Instance.OpenMenu(2);
+            MenuManager.Instance.OpenDefenseMenu();
             UpdateCurrentPlaceHolder();
         }
     }
 
-    public void CloseMenu() => MenuManager.Instance.CloseMenu();
+    public void CloseMenu() => MenuManager.Instance.CloseAllMenus();
 
     private void UpdateCurrentPlaceHolder()
     {

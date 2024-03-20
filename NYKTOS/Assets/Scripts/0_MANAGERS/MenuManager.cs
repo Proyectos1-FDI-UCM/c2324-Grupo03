@@ -86,7 +86,7 @@ public class MenuManager : MonoBehaviour
     #region properties
     private GameObject _previousMenu;
 
-    private GameObject[] _menuList;
+    private GameObject[] _menuList = new GameObject[6];
     #endregion
 
 
@@ -127,7 +127,7 @@ public class MenuManager : MonoBehaviour
     public void OpenPauseMenu() => OpenMenu(_pauseMenu, _pauseButton);
     public void OpenNexusMenu() => OpenMenu(_nexusMenu, _nexusButton);
     public void OpenAltarMenu() => OpenMenu(_altarMenu, _altarButton);
-    public void OpenDefense() => OpenMenu(_defenseMenu, _defenseButton);
+    public void OpenDefenseMenu() => OpenMenu(_defenseMenu, _defenseButton);
     public void OpenWeaponUpgradeMenu() => OpenMenu(_weaponUpgradeMenu, _weaponUpgradeButton);
     public void OpenWeaponEffectMenu() => OpenMenu(_weaponEffectMenu, _weaponEffectButton);
 

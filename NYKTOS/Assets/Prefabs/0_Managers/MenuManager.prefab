@@ -44,12 +44,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e19937666ae364087806329433b131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _firstSelected:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   _player: {fileID: 0}
+  _pauseMenu: {fileID: 0}
+  _nexusMenu: {fileID: 0}
+  _altarMenu: {fileID: 0}
+  _defenseMenu: {fileID: 0}
+  _weaponUpgradeMenu: {fileID: 0}
+  _weaponEffectMenu: {fileID: 0}
+  _pauseButton: {fileID: 0}
+  _nexusButton: {fileID: 0}
+  _altarButton: {fileID: 0}
+  _defenseButton: {fileID: 0}
+  _weaponUpgradeButton: {fileID: 0}
+  _weaponEffectButton: {fileID: 0}

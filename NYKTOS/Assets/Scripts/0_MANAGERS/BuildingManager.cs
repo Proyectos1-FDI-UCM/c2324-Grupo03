@@ -82,7 +82,7 @@ public class BuildingManager : MonoBehaviour
         AddBuilding(defense);
 
         _currentPlaceholder.GetComponent<BuildingStateMachine>().SetState(BuildingStateMachine.BuildingState.Built);
-        MenuManager.Instance.CloseMenu();
+        MenuManager.Instance.CloseAllMenus();
     }
     
     public void BuildBeacon()

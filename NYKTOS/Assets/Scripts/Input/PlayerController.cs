@@ -196,7 +196,7 @@ public class PlayerController : MonoBehaviour, IKnockback
 
     public void PauseGame(InputAction.CallbackContext context)
     {
-        MenuManager.Instance.OpenMenu(0);
+        MenuManager.Instance.OpenPauseMenu();
         GameManager.Instance.Pause();
     }
 

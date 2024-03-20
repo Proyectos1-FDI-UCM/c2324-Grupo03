@@ -71,7 +71,6 @@ public class GameManager : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1;
-        MenuManager.Instance.CloseMenu();
     }
 
     public void Quit()
