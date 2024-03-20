@@ -48,11 +48,8 @@ public class PlayerController : MonoBehaviour, IKnockback
         get { return _privateMovement; }
     }
     private Vector2 _privateMovement = Vector2.zero;
-    #endregion
-
-    #region parameters
-    [SerializeField]
-    private float _interactionRange = 5f;
+    
+    private float _interactionRange;
     #endregion
 
     #region enableInput
@@ -237,6 +234,8 @@ public class PlayerController : MonoBehaviour, IKnockback
         mainCamera= Camera.main;
         _playerState = GetComponent<PlayerStateMachine>();
         _playerDeath = GetComponent<PlayerDeath>();
+
+        _interactionRange = GetComponentInChildren<CircleCollider2D>().radius;
 
         previousScheme = _playerInput.currentControlScheme;
     }
