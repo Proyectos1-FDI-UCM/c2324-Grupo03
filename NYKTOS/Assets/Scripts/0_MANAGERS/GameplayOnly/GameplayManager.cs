@@ -15,7 +15,7 @@ public class GameplayManager : MonoBehaviour
     private SpawnerWithType[] _spawnerEditorList;
 
     [SerializeField]
-    private Dictionary<SpawnerType, EnemySpawner> _spawnerList;
+    private Dictionary<SpawnerType, EnemySpawner> _spawnerList = new Dictionary<SpawnerType, EnemySpawner>();
 
     [SerializeField]
     private NightWave[] _nightList;
@@ -188,13 +188,16 @@ public class GameplayManager : MonoBehaviour
         else
         {
             _instance = this;
+        }
+    }
 
-            GameManager.Instance.GameStateChanged.AddListener(GameStateListener);
+    void Start()
+    {
+        GameManager.Instance.GameStateChanged.AddListener(GameStateListener);
 
-            foreach(SpawnerWithType data in _spawnerEditorList)
-            {
-                _spawnerList.Add(data.type, data.spawner);
-            }
+        foreach(SpawnerWithType data in _spawnerEditorList)
+        {
+            _spawnerList.Add(data.type, data.spawner);
         }
     }
 }

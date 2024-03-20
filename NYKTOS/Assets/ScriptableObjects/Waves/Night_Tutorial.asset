@@ -19,6 +19,7 @@ MonoBehaviour:
       pool:
       - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
         number: 3
+        tipo: 0
   RequiredYellowCrystals: 5
   RequiredCyanCrystals: 5
   RequiredMagentaCrystals: 5
