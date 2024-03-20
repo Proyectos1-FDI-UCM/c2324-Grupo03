@@ -26,9 +26,7 @@ public class EnemySpawner : MonoBehaviour
     private List<Enemy> _remainingEnemyPool = new List<Enemy>();
 
     public void SetupSpawner(Enemy[] enemyPool)
-    {
-        GameplayManager.Instance.RegisterSpawner();
-        
+    {   
         _enemyPool = enemyPool;
         _remainingEnemyPool = enemyPool.ToList();
 
@@ -61,11 +59,7 @@ public class EnemySpawner : MonoBehaviour
                     }
                 }
 
-                if(_curentSpawnScore <= 0 || (_remainingEnemyPool.Count == 0  && _curentSpawnScore == _spawnScore))
-                {
-                    enabled = false;
-                }
-                else if (_remainingEnemyPool.Count == 0 && _curentSpawnScore < _spawnScore)
+                if(_remainingEnemyPool.Count == 0)
                 {
                     _remainingEnemyPool = _enemyPool.ToList();
                 }
@@ -81,13 +75,6 @@ public class EnemySpawner : MonoBehaviour
                         transform.GetChild(random.Next(0,  transform.childCount)).position,
                         Quaternion.identity
                     );
-
-                    _curentSpawnScore--;
-
-                    if(_curentSpawnScore <= 0)
-                    {
-                        GameplayManager.Instance.UnregisterSpawner();
-                    }
 
                     GameplayManager.Instance.AddConcurrentEnemy();
 

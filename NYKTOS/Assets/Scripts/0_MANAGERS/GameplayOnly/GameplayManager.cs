@@ -22,8 +22,6 @@ public class GameplayManager : MonoBehaviour
     [SerializeField]
     private int _nightLength = 180;
 
-    private int _registeredSpawners = 0;
-
     [SerializeField]
     private int _maxEnemies = 5;
     public int MaxEnemies
@@ -97,26 +95,6 @@ public class GameplayManager : MonoBehaviour
 
     private UnityEvent _stopSpawners = new UnityEvent();
     public UnityEvent StopSpawners => _stopSpawners; 
-
-    public void RegisterSpawner()
-    {
-        _registeredSpawners++;
-    }
-
-    public void UnregisterSpawner()
-    {
-        _registeredSpawners--;
-
-        if(_registeredSpawners <= 0)
-        {
-            if(_currentWaveNumber < _nightList[_saveData.Night].waves.Length)
-            {
-                _currentWaveNumber ++;
-            }
-
-            InitializeWave();
-        }
-    }
 
     public void StartNight()
     {
