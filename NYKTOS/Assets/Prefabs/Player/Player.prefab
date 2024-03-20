@@ -420,7 +420,7 @@ MonoBehaviour:
   _BlinkCooldown:
     _cooldownTime: 1
   _PrimaryAttackCooldown:
-    _cooldownTime: 0.5
+    _cooldownTime: 0.3
   _SecondaryAttackCooldown:
     _cooldownTime: 5
   _interactionRange: 2
@@ -734,8 +734,8 @@ MonoBehaviour:
   _damage: 3
   _attackType: 0
   attackHitbox: {fileID: 3679065653297175454, guid: c6593a0b651be4f46bd3bf884546eaec, type: 3}
-  attackAngleRange: 60
-  angleVelocity: 300
+  _hitboxDistanceFromPlayer: 1
+  _timeBeforeDestroy: 0.2
 --- !u!114 &3016302921365856093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,7 +821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deactivateDebuffTime: 2
-  speedAdder: 0.5
+  speedAdder: -2.5
 --- !u!61 &8410641752796733455
 BoxCollider2D:
   m_ObjectHideFlags: 0
