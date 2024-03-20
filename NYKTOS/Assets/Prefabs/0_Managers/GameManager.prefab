@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
+  save: {fileID: 11400000, guid: a5b71e18e6c9f454f90c0df5b843680a, type: 2}
   _state: 2

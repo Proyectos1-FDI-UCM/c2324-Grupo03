@@ -1,4 +1,5 @@
 using System;
+using System.Timers;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private SaveData save;
 
+    // esto está para debug unicamente
     [SerializeField]
     private GameState _state;
     public GameState State => _state;
@@ -27,40 +29,47 @@ public class GameManager : MonoBehaviour
 
     public void UpdateGameState(GameState newState)
     {
-        _state = newState;
-
-        switch (newState)
+        if(_state != newState)
         {
-            case GameState.StartScreen:
-                break;
-            case GameState.Config:
-                break;
-            case GameState.Day:
-                SaveProgress();
-                break;
-            case GameState.Night:
-                break;
-            case GameState.Pause:
-                break;
-            case GameState.Lose:
-                break;
-            case GameState.Win:
-                break;
-            default:
-                throw new ArgumentOutOfRangeException
-                (
-                    nameof(newState), 
-                    newState, 
-                    "GameState not included in GameManager statemachine"
-                );
-        }
+            _state = newState;
 
-        _gameStateChanged.Invoke(newState);
+            switch (newState)
+            {
+                case GameState.StartScreen:
+                    break;
+                case GameState.Config:
+                    break;
+                case GameState.Day:
+                    SaveProgress();
+                    break;
+                case GameState.Night:
+                    break;
+                case GameState.TutorialDay:
+                    break;
+                case GameState.TutorialNight:
+                    break;
+                case GameState.Pause:
+                    break;
+                case GameState.Lose:
+                    break;
+                case GameState.Win:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException
+                    (
+                        nameof(newState), 
+                        newState, 
+                        "GameState not included in GameManager statemachine"
+                    );
+            }
+
+            _gameStateChanged.Invoke(newState);
+        }
     }
 
-    public void UpdateGamestateByInt(int state)
+    public void UpdateGameState(int state)
     {
-        
+        UpdateGameState(state);
     }
 
     public void Pause()
@@ -78,7 +87,12 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    private void SaveProgress()
+    public void SaveProgress()
+    {
+        //TO DO
+    }
+
+    private void LoadProgress()
     {
         //TO DO
     }
@@ -100,6 +114,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         inventory.Reset();
+
+        Debug.Log("[GAME MANAGER]: SERIALZIED FOR DEBUGGING");
     }
 
     void OnValidate()
@@ -117,8 +133,10 @@ public enum GameState
     Config = 1,
     Day = 2,
     Night = 3,
-    Pause = 4,
-    Lose = 5,
-    Win = 6
+    TutorialDay = 4,
+    TutorialNight = 5, 
+    Pause = 6,
+    Lose = 7,
+    Win = 8
 }
 

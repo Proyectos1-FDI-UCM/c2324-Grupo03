@@ -10,7 +10,6 @@ public class GameplayManager : MonoBehaviour
     [SerializeField]
     private SaveData _saveData;
 
-
     [SerializeField]
     private SpawnerWithType[] _spawnerEditorList;
 
@@ -23,6 +22,23 @@ public class GameplayManager : MonoBehaviour
     #endregion
 
     #region parameters
+
+    private int _registeredAltars = 0;
+
+    public void RegisterAltar()
+    {
+        _registeredAltars++;
+    }
+
+    public void UnregisterAltar()
+    {
+        _registeredAltars--;
+
+        if(_registeredAltars <= 0)
+        {
+            GameManager.Instance.UpdateGameState(GameState.Win);
+        }
+    }
 
     [SerializeField]
     private int _nightLength = 180;
@@ -103,8 +119,6 @@ public class GameplayManager : MonoBehaviour
 
     public void StartNight()
     {
-        //GameManager.Instance.UpdateGameState(GameState.Night);
-
         Invoke(nameof(EndNight), _nightLength);
         
         // Aquí se debería inicializar el reloj
@@ -127,19 +141,16 @@ public class GameplayManager : MonoBehaviour
                 InitializeWave();
             }
         }
+        else
+        {
+            GameManager.Instance.UpdateGameState(GameState.Lose);
+        }
     }
 
     public void EndNight()
     {
-        if(_saveData.Night >= _nightList.Length)
-        {
-            GameManager.Instance.UpdateGameState(GameState.Lose);
-        }
-        else
-        {
-            GameManager.Instance.UpdateGameState(GameState.Day);
-            _saveData.AdvanceNight();
-        }
+        _saveData.AdvanceNight();
+        GameManager.Instance.UpdateGameState(GameState.Day);
     }
 
     void InitializeWave()
