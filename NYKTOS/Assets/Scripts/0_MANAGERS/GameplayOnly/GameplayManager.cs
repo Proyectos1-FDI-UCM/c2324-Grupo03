@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.Collections.LowLevel.Unsafe;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +9,10 @@ public class GameplayManager : MonoBehaviour
     #region references
     [SerializeField]
     private SaveData _saveData;
+
+
+    [SerializeField]
+    private SpawnerWithType[] _spawnerEditorList;
 
     [SerializeField]
     private Dictionary<SpawnerType, EnemySpawner> _spawnerList;
@@ -24,8 +26,6 @@ public class GameplayManager : MonoBehaviour
 
     [SerializeField]
     private int _nightLength = 180;
-
-    private int _registeredSpawners = 0;
 
     [SerializeField]
     private int _maxEnemies = 5;
@@ -99,50 +99,36 @@ public class GameplayManager : MonoBehaviour
     }
 
     private UnityEvent _stopSpawners = new UnityEvent();
-    public UnityEvent StopSpawners => _stopSpawners;
-
-    public void RegisterSpawner()
-    {
-        _registeredSpawners++;
-    }
-
-    public void UnregisterSpawner()
-    {
-        _registeredSpawners--;
-
-        if(_registeredSpawners <= 0)
-        {
-            if(_currentWaveNumber < _nightList[_saveData.Night].waves.Length)
-            {
-                _currentWaveNumber ++;
-            }
-
-            InitializeWave();
-        }
-    }
+    public UnityEvent StopSpawners => _stopSpawners; 
 
     public void StartNight()
     {
-        GameManager.Instance.UpdateGameState(GameState.Night);
+        //GameManager.Instance.UpdateGameState(GameState.Night);
+
         Invoke(nameof(EndNight), _nightLength);
         
         // Aquí se debería inicializar el reloj
 
-        NightWave currentnight = _nightList[_saveData.Night];
+        if(_saveData.Night < _nightList.Length)
+        {
+            NightWave currentnight = _nightList[_saveData.Night];
 
-        _currentRequiredYellow = currentnight.RequiredYellowCrystals;
-        _currentRequiredCyan = currentnight.RequiredCyanCrystals;
-        _currentRequiredMagenta = currentnight.RequiredMagentaCrystals;
-        _probabilityYellow = currentnight.YellowProbability;
-        _probabilityCyan = currentnight.CyanProbability;
-        _probabilityMagenta = currentnight.MagentaProbability;
+            _currentRequiredYellow = currentnight.RequiredYellowCrystals;
+            _currentRequiredCyan = currentnight.RequiredCyanCrystals;
+            _currentRequiredMagenta = currentnight.RequiredMagentaCrystals;
+            _probabilityYellow = currentnight.YellowProbability;
+            _probabilityCyan = currentnight.CyanProbability;
+            _probabilityMagenta = currentnight.MagentaProbability;
 
-        _currentWaveNumber = 0;
+            _currentWaveNumber = 0;
 
-        InitializeWave();
+            if(currentnight.waves.Length > 0)
+            {
+                InitializeWave();
+            }
+        }
     }
 
-    // Limite de noche, lo marca el numero de noches añadidas en la lista
     public void EndNight()
     {
         if(_saveData.Night >= _nightList.Length)
@@ -158,13 +144,25 @@ public class GameplayManager : MonoBehaviour
 
     void InitializeWave()
     {
-        foreach(var data in _nightList[_saveData.Night].waves[_currentWaveNumber].SpawnerData)
+        Wave currentWave = _nightList[_saveData.Night].waves[_currentWaveNumber];
+
+        foreach(SubWave subWave in currentWave.subWaves)
         {
-            if (_spawnerList.TryGetValue(data.Key, out EnemySpawner spawner))
+            if (_spawnerList.TryGetValue(subWave.type, out EnemySpawner spawner))
             {
-                (int points, Enemy[] pool) = data.Value;
-                spawner.SetupSpawner(points, pool);
+                spawner.SetupSpawner(subWave.pool);
             }
+        }
+
+        Invoke(nameof(AdvanceWave), currentWave.time);
+    }
+
+    void AdvanceWave()
+    {
+        if(_currentWaveNumber < _nightList[_saveData.Night].waves.Length)     
+        {
+            _currentWaveNumber ++;
+            InitializeWave();
         }
     }
 
@@ -172,7 +170,7 @@ public class GameplayManager : MonoBehaviour
     {
         if(state == GameState.Night)
         {
-            InitializeWave();
+            StartNight();
         }
         else
         {
@@ -190,11 +188,20 @@ public class GameplayManager : MonoBehaviour
         else
         {
             _instance = this;
+
+            GameManager.Instance.GameStateChanged.AddListener(GameStateListener);
+
+            foreach(SpawnerWithType data in _spawnerEditorList)
+            {
+                _spawnerList.Add(data.type, data.spawner);
+            }
         }
     }
+}
 
-    void Start()
-    {
-        GameManager.Instance.GameStateChanged.AddListener(GameStateListener);
-    }
+[System.Serializable]
+public struct SpawnerWithType
+{
+    public SpawnerType type;
+    public EnemySpawner spawner;
 }

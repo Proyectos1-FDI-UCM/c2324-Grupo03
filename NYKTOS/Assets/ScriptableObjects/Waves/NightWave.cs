@@ -16,13 +16,22 @@ public class NightWave : ScriptableObject {
 [System.Serializable]
 public struct Wave
 {
-    public Dictionary<SpawnerType, (int, Enemy[])> SpawnerData;
+    public int time;
+    public SubWave[] subWaves;
+}
+
+[System.Serializable]
+public struct SubWave {
+    public SpawnerType type;
+    public Enemy[] pool;
 }
 
 [System.Serializable]
 public struct Enemy {
     public GameObject enemyPrefab; // Prefab of the enemy
     public int number; // numero de cuantos de ese bicho en la iteración de la wave
+
+    public SpawnerType tipo;
 }
 
 

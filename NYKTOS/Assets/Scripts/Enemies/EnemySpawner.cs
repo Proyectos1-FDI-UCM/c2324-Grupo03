@@ -19,33 +19,37 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private SpawnerType _spawnerType;
 
-    private int _spawnScore = 0;
-    private int _curentSpawnScore = 0;
-
     [SerializeField]
     private Enemy[] _enemyPool;
 
     [SerializeField]
     private List<Enemy> _remainingEnemyPool = new List<Enemy>();
 
-    public void SetupSpawner(int score, Enemy[] enemyPool)
-    {
-        GameplayManager.Instance.RegisterSpawner();
-        
-        _spawnScore = score;
-        _curentSpawnScore = score;
+    public void SetupSpawner(Enemy[] enemyPool)
+    {   
         _enemyPool = enemyPool;
         _remainingEnemyPool = enemyPool.ToList();
 
-        _spawnEnabled = true;
+        if(_enemyPool.Length > 0) 
+        {
+            bool enemyDetected = false; 
+
+            foreach(var enemy in enemyPool)
+            {
+                enemyDetected = true;
+            }
+            
+            _spawnEnabled = enemyDetected;
+        }
+        else
+        {
+            _spawnEnabled = false;
+        }
     }
 
     void StopSpawner()
     {
         _spawnEnabled = false;
-
-        _spawnScore = 0;
-        _curentSpawnScore = 0;
     }
 
     // Start is called before the first frame update
@@ -61,19 +65,7 @@ public class EnemySpawner : MonoBehaviour
         {
             if (_spawnEnabled) 
             {
-                foreach(Enemy enemy in _remainingEnemyPool)
-                {
-                    if(enemy.number <= 0)
-                    {
-                        _remainingEnemyPool.Remove(enemy);
-                    }
-                }
-
-                if(_curentSpawnScore <= 0 || (_remainingEnemyPool.Count == 0  && _curentSpawnScore == _spawnScore))
-                {
-                    enabled = false;
-                }
-                else if (_remainingEnemyPool.Count == 0 && _curentSpawnScore < _spawnScore)
+                if(_remainingEnemyPool.Count == 0)
                 {
                     _remainingEnemyPool = _enemyPool.ToList();
                 }
@@ -83,18 +75,19 @@ public class EnemySpawner : MonoBehaviour
                     
                     int enemySpawnPos = random.Next(0, _remainingEnemyPool.Count);
 
-                    Instantiate
-                    (
-                        _remainingEnemyPool[enemySpawnPos].enemyPrefab, 
-                        transform.GetChild(random.Next(0,  transform.childCount)).position,
-                        Quaternion.identity
-                    );
-
-                    _curentSpawnScore--;
-
-                    if(_curentSpawnScore <= 0)
+                    if(_remainingEnemyPool[enemySpawnPos].number > 0)
                     {
-                        GameplayManager.Instance.UnregisterSpawner();
+                        Instantiate
+                        (
+                            _remainingEnemyPool[enemySpawnPos].enemyPrefab, 
+                            transform.GetChild(random.Next(0,  transform.childCount)).position,
+                            Quaternion.identity
+                        );
+
+                        if (_remainingEnemyPool[enemySpawnPos].number <= 0)
+                        {
+                            _remainingEnemyPool.RemoveAt(enemySpawnPos);
+                        }
                     }
 
                     GameplayManager.Instance.AddConcurrentEnemy();
