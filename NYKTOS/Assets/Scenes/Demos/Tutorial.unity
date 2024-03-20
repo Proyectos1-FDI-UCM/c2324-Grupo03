@@ -354,15 +354,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.0050251256
+      value: 0.004008016
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9985897
+      value: 1.0005639
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9928714
+      value: 0.9921238
       objectReference: {fileID: 0}
     - target: {fileID: 8073207824159548778, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_ShowDebugText
@@ -522,6 +522,54 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 327102155}
+    - target: {fileID: 4908613825644664339, guid: 634513026cb2e5549bd3b27ec9f3227e, type: 3}
+      propertyPath: _altarMenu
+      value: 
+      objectReference: {fileID: 1468414753}
+    - target: {fileID: 4908613825644664339, guid: 634513026cb2e5549bd3b27ec9f3227e, type: 3}
+      propertyPath: _nexusMenu
+      value: 
+      objectReference: {fileID: 1076817622}
+    - target: {fileID: 4908613825644664339, guid: 634513026cb2e5549bd3b27ec9f3227e, type: 3}
+      propertyPath: _pauseMenu
+      value: 
+      objectReference: {fileID: 1468414747}
+    - target: {fileID: 4908613825644664339, guid: 634513026cb2e5549bd3b27ec9f3227e, type: 3}
+      propertyPath: _altarButton
+      value: 
+      objectReference: {fileID: 1468414752}
+    - target: {fileID: 4908613825644664339, guid: 634513026cb2e5549bd3b27ec9f3227e, type: 3}
+      propertyPath: _defenseMenu
+      value: 
+      objectReference: {fileID: 916910547}
+    - target: {fileID: 4908613825644664339, guid: 634513026cb2e5549bd3b27ec9f3227e, type: 3}
+      propertyPath: _nexusButton
+      value: 
+      objectReference: {fileID: 1468414754}
+    - target: {fileID: 4908613825644664339, guid: 634513026cb2e5549bd3b27ec9f3227e, type: 3}
+      propertyPath: _pauseButton
+      value: 
+      objectReference: {fileID: 1468414746}
+    - target: {fileID: 4908613825644664339, guid: 634513026cb2e5549bd3b27ec9f3227e, type: 3}
+      propertyPath: _defenseButton
+      value: 
+      objectReference: {fileID: 1144747798}
+    - target: {fileID: 4908613825644664339, guid: 634513026cb2e5549bd3b27ec9f3227e, type: 3}
+      propertyPath: _weaponEffectMenu
+      value: 
+      objectReference: {fileID: 1468414749}
+    - target: {fileID: 4908613825644664339, guid: 634513026cb2e5549bd3b27ec9f3227e, type: 3}
+      propertyPath: _weaponUpgradeMenu
+      value: 
+      objectReference: {fileID: 1468414751}
+    - target: {fileID: 4908613825644664339, guid: 634513026cb2e5549bd3b27ec9f3227e, type: 3}
+      propertyPath: _weaponEffectButton
+      value: 
+      objectReference: {fileID: 1468414748}
+    - target: {fileID: 4908613825644664339, guid: 634513026cb2e5549bd3b27ec9f3227e, type: 3}
+      propertyPath: _weaponUpgradeButton
+      value: 
+      objectReference: {fileID: 1468414750}
     - target: {fileID: 4908613825644664339, guid: 634513026cb2e5549bd3b27ec9f3227e, type: 3}
       propertyPath: _menuList.Array.data[0]
       value: 
@@ -808,6 +856,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4248846942303054600, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4496728085888225263, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -868,6 +920,65 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7785906538325663509, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
   m_PrefabInstance: {fileID: 1468414744}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1468414748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3721011228572870791, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
+  m_PrefabInstance: {fileID: 1468414744}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1468414749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4248846942303054600, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
+  m_PrefabInstance: {fileID: 1468414744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1468414750 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 766903338917566798, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
+  m_PrefabInstance: {fileID: 1468414744}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1468414751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3594632343165287717, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
+  m_PrefabInstance: {fileID: 1468414744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1468414752 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 425440738427459316, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
+  m_PrefabInstance: {fileID: 1468414744}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1468414753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1713187738734561996, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
+  m_PrefabInstance: {fileID: 1468414744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1468414754 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2251676366952122962, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
+  m_PrefabInstance: {fileID: 1468414744}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1560564398
 PrefabInstance:
   m_ObjectHideFlags: 0
