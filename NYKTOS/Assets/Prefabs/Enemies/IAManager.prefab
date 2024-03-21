@@ -46,4 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
   Defenses: []
-  Altars: []
+  Altars:
+  - {fileID: 0}

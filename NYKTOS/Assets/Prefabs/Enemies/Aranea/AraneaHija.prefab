@@ -126,7 +126,6 @@ GameObject:
   - component: {fileID: 3790183393203834834}
   - component: {fileID: 1149162989173709927}
   - component: {fileID: 351139369968133128}
-  - component: {fileID: 3341963500009074883}
   m_Layer: 9
   m_Name: AraneaHija
   m_TagString: Enemy
@@ -179,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ce116b2e1fb5e43a0d0962685cc168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _siNoEsAraneaHija: 0
 --- !u!50 &2487468154528371437
 Rigidbody2D:
   serializedVersion: 4
@@ -373,24 +373,6 @@ CircleCollider2D:
   m_Offset: {x: 0.029503882, y: -0.110147625}
   serializedVersion: 2
   m_Radius: 0.09689298
---- !u!114 &3341963500009074883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074932061589432301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42f624ec04024914591cfee20e52f149, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
-  droppedItemPrefab: {fileID: 3451623645044351456, guid: 595781515fb61e640b7cae2f0cbfd631, type: 3}
-  CrystalList:
-  - {fileID: 11400000, guid: c7e5bbe351cfe6049962d13e9ebcb2d0, type: 2}
-  - {fileID: 11400000, guid: b5b8014c89569f746ad3efa6fa1d8eaa, type: 2}
-  - {fileID: 11400000, guid: f5c611acfb209cf49ac3f3f9b2f2274e, type: 2}
 --- !u!1 &2163725980603856200
 GameObject:
   m_ObjectHideFlags: 0

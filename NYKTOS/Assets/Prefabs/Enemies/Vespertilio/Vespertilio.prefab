@@ -259,8 +259,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4261393046184380584}
   - {fileID: 6864610263603912788}
+  - {fileID: 4261393046184380584}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7287470624222347862
@@ -307,6 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ce116b2e1fb5e43a0d0962685cc168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _araneaHija: {fileID: 2074932061589432301, guid: b708458429031474093b3004c3de77f9, type: 3}
 --- !u!50 &7059409480465428519
 Rigidbody2D:
   serializedVersion: 4
