@@ -21,7 +21,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
 
     public void Death()
     {
-        Debug.Log("He morio!");
+        //Debug.Log("He morio!");
        _aliveskin.enabled = false;
        _deathskin.enabled = true;
        _playerState.SetState(PlayerState.Dead);
