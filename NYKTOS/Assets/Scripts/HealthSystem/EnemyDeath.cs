@@ -7,6 +7,8 @@ using UnityEngine;
 [System.Serializable]
 public class EnemyDeath : MonoBehaviour, IDeath
 {
+    [SerializeField]
+    private bool _siNoEsAraneaHija = true;
     void GameStateListener(GameState state)
     {
         if(!(GameState.Night == state))
@@ -18,7 +20,7 @@ public class EnemyDeath : MonoBehaviour, IDeath
     public void Death()
     {
         GameplayManager.Instance.RemoveConcurrentEnemy();
-        GetComponent<CrystalBag>().InstantiateCrystal(transform.position);
+        if(_siNoEsAraneaHija) GetComponent<CrystalBag>().InstantiateCrystal(transform.position);
         Destroy(gameObject);
     }
 

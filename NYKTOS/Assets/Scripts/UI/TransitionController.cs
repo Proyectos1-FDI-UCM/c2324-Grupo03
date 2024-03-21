@@ -147,13 +147,13 @@ public class TransitionController : MonoBehaviour
         Opacity100 = true;
         _thisObject.SetActive(true);
         InstantTransitionToNormal();
-        print("Opacidad activada");
+        //print("Opacidad activada");
     }
 
     //PRIMERA TRANSICION
     public void TransitionToDark()
     {
-        print("Cambiando a oscuro");
+        //print("Cambiando a oscuro");
         isTransitioning = true;
         image.CrossFadeAlpha(fullOpacity, TransitionDuration, false);
         Invoke("EndTransition", TransitionDuration);
@@ -161,7 +161,7 @@ public class TransitionController : MonoBehaviour
 
     public void TransitionToNormal()
     {
-        print("cambiando a normal");
+        //print("cambiando a normal");
         isTransitioning = true;
         image.CrossFadeAlpha(originalOpacity, TransitionDuration, false);
         Invoke("EndTransition", TransitionDuration);
@@ -252,7 +252,7 @@ public class TransitionController : MonoBehaviour
     private void EndTransition()
     {
         isTransitioning = false;
-        print("Ya no tengo cambios");
+        //print("Ya no tengo cambios");
 
     }
     

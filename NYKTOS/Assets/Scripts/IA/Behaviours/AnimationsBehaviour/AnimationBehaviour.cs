@@ -18,9 +18,9 @@ public class AnimationBehaviour : MonoBehaviour, IBehaviour
     public void PerformBehaviour()
     {
         if (_animator != null) {
-            if (_animationType == AnimationType.Attacking) _animator.Play("Attacking");
+            if (_animationType == AnimationType.Attacking) _animator.Play("Attack");
             else if (_animationType == AnimationType.Walking && !isOnCoolDown) StartCoroutine(Walk());
-            else if (_animationType == AnimationType.Dying) _animator.Play("Dying");
+            else if (_animationType == AnimationType.Dying) _animator.Play("Die");
             else if (_animationType == AnimationType.SpawnHijas) {
                 //Debug.Log("Spawneando Hijas");
                 _animator.Play("SpawnHijas");

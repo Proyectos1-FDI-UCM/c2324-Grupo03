@@ -52,7 +52,7 @@ public class CrystalBag : MonoBehaviour
 
         if (RecursosObligatorios)
         {
-            print("Cristal obligatorio");
+            //print("Cristal obligatorio");
             if (_spawnManager.CurrentRequiredYellow > 0 && /*RandomNumber == 0*/ RandomNumber <= _spawnManager.ProbabilityYellow /*CrystalList[0].dropChance*/)
             {
                 possibleCrystal.Add(CrystalList[0]);
@@ -99,7 +99,7 @@ public class CrystalBag : MonoBehaviour
         
         if (!RecursosObligatorios)
         {
-            print("Cristal aleatorio");
+            //print("Cristal aleatorio");
 
             //RANDOM DEPENDIENDO DEL DROPCHANCE DEL SPAWNAMANAGER
             int RandomNumberCrystalRandom = Random.Range(0, 3);
@@ -141,13 +141,14 @@ public class CrystalBag : MonoBehaviour
         //Esto es para que elija solo un drop para tirar entre todos
         if (possibleCrystal.Count > 0)
         {
-            print("muchos cristales, quitamos hasta que quede uno");
+            //print("muchos cristales, quitamos hasta que quede uno");
             ResourceCrystal droppedCrystal = possibleCrystal[Random.Range(0,possibleCrystal.Count)];
             return droppedCrystal;
         }
         else
         {
-            Debug.Log("No Crystal Dropped");
+            
+            //Debug.Log("No Crystal Dropped");
             return null;
         }
     }
