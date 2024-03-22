@@ -174,15 +174,18 @@ public class CrystalBag : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        _spawnManager = GameplayManager.Instance;
-
+    //private void Awake()
+    //{
         //amarillosObligatorios = _spawnManager.CurrentRequiredYellow;
         //cianesObligatorios = _spawnManager.CurrentRequiredYellow;
         //magentasObligatorios = _spawnManager.CurrentRequiredYellow;
         //probAmarillo = _spawnManager.ProbabilityYellow;
         //probCian = _spawnManager.ProbabilityCyan;
         //probMagenta = _spawnManager.ProbabilityMagenta;
+    //}
+
+    private void Start()
+    {
+        _spawnManager = GameplayManager.Instance;
     }
 }
