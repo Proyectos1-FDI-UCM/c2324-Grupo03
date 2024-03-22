@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     /// <summary>
-    /// Listado de los menús del juego. ASIGNAR EN ESTE ORDEN (sujeto a cambios)
+    /// Listado de los menï¿½s del juego. ASIGNAR EN ESTE ORDEN (sujeto a cambios)
     /// 
     /// 0 - PAUSA
     /// 1 - Nexo
     /// 2 - Defensas (placeholder)
-    /// 3 - Reparación altares (altar destruido)
+    /// 3 - Reparaciï¿½n altares (altar destruido)
     /// 4 - Evolucionar arma (altar reparado)
     /// 5 - Efecto especial arma (altar reparado)
     /// </summary>
@@ -91,6 +91,12 @@ public class MenuManager : MonoBehaviour
 
 
     #region methods
+
+    public void ChangeStateFromMenu()
+    {
+        GameManager.Instance.UpdateGameState(GameState.Night);
+    }
+
     private void SwitchToUIControls()
     {
         _playerController.playerControls.Player.Disable();

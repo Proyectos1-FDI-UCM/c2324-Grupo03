@@ -29,8 +29,8 @@ public class GameManager : MonoBehaviour
 
     public void UpdateGameState(GameState newState)
     {
-        if(_state != newState)
-        {
+        //if(_state != newState)
+        //{
             _state = newState;
 
             switch (newState)
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
             }
 
             _gameStateChanged.Invoke(newState);
-        }
+        //}
     }
 
     public void UpdateGameState(int state)

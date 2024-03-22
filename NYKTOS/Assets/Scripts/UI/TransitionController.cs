@@ -18,8 +18,7 @@ public class TransitionController : MonoBehaviour
 
 
     private Image image;
-    [SerializeField]
-    private GameObject _thisObject;
+    private Transform _childTransform;
     private Animator animator;
 
     [SerializeField]
@@ -101,7 +100,7 @@ public class TransitionController : MonoBehaviour
         /*
         if (isTransitioningLerp && Opacity100)
         {
-            float elapsedTime = Time.time - startTime; // Calcula el tiempo transcurrido desde el inicio de la transición
+            float elapsedTime = Time.time - startTime; // Calcula el tiempo transcurrido desde el inicio de la transiciï¿½n
             elapsedTime += Time.deltaTime;
             float t = Mathf.Clamp01(elapsedTime / TransitionDuration);
 
@@ -119,7 +118,7 @@ public class TransitionController : MonoBehaviour
             
             if (elapsedTime >= 1f || elapsedTime <= 0f)
             {
-                isTransitioning = false; // Desactiva el indicador de transición
+                isTransitioning = false; // Desactiva el indicador de transiciï¿½n
                 isTransitioningLerp = false;
             }
             
@@ -133,19 +132,20 @@ public class TransitionController : MonoBehaviour
 
     private void Awake()
     {
-        image = _thisObject.GetComponentInChildren<Image>();
+        image = _childTransform.GetComponentInChildren<Image>();
     }
 
     private void Start()
     {
         Invoke("ActiveOpacity", TransitionDuration);
         animator = GetComponentInChildren<Animator>();
+        _childTransform = GetComponentInChildren<Transform>();
     }
 
     private void ActiveOpacity()
     {
         Opacity100 = true;
-        _thisObject.SetActive(true);
+        _childTransform.gameObject.SetActive(true);
         InstantTransitionToNormal();
         //print("Opacidad activada");
     }

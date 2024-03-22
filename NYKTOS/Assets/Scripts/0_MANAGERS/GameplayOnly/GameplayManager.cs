@@ -155,6 +155,8 @@ public class GameplayManager : MonoBehaviour
 
     void InitializeWave()
     {
+        StopSpawners.Invoke();
+
         Wave currentWave = _nightList[_saveData.Night].waves[_currentWaveNumber];
 
         foreach(SubWave subWave in currentWave.subWaves)
@@ -165,16 +167,16 @@ public class GameplayManager : MonoBehaviour
             }
         }
 
-        Invoke(nameof(AdvanceWave), currentWave.time);
+        if(_currentWaveNumber < _nightList[_saveData.Night].waves.Length)     
+        {
+            Invoke(nameof(AdvanceWave), currentWave.time);
+        }
     }
 
     void AdvanceWave()
     {
-        if(_currentWaveNumber < _nightList[_saveData.Night].waves.Length)     
-        {
-            _currentWaveNumber ++;
-            InitializeWave();
-        }
+        _currentWaveNumber ++;
+        InitializeWave();    
     }
 
     void GameStateListener(GameState state)
