@@ -12,7 +12,7 @@ public class PlayerCloserThanBuildingCondition : MonoBehaviour, ICondition
 
     public bool Validate(GameObject game)
     {
-        if (_enemyPriorityComponent.toNearestBuildingPath.corners.Length > 0)
+        if (_enemyPriorityComponent.toNearestBuildingPath != null && _enemyPriorityComponent.toNearestBuildingPath.corners.Length > 0)
         {
             Vector3 _nearestBuilding = _enemyPriorityComponent.toNearestBuildingPath.corners[_enemyPriorityComponent.toNearestBuildingPath.corners.Length - 1];
 

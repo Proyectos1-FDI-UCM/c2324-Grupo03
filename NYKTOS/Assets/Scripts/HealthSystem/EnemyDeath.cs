@@ -7,7 +7,6 @@ using UnityEngine;
 [System.Serializable]
 public class EnemyDeath : MonoBehaviour, IDeath
 {
-
     void GameStateListener(GameState state)
     {
         if(!(GameState.Night == state))

@@ -170,7 +170,6 @@ public class PlayerController : MonoBehaviour, IKnockback
             _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
             _PrimaryAttackCooldown.StartCooldown();
 
-            print(_playerMovement.movementSpeed / 2);
 
             _playerMovement.AddSpeed(-_playerMovement.movementSpeed /1.5f, _PrimaryAttackCooldown.cooldownTime);
             CallMove(_privateMovement);
