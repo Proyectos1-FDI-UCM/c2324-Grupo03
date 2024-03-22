@@ -7,8 +7,7 @@ using UnityEngine;
 [System.Serializable]
 public class EnemyDeath : MonoBehaviour, IDeath
 {
-    [SerializeField]
-    private bool _siNoEsAraneaHija = true;
+
     void GameStateListener(GameState state)
     {
         if(!(GameState.Night == state))

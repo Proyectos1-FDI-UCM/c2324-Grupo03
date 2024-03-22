@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - _knockbackArea: {fileID: 7885417974881959465, guid: 108c1387e45001742be649b31c540118, type: 3}
+  - _bullet: {fileID: 5778141340421890969, guid: 2eb15cd38c38f7f45bec7a5883c252a6, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

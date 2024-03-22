@@ -9,7 +9,7 @@ public class HealthComponent : MonoBehaviour
 
     private HealthBar healthBar;
     private GameObject HealthBarGameObject;
-    [SerializeField]
+
     private IDeath _deathComponent;
 
     private PlayerController _playerController;

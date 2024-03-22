@@ -13,13 +13,23 @@ public class WeaponStaff : Weapon
 
     [SerializeField]
     private GameObject _knockbackArea;
+
+    [SerializeField]
+    private GameObject _bullet;
     #endregion
 
     public override void PrimaryUse(Vector2 direction)
     {
-        
+        GameObject current =
+        Instantiate(_bullet, _myTransform.position, Quaternion.identity);
+
+        current.TryGetComponent<BulletComponent>(out BulletComponent bullet);
+
+        bullet.SetStats(damage, attackType);
+        bullet.SetDirection(direction);
     }
 
+    #region secondaryuse
     public override void SecondaryUse(Vector2 direction)
     {
         StartCoroutine(KnockbackArea());
@@ -39,7 +49,7 @@ public class WeaponStaff : Weapon
 
         Destroy(current);
     }
-
+    #endregion
     private void Awake()
     {
         _myTransform = transform;

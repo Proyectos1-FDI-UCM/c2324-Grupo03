@@ -55,7 +55,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
             for (int i = 0; i < iknockbackChildren.Length; i++)
             {
-                iknockbackChildren[i].CallKnockback(_myTransform.parent.position);
+                iknockbackChildren[i].CallKnockback(_myTransform.position);
             }
 
         }
