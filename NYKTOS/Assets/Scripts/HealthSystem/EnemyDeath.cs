@@ -20,13 +20,11 @@ public class EnemyDeath : MonoBehaviour, IDeath
     public void Death()
     {
         GameplayManager.Instance.RemoveConcurrentEnemy();
-        if(_siNoEsAraneaHija) GetComponent<CrystalBag>().InstantiateCrystal(transform.position);
+        if(TryGetComponent<CrystalBag>(out CrystalBag enemyBag))
+        {
+            enemyBag.InstantiateCrystal(transform.position);
+        }
         Destroy(gameObject);
-    }
-
-    public void Talk()
-    {
-        Debug.Log("Soy un enemigo!!");
     }
 
     void Start(){

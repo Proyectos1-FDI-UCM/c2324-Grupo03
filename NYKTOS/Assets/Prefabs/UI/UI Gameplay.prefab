@@ -5893,7 +5893,7 @@ GameObject:
   - component: {fileID: 8872000948005111731}
   - component: {fileID: 3395090818351271059}
   m_Layer: 5
-  m_Name: UI Escena principal
+  m_Name: UI Gameplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5911,6 +5911,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7638950316929361128}
   - {fileID: 1572633144235290909}
   - {fileID: 6951619023181333099}
   - {fileID: 7741254726291932776}
@@ -5918,7 +5919,6 @@ RectTransform:
   - {fileID: 2857960046244730211}
   - {fileID: 66124937537927128}
   - {fileID: 7755282911434737621}
-  - {fileID: 7638950316929361128}
   - {fileID: 7668766158200023661}
   - {fileID: 4924334235660689686}
   m_Father: {fileID: 0}

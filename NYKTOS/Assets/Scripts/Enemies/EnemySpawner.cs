@@ -77,12 +77,14 @@ public class EnemySpawner : MonoBehaviour
 
                     if(_remainingEnemyPool[enemySpawnPos].number > 0)
                     {
-                        Instantiate
+                        GameObject thisEnemy = Instantiate
                         (
                             _remainingEnemyPool[enemySpawnPos].enemyPrefab, 
                             transform.GetChild(random.Next(0,  transform.childCount)).position,
                             Quaternion.identity
                         );
+
+                        thisEnemy.GetComponent<EnemyVariant>().SetVariant(_remainingEnemyPool[enemySpawnPos].tipo);
 
                         if (_remainingEnemyPool[enemySpawnPos].number <= 0)
                         {

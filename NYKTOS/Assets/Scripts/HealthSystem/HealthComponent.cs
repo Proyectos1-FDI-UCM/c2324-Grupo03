@@ -10,8 +10,6 @@ public class HealthComponent : MonoBehaviour
     private HealthBar healthBar;
     private GameObject HealthBarGameObject;
     [SerializeField]
-    private UIManager _UIManager;
-    [SerializeField]
     private IDeath _deathComponent;
 
     private PlayerController _playerController;
@@ -75,7 +73,7 @@ public class HealthComponent : MonoBehaviour
             Invoke(nameof(DisableInm), _inmTime);
             if(_playerController != null)
             {
-                _UIManager.Hearts(_currentHealth);
+                UIManager.Instance.Hearts(_currentHealth);
             }
             
         }
@@ -99,7 +97,7 @@ public class HealthComponent : MonoBehaviour
         }
         if( _playerController != null)
         {
-            _UIManager.Hearts(_currentHealth);
+            UIManager.Instance.Hearts(_currentHealth);
         }
         
     }
@@ -107,7 +105,7 @@ public class HealthComponent : MonoBehaviour
     public void MaxHealth()
     {
         _currentHealth = _maxHealth;
-        _UIManager.Hearts(_currentHealth);
+        UIManager.Instance.Hearts(_currentHealth);
         if (HealthBarGameObject != null)
         {
             HealthBarGameObject.SetActive(false);

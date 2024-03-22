@@ -7,6 +7,12 @@ using System;
 
 public class UIManager : MonoBehaviour
 {
+    private static UIManager _instance;
+    public static UIManager Instance
+    {
+        get{return _instance;}
+    }
+
     #region references
 
     [SerializeField]
@@ -43,21 +49,6 @@ public class UIManager : MonoBehaviour
     private PlayerInventory _playerInventory;
 
     #endregion
-
-    
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _weaponPalo.enabled = true;
-        //_weaponCetro.enabled = false;
-
-        UpdateFromInventory();
-
-        _playerInventory.InventoryUpdate.AddListener(UpdateFromInventory);
-    }
 
     private void UpdateFromInventory()
     {
@@ -117,6 +108,22 @@ public class UIManager : MonoBehaviour
     public void DeathScreenOff()
     {
         _deathScreen.SetActive(false);
+    }
+
+    void Awake()
+    {
+        if (_instance != null) Destroy(gameObject);
+        else _instance = this;
+    }
+
+    void Start()
+    {
+        _weaponPalo.enabled = true;
+        //_weaponCetro.enabled = false;
+
+        UpdateFromInventory();
+
+        _playerInventory.InventoryUpdate.AddListener(UpdateFromInventory);
     }
 
 }
