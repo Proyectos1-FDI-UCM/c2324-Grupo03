@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: f97ae599272b6184cb81447c2f90b2cd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _knockbackArea: {fileID: 7885417974881959465, guid: 108c1387e45001742be649b31c540118, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

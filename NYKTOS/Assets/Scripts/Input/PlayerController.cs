@@ -165,6 +165,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region combat
     public void PrimaryAttack(InputAction.CallbackContext context)
     {
+        print("primary");
         if(PlayerStateMachine.playerState == PlayerState.Idle && !_PrimaryAttackCooldown.IsCooling()&& PlayerStateMachine.playerState != PlayerState.Dead)
         {
             _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
@@ -182,7 +183,18 @@ public class PlayerController : MonoBehaviour, IKnockback
 
     public void SecondaryAttack(InputAction.CallbackContext context)
     {
-        // Realizar el ataque especial
+        print("secondary");
+        if (PlayerStateMachine.playerState == PlayerState.Idle && !_SecondaryAttackCooldown.IsCooling() && PlayerStateMachine.playerState != PlayerState.Dead)
+        {
+            _weaponHandler.CallSecondaryUse(0, _lookDirection.lookDirection);
+            _SecondaryAttackCooldown.StartCooldown();
+
+            _playerMovement.AddSpeed(-_playerMovement.movementSpeed / 1.5f, _SecondaryAttackCooldown.cooldownTime);
+            CallMove(_privateMovement);
+
+            _playerState.SetState(PlayerState.Attacking);
+            _playerState.Invoke(nameof(_playerState.SetIdleState), _SecondaryAttackCooldown.cooldownTime);
+        }
     }
 
     #endregion
