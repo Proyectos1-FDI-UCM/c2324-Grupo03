@@ -422,8 +422,7 @@ MonoBehaviour:
   _PrimaryAttackCooldown:
     _cooldownTime: 0.3
   _SecondaryAttackCooldown:
-    _cooldownTime: 5
-  _interactionRange: 2
+    _cooldownTime: 0.3
 --- !u!114 &5023334086552178363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,7 +594,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityHitbox: {fileID: 8410641752796733455}
-  blinkDirection: {x: 0, y: 0}
   blinkRange: 2
   whatLayerToDetect:
   - serializedVersion: 2
@@ -774,7 +772,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fcb5a4b321af3b439cd5a8709d4a68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UIManager: {fileID: 0}
   _maxHealth: 10
   _currentHealth: 0
   _inmTime: 0.5
@@ -790,7 +787,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1faa86bce976241a81d77f27cf7d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UImanager: {fileID: 0}
   _deathskin: {fileID: 6758919315837710540}
   _aliveskin: {fileID: 6222676936956634352}
 --- !u!114 &4920501686148597465
