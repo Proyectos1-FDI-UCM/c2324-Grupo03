@@ -18,7 +18,6 @@ public class TransitionController : MonoBehaviour
 
 
     private Image image;
-    private Transform _childTransform;
     private Animator animator;
 
     [SerializeField]
@@ -130,22 +129,17 @@ public class TransitionController : MonoBehaviour
     }
     //Fin pruebas
 
-    private void Awake()
-    {
-        image = _childTransform.GetComponentInChildren<Image>();
-    }
-
     private void Start()
     {
-        Invoke("ActiveOpacity", TransitionDuration);
+        Invoke(nameof(ActiveOpacity), TransitionDuration);
         animator = GetComponentInChildren<Animator>();
-        _childTransform = GetComponentInChildren<Transform>();
+        image = GetComponentInChildren<Image>();
     }
 
     private void ActiveOpacity()
     {
         Opacity100 = true;
-        _childTransform.gameObject.SetActive(true);
+        image.enabled = true;
         InstantTransitionToNormal();
         //print("Opacidad activada");
     }
