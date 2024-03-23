@@ -6,6 +6,8 @@ using Quaternion = UnityEngine.Quaternion;
 
 public class EnemySpawner : MonoBehaviour
 {
+    private GameplayManager _gameplayManager;
+
     private bool _spawnEnabled = false;
 
     [SerializeField]
@@ -17,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
     private double _currentSpawnTime = 0;
 
     [SerializeField]
-    private SpawnerType _spawnerType;
+    private SpawnerRegion _spawnerRegion;
 
     [SerializeField]
     private Enemy[] _enemyPool;
@@ -55,13 +57,15 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameplayManager.Instance.StopSpawners.AddListener(StopSpawner);
+        _gameplayManager = GameplayManager.Instance;
+        _gameplayManager.RegisterSpawner(_spawnerRegion, this);
+        _gameplayManager.StopSpawners.AddListener(StopSpawner);
     }
 
     void Update()
     {
         // Este código que he hecho es una puta guarrada, hay que refactorizar un huevo
-        if(GameplayManager.Instance.ConcurrentEnemies < GameplayManager.Instance.MaxEnemies)
+        if(GameplayManager.Instance.ConcurrentEnemies < _gameplayManager.MaxEnemies)
         {
             if (_spawnEnabled) 
             {
@@ -84,7 +88,7 @@ public class EnemySpawner : MonoBehaviour
                             Quaternion.identity
                         );
 
-                        thisEnemy.GetComponent<EnemyVariant>().SetVariant(_remainingEnemyPool[enemySpawnPos].tipo);
+                        thisEnemy.GetComponent<EnemyVariant>().SetVariant(_remainingEnemyPool[enemySpawnPos].variantType);
 
                         if (_remainingEnemyPool[enemySpawnPos].number <= 0)
                         {
@@ -92,7 +96,7 @@ public class EnemySpawner : MonoBehaviour
                         }
                     }
 
-                    GameplayManager.Instance.AddConcurrentEnemy();
+                    _gameplayManager.AddConcurrentEnemy();
 
                     _currentSpawnTime = random.NextDouble() * (_spawnTimeMax - _spawnTimeMin + _spawnTimeMin);
                     _spawnEnabled = false;

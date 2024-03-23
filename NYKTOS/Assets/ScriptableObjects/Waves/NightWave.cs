@@ -22,7 +22,7 @@ public struct Wave
 
 [System.Serializable]
 public struct SubWave {
-    public SpawnerType type;
+    public SpawnerRegion spawnerRegion;
     public Enemy[] pool;
 }
 
@@ -31,12 +31,12 @@ public struct Enemy {
     public GameObject enemyPrefab; // Prefab of the enemy
     public int number; // numero de cuantos de ese bicho en la iteración de la wave
 
-    public AttackType tipo;
+    public AttackType variantType;
 }
 
 
 [System.Serializable]
-public enum SpawnerType
+public enum SpawnerRegion
 {
     Amarillo,
     CianIntermedio,

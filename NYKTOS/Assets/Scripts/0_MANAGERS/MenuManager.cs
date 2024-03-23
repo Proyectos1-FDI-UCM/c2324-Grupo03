@@ -89,7 +89,6 @@ public class MenuManager : MonoBehaviour
     private GameObject[] _menuList = new GameObject[6];
     #endregion
 
-
     #region methods
 
     public void ChangeStateFromMenu()
@@ -153,11 +152,6 @@ public class MenuManager : MonoBehaviour
         CloseAllMenus(); 
     }
     #endregion
-    #endregion
-
-
-    #region oldManager
-
     #endregion
 
     void Awake()
