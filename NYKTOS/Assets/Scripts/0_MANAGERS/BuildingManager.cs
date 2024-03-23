@@ -16,7 +16,6 @@ public class BuildingManager : MonoBehaviour
     private PlayerInventory _inventory;
     #endregion
 
-
     #region properties
     private GameObject _currentPlaceholder;
 
