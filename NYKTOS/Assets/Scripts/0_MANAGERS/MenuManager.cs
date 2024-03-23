@@ -89,6 +89,45 @@ public class MenuManager : MonoBehaviour
     private GameObject[] _menuList = new GameObject[6];
     #endregion
 
+    #region menuActions
+
+    public void Resume()
+    {
+        GameManager.Instance.Resume();
+    }
+
+    public void ExitGame()
+    {
+        GameManager.Instance.Quit();
+    }
+
+    public void StartNight()
+    {
+        GameManager.Instance.UpdateGameState(GameState.Night);
+    }
+
+    public void BuildAltar()
+    {
+        Debug.Log("TODO: Boton de reconstruir altar");
+    }
+
+    public void BuildBeacon()
+    {
+        BuildingManager.Instance.BuildBeacon();
+    }
+
+    public void BuildWall()
+    {
+        BuildingManager.Instance.BuildWall();
+    }
+
+    public void BuildTurret()
+    {
+        BuildingManager.Instance.BuildTurret();
+    }
+
+    #endregion
+
     #region methods
 
     public void ChangeStateFromMenu()
