@@ -11,10 +11,7 @@ public class GameplayManager : MonoBehaviour
     private SaveData _saveData;
 
     [SerializeField]
-    private SpawnerWithType[] _spawnerEditorList;
-
-    [SerializeField]
-    private Dictionary<SpawnerType, EnemySpawner> _spawnerList = new Dictionary<SpawnerType, EnemySpawner>();
+    private Dictionary<SpawnerRegion, EnemySpawner> _spawnerList = new Dictionary<SpawnerRegion, EnemySpawner>();
 
     [SerializeField]
     private NightWave[] _nightList;
@@ -24,21 +21,6 @@ public class GameplayManager : MonoBehaviour
     #region parameters
 
     private int _registeredAltars = 0;
-
-    public void RegisterAltar()
-    {
-        _registeredAltars++;
-    }
-
-    public void UnregisterAltar()
-    {
-        _registeredAltars--;
-
-        if(_registeredAltars <= 0)
-        {
-            GameManager.Instance.UpdateGameState(GameState.Win);
-        }
-    }
 
     [SerializeField]
     private int _nightLength = 180;
@@ -108,14 +90,38 @@ public class GameplayManager : MonoBehaviour
     }
     #endregion
 
+    #region events
+
+    private UnityEvent _stopSpawners = new UnityEvent();
+    public UnityEvent StopSpawners => _stopSpawners; 
+
+    #endregion
+
     static private GameplayManager _instance;
     public static GameplayManager Instance
     {
         get { return _instance; }
     }
 
-    private UnityEvent _stopSpawners = new UnityEvent();
-    public UnityEvent StopSpawners => _stopSpawners; 
+    public void RegisterSpawner(SpawnerRegion region, EnemySpawner spawner)
+    {
+        _spawnerList.Add(region, spawner);
+    }
+
+    public void RegisterAltar()
+    {
+        _registeredAltars++;
+    }
+
+    public void UnregisterAltar()
+    {
+        _registeredAltars--;
+
+        if(_registeredAltars <= 0)
+        {
+            GameManager.Instance.UpdateGameState(GameState.Win);
+        }
+    }    
 
     public void StartNight()
     {
@@ -161,7 +167,7 @@ public class GameplayManager : MonoBehaviour
 
         foreach(SubWave subWave in currentWave.subWaves)
         {
-            if (_spawnerList.TryGetValue(subWave.type, out EnemySpawner spawner))
+            if (_spawnerList.TryGetValue(subWave.spawnerRegion, out EnemySpawner spawner))
             {
                 spawner.SetupSpawner(subWave.pool);
             }
@@ -207,17 +213,5 @@ public class GameplayManager : MonoBehaviour
     void Start()
     {
         GameManager.Instance.GameStateChanged.AddListener(GameStateListener);
-
-        foreach(SpawnerWithType data in _spawnerEditorList)
-        {
-            _spawnerList.Add(data.type, data.spawner);
-        }
     }
-}
-
-[System.Serializable]
-public struct SpawnerWithType
-{
-    public SpawnerType type;
-    public EnemySpawner spawner;
 }

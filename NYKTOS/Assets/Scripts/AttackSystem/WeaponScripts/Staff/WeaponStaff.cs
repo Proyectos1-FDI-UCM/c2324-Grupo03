@@ -21,7 +21,7 @@ public class WeaponStaff : Weapon
     public override void PrimaryUse(Vector2 direction)
     {
         GameObject current =
-        Instantiate(_bullet, _myTransform.position, Quaternion.identity);
+        Instantiate(_bullet, _myTransform.position + (Vector3)direction.normalized * 0.5f, Quaternion.identity);
 
         current.TryGetComponent<BulletComponent>(out BulletComponent bullet);
 
