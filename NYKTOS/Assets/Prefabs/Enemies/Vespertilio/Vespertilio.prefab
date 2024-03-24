@@ -235,7 +235,6 @@ GameObject:
   - component: {fileID: 2957165754310691341}
   - component: {fileID: 8164607075338182922}
   - component: {fileID: 4853579953100035845}
-  - component: {fileID: 4839788181568266410}
   - component: {fileID: 8478231694944484909}
   - component: {fileID: 3629676020130989107}
   - component: {fileID: 8151834710267155371}
@@ -291,7 +290,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fcb5a4b321af3b439cd5a8709d4a68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UIManager: {fileID: 2095457240719268927, guid: 4af39589f43c7f74c86a060f109ad1d4, type: 3}
   _maxHealth: 8
   _currentHealth: 8
   _inmTime: 0.1
@@ -307,7 +305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ce116b2e1fb5e43a0d0962685cc168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _araneaHija: {fileID: 2074932061589432301, guid: b708458429031474093b3004c3de77f9, type: 3}
 --- !u!50 &7059409480465428519
 Rigidbody2D:
   serializedVersion: 4
@@ -436,23 +433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a04ed8bab2018941b2c9edadf18022a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4839788181568266410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2995607884255851843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c777e1596f38a874aab2f317d3377f26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1
-  _attackType: 0
-  _waitUntilAttacking: 0.5
-  _hitboxAppearingTime: 0.3
-  _vespertilioAttackHitbox: {fileID: 6919465541366467843, guid: 8ae27c9322cbbda43990443b041fd24c, type: 3}
 --- !u!114 &8478231694944484909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,8 +445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df4ef2d7cc69f243bc12dadb9466ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon:
-  - {fileID: 4839788181568266410}
+  weapons:
+  - weapon: {fileID: 11400000, guid: c43ae6a18a1f7e14fbd24b224d3b0ed5, type: 2}
+    attackType: 0
 --- !u!58 &3629676020130989107
 CircleCollider2D:
   m_ObjectHideFlags: 0

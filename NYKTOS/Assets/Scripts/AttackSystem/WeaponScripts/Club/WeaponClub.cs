@@ -8,7 +8,6 @@ public class WeaponClub : Weapon
     #region references
     [SerializeField]
     private GameObject attackHitbox;
-    private Transform _myTransform;
     #endregion
 
     #region parameters
@@ -18,18 +17,18 @@ public class WeaponClub : Weapon
     private float _timeBeforeDestroy = 0.2f;
     #endregion
 
-    public override void PrimaryUse(Vector2 direction)
+    public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType, WeaponHandler weaponHandler)
     {
         GameObject currentHitbox = 
-            Instantiate(attackHitbox, _myTransform.position + (Vector3) direction.normalized* _hitboxDistanceFromPlayer, Quaternion.Euler(0, 0, DirectionAngle(direction)));
-        currentHitbox.transform.parent = _myTransform;
+            Instantiate(attackHitbox, weaponHandler.transform.position + (Vector3) direction.normalized* _hitboxDistanceFromPlayer, Quaternion.Euler(0, 0, DirectionAngle(direction)));
+        currentHitbox.transform.parent = weaponHandler.transform;
 
         ClubHitboxBehaviour behaviour = currentHitbox.GetComponent<ClubHitboxBehaviour>();
         behaviour.SetStats(damage, attackType);
-        StartCoroutine(behaviour.DestroyMe(_timeBeforeDestroy));
+        weaponHandler.StartCoroutine(behaviour.DestroyMe(_timeBeforeDestroy));
     }
 
-    public override void SecondaryUse(Vector2 direction)
+    public override void SecondaryUse(Vector2 direction, int damage, AttackType attackType, WeaponHandler weaponHandler)
     {
 
     }
@@ -38,9 +37,5 @@ public class WeaponClub : Weapon
     private float DirectionAngle(Vector2 direction) //saca el angulo de la direccion dando por sentado que el modulo de la direccion es 1
     {
         return (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
-    }
-    private void Awake()
-    {
-        _myTransform = transform;
     }
 }
