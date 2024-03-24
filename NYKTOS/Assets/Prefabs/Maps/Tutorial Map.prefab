@@ -4865,6 +4865,10 @@ PrefabInstance:
       propertyPath: inversionMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+    - target: {fileID: 9152846765058659833, guid: dd9d2bdcd926bdb40b9ace74b1e47e11, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4939,6 +4943,10 @@ PrefabInstance:
       propertyPath: inversionMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+    - target: {fileID: 9152846765058659833, guid: dd9d2bdcd926bdb40b9ace74b1e47e11, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5077,7 +5085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2186155071209429203, guid: e1f24b024931df84e9c820c068720048, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.607
+      value: -0.541
       objectReference: {fileID: 0}
     - target: {fileID: 2186155071209429203, guid: e1f24b024931df84e9c820c068720048, type: 3}
       propertyPath: m_AnchoredPosition.y
