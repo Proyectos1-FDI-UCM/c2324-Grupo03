@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WeaponStaff : Weapon
 {
+    #region references
+    private Transform _myTransform;
+    #endregion
     #region parameters
     [SerializeField]
     private float _knockbackRadius = 2f;
@@ -15,10 +18,10 @@ public class WeaponStaff : Weapon
     private GameObject _bullet;
     #endregion
 
-    public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType, WeaponHandler weaponHandler)
+    public override void PrimaryUse(Vector2 direction)
     {
         GameObject current =
-        Instantiate(_bullet, weaponHandler.transform.position + (Vector3)direction.normalized * 0.5f, Quaternion.identity);
+        Instantiate(_bullet, _myTransform.position + (Vector3)direction.normalized * 0.5f, Quaternion.identity);
 
         current.TryGetComponent<BulletComponent>(out BulletComponent bullet);
 
@@ -27,12 +30,12 @@ public class WeaponStaff : Weapon
     }
 
     #region secondaryuse
-    public override void SecondaryUse(Vector2 direction, int damage, AttackType attackType, WeaponHandler weaponHandler)
+    public override void SecondaryUse(Vector2 direction)
     {
-        weaponHandler.StartCoroutine(KnockbackArea(weaponHandler.transform));
+        StartCoroutine(KnockbackArea());
     }
 
-    IEnumerator KnockbackArea(Transform _myTransform)
+    IEnumerator KnockbackArea()
     {
         GameObject current =
             Instantiate(_knockbackArea, _myTransform);
@@ -47,4 +50,8 @@ public class WeaponStaff : Weapon
         Destroy(current);
     }
     #endregion
+    private void Awake()
+    {
+        _myTransform = transform;
+    }
 }

@@ -4,32 +4,30 @@ using UnityEngine;
 
 public class WeaponVespertilioAttack : Weapon
 {
+    #region references
+    private Transform _myTransform;
+    #endregion
 
     #region parameters
     [SerializeField] private float _waitUntilAttacking = 0.2f;
     [SerializeField] private float _hitboxAppearingTime = 0.5f;
     #endregion
 
-    bool startedCoroutine = false;
-
+    private bool startedCoroutine = false;
 
     [SerializeField]
     private GameObject _vespertilioAttackHitbox;
-    public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType, WeaponHandler weaponHandler)
+    public override void PrimaryUse(Vector2 direction)
     {
-        if (!startedCoroutine)
-        {
-            
-            weaponHandler.StartCoroutine(VespertilioAttack(direction, damage, attackType, weaponHandler.transform));
-        }
-        
+        if(!startedCoroutine)
+        StartCoroutine(VespertilioAttack(direction));
     }
-    public override void SecondaryUse(Vector2 direction, int damage, AttackType attackType, WeaponHandler weaponHandler)
+    public override void SecondaryUse(Vector2 direction)
     {
 
     }
 
-    private IEnumerator VespertilioAttack(Vector2 direction, int damage, AttackType attackType, Transform _myTransform)
+    private IEnumerator VespertilioAttack(Vector2 direction)
     {
         startedCoroutine = true;
         yield return new WaitForSeconds(_waitUntilAttacking);
@@ -52,5 +50,10 @@ public class WeaponVespertilioAttack : Weapon
     private float DirectionAngle(Vector2 direction) //saca el angulo de la direccion dando por sentado que el modulo de la direccion es 1
     {
         return (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+    }
+
+    public void Awake()
+    {
+        _myTransform = transform;
     }
 }

@@ -357,6 +357,7 @@ GameObject:
   - component: {fileID: 8970073740190161489}
   - component: {fileID: 1150871829297294567}
   - component: {fileID: 3176177197675962967}
+  - component: {fileID: 436317021198750490}
   - component: {fileID: 3016302921365856093}
   - component: {fileID: 6800576876400449408}
   - component: {fileID: 5767895529976162651}
@@ -716,6 +717,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &436317021198750490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3385171631580939238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eeb6f22ae89f1848a6e70f6732ed9f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 3
+  _attackType: 0
+  attackHitbox: {fileID: 3679065653297175454, guid: c6593a0b651be4f46bd3bf884546eaec, type: 3}
+  _hitboxDistanceFromPlayer: 1
+  _timeBeforeDestroy: 0.2
 --- !u!114 &3016302921365856093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,9 +746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df4ef2d7cc69f243bc12dadb9466ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons:
-  - weapon: {fileID: 11400000, guid: b3929c8ff95159c46b8e63e51f093005, type: 2}
-    attackType: 0
+  weapon:
+  - {fileID: 436317021198750490}
 --- !u!114 &6800576876400449408
 MonoBehaviour:
   m_ObjectHideFlags: 0

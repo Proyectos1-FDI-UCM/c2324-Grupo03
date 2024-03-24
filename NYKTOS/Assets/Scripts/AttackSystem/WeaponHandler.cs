@@ -10,36 +10,27 @@ public enum AttackType
 
 public class WeaponHandler : MonoBehaviour
 {
-    [System.Serializable]
-    struct weaponStruct
-    {
-        [SerializeField]
-        public WeaponScriptableObject weapon;
-
-        [SerializeField]
-        public AttackType attackType;
-    }
-
-    [SerializeField] private weaponStruct[] weapons = new weaponStruct[1];
-   
+   [SerializeField]
+    private Weapon[] weapon = new Weapon[1]; //cantidad de armas que puede llevar a la vez
+    
     
     public void CallPrimaryUse(int num, Vector2 direction)
     {
-        weapons[num].weapon.PrimaryUse(direction, weapons[num].attackType, this);
+        weapon[num].PrimaryUse(direction);
     }
 
     public void CallSecondaryUse(int num, Vector2 direction)
     {
-        weapons[num].weapon.SecondaryUse(direction, weapons[num].attackType, this);
+        weapon[num].SecondaryUse(direction);
     }
 
-    public void SetWeapon(int num, WeaponScriptableObject setWeapon)
+    public void SetWeapon(int num, Weapon setWeapon)
     {
-        weapons[num].weapon = setWeapon;
+        weapon[num] = setWeapon;
     }
 
     public void SetDamageType(int num, AttackType attackType)
     {
-        weapons[num].attackType = attackType;
+        weapon[num].SetDamageType(attackType);
     }
 }
