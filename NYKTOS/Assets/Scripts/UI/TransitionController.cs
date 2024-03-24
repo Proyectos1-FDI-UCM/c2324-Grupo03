@@ -19,6 +19,7 @@ public class TransitionController : MonoBehaviour
 
     private Image image;
     private Animator animator;
+    //private RectTransform rectTransform;
 
     [SerializeField]
     private float TransitionDuration = 1.5f;
@@ -131,9 +132,23 @@ public class TransitionController : MonoBehaviour
 
     private void Start()
     {
-        Invoke(nameof(ActiveOpacity), TransitionDuration);
-        animator = GetComponentInChildren<Animator>();
-        image = GetComponentInChildren<Image>();
+        //ActiveOpacity();
+
+        //Nota para Marco, si no le hago un Invoke me salen nullreferences XD, soy consciente de que lo de arriba es lo mejor
+        Invoke(nameof(ActiveOpacity), 0f);
+
+        //rectTransform = GetComponentInChildren<RectTransform>();
+        //image = rectTransform.GetComponent<Image>();
+
+        // Itera a través de todos los hijos del objeto actual
+        foreach (Transform child in transform)
+        {
+            // Activa cada hijo
+            child.gameObject.SetActive(true);
+            image = child.GetComponent<Image>();
+            animator = GetComponentInChildren<Animator>();
+        }
+        
     }
 
     private void ActiveOpacity()
@@ -141,6 +156,9 @@ public class TransitionController : MonoBehaviour
         Opacity100 = true;
         image.enabled = true;
         InstantTransitionToNormal();
+        Color color = new Color();
+        color.a = 1;
+        image.color = color;
         //print("Opacidad activada");
     }
 
