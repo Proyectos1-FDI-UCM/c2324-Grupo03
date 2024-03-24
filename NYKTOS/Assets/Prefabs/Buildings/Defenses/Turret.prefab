@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437619f05cca17c478e9d8a9eaf45f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RotationVelocity: 5
 --- !u!58 &2038564241460201507
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -147,6 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _proyectil: {fileID: 6319034383733598113, guid: 6e7602240de51db4db05903b118ec7dd, type: 3}
+  DurationOfBullet: 4
+  RechargeTime: 1
 --- !u!1 &3502096605917638403
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fcb5a4b321af3b439cd5a8709d4a68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UIManager: {fileID: 0}
   _maxHealth: 15
   _currentHealth: 0
   _inmTime: 1
