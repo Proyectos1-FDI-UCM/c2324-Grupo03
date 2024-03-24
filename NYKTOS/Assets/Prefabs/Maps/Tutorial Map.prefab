@@ -4508,7 +4508,7 @@ TilemapCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -5075,6 +5075,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nexus
       objectReference: {fileID: 0}
+    - target: {fileID: 2186155071209429203, guid: e1f24b024931df84e9c820c068720048, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.607
+      objectReference: {fileID: 0}
+    - target: {fileID: 2186155071209429203, guid: e1f24b024931df84e9c820c068720048, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.752
+      objectReference: {fileID: 0}
     - target: {fileID: 5321148773877959482, guid: e1f24b024931df84e9c820c068720048, type: 3}
       propertyPath: m_PointLightInnerRadius
       value: 3.6
@@ -5125,7 +5133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fcb5a4b321af3b439cd5a8709d4a68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UIManager: {fileID: 0}
   _maxHealth: 30
   _currentHealth: 0
   _inmTime: 0
