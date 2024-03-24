@@ -12,6 +12,7 @@ public class VespertilioAttackHitbox : WeaponBehaviour
     {
         Damage(collision);
         Knockback(collision, _myTransform);
+        print(_myTransform);
     }
 
     private void Awake()

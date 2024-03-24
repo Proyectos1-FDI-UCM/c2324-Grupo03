@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponName: Vespertilio Attack
   _damage: 1
-  _weapon: {fileID: 6927212470521461978, guid: c476e2d6cd5f74e49a017671a6733a0d, type: 3}
+  _weapon: {fileID: -5246123120548650464, guid: c476e2d6cd5f74e49a017671a6733a0d, type: 3}
