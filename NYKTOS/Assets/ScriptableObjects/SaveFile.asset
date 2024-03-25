@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dace41ed48c35e40a11d932a78d2e37, type: 3}
   m_Name: SaveFile
   m_EditorClassIdentifier: 
-  _night: 0
+  _night: 1

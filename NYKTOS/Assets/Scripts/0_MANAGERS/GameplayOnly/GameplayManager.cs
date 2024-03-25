@@ -16,6 +16,9 @@ public class GameplayManager : MonoBehaviour
     [SerializeField]
     private NightWave[] _nightList;
 
+    [SerializeField]
+    private NightTransition _nightLoader;
+
     #endregion
 
     #region parameters
@@ -156,6 +159,7 @@ public class GameplayManager : MonoBehaviour
     public void EndNight()
     {
         _saveData.AdvanceNight();
+        _nightLoader.LoadTransition();
         GameManager.Instance.UpdateGameState(GameState.Day);
     }
 
@@ -189,7 +193,9 @@ public class GameplayManager : MonoBehaviour
     {
         if(state == GameState.Night)
         {
-            StartNight();
+            _nightLoader.LoadTransition();
+            Invoke(nameof(StartNight), 3f);
+            //StartNight();
         }
         else
         {
