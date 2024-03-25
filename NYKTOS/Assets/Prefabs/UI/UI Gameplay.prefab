@@ -5997,7 +5997,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7638950316929361128}
-  - {fileID: 1572633144235290909}
   - {fileID: 6951619023181333099}
   - {fileID: 7741254726291932776}
   - {fileID: 3634959450987879243}
@@ -6006,6 +6005,7 @@ RectTransform:
   - {fileID: 7755282911434737621}
   - {fileID: 7668766158200023661}
   - {fileID: 4924334235660689686}
+  - {fileID: 1572633144235290909}
   - {fileID: 1083471818301675621}
   - {fileID: 8447791208514909223}
   m_Father: {fileID: 0}

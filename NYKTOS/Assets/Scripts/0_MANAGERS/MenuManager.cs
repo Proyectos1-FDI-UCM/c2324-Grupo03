@@ -6,18 +6,6 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    /// <summary>
-    /// Listado de los men�s del juego. ASIGNAR EN ESTE ORDEN (sujeto a cambios)
-    /// 
-    /// 0 - PAUSA
-    /// 1 - Nexo
-    /// 2 - Defensas (placeholder)
-    /// 3 - Reparaci�n altares (altar destruido)
-    /// 4 - Evolucionar arma (altar reparado)
-    /// 5 - Efecto especial arma (altar reparado)
-    /// </summary>
-
-
     private static MenuManager _instance;
     public static MenuManager Instance
     {
@@ -183,7 +171,7 @@ public class MenuManager : MonoBehaviour
         foreach (GameObject menu in _menuList) menu.SetActive(false);
 
         SwitchToPlayerControls();
-        GameManager.Instance.Resume();
+        Resume();
     }
 
     public void CloseMenu(InputAction.CallbackContext context)
