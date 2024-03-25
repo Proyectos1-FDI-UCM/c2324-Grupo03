@@ -45,10 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _saveData: {fileID: 11400000, guid: a5b71e18e6c9f454f90c0df5b843680a, type: 2}
-  _spawnerEditorList:
-  - type: 0
-    spawner: {fileID: 0}
   _nightList:
   - {fileID: 11400000, guid: b4ada286ed58a514e94b2f24d17f5eb3, type: 2}
-  _nightLength: 180
+  _nightLoader: {fileID: 0}
+  _nightLength: 10
   _maxEnemies: 5

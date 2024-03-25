@@ -189,6 +189,8 @@ public class GameplayManager : MonoBehaviour
     {
         if(state == GameState.Night)
         {
+            //_nightLoader.LoadTransition();
+            //Invoke(nameof(StartNight), 3f);
             StartNight();
         }
         else
