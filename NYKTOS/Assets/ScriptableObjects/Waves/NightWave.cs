@@ -39,8 +39,6 @@ public struct Enemy {
 public enum SpawnerRegion
 {
     Amarillo,
-    CianIntermedio,
-    CianExtremo,
-    MagentaIntermedio,
-    MagentaExtremo
+    Cian,
+    Magenta
 }
