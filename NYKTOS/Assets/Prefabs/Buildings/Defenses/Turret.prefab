@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _proyectil: {fileID: 6319034383733598113, guid: 6e7602240de51db4db05903b118ec7dd, type: 3}
   DurationOfBullet: 4
-  RechargeTime: 1
+  RechargeTime: 0.5
 --- !u!1 &3502096605917638403
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +548,7 @@ Transform:
   m_GameObject: {fileID: 8365187515372501195}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.557639, y: -1.8000001, z: 0}
+  m_LocalPosition: {x: -6.582361, y: -1.7751416, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
