@@ -24,7 +24,7 @@ public class EnemyVariant : MonoBehaviour
     {
         if(TryGetComponent<WeaponHandler>(out WeaponHandler weaponHandler))
         {
-            weaponHandler.SetDamageType(0, attack);
+            weaponHandler.SetDamageType(attack);
         }
 
         SpriteLibrary spriteLibrary = GetComponentInChildren<SpriteLibrary>();

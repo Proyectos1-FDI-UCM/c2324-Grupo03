@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponName: Staff
   _damage: 3
-  _weapon: {fileID: 8870969041224502625, guid: a95b71591db51f049b293518b7d123e4, type: 3}
+  _weaponPrefab: {fileID: 433205645733556826, guid: a95b71591db51f049b293518b7d123e4, type: 3}

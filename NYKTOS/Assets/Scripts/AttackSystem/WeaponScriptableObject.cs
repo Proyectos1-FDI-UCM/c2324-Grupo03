@@ -16,20 +16,8 @@ public class WeaponScriptableObject : ScriptableObject
     private int _damage = 0;
 
     [SerializeField]
-    private Weapon _weapon;
+    private GameObject _weaponPrefab;
 
-    public void PrimaryUse(Vector2 direction, AttackType _attackType, WeaponHandler weaponHandler)
-    {
-        if (_weapon != null)
-        {
-            _weapon.PrimaryUse(direction, _damage, _attackType, weaponHandler);
-        }
-    }
-    public void SecondaryUse(Vector2 direction, AttackType _attackType, WeaponHandler weaponHandler)
-    {
-        if (_weapon != null)
-        {
-            _weapon.SecondaryUse(direction, _damage, _attackType, weaponHandler);
-        }
-    }
+    public GameObject weaponPrefab {  get { return _weaponPrefab; } }
+
 }

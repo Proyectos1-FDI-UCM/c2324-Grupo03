@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class VespertilioAttackHitbox : WeaponBehaviour
 {
     #region references
+    [NonSerialized]
     private Transform _myTransform;
     #endregion
 
@@ -12,7 +14,7 @@ public class VespertilioAttackHitbox : WeaponBehaviour
     {
         Damage(collision);
         Knockback(collision, _myTransform);
-        print(_myTransform);
+        print (_myTransform.position);
     }
 
     private void Awake()

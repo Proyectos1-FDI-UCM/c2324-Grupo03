@@ -1,15 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponVespertilioAttack : Weapon
 {
-
     #region parameters
     [SerializeField] private float _waitUntilAttacking = 0.2f;
     [SerializeField] private float _hitboxAppearingTime = 0.5f;
     #endregion
 
+    [NonSerialized]
     bool startedCoroutine = false;
 
 
@@ -19,7 +20,6 @@ public class WeaponVespertilioAttack : Weapon
     {
         if (!startedCoroutine)
         {
-            
             weaponHandler.StartCoroutine(VespertilioAttack(direction, damage, attackType, weaponHandler.transform));
         }
         
@@ -52,5 +52,10 @@ public class WeaponVespertilioAttack : Weapon
     private float DirectionAngle(Vector2 direction) //saca el angulo de la direccion dando por sentado que el modulo de la direccion es 1
     {
         return (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+    }
+
+    private void Awake()
+    {
+        startedCoroutine = false;
     }
 }
