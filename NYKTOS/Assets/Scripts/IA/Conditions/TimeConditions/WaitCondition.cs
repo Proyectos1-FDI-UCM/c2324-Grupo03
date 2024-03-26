@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class WaitCondition : MonoBehaviour, ICondition
@@ -10,12 +11,10 @@ public class WaitCondition : MonoBehaviour, ICondition
     private float currentTime = 0f;
 
     private GameObject previousGameObject;
-
-    private bool isSame = false;
     public bool Validate(GameObject _object)
     {
 
-        if (previousGameObject != _object)
+        if (PrefabUtility.GetCorrespondingObjectFromSource(previousGameObject) != PrefabUtility.GetCorrespondingObjectFromSource(_object))
         {
             currentTime = 0;
             previousGameObject = _object;
