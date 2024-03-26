@@ -41,13 +41,13 @@ public class AnimationEventTest : MonoBehaviour
     {
         if (GameManager.Instance.State == GameState.Night)
         {
-            _inversionEffect.Invert(false);
-            _globalLight.intensity = 1;
+            _inversionEffect.Invert(true);
+            _globalLight.intensity = 0;
         }
         else
         {
-            _inversionEffect.Invert(true);
-            _globalLight.intensity = 0;
+            _inversionEffect.Invert(false);
+            _globalLight.intensity = 1;
         }
     }
 
