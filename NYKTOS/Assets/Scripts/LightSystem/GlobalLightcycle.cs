@@ -24,10 +24,12 @@ public class GlobalLightcycle : MonoBehaviour
         if(state == GameState.Night)
         {
             Invoke(nameof(InvertToNight), 1f);
+            InvertToNight();
         }
         else if (state == GameState.Day)
         {
             Invoke(nameof(InvertToDay), 1f);
+            InvertToDay();
         }
     }
 

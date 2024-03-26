@@ -8,32 +8,28 @@ public class WaitCondition : MonoBehaviour, ICondition
 {
     [SerializeField]
     private float _waitTime = 1f;
-    private float currentTime = 0f;
+    bool waited = false;
 
-    private GameObject previousGameObject;
+    bool started = false;
     public bool Validate(GameObject _object)
     {
+        if (!started) 
+        StartCoroutine(Wait(_waitTime));
 
-        if (PrefabUtility.GetCorrespondingObjectFromSource(previousGameObject) != PrefabUtility.GetCorrespondingObjectFromSource(_object))
+        print(waited);
+        if (waited)
         {
-            currentTime = 0;
-            previousGameObject = _object;
-        }
-
-        if (currentTime < _waitTime)
-        {
-            currentTime += Time.deltaTime;
-            return false;
-        }
-        else
-        {
+            waited = false;
+            started = false;
             return true;
         }
+        else return false;
     }
 
-    private void Awake()
+    private IEnumerator Wait(float _waitTime)
     {
-        previousGameObject = GetComponent<GameObject>();
+        started = true;
+        yield return new WaitForSeconds(_waitTime);
+        waited = true;
     }
-
 }
