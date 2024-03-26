@@ -5,13 +5,13 @@ using UnityEngine;
 public class ClubHitboxBehaviour : WeaponBehaviour
 {
     #region references
-    private Transform _myTransform;
+    private Transform parentTransform;
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Damage(collision);
-        Knockback(collision, _myTransform);
+        Knockback(collision, parentTransform);
     }
 
     public IEnumerator DestroyMe(float time)
@@ -19,9 +19,8 @@ public class ClubHitboxBehaviour : WeaponBehaviour
         yield return new WaitForSeconds(time);
         Destroy(gameObject);
     }
-    private void Awake()
+    public void SetTransform(Transform t)
     {
-        _myTransform = transform;
-        
+        parentTransform = t;
     }
 }

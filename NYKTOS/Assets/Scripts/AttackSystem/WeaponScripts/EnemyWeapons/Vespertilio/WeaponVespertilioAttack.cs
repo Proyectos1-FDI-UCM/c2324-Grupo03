@@ -16,31 +16,32 @@ public class WeaponVespertilioAttack : Weapon
 
     [SerializeField]
     private GameObject _vespertilioAttackHitbox;
-    public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType, WeaponHandler weaponHandler)
+    public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType)
     {
         if (!startedCoroutine)
         {
-            weaponHandler.StartCoroutine(VespertilioAttack(direction, damage, attackType, weaponHandler.transform));
+            StartCoroutine(VespertilioAttack(direction, damage, attackType));
         }
         
     }
-    public override void SecondaryUse(Vector2 direction, int damage, AttackType attackType, WeaponHandler weaponHandler)
+    public override void SecondaryUse(Vector2 direction, int damage, AttackType attackType)
     {
 
     }
 
-    private IEnumerator VespertilioAttack(Vector2 direction, int damage, AttackType attackType, Transform _myTransform)
+    private IEnumerator VespertilioAttack(Vector2 direction, int damage, AttackType attackType)
     {
         startedCoroutine = true;
         yield return new WaitForSeconds(_waitUntilAttacking);
 
         GameObject currentHitbox =
             Instantiate(_vespertilioAttackHitbox, 
-            _myTransform.position + new Vector3(direction.normalized.x, direction.normalized.y, 0), 
+            transform.position + new Vector3(direction.normalized.x, direction.normalized.y, 0), 
             Quaternion.Euler(0, 0, DirectionAngle(direction)));
 
-        currentHitbox.transform.parent = _myTransform;
+        currentHitbox.transform.parent = transform;
         currentHitbox.GetComponent<VespertilioAttackHitbox>().SetStats(damage, attackType);
+        currentHitbox.GetComponent<VespertilioAttackHitbox>().SetTransform(transform);
 
         yield return new WaitForSeconds(_hitboxAppearingTime);
 
@@ -52,10 +53,5 @@ public class WeaponVespertilioAttack : Weapon
     private float DirectionAngle(Vector2 direction) //saca el angulo de la direccion dando por sentado que el modulo de la direccion es 1
     {
         return (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
-    }
-
-    private void Awake()
-    {
-        startedCoroutine = false;
     }
 }

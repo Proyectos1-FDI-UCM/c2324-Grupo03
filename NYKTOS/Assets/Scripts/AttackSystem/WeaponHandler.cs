@@ -28,13 +28,13 @@ public class WeaponHandler : MonoBehaviour
     public void CallPrimaryUse(Vector2 direction)
     {
         CheckChildren();
-        instantiatedPrefab.GetComponent<Weapon>().PrimaryUse(direction, weapons.scriptableWeapon.damage, weapons.attackType, this);
+        instantiatedPrefab.GetComponent<Weapon>().PrimaryUse(direction, weapons.scriptableWeapon.damage, weapons.attackType);
     }
 
     public void CallSecondaryUse(Vector2 direction)
     {
         CheckChildren();
-        instantiatedPrefab.GetComponent<Weapon>().SecondaryUse(direction, weapons.scriptableWeapon.damage, weapons.attackType, this);
+        instantiatedPrefab.GetComponent<Weapon>().SecondaryUse(direction, weapons.scriptableWeapon.damage, weapons.attackType);
     }
 
     private void CheckChildren()

@@ -7,18 +7,17 @@ public class VespertilioAttackHitbox : WeaponBehaviour
 {
     #region references
     [NonSerialized]
-    private Transform _myTransform;
+    private Transform parentTransform;
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Damage(collision);
-        Knockback(collision, _myTransform);
-        print (_myTransform.position);
+        Knockback(collision, parentTransform);
     }
 
-    private void Awake()
+    public void SetTransform(Transform t)
     {
-        _myTransform = transform;
+        parentTransform = t;
     }
 }
