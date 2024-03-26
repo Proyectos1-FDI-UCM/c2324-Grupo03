@@ -5437,6 +5437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6125069478168396986}
   - component: {fileID: 4758201694019181823}
+  - component: {fileID: 3467364250280686122}
   m_Layer: 0
   m_Name: Crossfade
   m_TagString: Untagged
@@ -5472,7 +5473,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 332a6dba79721cb42a0cfe2cd59aac43, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -5481,6 +5482,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3467364250280686122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6958111899515757398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbbfaacf2978f2e4eb9fb57257ee2cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inversionEffect: {fileID: 11400000, guid: dd9cd442df7e2b1428b388442011f85c, type: 2}
+  _globalLight: {fileID: 0}
+  _playerController: {fileID: 0}
 --- !u!1 &7146362538956703130
 GameObject:
   m_ObjectHideFlags: 0
@@ -6467,6 +6483,7 @@ RectTransform:
   - {fileID: 7668766158200023661}
   - {fileID: 4924334235660689686}
   - {fileID: 2094542971339212424}
+  - {fileID: 1572633144235290909}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

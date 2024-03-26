@@ -22,6 +22,7 @@ public class NightTransition : MonoBehaviour
         _TransitionToDay.SetActive(true);
     }
 
+    
     private void GameStateListener(GameState state)
     {
         if (state == GameState.Night)
@@ -39,15 +40,15 @@ public class NightTransition : MonoBehaviour
             LoadTransition();
         }
     }
+    
 
-
-    private void LoadTransition()
+    public void LoadTransition()
     {
         //Pone la transici�n
         transition.SetTrigger("Start");
         Invoke(nameof(ResetTransition),transitionTime);
     }
-    private void ResetTransition()
+    public void ResetTransition()
     {
         transition.ResetTrigger("Start");
     }
