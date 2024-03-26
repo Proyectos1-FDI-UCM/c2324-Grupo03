@@ -10,7 +10,7 @@ public class AttackPlayerBehaviour : MonoBehaviour, IBehaviour
     #endregion
     public void PerformBehaviour()
     {
-        _weaponHandler.CallPrimaryUse(0, PlayerController.playerTransform.position - _myTransform.position);
+        _weaponHandler.CallPrimaryUse(PlayerController.playerTransform.position - _myTransform.position);
     }
 
     private void Awake()

@@ -15,10 +15,10 @@ public class WeaponStaff : Weapon
     private GameObject _bullet;
     #endregion
 
-    public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType, WeaponHandler weaponHandler)
+    public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType)
     {
         GameObject current =
-        Instantiate(_bullet, weaponHandler.transform.position + (Vector3)direction.normalized * 0.5f, Quaternion.identity);
+        Instantiate(_bullet, transform.position + (Vector3)direction.normalized * 0.5f, Quaternion.identity);
 
         current.TryGetComponent<BulletComponent>(out BulletComponent bullet);
 
@@ -27,9 +27,9 @@ public class WeaponStaff : Weapon
     }
 
     #region secondaryuse
-    public override void SecondaryUse(Vector2 direction, int damage, AttackType attackType, WeaponHandler weaponHandler)
+    public override void SecondaryUse(Vector2 direction, int damage, AttackType attackType)
     {
-        weaponHandler.StartCoroutine(KnockbackArea(weaponHandler.transform));
+        StartCoroutine(KnockbackArea(transform));
     }
 
     IEnumerator KnockbackArea(Transform _myTransform)

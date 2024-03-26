@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,18 +6,18 @@ using UnityEngine;
 public class VespertilioAttackHitbox : WeaponBehaviour
 {
     #region references
-    private Transform _myTransform;
+    [NonSerialized]
+    private Transform parentTransform;
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Damage(collision);
-        Knockback(collision, _myTransform);
-        print(_myTransform);
+        Knockback(collision, parentTransform);
     }
 
-    private void Awake()
+    public void SetTransform(Transform t)
     {
-        _myTransform = transform;
+        parentTransform = t;
     }
 }

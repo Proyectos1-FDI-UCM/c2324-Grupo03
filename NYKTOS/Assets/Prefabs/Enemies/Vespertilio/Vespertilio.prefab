@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - weapon: {fileID: 11400000, guid: c43ae6a18a1f7e14fbd24b224d3b0ed5, type: 2}
+    scriptableWeapon: {fileID: 11400000, guid: c43ae6a18a1f7e14fbd24b224d3b0ed5, type: 2}
     attackType: 0
 --- !u!58 &3629676020130989107
 CircleCollider2D:

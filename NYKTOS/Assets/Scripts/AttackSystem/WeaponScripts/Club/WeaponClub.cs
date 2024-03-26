@@ -17,18 +17,19 @@ public class WeaponClub : Weapon
     private float _timeBeforeDestroy = 0.2f;
     #endregion
 
-    public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType, WeaponHandler weaponHandler)
+    public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType)
     {
         GameObject currentHitbox = 
-            Instantiate(attackHitbox, weaponHandler.transform.position + (Vector3) direction.normalized* _hitboxDistanceFromPlayer, Quaternion.Euler(0, 0, DirectionAngle(direction)));
-        currentHitbox.transform.parent = weaponHandler.transform;
+            Instantiate(attackHitbox, transform.position + (Vector3) direction.normalized* _hitboxDistanceFromPlayer, Quaternion.Euler(0, 0, DirectionAngle(direction)));
+        currentHitbox.transform.parent = transform;
 
         ClubHitboxBehaviour behaviour = currentHitbox.GetComponent<ClubHitboxBehaviour>();
         behaviour.SetStats(damage, attackType);
-        weaponHandler.StartCoroutine(behaviour.DestroyMe(_timeBeforeDestroy));
+        behaviour.SetTransform(transform);
+        StartCoroutine(behaviour.DestroyMe(_timeBeforeDestroy));
     }
 
-    public override void SecondaryUse(Vector2 direction, int damage, AttackType attackType, WeaponHandler weaponHandler)
+    public override void SecondaryUse(Vector2 direction, int damage, AttackType attackType)
     {
 
     }

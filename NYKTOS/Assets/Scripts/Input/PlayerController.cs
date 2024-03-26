@@ -167,7 +167,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     {
         if(PlayerStateMachine.playerState == PlayerState.Idle && !_PrimaryAttackCooldown.IsCooling()&& PlayerStateMachine.playerState != PlayerState.Dead)
         {
-            _weaponHandler.CallPrimaryUse(0, _lookDirection.lookDirection);
+            _weaponHandler.CallPrimaryUse(_lookDirection.lookDirection);
             _PrimaryAttackCooldown.StartCooldown();
 
 
@@ -183,7 +183,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     {
         if (PlayerStateMachine.playerState == PlayerState.Idle && !_SecondaryAttackCooldown.IsCooling() && PlayerStateMachine.playerState != PlayerState.Dead)
         {
-            _weaponHandler.CallSecondaryUse(0, _lookDirection.lookDirection);
+            _weaponHandler.CallSecondaryUse( _lookDirection.lookDirection);
             _SecondaryAttackCooldown.StartCooldown();
 
             _playerMovement.AddSpeed(-_playerMovement.movementSpeed / 1.5f, _SecondaryAttackCooldown.cooldownTime);

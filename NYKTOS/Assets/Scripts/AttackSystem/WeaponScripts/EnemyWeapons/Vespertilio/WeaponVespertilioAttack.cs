@@ -1,46 +1,47 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponVespertilioAttack : Weapon
 {
-
     #region parameters
     [SerializeField] private float _waitUntilAttacking = 0.2f;
     [SerializeField] private float _hitboxAppearingTime = 0.5f;
     #endregion
 
+    [NonSerialized]
     bool startedCoroutine = false;
 
 
     [SerializeField]
     private GameObject _vespertilioAttackHitbox;
-    public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType, WeaponHandler weaponHandler)
+    public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType)
     {
         if (!startedCoroutine)
         {
-            
-            weaponHandler.StartCoroutine(VespertilioAttack(direction, damage, attackType, weaponHandler.transform));
+            StartCoroutine(VespertilioAttack(direction, damage, attackType));
         }
         
     }
-    public override void SecondaryUse(Vector2 direction, int damage, AttackType attackType, WeaponHandler weaponHandler)
+    public override void SecondaryUse(Vector2 direction, int damage, AttackType attackType)
     {
 
     }
 
-    private IEnumerator VespertilioAttack(Vector2 direction, int damage, AttackType attackType, Transform _myTransform)
+    private IEnumerator VespertilioAttack(Vector2 direction, int damage, AttackType attackType)
     {
         startedCoroutine = true;
         yield return new WaitForSeconds(_waitUntilAttacking);
 
         GameObject currentHitbox =
             Instantiate(_vespertilioAttackHitbox, 
-            _myTransform.position + new Vector3(direction.normalized.x, direction.normalized.y, 0), 
+            transform.position + new Vector3(direction.normalized.x, direction.normalized.y, 0), 
             Quaternion.Euler(0, 0, DirectionAngle(direction)));
 
-        currentHitbox.transform.parent = _myTransform;
+        currentHitbox.transform.parent = transform;
         currentHitbox.GetComponent<VespertilioAttackHitbox>().SetStats(damage, attackType);
+        currentHitbox.GetComponent<VespertilioAttackHitbox>().SetTransform(transform);
 
         yield return new WaitForSeconds(_hitboxAppearingTime);
 
