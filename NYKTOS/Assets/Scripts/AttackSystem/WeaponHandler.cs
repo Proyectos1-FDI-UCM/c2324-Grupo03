@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 
@@ -43,9 +44,10 @@ public class WeaponHandler : MonoBehaviour
         {
             instantiatedPrefab = Instantiate(weapons.scriptableWeapon.weaponPrefab, transform);
         }
-        else if (instantiatedPrefab != weapons.scriptableWeapon.weaponPrefab)
+        else if (PrefabUtility.GetCorrespondingObjectFromSource(instantiatedPrefab) != PrefabUtility.GetCorrespondingObjectFromSource(weapons.scriptableWeapon.weaponPrefab))
         {
-            Destroy(instantiatedPrefab );
+            print("a");
+            Destroy(instantiatedPrefab);
             instantiatedPrefab = Instantiate(weapons.scriptableWeapon.weaponPrefab, transform);
         }
     }
