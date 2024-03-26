@@ -55,7 +55,7 @@ MonoBehaviour:
     enterConditions:
     - _condition: {fileID: 7289374016579705479}
       _negate: 0
-  - state: {fileID: 1796942724870437284}
+  - state: {fileID: 7855586010121628408}
     enterConditions:
     - _condition: {fileID: 3815373058782672952}
       _negate: 0
@@ -564,8 +564,8 @@ MonoBehaviour:
       _negate: 0
   - state: {fileID: 1796942724870437284}
     enterConditions:
-    - _condition: {fileID: 3815373058782672952}
-      _negate: 0
+    - _condition: {fileID: 8868372072783126819}
+      _negate: 1
 --- !u!1 &3258260903279848557
 GameObject:
   m_ObjectHideFlags: 0
