@@ -43,12 +43,14 @@ public class WeaponHandler : MonoBehaviour
         if (instantiatedPrefab == null)
         {
             instantiatedPrefab = Instantiate(weapons.scriptableWeapon.weaponPrefab, transform);
+            instantiatedPrefab.name = weapons.scriptableWeapon.weaponPrefab.name;
         }
-        else if (PrefabUtility.GetCorrespondingObjectFromSource(instantiatedPrefab) != PrefabUtility.GetCorrespondingObjectFromSource(weapons.scriptableWeapon.weaponPrefab))
+        else if (instantiatedPrefab.name != weapons.scriptableWeapon.weaponPrefab.name)
         {
             print("a");
             Destroy(instantiatedPrefab);
             instantiatedPrefab = Instantiate(weapons.scriptableWeapon.weaponPrefab, transform);
+            instantiatedPrefab.name = weapons.scriptableWeapon.weaponPrefab.name;
         }
     }
 
