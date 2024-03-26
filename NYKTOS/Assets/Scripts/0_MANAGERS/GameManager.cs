@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
                 case GameState.Config:
                     break;
                 case GameState.Day:
-                    SaveProgress();
                     break;
                 case GameState.Night:
                     break;
@@ -107,6 +106,7 @@ public class GameManager : MonoBehaviour
         else
         {
             _instance = this;
+            DontDestroyOnLoad(this);
         }
 
     }
