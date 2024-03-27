@@ -755,14 +755,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1395921103}
-    - target: {fileID: 6411900673605235013, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6518464635277634897, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8430937314319588348, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: _object
       value: 

@@ -9,7 +9,7 @@ public class InteractableObjects : MonoBehaviour
     private GameObject _sprite;
 
     [SerializeField]
-    private GameObject _object;
+    private GameObject _collider;
     private string _name;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,7 +24,7 @@ public class InteractableObjects : MonoBehaviour
 
     private void Start()
     {
-        _name = _object.name;
+        _name = _collider.name;
         Debug.Log(_name);
     }
 }

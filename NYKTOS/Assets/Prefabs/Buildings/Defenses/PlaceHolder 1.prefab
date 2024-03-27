@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 6049911034224379086}
+  _collider: {fileID: 8203535048386139408, guid: db607207a2a540547bec1bc28cc49008, type: 3}
 --- !u!1 &6049911034224379086
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8289538100365860474
 Transform:
   m_ObjectHideFlags: 0
