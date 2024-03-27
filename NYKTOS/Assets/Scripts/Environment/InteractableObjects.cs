@@ -14,15 +14,12 @@ public class InteractableObjects : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == _name)
-        {
-            _sprite.SetActive(false);
-        }
+        if (collision.gameObject.name == _name) _sprite.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == _name) _sprite.SetActive(true);
+        if (collision.gameObject.name == _name) _sprite.SetActive(false);
     }
 
     private void Start()

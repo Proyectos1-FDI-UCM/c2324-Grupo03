@@ -4861,6 +4861,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6049911034224379086, guid: dd9d2bdcd926bdb40b9ace74b1e47e11, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9142010433756476327, guid: dd9d2bdcd926bdb40b9ace74b1e47e11, type: 3}
       propertyPath: inversionEffect
       value: 
@@ -4941,6 +4945,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6049911034224379086, guid: dd9d2bdcd926bdb40b9ace74b1e47e11, type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049911034224379086, guid: dd9d2bdcd926bdb40b9ace74b1e47e11, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9142010433756476327, guid: dd9d2bdcd926bdb40b9ace74b1e47e11, type: 3}
