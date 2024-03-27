@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7870783667756657704}
   - component: {fileID: 8708895035124243018}
   - component: {fileID: 4451555629660728161}
+  - component: {fileID: 8972036692237660771}
   m_Layer: 7
   m_Name: PlaceHolder 1
   m_TagString: Untagged
@@ -203,6 +204,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc6f5bd79cd8dc48a05ed7befae8537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8972036692237660771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972155126267881982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08bceab8c62c92a42a72acae7174eec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprite: {fileID: 6049911034224379086}
 --- !u!1 &6049911034224379086
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,7 +227,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8289538100365860474}
   - component: {fileID: 9152846765058659833}
-  - component: {fileID: 5276211259082577931}
   m_Layer: 5
   m_Name: Isometric Diamond
   m_TagString: Untagged
@@ -288,15 +301,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5276211259082577931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6049911034224379086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08bceab8c62c92a42a72acae7174eec4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
