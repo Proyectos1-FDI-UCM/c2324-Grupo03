@@ -32,4 +32,9 @@ public class WaitCondition : MonoBehaviour, ICondition
         yield return new WaitForSeconds(_waitTime);
         waited = true;
     }
+
+    private void OnValidate()
+    {
+        gameObject.name = "Wait " + _waitTime + "sCondition";
+    }
 }
