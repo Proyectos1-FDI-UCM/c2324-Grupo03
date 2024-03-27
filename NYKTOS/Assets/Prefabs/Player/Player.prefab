@@ -661,7 +661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityHitbox: {fileID: 8410641752796733455}
-  blinkRange: 2
+  blinkRange: 2.3
   whatLayerToDetect:
   - serializedVersion: 2
     m_Bits: 8
