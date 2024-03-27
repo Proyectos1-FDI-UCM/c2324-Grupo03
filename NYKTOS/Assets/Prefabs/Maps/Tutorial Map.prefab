@@ -4857,6 +4857,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6049911034224379086, guid: dd9d2bdcd926bdb40b9ace74b1e47e11, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9142010433756476327, guid: dd9d2bdcd926bdb40b9ace74b1e47e11, type: 3}
       propertyPath: inversionEffect
       value: 
@@ -4867,7 +4871,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
     - target: {fileID: 9152846765058659833, guid: dd9d2bdcd926bdb40b9ace74b1e47e11, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4935,6 +4939,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6049911034224379086, guid: dd9d2bdcd926bdb40b9ace74b1e47e11, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9142010433756476327, guid: dd9d2bdcd926bdb40b9ace74b1e47e11, type: 3}
       propertyPath: inversionEffect
       value: 
@@ -4945,7 +4953,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
     - target: {fileID: 9152846765058659833, guid: dd9d2bdcd926bdb40b9ace74b1e47e11, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
