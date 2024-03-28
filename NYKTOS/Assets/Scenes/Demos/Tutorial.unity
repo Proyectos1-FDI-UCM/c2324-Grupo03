@@ -131,6 +131,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1209428880890365529, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 214.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209428880890365529, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 51
+      objectReference: {fileID: 0}
     - target: {fileID: 3440641815732349696, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -211,6 +219,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4649099680708896528, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 34.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649099680708896528, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785364039125196190, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 125.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785364039125196190, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6790466228577960869, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 170.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6790466228577960869, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 51
+      objectReference: {fileID: 0}
     - target: {fileID: 8276733419907818334, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
       propertyPath: m_Name
       value: UI Gameplay
@@ -219,6 +251,26 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 327102155}
+    - target: {fileID: 8916952453515254345, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8888317
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916952453515254345, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.45823386
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916952453515254345, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -336.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916952453515254345, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -154.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916952453515254345, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -54.546
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -352,7 +404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: orthographic size
-      value: 4.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_BackGroundColor.b
@@ -372,15 +424,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.0042462847
+      value: 0.004085802
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 1.000597
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9930382
+      value: 0.9919948
       objectReference: {fileID: 0}
     - target: {fileID: 8073207824159548778, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_ShowDebugText
