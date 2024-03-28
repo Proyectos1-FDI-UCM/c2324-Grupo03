@@ -10,20 +10,6 @@ public class PlayerController : MonoBehaviour, IKnockback
 {
     
     #region references
-    // Referencia a la clase creada a partir del ActionMap
-    private PlayerControls _playerControls;
-
-    private PlayerInput _playerInput;
-
-    private string previousScheme;
-    private const string gamepadScheme = "Gamepad";
-    private const string mouseScheme = "Mouse";
-
-    public PlayerControls playerControls { 
-        get { return _playerControls; } 
-        set { _playerControls = value; }
-    }
-
     private static Transform _myTransform;
     public static Transform playerTransform { get { return _myTransform; } }
     private BlinkComponent _blinkComponent;
@@ -32,7 +18,6 @@ public class PlayerController : MonoBehaviour, IKnockback
     private WeaponHandler _weaponHandler;
     private PlayerDeath _playerDeath;
 
-    private Camera mainCamera;
 
     [SerializeField]
     private Cooldown _BlinkCooldown;
@@ -54,45 +39,10 @@ public class PlayerController : MonoBehaviour, IKnockback
     private float _interactionRange;
     #endregion
 
-    #region enableInput
-    // activar/desactivar el input del jugador
-    private void OnEnable()
-    {
-        _playerControls.Enable();
-
-        _playerControls.Player.Move.performed += Move;
-        _playerControls.Player.Move.canceled += Move;
-        _playerControls.Player.Blink.performed += Blink;
-        _playerControls.Player.Look.performed += Look;
-        _playerControls.Player.PrimaryAttack.performed += PrimaryAttack;
-        _playerControls.Player.SecondaryAttack.performed += SecondaryAttack;
-        _playerControls.Player.Interact.performed += Interact;
-        _playerControls.Player.Pause.performed += PauseGame;
-
-        _playerInput.onControlsChanged += OnControlsChanged;
-    }
-
-    private void OnDisable()
-    {
-        _playerControls.Disable();
-
-        _playerControls.Player.Move.performed -= Move;
-        _playerControls.Player.Move.canceled -= Move;
-        _playerControls.Player.Blink.performed -= Blink;
-        _playerControls.Player.Look.performed -= Look;
-        _playerControls.Player.PrimaryAttack.performed -= PrimaryAttack;
-        _playerControls.Player.SecondaryAttack.performed -= SecondaryAttack;
-        _playerControls.Player.Interact.performed -= Interact;
-        _playerControls.Player.Pause.performed -= PauseGame;
-
-        _playerInput.onControlsChanged -= OnControlsChanged;
-    }
-    #endregion
-
     #region actions
 
     #region movement
-    public void Blink(InputAction.CallbackContext context)
+    public void Blink()
     {
         if (PlayerStateMachine.playerState == PlayerState.Idle && !_BlinkCooldown.IsCooling())
         {
@@ -101,14 +51,13 @@ public class PlayerController : MonoBehaviour, IKnockback
         }
     }
 
-    public void Move(InputAction.CallbackContext context)
+    public void Move(Vector2 direction)
     {
-        Vector2 input = context.ReadValue<Vector2>();
-        _privateMovement = input;
+        _privateMovement = direction;
 
         if (PlayerStateMachine.playerState == PlayerState.Idle || PlayerStateMachine.playerState == PlayerState.Dead)
         {
-            CallMove(input);
+            CallMove(direction);
         }
 
     }
@@ -144,26 +93,14 @@ public class PlayerController : MonoBehaviour, IKnockback
         CallMove(_privateMovement);
     }
 
-    public void Look(InputAction.CallbackContext context)
-    {
-        Vector2 input;
-        if(previousScheme == gamepadScheme)
-        {
-            input = context.ReadValue<Vector2>();
-        }
-        else 
-        {
-            Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue()); //apaño chungo, cambiar luego
-            Vector2 playerPosition = _myTransform.position;
-            input = (mousePosition- playerPosition).normalized;
-        }
-       
-        _lookDirection.SetLookDirection(input);
+    public void Look(Vector2 direction)
+    {       
+        _lookDirection.SetLookDirection(direction);
     }
     #endregion
 
     #region combat
-    public void PrimaryAttack(InputAction.CallbackContext context)
+    public void PrimaryAttack()
     {
         if(PlayerStateMachine.playerState == PlayerState.Idle && !_PrimaryAttackCooldown.IsCooling()&& PlayerStateMachine.playerState != PlayerState.Dead)
         {
@@ -179,7 +116,7 @@ public class PlayerController : MonoBehaviour, IKnockback
         }
     }
 
-    public void SecondaryAttack(InputAction.CallbackContext context)
+    public void SecondaryAttack()
     {
         if (PlayerStateMachine.playerState == PlayerState.Idle && !_SecondaryAttackCooldown.IsCooling() && PlayerStateMachine.playerState != PlayerState.Dead)
         {
@@ -197,7 +134,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     #endregion
 
     #region other actions
-    public void Interact(InputAction.CallbackContext context)
+    public void Interact()
     {
         int maxColliders = 10;
         Collider2D[] hitColliders = new Collider2D[maxColliders];
@@ -213,53 +150,25 @@ public class PlayerController : MonoBehaviour, IKnockback
             }
         }
     }
-
-    public void PauseGame(InputAction.CallbackContext context)
-    {
-        MenuManager.Instance.OpenPauseMenu();
-        GameManager.Instance.Pause();
-    }
-
     #endregion
-
-    #region controls
-    private void OnControlsChanged(PlayerInput input)
-    {
-        Debug.Log(_playerInput.currentControlScheme);
-        if(_playerInput.currentControlScheme == gamepadScheme && previousScheme != gamepadScheme)
-        {
-            previousScheme = gamepadScheme;
-            Cursor.visible = false;
-        }
-        else if (_playerInput.currentControlScheme != gamepadScheme)
-        {
-            previousScheme = _playerInput.currentControlScheme;
-            Cursor.visible = true;
-        }
-    }
-    #endregion
-
     #endregion
 
     void Awake()
     {
-        _playerControls = new PlayerControls();
-        _playerInput = GetComponent<PlayerInput>();
+        InputManager.Instance.RegisterPlayer(gameObject);
     }
-
     void Start()
-    {      
+    {
         _myTransform = transform;
         _playerMovement = GetComponent<RBMovement>();
         _blinkComponent = GetComponent<BlinkComponent>();
         _lookDirection = GetComponent<LookDirection>();
         _weaponHandler = GetComponent<WeaponHandler>();
-        mainCamera= Camera.main;
+        
         _playerState = GetComponent<PlayerStateMachine>();
         _playerDeath = GetComponent<PlayerDeath>();
 
         _interactionRange = GetComponentInChildren<CircleCollider2D>().radius;
 
-        previousScheme = _playerInput.currentControlScheme;
     }
 }

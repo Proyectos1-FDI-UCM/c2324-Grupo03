@@ -13,11 +13,6 @@ public class MenuManager : MonoBehaviour
     }
 
     #region references
-    [SerializeField]
-    private GameObject _player;
-
-    private PlayerController _playerController;
-    private PlayerStateMachine _playerStateMachine;
 
     #region menu refs
     [Header("Menu References")]
@@ -125,16 +120,11 @@ public class MenuManager : MonoBehaviour
 
     private void SwitchToUIControls()
     {
-        _playerController.playerControls.Player.Disable();
-        _playerStateMachine.SetState(PlayerState.OnMenu);
-        _playerController.playerControls.UI.Enable();
-        _playerController.CallMove(Vector2.zero);
+        InputManager.Instance.SwitchToUIControls();
     }
     private void SwitchToPlayerControls()
     {
-        _playerStateMachine.SetState(PlayerState.Idle);
-        _playerController.playerControls.UI.Disable();
-        _playerController.playerControls.Player.Enable();
+        InputManager.Instance.SwitchToPlayerControls();
     }
 
     private void RegisterMenus()
@@ -174,7 +164,7 @@ public class MenuManager : MonoBehaviour
         Resume();
     }
 
-    public void CloseMenu(InputAction.CallbackContext context)
+    public void CloseMenu()
     {
         CloseAllMenus(); 
     }
@@ -189,11 +179,6 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        _playerController = _player.GetComponent<PlayerController>();
-        _playerStateMachine = _player.GetComponent<PlayerStateMachine>();
-
         RegisterMenus();
-
-        _playerController.playerControls.UI.CloseMenu.performed += CloseMenu;
     }
 }
