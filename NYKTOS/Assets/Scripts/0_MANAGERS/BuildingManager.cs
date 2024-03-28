@@ -80,7 +80,10 @@ public class BuildingManager : MonoBehaviour
 
         AddBuilding(defense);
 
-        _currentPlaceholder.GetComponent<BuildingStateMachine>().SetState(BuildingStateMachine.BuildingState.Built);
+        BuildingStateMachine placeholderState = _currentPlaceholder.GetComponent<BuildingStateMachine>();
+        placeholderState.SetState(BuildingStateMachine.BuildingState.Built);
+        placeholderState.isInteractable = false;
+
         MenuManager.Instance.CloseAllMenus();
     }
     

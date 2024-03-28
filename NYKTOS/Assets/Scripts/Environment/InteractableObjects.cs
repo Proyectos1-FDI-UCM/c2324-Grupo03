@@ -12,9 +12,11 @@ public class InteractableObjects : MonoBehaviour
     private GameObject _collider;
     private string _name;
 
+    private BuildingStateMachine _buildingState;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == _name) _sprite.SetActive(true);
+        if (collision.gameObject.name == _name && _buildingState.isInteractable) _sprite.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -25,6 +27,6 @@ public class InteractableObjects : MonoBehaviour
     private void Start()
     {
         _name = _collider.name;
-        Debug.Log(_name);
+        _buildingState = GetComponent<BuildingStateMachine>();
     }
 }

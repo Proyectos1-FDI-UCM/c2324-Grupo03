@@ -21,4 +21,10 @@ public class BuildingStateMachine : MonoBehaviour
         _buildingState = state;
     }
 
+
+    private bool _isInteractable = true;
+    public bool isInteractable { 
+        get { return _isInteractable; } 
+        set { _isInteractable = value; } 
+    }
 }
