@@ -1431,6 +1431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityReactionTime: 0.4
+  _closestDistanceToPlayer: 1
 --- !u!1 &7709384723050659098
 GameObject:
   m_ObjectHideFlags: 0
