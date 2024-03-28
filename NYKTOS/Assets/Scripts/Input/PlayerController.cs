@@ -93,8 +93,10 @@ public class PlayerController : MonoBehaviour, IKnockback
         CallMove(_privateMovement);
     }
 
-    public void Look(Vector2 direction)
-    {       
+    public void Look(Vector2 direction, bool isMouse)
+    {   
+        if (isMouse) direction = (direction - new Vector2(_myTransform.position.x, _myTransform.position.y)).normalized;
+        Debug.Log(direction);
         _lookDirection.SetLookDirection(direction);
     }
     #endregion

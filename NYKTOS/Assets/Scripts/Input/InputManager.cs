@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -40,18 +41,26 @@ public class InputManager : MonoBehaviour
     }
 
     #region player actions
-    public void Move(InputAction.CallbackContext context)
+    private void Move(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();
         _player.Move(input);
     }
 
-    public void Blink(InputAction.CallbackContext context) => _player.Blink();
+    private void Blink(InputAction.CallbackContext context) => _player.Blink();
 
     public void Look(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();
-        _player.Look(input);
+        bool isMouse = false;
+        if (_currentScheme == mouseScheme)
+        {
+            isMouse = true;
+            input = mainCamera.ScreenToWorldPoint(input);
+        }
+        _player.Look(input, isMouse);
+
+       
         //Vector2 input;
         //if (_currentScheme == gamepadScheme)
         //{
@@ -65,21 +74,21 @@ public class InputManager : MonoBehaviour
         //}
     }
 
-    public void PrimaryAttack(InputAction.CallbackContext context) => _player.PrimaryAttack();
+    private void PrimaryAttack(InputAction.CallbackContext context) => _player.PrimaryAttack();
 
-    public void SecondaryAttack(InputAction.CallbackContext context) => _player.SecondaryAttack();
+    private void SecondaryAttack(InputAction.CallbackContext context) => _player.SecondaryAttack();
 
-    public void Interact(InputAction.CallbackContext context) => _player.Interact();
+    private void Interact(InputAction.CallbackContext context) => _player.Interact();
 
     #endregion
 
-    public void PauseGame(InputAction.CallbackContext context)
+    private void PauseGame(InputAction.CallbackContext context)
     {
         MenuManager.Instance.OpenPauseMenu();
         GameManager.Instance.Pause();
     }
 
-    public void CloseMenu(InputAction.CallbackContext context)
+    private void CloseMenu(InputAction.CallbackContext context)
     {
         MenuManager.Instance.CloseMenu();
     }
