@@ -61,10 +61,11 @@ public class EnemySpawner : MonoBehaviour
         else
         {
             Stop();
+            enabled = false;
         }
     }
 
-    void Start()
+    public void Start()
     {
         EnemyPoolChecker();
     }
