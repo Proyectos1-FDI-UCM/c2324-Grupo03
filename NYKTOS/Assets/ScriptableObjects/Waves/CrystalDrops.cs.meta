@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: a2754ec2fc757c244879b4eab2001418
+guid: 90758ce5cfed4684da572de046ad03a5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - _crystalDrops: {fileID: 11400000, guid: a54c29996e8d3c4419eed2c1b32cb930, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

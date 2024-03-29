@@ -17,7 +17,6 @@ public class EnemyDeath : MonoBehaviour, IDeath
 
     public void Death()
     {
-        GameplayManager.Instance.RemoveConcurrentEnemy();
         if(TryGetComponent<CrystalBag>(out CrystalBag enemyBag))
         {
             enemyBag.InstantiateCrystal(transform.position);

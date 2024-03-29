@@ -1,29 +1,53 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //MARIA
 [CreateAssetMenu(fileName = "New Night", menuName = "Wave System/Night", order = 1)]
 public class NightWave : ScriptableObject {
-    public Wave[] waves;
-    public int RequiredYellowCrystals;
-    public int RequiredCyanCrystals;
-    public int RequiredMagentaCrystals;
-    public int YellowProbability;
-    public int CyanProbability;
-    public int MagentaProbability;
+
+    [SerializeField]
+    private int _nightLength = 180;
+    public int NightLength{get{return _nightLength;}}
+
+    [SerializeField]
+    private Wave[] _waveList;
+    public Wave[] WaveList{get{return _waveList;}}
+
+    [SerializeField]
+    private CrystalDrops _nightCrystalDrops;
+    public CrystalDrops NightCrystalDrops {get{return _nightCrystalDrops;}}
 }
 
 [System.Serializable]
-public struct Wave
+public class Wave: ScriptableObject
 {
     public int time;
-    public SubWave[] subWaves;
+    public SubWave[] subWaveList;
+    private Dictionary<SpawnerRegion, Enemy[]> waveData = new Dictionary<SpawnerRegion, Enemy[]>();
+    public Dictionary<SpawnerRegion, Enemy[]> WaveData {get{return waveData;}}
+
+    void OnValidate()
+    {
+        foreach(SpawnerRegion region in Enum.GetValues(typeof(SpawnerRegion)))
+        {
+            bool matchCondition = false; 
+
+            for(int i = 0; i < subWaveList.Length && !matchCondition; i++)
+            {
+                if(subWaveList[i].spawnerRegion == region)
+                {
+                    waveData.Add(region, subWaveList[i].enemyPool);
+                }
+            }
+        }
+    }
 }
 
 [System.Serializable]
 public struct SubWave {
     public SpawnerRegion spawnerRegion;
-    public Enemy[] pool;
+    public Enemy[] enemyPool;
 }
 
 [System.Serializable]

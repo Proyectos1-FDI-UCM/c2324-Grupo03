@@ -29,7 +29,8 @@ public class CrystalBag : MonoBehaviour
     public List<ResourceCrystal> CrystalList = new List<ResourceCrystal>();
     private List<GameObject> clonedCrystals = new List<GameObject>();
 
-    private GameplayManager _spawnManager;
+    [SerializeField]
+    private CrystalDrops _crystalDropsTracker;
 
     private bool RecursosObligatorios = true;
 
@@ -48,48 +49,48 @@ public class CrystalBag : MonoBehaviour
         // 1 MAGENTA
         // 2 CIAN
 
-        if (_spawnManager.CurrentRequiredYellow == 0 && _spawnManager.CurrentRequiredCyan == 0 && _spawnManager.CurrentRequiredMagenta == 0) RecursosObligatorios = false;
+        if (_crystalDropsTracker.RequiredYellow == 0 && _crystalDropsTracker.RequiredCyan == 0 && _crystalDropsTracker.RequiredMagenta == 0) RecursosObligatorios = false;
 
         if (RecursosObligatorios)
         {
             //print("Cristal obligatorio");
-            if (_spawnManager.CurrentRequiredYellow > 0 && /*RandomNumber == 0*/ RandomNumber <= _spawnManager.ProbabilityYellow /*CrystalList[0].dropChance*/)
+            if (_crystalDropsTracker.RequiredYellow > 0 && /*RandomNumber == 0*/ RandomNumber <= _crystalDropsTracker.ProbabilityYellow /*CrystalList[0].dropChance*/)
             {
                 possibleCrystal.Add(CrystalList[0]);
-                _spawnManager.CurrentRequiredYellow--;
+                _crystalDropsTracker.RequiredYellow--;
                 //print("Amarillo obligatorio");
             }
-            else if (_spawnManager.CurrentRequiredCyan > 0 && /*RandomNumber == 2*/ RandomNumber <= _spawnManager.ProbabilityCyan /*CrystalList[2].dropChance*/)
+            else if (_crystalDropsTracker.RequiredCyan > 0 && /*RandomNumber == 2*/ RandomNumber <= _crystalDropsTracker.ProbabilityCyan /*CrystalList[2].dropChance*/)
             {
                 possibleCrystal.Add(CrystalList[2]);
-                _spawnManager.CurrentRequiredCyan--;
+                _crystalDropsTracker.RequiredCyan--;
                 //print("Cian obligatorio");
             }
-            else if (_spawnManager.CurrentRequiredMagenta > 0 && /*RandomNumber == 1*/ RandomNumber <= _spawnManager.ProbabilityMagenta /*CrystalList[1].dropChance*/)
+            else if (_crystalDropsTracker.RequiredMagenta > 0 && /*RandomNumber == 1*/ RandomNumber <= _crystalDropsTracker.ProbabilityMagenta /*CrystalList[1].dropChance*/)
             {
                 possibleCrystal.Add(CrystalList[1]);
-                _spawnManager.CurrentRequiredMagenta--;
+                _crystalDropsTracker.RequiredMagenta--;
                 //print("Magenta obligatorio");
             }
             else
             {
                 //print("No contemple probabilidad");
-                if (_spawnManager.CurrentRequiredMagenta > 0)
+                if (_crystalDropsTracker.RequiredMagenta > 0)
                 {
                     possibleCrystal.Add(CrystalList[1]);
-                    _spawnManager.CurrentRequiredMagenta--;
+                    _crystalDropsTracker.RequiredMagenta--;
                     //print("Magenta obligatorio");
                 }
-                else if (_spawnManager.CurrentRequiredCyan > 0)
+                else if (_crystalDropsTracker.RequiredCyan > 0)
                 {
                     possibleCrystal.Add(CrystalList[2]);
-                    _spawnManager.CurrentRequiredCyan--;
+                    _crystalDropsTracker.RequiredCyan--;
                     //print("Cian obligatorio");
                 }
                 else
                 {
                     possibleCrystal.Add(CrystalList[0]);
-                    _spawnManager.CurrentRequiredYellow--;
+                    _crystalDropsTracker.RequiredYellow--;
                     //print("Amarillo obligatorio");
                 }
 
@@ -104,9 +105,9 @@ public class CrystalBag : MonoBehaviour
             //RANDOM DEPENDIENDO DEL DROPCHANCE DEL SPAWNAMANAGER
             int RandomNumberCrystalRandom = Random.Range(0, 3);
             int RandomProbabilityCrystalRandom = Random.Range(1, 101);
-            if (RandomNumberCrystalRandom == 0 && RandomProbabilityCrystalRandom <= _spawnManager.ProbabilityYellow) possibleCrystal.Add(CrystalList[0]);
-            else if (RandomNumberCrystalRandom == 1 && RandomProbabilityCrystalRandom <= _spawnManager.ProbabilityMagenta) possibleCrystal.Add(CrystalList[1]);
-            else if (RandomNumberCrystalRandom == 2 && RandomProbabilityCrystalRandom <= _spawnManager.ProbabilityCyan) possibleCrystal.Add(CrystalList[2]);
+            if (RandomNumberCrystalRandom == 0 && RandomProbabilityCrystalRandom <= _crystalDropsTracker.ProbabilityYellow) possibleCrystal.Add(CrystalList[0]);
+            else if (RandomNumberCrystalRandom == 1 && RandomProbabilityCrystalRandom <= _crystalDropsTracker.ProbabilityMagenta) possibleCrystal.Add(CrystalList[1]);
+            else if (RandomNumberCrystalRandom == 2 && RandomProbabilityCrystalRandom <= _crystalDropsTracker.ProbabilityCyan) possibleCrystal.Add(CrystalList[2]);
             /*
             else
             {
@@ -183,9 +184,4 @@ public class CrystalBag : MonoBehaviour
         //probCian = _spawnManager.ProbabilityCyan;
         //probMagenta = _spawnManager.ProbabilityMagenta;
     //}
-
-    private void Start()
-    {
-        _spawnManager = GameplayManager.Instance;
-    }
 }

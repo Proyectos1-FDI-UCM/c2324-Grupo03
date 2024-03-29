@@ -29,41 +29,36 @@ public class GameManager : MonoBehaviour
 
     public void UpdateGameState(GameState newState)
     {
-        //if(_state != newState)
-        //{
-            _state = newState;
+        switch (newState)
+        {
+            case GameState.StartScreen:
+                break;
+            case GameState.Config:
+                break;
+            case GameState.Day:
+                break;
+            case GameState.Night:
+                break;
+            case GameState.TutorialDay:
+                break;
+            case GameState.TutorialNight:
+                break;
+            case GameState.Pause:
+                break;
+            case GameState.Lose:
+                break;
+            case GameState.Win:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException
+                (
+                    nameof(newState), 
+                    newState, 
+                    "GameState not included in GameManager statemachine"
+                );
+        }
 
-            switch (newState)
-            {
-                case GameState.StartScreen:
-                    break;
-                case GameState.Config:
-                    break;
-                case GameState.Day:
-                    break;
-                case GameState.Night:
-                    break;
-                case GameState.TutorialDay:
-                    break;
-                case GameState.TutorialNight:
-                    break;
-                case GameState.Pause:
-                    break;
-                case GameState.Lose:
-                    break;
-                case GameState.Win:
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException
-                    (
-                        nameof(newState), 
-                        newState, 
-                        "GameState not included in GameManager statemachine"
-                    );
-            }
-
-            _gameStateChanged.Invoke(newState);
-        //}
+        _gameStateChanged.Invoke(newState);
     }
 
     public void UpdateGameState(int state)
@@ -79,11 +74,6 @@ public class GameManager : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1;
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
     }
 
     public void SaveProgress()

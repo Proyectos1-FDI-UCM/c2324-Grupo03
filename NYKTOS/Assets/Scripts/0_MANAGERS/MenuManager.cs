@@ -81,7 +81,7 @@ public class MenuManager : MonoBehaviour
 
     public void ExitGame()
     {
-        GameManager.Instance.Quit();
+        Application.Quit();
     }
 
     public void StartNight()

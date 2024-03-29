@@ -9,5 +9,9 @@ public class Menu : MonoBehaviour
         GameManager.Instance.UpdateGameState(GameState.Day);
     }
 
+    public void Salir()
+    {
+        Application.Quit();
+    }
 
 }

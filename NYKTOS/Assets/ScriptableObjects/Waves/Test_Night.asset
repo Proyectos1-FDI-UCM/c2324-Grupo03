@@ -12,12 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2754ec2fc757c244879b4eab2001418, type: 3}
   m_Name: Test_Night
   m_EditorClassIdentifier: 
-  waves:
-  - time: 10
-    subWaves: []
-  RequiredYellowCrystals: 0
-  RequiredCyanCrystals: 0
-  RequiredMagentaCrystals: 0
-  YellowProbability: 0
-  CyanProbability: 0
-  MagentaProbability: 0
+  _nightLength: 10
+  _waveList: []
+  _nightCrystalDrops: {fileID: 11400000, guid: a54c29996e8d3c4419eed2c1b32cb930, type: 2}

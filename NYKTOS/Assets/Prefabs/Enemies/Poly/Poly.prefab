@@ -620,6 +620,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c7e5bbe351cfe6049962d13e9ebcb2d0, type: 2}
   - {fileID: 11400000, guid: b5b8014c89569f746ad3efa6fa1d8eaa, type: 2}
   - {fileID: 11400000, guid: f5c611acfb209cf49ac3f3f9b2f2274e, type: 2}
+  _crystalDropsTracker: {fileID: 0}
 --- !u!61 &8407820617980622886
 BoxCollider2D:
   m_ObjectHideFlags: 0

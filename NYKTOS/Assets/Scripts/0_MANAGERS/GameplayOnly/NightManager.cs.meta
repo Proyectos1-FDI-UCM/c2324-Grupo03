@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ad6b99c4323663749979fe2dcbf59e31
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _progressTracker: {instanceID: 0}
+  - _dropTracker: {fileID: 11400000, guid: 064f9146e25cc4e4dbdcb7d5bcb38e6f, type: 2}
+  - _spawnerEmmiter: {fileID: 11400000, guid: 11f7d29cbb577394cb3f4c6f1b6b1668, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

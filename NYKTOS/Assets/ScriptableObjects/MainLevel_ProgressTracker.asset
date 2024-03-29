@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2754ec2fc757c244879b4eab2001418, type: 3}
-  m_Name: Night_Tutorial
+  m_Script: {fileID: 11500000, guid: 2523dbfb6bf3f6741b286dc990c81a78, type: 3}
+  m_Name: MainLevel_ProgressTracker
   m_EditorClassIdentifier: 
-  _nightLength: 180
-  _waveList: []
-  _nightCrystalDrops: {fileID: 11400000, guid: a54c29996e8d3c4419eed2c1b32cb930, type: 2}
+  _night: 0
+  _nightList:
+  - {fileID: 11400000, guid: 1b1eb0289b78ca54a95d54e954b3bc1b, type: 2}
