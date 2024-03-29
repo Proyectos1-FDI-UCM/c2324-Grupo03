@@ -15,3 +15,4 @@ MonoBehaviour:
   _night: 0
   _nightList:
   - {fileID: 11400000, guid: 1b1eb0289b78ca54a95d54e954b3bc1b, type: 2}
+  - {fileID: 11400000, guid: 1b1eb0289b78ca54a95d54e954b3bc1b, type: 2}
