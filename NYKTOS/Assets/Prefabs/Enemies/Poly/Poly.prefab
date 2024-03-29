@@ -429,8 +429,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fcb5a4b321af3b439cd5a8709d4a68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 8
-  _currentHealth: 8
+  _maxHealth: 4
+  _currentHealth: 4
   _inmTime: 0.1
 --- !u!114 &6047305640081515741
 MonoBehaviour:
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e7a382721ad3144854f9f5a12b1088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 2
+  _movementSpeed: 4
   _knockBackSpeed: 10
   _knockBackTime: 0.2
 --- !u!114 &8144526789684626196
