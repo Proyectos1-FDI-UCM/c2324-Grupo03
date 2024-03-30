@@ -662,17 +662,17 @@ MonoBehaviour:
   exitBehaviours:
   - _behaviour: {fileID: 6746889818323469261}
   possibleStates:
-  - state: {fileID: 4709628850947208546}
-    enterConditions:
-    - _condition: {fileID: 2290110037950699916}
-      _negate: 0
-    - _condition: {fileID: 8995983637529864961}
-      _negate: 0
   - state: {fileID: 3463436403979554520}
     enterConditions:
     - _condition: {fileID: 8995983637529864961}
       _negate: 1
     - _condition: {fileID: 2290110037950699916}
+      _negate: 0
+  - state: {fileID: 4709628850947208546}
+    enterConditions:
+    - _condition: {fileID: 2290110037950699916}
+      _negate: 0
+    - _condition: {fileID: 8995983637529864961}
       _negate: 0
 --- !u!1 &5969949996595905546
 GameObject:
@@ -873,7 +873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c60bf4ddcefb246ba84d924d223a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 1
+  attackRange: 0.5
 --- !u!1 &8997511765814399742
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,4 +963,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e6db8abceba8e4c8260f4fea511913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _closestDistanceToPriority: 1

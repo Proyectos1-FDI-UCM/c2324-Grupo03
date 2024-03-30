@@ -46,4 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waitUntilAttacking: 0.2
   _hitboxAppearingTime: 0.5
+  _distanceOfInstanciation: 0.75
   _vespertilioAttackHitbox: {fileID: 6919465541366467843, guid: 8ae27c9322cbbda43990443b041fd24c, type: 3}

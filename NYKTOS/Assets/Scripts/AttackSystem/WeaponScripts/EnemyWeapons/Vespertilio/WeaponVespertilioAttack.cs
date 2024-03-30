@@ -8,6 +8,8 @@ public class WeaponVespertilioAttack : Weapon
     #region parameters
     [SerializeField] private float _waitUntilAttacking = 0.2f;
     [SerializeField] private float _hitboxAppearingTime = 0.5f;
+
+    [SerializeField] float _distanceOfInstanciation = 0.5f;
     #endregion
 
     [NonSerialized]
@@ -36,7 +38,7 @@ public class WeaponVespertilioAttack : Weapon
 
         GameObject currentHitbox =
             Instantiate(_vespertilioAttackHitbox, 
-            transform.position + new Vector3(direction.normalized.x, direction.normalized.y, 0), 
+            transform.position + new Vector3(direction.normalized.x, direction.normalized.y, 0).normalized * _distanceOfInstanciation, 
             Quaternion.Euler(0, 0, DirectionAngle(direction)));
 
         currentHitbox.transform.parent = transform;

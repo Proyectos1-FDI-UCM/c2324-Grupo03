@@ -11,10 +11,6 @@ public class MoveToPriorityBehaviour : MonoBehaviour, IBehaviour
     private EnemyPriorityComponent _enemyPriorityComponent;
     #endregion
 
-    #region parameters
-    [SerializeField] float _closestDistanceToPriority = 0.5f;
-    #endregion
-
     #region properties
     private Vector2 direction = Vector2.zero;
     #endregion
