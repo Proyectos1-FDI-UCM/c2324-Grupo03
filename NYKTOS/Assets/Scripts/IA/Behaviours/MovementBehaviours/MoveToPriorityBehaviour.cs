@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
+public class MoveToPriorityBehaviour : MonoBehaviour, IBehaviour
 {
     #region references
     private Transform _myTransform;
@@ -13,7 +12,7 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
     #endregion
 
     #region parameters
-    [SerializeField] float _closestDistanceToPlayer = 0.5f;
+    [SerializeField] float _closestDistanceToPriority = 0.5f;
     #endregion
 
     #region properties
@@ -23,27 +22,18 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
     bool started = false;
     public void PerformBehaviour()
     {
-        
-        if (_enemyPriorityComponent.toPlayerPath.corners.Length > 1 && (_myTransform.position - _enemyPriorityComponent.toPlayerPath.corners[1]).magnitude >= _closestDistanceToPlayer) //calculo de camino a tomar
+
+        if (_enemyPriorityComponent.priorityPath.corners.Length > 1) //calculo de camino a tomar
         {
-            direction = (_enemyPriorityComponent.toPlayerPath.corners[1] - _myTransform.position).normalized;
+            direction = (_enemyPriorityComponent.priorityPath.corners[1] - _myTransform.position).normalized;
 
             _rbMovement.OrthogonalMovement(direction);
-
-            //debug
-            for (int i = 0; i < _enemyPriorityComponent.toPlayerPath.corners.Length - 1; i++)
-            {
-                Debug.DrawLine(_enemyPriorityComponent.toPlayerPath.corners[i], _enemyPriorityComponent.toPlayerPath.corners[i + 1], Color.red);
-
-            }
 
         }
         else
         {
             _rbMovement.OrthogonalMovement(Vector2.zero);
         }
-
-
     }
 
     private void Start()
@@ -53,3 +43,4 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
         _enemyPriorityComponent = GetComponentInParent<EnemyPriorityComponent>();
     }
 }
+

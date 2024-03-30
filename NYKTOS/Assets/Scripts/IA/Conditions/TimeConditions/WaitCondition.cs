@@ -16,7 +16,6 @@ public class WaitCondition : MonoBehaviour, ICondition
         if (!started) 
         StartCoroutine(Wait(_waitTime));
 
-        print(waited);
         if (waited)
         {
             waited = false;
