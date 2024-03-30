@@ -6,19 +6,14 @@ public class SpawnAraneasBehaviour : MonoBehaviour, IBehaviour
 {
     [SerializeField] private GameObject _araneaHijaPrefab;
     private Transform _araneaMadreTransform;
-    public float spawnInterval = 5f; 
-    private float timer = 0f;
     [SerializeField] private int _maxHijas = 3;
     private int _currentHijas;
     public void PerformBehaviour() 
     {
-        timer += Time.deltaTime;
-        if (timer >= spawnInterval && _currentHijas< _maxHijas) 
+        if (_currentHijas < _maxHijas)
         {
-            SpawnSpider(); // Spawnear una araña hija
-            timer = 0f;
             _currentHijas++;
-            //Debug.Log("Hijas: " + _currentHijas);
+            SpawnSpider();
         }
 
     }
