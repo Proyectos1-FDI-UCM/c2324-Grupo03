@@ -325,8 +325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _usingDetection: 1
-  _farDetectionRadius: 5
-  _nearDetectionRadius: 2
+  _farDetectionRadius: 4
+  _nearDetectionRadius: 1.5
 --- !u!114 &8478231694944484909
 MonoBehaviour:
   m_ObjectHideFlags: 0

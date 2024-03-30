@@ -35,6 +35,8 @@ public class EnemyPriorityComponent : MonoBehaviour
 
     [SerializeField]
     float _nearDetectionRadius = 2f;
+
+    private bool _playerAggro = false;
     #endregion
 
     private void Update()
@@ -79,19 +81,29 @@ public class EnemyPriorityComponent : MonoBehaviour
 
         if (playerNear)
         {
+            _playerAggro = true;
+            _nearestPriorityObject = PlayerController.playerTransform.gameObject;
+            _priorityPath = _toPlayerPath;
+        }
+        else if (detected && _playerAggro)
+        {
             _nearestPriorityObject = PlayerController.playerTransform.gameObject;
             _priorityPath = _toPlayerPath;
         }
         else if (detected && num == 1)
         {
+            _playerAggro = true;
             _nearestPriorityObject = PlayerController.playerTransform.gameObject;
             _priorityPath = _toPlayerPath;
         }
         else
         {
+            _playerAggro = false;
             _nearestPriorityObject = _nearestBuildingObject;
             _priorityPath = _toNearestBuildingPath;
         }
+
+        print(_playerAggro);
 
         //debug
         for (int i = 0; i < _priorityPath.corners.Length - 1; i++)
