@@ -37,8 +37,11 @@ public class InputManager : MonoBehaviour
         _player = player.GetComponent<PlayerController>();
         _playerInput = player.GetComponent<PlayerInput>();
 
+        _currentScheme = _playerInput.currentControlScheme;
+
         _playerInput.onControlsChanged += OnControlsChanged;
     }
+
 
     #region player actions
     private void Move(InputAction.CallbackContext context)
@@ -56,8 +59,10 @@ public class InputManager : MonoBehaviour
         if (_currentScheme == mouseScheme)
         {
             isMouse = true;
-            input = mainCamera.ScreenToWorldPoint(input);
+            input = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         }
+        //Debug.Log(_currentScheme);
+        //Debug.Log(_playerInput.currentControlScheme);
         _player.Look(input, isMouse);
 
        
@@ -96,15 +101,19 @@ public class InputManager : MonoBehaviour
     #region controls
     private void OnControlsChanged(PlayerInput input)
     {
+        Debug.Log("cambio de controles");
         Debug.Log(_playerInput.currentControlScheme);
+
         if (_playerInput.currentControlScheme == gamepadScheme && _currentScheme != gamepadScheme)
         {
+            //Debug.Log(_playerInput.currentControlScheme);
             _currentScheme = gamepadScheme;
             Cursor.visible = false;
         }
-        else if (_playerInput.currentControlScheme != gamepadScheme)
+        else if (_playerInput.currentControlScheme == mouseScheme && _currentScheme != mouseScheme)
         {
-            _currentScheme = _playerInput.currentControlScheme;
+            //Debug.Log(_playerInput.currentControlScheme);
+            _currentScheme = mouseScheme;
             Cursor.visible = true;
         }
     }
@@ -175,8 +184,7 @@ public class InputManager : MonoBehaviour
     }
 
     void Start()
-    {
-        _currentScheme = _playerInput.currentControlScheme;
+    {        
         mainCamera = Camera.main;
     }
 
