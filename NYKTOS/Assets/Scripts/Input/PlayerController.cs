@@ -153,10 +153,14 @@ public class PlayerController : MonoBehaviour, IKnockback
     }
     #endregion
     #endregion
-    void Start()
+
+    void Awake()
     {
         InputManager.Instance.RegisterPlayer(gameObject);
+    }
 
+    void Start()
+    {
         _myTransform = transform;
         _playerMovement = GetComponent<RBMovement>();
         _blinkComponent = GetComponent<BlinkComponent>();
