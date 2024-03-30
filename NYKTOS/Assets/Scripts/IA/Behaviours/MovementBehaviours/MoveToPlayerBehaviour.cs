@@ -12,10 +12,6 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
     private EnemyPriorityComponent _enemyPriorityComponent;
     #endregion
 
-    #region parameters
-    [SerializeField] float _closestDistanceToPlayer = 0.5f;
-    #endregion
-
     #region properties
     private Vector2 direction = Vector2.zero;
     #endregion
@@ -24,19 +20,11 @@ public class MoveToPlayerBehaviour : MonoBehaviour, IBehaviour
     public void PerformBehaviour()
     {
         
-        if (_enemyPriorityComponent.toPlayerPath.corners.Length > 1 && (_myTransform.position - _enemyPriorityComponent.toPlayerPath.corners[1]).magnitude >= _closestDistanceToPlayer) //calculo de camino a tomar
+        if (_enemyPriorityComponent.toPlayerPath.corners.Length > 1) //calculo de camino a tomar
         {
             direction = (_enemyPriorityComponent.toPlayerPath.corners[1] - _myTransform.position).normalized;
 
             _rbMovement.OrthogonalMovement(direction);
-
-            //debug
-            for (int i = 0; i < _enemyPriorityComponent.toPlayerPath.corners.Length - 1; i++)
-            {
-                Debug.DrawLine(_enemyPriorityComponent.toPlayerPath.corners[i], _enemyPriorityComponent.toPlayerPath.corners[i + 1], Color.red);
-
-            }
-
         }
         else
         {

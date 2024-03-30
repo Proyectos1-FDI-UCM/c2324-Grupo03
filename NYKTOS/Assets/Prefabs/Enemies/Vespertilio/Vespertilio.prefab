@@ -1071,7 +1071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c60bf4ddcefb246ba84d924d223a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 0.5
+  attackRange: 0.75
 --- !u!1 &8997511765814399742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 72912881869878435}
   - component: {fileID: 9149878608490046069}
   m_Layer: 9
-  m_Name: Wait 0,2sCondition
+  m_Name: Wait 0,4sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3da0bdaa3417541a8cdc57e69aa60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waitTime: 0.2
+  _waitTime: 0.4
 --- !u!1 &9178508017942694149
 GameObject:
   m_ObjectHideFlags: 0
