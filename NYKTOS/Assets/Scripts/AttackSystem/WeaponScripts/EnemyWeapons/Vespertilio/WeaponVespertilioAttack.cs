@@ -6,7 +6,6 @@ using UnityEngine;
 public class WeaponVespertilioAttack : Weapon
 {
     #region parameters
-    [SerializeField] private float _waitUntilAttacking = 0.2f;
     [SerializeField] private float _hitboxAppearingTime = 0.5f;
 
     [SerializeField] float _distanceOfInstanciation = 0.5f;
@@ -34,7 +33,6 @@ public class WeaponVespertilioAttack : Weapon
     private IEnumerator VespertilioAttack(Vector2 direction, int damage, AttackType attackType)
     {
         startedCoroutine = true;
-        yield return new WaitForSeconds(_waitUntilAttacking);
 
         GameObject currentHitbox =
             Instantiate(_vespertilioAttackHitbox, 
@@ -49,7 +47,6 @@ public class WeaponVespertilioAttack : Weapon
 
         Destroy(currentHitbox);
 
-        yield return new WaitForSeconds(1- (_waitUntilAttacking + _hitboxAppearingTime));
         startedCoroutine = false;
     }
     private float DirectionAngle(Vector2 direction) //saca el angulo de la direccion dando por sentado que el modulo de la direccion es 1

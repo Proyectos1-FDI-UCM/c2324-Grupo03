@@ -45,6 +45,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationType: 3
+--- !u!1 &2615027658804113251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3632067628936819240}
+  - component: {fileID: 4760056054625925972}
+  m_Layer: 0
+  m_Name: Wait 0,4sCondition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3632067628936819240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2615027658804113251}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7255086647658344018}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4760056054625925972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2615027658804113251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db3da0bdaa3417541a8cdc57e69aa60f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waitTime: 0.4
 --- !u!1 &2683016789316417445
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +515,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a04ed8bab2018941b2c9edadf18022a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _usingDetection: 0
+  _farDetectionRadius: 5
+  _nearDetectionRadius: 2
 --- !u!114 &3389799706100257549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,10 +676,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd925eae5ad73243a17684a41483d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enterBehaviours: []
-  updateBehaviours:
+  enterBehaviours:
   - _behaviour: {fileID: 5996639514771999814}
-  - _behaviour: {fileID: 8726509610298045236}
+  updateBehaviours: []
   exitBehaviours: []
   possibleStates:
   - state: {fileID: 6085994863610978108}
@@ -641,6 +688,10 @@ MonoBehaviour:
   - state: {fileID: 8330133756692525588}
     enterConditions:
     - _condition: {fileID: 4556652366372516248}
+      _negate: 0
+  - state: {fileID: 7117175706813497121}
+    enterConditions:
+    - _condition: {fileID: 2615027658804113251}
       _negate: 0
 --- !u!1 &4349705668986481548
 GameObject:
@@ -688,10 +739,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enterBehaviours:
   - _behaviour: {fileID: 2683016789316417445}
-  updateBehaviours:
   - _behaviour: {fileID: 6010400854293651724}
+  updateBehaviours:
   - _behaviour: {fileID: 8726509610298045236}
-  - _behaviour: {fileID: 2683016789316417445}
   exitBehaviours: []
   possibleStates:
   - state: {fileID: 6085994863610978108}
@@ -699,6 +749,10 @@ MonoBehaviour:
     - _condition: {fileID: 3194935305017497303}
       _negate: 0
   - state: {fileID: 7117175706813497121}
+    enterConditions:
+    - _condition: {fileID: 4556652366372516248}
+      _negate: 1
+  - state: {fileID: 8330133756692525588}
     enterConditions:
     - _condition: {fileID: 7986282617621771783}
       _negate: 0
@@ -746,7 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d68dfcbb43ddc042820efb9a5ddaae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 1.5
+  attackRange: 3
 --- !u!1 &5205305458711450159
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,6 +834,7 @@ Transform:
   - {fileID: 4955001927784183663}
   - {fileID: 4954977540553919828}
   - {fileID: 3258450412063944758}
+  - {fileID: 3632067628936819240}
   m_Father: {fileID: 3399931161153121125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5274399705818785835
@@ -961,8 +1016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _araneaHijaPrefab: {fileID: 2074932061589432301, guid: b708458429031474093b3004c3de77f9, type: 3}
-  spawnInterval: 2
-  _maxHijas: 5
+  _maxHijas: 3
 --- !u!1 &6040614600024434154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,6 +1154,14 @@ MonoBehaviour:
     enterConditions:
     - _condition: {fileID: 5423786949828986890}
       _negate: 0
+    - _condition: {fileID: 4556652366372516248}
+      _negate: 1
+  - state: {fileID: 8330133756692525588}
+    enterConditions:
+    - _condition: {fileID: 5423786949828986890}
+      _negate: 0
+    - _condition: {fileID: 4556652366372516248}
+      _negate: 0
 --- !u!1 &7986282617621771783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,7 +1173,7 @@ GameObject:
   - component: {fileID: 7461280860815949787}
   - component: {fileID: 1828715075259602696}
   m_Layer: 9
-  m_Name: Wait 1sCondition
+  m_Name: Wait 1,5sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1144,7 +1206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3da0bdaa3417541a8cdc57e69aa60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waitTime: 1
+  _waitTime: 1.5
 --- !u!1 &8097717879972602624
 GameObject:
   m_ObjectHideFlags: 0
