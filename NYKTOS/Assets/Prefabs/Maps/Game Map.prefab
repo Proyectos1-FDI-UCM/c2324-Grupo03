@@ -22080,11 +22080,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4650631353993242343, guid: ce5bdf79bedf41b4b89259fe4028b543, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4650631353993242343, guid: ce5bdf79bedf41b4b89259fe4028b543, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4650631353993242343, guid: ce5bdf79bedf41b4b89259fe4028b543, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22164,11 +22164,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6750348343497695362, guid: ce5bdf79bedf41b4b89259fe4028b543, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.28125
+      value: 6.0625
       objectReference: {fileID: 0}
     - target: {fileID: 6750348343497695362, guid: ce5bdf79bedf41b4b89259fe4028b543, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 3.6875
+      value: 6.03125
       objectReference: {fileID: 0}
     - target: {fileID: 6750348343497695362, guid: ce5bdf79bedf41b4b89259fe4028b543, type: 3}
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
@@ -22236,7 +22236,7 @@ SpriteRenderer:
   m_SortingLayerID: -1661496829
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c821e6b8d5cf2514896d4954cb6640cd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df68092c5fb2d2b419fac05d8640c1bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
