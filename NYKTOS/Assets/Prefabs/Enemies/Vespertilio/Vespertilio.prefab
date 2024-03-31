@@ -951,7 +951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd925eae5ad73243a17684a41483d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animationName: Walk
+  _animationName: Knockback
   _whereToLookAt: 0
   enterBehaviours:
   - _behaviour: {fileID: 3156389573306969710}

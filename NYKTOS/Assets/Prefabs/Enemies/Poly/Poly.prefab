@@ -216,15 +216,15 @@ SpriteRenderer:
   m_SortingLayerID: -1231885529
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 197322998, guid: 27402d97d6e91ef4784085406024c86b, type: 3}
+  m_Sprite: {fileID: 334678106, guid: 928ab9583ef8a104b8a8eb72d52c7d2d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.25, y: 1.875}
+  m_Size: {x: 1.09375, y: 1.875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &2511592493935305881
@@ -1070,7 +1070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd925eae5ad73243a17684a41483d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animationName: Walk
+  _animationName: Knockback
   _whereToLookAt: 0
   enterBehaviours:
   - _behaviour: {fileID: 8711176540936773688}
