@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponName: PolyAttack
   _damage: 1
-  _weaponPrefab: {fileID: 0}
+  _weaponPrefab: {fileID: 988005469510805607, guid: a88e7afdda1d1b94db0686d087e8093d, type: 3}

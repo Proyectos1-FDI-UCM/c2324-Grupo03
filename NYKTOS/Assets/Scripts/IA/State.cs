@@ -13,6 +13,12 @@ struct stateAndConditions
 
 public class State : MonoBehaviour
 {
+    #region animations
+    [Header("ANIMATIONS")]
+    [SerializeField]
+    string _animationName = string.Empty;
+    #endregion
+
     #region behaviours
     [SerializeField]
     private BehaviourPerformer[] enterBehaviours;
@@ -32,6 +38,7 @@ public class State : MonoBehaviour
 
     public void OnEnterState()
     {
+        PlayAnimation(_animationName);
         foreach(BehaviourPerformer behaviour in enterBehaviours)
         {
             behaviour.Perform();
@@ -83,5 +90,14 @@ public class State : MonoBehaviour
         if (condition)
         nextState = possibleStates[i].state;
         return condition;
+    }
+
+    private void PlayAnimation(string clip)
+    {
+        if (clip != null && GetComponentInParent<HealthComponent>().GetComponentInChildren<Animator>() != null)
+        {
+            Animator animator = GetComponentInParent<HealthComponent>().GetComponentInChildren<Animator>();
+            animator.Play(clip);
+        }
     }
 }
