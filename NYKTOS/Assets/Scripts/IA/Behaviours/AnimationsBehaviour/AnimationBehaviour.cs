@@ -48,7 +48,7 @@ public class AnimationBehaviour : MonoBehaviour, IBehaviour
         Vector2 movementDirection = velocity.normalized;
         _animator.SetFloat("xAxis", movementDirection.x);
         _animator.SetFloat("yAxis", movementDirection.y);
-
+        Debug.Log("xAxis:" + movementDirection.x + ", yAxis" + movementDirection.y);
         yield return new WaitForSeconds(0.5f);
         isOnCoolDown = false;
     }
