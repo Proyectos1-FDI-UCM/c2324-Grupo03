@@ -52,26 +52,20 @@ public class InputManager : MonoBehaviour
 
     private void Blink(InputAction.CallbackContext context) => _player.Blink();
 
-    public void Look(InputAction.CallbackContext context) => Look(_currentScheme);
 
-    public void Look(string currentScheme)
+    public void Look(InputAction.CallbackContext context)
     {
-        //Debug.Log(_playerInput.currentControlScheme);
-        Debug.Log("estoy mirando");
-
         Vector2 input;
         bool isMouse = false;
-        if (currentScheme == gamepadScheme)
+        if (_currentScheme == gamepadScheme)
         {
-            input = Gamepad.current.rightStick.ReadValue();
-            Debug.Log(input);
+            input = context.ReadValue<Vector2>();
         }
         else
         {
             isMouse = true;
             input = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         }
-        //Debug.Log(isMouse);
         _player.Look(input, isMouse);
     }
 
@@ -137,6 +131,7 @@ public class InputManager : MonoBehaviour
         _playerControls.Player.Move.canceled += Move;
         _playerControls.Player.Blink.performed += Blink;
         _playerControls.Player.Look.performed += Look;
+
         _playerControls.Player.PrimaryAttack.performed += PrimaryAttack;
         _playerControls.Player.SecondaryAttack.performed += SecondaryAttack;
         _playerControls.Player.Interact.performed += Interact;
@@ -155,6 +150,7 @@ public class InputManager : MonoBehaviour
         _playerControls.Player.Move.canceled -= Move;
         _playerControls.Player.Blink.performed -= Blink;
         _playerControls.Player.Look.performed -= Look;
+
         _playerControls.Player.PrimaryAttack.performed -= PrimaryAttack;
         _playerControls.Player.SecondaryAttack.performed -= SecondaryAttack;
         _playerControls.Player.Interact.performed -= Interact;
