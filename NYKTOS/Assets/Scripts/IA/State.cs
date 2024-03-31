@@ -13,7 +13,22 @@ struct stateAndConditions
 
 public class State : MonoBehaviour
 {
+    #region animations
+    [Header("ANIMATIONS")]
+    [SerializeField]
+    string _animationName = string.Empty;
+
+    private enum AnimationPriority
+    {
+        Player, Building, Both
+    }
+
+    [SerializeField]
+    private AnimationPriority _whereToLookAt = AnimationPriority.Player;
+    #endregion
+
     #region behaviours
+    [Header("BEHAVIOURS")]
     [SerializeField]
     private BehaviourPerformer[] enterBehaviours;
 
@@ -25,6 +40,7 @@ public class State : MonoBehaviour
     #endregion
 
     #region states and conditions
+    [Header("EXIT STATES AND CONDITIONS")]
 
     [SerializeField]
     private stateAndConditions[] possibleStates;
@@ -32,6 +48,7 @@ public class State : MonoBehaviour
 
     public void OnEnterState()
     {
+        PlayAnimation(_animationName);
         foreach(BehaviourPerformer behaviour in enterBehaviours)
         {
             behaviour.Perform();
@@ -83,5 +100,37 @@ public class State : MonoBehaviour
         if (condition)
         nextState = possibleStates[i].state;
         return condition;
+    }
+
+    private void PlayAnimation(string clip)
+    {
+        if (clip != null && GetComponentInParent<HealthComponent>().GetComponentInChildren<Animator>() != null)
+        {
+            Animator animator = GetComponentInParent<HealthComponent>().GetComponentInChildren<Animator>();
+            animator.Play(clip);
+
+            if(GetComponentInParent<EnemyPriorityComponent>() != null)
+            {
+                EnemyPriorityComponent priority = GetComponentInParent<EnemyPriorityComponent>();
+
+                Vector3 direction = Vector3.right;
+
+                if (_whereToLookAt == AnimationPriority.Player && priority.toPlayerPath.corners.Length > 1)
+                {
+                    direction = (priority.toPlayerPath.corners[1] - priority.transform.position).normalized;
+                }
+                else if (_whereToLookAt == AnimationPriority.Building && priority.toNearestBuildingPath.corners.Length >1)
+                {
+                    direction = (priority.toNearestBuildingPath.corners[1] - priority.transform.position).normalized;
+                }
+                else if (priority.priorityPath.corners.Length > 1)
+                {
+                    direction = (priority.priorityPath.corners[1] - priority.transform.position).normalized;
+                }
+
+                animator.SetFloat("xAxis", direction.x);
+                animator.SetFloat("yAxis", direction.y);
+            }
+        }
     }
 }
