@@ -1,50 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &583985638561629485
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1353826681444743758}
-  - component: {fileID: 6719811063700722051}
-  m_Layer: 9
-  m_Name: AnimationSpawnHijasBehaviour
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1353826681444743758
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583985638561629485}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7537913431990830328}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6719811063700722051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583985638561629485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d79df9903dc6031459eafaa2e22f1603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animationType: 3
 --- !u!1 &2615027658804113251
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,8 +699,7 @@ MonoBehaviour:
   enterBehaviours:
   - _behaviour: {fileID: 2683016789316417445}
   - _behaviour: {fileID: 6010400854293651724}
-  updateBehaviours:
-  - _behaviour: {fileID: 8726509610298045236}
+  updateBehaviours: []
   exitBehaviours: []
   possibleStates:
   - state: {fileID: 6085994863610978108}
@@ -841,51 +795,6 @@ Transform:
   - {fileID: 3632067628936819240}
   m_Father: {fileID: 3399931161153121125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5274399705818785835
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3379039186638301967}
-  - component: {fileID: 6207960581601646373}
-  m_Layer: 9
-  m_Name: AnimationDieBehaviour
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3379039186638301967
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5274399705818785835}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7537913431990830328}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6207960581601646373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5274399705818785835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d79df9903dc6031459eafaa2e22f1603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animationType: 2
 --- !u!1 &5423786949828986890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,8 +1058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animationName: Walk
   _whereToLookAt: 0
-  enterBehaviours:
-  - _behaviour: {fileID: 8726509610298045236}
+  enterBehaviours: []
   updateBehaviours:
   - _behaviour: {fileID: 3563958836088504113}
   exitBehaviours:
@@ -1246,53 +1154,5 @@ Transform:
   - {fileID: 8433510922703256149}
   - {fileID: 451169281197382687}
   - {fileID: 8491358833419939938}
-  - {fileID: 1353826681444743758}
-  - {fileID: 6844405212523384385}
-  - {fileID: 3379039186638301967}
   m_Father: {fileID: 3399931161153121125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8726509610298045236
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6844405212523384385}
-  - component: {fileID: 3733181584037779015}
-  m_Layer: 9
-  m_Name: AnimationWalkBehaviour
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6844405212523384385
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8726509610298045236}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7537913431990830328}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3733181584037779015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8726509610298045236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d79df9903dc6031459eafaa2e22f1603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animationType: 1
