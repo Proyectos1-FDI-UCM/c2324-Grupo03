@@ -30,17 +30,14 @@ public class ToPlayerAndFleeBehaviour : MonoBehaviour, IBehaviour
 
             if (distance > _minDistanceToPlayer && distance > _maxDistanceToPlayer)
             {
-                print("gotoplayer");
                 _rbMovement.OrthogonalMovement(direction);
             }
             else if (distance > _minDistanceToPlayer && distance <= _maxDistanceToPlayer)
             {
-                print("stop");
                 _rbMovement.OrthogonalMovement(Vector2.zero);
             }
             else
             {
-                print("flee");
                 _rbMovement.OrthogonalMovement(-direction);
             }
         }
@@ -63,8 +60,8 @@ public class ToPlayerAndFleeBehaviour : MonoBehaviour, IBehaviour
         if (gizmos)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(_myTransform.position, _minDistanceToPlayer);
-            Gizmos.DrawWireSphere(_myTransform.position, _maxDistanceToPlayer);
+            Gizmos.DrawWireSphere(transform.position, _minDistanceToPlayer);
+            Gizmos.DrawWireSphere(transform.position, _maxDistanceToPlayer);
         }
     }
 }
