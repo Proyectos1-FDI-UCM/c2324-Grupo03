@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 27402d97d6e91ef4784085406024c86b
+guid: 928ab9583ef8a104b8a8eb72d52c7d2d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -118,14 +118,14 @@ TextureImporter:
         width: 40
         height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5314d2ac23c45e2419866a438426e549
-      internalID: 197322998
+      spriteID: 7970538ae4be44a4bb14360c0ccedea4
+      internalID: -355708014
       vertices: []
       indices: 
       edges: []
@@ -139,14 +139,14 @@ TextureImporter:
         width: 40
         height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 072b0d9e2f1d89249b12cb94b3f74ca3
-      internalID: 737963580
+      spriteID: f7881e6aef7713941b9eb707fce3dc0b
+      internalID: -1548336265
       vertices: []
       indices: 
       edges: []
@@ -160,14 +160,14 @@ TextureImporter:
         width: 40
         height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0b83b1147bbe8d46b93452ad843e3dd
-      internalID: 2105169272
+      spriteID: d5c477fa3678f3247aaf3ff4eaf170e5
+      internalID: -2140516961
       vertices: []
       indices: 
       edges: []
@@ -181,14 +181,14 @@ TextureImporter:
         width: 40
         height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a47dd7170ebede4884fa56683ea8da5
-      internalID: 524547979
+      spriteID: 34655eec373850745989658c22d85923
+      internalID: 1525875839
       vertices: []
       indices: 
       edges: []
@@ -202,14 +202,14 @@ TextureImporter:
         width: 40
         height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0474898083b66e4680da6bf801c99c0
-      internalID: 288303588
+      spriteID: 0dd5567452586f549a6ddb0b07b666d9
+      internalID: -1111275960
       vertices: []
       indices: 
       edges: []
@@ -218,19 +218,19 @@ TextureImporter:
       name: Poly_5
       rect:
         serializedVersion: 2
-        x: 2
-        y: 10
-        width: 40
+        x: 137
+        y: 75
+        width: 35
         height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8174672db3d12b145b8489db1847b166
-      internalID: 481359979
+      spriteID: 6b017af034fecd64b993190900dad3b7
+      internalID: 334678106
       vertices: []
       indices: 
       edges: []
@@ -239,19 +239,19 @@ TextureImporter:
       name: Poly_6
       rect:
         serializedVersion: 2
-        x: 45
-        y: 10
-        width: 40
+        x: 179
+        y: 75
+        width: 35
         height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfbc3f56fdbff6944ace0edabb94acd8
-      internalID: 664868569
+      spriteID: 5ba1550b71913174bb2c2ade538d39fd
+      internalID: -805190556
       vertices: []
       indices: 
       edges: []
@@ -260,19 +260,145 @@ TextureImporter:
       name: Poly_7
       rect:
         serializedVersion: 2
-        x: 88
-        y: 10
-        width: 40
+        x: 218
+        y: 75
+        width: 35
         height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5c11a438cec28747a43c23997bcf9a6
-      internalID: -1939852507
+      spriteID: b5535c49dad5f274e997789520d9e381
+      internalID: -1895546234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poly_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 10
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e228726d3df64d144bc2904c49aa58fd
+      internalID: -1449776795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poly_9
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 10
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b76c6d922be771c4a8ebf5312925d4ea
+      internalID: -1730195883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poly_10
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 10
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8450cbb09c4ce0b45923f09b3fc63b89
+      internalID: 1034798187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poly_11
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 9
+        width: 35
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8246fc016d7b84b94829ec0c1cd3d8
+      internalID: 507940161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poly_12
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 9
+        width: 35
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8168ee0bffc33458b60dd5f350c268
+      internalID: -1055377758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poly_13
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 9
+        width: 35
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7170e0634be234445aa2ad817e6ab9fc
+      internalID: 1972984537
       vertices: []
       indices: 
       edges: []
@@ -288,14 +414,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Poly_0: 197322998
-      Poly_1: 737963580
-      Poly_2: 2105169272
-      Poly_3: 524547979
-      Poly_4: 288303588
-      Poly_5: 481359979
-      Poly_6: 664868569
-      Poly_7: -1939852507
+      Poly_0: -355708014
+      Poly_1: -1548336265
+      Poly_10: 1034798187
+      Poly_11: 507940161
+      Poly_12: -1055377758
+      Poly_13: 1972984537
+      Poly_2: -2140516961
+      Poly_3: 1525875839
+      Poly_4: -1111275960
+      Poly_5: 334678106
+      Poly_6: -805190556
+      Poly_7: -1895546234
+      Poly_8: -1449776795
+      Poly_9: -1730195883
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
