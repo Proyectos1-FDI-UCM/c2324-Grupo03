@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd925eae5ad73243a17684a41483d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animationName: Walk
+  _whereToLookAt: 0
   enterBehaviours:
   - _behaviour: {fileID: 6698784512251519972}
   updateBehaviours: []
@@ -222,7 +224,7 @@ SpriteRenderer:
   m_Size: {x: 1.25, y: 1.875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &2511592493935305881
@@ -327,6 +329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd925eae5ad73243a17684a41483d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animationName: Walk
+  _whereToLookAt: 0
   enterBehaviours:
   - _behaviour: {fileID: 7617789740012206592}
   updateBehaviours: []
@@ -899,7 +903,7 @@ GameObject:
   - component: {fileID: 3906610732511413939}
   - component: {fileID: 1575053465498101187}
   m_Layer: 9
-  m_Name: Wait 0,4sCondition
+  m_Name: Wait 0.4sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1066,6 +1070,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd925eae5ad73243a17684a41483d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animationName: Walk
+  _whereToLookAt: 0
   enterBehaviours:
   - _behaviour: {fileID: 8711176540936773688}
   updateBehaviours: []
