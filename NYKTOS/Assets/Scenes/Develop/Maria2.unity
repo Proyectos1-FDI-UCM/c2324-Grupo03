@@ -783,6 +783,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1010973683906569202, guid: 24251535301804b4fb158da86df63da5, type: 3}
+      propertyPath: _animationName
+      value: Knockback
+      objectReference: {fileID: 0}
     - target: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
       propertyPath: m_Name
       value: Vespertilio
@@ -1079,6 +1083,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3529068338194848619, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
+      propertyPath: _animationName
+      value: Knockback
+      objectReference: {fileID: 0}
     - target: {fileID: 4111107077907592026, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
       propertyPath: m_Size.x
       value: 1.09375
@@ -1088,8 +1096,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 334678106, guid: 928ab9583ef8a104b8a8eb72d52c7d2d, type: 3}
     - target: {fileID: 4111107077907592026, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111107077907592026, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111107077907592026, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111107077907592026, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111107077907592026, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128456268691655586, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128456268691655586, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
