@@ -52,31 +52,27 @@ public class InputManager : MonoBehaviour
 
     private void Blink(InputAction.CallbackContext context) => _player.Blink();
 
-    public void Look(InputAction.CallbackContext context)
+    public void Look(InputAction.CallbackContext context) => Look(_currentScheme);
+
+    public void Look(string currentScheme)
     {
-        Vector2 input = context.ReadValue<Vector2>();
+        //Debug.Log(_playerInput.currentControlScheme);
+        Debug.Log("estoy mirando");
+
+        Vector2 input;
         bool isMouse = false;
-        if (_currentScheme == mouseScheme)
+        if (currentScheme == gamepadScheme)
+        {
+            input = Gamepad.current.rightStick.ReadValue();
+            Debug.Log(input);
+        }
+        else
         {
             isMouse = true;
             input = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         }
-        //Debug.Log(_currentScheme);
-        //Debug.Log(_playerInput.currentControlScheme);
+        //Debug.Log(isMouse);
         _player.Look(input, isMouse);
-
-       
-        //Vector2 input;
-        //if (_currentScheme == gamepadScheme)
-        //{
-        //    input = context.ReadValue<Vector2>();
-        //}
-        //else
-        //{
-        //    Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue()); //apaño chungo, cambiar luego
-        //    Vector2 playerPosition = _myTransform.position;
-        //    input = (mousePosition - playerPosition).normalized;
-        //}
     }
 
     private void PrimaryAttack(InputAction.CallbackContext context) => _player.PrimaryAttack();
@@ -101,18 +97,14 @@ public class InputManager : MonoBehaviour
     #region controls
     private void OnControlsChanged(PlayerInput input)
     {
-        Debug.Log("cambio de controles");
-        Debug.Log(_playerInput.currentControlScheme);
-
         if (_playerInput.currentControlScheme == gamepadScheme && _currentScheme != gamepadScheme)
         {
-            //Debug.Log(_playerInput.currentControlScheme);
+            //Debug.Log("cambio a gamepad");
             _currentScheme = gamepadScheme;
             Cursor.visible = false;
         }
         else if (_playerInput.currentControlScheme == mouseScheme && _currentScheme != mouseScheme)
         {
-            //Debug.Log(_playerInput.currentControlScheme);
             _currentScheme = mouseScheme;
             Cursor.visible = true;
         }
