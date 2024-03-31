@@ -37,11 +37,16 @@ public class InputManager : MonoBehaviour
         _player = player.GetComponent<PlayerController>();
         _playerInput = player.GetComponent<PlayerInput>();
 
-        _currentScheme = _playerInput.currentControlScheme;
-
-        _playerInput.onControlsChanged += OnControlsChanged;
+        ControlsStart();        
     }
 
+    private void ControlsStart()
+    {
+        _currentScheme = _playerInput.currentControlScheme;
+
+        OnControlsChanged(_playerInput);
+        _playerInput.onControlsChanged += OnControlsChanged;
+    }
 
     #region player actions
     private void Move(InputAction.CallbackContext context)
@@ -73,8 +78,11 @@ public class InputManager : MonoBehaviour
 
     private void SecondaryAttack(InputAction.CallbackContext context) => _player.SecondaryAttack();
 
-    private void Interact(InputAction.CallbackContext context) => _player.Interact();
-
+    //private void Interact(InputAction.CallbackContext context) => _player.Interact();
+    private void Interact(InputAction.CallbackContext context)
+    {
+        _player.Interact();
+    }
     #endregion
 
     private void PauseGame(InputAction.CallbackContext context)
