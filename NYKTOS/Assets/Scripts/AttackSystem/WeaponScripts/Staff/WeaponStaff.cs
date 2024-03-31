@@ -13,6 +13,9 @@ public class WeaponStaff : Weapon
 
     [SerializeField]
     private GameObject _bullet;
+
+    [SerializeField]
+    private GameObject _staffPrefab;
     #endregion
 
     public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType)
@@ -24,6 +27,12 @@ public class WeaponStaff : Weapon
 
         bullet.SetStats(damage, attackType);
         bullet.SetDirection(direction);
+
+        if (_staffPrefab != null)
+        {
+            StartCoroutine(InstantiateSprite(direction));
+        }
+
     }
 
     #region secondaryuse
@@ -45,6 +54,21 @@ public class WeaponStaff : Weapon
         yield return new WaitForSeconds(0.1f);
 
         Destroy(current);
+    }
+    #endregion
+
+    #region primaryuse
+    IEnumerator InstantiateSprite(Vector2 direction)
+    {
+            GameObject sprite = Instantiate(_staffPrefab, transform.position + (Vector3)direction.normalized * 0.75f, Quaternion.Euler(0, 0, DirectionAngle(direction) - 90));
+            sprite.transform.parent = transform;
+            yield return new WaitForSeconds(0.3f);
+            Destroy(sprite);
+    }
+
+    private float DirectionAngle(Vector2 direction) //saca el angulo de la direccion dando por sentado que el modulo de la direccion es 1
+    {
+        return (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
     }
     #endregion
 }
