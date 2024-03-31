@@ -604,7 +604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-    scriptableWeapon: {fileID: 11400000, guid: 6484b57929a82644d9f45c7420f08439, type: 2}
+    scriptableWeapon: {fileID: 11400000, guid: e4436164dd6de594991d9c32f51761ef, type: 2}
     attackType: 0
 --- !u!114 &8151834710267155371
 MonoBehaviour:
