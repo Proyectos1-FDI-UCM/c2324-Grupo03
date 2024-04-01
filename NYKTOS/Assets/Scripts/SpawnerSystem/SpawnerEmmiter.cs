@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-[CreateAssetMenu(fileName = "SpawnerEmmiter", menuName = "Emmiters/SpawnerEmmiter")]
+[CreateAssetMenu(fileName = "New Spawner Emmiter", menuName = "Emmiter/Spawner")]
 public class SpawnerEmmiter : ScriptableObject
 {   
     private UnityEvent<Dictionary<SpawnerRegion, Enemy[]>> _loadSpawners = new UnityEvent<Dictionary<SpawnerRegion, Enemy[]>>();

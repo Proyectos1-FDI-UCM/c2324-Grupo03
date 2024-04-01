@@ -31,7 +31,7 @@ public class InversionEffect : ScriptableObject
     /// <param name="inversionStatus"></param>
     public void Invert(bool inversionStatus) => inversionEvent.Invoke(inversionStatus);
 
-    public void OnValidate()
+    void OnValidate()
     {
         Invert(_inversionStatus);
     }
