@@ -15,33 +15,18 @@ public class GlobalLightcycle : MonoBehaviour
     void Start()
     {
         _globalLight = GetComponent<Light2D>();
-        GameManager.Instance.GameStateChanged.AddListener(GameStateListener);
-        GameStateListener(GameManager.Instance.State);
+        _inversionEffect.InversionEvent.AddListener(Invert);
     }
 
-    private void GameStateListener(GameState state)
+    private void Invert(bool inversionStatus)
     {
-        if(state == GameState.Night)
+        if(inversionStatus)
         {
-            Invoke(nameof(InvertToNight), 1f);
-            InvertToNight();
+            _globalLight.intensity = 0;
         }
-        else if (state == GameState.Day)
+        else
         {
-            Invoke(nameof(InvertToDay), 1f);
-            InvertToDay();
+            _globalLight.intensity = 1;
         }
-    }
-
-    private void InvertToNight()
-    {
-        _inversionEffect.Invert(true);
-        _globalLight.intensity = 0;
-    }
-
-    private void InvertToDay()
-    {
-        _inversionEffect.Invert(false);
-        _globalLight.intensity = 1;
     }
 }

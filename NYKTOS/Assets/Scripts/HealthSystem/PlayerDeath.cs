@@ -5,17 +5,21 @@ using UnityEngine;
 public class PlayerDeath : MonoBehaviour, IDeath
 {
     #region references
+
+    // [Marco] Not optimal
+    [SerializeField]
+    private CustomState _day;
+
     private PlayerStateMachine _playerState;
     private HealthComponent _health;
     
-    #endregion
-
-
     [SerializeField]
     private SpriteRenderer _deathskin;
 
     [SerializeField]
     private SpriteRenderer _aliveskin;
+
+    #endregion
 
     public void Death()
     {
@@ -36,16 +40,14 @@ public class PlayerDeath : MonoBehaviour, IDeath
         UIManager.Instance.DeathScreenOff();
     }
 
-    private void DayRevive(GameState state)
+    private void DayRevive()
     {
-        if(state == GameState.Day)
-        {
-            _aliveskin.enabled = true;
-            _deathskin.enabled = false;
-            _health.MaxHealth();
-            _playerState.SetState(PlayerState.Idle);
-            UIManager.Instance.DeathScreenOff();
-        }
+        _aliveskin.enabled = true;
+        _deathskin.enabled = false;
+        _health.MaxHealth();
+        _playerState.SetState(PlayerState.Idle);
+        UIManager.Instance.DeathScreenOff();
+    
     }
 
     void Start()
@@ -53,14 +55,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
         _health = GetComponent<HealthComponent>();
         _playerState = GetComponent<PlayerStateMachine>();
      
-        GameManager.Instance.GameStateChanged.AddListener(DayRevive);
-        /* 
-        
-        Marco:
-        
-        DayRevive se ejecuta cada vez que haya un cambio de estado
-        en el game manager
+        _day.OnStateEnter.AddListener(DayRevive);
 
-        */     
     }
 }

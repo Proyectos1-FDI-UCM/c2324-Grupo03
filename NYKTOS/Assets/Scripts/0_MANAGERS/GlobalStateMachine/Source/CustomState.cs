@@ -97,14 +97,4 @@ public class CustomState : ScriptableObject
     {
         _changeToScene = null;
     }
-
-    void OnValidate()
-    {
-        if(_changeToScene!=null)
-        {
-            Debug.Log(_changeToScene.name);
-
-            Debug.Log(UnityEditor.SceneManagement.EditorSceneManager.GetActiveScene().name);
-        }
-    }
 }

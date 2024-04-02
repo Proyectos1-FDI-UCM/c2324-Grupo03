@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f75a949d6e7b64bb3fb60da1fcbe46, type: 3}
   m_Name: MainMenu
   m_EditorClassIdentifier: 
-  _changeToScene:
-    m_Handle: 0
-  _stateIdentifier: 5
+  _changeToScene: {fileID: 0}
+  _stateIdentifier: 2
   _onStateLoad: []
   _onStateExit: []
+  _onStateInstantLoad:
+    m_PersistentCalls:
+      m_Calls: []
   _onStateEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  _onStateInstantExit:
     m_PersistentCalls:
       m_Calls: []

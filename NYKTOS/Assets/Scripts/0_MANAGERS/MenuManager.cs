@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    //[Marco] Not optimal  
+    [SerializeField]
+    private GameStateMachine _stateMachine; 
+
     private static MenuManager _instance;
     public static MenuManager Instance
     {
@@ -76,7 +80,7 @@ public class MenuManager : MonoBehaviour
 
     public void Resume()
     {
-        GameManager.Instance.Resume();
+        Time.timeScale = 1.0f;
     }
 
     public void ExitGame()
@@ -84,9 +88,10 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
+    //[Marco] Not optimal  
     public void StartNight()
     {
-        GameManager.Instance.UpdateGameState(GameState.Night);
+        _stateMachine.SetState(GlobalStateIdentifier.Night);
     }
 
     public void BuildAltar()
@@ -112,11 +117,6 @@ public class MenuManager : MonoBehaviour
     #endregion
 
     #region methods
-
-    public void ChangeStateFromMenu()
-    {
-        GameManager.Instance.UpdateGameState(GameState.Night);
-    }
 
     private void SwitchToUIControls()
     {

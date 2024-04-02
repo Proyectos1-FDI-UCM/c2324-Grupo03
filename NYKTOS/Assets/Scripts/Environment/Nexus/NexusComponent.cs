@@ -5,13 +5,17 @@ using UnityEngine;
 public class NexusComponent : MonoBehaviour, IBuilding
 {
 
+    //[Marco] Not optimal
+    [SerializeField]
+    private GameStateMachine _stateMachine;
+
     [SerializeField]
     private GameObject _player;
     private PlayerDeath _playerDeath;
 
     public void OpenMenu()
     {
-        if(GameManager.Instance.State == GameState.Day) 
+        if(_stateMachine.GetCurrentState == GlobalStateIdentifier.Day) 
         {
             MenuManager.Instance.OpenNexusMenu();
         }

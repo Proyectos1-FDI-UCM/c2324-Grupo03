@@ -6,7 +6,9 @@ using System;
 public class ImageControllerScript : MonoBehaviour
 {
 
-    
+    //[Marco] Not optimal
+    [SerializeField]
+    private GameStateMachine _stateMachine;
     
     [SerializeField]
     private GameObject _allTutorials;
@@ -29,7 +31,7 @@ public class ImageControllerScript : MonoBehaviour
         
         foreach (GameObject tutorial in _tutorials)
         {
-            if (GameManager.Instance.State == GameState.Night)
+            if (_stateMachine.GetCurrentState == GlobalStateIdentifier.Night)
             {
                 _allTutorials.SetActive(false);
             }

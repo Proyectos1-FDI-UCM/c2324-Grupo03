@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
+    //[Marco] Not optimal
+    [SerializeField]
+    private GameStateMachine _stateMachine;
+
     public void Iniciar()
     {
-        GameManager.Instance.UpdateGameState(GameState.Day);
+        _stateMachine.SetState(GlobalStateIdentifier.Day);
     }
 
     public void Salir()

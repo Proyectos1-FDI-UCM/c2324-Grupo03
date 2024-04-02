@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Day
   m_EditorClassIdentifier: 
   _changeToScene: {fileID: 0}
-  _stateIdentifier: 8
+  _stateIdentifier: 5
   _onStateLoad: []
   _onStateExit: []
   _onStateInstantLoad:

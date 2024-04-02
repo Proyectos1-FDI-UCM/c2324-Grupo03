@@ -17,12 +17,14 @@ public class NightTransition : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.GameStateChanged.AddListener(GameStateListener);
         _TransitionToNight.SetActive(true);
         _TransitionToDay.SetActive(true);
     }
 
-    
+    /*
+
+    TODO PARA EL 03/04
+
     private void GameStateListener(GameState state)
     {
         if (state == GameState.Night)
@@ -40,6 +42,7 @@ public class NightTransition : MonoBehaviour
             LoadTransition();
         }
     }
+    */
     
 
     public void LoadTransition()

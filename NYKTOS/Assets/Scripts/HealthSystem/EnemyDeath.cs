@@ -7,13 +7,9 @@ using UnityEngine;
 [System.Serializable]
 public class EnemyDeath : MonoBehaviour, IDeath
 {
-    void GameStateListener(GameState state)
-    {
-        if(!(GameState.Night == state))
-        {
-            Death();
-        }
-    }
+    // [Marco] Not optimal
+    [SerializeField]
+    private CustomState _day;
 
     public void Death()
     {
@@ -21,10 +17,12 @@ public class EnemyDeath : MonoBehaviour, IDeath
         {
             enemyBag.InstantiateCrystal(transform.position);
         }
+
+        // enemigos concurrentes
         Destroy(gameObject);
     }
 
     void Start(){
-        GameManager.Instance.GameStateChanged.AddListener(GameStateListener);
+        _day.OnStateInstantExit.AddListener(Death);
     }
 }

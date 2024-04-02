@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lose
   m_EditorClassIdentifier: 
   _changeToScene: {fileID: 0}
-  _stateIdentifier: 10
+  _stateIdentifier: 7
   _onStateLoad: []
   _onStateExit: []
   _onStateInstantLoad:

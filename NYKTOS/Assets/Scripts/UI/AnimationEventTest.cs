@@ -8,6 +8,10 @@ public class AnimationEventTest : MonoBehaviour
     //[SerializeField]
     //private GlobalLightcycle GlobalLightcycle;
 
+    //[Marco] Not optimal
+    [SerializeField]
+    private GameStateMachine _stateMachine;
+
     [SerializeField]
     private InversionEffect _inversionEffect;
     private bool _Invert = false;
@@ -39,7 +43,7 @@ public class AnimationEventTest : MonoBehaviour
 
     private void ChangeIlumination()
     {
-        if (GameManager.Instance.State == GameState.Night)
+        if (_stateMachine.GetCurrentState == GlobalStateIdentifier.Night)
         {
             _inversionEffect.Invert(true);
             _globalLight.intensity = 0;
@@ -58,7 +62,7 @@ public class AnimationEventTest : MonoBehaviour
 
     private void TransitionPause()
     {
-        GameManager.Instance.Pause();
+        Time.timeScale = 0.0f;
     }
 
     private void ResumePlayerMovement()
@@ -68,9 +72,10 @@ public class AnimationEventTest : MonoBehaviour
 
     private void TransitionResume()
     {
-        GameManager.Instance.Resume();
+        Time.timeScale = 1.0f;
     }
 
+    /*
     private void TransitionUpdateState()
     {
         switch (GameManager.Instance.State)
@@ -83,7 +88,7 @@ public class AnimationEventTest : MonoBehaviour
                 break;
         }
     }
-
+    */
 
 
 }

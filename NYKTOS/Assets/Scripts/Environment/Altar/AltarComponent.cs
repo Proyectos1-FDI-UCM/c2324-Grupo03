@@ -5,6 +5,10 @@ using UnityEngine.InputSystem;
 
 public class AltarComponent : MonoBehaviour, IBuilding
 {
+
+    [SerializeField]
+    private GameStateMachine _stateMachine;
+
     // Codigo de Iker y Andrea :D
 
     //SI ESTA CONSTRUIDO, ATRAE ENEMIGOS, ACTIVA VIDA Y NO SE PUEDE INTERACTUAR CON EL HASTA QUE SEA DESTRUIDO (ALTARHEALTHCOMPONENT)
@@ -16,12 +20,15 @@ public class AltarComponent : MonoBehaviour, IBuilding
 
     public void OpenMenu()
     {
-        if(_state.buildingState == BuildingStateMachine.BuildingState.NotBuilt && GameManager.Instance.State == GameState.Day)
+        if
+        (
+            _state.buildingState == BuildingStateMachine.BuildingState.NotBuilt && 
+            _stateMachine.GetCurrentState == GlobalStateIdentifier.Day)
         {
             Debug.Log("hola soy un altar sin reparar");
-            // Activar menú construcción
+            // Activar menï¿½ construcciï¿½n
         }
-        else { } // Activar menú potenciar armas
+        else { } // Activar menï¿½ potenciar armas
     }
 
     public void CloseMenu() => MenuManager.Instance.CloseAllMenus();

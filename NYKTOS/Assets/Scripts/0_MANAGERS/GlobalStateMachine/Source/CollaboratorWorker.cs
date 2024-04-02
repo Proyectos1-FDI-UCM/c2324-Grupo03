@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public abstract class CollaboratorWorker : MonoBehaviour
@@ -10,10 +11,11 @@ public abstract class CollaboratorWorker : MonoBehaviour
         _emmiter.WorkStart.AddListener(StartWorker);
     }
 
-    public void StartWorker()
+    private void StartWorker()
     {
         _emmiter.AddWorker();
         Perform();
+        StartCoroutine(WorkerCorroutine());
     }
 
     public void StopWorker()
@@ -21,5 +23,11 @@ public abstract class CollaboratorWorker : MonoBehaviour
         _emmiter.DeleteWorker();
     }
 
-    protected abstract void Perform();
+    private IEnumerator WorkerCorroutine()
+    {
+        yield return Perform();
+        StopWorker();
+    }
+
+    protected abstract IEnumerator Perform();
 }

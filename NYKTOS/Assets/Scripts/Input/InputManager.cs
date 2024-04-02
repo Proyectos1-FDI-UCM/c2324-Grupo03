@@ -88,7 +88,8 @@ public class InputManager : MonoBehaviour
     private void PauseGame(InputAction.CallbackContext context)
     {
         MenuManager.Instance.OpenPauseMenu();
-        GameManager.Instance.Pause();
+        //[Marco] Not optimal
+        Time.timeScale = 0.0f;
     }
 
     private void CloseMenu(InputAction.CallbackContext context)
