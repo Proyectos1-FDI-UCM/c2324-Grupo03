@@ -10,8 +10,11 @@ public class DefenseComponent : MonoBehaviour
     //SI ESTA CONSTRUIDO, ATRAE ENEMIGOS, ACTIVA VIDA Y NO SE PUEDE INTERACTUAR CON EL HASTA QUE SEA DESTRUIDO (ALTARHEALTHCOMPONENT)
     //SI ESTA DESTRUIDO, YA NO ATRAE ENEMIGOS, DESACTIVA EL FACTOR VIDA SE PUEDE INTERACTUAR CON EL (EN ESTE COMPONENTE)
 
-    [SerializeField]
+    [SerializeField] private GenericEmmiter _healthRestore;
+
+    [SerializeField] 
     private Defense Defense;
+    private HealthComponent _health;
 
     private GameObject _placeholder;
 
@@ -24,17 +27,12 @@ public class DefenseComponent : MonoBehaviour
     public int Health;
     public int MaxHealth;
 
-    // Start is called before the first frame update
     void Start()
     {
+        _health = GetComponent<HealthComponent>();
+
         MaxHealth = Defense.health;
         Health = Defense.health;
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        _healthRestore.Perform.AddListener(_health.MaxHealth);
     }
 }
