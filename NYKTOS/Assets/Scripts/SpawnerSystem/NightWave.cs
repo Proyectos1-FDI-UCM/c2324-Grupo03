@@ -22,18 +22,7 @@ public class NightWave : ScriptableObject {
     {
         foreach(var wave in _waveList)
         {
-            foreach(SpawnerRegion region in Enum.GetValues(typeof(SpawnerRegion)))
-            {
-                bool matchCondition = false; 
-
-                for(int i = 0; i < wave.subWaveList.Length && !matchCondition; i++)
-                {
-                    if(wave.subWaveList[i].spawnerRegion == region)
-                    {
-                        wave.WaveData.Add(region, wave.subWaveList[i].enemyPool);
-                    }
-                }
-            }
+            wave.WaveValidate();
         }
     }
 }
@@ -43,8 +32,23 @@ public struct Wave
 {
     public int time;
     public SubWave[] subWaveList;
-    private Dictionary<SpawnerRegion, Enemy[]> waveData;
+    private Dictionary<SpawnerRegion, Enemy[]> waveData ;
     public Dictionary<SpawnerRegion, Enemy[]> WaveData {get{return waveData;}}
+
+    public void WaveValidate()
+    {
+        if(waveData == null)
+        {
+            waveData = new Dictionary<SpawnerRegion, Enemy[]>();
+        }
+        foreach(var subwave in subWaveList)
+        {
+            if (!waveData.ContainsKey(subwave.spawnerRegion))
+            {
+                waveData.Add(subwave.spawnerRegion, subwave.enemyPool);
+            }
+        }
+    }
 }
 
 [System.Serializable]
