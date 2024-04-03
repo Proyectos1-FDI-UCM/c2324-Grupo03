@@ -2470,6 +2470,9 @@ GameObject:
   m_Component:
   - component: {fileID: 404518937874270872}
   - component: {fileID: 61759980987047731}
+  - component: {fileID: 7044858079816795135}
+  - component: {fileID: 8343236196401112293}
+  - component: {fileID: 1033584414235757322}
   m_Layer: 0
   m_Name: TX Plant_W_17
   m_TagString: Untagged
@@ -2533,7 +2536,7 @@ SpriteRenderer:
   m_SortingLayerID: 1586853493
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 748018894, guid: 7e648d655d82b1f48aa6a719935623af, type: 3}
+  m_Sprite: {fileID: -617495328, guid: 7e648d655d82b1f48aa6a719935623af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2544,6 +2547,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7044858079816795135
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4908079225607714567}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cecfdb1e41dbca540808dadc59d0166c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8343236196401112293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4908079225607714567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 125b385f2da6f074c9af8d857e05b896, type: 3}
+--- !u!114 &1033584414235757322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4908079225607714567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 0.009161512
+  m_labelHash: 1.2985474e-36
+  m_SpriteKey: 0
+  m_SpriteHash: 641084251
 --- !u!1 &5153607300381568226
 GameObject:
   m_ObjectHideFlags: 0
