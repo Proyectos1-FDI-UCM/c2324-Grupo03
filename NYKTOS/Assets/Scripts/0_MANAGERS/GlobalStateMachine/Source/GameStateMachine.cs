@@ -41,6 +41,11 @@ public class GameStateMachine : ScriptableObject
         SetState(GlobalStateIdentifier.Day);
     }
 
+    public void SetStateToNight()
+    {
+        SetState(GlobalStateIdentifier.Night);
+    }
+
     void OnValidate()
     {
         _stateDictionary.Clear();

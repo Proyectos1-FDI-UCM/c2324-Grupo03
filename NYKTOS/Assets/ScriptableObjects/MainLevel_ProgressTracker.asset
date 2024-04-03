@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2523dbfb6bf3f6741b286dc990c81a78, type: 3}
   m_Name: MainLevel_ProgressTracker
   m_EditorClassIdentifier: 
+  _stateMachine: {fileID: 11400000, guid: 26cd137f8c89dcd4d8bc981a37f3e83f, type: 2}
   _night: 0
   _nightList:
   - {fileID: 11400000, guid: 1b1eb0289b78ca54a95d54e954b3bc1b, type: 2}

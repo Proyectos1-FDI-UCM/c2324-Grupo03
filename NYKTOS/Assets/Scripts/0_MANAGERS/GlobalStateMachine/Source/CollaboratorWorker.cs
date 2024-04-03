@@ -18,15 +18,10 @@ public abstract class CollaboratorWorker : MonoBehaviour
         StartCoroutine(WorkerCorroutine());
     }
 
-    public void StopWorker()
-    {
-        _emmiter.DeleteWorker();
-    }
-
     private IEnumerator WorkerCorroutine()
     {
         yield return Perform();
-        StopWorker();
+        _emmiter.DeleteWorker();
     }
 
     protected abstract IEnumerator Perform();
