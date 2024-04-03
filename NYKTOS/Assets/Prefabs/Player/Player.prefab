@@ -417,7 +417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b9cc239eddd0947b9e8b34857ad094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthRestore: {fileID: 11400000, guid: 9716272772be32846893b2fcd6d7f912, type: 2}
   _BlinkCooldown:
     _cooldownTime: 1
   _PrimaryAttackCooldown:
@@ -772,7 +771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1faa86bce976241a81d77f27cf7d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _day: {fileID: 0}
+  _playerReviveEmmiter: {fileID: 11400000, guid: 6c2195f7a528dd34c949b65262f6333c, type: 2}
   _deathskin: {fileID: 6758919315837710540}
   _aliveskin: {fileID: 6222676936956634352}
 --- !u!114 &4920501686148597465
