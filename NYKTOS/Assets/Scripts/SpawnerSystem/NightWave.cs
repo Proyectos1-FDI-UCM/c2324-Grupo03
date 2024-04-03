@@ -17,31 +17,34 @@ public class NightWave : ScriptableObject {
     [SerializeField]
     private CrystalDrops _nightCrystalDrops;
     public CrystalDrops NightCrystalDrops {get{return _nightCrystalDrops;}}
-}
-
-[System.Serializable]
-public class Wave: ScriptableObject
-{
-    public int time;
-    public SubWave[] subWaveList;
-    private Dictionary<SpawnerRegion, Enemy[]> waveData = new Dictionary<SpawnerRegion, Enemy[]>();
-    public Dictionary<SpawnerRegion, Enemy[]> WaveData {get{return waveData;}}
 
     void OnValidate()
     {
-        foreach(SpawnerRegion region in Enum.GetValues(typeof(SpawnerRegion)))
+        foreach(var wave in _waveList)
         {
-            bool matchCondition = false; 
-
-            for(int i = 0; i < subWaveList.Length && !matchCondition; i++)
+            foreach(SpawnerRegion region in Enum.GetValues(typeof(SpawnerRegion)))
             {
-                if(subWaveList[i].spawnerRegion == region)
+                bool matchCondition = false; 
+
+                for(int i = 0; i < wave.subWaveList.Length && !matchCondition; i++)
                 {
-                    waveData.Add(region, subWaveList[i].enemyPool);
+                    if(wave.subWaveList[i].spawnerRegion == region)
+                    {
+                        wave.WaveData.Add(region, wave.subWaveList[i].enemyPool);
+                    }
                 }
             }
         }
     }
+}
+
+[System.Serializable]
+public struct Wave
+{
+    public int time;
+    public SubWave[] subWaveList;
+    private Dictionary<SpawnerRegion, Enemy[]> waveData;
+    public Dictionary<SpawnerRegion, Enemy[]> WaveData {get{return waveData;}}
 }
 
 [System.Serializable]

@@ -139,12 +139,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7487632267657409401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f82d2aaea3e136f47b0ae0e8932000bc, type: 3}
+  m_Script: {fileID: 11500000, guid: fbbfaacf2978f2e4eb9fb57257ee2cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TransitionType: 0
-  TransitionDuration: 1.5
-  Transition: 0
-  Transition2: 0
-  Transition3: 0
-  Transition4: 0
+  _stateMachine: {fileID: 0}
+  _inversionEffect: {fileID: 0}
+  _globalLight: {fileID: 0}
+  _playerController: {fileID: 0}
+  _TransitionToDay: {fileID: 0}
+  _TransitionToNight: {fileID: 0}
