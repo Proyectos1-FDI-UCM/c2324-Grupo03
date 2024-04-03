@@ -717,13 +717,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1249864226}
     - target: {fileID: 9072366380436489673, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: _day
+      value: 
+      objectReference: {fileID: 11400000, guid: 3358d7a4c7a0a2a49a5da3ded01a2bf0, type: 2}
+    - target: {fileID: 9072366380436489673, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: _night
+      value: 
+      objectReference: {fileID: 11400000, guid: 4819c37fbf1af4249bf7514acdc93fbf, type: 2}
+    - target: {fileID: 9072366380436489673, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 1395921103}
     - target: {fileID: 9072366380436489673, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: _tutorialDay
+      value: 
+      objectReference: {fileID: 11400000, guid: a69f62271090ac944b8915ff4e527f4c, type: 2}
+    - target: {fileID: 9072366380436489673, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
       propertyPath: _stateMachine
       value: 
       objectReference: {fileID: 11400000, guid: 26cd137f8c89dcd4d8bc981a37f3e83f, type: 2}
+    - target: {fileID: 9072366380436489673, guid: cb1ba589c5eaea4458acd54a086c1aa9, type: 3}
+      propertyPath: _tutorialNight
+      value: 
+      objectReference: {fileID: 11400000, guid: bac94f33724207046b48f4f0e51ef124, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

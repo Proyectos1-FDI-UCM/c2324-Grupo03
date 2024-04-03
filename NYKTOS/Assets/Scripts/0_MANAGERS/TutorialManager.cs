@@ -6,10 +6,10 @@ using System;
 public class ImageControllerScript : MonoBehaviour
 {
 
-    //[Marco] Not optimal
+    //[Andrea] Review
     [SerializeField]
-    private GameStateMachine _stateMachine;
-    
+    private GenericEmmiter _day;
+
     [SerializeField]
     private GameObject _allTutorials;
     [SerializeField]
@@ -19,11 +19,14 @@ public class ImageControllerScript : MonoBehaviour
     [SerializeField]
     private float _disappearTime = 1f;
 
+    private void DisableTutorials() => _allTutorials.SetActive(false);
+
     IEnumerator Start()
     {
-        
-            yield return StartCoroutine(AppearAndDisappearImages());
-            _allTutorials.SetActive(true);
+        _day.Perform.AddListener(DisableTutorials);
+
+        yield return StartCoroutine(AppearAndDisappearImages());
+        _allTutorials.SetActive(true);
     }
 
     IEnumerator AppearAndDisappearImages()
@@ -31,20 +34,13 @@ public class ImageControllerScript : MonoBehaviour
         
         foreach (GameObject tutorial in _tutorials)
         {
-            if (_stateMachine.GetCurrentState == GlobalStateIdentifier.Night)
-            {
-                _allTutorials.SetActive(false);
-            }
-
             yield return new WaitForSeconds(_disappearTime);
 
             tutorial.SetActive(true); // Hace que la imagen aparezca
 
             yield return new WaitForSeconds(_appearTime);
 
-            tutorial.SetActive(false); // Hace que la imagen desaparezca
-
-            
+            tutorial.SetActive(false); // Hace que la imagen desaparezca            
         }
     }
 }

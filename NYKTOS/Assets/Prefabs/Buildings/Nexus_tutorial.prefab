@@ -526,9 +526,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2224ec9d387f5c45a885d6c13a40221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateMachine: {fileID: 11400000, guid: 26cd137f8c89dcd4d8bc981a37f3e83f, type: 2}
   _player: {fileID: 0}
   _playerRevive: {fileID: 11400000, guid: 6c2195f7a528dd34c949b65262f6333c, type: 2}
+  _day: {fileID: 11400000, guid: 3358d7a4c7a0a2a49a5da3ded01a2bf0, type: 2}
+  _night: {fileID: 11400000, guid: 4819c37fbf1af4249bf7514acdc93fbf, type: 2}
+  _tutorialDay: {fileID: 11400000, guid: a69f62271090ac944b8915ff4e527f4c, type: 2}
+  _tutorialNight: {fileID: 11400000, guid: bac94f33724207046b48f4f0e51ef124, type: 2}
 --- !u!114 &-3869516557664234671
 MonoBehaviour:
   m_ObjectHideFlags: 0
