@@ -15,6 +15,8 @@ public class AudioPlayer : ScriptableObject
     private float _volume;
     public float volume {  get { return _volume; } }
 
+    bool _loop = false;
+    public bool loop { get { return _loop; } }
 
     private enum ReproductionType
     {
@@ -25,8 +27,8 @@ public class AudioPlayer : ScriptableObject
     #endregion
 
     #region events
-    UnityEvent<AudioClip, float> _playAudio;
-    public UnityEvent<AudioClip, float> playAudio { get { return _playAudio; } }
+    UnityEvent<AudioClip, float, bool> _playAudio;
+    public UnityEvent<AudioClip, float, bool> playAudio { get { return _playAudio; } }
     UnityEvent _stopAudio;
     public UnityEvent stopAudio { get { return _stopAudio; } }
     #endregion
@@ -39,12 +41,12 @@ public class AudioPlayer : ScriptableObject
         }
         else if(_reproductionType == ReproductionType.Default)
         {
-            playAudio?.Invoke(_clip[0], volume);
+            playAudio?.Invoke(_clip[0], _volume, _loop);
         }
         else if (_reproductionType == ReproductionType.Random)
         {
             System.Random rnd = new System.Random();
-            playAudio?.Invoke(_clip[rnd.Next(0, _clip.Length)], volume);
+            playAudio?.Invoke(_clip[rnd.Next(0, _clip.Length)], _volume, _loop);
         }
     }
 
