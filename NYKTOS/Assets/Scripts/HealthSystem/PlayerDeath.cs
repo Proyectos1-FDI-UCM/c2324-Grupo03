@@ -36,6 +36,8 @@ public class PlayerDeath : MonoBehaviour, IDeath
         _deathskin.enabled = false;
         _health.MaxHealth();
         _playerState.SetState(PlayerState.Idle);
+
+        // [Andrea] Not optimal?
         UIManager.Instance.DeathScreenOff();
     }
     

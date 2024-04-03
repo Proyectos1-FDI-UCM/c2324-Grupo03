@@ -11,7 +11,9 @@ public class NexusComponent : MonoBehaviour, IBuilding
 
     [SerializeField]
     private GameObject _player;
-    private PlayerDeath _playerDeath;
+
+    [SerializeField]
+    private GenericEmmiter _playerRevive;
 
     public void OpenMenu()
     {
@@ -21,16 +23,11 @@ public class NexusComponent : MonoBehaviour, IBuilding
         }
         else if (PlayerStateMachine.playerState == PlayerState.Dead) 
         {
-            _playerDeath.Revive();
+            _playerRevive.InvokePerform();
         }
     }
 
     public void CloseMenu() => MenuManager.Instance.CloseAllMenus();
-
-    private void Awake()
-    {
-        _playerDeath = _player.GetComponent<PlayerDeath>();
-    }
 
     private void Start()
     {
