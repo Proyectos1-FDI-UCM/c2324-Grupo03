@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class AnimationEventTest : MonoBehaviour
+public class TransitionPerformer : MonoBehaviour
 {
     //[SerializeField]
     //private GlobalLightcycle GlobalLightcycle;
