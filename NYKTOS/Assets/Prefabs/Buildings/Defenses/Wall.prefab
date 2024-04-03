@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16381709d15edf04693cedfccec2453c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthRestore: {fileID: 11400000, guid: 9716272772be32846893b2fcd6d7f912, type: 2}
   Defense: {fileID: 11400000, guid: 3048208e4256a1b4ab05b7544afa7535, type: 2}
   Health: 0
   MaxHealth: 0

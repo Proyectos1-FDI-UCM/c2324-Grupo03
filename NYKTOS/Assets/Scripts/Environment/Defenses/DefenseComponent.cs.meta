@@ -3,7 +3,9 @@ guid: 16381709d15edf04693cedfccec2453c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _healthRestore: {fileID: 11400000, guid: 9716272772be32846893b2fcd6d7f912, type: 2}
+  - Defense: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
