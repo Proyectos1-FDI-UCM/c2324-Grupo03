@@ -13,6 +13,9 @@ public class InputManager : MonoBehaviour
     }
 
     #region references
+    [SerializeField]
+    private GenericEmmiter _pauseGame;
+
     private PlayerController _player;
     private PlayerInput _playerInput;
 
@@ -87,8 +90,7 @@ public class InputManager : MonoBehaviour
 
     private void PauseGame(InputAction.CallbackContext context)
     {
-        MenuManager.Instance.OpenPauseMenu();
-        //[Marco] Not optimal
+        _pauseGame.InvokePerform();
         Time.timeScale = 0.0f;
     }
 
