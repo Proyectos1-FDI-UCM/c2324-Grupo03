@@ -141,14 +141,12 @@ public class PlayerController : MonoBehaviour, IKnockback
         int maxColliders = 10;
         Collider2D[] hitColliders = new Collider2D[maxColliders];
         int numColliders = Physics2D.OverlapCircleNonAlloc(_myTransform.position, _interactionRange, hitColliders, 1 << 7);
-
+        
         for (int i = 0; i < numColliders && (PlayerStateMachine.playerState == PlayerState.Idle  || PlayerStateMachine.playerState == PlayerState.Dead); i++)
         {
-            
             if (hitColliders[i].gameObject.TryGetComponent(out IInteractable interactableObject))
             {
                 interactableObject.Interact();
-                Debug.Log("dentro");
                 // Desde el objeto, lanzar un evento para cambiar el estado del player a OnMenu o algo así
             }
         }

@@ -81,11 +81,13 @@ public class InputManager : MonoBehaviour
 
     private void SecondaryAttack(InputAction.CallbackContext context) => _player.SecondaryAttack();
 
-    //private void Interact(InputAction.CallbackContext context) => _player.Interact();
-    private void Interact(InputAction.CallbackContext context)
-    {
-        _player.Interact();
-    }
+    private void Interact(InputAction.CallbackContext context) => _player.Interact();
+
+    //private void Interact(InputAction.CallbackContext context)
+    //{
+    //    _player.Interact();
+    //    Debug.Log("Interactuando");
+    //}
     #endregion
 
     private void PauseGame(InputAction.CallbackContext context)
@@ -149,8 +151,6 @@ public class InputManager : MonoBehaviour
         _playerControls.Player.Pause.performed += PauseGame;
 
         _playerControls.UI.CloseMenu.performed += CloseMenu;
-
-        
     }
 
     private void OnDisable()
