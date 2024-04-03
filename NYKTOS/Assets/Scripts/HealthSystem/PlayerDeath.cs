@@ -6,9 +6,8 @@ public class PlayerDeath : MonoBehaviour, IDeath
 {
     #region references
 
-    // [Marco] Not optimal
     [SerializeField]
-    private CustomState _day;
+    private GenericEmmiter _playerReviveEmmiter;
 
     private PlayerStateMachine _playerState;
     private HealthComponent _health;
@@ -39,23 +38,13 @@ public class PlayerDeath : MonoBehaviour, IDeath
         _playerState.SetState(PlayerState.Idle);
         UIManager.Instance.DeathScreenOff();
     }
-
-    private void DayRevive()
-    {
-        _aliveskin.enabled = true;
-        _deathskin.enabled = false;
-        _health.MaxHealth();
-        _playerState.SetState(PlayerState.Idle);
-        UIManager.Instance.DeathScreenOff();
     
-    }
-
     void Start()
     {
         _health = GetComponent<HealthComponent>();
         _playerState = GetComponent<PlayerStateMachine>();
      
-        _day.OnStateEnter.AddListener(DayRevive);
+        _playerReviveEmmiter.Perform.AddListener(Revive);
 
     }
 }
