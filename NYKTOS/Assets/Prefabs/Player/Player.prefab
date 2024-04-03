@@ -417,6 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b9cc239eddd0947b9e8b34857ad094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthRestore: {fileID: 11400000, guid: 9716272772be32846893b2fcd6d7f912, type: 2}
   _BlinkCooldown:
     _cooldownTime: 1
   _PrimaryAttackCooldown:

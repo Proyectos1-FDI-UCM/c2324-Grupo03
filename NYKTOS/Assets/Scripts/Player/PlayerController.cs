@@ -12,12 +12,16 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region references
     private static Transform _myTransform;
     public static Transform playerTransform { get { return _myTransform; } }
+
     private BlinkComponent _blinkComponent;
     private RBMovement _playerMovement;
     private LookDirection _lookDirection;
     private WeaponHandler _weaponHandler;
+    private HealthComponent _healthComponent;
     private PlayerDeath _playerDeath;
 
+    [SerializeField]
+    private GenericEmmiter _healthRestore;
 
     [SerializeField]
     private Cooldown _BlinkCooldown;
@@ -167,9 +171,12 @@ public class PlayerController : MonoBehaviour, IKnockback
         _weaponHandler = GetComponent<WeaponHandler>();
         
         _playerState = GetComponent<PlayerStateMachine>();
+        _healthComponent = GetComponent<HealthComponent>();
         _playerDeath = GetComponent<PlayerDeath>();
 
         _interactionRange = GetComponentInChildren<CircleCollider2D>().radius;
 
+
+        _healthRestore.Perform.AddListener(_healthComponent.MaxHealth);
     }
 }
