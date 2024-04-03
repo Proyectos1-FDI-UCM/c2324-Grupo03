@@ -6,9 +6,6 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    //[Marco] Not optimal  
-    [SerializeField]
-    private GameStateMachine _stateMachine; 
 
     private static MenuManager _instance;
     public static MenuManager Instance
@@ -86,12 +83,6 @@ public class MenuManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
-    }
-
-    //[Marco] Not optimal  
-    public void StartNight()
-    {
-        _stateMachine.SetState(GlobalStateIdentifier.Night);
     }
 
     public void BuildAltar()
