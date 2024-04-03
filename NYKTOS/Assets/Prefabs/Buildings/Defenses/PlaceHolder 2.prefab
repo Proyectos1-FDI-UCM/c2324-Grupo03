@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 358469850938584391}
   - component: {fileID: 1626007394635721577}
   m_Layer: 5
-  m_Name: Isometric Diamond
+  m_Name: Interaction mark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
