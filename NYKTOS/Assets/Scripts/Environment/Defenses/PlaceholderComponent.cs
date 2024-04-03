@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlaceholderComponent : MonoBehaviour, IBuilding
 {
-    //[Marco] Not optimal
-
+    //[Andrea] Review
+    
     #region references
     [SerializeField] private GenericEmmiter _tutorialDay;
     [SerializeField] private GenericEmmiter _day;
