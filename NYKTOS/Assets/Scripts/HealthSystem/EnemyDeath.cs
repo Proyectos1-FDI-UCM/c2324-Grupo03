@@ -7,9 +7,8 @@ using UnityEngine;
 [System.Serializable]
 public class EnemyDeath : MonoBehaviour, IDeath
 {
-    // [Marco] Not optimal
     [SerializeField]
-    private CustomState _day;
+    private GenericEmmiter _enemyDeathEmmiter;
 
     public void Death()
     {
@@ -23,6 +22,6 @@ public class EnemyDeath : MonoBehaviour, IDeath
     }
 
     void Start(){
-        _day.OnStateInstantExit.AddListener(Death);
+        _enemyDeathEmmiter.Perform.AddListener(Death);
     }
 }
