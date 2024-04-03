@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60280d42b12ca1e48b99c029c226afd4, type: 3}
-  m_Name: HealthRestore
+  m_Name: BuildingHealthRestore
   m_EditorClassIdentifier: 
