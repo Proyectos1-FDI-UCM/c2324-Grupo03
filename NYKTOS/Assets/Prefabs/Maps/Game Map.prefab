@@ -22648,6 +22648,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 851634892025506208, guid: 508147eb64d623649b5137f48d7793e6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4b831904e26b86b4b8279f3e1b07be95, type: 3}
     - target: {fileID: 1206551609366357710, guid: 508147eb64d623649b5137f48d7793e6, type: 3}
       propertyPath: m_Intensity
       value: 1
@@ -23614,6 +23618,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 851634892025506208, guid: 508147eb64d623649b5137f48d7793e6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d210fade6f2a4304bb72a284b5fcc7e0, type: 3}
     - target: {fileID: 7541120799965140361, guid: 508147eb64d623649b5137f48d7793e6, type: 3}
       propertyPath: m_Name
       value: Altar Yellow
@@ -23676,6 +23684,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 851634892025506208, guid: 508147eb64d623649b5137f48d7793e6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 58017c3e7c2a6b24795d6cf3fe88a7b3, type: 3}
     - target: {fileID: 1206551609366357710, guid: 508147eb64d623649b5137f48d7793e6, type: 3}
       propertyPath: m_Intensity
       value: 1
