@@ -3,7 +3,20 @@ guid: 11e19937666ae364087806329433b131
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _pauseGame: {fileID: 11400000, guid: fb885b14d96cba24c9fc95aa54d78ce2, type: 2}
+  - _pauseMenu: {instanceID: 0}
+  - _nexusMenu: {instanceID: 0}
+  - _altarMenu: {instanceID: 0}
+  - _defenseMenu: {instanceID: 0}
+  - _weaponUpgradeMenu: {instanceID: 0}
+  - _weaponEffectMenu: {instanceID: 0}
+  - _pauseButton: {instanceID: 0}
+  - _nexusButton: {instanceID: 0}
+  - _altarButton: {instanceID: 0}
+  - _defenseButton: {instanceID: 0}
+  - _weaponUpgradeButton: {instanceID: 0}
+  - _weaponEffectButton: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -14,6 +14,9 @@ public class MenuManager : MonoBehaviour
     }
 
     #region references
+    [SerializeField]
+    private GenericEmmiter _pauseGame;
+
 
     #region menu refs
     [Header("Menu References")]
@@ -171,5 +174,7 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         RegisterMenus();
+
+        _pauseGame.Perform.AddListener(OpenPauseMenu);
     }
 }

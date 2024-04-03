@@ -6849,6 +6849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e19937666ae364087806329433b131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pauseGame: {fileID: 11400000, guid: fb885b14d96cba24c9fc95aa54d78ce2, type: 2}
   _pauseMenu: {fileID: 4804922284347627298}
   _nexusMenu: {fileID: 2032700948203195905}
   _altarMenu: {fileID: 7437918417641337200}
