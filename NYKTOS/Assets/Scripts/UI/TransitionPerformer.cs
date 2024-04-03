@@ -22,9 +22,18 @@ public class TransitionPerformer : MonoBehaviour
     [SerializeField]
     private PlayerController _playerController;
 
+    private Animator _animator;
+
+    [SerializeField]
+    private GameObject _TransitionToDay;
+
+    [SerializeField]
+    private GameObject _TransitionToNight;
+
     void Start()
     {
         //GameManager.Instance.GameStateChanged.AddListener(GameStateListener);
+        _animator = GetComponent<Animator>();
     }
 
     //private void GameStateListener(GameState state)
@@ -54,20 +63,52 @@ public class TransitionPerformer : MonoBehaviour
             _globalLight.intensity = 1;
         }
     }
-
+    private void ResumePlayerMovement()
+    {
+        _playerController.enabled = true;
+    }
     private void StopPlayerMovement()
     {
         _playerController.enabled = false;
     }
 
+    private void TransitionToDark(int time)
+    {
+        _animator.Play("Base Layer.Crossfade_Start", 0, time);
+    }
+
+    private void TransitionToTransparent(int time)
+    {
+        _animator.Play("Base Layer.Crossfade_End", 0, time);
+    }
+
+    //Para debuggear
+    [ContextMenu("TextDay")]
+    private void TextDay()
+    {
+        _TransitionToDay.SetActive(true);
+        _TransitionToNight.SetActive(false);
+    }
+
+    //Para debuggear
+    [ContextMenu("TextNight")]
+    private void TextNight()
+    {
+        _TransitionToDay.SetActive(false);
+        _TransitionToNight.SetActive(true);
+    }
+
+    private void ResetTransition()
+    {
+        _animator.Play("Base Layer.Crossfade_Idle", 0, 0);
+    }
+
+
+    /*
+    NO BORRAR HASTA QUE TODO ESTE PERFECTO BONITO
     private void TransitionPause()
     {
         Time.timeScale = 0.0f;
-    }
-
-    private void ResumePlayerMovement()
-    {
-        _playerController.enabled = true;
     }
 
     private void TransitionResume()
@@ -75,7 +116,6 @@ public class TransitionPerformer : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    /*
     private void TransitionUpdateState()
     {
         switch (GameManager.Instance.State)
