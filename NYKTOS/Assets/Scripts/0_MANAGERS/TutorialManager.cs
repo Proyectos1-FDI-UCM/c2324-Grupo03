@@ -30,8 +30,7 @@ public class ImageControllerScript : MonoBehaviour
     }
 
     IEnumerator AppearAndDisappearImages()
-    {
-        
+    {        
         foreach (GameObject tutorial in _tutorials)
         {
             yield return new WaitForSeconds(_disappearTime);
