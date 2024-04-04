@@ -8,14 +8,14 @@ public class GlobalLightcycle : MonoBehaviour
 {
 
     [SerializeField]
-    private InversionEffect _inversionEffect;
+    private BoolEmitter _inversionEffect;
 
     private Light2D _globalLight;
     // Start is called before the first frame update
     void Start()
     {
         _globalLight = GetComponent<Light2D>();
-        _inversionEffect.InversionEvent.AddListener(Invert);
+        _inversionEffect.Perform.AddListener(Invert);
     }
 
     private void Invert(bool inversionStatus)

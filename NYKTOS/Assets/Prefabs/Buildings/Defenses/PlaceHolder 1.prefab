@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ae50ca5648bb245a303efe75533a1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inversionEffect: {fileID: 11400000, guid: dd9cd442df7e2b1428b388442011f85c, type: 2}
+  inversionEffect: {fileID: 11400000, guid: a4a1ef1ef912d394b8529caa92d35c63, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 62000017cbdf07944a1d5c37af893e15, type: 2}
   inversionMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
 --- !u!114 &7870783667756657704
@@ -180,10 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c0abb319d0d2b478714b5f15e4a7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tutorialDay: {fileID: 11400000, guid: a69f62271090ac944b8915ff4e527f4c, type: 2}
-  _day: {fileID: 11400000, guid: 3358d7a4c7a0a2a49a5da3ded01a2bf0, type: 2}
-  _tutorialNight: {fileID: 11400000, guid: bac94f33724207046b48f4f0e51ef124, type: 2}
-  _night: {fileID: 11400000, guid: 4819c37fbf1af4249bf7514acdc93fbf, type: 2}
+  _placeholderInteract: {fileID: 0}
 --- !u!114 &8708895035124243018
 MonoBehaviour:
   m_ObjectHideFlags: 0

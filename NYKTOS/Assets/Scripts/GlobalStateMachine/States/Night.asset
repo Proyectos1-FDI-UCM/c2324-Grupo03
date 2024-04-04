@@ -19,9 +19,9 @@ MonoBehaviour:
   _onStateInstantLoad:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: dd9cd442df7e2b1428b388442011f85c, type: 2}
-        m_TargetAssemblyTypeName: InversionEffect, Assembly-CSharp
-        m_MethodName: Invert
+      - m_Target: {fileID: 11400000, guid: a4a1ef1ef912d394b8529caa92d35c63, type: 2}
+        m_TargetAssemblyTypeName: GenericEmitter`1[[System.Boolean, mscorlib
+        m_MethodName: InvokePerform
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

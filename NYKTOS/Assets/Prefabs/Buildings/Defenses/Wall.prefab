@@ -202,6 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1701674298402512821}
   - component: {fileID: 2420700129767483592}
+  - component: {fileID: 5866894823917102879}
   - component: {fileID: 1362368791488443951}
   - component: {fileID: -5776077699872071573}
   - component: {fileID: 3095633297598776579}
@@ -281,6 +282,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5866894823917102879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6636109488734167412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ae50ca5648bb245a303efe75533a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inversionEffect: {fileID: 11400000, guid: a4a1ef1ef912d394b8529caa92d35c63, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 62000017cbdf07944a1d5c37af893e15, type: 2}
+  inversionMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
 --- !u!114 &1362368791488443951
 MonoBehaviour:
   m_ObjectHideFlags: 0

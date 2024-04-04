@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +10,7 @@ public class AudioPerformer : MonoBehaviour
     AudioPlayer[] players;
     private void Awake()
     {
+        
         if (instance != null)
         {
             Destroy(gameObject);
