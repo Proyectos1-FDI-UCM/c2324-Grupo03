@@ -2,8 +2,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEditor;
 using System.IO;
+using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "New Emitter", menuName = "Emitter/Generic")]
 public class GenericEmitter<T> : ScriptableObject
 {
     private UnityEvent<T> _perform = new UnityEvent<T>();
@@ -15,6 +15,7 @@ public class GenericEmitter<T> : ScriptableObject
     }
 }
 
+[CreateAssetMenu(fileName = "New Void Emitter", menuName = "Emitter/Void")]
 public class GenericEmitter : ScriptableObject
 {
     private UnityEvent _perform = new UnityEvent();
@@ -28,12 +29,6 @@ public class GenericEmitter : ScriptableObject
 
 public class CreateGenericEmitterMenu
 {
-    [MenuItem("Assets/Create/Emitter/Generic/Void Emitter")]
-    public static void CreateVoidEmitter()
-    {
-        CreateEmitter<int>();
-    }
-
     [MenuItem("Assets/Create/Emitter/Generic/Int Emitter")]
     public static void CreateIntEmitter()
     {
@@ -44,6 +39,12 @@ public class CreateGenericEmitterMenu
     public static void CreateFloatEmitter()
     {
         CreateEmitter<float>();
+    }
+
+    [MenuItem("Assets/Create/Emitter/Generic/Spawner Emitter")]
+    public static void CreateSpawnerEmitter()
+    {
+        CreateEmitter<Dictionary<SpawnerRegion, Enemy[]>>();
     }
 
     private static void CreateEmitter<T>()

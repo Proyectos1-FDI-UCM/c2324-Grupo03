@@ -8,7 +8,9 @@ public class SpawnerPerformer : MonoBehaviour
     /// Instancia de scriptable object que lanza los eventos
     /// </summary>
     [SerializeField] 
-    private SpawnerEmitter _spawnerEmitter;
+    private GenericEmitter<Dictionary<SpawnerRegion, Enemy[]>> _spawnerStartEmitter;
+    [SerializeField] 
+    private GenericEmitter _spawnerStopEmitter;
 
     [SerializeField]
     private SpawnerRegion _spawnerRegion;
@@ -31,7 +33,7 @@ public class SpawnerPerformer : MonoBehaviour
     {
         _enemySpawner = GetComponent<EnemySpawner>();
 
-        _spawnerEmitter.LoadSpawners.AddListener(LoadSpawnerPerformer);
-        _spawnerEmitter.StopSpawners.AddListener(_enemySpawner.Stop);
+        _spawnerStartEmitter.Perform.AddListener(LoadSpawnerPerformer);
+        _spawnerStopEmitter.Perform.AddListener(_enemySpawner.Stop);
     }
 }
