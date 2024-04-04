@@ -6,7 +6,7 @@ public class NightManager : MonoBehaviour
     private int _currentWaveNumber;
 
     [SerializeField]
-    private GameProgressTracker _progressTracker;
+    private NightProgressTracker _progressTracker;
     [SerializeField]
     private CrystalDrops _dropTracker;
     [SerializeField]

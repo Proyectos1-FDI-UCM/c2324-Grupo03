@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 
 [CreateAssetMenu(fileName = "GameProgressTracker", menuName = "Manager/GameProgress")]
-public class GameProgressTracker : ScriptableObject
+public class NightProgressTracker : ScriptableObject
 {   
     [SerializeField]
     private GameStateMachine _stateMachine;
