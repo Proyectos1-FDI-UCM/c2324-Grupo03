@@ -7,7 +7,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
     #region references
 
     [SerializeField]
-    private GenericEmitter _playerReviveEmitter;
+    private VoidEmitter _playerReviveEmitter;
 
     private PlayerStateMachine _playerState;
     private HealthComponent _health;

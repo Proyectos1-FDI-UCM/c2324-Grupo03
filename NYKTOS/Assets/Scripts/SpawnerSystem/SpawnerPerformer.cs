@@ -8,9 +8,9 @@ public class SpawnerPerformer : MonoBehaviour
     /// Instancia de scriptable object que lanza los eventos
     /// </summary>
     [SerializeField] 
-    private GenericEmitter<Dictionary<SpawnerRegion, Enemy[]>> _spawnerStartEmitter;
+    private SpawnDataEmitter _spawnerStartEmitter;
     [SerializeField] 
-    private GenericEmitter _spawnerStopEmitter;
+    private VoidEmitter _spawnerStopEmitter;
 
     [SerializeField]
     private SpawnerRegion _spawnerRegion;

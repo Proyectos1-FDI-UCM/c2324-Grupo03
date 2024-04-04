@@ -42,7 +42,7 @@ public class NightManager : MonoBehaviour
     {
         Wave currentWave = _currentNightData.WaveList[_currentWaveNumber];
 
-        _spawnerEmitter.InvokePerform(currentWave.WaveData);
+        //_spawnerEmitter.InvokePerform(currentWave.WaveData);
 
         if(_currentWaveNumber+1 < _currentNightData.WaveList.Length)     
         {
