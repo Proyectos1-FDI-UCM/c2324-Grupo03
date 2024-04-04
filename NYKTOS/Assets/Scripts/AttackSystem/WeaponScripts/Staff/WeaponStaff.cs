@@ -20,6 +20,7 @@ public class WeaponStaff : Weapon
 
     public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType)
     {
+        _primaryUsePerformed?.Invoke();
         GameObject current =
         Instantiate(_bullet, transform.position + (Vector3)direction.normalized * 0.5f, Quaternion.identity);
 

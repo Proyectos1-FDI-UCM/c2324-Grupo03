@@ -19,6 +19,7 @@ public class WeaponClub : Weapon
 
     public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType)
     {
+        _primaryUsePerformed?.Invoke();
         GameObject currentHitbox = 
             Instantiate(attackHitbox, transform.position + (Vector3) direction.normalized* _hitboxDistanceFromPlayer, Quaternion.Euler(0, 0, DirectionAngle(direction)));
         currentHitbox.transform.parent = transform;
