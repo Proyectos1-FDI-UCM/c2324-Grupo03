@@ -4,16 +4,16 @@ using UnityEngine;
 public abstract class CollaboratorWorker : MonoBehaviour
 {
     [SerializeField]
-    private CollaboratorEvent _emmiter;
+    private CollaboratorEvent _emitter;
 
     void Awake()
     {
-        _emmiter.WorkStart.AddListener(StartWorker);
+        _emitter.WorkStart.AddListener(StartWorker);
     }
 
     private void StartWorker()
     {
-        _emmiter.AddWorker();
+        _emitter.AddWorker();
         Perform();
         StartCoroutine(WorkerCorroutine());
     }
@@ -21,7 +21,7 @@ public abstract class CollaboratorWorker : MonoBehaviour
     private IEnumerator WorkerCorroutine()
     {
         yield return Perform();
-        _emmiter.DeleteWorker();
+        _emitter.DeleteWorker();
     }
 
     protected abstract IEnumerator Perform();

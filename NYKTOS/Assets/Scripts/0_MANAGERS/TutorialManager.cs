@@ -8,7 +8,7 @@ public class ImageControllerScript : MonoBehaviour
 
     //[Andrea] Review
     [SerializeField]
-    private GenericEmitter _day;
+    private VoidEmitter _day;
 
     [SerializeField]
     private GameObject _allTutorials;

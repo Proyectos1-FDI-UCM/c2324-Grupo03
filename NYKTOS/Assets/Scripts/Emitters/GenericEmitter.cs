@@ -4,6 +4,15 @@ using UnityEditor;
 using System.IO;
 using System.Collections.Generic;
 
+[CreateAssetMenu(fileName = "New Int Emitter", menuName = "Emitter/Void")]
+public class VoidEmitter  : GenericEmitter {}
+[CreateAssetMenu(fileName = "New Bool Emitter", menuName = "Emitter/Bool")]
+public class BoolEmitter  : GenericEmitter<bool> {}
+[CreateAssetMenu(fileName = "New Int Emitter", menuName = "Emitter/Int")]
+public class IntEmitter : GenericEmitter<int> {}
+[CreateAssetMenu(fileName = "New Spawndata Emitter", menuName = "Emitter/Spawndata")]
+public class SpawnDataEmitter  : GenericEmitter<Dictionary<SpawnerRegion, Enemy[]>> {}
+
 public class GenericEmitter<T> : ScriptableObject
 {
     private UnityEvent<T> _perform = new UnityEvent<T>();
@@ -14,8 +23,6 @@ public class GenericEmitter<T> : ScriptableObject
         _perform.Invoke(eventData);
     }
 }
-
-[CreateAssetMenu(fileName = "New Void Emitter", menuName = "Emitter/Void")]
 public class GenericEmitter : ScriptableObject
 {
     private UnityEvent _perform = new UnityEvent();
@@ -24,48 +31,5 @@ public class GenericEmitter : ScriptableObject
     public void InvokePerform()
     {
         _perform.Invoke();
-    }
-}
-
-public class CreateGenericEmitterMenu
-{
-    [MenuItem("Assets/Create/Emitter/Generic/Int Emitter")]
-    public static void CreateIntEmitter()
-    {
-        CreateEmitter<int>();
-    }
-
-    [MenuItem("Assets/Create/Emitter/Generic/Float Emitter")]
-    public static void CreateFloatEmitter()
-    {
-        CreateEmitter<float>();
-    }
-
-    [MenuItem("Assets/Create/Emitter/Generic/Spawner Emitter")]
-    public static void CreateSpawnerEmitter()
-    {
-        CreateEmitter<Dictionary<SpawnerRegion, Enemy[]>>();
-    }
-
-    private static void CreateEmitter<T>()
-    {
-        GenericEmitter<T> emitter = ScriptableObject.CreateInstance<GenericEmitter<T>>();
-        string typeName = typeof(T).Name;
-        string path = AssetDatabase.GetAssetPath(Selection.activeObject);
-        if (string.IsNullOrEmpty(path))
-        {
-            path = "Assets";
-        }
-        else if (!string.IsNullOrEmpty(Path.GetExtension(path)))
-        {
-            path = path.Replace(Path.GetFileName(AssetDatabase.GetAssetPath(Selection.activeObject)), "");
-        }
-
-        string assetPathAndName = AssetDatabase.GenerateUniqueAssetPath($"{path}/New{typeName}Emitter.asset");
-        AssetDatabase.CreateAsset(emitter, assetPathAndName);
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
-        EditorUtility.FocusProjectWindow();
-        Selection.activeObject = emitter;
     }
 }

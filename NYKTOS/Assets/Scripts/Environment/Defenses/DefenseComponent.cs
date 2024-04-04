@@ -10,7 +10,7 @@ public class DefenseComponent : MonoBehaviour
     //SI ESTA CONSTRUIDO, ATRAE ENEMIGOS, ACTIVA VIDA Y NO SE PUEDE INTERACTUAR CON EL HASTA QUE SEA DESTRUIDO (ALTARHEALTHCOMPONENT)
     //SI ESTA DESTRUIDO, YA NO ATRAE ENEMIGOS, DESACTIVA EL FACTOR VIDA SE PUEDE INTERACTUAR CON EL (EN ESTE COMPONENTE)
 
-    [SerializeField] private GenericEmitter _healthRestore;
+    [SerializeField] private VoidEmitter _healthRestore;
 
     [SerializeField] 
     private Defense Defense;

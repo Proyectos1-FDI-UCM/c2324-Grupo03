@@ -8,10 +8,11 @@ public class NexusComponent : MonoBehaviour, IBuilding
     [SerializeField]
     private GenericEmitter _playerRevive;
 
-    [SerializeField] private GenericEmitter _day;
-    [SerializeField] private GenericEmitter _night;
-    [SerializeField] private GenericEmitter _tutorialDay;
-    [SerializeField] private GenericEmitter _tutorialNight;
+    //[Andrea] Review
+    [SerializeField] private VoidEmitter _day;
+    [SerializeField] private VoidEmitter _night;
+    [SerializeField] private VoidEmitter _tutorialDay;
+    [SerializeField] private VoidEmitter _tutorialNight;
     #endregion
 
     private GlobalStateIdentifier _gameState;
@@ -24,10 +25,13 @@ public class NexusComponent : MonoBehaviour, IBuilding
 
     public void OpenMenu()
     {
-        _playerRevive.InvokePerform();
-        if (_gameState == GlobalStateIdentifier.Day || _gameState == GlobalStateIdentifier.TutorialDay) 
+        if(_gameState == GlobalStateIdentifier.Day || _gameState == GlobalStateIdentifier.TutorialDay) 
         {
             MenuManager.Instance.OpenNexusMenu();
+        }
+        else if (PlayerStateMachine.playerState == PlayerState.Dead) 
+        {
+            _playerRevive.InvokePerform();
         }
     }
 

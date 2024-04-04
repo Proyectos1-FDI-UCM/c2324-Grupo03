@@ -8,7 +8,7 @@ using UnityEngine;
 public class EnemyDeath : MonoBehaviour, IDeath
 {
     [SerializeField]
-    private GenericEmitter _enemyDeathEmitter;
+    private VoidEmitter _enemyDeathEmitter;
 
     public void Death()
     {

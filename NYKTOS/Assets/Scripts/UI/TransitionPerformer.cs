@@ -1,26 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 public class TransitionPerformer : MonoBehaviour
 {
-    //[SerializeField]
-    //private GlobalLightcycle GlobalLightcycle;
-
-    //[Marco] Not optimal
-    [SerializeField]
-    private GameStateMachine _stateMachine;
-
-    [SerializeField]
-    private InversionEffect _inversionEffect;
-    private bool _Invert = false;
-
-    [SerializeField]
-    private Light2D _globalLight;
-
-    [SerializeField]
-    private PlayerController _playerController;
 
     private Animator _animator;
 
@@ -33,8 +14,7 @@ public class TransitionPerformer : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
-
-
+        
     }
 
     private void TransitionToDark(int time)
