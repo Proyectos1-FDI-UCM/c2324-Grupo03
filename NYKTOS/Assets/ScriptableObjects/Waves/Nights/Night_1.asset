@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2754ec2fc757c244879b4eab2001418, type: 3}
-  m_Name: Night_Tutorial
+  m_Name: Night_1
   m_EditorClassIdentifier: 
   _nightLength: 180
   _waveList:
@@ -20,5 +20,20 @@ MonoBehaviour:
       enemyPool:
       - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
         number: 20
+        variantType: 0
+  - time: 15
+    subWaveList:
+    - spawnerRegion: 1
+      enemyPool:
+      - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
+        number: 10
+        variantType: 0
+    - spawnerRegion: 1
+      enemyPool:
+      - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
+        number: 10
+        variantType: 2
+      - enemyPrefab: {fileID: 3477185432724126219, guid: bd9ce6ea559b24446809069ef53c706f, type: 3}
+        number: 2
         variantType: 0
   _nightCrystalDrops: {fileID: 11400000, guid: a54c29996e8d3c4419eed2c1b32cb930, type: 2}
