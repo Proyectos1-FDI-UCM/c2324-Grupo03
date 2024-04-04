@@ -8,30 +8,21 @@ public class NexusComponent : MonoBehaviour, IBuilding
     [SerializeField]
     private GenericEmitter _playerRevive;
 
-    //[Andrea] Review
-    [SerializeField] private VoidEmitter _day;
-    [SerializeField] private VoidEmitter _night;
-    [SerializeField] private VoidEmitter _tutorialDay;
-    [SerializeField] private VoidEmitter _tutorialNight;
+    [SerializeField]
+    private BoolEmitter _nexusInteract;
     #endregion
 
-    private GlobalStateIdentifier _gameState;
+    private BuildingStateMachine _state;
 
-
-    private void DayState() => _gameState = GlobalStateIdentifier.Day;
-    private void NightState() => _gameState = GlobalStateIdentifier.Night;
-    private void TutorialDayState() => _gameState = GlobalStateIdentifier.TutorialDay;
-    private void TutorialNightState() => _gameState = GlobalStateIdentifier.TutorialNight;
+    // Solo afecta a si se abre o no el menú. El evento de revivir se emite siempre
+    private void CanInteract(bool canInteract) => _state.isInteractable = canInteract;
 
     public void OpenMenu()
     {
-        if(_gameState == GlobalStateIdentifier.Day || _gameState == GlobalStateIdentifier.TutorialDay) 
+        _playerRevive.InvokePerform();
+        if (_state.isInteractable)
         {
             MenuManager.Instance.OpenNexusMenu();
-        }
-        else if (PlayerStateMachine.playerState == PlayerState.Dead) 
-        {
-            _playerRevive.InvokePerform();
         }
     }
 
@@ -41,9 +32,6 @@ public class NexusComponent : MonoBehaviour, IBuilding
     {
         BuildingManager.Instance.AddBuilding(gameObject);
 
-        _day.Perform.AddListener(DayState);
-        _night.Perform.AddListener(NightState);
-        _tutorialDay.Perform.AddListener(TutorialDayState);
-        _tutorialNight.Perform.AddListener(TutorialNightState);
+        _nexusInteract.Perform.AddListener(CanInteract);
     }
 }

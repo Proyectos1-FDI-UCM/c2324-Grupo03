@@ -881,8 +881,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e899ebec7e5c347b4dea646c7f538e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _altarInteract: {fileID: 0}
-  _altarType: 0
+  _altarInteract: {fileID: 11400000, guid: 0e27e0c19acc1d24d9be940c2a141207, type: 2}
+  _altarType: 2
 --- !u!114 &5383076137783724208
 MonoBehaviour:
   m_ObjectHideFlags: 0
