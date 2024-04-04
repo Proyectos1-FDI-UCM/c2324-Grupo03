@@ -24,35 +24,51 @@ public class AudioPlayer : ScriptableObject
     }
     [SerializeField]
     private ReproductionType _reproductionType = ReproductionType.Default;
+
+    private enum AudioType
+    {
+        FX, Music
+    }
+    [SerializeField]
+    private AudioType _audioType = AudioType.Music;
     #endregion
 
     #region events
-    UnityEvent<AudioClip, float, bool> _playAudio;
-    public UnityEvent<AudioClip, float, bool> playAudio { get { return _playAudio; } }
+    UnityEvent<AudioClip, float, bool, bool> _playAudio;
+    public UnityEvent<AudioClip, float, bool, bool> playAudio { get { return _playAudio; } }
     UnityEvent _stopAudio;
     public UnityEvent stopAudio { get { return _stopAudio; } }
+
+    UnityEvent _pauseAudio;
+    public UnityEvent pauseAudio { get { return _pauseAudio; } }
     #endregion
 
     public void Play()
     {
+        bool isMusic = _audioType == AudioType.Music;
         if(_clip.Length == 0)
         {
             Debug.LogError($"Falta al menos un clip de audio en {name}");
         }
         else if(_reproductionType == ReproductionType.Default)
         {
-            playAudio?.Invoke(_clip[0], _volume, _loop);
+            playAudio?.Invoke(_clip[0], _volume, _loop, isMusic);
         }
         else if (_reproductionType == ReproductionType.Random)
         {
             System.Random rnd = new System.Random();
-            playAudio?.Invoke(_clip[rnd.Next(0, _clip.Length)], _volume, _loop);
+            playAudio?.Invoke(_clip[rnd.Next(0, _clip.Length)], _volume, _loop, isMusic);
         }
     }
 
     public void Stop()
     {
         _stopAudio?.Invoke();
+    }
+
+    public void Pause()
+    {
+        _pauseAudio?.Invoke();
     }
 
 }
