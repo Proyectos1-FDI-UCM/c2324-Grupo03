@@ -14,7 +14,7 @@ public class InversionPerformer : MonoBehaviour
     /// Instancia de scriptable object que lanza el evento
     /// </summary>
     [SerializeField] 
-    InversionEffect inversionEffect;
+    private BoolEmitter inversionEffect;
 
     [SerializeField]
     private Material defaultMaterial;
@@ -29,7 +29,7 @@ public class InversionPerformer : MonoBehaviour
         currentRenderer.material = defaultMaterial;
 
         // Suscribe el método ChangeMaterial al evento del scriptable object en inversionEffect
-        inversionEffect.InversionEvent.AddListener(ChangeMaterial);
+        inversionEffect.Perform.AddListener(ChangeMaterial);
     }
 
     private void ChangeMaterial(bool swapCondition)

@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de6952de87d6ee847ac7e6feee2a6d52, type: 3}
-  m_Name: InversionEffectInstance
+  m_Script: {fileID: 11500000, guid: da093581cfd1ff342abe8295b48a8ce6, type: 3}
+  m_Name: Global Methods
   m_EditorClassIdentifier: 
-  _inversionStatus: 1

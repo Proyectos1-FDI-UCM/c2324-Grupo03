@@ -14,7 +14,7 @@ public class NexusComponent : MonoBehaviour, IBuilding
 
     private BuildingStateMachine _state;
 
-    // Solo afecta a si se abre o no el menú. El evento de revivir se emite siempre
+    // Solo afecta a si se abre o no el menï¿½. El evento de revivir se emite siempre
     private void CanInteract(bool canInteract) => _state.isInteractable = canInteract;
 
     public void OpenMenu()

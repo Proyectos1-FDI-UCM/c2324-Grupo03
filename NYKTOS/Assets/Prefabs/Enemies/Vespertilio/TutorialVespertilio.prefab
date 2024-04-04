@@ -246,6 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd925eae5ad73243a17684a41483d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animationName: 
+  _whereToLookAt: 0
   enterBehaviours:
   - _behaviour: {fileID: 4635925478299626218}
   updateBehaviours: []
@@ -560,6 +562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd925eae5ad73243a17684a41483d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animationName: 
+  _whereToLookAt: 0
   enterBehaviours:
   - _behaviour: {fileID: 8049982452438617523}
   updateBehaviours: []
@@ -623,6 +627,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd925eae5ad73243a17684a41483d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animationName: 
+  _whereToLookAt: 0
   enterBehaviours:
   - _behaviour: {fileID: 7820781126875430712}
   updateBehaviours: []
@@ -709,6 +715,10 @@ PrefabInstance:
       propertyPath: _currentState
       value: 
       objectReference: {fileID: 1441661913646512757}
+    - target: {fileID: 6047305640081515741, guid: 24251535301804b4fb158da86df63da5, type: 3}
+      propertyPath: _enemyDeathEmitter
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a21eca47387e4f4092d5ab171bb56e8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 958664396553468792, guid: 24251535301804b4fb158da86df63da5, type: 3}

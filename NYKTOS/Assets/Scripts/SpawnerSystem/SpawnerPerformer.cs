@@ -8,7 +8,7 @@ public class SpawnerPerformer : MonoBehaviour
     /// Instancia de scriptable object que lanza los eventos
     /// </summary>
     [SerializeField] 
-    private SpawnDataEmitter _spawnerStartEmitter;
+    private SpawndataEmitter _spawnerStartEmitter;
     [SerializeField] 
     private VoidEmitter _spawnerStopEmitter;
 

@@ -5262,7 +5262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ce116b2e1fb5e43a0d0962685cc168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyDeathEmitter: {fileID: 0}
+  _enemyDeathEmitter: {fileID: 11400000, guid: 5a21eca47387e4f4092d5ab171bb56e8, type: 2}
 --- !u!50 &7059409480465428519
 Rigidbody2D:
   serializedVersion: 4
@@ -5702,7 +5702,7 @@ GameObject:
   - component: {fileID: 3906610732511413939}
   - component: {fileID: 1575053465498101187}
   m_Layer: 9
-  m_Name: Wait 0.4sCondition
+  m_Name: Wait 0,4sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

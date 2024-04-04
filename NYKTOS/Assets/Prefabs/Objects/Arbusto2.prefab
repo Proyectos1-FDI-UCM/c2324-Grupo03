@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2325902315334129735}
   - component: {fileID: 2594090212451662010}
+  - component: {fileID: 683674375600607203}
   m_Layer: 0
   m_Name: Arbusto2
   m_TagString: Untagged
@@ -84,3 +85,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &683674375600607203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705684140096474648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ae50ca5648bb245a303efe75533a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inversionEffect: {fileID: 11400000, guid: a4a1ef1ef912d394b8529caa92d35c63, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 62000017cbdf07944a1d5c37af893e15, type: 2}
+  inversionMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
