@@ -31,7 +31,6 @@ public class PlayerDeath : MonoBehaviour, IDeath
 
     public void Revive()
     {
-        Debug.Log("He revivio!");
         _aliveskin.enabled = true;
         _deathskin.enabled = false;
         _health.MaxHealth();
@@ -47,6 +46,5 @@ public class PlayerDeath : MonoBehaviour, IDeath
         _playerState = GetComponent<PlayerStateMachine>();
      
         _playerReviveEmitter.Perform.AddListener(Revive);
-
     }
 }

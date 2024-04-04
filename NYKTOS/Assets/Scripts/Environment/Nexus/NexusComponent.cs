@@ -5,10 +5,6 @@ using UnityEngine;
 public class NexusComponent : MonoBehaviour, IBuilding
 {
     //[Andrea] Review
-
-    [SerializeField]
-    private GameObject _player;
-
     #region emmiters
     [SerializeField]
     private GenericEmitter _playerRevive;
@@ -29,13 +25,10 @@ public class NexusComponent : MonoBehaviour, IBuilding
 
     public void OpenMenu()
     {
-        if(_gameState == GlobalStateIdentifier.Day || _gameState == GlobalStateIdentifier.TutorialDay) 
+        _playerRevive.InvokePerform();
+        if (_gameState == GlobalStateIdentifier.Day || _gameState == GlobalStateIdentifier.TutorialDay) 
         {
             MenuManager.Instance.OpenNexusMenu();
-        }
-        else if (PlayerStateMachine.playerState == PlayerState.Dead) 
-        {
-            _playerRevive.InvokePerform();
         }
     }
 
