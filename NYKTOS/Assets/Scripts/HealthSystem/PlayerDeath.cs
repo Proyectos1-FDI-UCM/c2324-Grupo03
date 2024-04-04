@@ -7,7 +7,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
     #region references
 
     [SerializeField]
-    private GenericEmmiter _playerReviveEmmiter;
+    private GenericEmitter _playerReviveEmitter;
 
     private PlayerStateMachine _playerState;
     private HealthComponent _health;
@@ -46,7 +46,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
         _health = GetComponent<HealthComponent>();
         _playerState = GetComponent<PlayerStateMachine>();
      
-        _playerReviveEmmiter.Perform.AddListener(Revive);
+        _playerReviveEmitter.Perform.AddListener(Revive);
 
     }
 }

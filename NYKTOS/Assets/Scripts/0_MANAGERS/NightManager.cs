@@ -10,7 +10,7 @@ public class NightManager : MonoBehaviour
     [SerializeField]
     private CrystalDrops _dropTracker;
     [SerializeField]
-    private SpawnerEmmiter _spawnerEmmiter;
+    private SpawnerEmitter _spawnerEmitter;
 
     static private NightManager _instance;
 
@@ -41,7 +41,7 @@ public class NightManager : MonoBehaviour
     {
         Wave currentWave = _currentNightData.WaveList[_currentWaveNumber];
 
-        _spawnerEmmiter.InvokeLoadSpawners(currentWave.WaveData);
+        _spawnerEmitter.InvokeLoadSpawners(currentWave.WaveData);
 
         if(_currentWaveNumber+1 < _currentNightData.WaveList.Length)     
         {

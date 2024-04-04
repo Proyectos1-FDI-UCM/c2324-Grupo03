@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class CollaboratorWorker : MonoBehaviour
 {
     [SerializeField]
-    private CollaboratorEmmiter _emmiter;
+    private CollaboratorEvent _emmiter;
 
     void Awake()
     {

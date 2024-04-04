@@ -8,10 +8,10 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     //[Andrea] Review
     
     #region references
-    [SerializeField] private GenericEmmiter _tutorialDay;
-    [SerializeField] private GenericEmmiter _day;
-    [SerializeField] private GenericEmmiter _tutorialNight;
-    [SerializeField] private GenericEmmiter _night;
+    [SerializeField] private GenericEmitter _tutorialDay;
+    [SerializeField] private GenericEmitter _day;
+    [SerializeField] private GenericEmitter _tutorialNight;
+    [SerializeField] private GenericEmitter _night;
 
     private BuildingStateMachine _state;
     #endregion

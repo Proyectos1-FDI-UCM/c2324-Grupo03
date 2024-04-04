@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "New Collaborator Event", menuName = "Emmiter/Collaborator")]
-public class CollaboratorEmmiter: ScriptableObject
+[CreateAssetMenu(fileName = "New Collaborator Event", menuName = "Collaborator Event")]
+public class CollaboratorEvent: ScriptableObject
 {
     private UnityEvent _workStart = new UnityEvent();
     public UnityEvent WorkStart{get{return _workStart;}}

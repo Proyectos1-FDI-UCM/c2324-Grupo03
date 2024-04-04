@@ -11,12 +11,12 @@ public class NexusComponent : MonoBehaviour, IBuilding
 
     #region emmiters
     [SerializeField]
-    private GenericEmmiter _playerRevive;
+    private GenericEmitter _playerRevive;
 
-    [SerializeField] private GenericEmmiter _day;
-    [SerializeField] private GenericEmmiter _night;
-    [SerializeField] private GenericEmmiter _tutorialDay;
-    [SerializeField] private GenericEmmiter _tutorialNight;
+    [SerializeField] private GenericEmitter _day;
+    [SerializeField] private GenericEmitter _night;
+    [SerializeField] private GenericEmitter _tutorialDay;
+    [SerializeField] private GenericEmitter _tutorialNight;
     #endregion
 
     private GlobalStateIdentifier _gameState;

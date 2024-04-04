@@ -14,7 +14,7 @@ public class InputManager : MonoBehaviour
 
     #region references
     [SerializeField]
-    private GenericEmmiter _pauseGame;
+    private GenericEmitter _pauseGame;
 
     private PlayerController _player;
     private PlayerInput _playerInput;

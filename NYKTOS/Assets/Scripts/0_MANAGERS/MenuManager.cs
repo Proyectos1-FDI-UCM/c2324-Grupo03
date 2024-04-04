@@ -15,7 +15,7 @@ public class MenuManager : MonoBehaviour
 
     #region references
     [SerializeField]
-    private GenericEmmiter _pauseGame;
+    private GenericEmitter _pauseGame;
 
 
     #region menu refs

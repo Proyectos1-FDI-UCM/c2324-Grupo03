@@ -17,11 +17,11 @@ public class CustomState : ScriptableObject
     [Header("Collaborator Events")]
 
     [SerializeField]
-    private List<CollaboratorEmmiter> _onStateLoad = new List<CollaboratorEmmiter>();
+    private List<CollaboratorEvent> _onStateLoad = new List<CollaboratorEvent>();
     private int _pendingLoadCount;
 
     [SerializeField] 
-    private List<CollaboratorEmmiter> _onStateExit = new List<CollaboratorEmmiter>();
+    private List<CollaboratorEvent> _onStateExit = new List<CollaboratorEvent>();
     private int _pendingExitCount;
 
     [Header("Events")]
@@ -54,32 +54,40 @@ public class CustomState : ScriptableObject
         }
     }
 
-    public void StateExit()
-    {
-        _pendingExitCount = _onStateExit.Count;
-        _onStateInstantExit.Invoke();
-        ExecuteEmmiters(_onStateExit, () => TryComplete(ref _pendingExitCount, _stateEndSignal));
-    }
-
     private void SceneLoadCompleted(Scene scene, LoadSceneMode loadSceneMode)
     {
         SceneManager.sceneLoaded -= SceneLoadCompleted;
         StartStateLoad();
     }
 
-    private void StartStateLoad()
+    private void ConsumeCollaboratorList
+    (
+        int pendingCount, 
+        List<CollaboratorEvent> collaboratorList, 
+        UnityEvent instantEvent,
+        UnityEvent collaboratorEndEvent)
     {
-        _pendingLoadCount = _onStateLoad.Count;
-        _onStateInstantLoad.Invoke();
-        ExecuteEmmiters(_onStateLoad, () => TryComplete(ref _pendingLoadCount, _onStateEnter));
+        pendingCount = collaboratorList.Count;
+        instantEvent.Invoke();
+        ExecuteCollaboratorEvents(collaboratorList, () => TryComplete(ref pendingCount, collaboratorEndEvent));
     }
 
-    private void ExecuteEmmiters(List<CollaboratorEmmiter> emmiters, UnityAction action)
+    private void StartStateLoad()
     {
-        foreach (var emmiter in emmiters)
+        ConsumeCollaboratorList(_pendingLoadCount, _onStateLoad, _onStateInstantLoad, _onStateEnter);
+    }
+
+    public void StateExit()
+    {
+        ConsumeCollaboratorList(_pendingExitCount, _onStateExit, _onStateInstantExit, _stateEndSignal);
+    }
+
+    private void ExecuteCollaboratorEvents(List<CollaboratorEvent> collaboratorEvents, UnityAction action)
+    {
+        foreach (var item in collaboratorEvents)
         {
-            emmiter.InvokeWorkStart();
-            emmiter.WorkCompleted.AddListener(action);
+            item.InvokeWorkStart();
+            item.WorkCompleted.AddListener(action);
         }
     }
 
