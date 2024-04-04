@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1023345621466568503}
   - component: {fileID: 2995824074083635514}
   - component: {fileID: 2571783678432163471}
+  - component: {fileID: 6929221349160019498}
   m_Layer: 11
   m_Name: PolyBullet
   m_TagString: Untagged
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: -1231885529
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c4dc4a949d4cf3e4a8440354c5783db2, type: 3}
-  m_Color: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 1}
+  m_Sprite: {fileID: -1516751829, guid: e8b27b864d22f634eaf6adceca37f862, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -134,3 +135,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 15
+--- !u!95 &6929221349160019498
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5778141340421890969}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e8bb0bbdad5709449e9be0c4381118e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
