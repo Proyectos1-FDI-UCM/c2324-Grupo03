@@ -6,27 +6,21 @@ using UnityEngine.InputSystem;
 public class PlaceholderComponent : MonoBehaviour, IBuilding
 {
     //[Andrea] Review
-    
+    // Cambiar el GenericEmmiter a un bool Emmiter
+
     #region references
-    [SerializeField] private GenericEmitter _tutorialDay;
-    [SerializeField] private GenericEmitter _day;
-    [SerializeField] private GenericEmitter _tutorialNight;
-    [SerializeField] private GenericEmitter _night;
+    [SerializeField] private GenericEmitter _placeholderInteract;
 
     private BuildingStateMachine _state;
     #endregion
 
-    private bool _isDay = false;
-    
-    private void IsDay() => _isDay = true;
-    private void IsNight() => _isDay = false;
-
+    private void CanInteract(bool canInteract) => _state.isInteractable = canInteract;
     public void OpenMenu()
     {
         if
         (
             _state.buildingState == BuildingStateMachine.BuildingState.NotBuilt 
-            && _isDay
+            && _state.isInteractable
         )
         {
             MenuManager.Instance.OpenDefenseMenu();
@@ -45,10 +39,6 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     {
         _state = GetComponent<BuildingStateMachine>();
 
-        _tutorialDay.Perform.AddListener(IsDay);
-        _day.Perform.AddListener(IsDay);
-
-        _tutorialNight.Perform.AddListener(IsNight);
-        _night.Perform.AddListener(IsNight);
+        //_placeholderInteract.Perform.AddListener(CanInteract)
     }
 }

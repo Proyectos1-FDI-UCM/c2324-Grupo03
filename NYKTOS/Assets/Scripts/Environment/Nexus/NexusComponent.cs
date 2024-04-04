@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class NexusComponent : MonoBehaviour, IBuilding
 {
-    //[Andrea] Review
     #region emmiters
     [SerializeField]
     private GenericEmitter _playerRevive;

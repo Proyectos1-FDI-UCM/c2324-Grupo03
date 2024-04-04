@@ -20,8 +20,8 @@ public class DefenseDeath : MonoBehaviour, IDeath
     public void Death()
     {
         BuildingManager.Instance.RemoveBuilding(this.gameObject);
-        Destroy(gameObject);
         _placeholderState.SetState(BuildingStateMachine.BuildingState.NotBuilt);
         _placeholderState.isInteractable = true;
+        Destroy(gameObject);
     }
 }

@@ -5,16 +5,13 @@ using UnityEngine.InputSystem;
 
 public class AltarComponent : MonoBehaviour, IBuilding
 {
-
-    [SerializeField]
-    private GameStateMachine _stateMachine;
-
-    // Codigo de Iker y Andrea :D
-
-    //SI ESTA CONSTRUIDO, ATRAE ENEMIGOS, ACTIVA VIDA Y NO SE PUEDE INTERACTUAR CON EL HASTA QUE SEA DESTRUIDO (ALTARHEALTHCOMPONENT)
-    //SI ESTA DESTRUIDO, YA NO ATRAE ENEMIGOS, DESACTIVA EL FACTOR VIDA SE PUEDE INTERACTUAR CON EL (ALTARDESTROYCOMPONENT)
+    // [Andrea] Review
+    // Cambiar GenericEmmiter a BoolEmmiter
 
     #region references
+    // Evento genérico compartido por todos los altares
+    [SerializeField] private GenericEmitter _altarInteract;
+
     private BuildingStateMachine _state;
     #endregion
 
@@ -23,12 +20,15 @@ public class AltarComponent : MonoBehaviour, IBuilding
         if
         (
             _state.buildingState == BuildingStateMachine.BuildingState.NotBuilt && 
-            _stateMachine.GetCurrentState == GlobalStateIdentifier.Day)
+            _state.isInteractable)
         {
-            Debug.Log("hola soy un altar sin reparar");
-            // Activar men� construcci�n
+            MenuManager.Instance.OpenAltarMenu();
         }
-        else { } // Activar men� potenciar armas
+        else if (_state.isInteractable) 
+        { 
+            // Activar men� potenciar armas
+            // No tengo claro como hacerlo para distinguir el tipo de placeholder
+        } 
     }
 
     public void CloseMenu() => MenuManager.Instance.CloseAllMenus();
@@ -37,5 +37,7 @@ public class AltarComponent : MonoBehaviour, IBuilding
     {
         _state = GetComponent<BuildingStateMachine>();
         BuildingManager.Instance.AddBuilding(this.gameObject);
+
+        //_altarInteract.Perform.AddListener(CanInteract)
     }
 }

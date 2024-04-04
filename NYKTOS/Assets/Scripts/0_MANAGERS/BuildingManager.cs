@@ -96,7 +96,7 @@ public class BuildingManager : MonoBehaviour
             SetBuilding(_beacon);
             BuildDefense();
         }
-        // else => Mensaje de no suficientes cristales?
+        // else => Mensaje de no suficientes cristales? -> Por eventos!
     }    
     
     public void BuildWall()
