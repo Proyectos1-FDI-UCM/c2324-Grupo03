@@ -20,10 +20,10 @@ public class AudioPlayer : ScriptableObject
 
     private enum ReproductionType
     {
-        Default, Random
+        First, Random
     }
     [SerializeField]
-    private ReproductionType _reproductionType = ReproductionType.Default;
+    private ReproductionType _reproductionType = ReproductionType.First;
 
     private enum AudioType
     {
@@ -50,7 +50,7 @@ public class AudioPlayer : ScriptableObject
         {
             Debug.LogError($"Falta al menos un clip de audio en {name}");
         }
-        else if(_reproductionType == ReproductionType.Default)
+        else if(_reproductionType == ReproductionType.First)
         {
             playAudio?.Invoke(_clip[0], _volume, _loop, isMusic);
         }
