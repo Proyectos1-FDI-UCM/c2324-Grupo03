@@ -9,6 +9,7 @@ public class EnemyVariant : MonoBehaviour
     SpriteLibraryAsset _magentaSprite;
     [SerializeField]
     SpriteLibraryAsset _cyanSprite;
+    private ParticleSystem _particleSystem;
 
     #region debug
     [Header("DEBUG")]
@@ -33,16 +34,23 @@ public class EnemyVariant : MonoBehaviour
             if (attack == AttackType.Slow)
             {
                 spriteLibrary.spriteLibraryAsset = _cyanSprite;
+                ParticleSystem.MainModule settings = GetComponentInChildren<ParticleSystem>().main;
+
+                settings.startColor = new ParticleSystem.MinMaxGradient(Color.cyan);
             }
             else if (attack == AttackType.Fire)
             {
                 spriteLibrary.spriteLibraryAsset = _magentaSprite;
+                ParticleSystem.MainModule settings = GetComponentInChildren<ParticleSystem>().main;
+
+                settings.startColor = new ParticleSystem.MinMaxGradient(Color.magenta);
             }
         }
     }
 
     private void Awake()
     {
+       
         if (debug)
         {
             SetVariant(_attackType);
