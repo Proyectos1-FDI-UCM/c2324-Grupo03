@@ -4265,7 +4265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6951619023181333099
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5823,10 +5823,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbbfaacf2978f2e4eb9fb57257ee2cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateMachine: {fileID: 11400000, guid: 26cd137f8c89dcd4d8bc981a37f3e83f, type: 2}
-  _inversionEffect: {fileID: 11400000, guid: dd9cd442df7e2b1428b388442011f85c, type: 2}
-  _globalLight: {fileID: 0}
-  _playerController: {fileID: 0}
   _TransitionToDay: {fileID: 0}
   _TransitionToNight: {fileID: 0}
 --- !u!1 &7146362538956703130
@@ -6940,7 +6936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e19937666ae364087806329433b131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pauseGame: {fileID: 11400000, guid: fb885b14d96cba24c9fc95aa54d78ce2, type: 2}
+  _pauseGame: {fileID: 0}
   _pauseMenu: {fileID: 4804922284347627298}
   _nexusMenu: {fileID: 2032700948203195905}
   _altarMenu: {fileID: 7437918417641337200}
