@@ -10,11 +10,20 @@ public class AltarComponent : MonoBehaviour, IBuilding
 
     #region references
     // Evento genérico compartido por todos los altares
-    [SerializeField] private GenericEmitter _altarInteract;
+    [SerializeField] private BoolEmitter _altarInteract;
 
     private BuildingStateMachine _state;
     #endregion
 
+    private enum altarType
+    {
+        yellow, magenta, cyan
+    }
+
+    [SerializeField]
+    private altarType _altarType;
+
+    private void CanInteract(bool canInteract) => _state.isInteractable = canInteract;
     public void OpenMenu()
     {
         if
@@ -38,6 +47,6 @@ public class AltarComponent : MonoBehaviour, IBuilding
         _state = GetComponent<BuildingStateMachine>();
         BuildingManager.Instance.AddBuilding(this.gameObject);
 
-        //_altarInteract.Perform.AddListener(CanInteract)
+        _altarInteract.Perform.AddListener(CanInteract); 
     }
 }

@@ -6,10 +6,9 @@ using UnityEngine.InputSystem;
 public class PlaceholderComponent : MonoBehaviour, IBuilding
 {
     //[Andrea] Review
-    // Cambiar el GenericEmmiter a un bool Emmiter
 
     #region references
-    [SerializeField] private GenericEmitter _placeholderInteract;
+    [SerializeField] private BoolEmitter _placeholderInteract;
 
     private BuildingStateMachine _state;
     #endregion
@@ -39,6 +38,6 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     {
         _state = GetComponent<BuildingStateMachine>();
 
-        //_placeholderInteract.Perform.AddListener(CanInteract)
+        _placeholderInteract.Perform.AddListener(CanInteract);
     }
 }

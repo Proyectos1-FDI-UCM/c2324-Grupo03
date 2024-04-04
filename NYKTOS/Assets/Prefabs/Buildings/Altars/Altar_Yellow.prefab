@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: -3130503717562002041}
   - component: {fileID: 5937929811355456676}
   m_Layer: 7
-  m_Name: Altar
+  m_Name: Altar_Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -881,7 +881,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e899ebec7e5c347b4dea646c7f538e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateMachine: {fileID: 11400000, guid: 26cd137f8c89dcd4d8bc981a37f3e83f, type: 2}
+  _altarInteract: {fileID: 11400000, guid: 0e27e0c19acc1d24d9be940c2a141207, type: 2}
+  _altarType: 0
 --- !u!114 &5383076137783724208
 MonoBehaviour:
   m_ObjectHideFlags: 0
