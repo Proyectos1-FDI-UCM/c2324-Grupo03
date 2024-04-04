@@ -957,7 +957,7 @@ PrefabInstance:
     - target: {fileID: 8885461671150054981, guid: 70d3f1be5e7f91240b9f5c85a8191a27, type: 3}
       propertyPath: _pauseGame
       value: 
-      objectReference: {fileID: 11400000, guid: fb885b14d96cba24c9fc95aa54d78ce2, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
