@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class AltarComponent : MonoBehaviour, IBuilding
 {
     // [Andrea] Review
+    // 
 
     #region references
     // Evento genérico compartido por todos los altares
@@ -39,16 +40,20 @@ public class AltarComponent : MonoBehaviour, IBuilding
         }
         else if (_state.isInteractable) 
         { 
-            // Comportamiento en función del tipo de altar
+            // Comportamiento en función del tipo de altar. ESTO VA A CAMBIAR
+            // Ahora actuan todos los altares por igual. Cuando se activa uno, lanzar evento de mejorar armas
             switch(_type)
             {
                 case altarType.yellow:
+                    MenuManager.Instance.OpenWeaponUpgradeMenu();
                     break; 
 
                 case altarType.magenta:
+                    MenuManager.Instance.OpenWeaponEffectMenu();
                     break;
 
                 case altarType.cyan:
+                    MenuManager.Instance.OpenWeaponEffectMenu();
                     break;
             }
         } 
