@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.9999995
+      value: 4.999999
       objectReference: {fileID: 0}
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.y
@@ -240,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.0030674846
+      value: 0.004285714
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -248,7 +248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.99300903
+      value: 0.9918937
       objectReference: {fileID: 0}
     - target: {fileID: 8073207824159548778, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_ShowDebugText
@@ -906,9 +906,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8454300882339233618, guid: a76460b6169938e48aeabb1babeb5972, type: 3}
-      propertyPath: lengthInSec
-      value: 15
+    - target: {fileID: 8647570714200443529, guid: a76460b6169938e48aeabb1babeb5972, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1059,7 +1059,7 @@ PrefabInstance:
       objectReference: {fileID: 1778733987}
     - target: {fileID: 5847144808090115009, guid: 2a0fede60110d6c418162d6a4a113208, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.9999995
+      value: 4.999999
       objectReference: {fileID: 0}
     - target: {fileID: 5847144808090115009, guid: 2a0fede60110d6c418162d6a4a113208, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameStateMachine: {fileID: 11400000, guid: 26cd137f8c89dcd4d8bc981a37f3e83f, type: 2}
-  _identifier: 6
+  _identifier: 5
 --- !u!4 &1902504696
 Transform:
   m_ObjectHideFlags: 0
