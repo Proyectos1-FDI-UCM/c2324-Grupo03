@@ -28,7 +28,7 @@ public class TurretShootingComponent : MonoBehaviour
     {
         _DirectionToEnemy = _turretTargetingComponent.DirectionToEnemy();
 
-        if (_DirectionToEnemy != Vector3.zero)
+        if (_DirectionToEnemy != Vector3.zero && _DirectionToEnemy != null)
         {
             RechargeTime -= Time.deltaTime;
 
@@ -38,8 +38,10 @@ public class TurretShootingComponent : MonoBehaviour
                 Destroy(bullet,DurationOfBullet);
                 RechargeTime = RechargeTimePrincipal;
             }
-            
-        }    
+
+        }
+
+
     }
 
 

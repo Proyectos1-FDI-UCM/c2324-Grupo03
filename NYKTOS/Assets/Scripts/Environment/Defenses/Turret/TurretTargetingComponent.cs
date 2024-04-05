@@ -34,6 +34,10 @@ public class TurretTargetingComponent : MonoBehaviour
 
             _myTransform.rotation = Quaternion.RotateTowards(_myTransform.rotation, targetRotation, RotationVelocity);
         }
+        else
+        {
+            directionToEnemy = Vector3.zero;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
