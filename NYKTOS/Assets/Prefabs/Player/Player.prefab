@@ -223,6 +223,8 @@ MonoBehaviour:
   provokedMultiplier: 24
   provokedFearMax: 1
   provokedFear: 0
+  vibrationDistance: 0.075
+  vibrationSpeed: 5
 --- !u!1 &2307209738609337397
 GameObject:
   m_ObjectHideFlags: 0

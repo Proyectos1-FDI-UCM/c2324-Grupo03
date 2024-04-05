@@ -177,6 +177,8 @@ public class FovController : MonoBehaviour
             );
 
         playerLight.pointLightInnerRadius = playerLight.pointLightOuterRadius * internalLightProportion;
+
+        LightVibration();
     }
 
 
@@ -194,5 +196,17 @@ public class FovController : MonoBehaviour
         provokedMultiplier = Mathf.Max(1.0f, provokedMultiplier);
         
         #endif
+    }
+
+    private float currentX = 0;
+    [SerializeField] float vibrationDistance = 0.1f;
+    [SerializeField] float vibrationSpeed = 5f;
+    void LightVibration()
+    {
+        currentX = currentX + Time.deltaTime;
+        float vibrationRadius = vibrationDistance * Mathf.Sin(vibrationSpeed * currentX);
+
+        playerLight.pointLightInnerRadius += vibrationRadius;
+
     }
 }
