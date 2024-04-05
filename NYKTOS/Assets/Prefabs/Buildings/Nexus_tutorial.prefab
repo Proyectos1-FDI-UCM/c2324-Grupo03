@@ -196,12 +196,12 @@ GameObject:
   - component: {fileID: 5741696033471757639}
   - component: {fileID: 7445230508807720532}
   m_Layer: 5
-  m_Name: InteractionExclamation
+  m_Name: Interaction mark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5741696033471757639
 Transform:
   m_ObjectHideFlags: 0
