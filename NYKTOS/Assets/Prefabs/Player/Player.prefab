@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _BlinkCooldown:
-    _cooldownTime: 1
+    _cooldownTime: 0.75
   _PrimaryAttackCooldown:
     _cooldownTime: 0.3
   _SecondaryAttackCooldown:
