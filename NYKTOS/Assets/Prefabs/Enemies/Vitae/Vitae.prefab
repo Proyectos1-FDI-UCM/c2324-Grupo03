@@ -5266,9 +5266,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e7a382721ad3144854f9f5a12b1088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 2
-  _knockBackSpeed: 5
-  _knockBackTime: 0.3
+  _movementSpeed: 1
+  _knockBackSpeed: 2
+  _knockBackTime: 0.1
 --- !u!114 &8930546091467528517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5965,4 +5965,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c60bf4ddcefb246ba84d924d223a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 0.75
+  attackRange: 1
