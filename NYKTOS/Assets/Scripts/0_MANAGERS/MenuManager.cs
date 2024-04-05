@@ -14,10 +14,10 @@ public class MenuManager : MonoBehaviour
         get { return _instance; }
     }
 
-    #region references
     [SerializeField]
-    private VoidEmitter _pauseGame;
+    private BoolEmitter _pauseEmitter;
 
+    #region references
 
     #region menu refs
     [Header("Menu References")]
@@ -87,11 +87,6 @@ public class MenuManager : MonoBehaviour
 
     #region menuActions
 
-    public void Resume()
-    {
-        Time.timeScale = 1.0f;
-    }
-
     public void ExitGame()
     {
         PlayClosedSound();
@@ -108,6 +103,7 @@ public class MenuManager : MonoBehaviour
     {
         PlayOpenedSound();
         BuildingManager.Instance.BuildBeacon();
+
     }
 
     public void BuildWall()
@@ -171,7 +167,7 @@ public class MenuManager : MonoBehaviour
         foreach (GameObject menu in _menuList) menu.SetActive(false);
 
         SwitchToPlayerControls();
-        Resume();
+        _pauseEmitter.InvokePerform(false);
     }
 
     public void CloseMenu()
@@ -190,8 +186,6 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         RegisterMenus();
-
-        _pauseGame.Perform.AddListener(OpenPauseMenu);
     }
 
     #region EventsMethods

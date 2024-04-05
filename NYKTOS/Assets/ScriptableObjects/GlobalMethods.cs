@@ -5,18 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Global Methods", menuName = "Global Methods")]
 public class GlobalMethods: ScriptableObject
 {
-    public static void PauseGame()
+    [SerializeField]
+    BoolEmitter _pauseEmitter;
+
+    public static void PauseAction(bool condition)
     {
-        Time.timeScale = 0.0f;
+        Time.timeScale = condition ? 0.0f : 1.0f;
     }
 
-    public static void ResumeGame()
+    void OnValidate()
     {
-        Time.timeScale = 1.0f;
-    }
-
-    public static void ExitGame()
-    {
-        Application.Quit();
+        _pauseEmitter.Perform.AddListener(PauseAction);
     }
 }

@@ -1,8 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class TransitionPerformer : MonoBehaviour
 {
-
     private Animator _animator;
 
     [SerializeField]
@@ -14,7 +16,8 @@ public class TransitionPerformer : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
-        
+
+
     }
 
     private void TransitionToDark(int time)

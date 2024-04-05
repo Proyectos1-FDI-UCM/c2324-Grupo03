@@ -13,8 +13,9 @@ public class InputManager : MonoBehaviour
     }
 
     #region references
+
     [SerializeField]
-    private VoidEmitter _pauseGame;
+    private BoolEmitter _pauseEmitter;
 
     private PlayerController _player;
     private PlayerInput _playerInput;
@@ -92,8 +93,7 @@ public class InputManager : MonoBehaviour
 
     private void PauseGame(InputAction.CallbackContext context)
     {
-        _pauseGame.InvokePerform();
-        Time.timeScale = 0.0f;
+        _pauseEmitter.InvokePerform(true);
     }
 
     private void CloseMenu(InputAction.CallbackContext context)
