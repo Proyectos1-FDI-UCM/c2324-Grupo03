@@ -43,13 +43,13 @@ public class CustomState : ScriptableObject
 
     public void StateLoad()
     {
-        if (_changeToScene != null)
+        if (_changeToScene == null)
         {
             StartStateLoad();
         }
         else
         {
-            SceneManager.LoadScene(_changeToScene.name);
+            SceneManager.LoadScene(_changeToScene?.name);
             SceneManager.sceneLoaded += SceneLoadCompleted;
         }
     }
