@@ -4,7 +4,13 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - _pauseGame: {fileID: 11400000, guid: fb885b14d96cba24c9fc95aa54d78ce2, type: 2}
+  - _closeMenusEmitter: {fileID: 11400000, guid: 2b9072c17d1a8b643a3d84e13cd80942, type: 2}
+  - _pauseMenuEmitter: {fileID: 11400000, guid: 1f83d2215c671924eaec39ecaf9b6244, type: 2}
+  - _nexusMenuEmitter: {fileID: 11400000, guid: 7dee2853a844893449043eaac068bb2b, type: 2}
+  - _altarMenuEmitter: {fileID: 11400000, guid: 3b8e74d1ebfd67546a1f216abfd2eba3, type: 2}
+  - _defenseMenuEmitter: {fileID: 11400000, guid: 61d01db8c8f871a4684fcf3b82b8a031, type: 2}
+  - _weaponUpgradeMenuEmitter: {fileID: 11400000, guid: 1e1cdcdcf5f368941b553f87e0b31b2e, type: 2}
+  - _weaponEffectMenuEmitter: {fileID: 11400000, guid: 343c80a31b148424bbb6e6f14b65b1cc, type: 2}
   - _pauseMenu: {instanceID: 0}
   - _nexusMenu: {instanceID: 0}
   - _altarMenu: {instanceID: 0}

@@ -12,3 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670c2310f45342e4baffd7fb12df225e, type: 3}
   m_Name: Pause
   m_EditorClassIdentifier: 
+  _perform:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1225504e19f4c004299fdc695b54468c, type: 2}
+        m_TargetAssemblyTypeName: GlobalMethods, Assembly-CSharp
+        m_MethodName: PauseAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2

@@ -4,25 +4,46 @@ using UnityEngine;
 
 public class NexusComponent : MonoBehaviour, IBuilding
 {
+    
     #region emmiters
     [SerializeField]
-    private GenericEmitter _playerRevive;
-
+    private VoidEmitter _playerDeathEmitter;
     [SerializeField]
-    private BoolEmitter _nexusInteract;
+    private VoidEmitter _playerReviveEmitter;
+    [SerializeField]
+    private VoidEmitter _nexusMenuEmitter;
+    [SerializeField]
+    private BoolEmitter _nexusInteractEmitter;
     #endregion
 
     private BuildingStateMachine _state;
 
-    // Solo afecta a si se abre o no el men�. El evento de revivir se emite siempre
+    // Solo afecta a si se abre o no el menu. El evento de revivir se emite siempre
     private void CanInteract(bool canInteract) => _state.isInteractable = canInteract;
+
+    //[Marco] Esto es una guarrada? tal vez pero es lo que hay
+    private bool _canRevive = false;
+    private void CanRevive() => _canRevive = true;
 
     public void OpenMenu()
     {
-        _playerRevive.InvokePerform();
         if (_state.isInteractable)
         {
-            MenuManager.Instance.OpenNexusMenu();
+            //[Marco] Deprecated
+            //MenuManager.Instance.OpenNexusMenu();
+
+            _nexusMenuEmitter.InvokePerform();
+        }
+        else
+        {
+            // [Marco]
+            // Repito que es horripilante, 
+            // me da palo ponerme a hacer una maquina de estados del nexo
+            if(_canRevive)
+            {
+                _canRevive = false;
+                _playerReviveEmitter.InvokePerform();
+            }
         }
     }
 
@@ -32,6 +53,7 @@ public class NexusComponent : MonoBehaviour, IBuilding
     {
         BuildingManager.Instance.AddBuilding(gameObject);
 
-        _nexusInteract.Perform.AddListener(CanInteract);
+        _nexusInteractEmitter.Perform.AddListener(CanInteract);
+        _playerDeathEmitter.Perform.AddListener(CanRevive);
     }
 }

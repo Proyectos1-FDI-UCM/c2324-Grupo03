@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77f75a949d6e7b64bb3fb60da1fcbe46, type: 3}
-  m_Name: TutorialNight
+  m_Name: TutorialDayState
   m_EditorClassIdentifier: 
   _changeToScene: {fileID: 0}
-  _stateIdentifier: 4
+  _stateIdentifier: 3
   _onStateLoad: []
   _onStateExit: []
   _onStateInstantLoad:

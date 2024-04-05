@@ -16,6 +16,10 @@ public class InputManager : MonoBehaviour
 
     [SerializeField]
     private BoolEmitter _pauseEmitter;
+    [SerializeField]
+    private VoidEmitter _pauseMenuEmitter;
+    [SerializeField]
+    private VoidEmitter _closeMenusEmitter;
 
     private PlayerController _player;
     private PlayerInput _playerInput;
@@ -41,7 +45,7 @@ public class InputManager : MonoBehaviour
         _player = player.GetComponent<PlayerController>();
         _playerInput = player.GetComponent<PlayerInput>();
 
-        ControlsStart();        
+        ControlsStart();  
     }
 
     private void ControlsStart()
@@ -94,11 +98,17 @@ public class InputManager : MonoBehaviour
     private void PauseGame(InputAction.CallbackContext context)
     {
         _pauseEmitter.InvokePerform(true);
+        _pauseMenuEmitter.InvokePerform();
     }
 
     private void CloseMenu(InputAction.CallbackContext context)
     {
-        MenuManager.Instance.CloseMenu();
+        //[Marco] Deprecated
+        //MenuManager.Instance.CloseMenu();
+
+        //esto es lo guay esto se queda
+        _pauseEmitter.InvokePerform(false);
+        _closeMenusEmitter.InvokePerform();
     }
 
     #region controls

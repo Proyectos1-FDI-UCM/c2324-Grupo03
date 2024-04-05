@@ -14,10 +14,25 @@ public class MenuManager : MonoBehaviour
         get { return _instance; }
     }
 
-    [SerializeField]
-    private BoolEmitter _pauseEmitter;
-
     #region references
+
+    [Header("Emitters")]
+
+    [SerializeField]
+    private VoidEmitter _closeMenusEmitter;
+
+    [SerializeField]
+    private VoidEmitter _pauseMenuEmitter;
+    [SerializeField]
+    private VoidEmitter _nexusMenuEmitter;
+    [SerializeField]
+    private VoidEmitter _altarMenuEmitter;
+    [SerializeField]
+    private VoidEmitter _defenseMenuEmitter;
+    [SerializeField]
+    private VoidEmitter _weaponUpgradeMenuEmitter;
+    [SerializeField]
+    private VoidEmitter _weaponEffectMenuEmitter;
 
     #region menu refs
     [Header("Menu References")]
@@ -167,14 +182,14 @@ public class MenuManager : MonoBehaviour
         foreach (GameObject menu in _menuList) menu.SetActive(false);
 
         SwitchToPlayerControls();
-        _pauseEmitter.InvokePerform(false);
     }
 
     public void CloseMenu()
     {
-        CloseAllMenus(); 
+        CloseAllMenus();
     }
     #endregion
+
     #endregion
 
     void Awake()
@@ -186,6 +201,16 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         RegisterMenus();
+
+        _closeMenusEmitter.Perform.AddListener(CloseAllMenus);
+
+        _pauseMenuEmitter.Perform.AddListener(OpenPauseMenu);
+        _nexusMenuEmitter.Perform.AddListener(OpenNexusMenu);
+        _altarMenuEmitter.Perform.AddListener(OpenAltarMenu);
+        _defenseMenuEmitter.Perform.AddListener(OpenDefenseMenu);
+        _weaponUpgradeMenuEmitter.Perform.AddListener(OpenWeaponUpgradeMenu);
+        _weaponEffectMenuEmitter.Perform.AddListener(OpenWeaponEffectMenu);
+
     }
 
     #region EventsMethods

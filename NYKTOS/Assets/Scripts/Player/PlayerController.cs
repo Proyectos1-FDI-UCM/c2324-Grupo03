@@ -147,7 +147,7 @@ public class PlayerController : MonoBehaviour, IKnockback
             if (hitColliders[i].gameObject.TryGetComponent(out IInteractable interactableObject))
             {
                 interactableObject.Interact();
-                // Desde el objeto, lanzar un evento para cambiar el estado del player a OnMenu o algo así
+                // Desde el objeto, lanzar un evento para cambiar el estado del player a OnMenu o algo asï¿½
             }
         }
     }
