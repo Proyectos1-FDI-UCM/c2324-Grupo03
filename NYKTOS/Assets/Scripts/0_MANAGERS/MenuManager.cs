@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class MenuManager : MonoBehaviour
 {
@@ -76,6 +77,14 @@ public class MenuManager : MonoBehaviour
     private GameObject[] _menuList = new GameObject[6];
     #endregion
 
+    #region events
+    [SerializeField]
+    UnityEvent _menuOpened;
+
+    [SerializeField]
+    UnityEvent _menuClosed;
+    #endregion
+
     #region menuActions
 
     public void Resume()
@@ -85,26 +94,31 @@ public class MenuManager : MonoBehaviour
 
     public void ExitGame()
     {
+        PlayClosedSound();
         Application.Quit();
     }
 
     public void BuildAltar()
     {
+        PlayOpenedSound();
         Debug.Log("TODO: Boton de reconstruir altar");
     }
 
     public void BuildBeacon()
     {
+        PlayOpenedSound();
         BuildingManager.Instance.BuildBeacon();
     }
 
     public void BuildWall()
     {
+        PlayOpenedSound();
         BuildingManager.Instance.BuildWall();
     }
 
     public void BuildTurret()
     {
+        PlayOpenedSound();
         BuildingManager.Instance.BuildTurret();
     }
 
@@ -135,6 +149,7 @@ public class MenuManager : MonoBehaviour
     #region open menus
     private void OpenMenu(GameObject menu, Button button)
     {
+        PlayOpenedSound();
         menu.SetActive(true);
         button.Select();
         SwitchToUIControls();
@@ -152,6 +167,7 @@ public class MenuManager : MonoBehaviour
     #region close menus
     public void CloseAllMenus()
     {
+        PlayClosedSound();
         foreach (GameObject menu in _menuList) menu.SetActive(false);
 
         SwitchToPlayerControls();
@@ -177,4 +193,15 @@ public class MenuManager : MonoBehaviour
 
         _pauseGame.Perform.AddListener(OpenPauseMenu);
     }
+
+    #region EventsMethods
+    private void PlayOpenedSound()
+    {
+        _menuOpened?.Invoke();
+    }
+    private void PlayClosedSound()
+    {
+        _menuClosed?.Invoke();
+    }
+    #endregion
 }

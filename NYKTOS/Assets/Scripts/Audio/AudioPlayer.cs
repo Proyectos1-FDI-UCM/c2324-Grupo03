@@ -45,6 +45,7 @@ public class AudioPlayer : ScriptableObject
 
     public void Play()
     {
+        Debug.Log(_volume);
         bool isMusic = _audioType == AudioType.Music;
         if(_clip.Length == 0)
         {
