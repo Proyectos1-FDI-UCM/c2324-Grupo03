@@ -163,6 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightRadius: 4
+  vibrationSpeed: 5
+  vibrationDistance: 0.1
   internalRadiusPercentageOffset: 0.869
   colliderPercentageOffset: 1
 --- !u!114 &6390619183078054513

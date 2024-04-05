@@ -449,6 +449,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightRadius: 5
+  vibrationSpeed: 5
+  vibrationDistance: 0.1
   internalRadiusPercentageOffset: 0.96
   colliderPercentageOffset: 1
 --- !u!114 &1206551609366357710
@@ -882,7 +884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _altarInteract: {fileID: 11400000, guid: 0e27e0c19acc1d24d9be940c2a141207, type: 2}
-  _altarType: 1
+  _type: 0
 --- !u!114 &5383076137783724208
 MonoBehaviour:
   m_ObjectHideFlags: 0

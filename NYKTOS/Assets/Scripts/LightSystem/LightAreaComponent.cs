@@ -15,6 +15,11 @@ public class LightAreaComponent : MonoBehaviour
     [SerializeField]
     private float lightRadius = 1.0f;
 
+    private float vibrationRadius;
+    [SerializeField] float vibrationSpeed=2;
+    [SerializeField] float vibrationDistance=0.5f;
+    private float currentX = 0;
+
     [SerializeField]
     [Range(0.0f, 1.0f)]
     private float internalRadiusPercentageOffset = 0.98f;
@@ -82,5 +87,19 @@ public class LightAreaComponent : MonoBehaviour
         UpdateLightarea();
         
         #endif
+    }
+
+    private void Update()
+    {
+        LightVibration();
+    }
+
+    void LightVibration()
+    {
+        currentX = currentX + Time.deltaTime;
+        vibrationRadius = lightRadius + vibrationDistance * Mathf.Sin(vibrationSpeed*currentX);
+
+        lightComponent.pointLightOuterRadius = vibrationRadius;
+        lightComponent.pointLightInnerRadius = vibrationRadius * internalRadiusPercentageOffset;
     }
 }
