@@ -308,6 +308,38 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 327102155}
+    - target: {fileID: 8618545276459786791, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: _menuClosed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618545276459786791, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: _menuOpened.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618545276459786791, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: _menuClosed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618545276459786791, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: _menuOpened.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618545276459786791, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: _menuClosed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioPlayer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618545276459786791, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: _menuOpened.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioPlayer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618545276459786791, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: _menuClosed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618545276459786791, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: _menuOpened.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
