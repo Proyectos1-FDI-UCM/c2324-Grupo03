@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class AltarComponent : MonoBehaviour, IBuilding
 {
     // [Andrea] Review
-    // Cambiar GenericEmmiter a BoolEmmiter
 
     #region references
     // Evento genérico compartido por todos los altares
@@ -15,13 +14,18 @@ public class AltarComponent : MonoBehaviour, IBuilding
     private BuildingStateMachine _state;
     #endregion
 
-    private enum altarType
+    public enum altarType
     {
         yellow, magenta, cyan
     }
 
     [SerializeField]
-    private altarType _altarType;
+    private altarType _type;
+
+    public altarType type
+    {
+        get { return _type; }
+    }
 
     private void CanInteract(bool canInteract) => _state.isInteractable = canInteract;
     public void OpenMenu()
@@ -35,8 +39,18 @@ public class AltarComponent : MonoBehaviour, IBuilding
         }
         else if (_state.isInteractable) 
         { 
-            // Activar men� potenciar armas
-            // No tengo claro como hacerlo para distinguir el tipo de placeholder
+            // Comportamiento en función del tipo de altar
+            switch(_type)
+            {
+                case altarType.yellow:
+                    break; 
+
+                case altarType.magenta:
+                    break;
+
+                case altarType.cyan:
+                    break;
+            }
         } 
     }
 
