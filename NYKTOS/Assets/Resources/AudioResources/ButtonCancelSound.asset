@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275fcc05780e2a442b5c471fbd15198d, type: 3}
   m_Name: ButtonCancelSound
   m_EditorClassIdentifier: 
-  _clip: []
-  _volume: 0
+  _clip:
+  - {fileID: 8300000, guid: 54a3a6a740402a54fb60b7de8ead002b, type: 3}
+  _volume: 1
   _reproductionType: 0
-  _audioType: 1
+  _audioType: 0
