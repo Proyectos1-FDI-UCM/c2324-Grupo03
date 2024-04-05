@@ -156,8 +156,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 3.6
-  m_PointLightOuterRadius: 4
+  m_PointLightInnerRadius: 4.0004
+  m_PointLightOuterRadius: 5.48
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -215,9 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6ebbff7f258b742ab2eefcc5eecda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  internalLightProportion: 0.9
-  maxLightRadius: 4
-  minLightRadius: 2
+  internalLightProportion: 0.73
+  maxLightRadius: 5.48
+  minLightRadius: 2.08
   increaseMultiplier: 8
   fearModifyUnit: 0.4
   provokedMultiplier: 24
