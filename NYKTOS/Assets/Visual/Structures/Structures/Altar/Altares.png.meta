@@ -113,15 +113,19 @@ TextureImporter:
       name: Altares_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
+        x: 64
+        y: 42
         width: 32
-        height: 64
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -16, y: -32}
+        - {x: -16, y: -6}
+        - {x: 16, y: -6}
+        - {x: 16, y: -32}
       tessellationDetail: 0
       bones: []
       spriteID: bae9a29fad20c2a48add48cf74c8bbf3
@@ -131,57 +135,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Altares_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e8f95abd4bb4194cb397ec0aa6d0d77
-      internalID: -1564748852
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Altares_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 16
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ee94c1047245704089feefc6801282e
-      internalID: 1487229165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Altares_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 16
+        x: 0
+        y: 42
         width: 32
-        height: 64
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +159,12 @@ TextureImporter:
       name: Altares_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 16
+        x: 32
+        y: 42
         width: 32
-        height: 64
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,6 +172,153 @@ TextureImporter:
       bones: []
       spriteID: 4a7c2067a17e1a941b9502b7eba12243
       internalID: -1244343387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altares_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 42
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e97f309e7b7e64892b40610abcb433
+      internalID: -601439128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altares_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 42
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb4b4d7e80948b4c943bcfe44cea419
+      internalID: 1013981686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altares_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d237b40011ebe240b2f622d36a69403
+      internalID: -2007296326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altares_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb332523009adf40905a193e91158e9
+      internalID: -163263339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altares_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ad560b262709bc449d86b1a3c078587
+      internalID: 1603223705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altares_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc1f204c83755204d8730611bdc380c5
+      internalID: 1701801355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Altares_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7cb25a2c505cda4dbb9b17654aadc8d
+      internalID: 1782656966
       vertices: []
       indices: 
       edges: []
@@ -227,9 +336,19 @@ TextureImporter:
     nameFileIdTable:
       Altares_0: -1074879678
       Altares_1: -1564748852
+      Altares_10: 1603223705
+      Altares_11: 1701801355
+      Altares_12: 1200166472
+      Altares_13: 1782656966
+      Altares_14: 893464338
       Altares_2: 1487229165
       Altares_3: -79044420
       Altares_4: -1244343387
+      Altares_5: -1284741392
+      Altares_6: -601439128
+      Altares_7: 1013981686
+      Altares_8: -2007296326
+      Altares_9: -163263339
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
