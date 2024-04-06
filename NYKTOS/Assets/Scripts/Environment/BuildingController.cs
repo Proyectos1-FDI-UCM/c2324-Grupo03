@@ -5,17 +5,10 @@ using UnityEngine;
 public class BuildingController : MonoBehaviour, IInteractable
 {
     #region references
-    private BuildingStateMachine _buildingState;
     
     #endregion
     public void Interact()
     {
         if (TryGetComponent(out IBuilding building)) building.OpenMenu();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _buildingState = GetComponent<BuildingStateMachine>();
     }
 }
