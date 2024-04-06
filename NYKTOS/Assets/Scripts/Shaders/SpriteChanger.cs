@@ -18,6 +18,11 @@ public class NexusSpriteChanger : MonoBehaviour
         inversionEffect.Perform.AddListener(ChangeSprite);
     }
 
+    void OnDestroy()
+    {
+        inversionEffect.Perform.RemoveListener(ChangeSprite);
+    }
+
     private void ChangeSprite(bool swapCondition) {
         if (swapCondition) {
             currentRenderer.sprite = inversionSprite;
