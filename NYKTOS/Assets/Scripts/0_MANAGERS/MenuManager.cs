@@ -34,8 +34,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private VoidEmitter _weaponEffectMenuEmitter;
 
-    [SerializeField]
-    private VoidEmitter _altarBuildEmitter;
+    //[SerializeField]
+    //private VoidEmitter _altarBuildEmitter;
 
     [SerializeField]
     private VoidEmitter _beaconBuildEmitter;
@@ -97,8 +97,6 @@ public class MenuManager : MonoBehaviour
     #endregion
 
     #region properties
-    private GameObject _previousMenu;
-
     private GameObject[] _menuList = new GameObject[6];
     #endregion
 
@@ -118,11 +116,12 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void BuildAltar()
-    {
-        PlayOpenedSound();
-        Debug.Log("TODO: Boton de reconstruir altar");
-    }
+    // LOS ALTARES YA NO VAN A SER REPARADOS POR EL PLAYER
+    //public void BuildAltar()
+    //{
+    //    PlayOpenedSound();
+    //    Debug.Log("TODO: Boton de reconstruir altar");
+    //}
 
     public void BuildBeacon()
     {
@@ -221,7 +220,7 @@ public class MenuManager : MonoBehaviour
         _weaponUpgradeMenuEmitter.Perform.AddListener(OpenWeaponUpgradeMenu);
         _weaponEffectMenuEmitter.Perform.AddListener(OpenWeaponEffectMenu);
 
-        _altarBuildEmitter.Perform.AddListener(BuildAltar);
+        //_altarBuildEmitter.Perform.AddListener(BuildAltar);
 
         _beaconBuildEmitter.Perform.AddListener(BuildBeacon);
         _wallBuildEmitter.Perform.AddListener(BuildWall);
