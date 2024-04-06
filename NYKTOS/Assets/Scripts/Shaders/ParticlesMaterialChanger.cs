@@ -14,6 +14,7 @@ public class ParticlesMaterialChanger : MonoBehaviour
     private Material inversionMaterial;
 
     ParticleSystemRenderer currentRenderer;
+
     void Start() {
 
         currentRenderer = GetComponentInChildren<ParticleSystemRenderer>();
@@ -21,6 +22,12 @@ public class ParticlesMaterialChanger : MonoBehaviour
 
         inversionEffect.Perform.AddListener(ChangeSprite);
     }
+
+    void OnDestroy()
+    {
+        inversionEffect.Perform.RemoveListener(ChangeSprite);
+    }
+
     private void ChangeSprite(bool swapCondition) {
         if (swapCondition) {
             currentRenderer.material = inversionMaterial;

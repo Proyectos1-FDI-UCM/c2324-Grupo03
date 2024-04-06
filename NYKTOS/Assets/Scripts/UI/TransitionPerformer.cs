@@ -50,7 +50,16 @@ public class TransitionPerformer : MonoBehaviour
         _TransitionToDark.Perform.AddListener(TransitionToDark);
         _TransitionToTransparent.Perform.AddListener(TransitionToTransparent);
         _TransitionReset.Perform.AddListener(ResetTransition);
+    }
 
+    void OnDestroy()
+    {
+        _DayTransitionText.Perform.RemoveListener(TextInDay);
+        _NightTransitionText.Perform.RemoveListener(TextInNight);
+
+        _TransitionToDark.Perform.RemoveListener(TransitionToDark);
+        _TransitionToTransparent.Perform.RemoveListener(TransitionToTransparent);
+        _TransitionReset.Perform.RemoveListener(ResetTransition);
     }
 
    
@@ -60,9 +69,9 @@ public class TransitionPerformer : MonoBehaviour
         if (_animator != null && AnimationClipToDark != null)
         {
             print("animacion lanzada");
-            // Obtenemos el hash del nombre del clip de animación
+            // Obtenemos el hash del nombre del clip de animaciï¿½n
             int transitionHash = Animator.StringToHash(AnimationClipToDark.name);
-            // Reproducimos la animación utilizando el hash
+            // Reproducimos la animaciï¿½n utilizando el hash
             _animator.Play(transitionHash, 0, 0f);
         }
     }
@@ -72,9 +81,9 @@ public class TransitionPerformer : MonoBehaviour
     {
         if (_animator != null && AnimationClipToTransparent != null)
         {
-            // Obtenemos el hash del nombre del clip de animación
+            // Obtenemos el hash del nombre del clip de animaciï¿½n
             int transitionHash = Animator.StringToHash(AnimationClipToTransparent.name);
-            // Reproducimos la animación utilizando el hash
+            // Reproducimos la animaciï¿½n utilizando el hash
             _animator.Play(transitionHash, 0, 0f);
         }
     }
@@ -84,9 +93,9 @@ public class TransitionPerformer : MonoBehaviour
     {
         if (_animator != null && AnimationClipToIdle != null)
         {
-            // Obtenemos el hash del nombre del clip de animación
+            // Obtenemos el hash del nombre del clip de animaciï¿½n
             int transitionHash = Animator.StringToHash(AnimationClipToIdle.name);
-            // Reproducimos la animación utilizando el hash
+            // Reproducimos la animaciï¿½n utilizando el hash
             _animator.Play(transitionHash, 0, 0f);
         }
     }
