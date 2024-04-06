@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -7,47 +8,84 @@ public class TransitionPerformer : MonoBehaviour
 {
     private Animator _animator;
 
+    /*
+    [SerializeField]
+    private BoolEmitter _DayTransition;
+
+    [SerializeField]
+    private BoolEmitter _NightTransition;
+    */
+
     [SerializeField]
     private GameObject _TransitionToDay;
 
     [SerializeField]
     private GameObject _TransitionToNight;
 
+    [SerializeField]
+    private AnimationClip AnimationClipToDark;
+
+    [SerializeField]
+    private AnimationClip AnimationClipToTransparent;
+
+    [SerializeField]
+    private AnimationClip AnimationClipToIdle;
+
     void Start()
     {
         _animator = GetComponent<Animator>();
-
-
+        _TransitionToDay.SetActive(false);
+        _TransitionToNight.SetActive(false);
+        //_DayTransition.Perform.AddListener(TextInDay);
+        //_NightTransition.Perform.AddListener(TextInNight);
     }
 
-    private void TransitionToDark(int time)
+   
+    [ContextMenu("TransitionToDark")]
+    private void TransitionToDark()
     {
-        _animator.Play("Base Layer.Crossfade_Start", 0, time);
+        if (_animator != null && AnimationClipToDark != null)
+        {
+            // Obtenemos el hash del nombre del clip de animación
+            int transitionHash = Animator.StringToHash(AnimationClipToDark.name);
+            // Reproducimos la animación utilizando el hash
+            _animator.Play(transitionHash, 0, 0f);
+        }
     }
 
-    private void TransitionToTransparent(int time)
+    [ContextMenu("TransitionToTransparent")]
+    private void TransitionToTransparent()
     {
-        _animator.Play("Base Layer.Crossfade_End", 0, time);
+        if (_animator != null && AnimationClipToTransparent != null)
+        {
+            // Obtenemos el hash del nombre del clip de animación
+            int transitionHash = Animator.StringToHash(AnimationClipToTransparent.name);
+            // Reproducimos la animación utilizando el hash
+            _animator.Play(transitionHash, 0, 0f);
+        }
     }
 
+    [ContextMenu("ResetTransition")]
     private void ResetTransition()
     {
-        _animator.Play("Base Layer.Crossfade_Idle", 0, 0);
+        if (_animator != null && AnimationClipToIdle != null)
+        {
+            // Obtenemos el hash del nombre del clip de animación
+            int transitionHash = Animator.StringToHash(AnimationClipToIdle.name);
+            // Reproducimos la animación utilizando el hash
+            _animator.Play(transitionHash, 0, 0f);
+        }
     }
 
     //Para debuggear
-    [ContextMenu("TextDay")]
-    private void TextDay()
+    private void TextInDay(bool value)
     {
-        _TransitionToDay.SetActive(true);
-        _TransitionToNight.SetActive(false);
+        _TransitionToDay.SetActive(value);
     }
 
-    //Para debuggear
-    [ContextMenu("TextNight")]
-    private void TextNight()
+    private void TextInNight(bool value)
     {
-        _TransitionToDay.SetActive(false);
-        _TransitionToNight.SetActive(true);
+        _TransitionToNight.SetActive(value);
     }
+    
 }
