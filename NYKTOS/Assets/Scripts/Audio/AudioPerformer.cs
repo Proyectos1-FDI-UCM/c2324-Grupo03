@@ -40,6 +40,8 @@ public class AudioPerformer : MonoBehaviour
                 players[i].stopAudio.AddListener(() => currentSource.Stop());
 
                 players[i].pauseAudio.AddListener(() => currentSource.Pause());
+
+                players[i].unPauseAudio.AddListener(() => currentSource.UnPause());
             }
         }
     }

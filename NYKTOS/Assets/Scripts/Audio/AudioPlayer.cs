@@ -15,6 +15,7 @@ public class AudioPlayer : ScriptableObject
     private float _volume;
     public float volume {  get { return _volume; } }
 
+    [SerializeField]
     bool _loop = false;
     public bool loop { get { return _loop; } }
 
@@ -41,6 +42,9 @@ public class AudioPlayer : ScriptableObject
 
     UnityEvent _pauseAudio;
     public UnityEvent pauseAudio { get { return _pauseAudio; } }
+
+    UnityEvent _unPauseAudio;
+    public UnityEvent unPauseAudio { get { return _unPauseAudio; } }
     #endregion
 
     public void Play()
@@ -70,6 +74,11 @@ public class AudioPlayer : ScriptableObject
     public void Pause()
     {
         _pauseAudio?.Invoke();
+    }
+
+    public void UnPause()
+    {
+        _unPauseAudio?.Invoke();
     }
 
 }
