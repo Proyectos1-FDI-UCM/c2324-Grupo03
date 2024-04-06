@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275fcc05780e2a442b5c471fbd15198d, type: 3}
   m_Name: PlayerHurtSound
   m_EditorClassIdentifier: 
-  _clip: []
-  _volume: 0
+  _clip:
+  - {fileID: 8300000, guid: ce0f0589968da764f9834771de2685a8, type: 3}
+  _volume: 1
   _loop: 0
   _reproductionType: 0
-  _audioType: 1
+  _audioType: 0

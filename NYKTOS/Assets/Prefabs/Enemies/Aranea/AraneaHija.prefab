@@ -186,6 +186,24 @@ MonoBehaviour:
   _maxHealth: 2
   _currentHealth: 2
   _inmTime: 0.1
+  _OnHurt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 91db806eb91d7fc42b928f9bb40f47a5, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _OnDying:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &9042502102976828159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +259,15 @@ MonoBehaviour:
   _movementSpeed: 3
   _knockBackSpeed: 10
   _knockBackTime: 0.2
+  _unpauseLoopableMovingSound:
+    m_PersistentCalls:
+      m_Calls: []
+  _pauseLoopableMovingSound:
+    m_PersistentCalls:
+      m_Calls: []
+  _startLoopableMovingSound:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3284386616162239011
 MonoBehaviour:
   m_ObjectHideFlags: 0

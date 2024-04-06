@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 275fcc05780e2a442b5c471fbd15198d, type: 3}
-  m_Name: PlayerDeathSound
+  m_Name: EnemyHurtSound
   m_EditorClassIdentifier: 
   _clip:
-  - {fileID: 8300000, guid: 4fb62ce548b9ccd44a36072c7f7e6c47, type: 3}
-  _volume: 1
+  - {fileID: 8300000, guid: 5046815e612fe0948b7ec8f007861c65, type: 3}
+  _volume: 0.75
   _loop: 0
   _reproductionType: 0
   _audioType: 0
