@@ -23,6 +23,7 @@ public class InputManager : MonoBehaviour
 
     private PlayerController _player;
     private PlayerInput _playerInput;
+    //private PlayerStateMachine _playerState;
 
     private Camera mainCamera;
 
@@ -44,6 +45,7 @@ public class InputManager : MonoBehaviour
     {
         _player = player.GetComponent<PlayerController>();
         _playerInput = player.GetComponent<PlayerInput>();
+        //_playerState = player.GetComponent<PlayerStateMachine>();
 
         ControlsStart();  
     }
@@ -116,7 +118,6 @@ public class InputManager : MonoBehaviour
     {
         if (_playerInput.currentControlScheme == gamepadScheme && _currentScheme != gamepadScheme)
         {
-            //Debug.Log("cambio a gamepad");
             _currentScheme = gamepadScheme;
             Cursor.visible = false;
         }
@@ -131,7 +132,7 @@ public class InputManager : MonoBehaviour
     {
         playerControls.Player.Disable();
         // Lanzar evento de cambio de estado
-        //_playerStateMachine.SetState(PlayerState.OnMenu);
+        //_playerState.SetState(PlayerState.OnMenu);
         playerControls.UI.Enable();
         _player.CallMove(Vector2.zero);
     }
@@ -139,7 +140,7 @@ public class InputManager : MonoBehaviour
     public void SwitchToPlayerControls()
     {
         // Lanzar evento cambio de estado
-        //_playerStateMachine.SetState(PlayerState.Idle);
+        //_playerState.SetState(PlayerState.Idle);
         playerControls.UI.Disable();
         playerControls.Player.Enable();
     }
