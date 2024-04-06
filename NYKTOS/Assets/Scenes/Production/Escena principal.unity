@@ -240,15 +240,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.003144654
+      value: 0.004484305
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.99911594
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.991663
+      value: 0.9911357
       objectReference: {fileID: 0}
     - target: {fileID: 8073207824159548778, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_ShowDebugText
@@ -976,14 +976,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6946885610336402208, guid: a76460b6169938e48aeabb1babeb5972, type: 3}
-      propertyPath: inversionEffect
-      value: 
-      objectReference: {fileID: 11400000, guid: a4a1ef1ef912d394b8529caa92d35c63, type: 2}
-    - target: {fileID: 8596712083496393390, guid: a76460b6169938e48aeabb1babeb5972, type: 3}
-      propertyPath: _player
-      value: 
-      objectReference: {fileID: 276239326}
+    - target: {fileID: 6549117460834930903, guid: a76460b6169938e48aeabb1babeb5972, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1348,7 +1344,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2081852058249285304, guid: c0738317c8174684db4981349de89ba5, type: 3}
       propertyPath: _identifier
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3626476904400368062, guid: c0738317c8174684db4981349de89ba5, type: 3}
       propertyPath: m_Name

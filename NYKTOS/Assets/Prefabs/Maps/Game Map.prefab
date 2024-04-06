@@ -1308,7 +1308,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1586853493
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: -1870154715, guid: c6c6d2b959410264c8a4f7815dc7066c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -23707,13 +23707,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2672838125591689643, guid: 6a3a5d72acb4d6741a802ab73e866861, type: 3}
+      insertIndex: 7
+      addedObject: {fileID: 253274201738289609}
   m_SourcePrefab: {fileID: 100100000, guid: 6a3a5d72acb4d6741a802ab73e866861, type: 3}
 --- !u!4 &892069959469629259 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2642421058682479307, guid: 6a3a5d72acb4d6741a802ab73e866861, type: 3}
   m_PrefabInstance: {fileID: 2939310232104082816}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &999045986560992299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2672838125591689643, guid: 6a3a5d72acb4d6741a802ab73e866861, type: 3}
+  m_PrefabInstance: {fileID: 2939310232104082816}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &253274201738289609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999045986560992299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f806488c399b434ba03453b812811a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inversionEffect: {fileID: 11400000, guid: a4a1ef1ef912d394b8529caa92d35c63, type: 2}
+  defaultSprite: {fileID: 21300000, guid: df68092c5fb2d2b419fac05d8640c1bf, type: 3}
+  inversionSprite: {fileID: 21300000, guid: c6f091262aa9bab44a2774fafc2bedca, type: 3}
 --- !u!1001 &3152109844480267749
 PrefabInstance:
   m_ObjectHideFlags: 0
