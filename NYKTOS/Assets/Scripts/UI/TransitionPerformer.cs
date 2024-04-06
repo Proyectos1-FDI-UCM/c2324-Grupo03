@@ -1,50 +1,112 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class TransitionPerformer : MonoBehaviour
 {
-
     private Animator _animator;
 
+    #region BoolEmitters
+    [SerializeField]
+    private BoolEmitter _DayTransitionText;
+    [SerializeField]
+    private BoolEmitter _NightTransitionText;
+    #endregion
+
+    #region VoidEmmiters
+    [SerializeField]
+    private VoidEmitter _TransitionToDark;
+    [SerializeField]
+    private VoidEmitter _TransitionToTransparent;
+    [SerializeField]
+    private VoidEmitter _TransitionReset;
+    #endregion
+
+    #region Texts
     [SerializeField]
     private GameObject _TransitionToDay;
-
     [SerializeField]
     private GameObject _TransitionToNight;
+    #endregion
+
+    #region AnimationClips
+    [SerializeField]
+    private AnimationClip AnimationClipToDark;
+    [SerializeField]
+    private AnimationClip AnimationClipToTransparent;
+    [SerializeField]
+    private AnimationClip AnimationClipToIdle;
+    #endregion
 
     void Start()
     {
         _animator = GetComponent<Animator>();
-        
+
+        _DayTransitionText.Perform.AddListener(TextInDay);
+        _NightTransitionText.Perform.AddListener(TextInNight);
+
+        _TransitionToDark.Perform.AddListener(TransitionToDark);
+        _TransitionToTransparent.Perform.AddListener(TransitionToTransparent);
+        _TransitionReset.Perform.AddListener(ResetTransition);
     }
 
-    private void TransitionToDark(int time)
+    void OnDestroy()
     {
-        _animator.Play("Base Layer.Crossfade_Start", 0, time);
+        _DayTransitionText.Perform.RemoveListener(TextInDay);
+        _NightTransitionText.Perform.RemoveListener(TextInNight);
+
+        _TransitionToDark.Perform.RemoveListener(TransitionToDark);
+        _TransitionToTransparent.Perform.RemoveListener(TransitionToTransparent);
+        _TransitionReset.Perform.RemoveListener(ResetTransition);
     }
 
-    private void TransitionToTransparent(int time)
+   
+    [ContextMenu("TransitionToDark")]
+    private void TransitionToDark()
     {
-        _animator.Play("Base Layer.Crossfade_End", 0, time);
+        if (_animator != null && AnimationClipToDark != null)
+        {
+            print("animacion lanzada");
+            // Obtenemos el hash del nombre del clip de animaci�n
+            int transitionHash = Animator.StringToHash(AnimationClipToDark.name);
+            // Reproducimos la animaci�n utilizando el hash
+            _animator.Play(transitionHash, 0, 0f);
+        }
     }
 
+    [ContextMenu("TransitionToTransparent")]
+    private void TransitionToTransparent()
+    {
+        if (_animator != null && AnimationClipToTransparent != null)
+        {
+            // Obtenemos el hash del nombre del clip de animaci�n
+            int transitionHash = Animator.StringToHash(AnimationClipToTransparent.name);
+            // Reproducimos la animaci�n utilizando el hash
+            _animator.Play(transitionHash, 0, 0f);
+        }
+    }
+
+    [ContextMenu("ResetTransition")]
     private void ResetTransition()
     {
-        _animator.Play("Base Layer.Crossfade_Idle", 0, 0);
+        if (_animator != null && AnimationClipToIdle != null)
+        {
+            // Obtenemos el hash del nombre del clip de animaci�n
+            int transitionHash = Animator.StringToHash(AnimationClipToIdle.name);
+            // Reproducimos la animaci�n utilizando el hash
+            _animator.Play(transitionHash, 0, 0f);
+        }
+    }
+    private void TextInDay(bool value)
+    {
+        _TransitionToDay.SetActive(value);
     }
 
-    //Para debuggear
-    [ContextMenu("TextDay")]
-    private void TextDay()
+    private void TextInNight(bool value)
     {
-        _TransitionToDay.SetActive(true);
-        _TransitionToNight.SetActive(false);
+        _TransitionToNight.SetActive(value);
     }
-
-    //Para debuggear
-    [ContextMenu("TextNight")]
-    private void TextNight()
-    {
-        _TransitionToDay.SetActive(false);
-        _TransitionToNight.SetActive(true);
-    }
+    
 }

@@ -3,7 +3,11 @@ guid: b2224ec9d387f5c45a885d6c13a40221
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _playerDeathEmitter: {fileID: 11400000, guid: 2da8c61c32f04eb4dbe80c7a3e8054b4, type: 2}
+  - _playerReviveEmitter: {fileID: 11400000, guid: 6c2195f7a528dd34c949b65262f6333c, type: 2}
+  - _nexusMenuEmitter: {fileID: 11400000, guid: 7dee2853a844893449043eaac068bb2b, type: 2}
+  - _nexusInteractEmitter: {fileID: 11400000, guid: 7f2dcced0862aa94092c69df3eec2da0, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

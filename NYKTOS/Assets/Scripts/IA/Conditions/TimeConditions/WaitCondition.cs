@@ -8,6 +8,8 @@ public class WaitCondition : MonoBehaviour, ICondition
 {
     [SerializeField]
     private float _waitTime = 1f;
+
+    public float waitTime { get { return _waitTime; } }
     bool waited = false;
 
     bool started = false;

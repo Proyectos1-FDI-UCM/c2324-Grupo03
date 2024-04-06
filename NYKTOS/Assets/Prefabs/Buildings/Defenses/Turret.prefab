@@ -197,6 +197,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightRadius: 4
+  vibrationSpeed: 5
+  vibrationDistance: 0.1
   internalRadiusPercentageOffset: 0.869
   colliderPercentageOffset: 1
 --- !u!114 &6475124060356871247
@@ -564,7 +566,7 @@ Transform:
   m_GameObject: {fileID: 8365187515372501195}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.582361, y: -1.7751416, z: 0}
+  m_LocalPosition: {x: 6.557639, y: -1.8000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -605,6 +607,12 @@ MonoBehaviour:
   _maxHealth: 15
   _currentHealth: 0
   _inmTime: 1
+  _OnHurt:
+    m_PersistentCalls:
+      m_Calls: []
+  _OnDying:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!58 &4610545111281510273
 CircleCollider2D:
   m_ObjectHideFlags: 0

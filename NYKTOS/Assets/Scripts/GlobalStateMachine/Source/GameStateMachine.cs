@@ -46,6 +46,11 @@ public class GameStateMachine : ScriptableObject
         SetState(GlobalStateIdentifier.Night);
     }
 
+    public void SetStateToQuit()
+    {
+        SetState(GlobalStateIdentifier.Quit);
+    }
+
     void OnValidate()
     {
         _stateDictionary.Clear();
@@ -77,10 +82,11 @@ public class GameStateMachine : ScriptableObject
     }
 }
 
-[System.Serializable]
+[Serializable]
 public enum GlobalStateIdentifier
 {
     None,
+    Quit,
     Load,
     MainMenu,
     TutorialDay,
@@ -88,5 +94,8 @@ public enum GlobalStateIdentifier
     Day,
     Night,
     Lose,
-    Win
+    Win,
+    MenuSceneLoad,
+    TutorialSceneLoad,
+    MaingameSceneLoad
 }

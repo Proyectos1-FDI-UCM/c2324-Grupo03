@@ -6,11 +6,6 @@ public abstract class CollaboratorWorker : MonoBehaviour
     [SerializeField]
     private CollaboratorEvent _emitter;
 
-    void Awake()
-    {
-        _emitter.WorkStart.AddListener(StartWorker);
-    }
-
     private void StartWorker()
     {
         _emitter.AddWorker();
@@ -25,4 +20,14 @@ public abstract class CollaboratorWorker : MonoBehaviour
     }
 
     protected abstract IEnumerator Perform();
+
+    void Start()
+    {
+        _emitter.WorkStart.AddListener(StartWorker);
+    }
+
+    void OnDestroy()
+    {
+        _emitter.WorkStart.RemoveListener(StartWorker);
+    }
 }

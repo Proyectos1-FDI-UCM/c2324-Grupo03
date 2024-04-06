@@ -156,8 +156,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 3.6
-  m_PointLightOuterRadius: 4
+  m_PointLightInnerRadius: 4.0004
+  m_PointLightOuterRadius: 5.48
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -215,14 +215,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6ebbff7f258b742ab2eefcc5eecda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  internalLightProportion: 0.9
-  maxLightRadius: 4
-  minLightRadius: 2
+  internalLightProportion: 0.73
+  maxLightRadius: 5.48
+  minLightRadius: 2.08
   increaseMultiplier: 8
   fearModifyUnit: 0.4
   provokedMultiplier: 24
   provokedFearMax: 1
   provokedFear: 0
+  vibrationDistance: 0.075
+  vibrationSpeed: 5
 --- !u!1 &2307209738609337397
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +407,51 @@ MonoBehaviour:
   _movementSpeed: 5
   _knockBackSpeed: 10
   _knockBackTime: 0.2
+  _unpauseLoopableMovingSound:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 70ed0d0a4cfb1a445a9cef35a3ef3e6d, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: UnPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _pauseLoopableMovingSound:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 70ed0d0a4cfb1a445a9cef35a3ef3e6d, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _startLoopableMovingSound:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 70ed0d0a4cfb1a445a9cef35a3ef3e6d, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1574447697511335288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,6 +650,21 @@ MonoBehaviour:
   - serializedVersion: 2
     m_Bits: 64
   playerHitboxDissapearingTime: 0.2
+  _hasBlinked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1d4c58df92d185e4790c9bb7a6aa8c46, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-1504753601656162217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,6 +821,36 @@ MonoBehaviour:
   _maxHealth: 10
   _currentHealth: 0
   _inmTime: 0.5
+  _OnHurt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: a804cf20aa8cb9f48be53f5f728bcb9a, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _OnDying:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 0c3aa055afdf69344a3d82ddb60d26ed, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3702319650464414860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,6 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerReviveEmitter: {fileID: 11400000, guid: 6c2195f7a528dd34c949b65262f6333c, type: 2}
+  _playerDeathEmitter: {fileID: 0}
   _deathskin: {fileID: 6758919315837710540}
   _aliveskin: {fileID: 6222676936956634352}
 --- !u!114 &4920501686148597465

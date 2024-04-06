@@ -81,4 +81,9 @@ public class NightManager : MonoBehaviour
     {
         _progressTracker.StartNight.AddListener(StartNight);
     }
+
+    void OnDestroy()
+    {
+        _progressTracker.StartNight.RemoveListener(StartNight);
+    }
 }

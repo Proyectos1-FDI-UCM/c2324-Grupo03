@@ -8,7 +8,7 @@ public class AudioPerformer : MonoBehaviour
 {
     static private AudioPerformer instance;
     AudioPlayer[] players;
-    private void Awake()
+    void Awake()
     {
         
         if (instance != null)
@@ -40,6 +40,8 @@ public class AudioPerformer : MonoBehaviour
                 players[i].stopAudio.AddListener(() => currentSource.Stop());
 
                 players[i].pauseAudio.AddListener(() => currentSource.Pause());
+
+                players[i].unPauseAudio.AddListener(() => currentSource.UnPause());
             }
         }
     }

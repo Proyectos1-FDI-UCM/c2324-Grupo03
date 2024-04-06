@@ -132,7 +132,7 @@ public class BuildingManager : MonoBehaviour
 
     public void AddBuilding(GameObject obj)
     {
-        print(obj);
+        //print(obj);
         _buildingArray.Add(obj);
     }
 

@@ -36,4 +36,10 @@ public class SpawnerPerformer : MonoBehaviour
         _spawnerStartEmitter.Perform.AddListener(LoadSpawnerPerformer);
         _spawnerStopEmitter.Perform.AddListener(_enemySpawner.Stop);
     }
+
+    void OnDestroy()
+    {
+        _spawnerStartEmitter.Perform.RemoveListener(LoadSpawnerPerformer);
+        _spawnerStopEmitter.Perform.RemoveListener(_enemySpawner.Stop);
+    }
 }

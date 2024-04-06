@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RBMovement : MonoBehaviour
 {
@@ -39,6 +40,13 @@ public class RBMovement : MonoBehaviour
         get { return _knockBackTime; }
     }
     [SerializeField] private float _knockBackTime = 0.5f;
+    #endregion
+
+    #region Events
+    [SerializeField] UnityEvent _unpauseLoopableMovingSound;
+    [SerializeField] private UnityEvent _pauseLoopableMovingSound;
+    [SerializeField] private UnityEvent _startLoopableMovingSound;
+    bool started = false;
     #endregion
 
     /// <summary>
@@ -100,6 +108,15 @@ public class RBMovement : MonoBehaviour
     {
         _movementDirection = new Vector2(xAxis, yAxis).normalized;
         _myRigidbody.velocity = _movementDirection * (_movementSpeed + _addedSpeed);
+
+        //audio
+        if (_movementDirection != Vector2.zero && !started)
+        {
+            started = true;
+            _startLoopableMovingSound?.Invoke();
+        }
+        else if (_movementDirection != Vector2.zero && started) _unpauseLoopableMovingSound?.Invoke();
+        else _pauseLoopableMovingSound?.Invoke();
     }
 
     public void TeleportTo(Vector2 position) //Pone la posicion del jugador en las coordenadas que se le pasan

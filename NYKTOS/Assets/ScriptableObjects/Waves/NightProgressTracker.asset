@@ -15,4 +15,6 @@ MonoBehaviour:
   _stateMachine: {fileID: 11400000, guid: 26cd137f8c89dcd4d8bc981a37f3e83f, type: 2}
   _night: 0
   _nightList:
-  - {fileID: 11400000, guid: 1b1eb0289b78ca54a95d54e954b3bc1b, type: 2}
+  - {fileID: 11400000, guid: 91ceccb45f774c043aeae1db67749daf, type: 2}
+  - {fileID: 11400000, guid: 81d0588b26ea1b042b3a75596bce2d1a, type: 2}
+  - {fileID: 11400000, guid: 90ebb37cf4bb7be43bf039b078446fe2, type: 2}

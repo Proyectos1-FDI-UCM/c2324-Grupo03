@@ -29,6 +29,11 @@ public class ImageControllerScript : MonoBehaviour
         _allTutorials.SetActive(true);
     }
 
+    void OnDestroy()
+    {
+        _day.Perform.RemoveListener(DisableTutorials);
+    }
+
     IEnumerator AppearAndDisappearImages()
     {        
         foreach (GameObject tutorial in _tutorials)

@@ -316,6 +316,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightRadius: 4
+  vibrationSpeed: 5
+  vibrationDistance: 0.1
   internalRadiusPercentageOffset: 0.9
   colliderPercentageOffset: 1
 --- !u!114 &1246145362626918794
@@ -415,7 +417,7 @@ GameObject:
   - component: {fileID: 6750348343497695362}
   - component: {fileID: 6758670540616618826}
   - component: {fileID: 6315878374668799528}
-  - component: {fileID: 4298316833115079426}
+  - component: {fileID: -4751459731007968555}
   - component: {fileID: -3869516557664234671}
   - component: {fileID: 6591812744701179738}
   m_Layer: 7
@@ -515,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9dfb7a72df3a44eaff93b7fd3d9210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4298316833115079426
+--- !u!114 &-4751459731007968555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -527,8 +529,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2224ec9d387f5c45a885d6c13a40221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerRevive: {fileID: 11400000, guid: 6c2195f7a528dd34c949b65262f6333c, type: 2}
-  _nexusInteract: {fileID: 11400000, guid: 7f2dcced0862aa94092c69df3eec2da0, type: 2}
+  _playerDeathEmitter: {fileID: 11400000, guid: 2da8c61c32f04eb4dbe80c7a3e8054b4, type: 2}
+  _playerReviveEmitter: {fileID: 11400000, guid: 6c2195f7a528dd34c949b65262f6333c, type: 2}
+  _nexusMenuEmitter: {fileID: 11400000, guid: 7dee2853a844893449043eaac068bb2b, type: 2}
+  _nexusInteractEmitter: {fileID: 11400000, guid: 7f2dcced0862aa94092c69df3eec2da0, type: 2}
 --- !u!114 &-3869516557664234671
 MonoBehaviour:
   m_ObjectHideFlags: 0

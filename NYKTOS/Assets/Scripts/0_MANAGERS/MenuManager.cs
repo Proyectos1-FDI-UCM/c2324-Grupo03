@@ -15,9 +15,34 @@ public class MenuManager : MonoBehaviour
     }
 
     #region references
-    [SerializeField]
-    private VoidEmitter _pauseGame;
 
+    [Header("Emitters")]
+
+    [SerializeField]
+    private VoidEmitter _closeMenusEmitter;
+
+    [SerializeField]
+    private VoidEmitter _pauseMenuEmitter;
+    [SerializeField]
+    private VoidEmitter _nexusMenuEmitter;
+    [SerializeField]
+    private VoidEmitter _altarMenuEmitter;
+    [SerializeField]
+    private VoidEmitter _defenseMenuEmitter;
+    [SerializeField]
+    private VoidEmitter _weaponUpgradeMenuEmitter;
+    [SerializeField]
+    private VoidEmitter _weaponEffectMenuEmitter;
+
+    //[SerializeField]
+    //private VoidEmitter _altarBuildEmitter;
+
+    [SerializeField]
+    private VoidEmitter _beaconBuildEmitter;
+    [SerializeField]
+    private VoidEmitter _wallBuildEmitter;
+    [SerializeField]
+    private VoidEmitter _turretBuildEmitter;
 
     #region menu refs
     [Header("Menu References")]
@@ -72,8 +97,6 @@ public class MenuManager : MonoBehaviour
     #endregion
 
     #region properties
-    private GameObject _previousMenu;
-
     private GameObject[] _menuList = new GameObject[6];
     #endregion
 
@@ -87,27 +110,24 @@ public class MenuManager : MonoBehaviour
 
     #region menuActions
 
-    public void Resume()
-    {
-        Time.timeScale = 1.0f;
-    }
-
     public void ExitGame()
     {
         PlayClosedSound();
         Application.Quit();
     }
 
-    public void BuildAltar()
-    {
-        PlayOpenedSound();
-        Debug.Log("TODO: Boton de reconstruir altar");
-    }
+    // LOS ALTARES YA NO VAN A SER REPARADOS POR EL PLAYER
+    //public void BuildAltar()
+    //{
+    //    PlayOpenedSound();
+    //    Debug.Log("TODO: Boton de reconstruir altar");
+    //}
 
     public void BuildBeacon()
     {
         PlayOpenedSound();
         BuildingManager.Instance.BuildBeacon();
+
     }
 
     public void BuildWall()
@@ -171,14 +191,14 @@ public class MenuManager : MonoBehaviour
         foreach (GameObject menu in _menuList) menu.SetActive(false);
 
         SwitchToPlayerControls();
-        Resume();
     }
 
     public void CloseMenu()
     {
-        CloseAllMenus(); 
+        CloseAllMenus();
     }
     #endregion
+
     #endregion
 
     void Awake()
@@ -191,7 +211,20 @@ public class MenuManager : MonoBehaviour
     {
         RegisterMenus();
 
-        _pauseGame.Perform.AddListener(OpenPauseMenu);
+        _closeMenusEmitter.Perform.AddListener(CloseAllMenus);
+
+        _pauseMenuEmitter.Perform.AddListener(OpenPauseMenu);
+        _nexusMenuEmitter.Perform.AddListener(OpenNexusMenu);
+        _altarMenuEmitter.Perform.AddListener(OpenAltarMenu);
+        _defenseMenuEmitter.Perform.AddListener(OpenDefenseMenu);
+        _weaponUpgradeMenuEmitter.Perform.AddListener(OpenWeaponUpgradeMenu);
+        _weaponEffectMenuEmitter.Perform.AddListener(OpenWeaponEffectMenu);
+
+        //_altarBuildEmitter.Perform.AddListener(BuildAltar);
+
+        _beaconBuildEmitter.Perform.AddListener(BuildBeacon);
+        _wallBuildEmitter.Perform.AddListener(BuildWall);
+        _turretBuildEmitter.Perform.AddListener(BuildTurret);
     }
 
     #region EventsMethods
