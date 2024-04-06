@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f75a949d6e7b64bb3fb60da1fcbe46, type: 3}
   m_Name: DayState
   m_EditorClassIdentifier: 
-  _changeToScene: {fileID: 0}
   _stateIdentifier: 6
   _onStateLoad: []
   _onStateExit: []
@@ -21,7 +20,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -944628639613478452, guid: be9f3fd42d1fb604ab2253caedcf7a80, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.InputSystem.InputActionAsset, Unity.InputSystem
-        m_MethodName: Disable
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -84,7 +83,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -944628639613478452, guid: be9f3fd42d1fb604ab2253caedcf7a80, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.InputSystem.InputActionAsset, Unity.InputSystem
-        m_MethodName: Enable
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -99,7 +98,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -944628639613478452, guid: be9f3fd42d1fb604ab2253caedcf7a80, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.InputSystem.InputActionAsset, Unity.InputSystem
-        m_MethodName: Disable
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
