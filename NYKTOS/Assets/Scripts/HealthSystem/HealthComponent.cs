@@ -30,6 +30,7 @@ public class HealthComponent : MonoBehaviour
 
     #region events
     [SerializeField] UnityEvent _OnHurt;
+    [SerializeField] UnityEvent _OnDying;
     #endregion
 
     // Start is called before the first frame update
@@ -68,6 +69,7 @@ public class HealthComponent : MonoBehaviour
             {
                 _currentHealth = 0;
 
+                _OnDying?.Invoke();
                 // Cosa marco, me he cargado el metodo morir
                 _deathComponent.Death();
             }
