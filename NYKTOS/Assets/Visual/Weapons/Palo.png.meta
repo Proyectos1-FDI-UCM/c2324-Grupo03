@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e6e7f6553a3ea2c4fb71303d761566b7
+guid: 3b0773167421e9947847348d536e6811
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Palo 1_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 15
+        width: 12
+        height: 23
+      alignment: 9
+      pivot: {x: 0.74986285, y: 0.062113553}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5a9ce219c23634c818bf5d64cd2a9b
+      internalID: -1280224887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Palo 1_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 13
+        width: 23
+        height: 28
+      alignment: 9
+      pivot: {x: 0.07882674, y: 0.28583208}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 792831944e22bc8489fc88ca20ec63f2
+      internalID: 75963997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +161,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Palo 1_0: -1280224887
+      Palo 1_1: 75963997
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
