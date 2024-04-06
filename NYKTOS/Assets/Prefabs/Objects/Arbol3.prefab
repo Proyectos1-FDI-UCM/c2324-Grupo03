@@ -4838,6 +4838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9028305010749471652}
   - component: {fileID: 5564559750527173678}
+  - component: {fileID: 8559624051472153355}
   - component: {fileID: -3671019279466825210}
   m_Layer: 0
   m_Name: Arbol3
@@ -4914,6 +4915,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8559624051472153355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915123802794654685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b21e6c7af392f54b8f45d81f547f4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inversionEffect: {fileID: 11400000, guid: a4a1ef1ef912d394b8529caa92d35c63, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 95658edc5c8ee0144a2d88dff75ada12, type: 2}
+  inversionMaterial: {fileID: 2100000, guid: ea9bfcde5d913c64e819e510546b250e, type: 2}
 --- !u!114 &-3671019279466825210
 MonoBehaviour:
   m_ObjectHideFlags: 0
