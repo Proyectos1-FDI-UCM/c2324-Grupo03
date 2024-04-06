@@ -64,8 +64,13 @@ public class AltarComponent : MonoBehaviour, IBuilding
     void Start()
     {
         _state = GetComponent<BuildingStateMachine>();
-        BuildingManager.Instance.AddBuilding(this.gameObject);
+        BuildingManager.Instance.AddBuilding(gameObject);
 
         _altarInteract.Perform.AddListener(CanInteract); 
+    }
+
+    void OnDestroy()
+    {
+        _altarInteract.Perform.RemoveListener(CanInteract); 
     }
 }

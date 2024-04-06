@@ -94,5 +94,8 @@ public enum GlobalStateIdentifier
     Day,
     Night,
     Lose,
-    Win
+    Win,
+    MenuSceneLoad,
+    TutorialSceneLoad,
+    MaingameSceneLoad
 }

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f75a949d6e7b64bb3fb60da1fcbe46, type: 3}
   m_Name: NightState
   m_EditorClassIdentifier: 
-  _changeToScene: {fileID: 0}
   _stateIdentifier: 7
   _onStateLoad: []
   _onStateExit: []
@@ -32,18 +31,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 11400000, guid: a4a1ef1ef912d394b8529caa92d35c63, type: 2}
-        m_TargetAssemblyTypeName: GenericEmitter`1[[System.Boolean, mscorlib
-        m_MethodName: InvokePerform
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: ad2d45fe2d0ba464291ba279121ed7dd, type: 2}
         m_TargetAssemblyTypeName: GenericEmitter`1[[System.Boolean, mscorlib
         m_MethodName: InvokePerform
         m_Mode: 6

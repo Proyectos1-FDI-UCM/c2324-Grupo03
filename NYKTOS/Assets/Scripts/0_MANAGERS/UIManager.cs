@@ -126,4 +126,9 @@ public class UIManager : MonoBehaviour
         _playerInventory.InventoryUpdate.AddListener(UpdateFromInventory);
     }
 
+    void OnDestroy()
+    {
+        _playerInventory.InventoryUpdate.RemoveListener(UpdateFromInventory);
+    }
+
 }

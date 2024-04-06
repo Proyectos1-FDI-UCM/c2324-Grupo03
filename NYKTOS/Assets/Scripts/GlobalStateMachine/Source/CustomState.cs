@@ -8,9 +8,6 @@ using UnityEngine.SceneManagement;
 public class CustomState : ScriptableObject
 {
     [SerializeField]
-    private SceneAsset _changeToScene;
-
-    [SerializeField]
     private GlobalStateIdentifier _stateIdentifier = GlobalStateIdentifier.None;
     public GlobalStateIdentifier StateIdentifier {get{return _stateIdentifier;}}
 
@@ -43,21 +40,7 @@ public class CustomState : ScriptableObject
 
     public void StateLoad()
     {
-        if (_changeToScene == null)
-        {
-            StartStateLoad();
-        }
-        else
-        {
-            SceneManager.LoadScene(_changeToScene?.name);
-            SceneManager.sceneLoaded += SceneLoadCompleted;
-        }
-    }
-
-    private void SceneLoadCompleted(Scene scene, LoadSceneMode loadSceneMode)
-    {
-        SceneManager.sceneLoaded -= SceneLoadCompleted;
-        StartStateLoad();
+        ConsumeCollaboratorList(_pendingLoadCount, _onStateLoad, _onStateInstantLoad, _onStateEnter);
     }
 
     private void ConsumeCollaboratorList
@@ -70,11 +53,6 @@ public class CustomState : ScriptableObject
         pendingCount = collaboratorList.Count;
         instantEvent.Invoke();
         ExecuteCollaboratorEvents(collaboratorList, () => TryComplete(ref pendingCount, collaboratorEndEvent));
-    }
-
-    private void StartStateLoad()
-    {
-        ConsumeCollaboratorList(_pendingLoadCount, _onStateLoad, _onStateInstantLoad, _onStateEnter);
     }
 
     public void StateExit()
@@ -98,11 +76,5 @@ public class CustomState : ScriptableObject
         {
             targetEvent.Invoke();
         }
-    }
-
-    [ContextMenu("DeleteScene")]
-    private void DeleteScene()
-    {
-        _changeToScene = null;
     }
 }

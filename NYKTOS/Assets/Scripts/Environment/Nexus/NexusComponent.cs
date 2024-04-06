@@ -49,11 +49,17 @@ public class NexusComponent : MonoBehaviour, IBuilding
 
     public void CloseMenu() => MenuManager.Instance.CloseAllMenus();
 
-    private void Start()
+    void Start()
     {
         BuildingManager.Instance.AddBuilding(gameObject);
 
         _nexusInteractEmitter.Perform.AddListener(CanInteract);
         _playerDeathEmitter.Perform.AddListener(CanRevive);
+    }
+
+    void OnDestroy()
+    {
+        _nexusInteractEmitter.Perform.RemoveListener(CanInteract);
+        _playerDeathEmitter.Perform.RemoveListener(CanRevive);
     }
 }

@@ -1,17 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "GlobalMethods", menuName = "GlobalMethods")]
 public class GlobalMethods: ScriptableObject
 {
-    public static void PauseAction(bool condition)
+
+    public void PauseAction(bool condition)
     {
         Time.timeScale = condition ? 0.0f : 1.0f;
     }
 
-    public static void Quit()
+    public void Quit()
     {
         Application.Quit();
+    }
+
+    public void ChangeScene(SceneAsset scene)
+    {
+        SceneManager.LoadScene(scene.name);
     }
 }

@@ -35,4 +35,9 @@ public class DefenseComponent : MonoBehaviour
         Health = Defense.health;
         _healthRestore.Perform.AddListener(_health.MaxHealth);
     }
+
+    void OnDestroy()
+    {
+        _healthRestore.Perform.RemoveListener(_health.MaxHealth);
+    }
 }

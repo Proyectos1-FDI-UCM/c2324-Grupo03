@@ -23,10 +23,15 @@ public class ImageControllerScript : MonoBehaviour
 
     IEnumerator Start()
     {
-        _day.Perform.AddListener(DisableTutorials);
+        _day.Perform.(DisableTutorials);
 
         yield return StartCoroutine(AppearAndDisappearImages());
         _allTutorials.SetActive(true);
+    }
+
+    void OnDestroy()
+    {
+        _day.Perform.RemoveListener(DisableTutorials);
     }
 
     IEnumerator AppearAndDisappearImages()

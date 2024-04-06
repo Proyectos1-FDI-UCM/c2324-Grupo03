@@ -8,7 +8,7 @@ public class AudioPerformer : MonoBehaviour
 {
     static private AudioPerformer instance;
     AudioPlayer[] players;
-    private void Awake()
+    void Awake()
     {
         
         if (instance != null)

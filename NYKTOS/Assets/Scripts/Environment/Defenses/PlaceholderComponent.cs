@@ -40,4 +40,9 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
 
         _placeholderInteract.Perform.AddListener(CanInteract);
     }
+
+    void OnDestroy()
+    {
+        _placeholderInteract.Perform.RemoveListener(CanInteract);
+    }
 }

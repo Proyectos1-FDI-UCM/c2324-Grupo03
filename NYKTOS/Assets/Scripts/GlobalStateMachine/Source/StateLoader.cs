@@ -8,8 +8,9 @@ public class StateLoader : MonoBehaviour
     [SerializeField]
     private GlobalStateIdentifier _identifier;
 
-    void Start()
+    void Update()
     {
         _gameStateMachine?.SetState(_identifier);
+        gameObject.SetActive(false);
     }
 }
