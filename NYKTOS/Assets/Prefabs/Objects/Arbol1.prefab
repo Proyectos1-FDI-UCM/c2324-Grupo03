@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inversionEffect: {fileID: 11400000, guid: a4a1ef1ef912d394b8529caa92d35c63, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 95658edc5c8ee0144a2d88dff75ada12, type: 2}
-  inversionMaterial: {fileID: 2100000, guid: ea9bfcde5d913c64e819e510546b250e, type: 2}
+  inversionMaterial: {fileID: 2100000, guid: 4180ac095957fca42979d8a7339c26a8, type: 2}
 --- !u!1 &8356100458014509943
 GameObject:
   m_ObjectHideFlags: 0
