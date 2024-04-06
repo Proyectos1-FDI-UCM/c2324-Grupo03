@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LoadState
   m_EditorClassIdentifier: 
   _changeToScene: {fileID: 102900000, guid: cddedea2decd49248a22a36d3d0cad1d, type: 3}
-  _stateIdentifier: 1
+  _stateIdentifier: 2
   _onStateLoad: []
   _onStateExit: []
   _onStateInstantLoad:

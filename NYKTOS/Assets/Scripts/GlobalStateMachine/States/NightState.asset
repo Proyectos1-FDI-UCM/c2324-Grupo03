@@ -13,12 +13,24 @@ MonoBehaviour:
   m_Name: NightState
   m_EditorClassIdentifier: 
   _changeToScene: {fileID: 0}
-  _stateIdentifier: 6
+  _stateIdentifier: 7
   _onStateLoad: []
   _onStateExit: []
   _onStateInstantLoad:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: -944628639613478452, guid: be9f3fd42d1fb604ab2253caedcf7a80, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.InputSystem.InputActionAsset, Unity.InputSystem
+        m_MethodName: Disable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: a4a1ef1ef912d394b8529caa92d35c63, type: 2}
         m_TargetAssemblyTypeName: GenericEmitter`1[[System.Boolean, mscorlib
         m_MethodName: InvokePerform
@@ -58,6 +70,18 @@ MonoBehaviour:
   _onStateEnter:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: -944628639613478452, guid: be9f3fd42d1fb604ab2253caedcf7a80, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.InputSystem.InputActionAsset, Unity.InputSystem
+        m_MethodName: Enable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 100c2ea44e0114a49b753e96612872fb, type: 2}
         m_TargetAssemblyTypeName: GameProgressTracker, Assembly-CSharp
         m_MethodName: InvokeStartNight
@@ -72,4 +96,40 @@ MonoBehaviour:
         m_CallState: 2
   _onStateInstantExit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -944628639613478452, guid: be9f3fd42d1fb604ab2253caedcf7a80, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.InputSystem.InputActionAsset, Unity.InputSystem
+        m_MethodName: Disable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 5a21eca47387e4f4092d5ab171bb56e8, type: 2}
+        m_TargetAssemblyTypeName: GenericEmitter, Assembly-CSharp
+        m_MethodName: InvokePerform
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 53c499af04146ec4e8d2d76d0c92610b, type: 2}
+        m_TargetAssemblyTypeName: GenericEmitter, Assembly-CSharp
+        m_MethodName: InvokePerform
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

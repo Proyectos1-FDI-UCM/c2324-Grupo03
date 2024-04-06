@@ -8,6 +8,8 @@ public class PlayerDeath : MonoBehaviour, IDeath
 
     [SerializeField]
     private VoidEmitter _playerReviveEmitter;
+    [SerializeField]
+    private VoidEmitter _playerDeathEmitter;
 
     private PlayerStateMachine _playerState;
     private HealthComponent _health;
@@ -26,6 +28,8 @@ public class PlayerDeath : MonoBehaviour, IDeath
         _deathskin.enabled = true;
         _playerState.SetState(PlayerState.Dead);
         UIManager.Instance.DeathScreenOn();
+
+        _playerDeathEmitter.InvokePerform();
     }
 
     public void Revive()

@@ -9,19 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77f75a949d6e7b64bb3fb60da1fcbe46, type: 3}
-  m_Name: LoseState
+  m_Script: {fileID: 11500000, guid: 7ef8d3f00f16c764e9dae1b4df08dee1, type: 3}
+  m_Name: BuildTurret
   m_EditorClassIdentifier: 
-  _changeToScene: {fileID: 0}
-  _stateIdentifier: 8
-  _onStateLoad: []
-  _onStateExit: []
-  _onStateInstantLoad:
-    m_PersistentCalls:
-      m_Calls: []
-  _onStateEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  _onStateInstantExit:
+  _perform:
     m_PersistentCalls:
       m_Calls: []

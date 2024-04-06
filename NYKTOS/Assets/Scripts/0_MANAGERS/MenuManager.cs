@@ -34,6 +34,16 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private VoidEmitter _weaponEffectMenuEmitter;
 
+    [SerializeField]
+    private VoidEmitter _altarBuildEmitter;
+
+    [SerializeField]
+    private VoidEmitter _beaconBuildEmitter;
+    [SerializeField]
+    private VoidEmitter _wallBuildEmitter;
+    [SerializeField]
+    private VoidEmitter _turretBuildEmitter;
+
     #region menu refs
     [Header("Menu References")]
     [SerializeField]
@@ -211,6 +221,11 @@ public class MenuManager : MonoBehaviour
         _weaponUpgradeMenuEmitter.Perform.AddListener(OpenWeaponUpgradeMenu);
         _weaponEffectMenuEmitter.Perform.AddListener(OpenWeaponEffectMenu);
 
+        _altarBuildEmitter.Perform.AddListener(BuildAltar);
+
+        _beaconBuildEmitter.Perform.AddListener(BuildBeacon);
+        _wallBuildEmitter.Perform.AddListener(BuildWall);
+        _turretBuildEmitter.Perform.AddListener(BuildTurret);
     }
 
     #region EventsMethods
