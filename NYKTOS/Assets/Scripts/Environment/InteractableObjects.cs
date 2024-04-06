@@ -16,7 +16,12 @@ public class InteractableObjects : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == _name && _buildingState.isInteractable) _sprite.SetActive(true);
+        //if (collision.gameObject.name == _name && _buildingState.isInteractable) _sprite.SetActive(true);
+        if (collision.gameObject.name == _name && _buildingState.isInteractable)
+        {
+            _sprite.SetActive(true);
+            Debug.Log("se puede interactuar: " + _buildingState.isInteractable);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
