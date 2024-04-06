@@ -5498,6 +5498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5d092a0773cee43a7513b28d69d2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitCondition: {fileID: 2269808507720967022}
 --- !u!1 &2571774634260732345
 GameObject:
   m_ObjectHideFlags: 0
@@ -5725,9 +5726,9 @@ MonoBehaviour:
   _whereToLookAt: 2
   enterBehaviours:
   - _behaviour: {fileID: 7495377011902058311}
-  updateBehaviours: []
-  exitBehaviours:
   - _behaviour: {fileID: 2513193540099645405}
+  updateBehaviours: []
+  exitBehaviours: []
   possibleStates:
   - state: {fileID: 7602621073685853309}
     enterConditions:
