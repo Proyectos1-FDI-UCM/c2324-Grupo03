@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Renderer))]
 public class ParticlesMaterialChanger : MonoBehaviour
 {
     //El componente de particulas los puse todos como hijos
