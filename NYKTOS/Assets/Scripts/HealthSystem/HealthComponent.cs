@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 public class HealthComponent : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class HealthComponent : MonoBehaviour
     #endregion
 
     #region events
-
+    [SerializeField] UnityEvent _OnHurt;
     #endregion
 
     // Start is called before the first frame update
@@ -55,6 +56,7 @@ public class HealthComponent : MonoBehaviour
 
         if (!_inmune)
         {
+            _OnHurt?.Invoke();
             _currentHealth -= damage;
             _inmune = true;
             if (HealthBarGameObject != null)
