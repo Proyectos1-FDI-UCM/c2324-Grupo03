@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 275fcc05780e2a442b5c471fbd15198d, type: 3}
-  m_Name: ClubPrimaryAttackSound
+  m_Name: BlinkSound
   m_EditorClassIdentifier: 
   _clip:
-  - {fileID: 8300000, guid: eecade2b1b7cc6c4b83a3197f8a0b4ef, type: 3}
-  _volume: 0.9
+  - {fileID: 8300000, guid: 3fcd9ddbb42b5ef44ae652e26fe2823c, type: 3}
+  _volume: 1
   _reproductionType: 0
   _audioType: 0

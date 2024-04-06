@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BlinkComponent : MonoBehaviour
 {
@@ -24,13 +25,16 @@ public class BlinkComponent : MonoBehaviour
     [SerializeField] public LayerMask[] whatLayerToDetect = new LayerMask[3]; //deteccion de las capas terrain collider, out of bounds y buildings
 
     [SerializeField] private float playerHitboxDissapearingTime;
+
+    [SerializeField] UnityEvent _hasBlinked;
     #endregion
 
     public void Blink()
     {
         if (blinkHitbox != null)
         {
-            entityHitbox.enabled = false;
+            _hasBlinked?.Invoke();
+            StartCoroutine(ActivatePlayerHitbox());
             if (!blinkHitbox.isColliding) //caso de que la hitbox no colisione con la pared ------> se teleporta a la distancia maxima del blink
             {
                 rbMovement.TeleportTo(new Vector2 (_myTransform.position.x, _myTransform.position.y) 
@@ -55,13 +59,14 @@ public class BlinkComponent : MonoBehaviour
                 if (closestHit != Vector2.zero)
                     rbMovement.TeleportTo(closestHit - 0.25f * _blinkDirection);
             }
-
-            Invoke("ActivatePlayerHitbox", playerHitboxDissapearingTime);
         }
     }
 
-    private void ActivatePlayerHitbox()
+    private IEnumerator ActivatePlayerHitbox()
     {
+        entityHitbox.enabled = false;
+
+        yield return new WaitForSeconds(playerHitboxDissapearingTime);
         entityHitbox.enabled= true;
     }
 

@@ -605,6 +605,21 @@ MonoBehaviour:
   - serializedVersion: 2
     m_Bits: 64
   playerHitboxDissapearingTime: 0.2
+  _hasBlinked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1d4c58df92d185e4790c9bb7a6aa8c46, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-1504753601656162217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,6 +789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerReviveEmitter: {fileID: 11400000, guid: 6c2195f7a528dd34c949b65262f6333c, type: 2}
+  _playerDeathEmitter: {fileID: 0}
   _deathskin: {fileID: 6758919315837710540}
   _aliveskin: {fileID: 6222676936956634352}
 --- !u!114 &4920501686148597465
