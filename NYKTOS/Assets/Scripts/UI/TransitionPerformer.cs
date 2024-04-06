@@ -8,36 +8,49 @@ public class TransitionPerformer : MonoBehaviour
 {
     private Animator _animator;
 
-    /*
+    #region BoolEmitters
     [SerializeField]
-    private BoolEmitter _DayTransition;
-
+    private BoolEmitter _DayTransitionText;
     [SerializeField]
-    private BoolEmitter _NightTransition;
-    */
+    private BoolEmitter _NightTransitionText;
+    #endregion
 
+    #region VoidEmmiters
+    [SerializeField]
+    private VoidEmitter _TransitionToDark;
+    [SerializeField]
+    private VoidEmitter _TransitionToTransparent;
+    [SerializeField]
+    private VoidEmitter _TransitionReset;
+    #endregion
+
+    #region Texts
     [SerializeField]
     private GameObject _TransitionToDay;
-
     [SerializeField]
     private GameObject _TransitionToNight;
+    #endregion
 
+    #region AnimationClips
     [SerializeField]
     private AnimationClip AnimationClipToDark;
-
     [SerializeField]
     private AnimationClip AnimationClipToTransparent;
-
     [SerializeField]
     private AnimationClip AnimationClipToIdle;
+    #endregion
 
     void Start()
     {
         _animator = GetComponent<Animator>();
-        _TransitionToDay.SetActive(false);
-        _TransitionToNight.SetActive(false);
-        //_DayTransition.Perform.AddListener(TextInDay);
-        //_NightTransition.Perform.AddListener(TextInNight);
+
+        _DayTransitionText.Perform.AddListener(TextInDay);
+        _NightTransitionText.Perform.AddListener(TextInNight);
+
+        _TransitionToDark.Perform.AddListener(TransitionToDark);
+        _TransitionToTransparent.Perform.AddListener(TransitionToTransparent);
+        _TransitionReset.Perform.AddListener(ResetTransition);
+
     }
 
    
@@ -46,6 +59,7 @@ public class TransitionPerformer : MonoBehaviour
     {
         if (_animator != null && AnimationClipToDark != null)
         {
+            print("animacion lanzada");
             // Obtenemos el hash del nombre del clip de animación
             int transitionHash = Animator.StringToHash(AnimationClipToDark.name);
             // Reproducimos la animación utilizando el hash
@@ -76,8 +90,6 @@ public class TransitionPerformer : MonoBehaviour
             _animator.Play(transitionHash, 0, 0f);
         }
     }
-
-    //Para debuggear
     private void TextInDay(bool value)
     {
         _TransitionToDay.SetActive(value);

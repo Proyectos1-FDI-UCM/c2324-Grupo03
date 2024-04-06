@@ -708,14 +708,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678967869608256962}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6371297836848223594}
   - {fileID: 5411513165501802549}
-  m_Father: {fileID: 2094542971339212424}
+  m_Father: {fileID: 6125069478168396986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5123,7 +5123,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4314343032170897763}
   - {fileID: 6125069478168396986}
   m_Father: {fileID: 3440641815732349696}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6199,6 +6198,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3648714221238506052}
+  - {fileID: 4314343032170897763}
   m_Father: {fileID: 2094542971339212424}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4758201694019181823
@@ -6234,8 +6234,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbbfaacf2978f2e4eb9fb57257ee2cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _DayTransition: {fileID: 11400000, guid: 54de89798f3b01647ad844e71d7344b4, type: 2}
-  _NightTransition: {fileID: 11400000, guid: 0b60db9189383644c85b5af44559b1ad, type: 2}
+  _DayTransitionText: {fileID: 11400000, guid: 54de89798f3b01647ad844e71d7344b4, type: 2}
+  _NightTransitionText: {fileID: 11400000, guid: 0b60db9189383644c85b5af44559b1ad, type: 2}
+  _TransitionToDark: {fileID: 11400000, guid: d2500bf523091fe468863b74103bc83d, type: 2}
+  _TransitionToTransparent: {fileID: 11400000, guid: bf58668f04c7d8043a7322510cae1601, type: 2}
+  _TransitionReset: {fileID: 11400000, guid: 66a85346dad213345805e4df21196962, type: 2}
   _TransitionToDay: {fileID: 6644510487536453798}
   _TransitionToNight: {fileID: 3443092654729888271}
   AnimationClipToDark: {fileID: 7400000, guid: 8d2e9b72feec0a24dab7e4c517506dd7, type: 2}
@@ -7513,7 +7516,6 @@ MonoBehaviour:
   _defenseMenuEmitter: {fileID: 11400000, guid: 61d01db8c8f871a4684fcf3b82b8a031, type: 2}
   _weaponUpgradeMenuEmitter: {fileID: 11400000, guid: 1e1cdcdcf5f368941b553f87e0b31b2e, type: 2}
   _weaponEffectMenuEmitter: {fileID: 11400000, guid: 343c80a31b148424bbb6e6f14b65b1cc, type: 2}
-  _altarBuildEmitter: {fileID: 11400000, guid: 83bf280f8d7c31e48a5f401885b61f39, type: 2}
   _beaconBuildEmitter: {fileID: 11400000, guid: bd66721845a72d9458e1061aec7616b9, type: 2}
   _wallBuildEmitter: {fileID: 11400000, guid: 41bf204db3d38e546a632d72b95afb04, type: 2}
   _turretBuildEmitter: {fileID: 11400000, guid: 9c3057776ab85794eb818a6c68c0dbdb, type: 2}

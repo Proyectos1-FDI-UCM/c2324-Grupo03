@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670c2310f45342e4baffd7fb12df225e, type: 3}
-  m_Name: NightTransition
+  m_Script: {fileID: 11500000, guid: 7ef8d3f00f16c764e9dae1b4df08dee1, type: 3}
+  m_Name: TransitionToTransparent
   m_EditorClassIdentifier: 
   _perform:
     m_PersistentCalls:
