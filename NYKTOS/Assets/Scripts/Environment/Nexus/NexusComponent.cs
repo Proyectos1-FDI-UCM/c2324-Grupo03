@@ -53,6 +53,8 @@ public class NexusComponent : MonoBehaviour, IBuilding
     {
         BuildingManager.Instance.AddBuilding(gameObject);
 
+        _state = GetComponent<BuildingStateMachine>();
+
         _nexusInteractEmitter.Perform.AddListener(CanInteract);
         _playerDeathEmitter.Perform.AddListener(CanRevive);
     }

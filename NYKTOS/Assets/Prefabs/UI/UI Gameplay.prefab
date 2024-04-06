@@ -7489,10 +7489,10 @@ MonoBehaviour:
   _defenseMenuEmitter: {fileID: 11400000, guid: 61d01db8c8f871a4684fcf3b82b8a031, type: 2}
   _weaponUpgradeMenuEmitter: {fileID: 11400000, guid: 1e1cdcdcf5f368941b553f87e0b31b2e, type: 2}
   _weaponEffectMenuEmitter: {fileID: 11400000, guid: 343c80a31b148424bbb6e6f14b65b1cc, type: 2}
-  _altarBuildEmitter: {fileID: 0}
-  _beaconBuildEmitter: {fileID: 0}
-  _wallBuildEmitter: {fileID: 0}
-  _turretBuildEmitter: {fileID: 0}
+  _altarBuildEmitter: {fileID: 11400000, guid: 83bf280f8d7c31e48a5f401885b61f39, type: 2}
+  _beaconBuildEmitter: {fileID: 11400000, guid: bd66721845a72d9458e1061aec7616b9, type: 2}
+  _wallBuildEmitter: {fileID: 11400000, guid: 41bf204db3d38e546a632d72b95afb04, type: 2}
+  _turretBuildEmitter: {fileID: 11400000, guid: 9c3057776ab85794eb818a6c68c0dbdb, type: 2}
   _pauseMenu: {fileID: 4804922284347627298}
   _nexusMenu: {fileID: 2032700948203195905}
   _altarMenu: {fileID: 7437918417641337200}
