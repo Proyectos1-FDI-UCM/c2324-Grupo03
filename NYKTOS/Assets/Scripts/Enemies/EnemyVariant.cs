@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 
@@ -9,7 +7,6 @@ public class EnemyVariant : MonoBehaviour
     SpriteLibraryAsset _magentaSprite;
     [SerializeField]
     SpriteLibraryAsset _cyanSprite;
-    private ParticleSystem _particleSystem;
 
     #region debug
     [Header("DEBUG")]
