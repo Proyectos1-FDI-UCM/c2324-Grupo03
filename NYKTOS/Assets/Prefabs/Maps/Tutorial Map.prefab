@@ -4982,9 +4982,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3550060203260948367, guid: 64a242fa460722d47a278480195ff466, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3983642246170334203, guid: 64a242fa460722d47a278480195ff466, type: 3}
       propertyPath: m_Name
       value: Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265521018662020170, guid: 64a242fa460722d47a278480195ff466, type: 3}
+      propertyPath: _spawnMarker
+      value: 
+      objectReference: {fileID: 11400000, guid: efc9b240a144bca4b9295a474e1fe87b, type: 2}
+    - target: {fileID: 9208304117144434517, guid: 64a242fa460722d47a278480195ff466, type: 3}
+      propertyPath: _spawnerRegion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
