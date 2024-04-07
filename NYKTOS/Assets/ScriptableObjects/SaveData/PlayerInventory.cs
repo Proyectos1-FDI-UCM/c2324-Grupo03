@@ -57,6 +57,13 @@ public class PlayerInventory : ScriptableObject
 
     [ContextMenu("Reset")]
     public void Reset(){
+        amarilloCristales = 0;
+        magentaCristales = 0;
+        cianCristales = 0;
+    }
+
+    [ContextMenu("ResetForTutorial")]
+    public void ResetForTutorial(){
         amarilloCristales = 5;
         magentaCristales = 0;
         cianCristales = 0;

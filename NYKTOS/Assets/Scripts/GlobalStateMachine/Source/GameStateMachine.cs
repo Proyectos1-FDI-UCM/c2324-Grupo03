@@ -28,11 +28,13 @@ public class GameStateMachine : ScriptableObject
         {
             if(_currentState != null)
             {
+                Debug.Log("3");
                 _currentState.StateEndSignal.AddListener(newState.StateLoad);
                 _currentState.StateExit();
             }
             else
             {
+                Debug.Log("4");
                 newState.StateLoad();
                 _currentState = newState;
             }
