@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2754ec2fc757c244879b4eab2001418, type: 3}
   m_Name: Night_Tutorial
   m_EditorClassIdentifier: 
-  _nightLength: 180
+  _nightLength: 45
   _waveList:
-  - time: 0
+  - time: 5
+    subWaveList: []
+  - time: 40
     subWaveList:
     - spawnerRegion: 0
       enemyPool:
