@@ -71,7 +71,7 @@ public class BuildingManager : MonoBehaviour
 
     private void BuildDefense()
     {
-        if (_selectedDefense == _beacon || _selectedDefense == _turret)
+        if (_selectedDefense == _turret)
         {
             _selectedDefense.transform.position = new Vector2(_currentPlaceholder.transform.position.x, _currentPlaceholder.transform.position.y + _offsetNotWall);
         }

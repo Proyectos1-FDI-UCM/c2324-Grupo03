@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e30e57da976c59148ad1da8f30d7adb5
+guid: 1f7b36c266b2ea641ab5412e9e96bed2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,7 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -107,11 +107,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,43 +123,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Faro_0
+      name: BuildingsOnlyColorNoInvert_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 47
-        width: 15
-        height: 19
+        x: 0
+        y: 34
+        width: 36
+        height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea9244966e16f4f409372265a93de6d7
-      internalID: -236984582
+      spriteID: 1db0c317d77059c45bc531edf1769b6a
+      internalID: -312586034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Faro_1
+      name: BuildingsOnlyColorNoInvert_1
       rect:
         serializedVersion: 2
-        x: 3
-        y: 0
-        width: 19
-        height: 47
+        x: 41
+        y: 35
+        width: 34
+        height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51754810843f306478be4c61b39d4b48
-      internalID: 432632609
+      spriteID: 71fbb0f3ba6c87449a923aaa11202c2e
+      internalID: 80455940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuildingsOnlyColorNoInvert_3
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 9
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a2f43768d7eff42845c844ad7a80ed
+      internalID: 2024134467
       vertices: []
       indices: 
       edges: []
@@ -175,8 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Faro_0: -236984582
-      Faro_1: 432632609
+      BuildingsOnlyColorNoInvert_0: -312586034
+      BuildingsOnlyColorNoInvert_1: 80455940
+      BuildingsOnlyColorNoInvert_3: 2024134467
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
