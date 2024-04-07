@@ -47,7 +47,6 @@ public class AltarComponent : MonoBehaviour
     private void RegisterPlaceholder()
     {
         _totalPlaceholders++;
-        Debug.Log("Se ha registrado un ph");
     }
 
     private void PlaceholderCount(bool value)
@@ -67,7 +66,6 @@ public class AltarComponent : MonoBehaviour
     private void ChangeState()
     {
         // Actualizar apariencia en funcion de numero de _currentPlaceholders
-        Debug.Log($"altar {_type}, ph totales: {_totalPlaceholders}, ph construidos: {_currentPlaceholders}");
 
         if (_currentPlaceholders == _totalPlaceholders)
         {
@@ -80,6 +78,19 @@ public class AltarComponent : MonoBehaviour
             _state.SetState(BuildingStateMachine.BuildingState.NotBuilt);
             Debug.Log("Altar desactivado");
             // Lanzar evento que desactive comportamiento especial
+        }
+
+        switch(_currentPlaceholders)
+        {
+            case 0:
+
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
         }
     }
 
