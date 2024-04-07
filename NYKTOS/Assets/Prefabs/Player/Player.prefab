@@ -869,7 +869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerReviveEmitter: {fileID: 11400000, guid: 6c2195f7a528dd34c949b65262f6333c, type: 2}
-  _playerDeathEmitter: {fileID: 0}
+  _playerDeathEmitter: {fileID: 11400000, guid: 2da8c61c32f04eb4dbe80c7a3e8054b4, type: 2}
   _deathskin: {fileID: 6758919315837710540}
   _aliveskin: {fileID: 6222676936956634352}
 --- !u!114 &4920501686148597465

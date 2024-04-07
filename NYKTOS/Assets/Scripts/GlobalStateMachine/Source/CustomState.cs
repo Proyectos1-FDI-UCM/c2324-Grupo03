@@ -34,13 +34,13 @@ public class CustomState : ScriptableObject
 
     public void StateLoad()
     {
-        Debug.Log(name + " STATELOAD");
+        //Debug.Log(name + " STATELOAD");
         ConsumeCollaboratorList(_onStateLoadCollaborators, _onStateInstantLoad, _onStateEnter);
     }
 
     public void StateExit()
     {
-        Debug.Log(name + " STATEXIT");
+        //Debug.Log(name + " STATEXIT");
 
         ConsumeCollaboratorList(_onStateExitCollaborators, _onStateInstantExit, _stateEndSignal);
     }
@@ -70,7 +70,7 @@ public class CustomState : ScriptableObject
         }
         else
         {
-            Debug.Log(name + " COLLABORADOR CON 0 ITEMS");
+            //Debug.Log(name + " COLLABORADOR CON 0 ITEMS");
             collaboratorEndEvent.Invoke();
         }
         instantEvent.Invoke();
@@ -79,10 +79,10 @@ public class CustomState : ScriptableObject
     private void TryComplete(UnityEvent targetEvent)
     {
         _currentPendingCount--;
-        Debug.Log(name + " TRYCOMPLETE COMPLETED, QUEDAN " + _currentPendingCount);
+        //Debug.Log(name + " TRYCOMPLETE COMPLETED, QUEDAN " + _currentPendingCount);
         if (_currentPendingCount == 0)
         {
-            Debug.Log(name + " FIN DE COLABORADOR");
+            //Debug.Log(name + " FIN DE COLABORADOR");
             targetEvent.Invoke();
         }
     }

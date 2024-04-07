@@ -40,6 +40,7 @@ public class WeaponStaff : Weapon
     public override void SecondaryUse(Vector2 direction, int damage, AttackType attackType)
     {
         StartCoroutine(KnockbackArea(transform));
+        _secondaryUsePerformed?.Invoke();
     }
 
     IEnumerator KnockbackArea(Transform _myTransform)

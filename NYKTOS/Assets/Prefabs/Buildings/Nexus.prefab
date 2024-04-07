@@ -33,11 +33,11 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4616142681394105514}
-  m_Father: {fileID: 3138733509570607467}
+  m_Father: {fileID: 2642421058682479307}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.93}
+  m_AnchoredPosition: {x: 0, y: 3.469999}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5053723664906336459
@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 3712970001741564420}
   - component: {fileID: 5288788653416788898}
   - component: {fileID: 3345374428008945533}
+  - component: {fileID: 5077888989296936055}
   - component: {fileID: 4565328015516906358}
   - component: {fileID: 8653570761431655927}
   - component: {fileID: 3832298810210701330}
@@ -228,6 +229,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 251831925025144617}
   - {fileID: 3138733509570607467}
   - {fileID: 2682323371802472900}
   - {fileID: 8303577221815667329}
@@ -340,6 +342,19 @@ MonoBehaviour:
   _OnDying:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5077888989296936055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672838125591689643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717e3a49e72ab8d4b8242fb902d44110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameStateMachine: {fileID: 11400000, guid: 26cd137f8c89dcd4d8bc981a37f3e83f, type: 2}
 --- !u!114 &4565328015516906358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,8 +697,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 2.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 251831925025144617}
+  m_Children: []
   m_Father: {fileID: 2642421058682479307}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &248642270707501688

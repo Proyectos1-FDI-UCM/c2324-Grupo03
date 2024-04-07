@@ -1827,13 +1827,15 @@ MonoBehaviour:
   - {fileID: 7943221074267810392}
   - {fileID: 5895532095455429504}
   - {fileID: 5572715266764179399}
+  - {fileID: 7506329209884107763}
   - {fileID: 1825579236115015080}
-  TutorialMovement: {fileID: 11400000, guid: 05f3c49d07071324da4ec91467bb04c9, type: 2}
+  TutorialMovement: {fileID: 11400000, guid: 2efb9384e4ebbe445ac551cf647c1ffe, type: 2}
   TutorialBlink: {fileID: 11400000, guid: 1afac494d7f101046b3f657927d76952, type: 2}
   TutorialAttack: {fileID: 11400000, guid: b1da115a8ab028f438a295715950f9b9, type: 2}
   TutorialBuild: {fileID: 11400000, guid: 48188d69af5c4974782ad40cf1806e7d, type: 2}
   TutorialConfirm: {fileID: 11400000, guid: 32b5c165183a9a94ebfc3a6aea4c474e, type: 2}
   TutorialAltar: {fileID: 11400000, guid: 0f10fc806fbb6a044a9de679533a004b, type: 2}
+  TutorialNexus: {fileID: 11400000, guid: e19494d92af74a842af665fe3a7b1a53, type: 2}
   TutorialCompleted: {fileID: 11400000, guid: 8f4af4d5459889245a15b2ba1eb1d3e5, type: 2}
 --- !u!1 &1716059188161521349
 GameObject:
@@ -10940,7 +10942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &149576419284907436
 RectTransform:
   m_ObjectHideFlags: 0
