@@ -795,6 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df4ef2d7cc69f243bc12dadb9466ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weaponUpgrade: {fileID: 11400000, guid: 2ed21c2ee9392f0488e3753459f2de0b, type: 2}
   weapons:
     scriptableWeapon: {fileID: 11400000, guid: b3929c8ff95159c46b8e63e51f093005, type: 2}
     attackType: 0
