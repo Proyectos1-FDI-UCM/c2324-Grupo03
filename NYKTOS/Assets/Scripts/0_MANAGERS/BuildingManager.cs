@@ -32,6 +32,11 @@ public class BuildingManager : MonoBehaviour
     }
     #endregion
 
+    #region emitters
+    [SerializeField]
+    private VoidEmitter AltarTutorial;
+    #endregion
+
     #region parameters
     private float _offsetNotWall = 0.9f;
 
@@ -88,6 +93,8 @@ public class BuildingManager : MonoBehaviour
         {
             specialPh.PlaceholderBuilt();
         }
+
+        AltarTutorial.InvokePerform();
 
         MenuManager.Instance.CloseAllMenus();
     }
