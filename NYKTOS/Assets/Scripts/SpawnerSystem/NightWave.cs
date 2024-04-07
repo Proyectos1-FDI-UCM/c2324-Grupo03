@@ -32,7 +32,7 @@ public struct Wave
 {
     public int time;
     public SubWave[] subWaveList;
-    private Dictionary<SpawnerRegion, Enemy[]> waveData ;
+    private Dictionary<SpawnerRegion, Enemy[]> waveData;
     public Dictionary<SpawnerRegion, Enemy[]> WaveData {get{return waveData;}}
 
     public void WaveValidate()

@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _progressTracker: {fileID: 11400000, guid: 100c2ea44e0114a49b753e96612872fb, type: 2}
   _dropTracker: {fileID: 11400000, guid: 064f9146e25cc4e4dbdcb7d5bcb38e6f, type: 2}
-  _spawnerEmmiter: {fileID: 11400000, guid: 11f7d29cbb577394cb3f4c6f1b6b1668, type: 2}
+  _spawnerEmitter: {fileID: 11400000, guid: 9518b031b2f897540abcf35982103218, type: 2}

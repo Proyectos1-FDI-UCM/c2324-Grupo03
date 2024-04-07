@@ -25,13 +25,14 @@ public class NightProgressTracker : ScriptableObject
 
     public void AdvanceNight()
     {   
+        Debug.Log(_stateMachine.GetCurrentState);
         if(_stateMachine.GetCurrentState == GlobalStateIdentifier.Night)
         {
             if( _night+1 < _nightList.Count)
             {
                 _night++;
-                _stateMachine?.SetState(GlobalStateIdentifier.Day);
             }
+            _stateMachine?.SetState(GlobalStateIdentifier.Day);
         }
     }
 

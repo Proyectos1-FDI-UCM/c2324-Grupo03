@@ -29,7 +29,7 @@ public class SpawnerPerformer : MonoBehaviour
         }
     }
 
-    void Start()
+    void Awake()
     {
         _enemySpawner = GetComponent<EnemySpawner>();
 

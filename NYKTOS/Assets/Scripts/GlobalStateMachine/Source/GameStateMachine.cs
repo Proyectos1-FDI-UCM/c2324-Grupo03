@@ -34,8 +34,8 @@ public class GameStateMachine : ScriptableObject
             else
             {
                 newState.StateLoad();
-                _currentState = newState;
             }
+            _currentState = newState;
         }
     }
 

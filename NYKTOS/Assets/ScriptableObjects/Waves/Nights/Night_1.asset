@@ -12,21 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2754ec2fc757c244879b4eab2001418, type: 3}
   m_Name: Night_1
   m_EditorClassIdentifier: 
-  _nightLength: 180
+  _nightLength: 10
   _waveList:
-  - time: 20
+  - time: 2
     subWaveList:
     - spawnerRegion: 0
       enemyPool:
       - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
-        number: 20
+        number: 1
         variantType: 0
-  - time: 15
+  - time: 2
     subWaveList:
-    - spawnerRegion: 1
+    - spawnerRegion: 0
       enemyPool:
       - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
-        number: 10
+        number: 1
         variantType: 0
     - spawnerRegion: 1
       enemyPool:

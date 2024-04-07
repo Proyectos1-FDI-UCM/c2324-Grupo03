@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NightManager : MonoBehaviour
@@ -11,12 +12,14 @@ public class NightManager : MonoBehaviour
     [SerializeField]
     private CrystalDrops _dropTracker;
     [SerializeField]
-    private GenericEmitter<Dictionary<SpawnerRegion, Enemy[]>> _spawnerEmitter;
+    private SpawndataEmitter _spawnerEmitter;
 
     static private NightManager _instance;
 
     public void StartNight(NightWave night)
     {
+        Debug.Log(night);
+        Debug.Log("Nightmanager: STARTNIGHT");
         _currentNightData = night;
 
         Invoke(nameof(EndNight), _currentNightData.NightLength);
@@ -34,6 +37,7 @@ public class NightManager : MonoBehaviour
 
         if(_currentNightData.WaveList.Length > 0)
         {
+            
             InitializeWave();
         }
     }
@@ -42,7 +46,11 @@ public class NightManager : MonoBehaviour
     {
         Wave currentWave = _currentNightData.WaveList[_currentWaveNumber];
 
-        //_spawnerEmitter.InvokePerform(currentWave.WaveData);
+        currentWave.WaveValidate();
+
+        Debug.Log(currentWave.WaveData);
+
+        _spawnerEmitter.InvokePerform(currentWave.WaveData);
 
         if(_currentWaveNumber+1 < _currentNightData.WaveList.Length)     
         {

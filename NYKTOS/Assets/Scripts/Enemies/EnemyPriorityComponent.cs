@@ -103,7 +103,7 @@ public class EnemyPriorityComponent : MonoBehaviour
             _priorityPath = _toNearestBuildingPath;
         }
 
-        print(_playerAggro);
+        //Debug.Log(_playerAggro);
 
         //debug
         for (int i = 0; i < _priorityPath.corners.Length - 1; i++)
