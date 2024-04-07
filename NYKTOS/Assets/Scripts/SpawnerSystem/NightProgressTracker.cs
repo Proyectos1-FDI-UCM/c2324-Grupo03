@@ -31,8 +31,12 @@ public class NightProgressTracker : ScriptableObject
             if( _night+1 < _nightList.Count)
             {
                 _night++;
+                _stateMachine?.SetState(GlobalStateIdentifier.Day);
             }
-            _stateMachine?.SetState(GlobalStateIdentifier.Day);
+            else
+            {
+                _stateMachine?.SetState(GlobalStateIdentifier.Lose);
+            }
         }
         else if(_stateMachine.GetCurrentState == GlobalStateIdentifier.TutorialNight)
         {
