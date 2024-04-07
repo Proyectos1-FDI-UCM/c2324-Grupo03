@@ -6,6 +6,9 @@ using UnityEngine.Events;
 public class CustomState : ScriptableObject
 {
     [SerializeField]
+    private VoidEmitter _stateChanged;
+
+    [SerializeField]
     private GlobalStateIdentifier _stateIdentifier = GlobalStateIdentifier.None;
     public GlobalStateIdentifier StateIdentifier {get{return _stateIdentifier;}}
 
@@ -34,6 +37,7 @@ public class CustomState : ScriptableObject
 
     public void StateLoad()
     {
+        _stateChanged?.Perform.Invoke();
         //Debug.Log(name + " STATELOAD");
         ConsumeCollaboratorList(_onStateLoadCollaborators, _onStateInstantLoad, _onStateEnter);
     }

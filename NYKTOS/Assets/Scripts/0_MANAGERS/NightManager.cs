@@ -18,7 +18,6 @@ public class NightManager : MonoBehaviour
 
     public void StartNight(NightWave night)
     {
-        Debug.Log(night);
         Debug.Log("Nightmanager: STARTNIGHT");
         _currentNightData = night;
 
@@ -43,7 +42,6 @@ public class NightManager : MonoBehaviour
 
     void InitializeWave()
     {
-        Debug.Log("[NightManager] Se lanza la primera wave");
 
         Wave currentWave = _currentNightData.WaveList[_currentWaveNumber];
 
@@ -88,11 +86,12 @@ public class NightManager : MonoBehaviour
         {
             _instance = this;
         }
+        _progressTracker.StartNight.AddListener(StartNight);
+        _progressTracker.StartNight.AddListener(StartNight => {Debug.Log(_progressTracker.name);});
     }
 
     void Start()
     {
-        _progressTracker.StartNight.AddListener(StartNight);
     }
 
     void OnDestroy()

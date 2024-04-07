@@ -10,8 +10,11 @@ public class ClubHitboxBehaviour : WeaponBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Damage(collision);
-        Knockback(collision, parentTransform);
+        if(collision.gameObject.layer != 7)
+        {
+            Damage(collision);
+            Knockback(collision, parentTransform);
+        }
     }
 
     public IEnumerator DestroyMe(float time)

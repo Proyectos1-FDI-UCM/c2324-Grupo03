@@ -28,9 +28,12 @@ public class BulletComponent : WeaponBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Damage(collision);
-        Knockback(collision, _myTransform);
-        Destroy(gameObject);
+        if(collision.gameObject.layer != 7)
+        {
+            Damage(collision);
+            Knockback(collision, _myTransform);
+            Destroy(gameObject);
+        }
     }
 
     private void Awake()

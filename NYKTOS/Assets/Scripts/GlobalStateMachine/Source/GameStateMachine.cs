@@ -6,6 +6,9 @@ using UnityEngine;
 public class GameStateMachine : ScriptableObject
 {
     [SerializeField]
+    private VoidEmitter _stateChanged;
+
+    [SerializeField]
     private List<CustomState> _stateList = new List<CustomState>();
     private Dictionary<GlobalStateIdentifier, CustomState> _stateDictionary = 
         new Dictionary<GlobalStateIdentifier, CustomState>();

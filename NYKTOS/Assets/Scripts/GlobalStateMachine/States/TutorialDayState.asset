@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f75a949d6e7b64bb3fb60da1fcbe46, type: 3}
   m_Name: TutorialDayState
   m_EditorClassIdentifier: 
+  _stateChanged: {fileID: 11400000, guid: 49b121f9bca222c49b52d58b2b2e0b6b, type: 2}
   _stateIdentifier: 4
   _onStateInstantLoad:
     m_PersistentCalls:
@@ -55,6 +56,30 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: 1fc49547d2cfb204baa3dbc425a1d75a, type: 2}
         m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
+        m_TargetAssemblyTypeName: PlayerInventory, Assembly-CSharp
+        m_MethodName: ResetForTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 85b501d9779dbc2479e4472a07d19f51, type: 2}
+        m_TargetAssemblyTypeName: NightProgressTracker, Assembly-CSharp
+        m_MethodName: ResetNights
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

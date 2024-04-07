@@ -15,6 +15,9 @@ public class InputManager : MonoBehaviour
     #region references
 
     [SerializeField]
+    private VoidEmitter _stateChanged;
+
+    [SerializeField]
     private BoolEmitter _pauseEmitter;
     [SerializeField]
     private VoidEmitter _pauseMenuEmitter;
@@ -168,18 +171,22 @@ public class InputManager : MonoBehaviour
     {
         _playerControls.Disable();
 
-        _playerControls.Player.Move.performed -= Move;
-        _playerControls.Player.Move.canceled -= Move;
-        _playerControls.Player.Blink.performed -= Blink;
-        _playerControls.Player.Look.performed -= Look;
+        if (_playerControls != null)
+        {
+            _playerControls.Player.Move.performed -= Move;
+            _playerControls.Player.Move.canceled -= Move;
+            _playerControls.Player.Blink.performed -= Blink;
+            _playerControls.Player.Look.performed -= Look;
 
-        _playerControls.Player.PrimaryAttack.performed -= PrimaryAttack;
-        _playerControls.Player.SecondaryAttack.performed -= SecondaryAttack;
-        _playerControls.Player.Interact.performed -= Interact;
-        _playerControls.Player.Pause.performed -= PauseGame;
+            _playerControls.Player.PrimaryAttack.performed -= PrimaryAttack;
+            _playerControls.Player.SecondaryAttack.performed -= SecondaryAttack;
+            _playerControls.Player.Interact.performed -= Interact;
+            _playerControls.Player.Pause.performed -= PauseGame;
 
-        _playerInput.onControlsChanged -= OnControlsChanged;
+            _playerInput.onControlsChanged -= OnControlsChanged;
+        }
     }
+    
     #endregion
     void Awake()
     {
@@ -196,7 +203,11 @@ public class InputManager : MonoBehaviour
     void Start()
     {        
         mainCamera = Camera.main;
+        _stateChanged.Perform.AddListener(Start);
     }
 
-
-}
+    void OnDestroy()
+    {
+        _stateChanged.Perform.RemoveListener(Start);
+    }
+}   

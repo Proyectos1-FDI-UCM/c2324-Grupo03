@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80da31be7877d6448a9523d819546251, type: 3}
   m_Name: Global State Machine
   m_EditorClassIdentifier: 
+  _stateChanged: {fileID: 11400000, guid: 49b121f9bca222c49b52d58b2b2e0b6b, type: 2}
   _stateList:
   - {fileID: 11400000, guid: 4487db9587fd14c4c875c428663abe82, type: 2}
   - {fileID: 11400000, guid: 089a9fb896f77f14fa2559e5e8e4a254, type: 2}

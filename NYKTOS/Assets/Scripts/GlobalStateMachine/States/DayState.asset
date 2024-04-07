@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f75a949d6e7b64bb3fb60da1fcbe46, type: 3}
   m_Name: DayState
   m_EditorClassIdentifier: 
+  _stateChanged: {fileID: 11400000, guid: 49b121f9bca222c49b52d58b2b2e0b6b, type: 2}
   _stateIdentifier: 6
   _onStateInstantLoad:
     m_PersistentCalls:

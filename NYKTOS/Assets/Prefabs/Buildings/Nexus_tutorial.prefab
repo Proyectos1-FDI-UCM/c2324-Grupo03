@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581777a8d78b62b4085ec49617e662a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightRadius: 4
+  _lightRadius: 4
   vibrationSpeed: 5
   vibrationDistance: 0.1
   internalRadiusPercentageOffset: 0.9
