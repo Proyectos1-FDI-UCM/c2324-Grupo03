@@ -123,15 +123,15 @@ public class AltarComponent : MonoBehaviour
     //public void CloseMenu() => MenuManager.Instance.CloseAllMenus();
     #endregion
 
+    private void Awake()
+    {
+        _registerPlaceholder.Perform.AddListener(RegisterPlaceholder);
+        _placeholderBuilt.Perform.AddListener(PlaceholderCount);
+    }
     void Start()
     {
         _state = GetComponent<BuildingStateMachine>();
         BuildingManager.Instance.AddBuilding(gameObject); 
-
-        _registerPlaceholder.Perform.AddListener(RegisterPlaceholder);
-        _placeholderBuilt.Perform.AddListener(PlaceholderCount);
-
-        //Debug.Log($"altar {_type}, ph totales: {_totalPlaceholders}");
     }
 
     void OnDestroy()
