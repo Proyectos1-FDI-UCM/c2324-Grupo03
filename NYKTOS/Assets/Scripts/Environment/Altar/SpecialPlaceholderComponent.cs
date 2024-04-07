@@ -13,15 +13,19 @@ public class SpecialPlaceholderComponent : MonoBehaviour
     private placeholderType _type;
     public placeholderType type { get { return _type; } }
 
+    [SerializeField]
+    private VoidEmitter _registerPlaceholder;
+
+    [SerializeField]
+    private BoolEmitter _placeholderBuilt;
+
+
+    public void PlaceholderBuilt() => _placeholderBuilt.InvokePerform(true);
+    public void PlaceholderDestroyed() => _placeholderBuilt.InvokePerform(false);
 
     void Start()
     {
-        
+        _registerPlaceholder.InvokePerform();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class AltarComponent : MonoBehaviour
-    //, IBuilding
 {
     public enum altarType
     {
@@ -13,19 +12,17 @@ public class AltarComponent : MonoBehaviour
 
     // [Andrea]
 
-    #region emitters
-    // Evento genérico compartido por todos los altares
-    //[SerializeField] private BoolEmitter _altarInteract;
+    #region references
+    private BuildingStateMachine _state;
+    #endregion
 
+    #region emitters
+    [Header("Emitters")]
     [SerializeField] private VoidEmitter _registerPlaceholder;
 
     // Se invoca cuando se construye un ph (true) y cuando se destruye (false)
     [SerializeField] private BoolEmitter _placeholderBuilt;
-    #endregion
 
-    #region references
-    // El estado determina si está activo o no
-    private BuildingStateMachine _state;
     #endregion
 
     #region properties
@@ -128,5 +125,8 @@ public class AltarComponent : MonoBehaviour
     void OnDestroy()
     {
         //_altarInteract.Perform.RemoveListener(CanInteract); 
+
+        _registerPlaceholder.Perform.RemoveListener(RegisterPlaceholder);
+        _placeholderBuilt.Perform.RemoveListener(PlaceholderCount);
     }
 }
