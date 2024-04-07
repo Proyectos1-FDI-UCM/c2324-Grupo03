@@ -59,7 +59,6 @@ public class WeaponHandler : MonoBehaviour
 
     public void SetWeapon(WeaponScriptableObject setWeapon)
     {
-        print('a');
         weapons.scriptableWeapon = setWeapon;
     }
 
@@ -70,6 +69,7 @@ public class WeaponHandler : MonoBehaviour
 
     private void Start()
     {
+        if (_weaponUpgrade != null)
         _weaponUpgrade.Perform.AddListener(SetWeapon);
     }
 }
