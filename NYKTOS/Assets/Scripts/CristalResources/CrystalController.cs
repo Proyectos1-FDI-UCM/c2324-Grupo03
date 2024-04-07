@@ -92,7 +92,7 @@ public class CrystalController : MonoBehaviour
     {
         if (collision.gameObject == _player && PlayerStateMachine.playerState != PlayerState.Dead)
         {
-            //Debug.Log("Encontré al jugador!");
+            //Debug.Log("Encontre al jugador!");
             _Atracted = true;
         }
     }
