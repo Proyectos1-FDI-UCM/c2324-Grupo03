@@ -8,6 +8,9 @@ using UnityEngine;
 public class EnemyDeath : MonoBehaviour, IDeath
 {
     [SerializeField]
+    private SpawnLimit _spawnLimit;
+
+    [SerializeField]
     private VoidEmitter _enemyDeathEmitter;
 
     public void Death()
@@ -17,7 +20,7 @@ public class EnemyDeath : MonoBehaviour, IDeath
             enemyBag.InstantiateCrystal(transform.position);
         }
 
-        // enemigos concurrentes
+        _spawnLimit?.RemoveConcurrentEnemy();
         Destroy(gameObject);
     }
 
