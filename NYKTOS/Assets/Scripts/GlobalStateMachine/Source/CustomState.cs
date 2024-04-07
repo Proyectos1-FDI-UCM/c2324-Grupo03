@@ -85,7 +85,7 @@ public class CustomState : ScriptableObject
 
     private void TryComplete(ref int pendingCount, UnityEvent targetEvent)
     {
-        Debug.Log(pendingCount);
+        //Debug.Log(pendingCount);
         pendingCount--;
         if (pendingCount == 0)
         {

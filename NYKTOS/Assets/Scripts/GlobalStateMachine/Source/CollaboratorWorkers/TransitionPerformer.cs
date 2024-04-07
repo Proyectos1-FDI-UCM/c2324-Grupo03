@@ -49,17 +49,17 @@ public class TransitionPerformer : MonoBehaviour
     private IEnumerator TransitionTo(AnimationClip animationClip, CollaboratorEvent collaboratorEvent)
     {
         
-        Debug.Log("102");
+        //Debug.Log("102");
         if (_animator != null && animationClip != null)
         {
-            print("animacion lanzada");
+            //print("animacion lanzada");
             // Obtenemos el hash del nombre del clip de animaci�n
             int transitionHash = Animator.StringToHash(animationClip.name);
             // Reproducimos la animaci�n utilizando el hash
             _animator.Play(transitionHash, 0, 0f);
 
             yield return new WaitForSeconds(animationClip.length);
-            Debug.Log("10:" + animationClip.length);
+            //Debug.Log("10:" + animationClip.length);
         }
         
         collaboratorEvent.DeleteWorker();

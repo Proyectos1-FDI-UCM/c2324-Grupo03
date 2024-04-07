@@ -605,7 +605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _registerPlaceholder: {fileID: 11400000, guid: b3f1edb9d1725dd44b4b130453ccd8a7, type: 2}
   _placeholderBuilt: {fileID: 11400000, guid: d73a528d066ca384084bbdaf5d95a9bf, type: 2}
-  _type: 0
+  _type: 1
 --- !u!114 &6128104302095219219
 MonoBehaviour:
   m_ObjectHideFlags: 0
