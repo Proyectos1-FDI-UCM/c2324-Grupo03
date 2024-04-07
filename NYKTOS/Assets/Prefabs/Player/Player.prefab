@@ -470,7 +470,7 @@ MonoBehaviour:
     _cooldownTime: 0.3
   _SecondaryAttackCooldown:
     _cooldownTime: 0.3
-  TutorialMovement: {fileID: 11400000, guid: 05f3c49d07071324da4ec91467bb04c9, type: 2}
+  TutorialMovement: {fileID: 11400000, guid: a27dddf68839c3c4481e6eb73d3ef2ea, type: 2}
   TutorialBlink: {fileID: 11400000, guid: 1afac494d7f101046b3f657927d76952, type: 2}
   TutorialAttack: {fileID: 11400000, guid: b1da115a8ab028f438a295715950f9b9, type: 2}
   TutorialBuild: {fileID: 11400000, guid: 48188d69af5c4974782ad40cf1806e7d, type: 2}
