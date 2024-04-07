@@ -10,6 +10,7 @@ public class AttackPlayerBehaviour : MonoBehaviour, IBehaviour
     #endregion
     public void PerformBehaviour()
     {
+        if (PlayerStateMachine.playerState != PlayerState.Dead)
         _weaponHandler.CallPrimaryUse(PlayerController.playerTransform.position - _myTransform.position);
     }
 
