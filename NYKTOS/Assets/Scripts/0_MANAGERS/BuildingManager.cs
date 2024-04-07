@@ -84,6 +84,11 @@ public class BuildingManager : MonoBehaviour
         placeholderState.SetState(BuildingStateMachine.BuildingState.Built);
         placeholderState.isInteractable = false;
 
+        if(_currentPlaceholder.TryGetComponent<SpecialPlaceholderComponent>(out SpecialPlaceholderComponent specialPh))
+        {
+            specialPh.PlaceholderBuilt();
+        }
+
         MenuManager.Instance.CloseAllMenus();
     }
     

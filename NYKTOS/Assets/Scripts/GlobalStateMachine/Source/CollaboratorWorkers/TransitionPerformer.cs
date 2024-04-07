@@ -48,8 +48,6 @@ public class TransitionPerformer : MonoBehaviour
 
     private IEnumerator TransitionTo(AnimationClip animationClip, CollaboratorEvent collaboratorEvent)
     {
-        
-        Debug.Log("102");
         if (_animator != null && animationClip != null)
         {
             print("animacion lanzada");
@@ -59,7 +57,6 @@ public class TransitionPerformer : MonoBehaviour
             _animator.Play(transitionHash, 0, 0f);
 
             yield return new WaitForSeconds(animationClip.length);
-            Debug.Log("10:" + animationClip.length);
         }
         
         collaboratorEvent.DeleteWorker();
