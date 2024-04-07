@@ -64,4 +64,4 @@ MonoBehaviour:
       m_Calls: []
   attackHitbox: {fileID: 3679065653297175454, guid: c6593a0b651be4f46bd3bf884546eaec, type: 3}
   _hitboxDistanceFromPlayer: 1
-  _timeBeforeDestroy: 0.2
+  _timeBeforeDestroy: 0.3
