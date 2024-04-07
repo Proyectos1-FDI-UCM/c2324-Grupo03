@@ -465,6 +465,7 @@ GameObject:
   - component: {fileID: 4190510745988416496}
   - component: {fileID: 7935824692916406371}
   - component: {fileID: 1612849090600588505}
+  - component: {fileID: 825225841451216078}
   m_Layer: 7
   m_Name: Altar top
   m_TagString: Untagged
@@ -554,6 +555,24 @@ MonoBehaviour:
   inversionEffect: {fileID: 11400000, guid: a4a1ef1ef912d394b8529caa92d35c63, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 62000017cbdf07944a1d5c37af893e15, type: 2}
   inversionMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+--- !u!114 &825225841451216078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6711770445324362299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7376e0a0a59bb17449fc093c57b68988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _placeHolderSprite: {fileID: 11400000, guid: 08e2012b8c4198b428673864a03374d6, type: 2}
+  _sprite0: {fileID: -1074879678, guid: 0f92cafabe9d72d4db5c852b0bf43218, type: 3}
+  _sprite1: {fileID: -601439128, guid: 0f92cafabe9d72d4db5c852b0bf43218, type: 3}
+  _sprite2: {fileID: 1013981686, guid: 0f92cafabe9d72d4db5c852b0bf43218, type: 3}
+  _sprite3: {fileID: -1244343387, guid: 0f92cafabe9d72d4db5c852b0bf43218, type: 3}
+  _sprite4: {fileID: -79044420, guid: 0f92cafabe9d72d4db5c852b0bf43218, type: 3}
 --- !u!1 &7541120799965140361
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,6 +818,7 @@ GameObject:
   - component: {fileID: 8814083807565181971}
   - component: {fileID: 5073466763342270018}
   - component: {fileID: 2156326376904426310}
+  - component: {fileID: 6970429094232660642}
   m_Layer: 7
   m_Name: Altar bot
   m_TagString: Untagged
@@ -904,3 +924,21 @@ MonoBehaviour:
   inversionEffect: {fileID: 11400000, guid: a4a1ef1ef912d394b8529caa92d35c63, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 62000017cbdf07944a1d5c37af893e15, type: 2}
   inversionMaterial: {fileID: 2100000, guid: 126c466cddfcf2c49972d7c018b7fb43, type: 2}
+--- !u!114 &6970429094232660642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9101711828745316394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7376e0a0a59bb17449fc093c57b68988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _placeHolderSprite: {fileID: 11400000, guid: 08e2012b8c4198b428673864a03374d6, type: 2}
+  _sprite0: {fileID: 1603223705, guid: 0f92cafabe9d72d4db5c852b0bf43218, type: 3}
+  _sprite1: {fileID: 1701801355, guid: 0f92cafabe9d72d4db5c852b0bf43218, type: 3}
+  _sprite2: {fileID: 1782656966, guid: 0f92cafabe9d72d4db5c852b0bf43218, type: 3}
+  _sprite3: {fileID: -163263339, guid: 0f92cafabe9d72d4db5c852b0bf43218, type: 3}
+  _sprite4: {fileID: -2007296326, guid: 0f92cafabe9d72d4db5c852b0bf43218, type: 3}

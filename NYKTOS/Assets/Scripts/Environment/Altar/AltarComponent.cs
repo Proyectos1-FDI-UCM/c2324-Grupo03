@@ -47,7 +47,6 @@ public class AltarComponent : MonoBehaviour
     private void RegisterPlaceholder()
     {
         _totalPlaceholders++;
-        Debug.Log("Se ha registrado un ph");
     }
 
     private void PlaceholderCount(bool value)
@@ -67,7 +66,6 @@ public class AltarComponent : MonoBehaviour
     private void ChangeState()
     {
         // Actualizar apariencia en funcion de numero de _currentPlaceholders
-        Debug.Log($"altar {_type}, ph totales: {_totalPlaceholders}, ph construidos: {_currentPlaceholders}");
 
         if (_currentPlaceholders == _totalPlaceholders)
         {
@@ -80,7 +78,10 @@ public class AltarComponent : MonoBehaviour
             _state.SetState(BuildingStateMachine.BuildingState.NotBuilt);
             Debug.Log("Altar desactivado");
             // Lanzar evento que desactive comportamiento especial
+            
         }
+
+        
     }
 
     #region no borrar esto aun
@@ -123,15 +124,16 @@ public class AltarComponent : MonoBehaviour
     //public void CloseMenu() => MenuManager.Instance.CloseAllMenus();
     #endregion
 
+    private void Awake()
+    {
+        _registerPlaceholder.Perform.AddListener(RegisterPlaceholder);
+        _placeholderBuilt.Perform.AddListener(PlaceholderCount);
+    }
     void Start()
     {
         _state = GetComponent<BuildingStateMachine>();
         BuildingManager.Instance.AddBuilding(gameObject); 
-
-        _registerPlaceholder.Perform.AddListener(RegisterPlaceholder);
-        _placeholderBuilt.Perform.AddListener(PlaceholderCount);
-
-        //Debug.Log($"altar {_type}, ph totales: {_totalPlaceholders}");
+        
     }
 
     void OnDestroy()
