@@ -66,9 +66,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 1.2345679
-    width: 1.4488372
-    height: 1.4309504
+    y: 0.8636364
+    width: 0.38412407
+    height: 0.38145575
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
@@ -256,7 +256,7 @@ ParticleSystem:
   m_GameObject: {fileID: 3478766907736150874}
   serializedVersion: 8
   lengthInSec: 10
-  simulationSpeed: 7
+  simulationSpeed: 10
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -330,7 +330,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 30
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -383,7 +383,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -884,8 +884,8 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 5.0694394, y: -2.886879, z: 0.0000009603468}
-    m_Rotation: {x: 0, y: 0, z: -100}
+    m_Position: {x: 8.485085, y: 1.1353359, z: 0.0000017072899}
+    m_Rotation: {x: 3.816013e-14, y: 4.9559705e-14, z: 210.46004}
     m_Scale: {x: 8, y: 1, z: 0.5}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -1356,7 +1356,7 @@ ParticleSystem:
     x:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.7853981
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1409,7 +1409,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.7853981
       minScalar: 0
       maxCurve:
         serializedVersion: 2

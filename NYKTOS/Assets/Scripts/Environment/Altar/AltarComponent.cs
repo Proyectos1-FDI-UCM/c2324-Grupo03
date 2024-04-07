@@ -78,20 +78,10 @@ public class AltarComponent : MonoBehaviour
             _state.SetState(BuildingStateMachine.BuildingState.NotBuilt);
             Debug.Log("Altar desactivado");
             // Lanzar evento que desactive comportamiento especial
+            
         }
 
-        switch(_currentPlaceholders)
-        {
-            case 0:
-
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-        }
+        
     }
 
     #region no borrar esto aun
@@ -143,6 +133,7 @@ public class AltarComponent : MonoBehaviour
     {
         _state = GetComponent<BuildingStateMachine>();
         BuildingManager.Instance.AddBuilding(gameObject); 
+        
     }
 
     void OnDestroy()
