@@ -230,7 +230,7 @@ Transform:
   m_GameObject: {fileID: 5477286909179855415}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.8, z: 0}
+  m_LocalPosition: {x: 0, y: -0.022, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581777a8d78b62b4085ec49617e662a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightRadius: 5
+  _lightRadius: 3.68
   vibrationSpeed: 5
   vibrationDistance: 0.1
   internalRadiusPercentageOffset: 0.96
@@ -291,8 +291,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 4.7999997
-  m_PointLightOuterRadius: 5
+  m_PointLightInnerRadius: 3.5328
+  m_PointLightOuterRadius: 3.68
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -337,7 +337,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4.6
+  m_Radius: 3.3856
 --- !u!1 &6126007700109933039
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +625,8 @@ MonoBehaviour:
   _placeholderBuilt: {fileID: 11400000, guid: e55c14055672c704dbedc47494f6e280, type: 2}
   _altarSprite: {fileID: 11400000, guid: 1cf974035ad0dad498519b61527cc0a4, type: 2}
   _altarActivated: {fileID: 11400000, guid: efe0690e9f5518144be708e0d5082d3d, type: 2}
+  _inactiveLightRadius: 1
+  _activeLightRadius: 10
   _type: 2
 --- !u!114 &6128104302095219219
 MonoBehaviour:
