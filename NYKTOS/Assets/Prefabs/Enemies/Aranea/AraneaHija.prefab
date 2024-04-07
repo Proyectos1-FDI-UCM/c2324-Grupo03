@@ -881,7 +881,7 @@ GameObject:
   - component: {fileID: 572495175620384568}
   - component: {fileID: 3678306644806890715}
   m_Layer: 0
-  m_Name: Wait 0.4sCondition
+  m_Name: Wait 0,4sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

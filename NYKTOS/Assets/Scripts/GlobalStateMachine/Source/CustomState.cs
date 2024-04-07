@@ -1,8 +1,6 @@
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "New State", menuName = "GlobalStateMachine/State")]
 public class CustomState : ScriptableObject
@@ -17,7 +15,6 @@ public class CustomState : ScriptableObject
 
     [SerializeField]
     private List<CollaboratorEvent> _onStateLoadCollaborators = new List<CollaboratorEvent>();
-    private int _pendingLoadCount;
 
     [SerializeField] 
     private UnityEvent _onStateEnter;
@@ -29,65 +26,63 @@ public class CustomState : ScriptableObject
 
     [SerializeField] 
     private List<CollaboratorEvent> _onStateExitCollaborators = new List<CollaboratorEvent>();
-    private int _pendingExitCount;
 
     private UnityEvent _stateEndSignal = new UnityEvent();
     public UnityEvent StateEndSignal{get{return _stateEndSignal;}}
 
+    private int _currentPendingCount = 0;
+
     public void StateLoad()
     {
-        ConsumeCollaboratorList(_pendingLoadCount, _onStateLoadCollaborators, _onStateInstantLoad, _onStateEnter);
+        Debug.Log(name + " STATELOAD");
+        ConsumeCollaboratorList(_onStateLoadCollaborators, _onStateInstantLoad, _onStateEnter);
     }
 
     public void StateExit()
     {
-        ConsumeCollaboratorList(_pendingExitCount, _onStateExitCollaborators, _onStateInstantExit, _stateEndSignal);
+        Debug.Log(name + " STATEXIT");
+
+        ConsumeCollaboratorList(_onStateExitCollaborators, _onStateInstantExit, _stateEndSignal);
     }
 
     private void ConsumeCollaboratorList
     (
-        int pendingCount, 
         List<CollaboratorEvent> collaboratorList, 
         UnityEvent instantEvent,
         UnityEvent collaboratorEndEvent)
     {
         if (collaboratorList.Count > 0)
         {
-            pendingCount = collaboratorList.Count;
-            ExecuteCollaboratorEvents(collaboratorList, () => TryComplete(ref pendingCount, collaboratorEndEvent));
+            _currentPendingCount = collaboratorList.Count;
+            
+            foreach (var item in collaboratorList)
+            {
+                item.InvokeWorkStart();
+
+                UnityAction completionAction = null;
+                completionAction = () =>
+                {
+                    item.WorkCompleted.RemoveListener(completionAction);
+                    TryComplete(collaboratorEndEvent);
+                };
+                item.WorkCompleted.AddListener(completionAction);
+            }
         }
         else
         {
+            Debug.Log(name + " COLLABORADOR CON 0 ITEMS");
             collaboratorEndEvent.Invoke();
         }
-        
         instantEvent.Invoke();
     }
 
-    private void ExecuteCollaboratorEvents(List<CollaboratorEvent> collaboratorEvents, UnityAction action)
+    private void TryComplete(UnityEvent targetEvent)
     {
-
-        foreach (var item in collaboratorEvents)
+        _currentPendingCount--;
+        Debug.Log(name + " TRYCOMPLETE COMPLETED, QUEDAN " + _currentPendingCount);
+        if (_currentPendingCount == 0)
         {
-            item.InvokeWorkStart();
-
-            UnityAction completionAction = null;
-            completionAction = () =>
-            {
-                item.WorkCompleted.RemoveListener(completionAction); // Desuscribirse una vez que se complete
-                action.Invoke();
-            };
-            
-            item.WorkCompleted.AddListener(completionAction);
-        }
-
-    }
-
-    private void TryComplete(ref int pendingCount, UnityEvent targetEvent)
-    {
-        pendingCount--;
-        if (pendingCount == 0)
-        {
+            Debug.Log(name + " FIN DE COLABORADOR");
             targetEvent.Invoke();
         }
     }

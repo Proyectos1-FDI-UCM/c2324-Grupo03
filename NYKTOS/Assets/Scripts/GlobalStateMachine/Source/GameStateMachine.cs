@@ -24,11 +24,12 @@ public class GameStateMachine : ScriptableObject
     
     public void SetState(GlobalStateIdentifier identifier)
     {
+        Debug.Log("SET STATE ORDER FROM " + _currentState + " TO " + identifier);
         if(_stateDictionary.TryGetValue(identifier, out CustomState newState))
         {
             if(_currentState != null)
             {
-                _currentState.StateEndSignal.AddListener(newState.StateLoad);
+                _currentState.StateEndSignal.AddListener(() => StateHasFinalised(_currentState, newState));
                 _currentState.StateExit();
             }
             else
@@ -37,6 +38,13 @@ public class GameStateMachine : ScriptableObject
             }
             _currentState = newState;
         }
+    }
+
+    private void StateHasFinalised(CustomState oldstate, CustomState newState)
+    {
+        oldstate.StateEndSignal.RemoveAllListeners();
+        Debug.Log(oldstate.name + " " + "FIN DE ESTADO");
+        newState.StateLoad();
     }
 
     public void SetStateToDay()

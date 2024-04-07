@@ -70,7 +70,6 @@ public class HealthComponent : MonoBehaviour
                 _currentHealth = 0;
 
                 _OnDying?.Invoke();
-                // Cosa marco, me he cargado el metodo morir
                 _deathComponent.Death();
             }
             
