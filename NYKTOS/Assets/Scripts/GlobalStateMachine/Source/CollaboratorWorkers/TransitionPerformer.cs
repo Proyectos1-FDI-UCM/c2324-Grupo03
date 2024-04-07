@@ -66,6 +66,7 @@ public class TransitionPerformer : MonoBehaviour
     [ContextMenu("TransitionToDark")]
     private void TransitionToDark()
     {
+        StopAllCoroutines();
         _TransitionToDarkEvent.AddWorker();
         StartCoroutine(TransitionTo(AnimationClipToDark, _TransitionToDarkEvent));
     }
@@ -73,6 +74,7 @@ public class TransitionPerformer : MonoBehaviour
     [ContextMenu("TransitionToTransparent")]
     private void TransitionToTransparent()
     {
+        StopAllCoroutines();
         _TransitionToTransparentEvent.AddWorker();
         StartCoroutine(TransitionTo(AnimationClipToTransparent, _TransitionToTransparentEvent));
     }
@@ -80,6 +82,7 @@ public class TransitionPerformer : MonoBehaviour
     [ContextMenu("ResetTransition")]
     private void ResetTransition()
     {
+        StopAllCoroutines();
         _TransitionResetEvent.AddWorker();
         StartCoroutine(TransitionTo(AnimationClipToIdle, _TransitionResetEvent));
     }

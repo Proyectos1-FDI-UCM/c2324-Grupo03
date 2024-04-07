@@ -37,16 +37,22 @@ public class NightManager : MonoBehaviour
 
         if(_currentNightData.WaveList.Length > 0)
         {
-            
             InitializeWave();
         }
     }
 
     void InitializeWave()
     {
+        Debug.Log("[NightManager] Se lanza la primera wave");
+
         Wave currentWave = _currentNightData.WaveList[_currentWaveNumber];
 
         currentWave.WaveValidate();
+
+        foreach(var item in currentWave.WaveData)
+        {
+            Debug.Log(item.Key);
+        }
 
         _spawnerEmitter.InvokePerform(currentWave.WaveData);
 
@@ -58,6 +64,7 @@ public class NightManager : MonoBehaviour
 
     void AdvanceWave()
     {
+        Debug.Log("[NightManager] Se lanza una wave");
         _currentWaveNumber ++;
         InitializeWave();    
     }
