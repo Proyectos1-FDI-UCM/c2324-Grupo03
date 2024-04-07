@@ -41,7 +41,6 @@ public class CustomState : ScriptableObject
 
     public void StateExit()
     {
-        Debug.Log("E1");
         ConsumeCollaboratorList(_pendingExitCount, _onStateExitCollaborators, _onStateInstantExit, _stateEndSignal);
     }
 
@@ -52,7 +51,6 @@ public class CustomState : ScriptableObject
         UnityEvent instantEvent,
         UnityEvent collaboratorEndEvent)
     {
-        Debug.Log("E2");
         if (collaboratorList.Count > 0)
         {
             pendingCount = collaboratorList.Count;
@@ -60,7 +58,6 @@ public class CustomState : ScriptableObject
         }
         else
         {
-            Debug.Log("E3");
             collaboratorEndEvent.Invoke();
         }
         
@@ -88,7 +85,6 @@ public class CustomState : ScriptableObject
 
     private void TryComplete(ref int pendingCount, UnityEvent targetEvent)
     {
-        //Debug.Log(pendingCount);
         pendingCount--;
         if (pendingCount == 0)
         {

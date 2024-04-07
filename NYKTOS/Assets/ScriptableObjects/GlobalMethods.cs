@@ -20,9 +20,4 @@ public class GlobalMethods: ScriptableObject
     {
         SceneManager.LoadScene(scene.name);
     }
-
-    public void DebugText()
-    {
-        Debug.Log("DEBUGTEXT");
-    }
 }
