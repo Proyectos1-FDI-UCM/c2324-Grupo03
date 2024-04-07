@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: IdleRight
+    m_Hash: 664738502
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: New Label
+      m_Hash: 259326342
+      m_Sprite: {fileID: 1005809646, guid: 08869261340916e4dabecfda02954c14, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1005809646, guid: 08869261340916e4dabecfda02954c14, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 0
+  - m_Name: IdleUp
+    m_Hash: 486716119
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: New Label
+      m_Hash: 259326342
+      m_Sprite: {fileID: -1521145871, guid: 08869261340916e4dabecfda02954c14, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1521145871, guid: 08869261340916e4dabecfda02954c14, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 0
+  - m_Name: IdleLeft
+    m_Hash: 972869135
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: a
+      m_Hash: 683130435
+      m_Sprite: {fileID: 1109689012, guid: 08869261340916e4dabecfda02954c14, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1109689012, guid: 08869261340916e4dabecfda02954c14, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 0
+  - m_Name: IdleDown
+    m_Hash: 526694748
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: New Label
+      m_Hash: 259326342
+      m_Sprite: {fileID: 1008187958, guid: 08869261340916e4dabecfda02954c14, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1008187958, guid: 08869261340916e4dabecfda02954c14, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 0
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638481317412747357
+  m_Version: 1

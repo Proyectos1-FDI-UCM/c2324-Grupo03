@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D.Animation;
 
 public class PlayerDeath : MonoBehaviour, IDeath
 {
@@ -15,17 +16,18 @@ public class PlayerDeath : MonoBehaviour, IDeath
     private HealthComponent _health;
     
     [SerializeField]
-    private SpriteRenderer _deathskin;
+    private SpriteLibraryAsset _deathskin;
 
     [SerializeField]
-    private SpriteRenderer _aliveskin;
+    private SpriteLibraryAsset _aliveskin;
+
+    SpriteLibrary spriteLibrary;
 
     #endregion
 
     public void Death()
     {
-        _aliveskin.enabled = false;
-        _deathskin.enabled = true;
+        spriteLibrary.spriteLibraryAsset = _deathskin;
         _playerState.SetState(PlayerState.Dead);
         UIManager.Instance.DeathScreenOn();
 
@@ -34,8 +36,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
 
     public void Revive()
     {
-        _aliveskin.enabled = true;
-        _deathskin.enabled = false;
+        spriteLibrary.spriteLibraryAsset = _aliveskin;
         _health.MaxHealth();
         _playerState.SetState(PlayerState.Idle);
 
@@ -47,7 +48,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
     {
         _health = GetComponent<HealthComponent>();
         _playerState = GetComponent<PlayerStateMachine>();
-     
+        spriteLibrary = GetComponentInChildren<SpriteLibrary>();
         _playerReviveEmitter.Perform.AddListener(Revive);
     }
 }
