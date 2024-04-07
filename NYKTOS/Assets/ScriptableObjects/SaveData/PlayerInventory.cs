@@ -63,6 +63,15 @@ public class PlayerInventory : ScriptableObject
         InvokeInventoryUpdate();
     }
 
+    [ContextMenu("TutorialInventoryAdjust")]
+    public void TutorialInventoryAdjust()
+    {
+        amarilloCristales = 3;
+        magentaCristales = 0;
+        cianCristales = 0;
+        InvokeInventoryUpdate();
+    }
+
     [ContextMenu("ResetForTutorial")]
     public void ResetForTutorial(){
         amarilloCristales = 5;

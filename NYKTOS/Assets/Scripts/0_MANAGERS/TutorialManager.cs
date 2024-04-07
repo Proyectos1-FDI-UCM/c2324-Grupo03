@@ -57,6 +57,9 @@ public class ImageControllerScript : MonoBehaviour
     private GameObject[] Tutorials;
 
     [SerializeField]
+    private PlayerInventory _playerInventory;
+
+    [SerializeField]
     private BoolEmitter TutorialMovement;
     [SerializeField]
     private VoidEmitter TutorialBlink;
@@ -179,6 +182,7 @@ public class ImageControllerScript : MonoBehaviour
             //Desaparece al construir una defensa para reparar el altar
             OneTimeConfirm = false;
             OneTimeNexus = true;
+            _playerInventory.TutorialInventoryAdjust();
         }
     }
 
