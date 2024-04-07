@@ -14,6 +14,7 @@ public class AltarComponent : MonoBehaviour
 
     #region references
     private BuildingStateMachine _state;
+    private LightAreaComponent _light;
     #endregion
 
     #region emitters
@@ -28,6 +29,13 @@ public class AltarComponent : MonoBehaviour
 
     [SerializeField]
     private VoidEmitter _altarActivated;
+    #endregion
+
+    #region parameters
+    [SerializeField]
+    private float _inactiveLightRadius = 1f;    
+    [SerializeField]
+    private float _activeLightRadius = 10f;
     #endregion
 
     #region properties
@@ -75,11 +83,17 @@ public class AltarComponent : MonoBehaviour
         if (_currentPlaceholders == _totalPlaceholders)
         {
             _state.SetState(BuildingStateMachine.BuildingState.Built);
+            _light.lightRadius = _activeLightRadius;
+            _light.UpdateLightarea();
+
             _altarActivated.InvokePerform();
+
         }
         else if (_state.buildingState == BuildingStateMachine.BuildingState.Built)
         {
             _state.SetState(BuildingStateMachine.BuildingState.NotBuilt);
+            _light.lightRadius = _inactiveLightRadius;
+            _light.UpdateLightarea();
             Debug.Log("Altar desactivado");
             // Lanzar evento que desactive comportamiento especial
             
@@ -138,6 +152,8 @@ public class AltarComponent : MonoBehaviour
     void Start()
     {
         _state = GetComponent<BuildingStateMachine>();
+        _light = GetComponentInChildren<LightAreaComponent>();
+
         BuildingManager.Instance.AddBuilding(gameObject);         
     }
 

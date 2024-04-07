@@ -13,7 +13,13 @@ public class LightAreaComponent : MonoBehaviour
     #region parameters
 
     [SerializeField]
-    private float lightRadius = 1.0f;
+    private float _lightRadius = 1.0f;
+
+    public float lightRadius
+    {
+        get { return _lightRadius; }
+        set { _lightRadius = value; }
+    }
 
     private float vibrationRadius;
     [SerializeField] float vibrationSpeed=2;
@@ -61,12 +67,12 @@ public class LightAreaComponent : MonoBehaviour
         colliderComponent.offset = Vector2.zero;
     }
 
-    private void UpdateLightarea()
+    public void UpdateLightarea()
     {
-        lightComponent.pointLightOuterRadius = lightRadius;
-        lightComponent.pointLightInnerRadius = lightRadius * internalRadiusPercentageOffset;
+        lightComponent.pointLightOuterRadius = _lightRadius;
+        lightComponent.pointLightInnerRadius = _lightRadius * internalRadiusPercentageOffset;
         
-        colliderComponent.radius = lightRadius * CIRCLE_COLLIDER_EQUIVALENCY * colliderPercentageOffset;
+        colliderComponent.radius = _lightRadius * CIRCLE_COLLIDER_EQUIVALENCY * colliderPercentageOffset;
     }
 
     #endregion
@@ -97,7 +103,7 @@ public class LightAreaComponent : MonoBehaviour
     void LightVibration()
     {
         currentX = currentX + Time.deltaTime;
-        vibrationRadius = lightRadius + vibrationDistance * Mathf.Sin(vibrationSpeed*currentX);
+        vibrationRadius = _lightRadius + vibrationDistance * Mathf.Sin(vibrationSpeed*currentX);
 
         lightComponent.pointLightOuterRadius = vibrationRadius;
         lightComponent.pointLightInnerRadius = vibrationRadius * internalRadiusPercentageOffset;
