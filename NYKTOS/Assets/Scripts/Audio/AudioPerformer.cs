@@ -36,13 +36,25 @@ public class AudioPerformer : MonoBehaviour
                     else currentSource.PlayOneShot(clip, volume);
                     
                 });
-
+ 
                 players[i].stopAudio.AddListener(() => currentSource.Stop());
 
                 players[i].pauseAudio.AddListener(() => currentSource.Pause());
 
                 players[i].unPauseAudio.AddListener(() => currentSource.UnPause());
             }
+        }
+    }
+
+    void OnDestroy()
+    {
+        for (int i = 0; i < players.Length; i++)
+        {
+            players[i].stopAudio.RemoveAllListeners();
+
+            players[i].pauseAudio.RemoveAllListeners();
+
+            players[i].unPauseAudio.RemoveAllListeners();
         }
     }
 }

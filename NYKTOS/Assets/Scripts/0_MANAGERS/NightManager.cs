@@ -48,8 +48,6 @@ public class NightManager : MonoBehaviour
 
         currentWave.WaveValidate();
 
-        Debug.Log(currentWave.WaveData);
-
         _spawnerEmitter.InvokePerform(currentWave.WaveData);
 
         if(_currentWaveNumber+1 < _currentNightData.WaveList.Length)     
