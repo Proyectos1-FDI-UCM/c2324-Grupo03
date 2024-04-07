@@ -29,6 +29,9 @@ public class AltarComponent : MonoBehaviour
 
     [SerializeField]
     private VoidEmitter _altarActivated;
+
+    [SerializeField]
+    private VoidEmitter _NexusTutorial;
     #endregion
 
     #region parameters
@@ -73,6 +76,7 @@ public class AltarComponent : MonoBehaviour
         {
             _currentPlaceholders--;
             ChangeState();
+            
         }        
     }
 
@@ -87,6 +91,7 @@ public class AltarComponent : MonoBehaviour
             _light.UpdateLightarea();
 
             _altarActivated.InvokePerform();
+            _NexusTutorial.InvokePerform();
 
         }
         else if (_state.buildingState == BuildingStateMachine.BuildingState.Built)

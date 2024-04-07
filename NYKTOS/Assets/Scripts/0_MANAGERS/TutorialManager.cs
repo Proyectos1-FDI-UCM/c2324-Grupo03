@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.Rendering;
 
 public class ImageControllerScript : MonoBehaviour
 {
@@ -56,7 +57,7 @@ public class ImageControllerScript : MonoBehaviour
     private GameObject[] Tutorials;
 
     [SerializeField]
-    private VoidEmitter TutorialMovement;
+    private BoolEmitter TutorialMovement;
     [SerializeField]
     private VoidEmitter TutorialBlink;
     [SerializeField]
@@ -68,16 +69,19 @@ public class ImageControllerScript : MonoBehaviour
     [SerializeField]
     private VoidEmitter TutorialAltar;
     [SerializeField]
+    private VoidEmitter TutorialNexus;
+    [SerializeField]
     private VoidEmitter TutorialCompleted;
 
     //Hay que activar esto cuando se entre en el estado TutorialDay
+    //REVISAR ESTO PARA QUE FUNCIONE AL ENTRAR AL ESTADO TUTORIALDAY
     private bool OneTimeMovement = true;
     private bool OneTimeBlink = true;
-
     private bool OneTimeAttack = false;
     private bool OneTimeBuild = false;
     private bool OneTimeConfirm = false;
     private bool OneTimeAltar = false;
+    private bool OneTimeNexus = false;
     //Si el jugador interactua con el altar, el tutorial se skipea instantaneamente
     private bool OneTimeCompleted = true;
 
@@ -89,9 +93,11 @@ public class ImageControllerScript : MonoBehaviour
         }
     }
 
+
     [ContextMenu("ShowTutorialMovement")]
-    private void ShowTutorialMovement()
+    private void ShowTutorialMovement(bool value)
     {
+        OneTimeMovement = value;
         if (OneTimeMovement)
         {
             //Aparece al inicial la escena de tutorial Day
@@ -170,8 +176,23 @@ public class ImageControllerScript : MonoBehaviour
             //Aparece al confirmar
             DisableTutorials();
             Tutorials[5].SetActive(true);
-            //Desaparece al acabar el estado de dia
+            //Desaparece al construir una defensa para reparar el altar
             OneTimeConfirm = false;
+            OneTimeNexus = true;
+        }
+    }
+
+    [ContextMenu("ShowTutorialNexus")]
+    private void ShowTutorialNexus()
+    {
+        if (OneTimeNexus)
+        {
+            //Aparece al confirmar
+            DisableTutorials();
+            Tutorials[6].SetActive(true);
+            //Desaparece al entrar en el menu del nexo
+            OneTimeAltar = false;
+            OneTimeCompleted = true;
         }
     }
 
@@ -180,8 +201,9 @@ public class ImageControllerScript : MonoBehaviour
     {
         if (OneTimeCompleted)
         {
+            //Desaparece todos los tutoriales y da por terminado el tutorial
             DisableTutorials();
-            OneTimeAltar = false;
+            OneTimeNexus = false;
         }
         
     }
@@ -194,6 +216,21 @@ public class ImageControllerScript : MonoBehaviour
         TutorialBuild.Perform.AddListener(ShowTutorialBuild);
         TutorialConfirm.Perform.AddListener(ShowTutorialConfirm);
         TutorialAltar.Perform.AddListener(ShowTutorialAltar);
+        TutorialNexus.Perform.AddListener(ShowTutorialNexus);
         TutorialCompleted.Perform.AddListener(ShowTutorialCompleted);
+
+        Tutorials[0].SetActive(true);
+    }
+
+    private void OnDestroy()
+    {
+        TutorialMovement.Perform.RemoveListener(ShowTutorialMovement);
+        TutorialBlink.Perform.RemoveListener(ShowTutorialBlink);
+        TutorialAttack.Perform.RemoveListener(ShowTutorialAttack);
+        TutorialBuild.Perform.RemoveListener(ShowTutorialBuild);
+        TutorialConfirm.Perform.RemoveListener(ShowTutorialConfirm);
+        TutorialAltar.Perform.RemoveListener(ShowTutorialAltar);
+        TutorialNexus.Perform.RemoveListener(ShowTutorialNexus);
+        TutorialCompleted.Perform.RemoveListener(ShowTutorialCompleted);
     }
 }
