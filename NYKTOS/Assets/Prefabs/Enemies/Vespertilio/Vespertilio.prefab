@@ -370,6 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df4ef2d7cc69f243bc12dadb9466ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weaponUpgrade: {fileID: 0}
   weapons:
     scriptableWeapon: {fileID: 11400000, guid: c43ae6a18a1f7e14fbd24b224d3b0ed5, type: 2}
     attackType: 0
