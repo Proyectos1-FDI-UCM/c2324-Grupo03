@@ -6503,6 +6503,7 @@ GameObject:
   - component: {fileID: 8916952453515254345}
   - component: {fileID: 1766939989159366592}
   - component: {fileID: 1258200606977342028}
+  - component: {fileID: 5261703685294542718}
   m_Layer: 5
   m_Name: Weapon
   m_TagString: Untagged
@@ -6527,7 +6528,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -336.3, y: -154.6}
-  m_SizeDelta: {x: 37.5, y: 71.875}
+  m_SizeDelta: {x: 32, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1766939989159366592
 CanvasRenderer:
@@ -6567,6 +6568,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5261703685294542718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822121148429078722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dec831c3ae2d84479ac55fc7d364cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _emitter: {fileID: 11400000, guid: 2ed21c2ee9392f0488e3753459f2de0b, type: 2}
 --- !u!1 &7877120586662348681
 GameObject:
   m_ObjectHideFlags: 0

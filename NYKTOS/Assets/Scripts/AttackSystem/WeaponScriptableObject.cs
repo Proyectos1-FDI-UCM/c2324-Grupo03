@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+
 
 
 
@@ -16,8 +18,11 @@ public class WeaponScriptableObject : ScriptableObject
     private int _damage = 0;
 
     [SerializeField]
-    private GameObject _weaponPrefab;
+    private Sprite _weaponImage;
+    public Sprite weaponImage {  get { return _weaponImage; } }
 
+    [SerializeField]
+    private GameObject _weaponPrefab;
     public GameObject weaponPrefab {  get { return _weaponPrefab; } }
 
 }
