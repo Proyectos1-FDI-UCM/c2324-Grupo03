@@ -53,7 +53,7 @@ public class WeaponStaff : Weapon
             a.SetKnockbackArea(_knockbackRadius);
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         Destroy(current);
     }
