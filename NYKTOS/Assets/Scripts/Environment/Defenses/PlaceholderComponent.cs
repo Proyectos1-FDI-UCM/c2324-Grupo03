@@ -8,12 +8,13 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     //[Andrea] Review
 
     #region references
-    [SerializeField] private BoolEmitter _placeholderInteract;
-
     private BuildingStateMachine _state;
     #endregion
 
     #region emitters
+    [SerializeField] private BoolEmitter _placeholderInteract;
+    [SerializeField] private VoidEmitter _defenseMenu;
+
     [SerializeField]
     private VoidEmitter TutorialConfirm;
     #endregion
@@ -28,7 +29,7 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
             && _state.isInteractable
         )
         {
-            MenuManager.Instance.OpenDefenseMenu();
+            _defenseMenu.InvokePerform();
             UpdateCurrentPlaceHolder();
         }
     }

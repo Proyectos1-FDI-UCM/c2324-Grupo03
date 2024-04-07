@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class MenuManager : MonoBehaviour
 {
+    // [Andrea] Cambiar el registro de menus a eventos
 
     private static MenuManager _instance;
     public static MenuManager Instance
@@ -26,16 +27,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private VoidEmitter _nexusMenuEmitter;
     [SerializeField]
-    private VoidEmitter _altarMenuEmitter;
-    [SerializeField]
     private VoidEmitter _defenseMenuEmitter;
     [SerializeField]
     private VoidEmitter _weaponUpgradeMenuEmitter;
     [SerializeField]
     private VoidEmitter _weaponEffectMenuEmitter;
-
-    //[SerializeField]
-    //private VoidEmitter _altarBuildEmitter;
 
     [SerializeField]
     private VoidEmitter _beaconBuildEmitter;
@@ -51,9 +47,6 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField]
     private GameObject _nexusMenu;
-
-    [SerializeField]
-    private GameObject _altarMenu;
 
     [SerializeField]
     private GameObject _defenseMenu;
@@ -78,9 +71,6 @@ public class MenuManager : MonoBehaviour
     private Button _nexusButton;
 
     [SerializeField]
-    private Button _altarButton;
-
-    [SerializeField]
     private Button _defenseButton;
 
     [SerializeField]
@@ -97,7 +87,7 @@ public class MenuManager : MonoBehaviour
     #endregion
 
     #region properties
-    private GameObject[] _menuList = new GameObject[6];
+    private GameObject[] _menuList = new GameObject[5];
     #endregion
 
     #region events
@@ -115,13 +105,6 @@ public class MenuManager : MonoBehaviour
         PlayClosedSound();
         Application.Quit();
     }
-
-    // LOS ALTARES YA NO VAN A SER REPARADOS POR EL PLAYER
-    //public void BuildAltar()
-    //{
-    //    PlayOpenedSound();
-    //    Debug.Log("TODO: Boton de reconstruir altar");
-    //}
 
     public void BuildBeacon()
     {
@@ -159,10 +142,9 @@ public class MenuManager : MonoBehaviour
     {
         _menuList[0] = _pauseMenu;
         _menuList[1] = _nexusMenu;
-        _menuList[2] = _altarMenu;
-        _menuList[3] = _defenseMenu;
-        _menuList[4] = _weaponUpgradeMenu;
-        _menuList[5] = _weaponEffectMenu;
+        _menuList[2] = _defenseMenu;
+        _menuList[3] = _weaponUpgradeMenu;
+        _menuList[4] = _weaponEffectMenu;
 
     }
 
@@ -177,7 +159,6 @@ public class MenuManager : MonoBehaviour
 
     public void OpenPauseMenu() => OpenMenu(_pauseMenu, _pauseButton);
     public void OpenNexusMenu() => OpenMenu(_nexusMenu, _nexusButton);
-    public void OpenAltarMenu() => OpenMenu(_altarMenu, _altarButton);
     public void OpenDefenseMenu() => OpenMenu(_defenseMenu, _defenseButton);
     public void OpenWeaponUpgradeMenu() => OpenMenu(_weaponUpgradeMenu, _weaponUpgradeButton);
     public void OpenWeaponEffectMenu() => OpenMenu(_weaponEffectMenu, _weaponEffectButton);
@@ -215,12 +196,9 @@ public class MenuManager : MonoBehaviour
 
         _pauseMenuEmitter.Perform.AddListener(OpenPauseMenu);
         _nexusMenuEmitter.Perform.AddListener(OpenNexusMenu);
-        _altarMenuEmitter.Perform.AddListener(OpenAltarMenu);
         _defenseMenuEmitter.Perform.AddListener(OpenDefenseMenu);
         _weaponUpgradeMenuEmitter.Perform.AddListener(OpenWeaponUpgradeMenu);
         _weaponEffectMenuEmitter.Perform.AddListener(OpenWeaponEffectMenu);
-
-        //_altarBuildEmitter.Perform.AddListener(BuildAltar);
 
         _beaconBuildEmitter.Perform.AddListener(BuildBeacon);
         _wallBuildEmitter.Perform.AddListener(BuildWall);
@@ -233,7 +211,6 @@ public class MenuManager : MonoBehaviour
 
         _pauseMenuEmitter.Perform.RemoveListener(OpenPauseMenu);
         _nexusMenuEmitter.Perform.RemoveListener(OpenNexusMenu);
-        _altarMenuEmitter.Perform.RemoveListener(OpenAltarMenu);
         _defenseMenuEmitter.Perform.RemoveListener(OpenDefenseMenu);
         _weaponUpgradeMenuEmitter.Perform.RemoveListener(OpenWeaponUpgradeMenu);
         _weaponEffectMenuEmitter.Perform.RemoveListener(OpenWeaponEffectMenu);

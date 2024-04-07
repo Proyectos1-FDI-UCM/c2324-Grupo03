@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _placeholderInteract: {fileID: 11400000, guid: d1d07e2e43b1030418d35278e36be01e, type: 2}
+  _defenseMenu: {fileID: 11400000, guid: 61d01db8c8f871a4684fcf3b82b8a031, type: 2}
   TutorialConfirm: {fileID: 11400000, guid: 32b5c165183a9a94ebfc3a6aea4c474e, type: 2}
 --- !u!114 &8708895035124243018
 MonoBehaviour:

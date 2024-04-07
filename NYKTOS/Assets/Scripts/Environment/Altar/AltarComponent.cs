@@ -24,8 +24,10 @@ public class AltarComponent : MonoBehaviour
     [SerializeField] private BoolEmitter _placeholderBuilt;
 
     //Sprites
-    [SerializeField] private VoidEmitter _placeHolderSprite;
+    [SerializeField] private VoidEmitter _altarSprite;
 
+    [SerializeField]
+    private VoidEmitter _altarActivated;
     #endregion
 
     #region properties
@@ -73,8 +75,7 @@ public class AltarComponent : MonoBehaviour
         if (_currentPlaceholders == _totalPlaceholders)
         {
             _state.SetState(BuildingStateMachine.BuildingState.Built);
-            Debug.Log("Altar activado");
-            // Lanzar evento que active comportamiento especial
+            _altarActivated.InvokePerform();
         }
         else if (_state.buildingState == BuildingStateMachine.BuildingState.Built)
         {
@@ -84,7 +85,7 @@ public class AltarComponent : MonoBehaviour
             
         }
 
-        _placeHolderSprite.InvokePerform();
+        _altarSprite.InvokePerform();
 
 
     }
@@ -137,8 +138,7 @@ public class AltarComponent : MonoBehaviour
     void Start()
     {
         _state = GetComponent<BuildingStateMachine>();
-        BuildingManager.Instance.AddBuilding(gameObject); 
-        
+        BuildingManager.Instance.AddBuilding(gameObject);         
     }
 
     void OnDestroy()

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ef8d3f00f16c764e9dae1b4df08dee1, type: 3}
-  m_Name: BuildAltar
+  m_Name: AltarActivated
   m_EditorClassIdentifier: 
   _perform:
     m_PersistentCalls:
