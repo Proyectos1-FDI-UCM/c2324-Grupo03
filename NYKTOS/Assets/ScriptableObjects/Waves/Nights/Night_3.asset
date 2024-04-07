@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nightLength: 240
   _waveList:
+  - time: 5
+    subWaveList: []
   - time: 60
     subWaveList:
     - spawnerRegion: 0
@@ -41,7 +43,7 @@ MonoBehaviour:
       - enemyPrefab: {fileID: 2995607884255851843, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
         number: 1
         variantType: 0
-  - time: 60
+  - time: 55
     subWaveList:
     - spawnerRegion: 1
       enemyPool:

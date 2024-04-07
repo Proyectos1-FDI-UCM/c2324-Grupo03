@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nightLength: 180
   _waveList:
-  - time: 60
+  - time: 5
+    subWaveList: []
+  - time: 55
     subWaveList:
     - spawnerRegion: 0
       enemyPool:
