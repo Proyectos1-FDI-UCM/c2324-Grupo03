@@ -60,6 +60,7 @@ public class PlayerInventory : ScriptableObject
         amarilloCristales = 10;
         magentaCristales = 0;
         cianCristales = 0;
+        InvokeInventoryUpdate();
     }
 
     [ContextMenu("ResetForTutorial")]
@@ -67,6 +68,7 @@ public class PlayerInventory : ScriptableObject
         amarilloCristales = 5;
         magentaCristales = 0;
         cianCristales = 0;
+        InvokeInventoryUpdate();
     }
 
     public void OnValidate()
