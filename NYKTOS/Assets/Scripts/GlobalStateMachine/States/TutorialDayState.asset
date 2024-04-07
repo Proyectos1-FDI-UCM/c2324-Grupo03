@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: TutorialDayState
   m_EditorClassIdentifier: 
   _stateIdentifier: 4
-  _onStateLoad: []
-  _onStateExit: []
   _onStateInstantLoad:
     m_PersistentCalls:
       m_Calls:
@@ -42,6 +40,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  _onStateLoadCollaborators: []
   _onStateEnter:
     m_PersistentCalls:
       m_Calls:
@@ -96,3 +95,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _onStateExitCollaborators: []

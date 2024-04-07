@@ -13,9 +13,15 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     private BuildingStateMachine _state;
     #endregion
 
+    #region emitters
+    [SerializeField]
+    private VoidEmitter TutorialConfirm;
+    #endregion
+
     private void CanInteract(bool canInteract) => _state.isInteractable = canInteract;
     public void OpenMenu()
     {
+        TutorialConfirm.InvokePerform();
         if
         (
             _state.buildingState == BuildingStateMachine.BuildingState.NotBuilt 
