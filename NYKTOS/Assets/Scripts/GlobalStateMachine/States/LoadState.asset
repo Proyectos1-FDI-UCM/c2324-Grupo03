@@ -12,13 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f75a949d6e7b64bb3fb60da1fcbe46, type: 3}
   m_Name: LoadState
   m_EditorClassIdentifier: 
-  _changeToScene: {fileID: 102900000, guid: cddedea2decd49248a22a36d3d0cad1d, type: 3}
   _stateIdentifier: 2
-  _onStateLoad: []
-  _onStateExit: []
   _onStateInstantLoad:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 100c2ea44e0114a49b753e96612872fb, type: 2}
+        m_TargetAssemblyTypeName: NightProgressTracker, Assembly-CSharp
+        m_MethodName: ResetNights
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onStateLoadCollaborators:
+  - {fileID: 11400000, guid: 634792852917d85479b6fc40457d6d2e, type: 2}
+  - {fileID: 11400000, guid: 63b63dadbb7b50243977a009c8fb9325, type: 2}
   _onStateEnter:
     m_PersistentCalls:
       m_Calls:
@@ -37,3 +49,4 @@ MonoBehaviour:
   _onStateInstantExit:
     m_PersistentCalls:
       m_Calls: []
+  _onStateExitCollaborators: []

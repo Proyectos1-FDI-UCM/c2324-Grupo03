@@ -11,21 +11,13 @@ public class CustomState : ScriptableObject
     private GlobalStateIdentifier _stateIdentifier = GlobalStateIdentifier.None;
     public GlobalStateIdentifier StateIdentifier {get{return _stateIdentifier;}}
 
-    [Header("Collaborator Events")]
-
-    [SerializeField]
-    private List<CollaboratorEvent> _onStateLoad = new List<CollaboratorEvent>();
-    private int _pendingLoadCount;
-
-    [SerializeField] 
-    private List<CollaboratorEvent> _onStateExit = new List<CollaboratorEvent>();
-    private int _pendingExitCount;
-
-    [Header("Events")]
-
     [SerializeField] 
     private UnityEvent _onStateInstantLoad;
     public UnityEvent OnStateInstantLoad{get{return _onStateInstantLoad;}}
+
+    [SerializeField]
+    private List<CollaboratorEvent> _onStateLoadCollaborators = new List<CollaboratorEvent>();
+    private int _pendingLoadCount;
 
     [SerializeField] 
     private UnityEvent _onStateEnter;
@@ -35,17 +27,21 @@ public class CustomState : ScriptableObject
     private UnityEvent _onStateInstantExit;
     public UnityEvent OnStateInstantExit{get{return _onStateInstantExit;}}
 
+    [SerializeField] 
+    private List<CollaboratorEvent> _onStateExitCollaborators = new List<CollaboratorEvent>();
+    private int _pendingExitCount;
+
     private UnityEvent _stateEndSignal = new UnityEvent();
     public UnityEvent StateEndSignal{get{return _stateEndSignal;}}
 
     public void StateLoad()
     {
-        ConsumeCollaboratorList(_pendingLoadCount, _onStateLoad, _onStateInstantLoad, _onStateEnter);
+        ConsumeCollaboratorList(_pendingLoadCount, _onStateLoadCollaborators, _onStateInstantLoad, _onStateEnter);
     }
 
     public void StateExit()
     {
-        ConsumeCollaboratorList(_pendingExitCount, _onStateExit, _onStateInstantExit, _stateEndSignal);
+        ConsumeCollaboratorList(_pendingExitCount, _onStateExitCollaborators, _onStateInstantExit, _stateEndSignal);
     }
 
     private void ConsumeCollaboratorList

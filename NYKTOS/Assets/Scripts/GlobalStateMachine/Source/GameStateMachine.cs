@@ -16,22 +16,30 @@ public class GameStateMachine : ScriptableObject
         get{return _currentState.StateIdentifier;}
     }
 
+    public void ResetCurrentState() => _currentState = null;
+
     public bool TryGetState(GlobalStateIdentifier identifier, out CustomState state)
         => _stateDictionary.TryGetValue(identifier, out state);
     
     
     public void SetState(GlobalStateIdentifier identifier)
     {
+        Debug.Log("1");
+
         if(_stateDictionary.TryGetValue(identifier, out CustomState newState))
         {
+            Debug.Log("2");
             if(_currentState != null)
             {
+                Debug.Log("3");
                 _currentState.StateEndSignal.AddListener(newState.StateLoad);
                 _currentState.StateExit();
             }
             else
             {
+                Debug.Log("4");
                 newState.StateLoad();
+                _currentState = newState;
             }
         }
     }
@@ -67,18 +75,6 @@ public class GameStateMachine : ScriptableObject
                 }
             }
         }
-
-        /*
-        //Cosa de debugeos
-
-        String debugtext = "";
-
-        foreach(var item in _stateDictionary)
-        {
-            debugtext = debugtext + item + "\n";
-        }
-        Debug.Log(debugtext);
-        */
     }
 }
 

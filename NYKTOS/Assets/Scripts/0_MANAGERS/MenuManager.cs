@@ -207,7 +207,7 @@ public class MenuManager : MonoBehaviour
         else _instance = this;
     }
 
-    private void Start()
+    void Start()
     {
         RegisterMenus();
 
@@ -225,6 +225,22 @@ public class MenuManager : MonoBehaviour
         _beaconBuildEmitter.Perform.AddListener(BuildBeacon);
         _wallBuildEmitter.Perform.AddListener(BuildWall);
         _turretBuildEmitter.Perform.AddListener(BuildTurret);
+    }
+
+    void OnDestroy()
+    {
+        _closeMenusEmitter.Perform.RemoveListener(CloseAllMenus);
+
+        _pauseMenuEmitter.Perform.RemoveListener(OpenPauseMenu);
+        _nexusMenuEmitter.Perform.RemoveListener(OpenNexusMenu);
+        _altarMenuEmitter.Perform.RemoveListener(OpenAltarMenu);
+        _defenseMenuEmitter.Perform.RemoveListener(OpenDefenseMenu);
+        _weaponUpgradeMenuEmitter.Perform.RemoveListener(OpenWeaponUpgradeMenu);
+        _weaponEffectMenuEmitter.Perform.RemoveListener(OpenWeaponEffectMenu);
+
+        _beaconBuildEmitter.Perform.RemoveListener(BuildBeacon);
+        _wallBuildEmitter.Perform.RemoveListener(BuildWall);
+        _turretBuildEmitter.Perform.RemoveListener(BuildTurret);
     }
 
     #region EventsMethods

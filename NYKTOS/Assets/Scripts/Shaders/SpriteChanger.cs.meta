@@ -3,7 +3,10 @@ guid: 3f806488c399b434ba03453b812811a0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - inversionEffect: {fileID: 11400000, guid: a4a1ef1ef912d394b8529caa92d35c63, type: 2}
+  - defaultSprite: {instanceID: 0}
+  - inversionSprite: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

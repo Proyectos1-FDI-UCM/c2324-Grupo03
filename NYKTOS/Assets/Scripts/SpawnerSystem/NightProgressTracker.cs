@@ -30,9 +30,13 @@ public class NightProgressTracker : ScriptableObject
             if( _night+1 < _nightList.Count)
             {
                 _night++;
+                _stateMachine?.SetState(GlobalStateIdentifier.Day);
             }
-            _stateMachine?.SetState(GlobalStateIdentifier.Day);
         }
     }
 
+    public void ResetNights()
+    {
+        _night = 0;
+    }
 }

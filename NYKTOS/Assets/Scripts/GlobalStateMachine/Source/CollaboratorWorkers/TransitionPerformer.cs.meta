@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: fbbfaacf2978f2e4eb9fb57257ee2cfd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _DayTransitionText: {instanceID: 0}
+  - _NightTransitionText: {instanceID: 0}
+  - _TransitionToDark: {fileID: 11400000, guid: 63b63dadbb7b50243977a009c8fb9325, type: 2}
+  - _TransitionToTransparent: {fileID: 11400000, guid: 56ae15cb68065a347905d1cb090e9f25, type: 2}
+  - _TransitionReset: {fileID: 11400000, guid: 634792852917d85479b6fc40457d6d2e, type: 2}
+  - _TransitionToDay: {instanceID: 0}
+  - _TransitionToNight: {instanceID: 0}
+  - AnimationClipToDark: {instanceID: 0}
+  - AnimationClipToTransparent: {instanceID: 0}
+  - AnimationClipToIdle: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

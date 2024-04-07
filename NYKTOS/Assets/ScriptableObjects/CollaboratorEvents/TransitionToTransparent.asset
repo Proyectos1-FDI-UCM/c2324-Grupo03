@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5482f1e0d22d9448b7ab7c19332e2f7, type: 3}
-  m_Name: TransitionFadeIn
+  m_Name: TransitionToTransparent
   m_EditorClassIdentifier: 
