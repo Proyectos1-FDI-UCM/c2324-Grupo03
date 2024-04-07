@@ -48,13 +48,17 @@ public class AudioPerformer : MonoBehaviour
 
     void OnDestroy()
     {
-        for (int i = 0; i < players.Length; i++)
+        if(players != null)
         {
-            players[i].stopAudio.RemoveAllListeners();
+            for (int i = 0; i < players.Length; i++)
+            {
+                players[i].stopAudio.RemoveAllListeners();
 
-            players[i].pauseAudio.RemoveAllListeners();
+                players[i].pauseAudio.RemoveAllListeners();
 
-            players[i].unPauseAudio.RemoveAllListeners();
+                players[i].unPauseAudio.RemoveAllListeners();
+            }
         }
+        
     }
 }
