@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e8b27b864d22f634eaf6adceca37f862
+guid: 301d9a89072945043b5ad642a65819a9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PolyBullet_0
+      name: PolyBullet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,17 +124,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87888fa2e63da0f49a06ec970c9461d8
-      internalID: -1516751829
+      spriteID: 3ffd254fff1376143b318d5e40ad04e1
+      internalID: 1249735419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PolyBullet_1
+      name: PolyBullet 1_1
       rect:
         serializedVersion: 2
-        x: 10
+        x: 11
         y: 0
         width: 10
         height: 10
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd3ae576546ce8b4bbef9d8bd04758df
-      internalID: -1890638970
+      spriteID: 4b3095b93981e9048ab391e899b967fc
+      internalID: -1479460834
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PolyBullet_0: -1516751829
-      PolyBullet_1: -1890638970
+      PolyBullet 1_0: 1249735419
+      PolyBullet 1_1: -1479460834
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
