@@ -17,6 +17,8 @@ public class EnemySpawner : MonoBehaviour
     [Header("Configuration fields")]
     [SerializeField]
     private SpawnLimit _spawnLimit;
+    [SerializeField]
+    private BoolEmitter _spawnMarker;
 
     private List<Enemy> _enemyPool = new List<Enemy>();
     private List<Enemy> _remainingEnemyPool = new List<Enemy>();
@@ -61,11 +63,15 @@ public class EnemySpawner : MonoBehaviour
         {
             _remainingEnemyPool = _enemyPool;
             enabled = true;
+
+            _spawnMarker?.InvokePerform(true);
         }
         else
         {
             Stop();
             enabled = false;
+
+            _spawnMarker?.InvokePerform(false);
         }
     }
 

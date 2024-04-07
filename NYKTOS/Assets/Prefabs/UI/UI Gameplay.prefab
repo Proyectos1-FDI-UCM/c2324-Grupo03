@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 8862906999443917275}
   - component: {fileID: 5725495267052453735}
   - component: {fileID: 7040759350927633821}
+  - component: {fileID: 883063755263912889}
   m_Layer: 5
   m_Name: AdvertenceMagentaZone
   m_TagString: Untagged
@@ -349,7 +350,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681681436725759427}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -372,6 +373,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &883063755263912889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681681436725759427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b80b7a5ebd819479244b8dd92e68a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnMarkerEmitter: {fileID: 11400000, guid: 80951fe091ea49442be7bd7b50424419, type: 2}
 --- !u!1 &922111415776737412
 GameObject:
   m_ObjectHideFlags: 0
@@ -5062,6 +5076,7 @@ GameObject:
   - component: {fileID: 6260904785543809200}
   - component: {fileID: 3265092017000588901}
   - component: {fileID: 2571876915101235428}
+  - component: {fileID: 890444146060138046}
   m_Layer: 5
   m_Name: AdvertenceCyanZone
   m_TagString: Untagged
@@ -5103,7 +5118,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6150751271281831235}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -5126,6 +5141,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &890444146060138046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6150751271281831235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b80b7a5ebd819479244b8dd92e68a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnMarkerEmitter: {fileID: 11400000, guid: 549f0bc08724411408ba94523581ae60, type: 2}
 --- !u!1 &6187034812044771475
 GameObject:
   m_ObjectHideFlags: 0
@@ -6131,6 +6159,7 @@ GameObject:
   - component: {fileID: 7595703912875272176}
   - component: {fileID: 4023718767794691054}
   - component: {fileID: 8389621575603344273}
+  - component: {fileID: 5760179669910278085}
   m_Layer: 5
   m_Name: AdvertenceYellowZone
   m_TagString: Untagged
@@ -6172,7 +6201,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7303406542231964190}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -6195,6 +6224,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5760179669910278085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7303406542231964190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b80b7a5ebd819479244b8dd92e68a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnMarkerEmitter: {fileID: 11400000, guid: efc9b240a144bca4b9295a474e1fe87b, type: 2}
 --- !u!1 &7435931973371276927
 GameObject:
   m_ObjectHideFlags: 0

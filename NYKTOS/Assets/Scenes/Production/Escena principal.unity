@@ -303,6 +303,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner Magenta
       objectReference: {fileID: 0}
+    - target: {fileID: 5265521018662020170, guid: 64a242fa460722d47a278480195ff466, type: 3}
+      propertyPath: _spawnMarker
+      value: 
+      objectReference: {fileID: 11400000, guid: 80951fe091ea49442be7bd7b50424419, type: 2}
     - target: {fileID: 9208304117144434517, guid: 64a242fa460722d47a278480195ff466, type: 3}
       propertyPath: _spawnerRegion
       value: 2
@@ -358,7 +362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2642421058682479307, guid: 6a3a5d72acb4d6741a802ab73e866861, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.5
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2642421058682479307, guid: 6a3a5d72acb4d6741a802ab73e866861, type: 3}
       propertyPath: m_LocalPosition.z
@@ -788,6 +792,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner Cian
       objectReference: {fileID: 0}
+    - target: {fileID: 5265521018662020170, guid: 64a242fa460722d47a278480195ff466, type: 3}
+      propertyPath: _spawnMarker
+      value: 
+      objectReference: {fileID: 11400000, guid: 549f0bc08724411408ba94523581ae60, type: 2}
     - target: {fileID: 9208304117144434517, guid: 64a242fa460722d47a278480195ff466, type: 3}
       propertyPath: _spawnerRegion
       value: 1
@@ -931,6 +939,14 @@ PrefabInstance:
     - target: {fileID: 3983642246170334203, guid: 64a242fa460722d47a278480195ff466, type: 3}
       propertyPath: m_Name
       value: Spawner Amarillo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265521018662020170, guid: 64a242fa460722d47a278480195ff466, type: 3}
+      propertyPath: _spawnMarker
+      value: 
+      objectReference: {fileID: 11400000, guid: efc9b240a144bca4b9295a474e1fe87b, type: 2}
+    - target: {fileID: 9208304117144434517, guid: 64a242fa460722d47a278480195ff466, type: 3}
+      propertyPath: _spawnerRegion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
