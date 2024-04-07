@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0920da6225e66f408de939384056745, type: 3}
-  m_Name: PlayerInventory
+  m_Script: {fileID: 11500000, guid: 90758ce5cfed4684da572de046ad03a5, type: 3}
+  m_Name: Night 1 Crystals
   m_EditorClassIdentifier: 
-  amarilloCristales: 99
-  magentaCristales: 99
-  cianCristales: 99
+  _requiredYellow: 60
+  _requiredCyan: 10
+  _requiredMagenta: 10
+  _probabilityYellow: 8
+  _probabilityCyan: 1
+  _probabilityMagenta: 1
