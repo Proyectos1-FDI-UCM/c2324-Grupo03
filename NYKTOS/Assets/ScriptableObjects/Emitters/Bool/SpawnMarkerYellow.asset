@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 275fcc05780e2a442b5c471fbd15198d, type: 3}
-  m_Name: AAAAAA
+  m_Script: {fileID: 11500000, guid: 670c2310f45342e4baffd7fb12df225e, type: 3}
+  m_Name: SpawnMarkerYellow
   m_EditorClassIdentifier: 
-  _clip:
-  - {fileID: 8300000, guid: bbc2d375720e08441b15560ed1b8c04a, type: 3}
-  _volume: 1
-  _reproductionType: 0
-  _audioType: 1
+  _perform:
+    m_PersistentCalls:
+      m_Calls: []

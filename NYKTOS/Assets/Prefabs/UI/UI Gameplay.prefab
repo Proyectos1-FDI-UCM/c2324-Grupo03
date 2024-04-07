@@ -599,7 +599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &66124937537927128
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2086,6 +2086,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 2ed21c2ee9392f0488e3753459f2de0b, type: 2}
+        m_TargetAssemblyTypeName: GenericEmitter`1[[WeaponScriptableObject, Assembly-CSharp
+        m_MethodName: InvokePerform
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 6484b57929a82644d9f45c7420f08439, type: 2}
+          m_ObjectArgumentAssemblyTypeName: WeaponScriptableObject, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7137,7 +7149,6 @@ MonoBehaviour:
   _closeMenusEmitter: {fileID: 11400000, guid: 2b9072c17d1a8b643a3d84e13cd80942, type: 2}
   _pauseMenuEmitter: {fileID: 11400000, guid: 1f83d2215c671924eaec39ecaf9b6244, type: 2}
   _nexusMenuEmitter: {fileID: 11400000, guid: 7dee2853a844893449043eaac068bb2b, type: 2}
-  _altarMenuEmitter: {fileID: 11400000, guid: 3b8e74d1ebfd67546a1f216abfd2eba3, type: 2}
   _defenseMenuEmitter: {fileID: 11400000, guid: 61d01db8c8f871a4684fcf3b82b8a031, type: 2}
   _weaponUpgradeMenuEmitter: {fileID: 11400000, guid: 1e1cdcdcf5f368941b553f87e0b31b2e, type: 2}
   _weaponEffectMenuEmitter: {fileID: 11400000, guid: 343c80a31b148424bbb6e6f14b65b1cc, type: 2}
@@ -7146,13 +7157,11 @@ MonoBehaviour:
   _turretBuildEmitter: {fileID: 11400000, guid: 9c3057776ab85794eb818a6c68c0dbdb, type: 2}
   _pauseMenu: {fileID: 4804922284347627298}
   _nexusMenu: {fileID: 2032700948203195905}
-  _altarMenu: {fileID: 0}
   _defenseMenu: {fileID: 5533160026525443117}
   _weaponUpgradeMenu: {fileID: 1678076738440843332}
   _weaponEffectMenu: {fileID: 6780464174303355538}
   _pauseButton: {fileID: 4776382187734192104}
   _nexusButton: {fileID: 3684016067497718864}
-  _altarButton: {fileID: 0}
   _defenseButton: {fileID: 2413852913135636688}
   _weaponUpgradeButton: {fileID: 8433410945502909940}
   _weaponEffectButton: {fileID: 1612582579867539094}

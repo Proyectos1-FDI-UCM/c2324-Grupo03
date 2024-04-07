@@ -14,6 +14,10 @@ public class EnemySpawner : MonoBehaviour
     private double _spawnTimeMax = 2;
     private double _currentSpawnTime = 0;
 
+    [Header("Configuration fields")]
+    [SerializeField]
+    private SpawnLimit _spawnLimit;
+
     private List<Enemy> _enemyPool = new List<Enemy>();
     private List<Enemy> _remainingEnemyPool = new List<Enemy>();
 
@@ -77,7 +81,7 @@ public class EnemySpawner : MonoBehaviour
             _currentSpawnTime -= Time.deltaTime; 
         }       
         else
-        {
+        {   
             if(_remainingEnemyPool.Count == 0)
             {
                 _remainingEnemyPool = _enemyPool.ToList();
@@ -89,18 +93,21 @@ public class EnemySpawner : MonoBehaviour
 
             if(_remainingEnemyPool[enemySpawnPos].number > 0)
             {
-                GameObject thisEnemy = Instantiate
-                (
-                    _remainingEnemyPool[enemySpawnPos].enemyPrefab, 
-                    transform.GetChild(random.Next(0,  transform.childCount)).position,
-                    Quaternion.identity
-                );
-
-                thisEnemy.GetComponent<EnemyVariant>().SetVariant(_remainingEnemyPool[enemySpawnPos].variantType);
-
-                if (_remainingEnemyPool[enemySpawnPos].number <= 0)
+                if(_spawnLimit.AddConcurrentEnemy())
                 {
-                    _remainingEnemyPool.RemoveAt(enemySpawnPos);
+                    GameObject thisEnemy = Instantiate
+                    (
+                        _remainingEnemyPool[enemySpawnPos].enemyPrefab, 
+                        transform.GetChild(random.Next(0,  transform.childCount)).position,
+                        Quaternion.identity
+                    );
+
+                    thisEnemy.GetComponent<EnemyVariant>().SetVariant(_remainingEnemyPool[enemySpawnPos].variantType);
+
+                    if (_remainingEnemyPool[enemySpawnPos].number <= 0)
+                    {
+                        _remainingEnemyPool.RemoveAt(enemySpawnPos);
+                    }
                 }
             }
 

@@ -12,6 +12,9 @@ public enum AttackType
 
 public class WeaponHandler : MonoBehaviour
 {
+    #region references
+    [SerializeField] private WeaponSOEmmiter _weaponUpgrade;
+    #endregion
     [System.Serializable]
     struct weaponStruct
     {
@@ -64,4 +67,9 @@ public class WeaponHandler : MonoBehaviour
         weapons.attackType = attackType;
     }
 
+    private void Start()
+    {
+        if (_weaponUpgrade != null)
+        _weaponUpgrade.Perform.AddListener(SetWeapon);
+    }
 }

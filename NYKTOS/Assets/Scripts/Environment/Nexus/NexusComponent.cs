@@ -35,7 +35,7 @@ public class NexusComponent : MonoBehaviour, IBuilding
             //MenuManager.Instance.OpenNexusMenu();
 
             _nexusMenuEmitter.InvokePerform();
-            TutorialCompleted.InvokePerform();
+            TutorialCompleted?.InvokePerform();
         }
         else
         {

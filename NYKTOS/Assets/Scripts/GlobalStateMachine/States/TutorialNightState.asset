@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: TutorialNightState
   m_EditorClassIdentifier: 
   _stateIdentifier: 5
-  _onStateLoad: []
-  _onStateExit: []
   _onStateInstantLoad:
     m_PersistentCalls:
       m_Calls:
@@ -42,12 +40,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _onStateEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: bf58668f04c7d8043a7322510cae1601, type: 2}
-        m_TargetAssemblyTypeName: GenericEmitter, Assembly-CSharp
-        m_MethodName: InvokePerform
+      - m_Target: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
+        m_TargetAssemblyTypeName: PlayerInventory, Assembly-CSharp
+        m_MethodName: ResetForTutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -57,6 +52,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 01ecff68fa1446142ad7553b559564ee, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 57ac4211a3defba4280d29488b0a2f6a, type: 2}
+        m_TargetAssemblyTypeName: SpawnLimit, Assembly-CSharp
+        m_MethodName: ResetConcurrentEnemies
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onStateLoadCollaborators:
+  - {fileID: 11400000, guid: 56ae15cb68065a347905d1cb090e9f25, type: 2}
+  _onStateEnter:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 11400000, guid: 0b60db9189383644c85b5af44559b1ad, type: 2}
         m_TargetAssemblyTypeName: GenericEmitter`1[[System.Boolean, mscorlib
         m_MethodName: InvokePerform
@@ -69,12 +93,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  _onStateInstantExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: d2500bf523091fe468863b74103bc83d, type: 2}
-        m_TargetAssemblyTypeName: GenericEmitter, Assembly-CSharp
-        m_MethodName: InvokePerform
+      - m_Target: {fileID: 11400000, guid: 85b501d9779dbc2479e4472a07d19f51, type: 2}
+        m_TargetAssemblyTypeName: NightProgressTracker, Assembly-CSharp
+        m_MethodName: InvokeStartNight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -82,8 +103,11 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
+  _onStateInstantExit:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 11400000, guid: 0b60db9189383644c85b5af44559b1ad, type: 2}
         m_TargetAssemblyTypeName: GenericEmitter`1[[System.Boolean, mscorlib
         m_MethodName: InvokePerform
@@ -96,3 +120,29 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 01ecff68fa1446142ad7553b559564ee, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 5a21eca47387e4f4092d5ab171bb56e8, type: 2}
+        m_TargetAssemblyTypeName: GenericEmitter, Assembly-CSharp
+        m_MethodName: InvokePerform
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onStateExitCollaborators:
+  - {fileID: 11400000, guid: 63b63dadbb7b50243977a009c8fb9325, type: 2}

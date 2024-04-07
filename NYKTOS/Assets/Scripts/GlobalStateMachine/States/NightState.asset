@@ -16,18 +16,6 @@ MonoBehaviour:
   _onStateInstantLoad:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -944628639613478452, guid: be9f3fd42d1fb604ab2253caedcf7a80, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.InputSystem.InputActionAsset, Unity.InputSystem
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: a4a1ef1ef912d394b8529caa92d35c63, type: 2}
         m_TargetAssemblyTypeName: GenericEmitter`1[[System.Boolean, mscorlib
         m_MethodName: InvokePerform
@@ -64,9 +52,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 1fc49547d2cfb204baa3dbc425a1d75a, type: 2}
+      - m_Target: {fileID: 11400000, guid: 01ecff68fa1446142ad7553b559564ee, type: 2}
         m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
-        m_MethodName: Stop
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -76,9 +64,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 01ecff68fa1446142ad7553b559564ee, type: 2}
-        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
-        m_MethodName: Play
+      - m_Target: {fileID: 11400000, guid: 57ac4211a3defba4280d29488b0a2f6a, type: 2}
+        m_TargetAssemblyTypeName: SpawnLimit, Assembly-CSharp
+        m_MethodName: ResetConcurrentEnemies
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
