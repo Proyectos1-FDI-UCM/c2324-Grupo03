@@ -24,7 +24,7 @@ public class GameStateMachine : ScriptableObject
     
     public void SetState(GlobalStateIdentifier identifier)
     {
-        Debug.Log("SET STATE ORDER FROM " + _currentState + " TO " + identifier);
+        //Debug.Log("SET STATE ORDER FROM " + _currentState + " TO " + identifier);
         if(_stateDictionary.TryGetValue(identifier, out CustomState newState))
         {
             if(_currentState != null)
@@ -43,7 +43,7 @@ public class GameStateMachine : ScriptableObject
     private void StateHasFinalised(CustomState oldstate, CustomState newState)
     {
         oldstate.StateEndSignal.RemoveAllListeners();
-        Debug.Log(oldstate.name + " " + "FIN DE ESTADO");
+        //Debug.Log(oldstate.name + " " + "FIN DE ESTADO");
         newState.StateLoad();
     }
 
@@ -60,6 +60,11 @@ public class GameStateMachine : ScriptableObject
     public void SetStateToQuit()
     {
         SetState(GlobalStateIdentifier.Quit);
+    }
+
+    public void SetStateToLose()
+    {
+        SetState(GlobalStateIdentifier.Lose);
     }
 
     void OnValidate()

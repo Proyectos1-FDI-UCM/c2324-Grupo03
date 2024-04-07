@@ -4,22 +4,14 @@ using UnityEngine;
 
 public class NexusDeath : MonoBehaviour, IDeath
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
+    [SerializeField]
+    private GameStateMachine _gameStateMachine;
 
     public void Death()
     {
-        Destroy(gameObject);
+        //Cambiar sprite
+        // Lanzar evento de perder
+        _gameStateMachine.SetStateToLose();
+        Application.Quit();
     }
 }
