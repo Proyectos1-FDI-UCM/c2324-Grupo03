@@ -9,6 +9,7 @@ public class SpawnLimit : ScriptableObject
     [SerializeField]
     private int _maxEnemies = 10;
 
+    [SerializeField]
     private int _concurrentEnemies = 0;
     public int ConcurrentEnemies
     {
@@ -18,7 +19,7 @@ public class SpawnLimit : ScriptableObject
     public void ResetConcurrentEnemies() => _concurrentEnemies = 0;
     public bool AddConcurrentEnemy()
     {
-        if(_maxEnemies+1 <= _maxEnemies)
+        if(_concurrentEnemies+1 <= _maxEnemies)
         {
             _concurrentEnemies++;
             return true;
