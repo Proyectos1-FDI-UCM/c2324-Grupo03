@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2523dbfb6bf3f6741b286dc990c81a78, type: 3}
+  m_Name: TutorialNightProgressTracker
+  m_EditorClassIdentifier: 
+  _stateMachine: {fileID: 11400000, guid: 26cd137f8c89dcd4d8bc981a37f3e83f, type: 2}
+  _night: 0
+  _nightList:
+  - {fileID: 11400000, guid: d5ab7057d6498a348b18cf4da45af3d7, type: 2}

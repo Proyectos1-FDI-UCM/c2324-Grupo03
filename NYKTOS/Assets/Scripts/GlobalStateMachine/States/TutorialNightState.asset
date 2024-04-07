@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: TutorialNightState
   m_EditorClassIdentifier: 
   _stateIdentifier: 5
-  _onStateLoad: []
-  _onStateExit: []
   _onStateInstantLoad:
     m_PersistentCalls:
       m_Calls:
@@ -42,21 +40,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _onStateLoadCollaborators:
+  - {fileID: 11400000, guid: 56ae15cb68065a347905d1cb090e9f25, type: 2}
   _onStateEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: bf58668f04c7d8043a7322510cae1601, type: 2}
-        m_TargetAssemblyTypeName: GenericEmitter, Assembly-CSharp
-        m_MethodName: InvokePerform
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 0b60db9189383644c85b5af44559b1ad, type: 2}
         m_TargetAssemblyTypeName: GenericEmitter`1[[System.Boolean, mscorlib
         m_MethodName: InvokePerform
@@ -69,12 +57,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  _onStateInstantExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: d2500bf523091fe468863b74103bc83d, type: 2}
-        m_TargetAssemblyTypeName: GenericEmitter, Assembly-CSharp
-        m_MethodName: InvokePerform
+      - m_Target: {fileID: 11400000, guid: 85b501d9779dbc2479e4472a07d19f51, type: 2}
+        m_TargetAssemblyTypeName: NightProgressTracker, Assembly-CSharp
+        m_MethodName: InvokeStartNight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -82,8 +67,11 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
+  _onStateInstantExit:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 11400000, guid: 0b60db9189383644c85b5af44559b1ad, type: 2}
         m_TargetAssemblyTypeName: GenericEmitter`1[[System.Boolean, mscorlib
         m_MethodName: InvokePerform
@@ -96,3 +84,5 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _onStateExitCollaborators:
+  - {fileID: 11400000, guid: 63b63dadbb7b50243977a009c8fb9325, type: 2}
