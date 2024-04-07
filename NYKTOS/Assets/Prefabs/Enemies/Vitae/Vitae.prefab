@@ -5244,7 +5244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ce116b2e1fb5e43a0d0962685cc168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyDeathEmitter: {fileID: 0}
+  _spawnLimit: {fileID: 11400000, guid: 57ac4211a3defba4280d29488b0a2f6a, type: 2}
+  _enemyDeathEmitter: {fileID: 11400000, guid: 5a21eca47387e4f4092d5ab171bb56e8, type: 2}
 --- !u!50 &1905235591837792525
 Rigidbody2D:
   serializedVersion: 4
