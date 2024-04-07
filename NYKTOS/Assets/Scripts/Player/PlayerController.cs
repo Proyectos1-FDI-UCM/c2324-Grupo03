@@ -39,6 +39,17 @@ public class PlayerController : MonoBehaviour, IKnockback
     private float _interactionRange;
     #endregion
 
+    #region tutorials
+    [SerializeField]
+    private VoidEmitter TutorialMovement;
+    [SerializeField]
+    private VoidEmitter TutorialBlink;
+    [SerializeField]
+    private VoidEmitter TutorialAttack;
+    [SerializeField]
+    private VoidEmitter TutorialBuild;
+    #endregion
+
     #region actions
 
     #region movement
@@ -47,6 +58,7 @@ public class PlayerController : MonoBehaviour, IKnockback
         if (PlayerStateMachine.playerState == PlayerState.Idle && !_BlinkCooldown.IsCooling())
         {
             _blinkComponent.Blink();
+            TutorialAttack.InvokePerform();
             _BlinkCooldown.StartCooldown();
         }
     }
@@ -58,6 +70,7 @@ public class PlayerController : MonoBehaviour, IKnockback
         if (PlayerStateMachine.playerState == PlayerState.Idle || PlayerStateMachine.playerState == PlayerState.Dead)
         {
             CallMove(direction);
+            TutorialBlink.InvokePerform();
         }
 
     }
@@ -104,9 +117,11 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region combat
     public void PrimaryAttack()
     {
-        if(PlayerStateMachine.playerState == PlayerState.Idle && !_PrimaryAttackCooldown.IsCooling()&& PlayerStateMachine.playerState != PlayerState.Dead)
+        TutorialBuild.InvokePerform();
+        if (PlayerStateMachine.playerState == PlayerState.Idle && !_PrimaryAttackCooldown.IsCooling()&& PlayerStateMachine.playerState != PlayerState.Dead)
         {
             _weaponHandler.CallPrimaryUse(_lookDirection.lookDirection);
+            
             _PrimaryAttackCooldown.StartCooldown();
 
 
@@ -168,5 +183,7 @@ public class PlayerController : MonoBehaviour, IKnockback
         _playerDeath = GetComponent<PlayerDeath>();
 
         _interactionRange = GetComponentInChildren<CircleCollider2D>().radius;
+
+
     }
 }

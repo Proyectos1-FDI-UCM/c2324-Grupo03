@@ -14,6 +14,8 @@ public class NexusComponent : MonoBehaviour, IBuilding
     private VoidEmitter _nexusMenuEmitter;
     [SerializeField]
     private BoolEmitter _nexusInteractEmitter;
+    [SerializeField]
+    private VoidEmitter TutorialCompleted;
     #endregion
 
     private BuildingStateMachine _state;
@@ -33,6 +35,7 @@ public class NexusComponent : MonoBehaviour, IBuilding
             //MenuManager.Instance.OpenNexusMenu();
 
             _nexusMenuEmitter.InvokePerform();
+            TutorialCompleted.InvokePerform();
         }
         else
         {

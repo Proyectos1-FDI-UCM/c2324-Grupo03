@@ -82,7 +82,7 @@ public class BuildingManager : MonoBehaviour
 
         BuildingStateMachine placeholderState = _currentPlaceholder.GetComponent<BuildingStateMachine>();
         placeholderState.SetState(BuildingStateMachine.BuildingState.Built);
-        //placeholderState.isInteractable = false;
+        placeholderState.isInteractable = false;
 
         if(_currentPlaceholder.TryGetComponent<SpecialPlaceholderComponent>(out SpecialPlaceholderComponent specialPh))
         {

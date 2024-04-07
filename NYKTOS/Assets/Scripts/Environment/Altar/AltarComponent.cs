@@ -44,7 +44,11 @@ public class AltarComponent : MonoBehaviour
     }
     #endregion
 
-    private void RegisterPlaceholder() => _totalPlaceholders++;
+    private void RegisterPlaceholder()
+    {
+        _totalPlaceholders++;
+        Debug.Log("Se ha registrado un ph");
+    }
 
     private void PlaceholderCount(bool value)
     {
@@ -63,11 +67,19 @@ public class AltarComponent : MonoBehaviour
     private void ChangeState()
     {
         // Actualizar apariencia en funcion de numero de _currentPlaceholders
+        Debug.Log($"altar {_type}, ph totales: {_totalPlaceholders}, ph construidos: {_currentPlaceholders}");
 
-        if(_currentPlaceholders == _totalPlaceholders)
+        if (_currentPlaceholders == _totalPlaceholders)
         {
             _state.SetState(BuildingStateMachine.BuildingState.Built);
+            Debug.Log("Altar activado");
             // Lanzar evento que active comportamiento especial
+        }
+        else if (_state.buildingState == BuildingStateMachine.BuildingState.Built)
+        {
+            _state.SetState(BuildingStateMachine.BuildingState.NotBuilt);
+            Debug.Log("Altar desactivado");
+            // Lanzar evento que desactive comportamiento especial
         }
     }
 
@@ -114,18 +126,16 @@ public class AltarComponent : MonoBehaviour
     void Start()
     {
         _state = GetComponent<BuildingStateMachine>();
-        BuildingManager.Instance.AddBuilding(gameObject);
-
-        //_altarInteract.Perform.AddListener(CanInteract); 
+        BuildingManager.Instance.AddBuilding(gameObject); 
 
         _registerPlaceholder.Perform.AddListener(RegisterPlaceholder);
         _placeholderBuilt.Perform.AddListener(PlaceholderCount);
+
+        //Debug.Log($"altar {_type}, ph totales: {_totalPlaceholders}");
     }
 
     void OnDestroy()
     {
-        //_altarInteract.Perform.RemoveListener(CanInteract); 
-
         _registerPlaceholder.Perform.RemoveListener(RegisterPlaceholder);
         _placeholderBuilt.Perform.RemoveListener(PlaceholderCount);
     }

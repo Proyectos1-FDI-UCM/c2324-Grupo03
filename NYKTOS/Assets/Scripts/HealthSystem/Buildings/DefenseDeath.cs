@@ -21,7 +21,7 @@ public class DefenseDeath : MonoBehaviour, IDeath
     {
         BuildingManager.Instance.RemoveBuilding(this.gameObject);
         _placeholderState.SetState(BuildingStateMachine.BuildingState.NotBuilt);
-        //_placeholderState.isInteractable = true;
+        _placeholderState.isInteractable = true;
 
         if(_defenseComponent.placeholder.TryGetComponent<SpecialPlaceholderComponent>(out SpecialPlaceholderComponent specialPh))
         {
