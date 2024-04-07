@@ -47,6 +47,11 @@ public class GameStateMachine : ScriptableObject
         newState.StateLoad();
     }
 
+    public void SetStateTo(CustomState _state)
+    {
+        SetState(_state.StateIdentifier);
+    }
+
     public void SetStateToDay()
     {
         SetState(GlobalStateIdentifier.Day);
