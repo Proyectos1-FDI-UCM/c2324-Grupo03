@@ -34,6 +34,10 @@ public class NightProgressTracker : ScriptableObject
             }
             _stateMachine?.SetState(GlobalStateIdentifier.Day);
         }
+        else if(_stateMachine.GetCurrentState == GlobalStateIdentifier.TutorialNight)
+        {
+            _stateMachine?.SetState(GlobalStateIdentifier.MaingameSceneLoad);
+        }
     }
 
     public void ResetNights()
