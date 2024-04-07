@@ -61,7 +61,19 @@ MonoBehaviour:
         m_CallState: 2
   _secondaryUsePerformed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 90068c601ac38724da6e4ed6aabf96ab, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _knockbackRadius: 2
   _knockbackArea: {fileID: 7885417974881959465, guid: 108c1387e45001742be649b31c540118, type: 3}
   _bullet: {fileID: 5778141340421890969, guid: 2eb15cd38c38f7f45bec7a5883c252a6, type: 3}
