@@ -672,6 +672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _registerPlaceholder: {fileID: 11400000, guid: fb9689917d94b9b4fbc65cd222608a86, type: 2}
   _placeholderBuilt: {fileID: 11400000, guid: 8ac74a35fad40b242b40b5ec06cc311f, type: 2}
+  _placeHolderSprite: {fileID: 11400000, guid: 08e2012b8c4198b428673864a03374d6, type: 2}
   _type: 0
 --- !u!114 &6128104302095219219
 MonoBehaviour:

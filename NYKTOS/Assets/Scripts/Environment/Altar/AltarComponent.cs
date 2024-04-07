@@ -23,6 +23,9 @@ public class AltarComponent : MonoBehaviour
     // Se invoca cuando se construye un ph (true) y cuando se destruye (false)
     [SerializeField] private BoolEmitter _placeholderBuilt;
 
+    //Sprites
+    [SerializeField] private VoidEmitter _placeHolderSprite;
+
     #endregion
 
     #region properties
@@ -81,7 +84,9 @@ public class AltarComponent : MonoBehaviour
             
         }
 
-        
+        _placeHolderSprite.InvokePerform();
+
+
     }
 
     #region no borrar esto aun

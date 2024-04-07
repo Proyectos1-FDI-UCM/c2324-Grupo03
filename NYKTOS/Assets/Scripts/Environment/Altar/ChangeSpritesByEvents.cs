@@ -25,8 +25,12 @@ public class ChangeSpritesByEvents : MonoBehaviour
     void Start()
     {
         _currentSprite = GetComponent<SpriteRenderer>();
+
         _altarComponent = GetComponentInParent<AltarComponent>();
         _placeHolderSprite.Perform.AddListener(ChangeSprite);
+        _state = GetComponentInParent<BuildingStateMachine>();
+
+        ChangeSprite();
     }
 
     private void ChangeSprite() 
