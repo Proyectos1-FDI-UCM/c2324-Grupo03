@@ -21,11 +21,11 @@ public class TransitionPerformer : MonoBehaviour
     [Header("Collaborator Events")]
     #region CollaboratorEvents
     [SerializeField]
-    private CollaboratorEvent _TransitionToDark;
+    private CollaboratorEvent _TransitionToDarkEvent;
     [SerializeField]
-    private CollaboratorEvent _TransitionToTransparent;
+    private CollaboratorEvent _TransitionToTransparentEvent;
     [SerializeField]
-    private CollaboratorEvent _TransitionReset;
+    private CollaboratorEvent _TransitionResetEvent;
     #endregion
 
     [Header("Texts")]
@@ -46,26 +46,10 @@ public class TransitionPerformer : MonoBehaviour
     private AnimationClip AnimationClipToIdle;
     #endregion
 
-    #region Actions
-    private UnityAction _actionDark;
-    private UnityAction _actionTransparent;
-    private UnityAction _actionIdle;
-    #endregion
-
-    private void StartWorker(CollaboratorEvent collaboratorEvent, Func<IEnumerator> coroutine)
+    private IEnumerator TransitionTo(AnimationClip animationClip, CollaboratorEvent collaboratorEvent)
     {
-        collaboratorEvent.AddWorker();
-        StartCoroutine(WorkerCorroutine(collaboratorEvent, coroutine));
-    }
-
-    private IEnumerator WorkerCorroutine(CollaboratorEvent collaboratorEvent, Func<IEnumerator> coroutine)
-    {
-        yield return coroutine;
-        collaboratorEvent.DeleteWorker();
-    }
-
-    private IEnumerator TransitionTo(AnimationClip animationClip)
-    {
+        
+        Debug.Log("102");
         if (_animator != null && animationClip != null)
         {
             print("animacion lanzada");
@@ -75,26 +59,32 @@ public class TransitionPerformer : MonoBehaviour
             _animator.Play(transitionHash, 0, 0f);
 
             yield return new WaitForSeconds(animationClip.length);
+            Debug.Log("10:" + animationClip.length);
         }
+        
+        collaboratorEvent.DeleteWorker();
         yield return null;
     }
 
     [ContextMenu("TransitionToDark")]
-    private IEnumerator TransitionToDark()
+    private void TransitionToDark()
     {
-        yield return TransitionTo(AnimationClipToDark);
+        _TransitionToDarkEvent.AddWorker();
+        StartCoroutine(TransitionTo(AnimationClipToDark, _TransitionToDarkEvent));
     }
 
     [ContextMenu("TransitionToTransparent")]
-    private IEnumerator TransitionToTransparent()
+    private void TransitionToTransparent()
     {
-        yield return TransitionTo(AnimationClipToTransparent);
+        _TransitionToTransparentEvent.AddWorker();
+        StartCoroutine(TransitionTo(AnimationClipToTransparent, _TransitionToTransparentEvent));
     }
 
     [ContextMenu("ResetTransition")]
-    private IEnumerator ResetTransition()
+    private void ResetTransition()
     {
-        yield return TransitionTo(AnimationClipToIdle);
+        _TransitionResetEvent.AddWorker();
+        StartCoroutine(TransitionTo(AnimationClipToIdle, _TransitionResetEvent));
     }
 
     private void TextInDay(bool value)
@@ -109,18 +99,15 @@ public class TransitionPerformer : MonoBehaviour
 
     void Start()
     {
-        _actionDark = () => StartWorker(_TransitionToDark, TransitionToDark);
-        _actionTransparent = () => StartWorker(_TransitionToTransparent, TransitionToTransparent);
-        _actionIdle = () => StartWorker(_TransitionReset, ResetTransition);
 
         _animator = GetComponent<Animator>();
 
         _DayTransitionText.Perform.AddListener(TextInDay);
         _NightTransitionText.Perform.AddListener(TextInNight);
 
-        _TransitionToDark.WorkStart.AddListener(_actionDark);
-        _TransitionToTransparent.WorkStart.AddListener(_actionTransparent);
-        _TransitionReset.WorkStart.AddListener(_actionIdle);
+        _TransitionToDarkEvent.WorkStart.AddListener(TransitionToDark);
+        _TransitionToTransparentEvent.WorkStart.AddListener(TransitionToTransparent);
+        _TransitionResetEvent.WorkStart.AddListener(ResetTransition);
     }
 
     void OnDestroy()
@@ -128,9 +115,9 @@ public class TransitionPerformer : MonoBehaviour
         _DayTransitionText.Perform.RemoveListener(TextInDay);
         _NightTransitionText.Perform.RemoveListener(TextInNight);
 
-        _TransitionToDark.WorkStart.RemoveListener(_actionDark);
-        _TransitionToTransparent.WorkStart.RemoveListener(_actionTransparent);
-        _TransitionReset.WorkStart.RemoveListener(_actionIdle);
+        _TransitionToDarkEvent.WorkStart.RemoveListener(TransitionToDark);
+        _TransitionToTransparentEvent.WorkStart.RemoveListener(TransitionToTransparent);
+        _TransitionResetEvent.WorkStart.RemoveListener(ResetTransition);
     }
     
 }

@@ -51,16 +51,22 @@ public class CustomState : ScriptableObject
         UnityEvent instantEvent,
         UnityEvent collaboratorEndEvent)
     {
-        pendingCount = collaboratorList.Count;
+        if (collaboratorList.Count > 0)
+        {
+            pendingCount = collaboratorList.Count;
 
-        Debug.Log("[AAA] " + _pendingLoadCount);
-
-        instantEvent.Invoke();
-        ExecuteCollaboratorEvents(collaboratorList, () => TryComplete(ref pendingCount, collaboratorEndEvent));
+            instantEvent.Invoke();
+            ExecuteCollaboratorEvents(collaboratorList, () => TryComplete(ref pendingCount, collaboratorEndEvent));
+        }
+        else
+        {
+            collaboratorEndEvent.Invoke();
+        }
     }
 
     private void ExecuteCollaboratorEvents(List<CollaboratorEvent> collaboratorEvents, UnityAction action)
     {
+
         foreach (var item in collaboratorEvents)
         {
             item.InvokeWorkStart();
@@ -74,10 +80,12 @@ public class CustomState : ScriptableObject
             
             item.WorkCompleted.AddListener(completionAction);
         }
+
     }
 
     private void TryComplete(ref int pendingCount, UnityEvent targetEvent)
     {
+        Debug.Log(pendingCount);
         pendingCount--;
         if (pendingCount == 0)
         {

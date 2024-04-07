@@ -24,20 +24,15 @@ public class GameStateMachine : ScriptableObject
     
     public void SetState(GlobalStateIdentifier identifier)
     {
-        Debug.Log("1");
-
         if(_stateDictionary.TryGetValue(identifier, out CustomState newState))
         {
-            Debug.Log("2");
             if(_currentState != null)
             {
-                Debug.Log("3");
                 _currentState.StateEndSignal.AddListener(newState.StateLoad);
                 _currentState.StateExit();
             }
             else
             {
-                Debug.Log("4");
                 newState.StateLoad();
                 _currentState = newState;
             }

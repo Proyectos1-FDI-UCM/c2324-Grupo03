@@ -6424,9 +6424,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _DayTransitionText: {fileID: 11400000, guid: 54de89798f3b01647ad844e71d7344b4, type: 2}
   _NightTransitionText: {fileID: 11400000, guid: 0b60db9189383644c85b5af44559b1ad, type: 2}
-  _TransitionToDark: {fileID: 11400000, guid: 63b63dadbb7b50243977a009c8fb9325, type: 2}
-  _TransitionToTransparent: {fileID: 11400000, guid: 56ae15cb68065a347905d1cb090e9f25, type: 2}
-  _TransitionReset: {fileID: 11400000, guid: 634792852917d85479b6fc40457d6d2e, type: 2}
+  _TransitionToDarkEvent: {fileID: 11400000, guid: 63b63dadbb7b50243977a009c8fb9325, type: 2}
+  _TransitionToTransparentEvent: {fileID: 11400000, guid: 56ae15cb68065a347905d1cb090e9f25, type: 2}
+  _TransitionResetEvent: {fileID: 11400000, guid: 634792852917d85479b6fc40457d6d2e, type: 2}
   _TransitionToDay: {fileID: 6644510487536453798}
   _TransitionToNight: {fileID: 3443092654729888271}
   AnimationClipToDark: {fileID: 7400000, guid: 8d2e9b72feec0a24dab7e4c517506dd7, type: 2}
