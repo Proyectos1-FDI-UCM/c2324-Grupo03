@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581777a8d78b62b4085ec49617e662a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lightRadius: 1.92
+  _lightRadius: 4.94
   vibrationSpeed: 5
   vibrationDistance: 0.1
   internalRadiusPercentageOffset: 0.869
@@ -305,8 +305,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1.66848
-  m_PointLightOuterRadius: 1.92
+  m_PointLightInnerRadius: 4.29286
+  m_PointLightOuterRadius: 4.94
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -351,7 +351,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.7664
+  m_Radius: 4.5448003
 --- !u!1 &5698021183704277950
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +382,7 @@ Transform:
   m_GameObject: {fileID: 5698021183704277950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: -1.55, z: 0}
+  m_LocalPosition: {x: 9, y: -8.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
