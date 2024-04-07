@@ -19,15 +19,12 @@ public class SpawnerPerformer : MonoBehaviour
 
     private void LoadSpawnerPerformer(Dictionary<SpawnerRegion, Enemy[]> waveData)
     {
-        Debug.Log("PERFORMER");
         if(waveData.TryGetValue(_spawnerRegion, out Enemy[] enemyPool))
         {
             _enemySpawner.SetupSpawner(enemyPool);
-            Debug.Log("SI");
         }
         else
         {
-            Debug.Log("NO");
             _enemySpawner.Stop();
         }
     }

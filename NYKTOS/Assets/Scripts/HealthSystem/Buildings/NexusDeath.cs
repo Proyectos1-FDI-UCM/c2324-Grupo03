@@ -12,6 +12,5 @@ public class NexusDeath : MonoBehaviour, IDeath
         //Cambiar sprite
         // Lanzar evento de perder
         _gameStateMachine.SetStateToLose();
-        Application.Quit();
     }
 }

@@ -123,7 +123,7 @@ public class State : MonoBehaviour
                 {
                     direction = (priority.toNearestBuildingPath.corners[1] - priority.transform.position).normalized;
                 }
-                else if (priority.priorityPath.corners.Length > 1)
+                else if (priority.priorityPath != null && priority.priorityPath.corners.Length > 0)
                 {
                     direction = (priority.priorityPath.corners[1] - priority.transform.position).normalized;
                 }
