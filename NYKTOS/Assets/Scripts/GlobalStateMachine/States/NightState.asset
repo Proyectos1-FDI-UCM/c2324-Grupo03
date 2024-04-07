@@ -52,9 +52,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 1fc49547d2cfb204baa3dbc425a1d75a, type: 2}
+      - m_Target: {fileID: 11400000, guid: 01ecff68fa1446142ad7553b559564ee, type: 2}
         m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
-        m_MethodName: Stop
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -64,9 +64,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 01ecff68fa1446142ad7553b559564ee, type: 2}
-        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
-        m_MethodName: Play
+      - m_Target: {fileID: 11400000, guid: 57ac4211a3defba4280d29488b0a2f6a, type: 2}
+        m_TargetAssemblyTypeName: SpawnLimit, Assembly-CSharp
+        m_MethodName: ResetConcurrentEnemies
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
