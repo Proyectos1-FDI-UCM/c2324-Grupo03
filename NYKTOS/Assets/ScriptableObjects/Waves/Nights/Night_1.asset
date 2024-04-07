@@ -26,28 +26,22 @@ MonoBehaviour:
     - spawnerRegion: 0
       enemyPool:
       - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
-        number: 15
+        number: 8
         variantType: 0
-      - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
-        number: 3
-        variantType: 1
-      - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
+      - enemyPrefab: {fileID: 2360520016083966940, guid: fefdc8d6c4f6ef34b94520a30c65a8f1, type: 3}
         number: 1
-        variantType: 1
+        variantType: 0
   - time: 60
     subWaveList:
     - spawnerRegion: 0
       enemyPool:
+      - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
+        number: 15
+        variantType: 0
       - enemyPrefab: {fileID: 2360520016083966940, guid: fefdc8d6c4f6ef34b94520a30c65a8f1, type: 3}
         number: 2
         variantType: 0
-      - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
-        number: 1
-        variantType: 1
-      - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
-        number: 1
-        variantType: 2
-      - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
-        number: 15
+      - enemyPrefab: {fileID: 3477185432724126219, guid: bd9ce6ea559b24446809069ef53c706f, type: 3}
+        number: 2
         variantType: 0
   _nightCrystalDrops: {fileID: 11400000, guid: a54c29996e8d3c4419eed2c1b32cb930, type: 2}
