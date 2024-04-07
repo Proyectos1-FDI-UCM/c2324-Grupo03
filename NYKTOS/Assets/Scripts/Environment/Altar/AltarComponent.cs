@@ -152,9 +152,7 @@ public class AltarComponent : MonoBehaviour
     void Start()
     {
         _state = GetComponent<BuildingStateMachine>();
-        _light = GetComponentInChildren<LightAreaComponent>();
-
-        BuildingManager.Instance.AddBuilding(gameObject);         
+        _light = GetComponentInChildren<LightAreaComponent>();    
     }
 
     void OnDestroy()
