@@ -182,7 +182,7 @@ public class ImageControllerScript : MonoBehaviour
             //Desaparece al construir una defensa para reparar el altar
             OneTimeConfirm = false;
             OneTimeNexus = true;
-            _playerInventory.TutorialInventoryAdjust();
+            _playerInventory?.TutorialInventoryAdjust();
         }
     }
 
