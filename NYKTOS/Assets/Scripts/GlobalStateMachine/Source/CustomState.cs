@@ -37,6 +37,7 @@ public class CustomState : ScriptableObject
 
     public void StateLoad()
     {
+        Debug.LogError("STATE LOAD");
         _stateChanged?.Perform.Invoke();
         //Debug.Log(name + " STATELOAD");
         ConsumeCollaboratorList(_onStateLoadCollaborators, _onStateInstantLoad, _onStateEnter);
@@ -45,7 +46,7 @@ public class CustomState : ScriptableObject
     public void StateExit()
     {
         //Debug.Log(name + " STATEXIT");
-
+    
         ConsumeCollaboratorList(_onStateExitCollaborators, _onStateInstantExit, _stateEndSignal);
     }
 

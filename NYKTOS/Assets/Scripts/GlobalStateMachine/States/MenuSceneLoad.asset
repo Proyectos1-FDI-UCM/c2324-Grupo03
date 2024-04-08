@@ -24,13 +24,25 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: 1225504e19f4c004299fdc695b54468c, type: 2}
         m_TargetAssemblyTypeName: GlobalMethods, Assembly-CSharp
         m_MethodName: ChangeScene
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 102900000, guid: e4bd9efa570cae94aab753724920dfc4, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor.CoreModule
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MenuPrincipal
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 11d88b001a9fc0543b36c5696d1136f1, type: 2}
+        m_TargetAssemblyTypeName: GenericEmitter`1[[System.Int32, mscorlib
+        m_MethodName: InvokePerform
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MenuPrincipal
           m_BoolArgument: 0
         m_CallState: 2
   _onStateInstantExit:

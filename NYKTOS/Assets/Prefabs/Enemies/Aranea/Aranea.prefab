@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3632067628936819240}
   - component: {fileID: 4760056054625925972}
   m_Layer: 0
-  m_Name: Wait 0.4sCondition
+  m_Name: Wait 0,4sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5914,7 +5914,7 @@ GameObject:
   - component: {fileID: 7461280860815949787}
   - component: {fileID: 1828715075259602696}
   m_Layer: 9
-  m_Name: Wait 1.5sCondition
+  m_Name: Wait 1,5sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

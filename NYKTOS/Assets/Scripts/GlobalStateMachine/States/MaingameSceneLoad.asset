@@ -21,18 +21,6 @@ MonoBehaviour:
   _onStateEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 1225504e19f4c004299fdc695b54468c, type: 2}
-        m_TargetAssemblyTypeName: GlobalMethods, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 102900000, guid: cddedea2decd49248a22a36d3d0cad1d, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor.CoreModule
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 05fc8819e4d13d04bbaae2cd287ca4cb, type: 2}
         m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
         m_MethodName: Play
@@ -41,6 +29,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 11d88b001a9fc0543b36c5696d1136f1, type: 2}
+        m_TargetAssemblyTypeName: GenericEmitter`1[[System.Int32, mscorlib
+        m_MethodName: InvokePerform
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

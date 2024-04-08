@@ -20,9 +20,7 @@ public class NightProgressTracker : ScriptableObject
 
     public void InvokeStartNight()
     {
-        Debug.Log("NOCHE " + _night);
         _startNight.Invoke(_nightList[_night]);
-        Debug.Log("NOCHE " + _night);
     }
 
     public void AdvanceNight()
