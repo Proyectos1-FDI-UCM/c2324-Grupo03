@@ -9,15 +9,15 @@ public class AudioPlayer : ScriptableObject
     #region parameters
     [SerializeField]
     private AudioClip[] _clip;
-    public AudioClip[] clip {  get { return _clip; } }
+    public AudioClip[] clip => _clip;
 
     [SerializeField]
     private float _volume;
-    public float volume {  get { return _volume; } }
+    public float volume => _volume;
 
     [SerializeField]
     bool _loop = false;
-    public bool loop { get { return _loop; } }
+    public bool loop => _loop;
 
     private enum ReproductionType
     {
@@ -35,16 +35,16 @@ public class AudioPlayer : ScriptableObject
     #endregion
 
     #region events
-    UnityEvent<AudioClip, float, bool, bool> _playAudio;
+    UnityEvent<AudioClip, float, bool, bool> _playAudio = new UnityEvent<AudioClip, float, bool, bool>();
     public UnityEvent<AudioClip, float, bool, bool> playAudio { get { return _playAudio; } }
-    UnityEvent _stopAudio;
-    public UnityEvent stopAudio { get { return _stopAudio; } }
+    UnityEvent _stopAudio = new UnityEvent();
+    public UnityEvent stopAudio => _stopAudio;
 
-    UnityEvent _pauseAudio;
-    public UnityEvent pauseAudio { get { return _pauseAudio; } }
+    UnityEvent _pauseAudio = new UnityEvent();
+    public UnityEvent pauseAudio => _pauseAudio;
 
-    UnityEvent _unPauseAudio;
-    public UnityEvent unPauseAudio { get { return _unPauseAudio; } }
+    UnityEvent _unPauseAudio = new UnityEvent();
+    public UnityEvent unPauseAudio => _unPauseAudio;
     #endregion
 
     public void Play()
