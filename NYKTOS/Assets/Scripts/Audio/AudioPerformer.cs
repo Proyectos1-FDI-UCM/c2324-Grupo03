@@ -24,24 +24,28 @@ public class AudioPerformer : MonoBehaviour
             for (int i = 0; i < players.Length; i++)
             {
                 AudioSource currentSource = gameObject.AddComponent<AudioSource>();
-                players[i].playAudio.AddListener((AudioClip clip, float volume, bool loop, bool isMusic) =>
+                if (players[i] != null)
                 {
-                    currentSource.clip = clip;
-                    currentSource.volume = volume;
-                    currentSource.loop = loop;
-                    if (isMusic)
+                    players[i].playAudio.AddListener((AudioClip clip, float volume, bool loop, bool isMusic) =>
                     {
-                        currentSource.Play();
-                    }
-                    else currentSource.PlayOneShot(clip, volume);
-                    
-                });
- 
-                players[i].stopAudio.AddListener(() => currentSource.Stop());
+                        currentSource.clip = clip;
+                        currentSource.volume = volume;
+                        currentSource.loop = loop;
+                        if (isMusic)
+                        {
+                            currentSource.Play();
+                        }
+                        else currentSource.PlayOneShot(clip, volume);
 
-                players[i].pauseAudio.AddListener(() => currentSource.Pause());
+                    });
 
-                players[i].unPauseAudio.AddListener(() => currentSource.UnPause());
+                    players[i].stopAudio.AddListener(() => currentSource.Stop());
+
+                    players[i].pauseAudio.AddListener(() => currentSource.Pause());
+
+                    players[i].unPauseAudio.AddListener(() => currentSource.UnPause());
+                }
+                
             }
         }
     }
