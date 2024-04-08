@@ -10,7 +10,6 @@ public class StateLoader : MonoBehaviour
 
     void Update()
     {
-        Debug.LogError("INITIAL STATE LOAD");
         _gameStateMachine?.SetState(_identifier);
         gameObject.SetActive(false);
     }
