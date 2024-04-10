@@ -27,4 +27,10 @@ public class EnemyDeath : MonoBehaviour, IDeath
     void Start(){
         _enemyDeathEmitter.Perform.AddListener(Death);
     }
+
+    void OnDestroy() 
+    {
+        _enemyDeathEmitter.Perform.RemoveListener(Death);
+
+    }
 }
