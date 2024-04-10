@@ -43,6 +43,11 @@ public class InputManager : MonoBehaviour
     private string _currentScheme;
     #endregion
 
+    private void OnStateLoad()
+    {
+        mainCamera = Camera.main;
+    }
+
     //Se llama desde el player controller
     public void RegisterPlayer(GameObject player)
     {
@@ -201,13 +206,13 @@ public class InputManager : MonoBehaviour
     }
 
     void Start()
-    {        
-        mainCamera = Camera.main;
-        _stateChanged.Perform.AddListener(Start);
+    {
+        OnStateLoad();
+        _stateChanged.Perform.AddListener(OnStateLoad);
     }
 
     void OnDestroy()
     {
-        _stateChanged.Perform.RemoveListener(Start);
+        _stateChanged.Perform.RemoveListener(OnStateLoad);
     }
 }   
