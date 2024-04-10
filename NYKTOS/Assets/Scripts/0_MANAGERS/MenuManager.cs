@@ -7,7 +7,9 @@ using UnityEngine.Events;
 
 public class MenuManager : MonoBehaviour
 {
-    // [Andrea] Cambiar el registro de menus a eventos
+    // [Andrea]
+    // - Cambiar el registro de menus a eventos
+    // - Destruir MenuManager al salir al menú principal (puede que haga falta crear un MainMenuManager)
 
     private static MenuManager _instance;
     public static MenuManager Instance

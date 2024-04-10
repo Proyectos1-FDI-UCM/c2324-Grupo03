@@ -4,16 +4,16 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - _DayTransitionText: {instanceID: 0}
-  - _NightTransitionText: {instanceID: 0}
-  - _TransitionToDarkEvent: {fileID: 11400000, guid: 63b63dadbb7b50243977a009c8fb9325, type: 2}
-  - _TransitionToTransparentEvent: {fileID: 11400000, guid: 56ae15cb68065a347905d1cb090e9f25, type: 2}
-  - _TransitionResetEvent: {fileID: 11400000, guid: 634792852917d85479b6fc40457d6d2e, type: 2}
-  - _TransitionToDay: {instanceID: 0}
-  - _TransitionToNight: {instanceID: 0}
-  - AnimationClipToDark: {instanceID: 0}
-  - AnimationClipToTransparent: {instanceID: 0}
-  - AnimationClipToIdle: {instanceID: 0}
+  - _dayTransitionTextEmitter: {fileID: 11400000, guid: 54de89798f3b01647ad844e71d7344b4, type: 2}
+  - _nightTransitionTextEmitter: {fileID: 11400000, guid: 0b60db9189383644c85b5af44559b1ad, type: 2}
+  - _transitionToDarkEvent: {fileID: 11400000, guid: 63b63dadbb7b50243977a009c8fb9325, type: 2}
+  - _transitionToTransparentEvent: {fileID: 11400000, guid: 56ae15cb68065a347905d1cb090e9f25, type: 2}
+  - _transitionResetEvent: {fileID: 11400000, guid: 634792852917d85479b6fc40457d6d2e, type: 2}
+  - _transitionToDayText: {instanceID: 0}
+  - _transitionToNightText: {instanceID: 0}
+  - _animationClipToDark: {instanceID: 0}
+  - _animationClipToTransparent: {instanceID: 0}
+  - _animationClipToIdle: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
