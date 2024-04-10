@@ -2757,6 +2757,7 @@ GameObject:
   - component: {fileID: 5778961985226718632}
   - component: {fileID: 7742784557410674796}
   - component: {fileID: 7735119515986909961}
+  - component: {fileID: 6656312746792921787}
   m_Layer: 5
   m_Name: Reloj
   m_TagString: Untagged
@@ -2821,6 +2822,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6656312746792921787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3102252608056241001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d70be83dd6a86cc4c93eaac9bf87d2db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3229105474691895610
 GameObject:
   m_ObjectHideFlags: 0
