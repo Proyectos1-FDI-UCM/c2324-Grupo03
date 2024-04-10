@@ -5,27 +5,29 @@ using UnityEngine.UI;
 
 public class Reloj : MonoBehaviour
 {
-    [SerializeField]
-    private Image _clockHand;
 
     //clock variables
 
     private bool _timerOn = false;
     private float _currentTime;
 
-    
+    private RectTransform _clockTransform;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _clockTransform = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       if( _timerOn)
+        if (_currentTime >=0)
+        {
+            
+        }
+        if ( _timerOn)
         {
             ChangeTime();
         }
@@ -38,6 +40,7 @@ public class Reloj : MonoBehaviour
         if(_currentTime < 0)
         {
             _timerOn = false;
+            _clockTransform.rotation = Quaternion.identity;
         }
     }
 
@@ -47,6 +50,8 @@ public class Reloj : MonoBehaviour
         _timerOn = true;
         
     }
+   
+
 
 
 }
