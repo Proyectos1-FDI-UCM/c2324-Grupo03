@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306741867903416464}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.12613598}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 799.99994, y: 449.99997}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3007616411030193519
 CanvasRenderer:
@@ -6392,14 +6392,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6125069478168396986
-Transform:
+--- !u!224 &6125069478168396986
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6958111899515757398}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -6409,6 +6408,11 @@ Transform:
   - {fileID: 4314343032170897763}
   m_Father: {fileID: 2094542971339212424}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &4758201694019181823
 Animator:
   serializedVersion: 5
@@ -6442,16 +6446,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbbfaacf2978f2e4eb9fb57257ee2cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _DayTransitionText: {fileID: 11400000, guid: 54de89798f3b01647ad844e71d7344b4, type: 2}
-  _NightTransitionText: {fileID: 11400000, guid: 0b60db9189383644c85b5af44559b1ad, type: 2}
-  _TransitionToDarkEvent: {fileID: 11400000, guid: 63b63dadbb7b50243977a009c8fb9325, type: 2}
-  _TransitionToTransparentEvent: {fileID: 11400000, guid: 56ae15cb68065a347905d1cb090e9f25, type: 2}
-  _TransitionResetEvent: {fileID: 11400000, guid: 634792852917d85479b6fc40457d6d2e, type: 2}
-  _TransitionToDay: {fileID: 6644510487536453798}
-  _TransitionToNight: {fileID: 3443092654729888271}
-  AnimationClipToDark: {fileID: 7400000, guid: 8d2e9b72feec0a24dab7e4c517506dd7, type: 2}
-  AnimationClipToTransparent: {fileID: 7400000, guid: b608e47d7f3603c478a2b15cbe7671a7, type: 2}
-  AnimationClipToIdle: {fileID: 7400000, guid: 98e5e07517bc27f48b6e63a17bb42468, type: 2}
+  _dayTransitionTextEmitter: {fileID: 11400000, guid: 54de89798f3b01647ad844e71d7344b4, type: 2}
+  _nightTransitionTextEmitter: {fileID: 11400000, guid: 0b60db9189383644c85b5af44559b1ad, type: 2}
+  _transitionToDarkEvent: {fileID: 11400000, guid: 63b63dadbb7b50243977a009c8fb9325, type: 2}
+  _transitionToTransparentEvent: {fileID: 11400000, guid: 56ae15cb68065a347905d1cb090e9f25, type: 2}
+  _transitionResetEvent: {fileID: 11400000, guid: 634792852917d85479b6fc40457d6d2e, type: 2}
+  _transitionToDayText: {fileID: 6644510487536453798}
+  _transitionToNightText: {fileID: 3443092654729888271}
+  _animationClipToDark: {fileID: 7400000, guid: 8d2e9b72feec0a24dab7e4c517506dd7, type: 2}
+  _animationClipToTransparent: {fileID: 7400000, guid: b608e47d7f3603c478a2b15cbe7671a7, type: 2}
+  _animationClipToIdle: {fileID: 7400000, guid: 98e5e07517bc27f48b6e63a17bb42468, type: 2}
 --- !u!1 &7142682884210655392
 GameObject:
   m_ObjectHideFlags: 0
