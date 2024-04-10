@@ -6,7 +6,7 @@ public class RBMovement : MonoBehaviour
     #region references
     private Transform _myTransform;
     private Rigidbody2D _myRigidbody;
-    private Animator _animator;
+
     #endregion
 
     #region properties
@@ -111,10 +111,7 @@ public class RBMovement : MonoBehaviour
     {
         _movementDirection = new Vector2(xAxis, yAxis).normalized;
         _myRigidbody.velocity = _movementDirection * (_movementSpeed + _addedSpeed);
-        if (_myRigidbody.velocity.x != 0 || _myRigidbody.velocity.y !=0) {
-            _animator.SetFloat("xAxis", _movementDirection.x);
-            _animator.SetFloat("yAxis", _movementDirection.y);
-        }
+        
         //audio
         if (_movementDirection != Vector2.zero && !started)
         {
@@ -134,7 +131,6 @@ public class RBMovement : MonoBehaviour
     {
         _myTransform = transform;
         _myRigidbody = GetComponent<Rigidbody2D>();
-        _animator = GetComponentInChildren<Animator>();
     }
     #region cambios de velocidad
     public void AddSpeed(float addSpeed, float time)
