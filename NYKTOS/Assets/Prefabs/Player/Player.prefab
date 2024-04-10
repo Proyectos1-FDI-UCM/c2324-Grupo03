@@ -618,6 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookDirection: {x: 0, y: -1}
+  _waitTime: 20
 --- !u!50 &8970073740190161489
 Rigidbody2D:
   serializedVersion: 4

@@ -24,10 +24,10 @@ MonoBehaviour:
         number: 10
         variantType: 0
       - enemyPrefab: {fileID: 3477185432724126219, guid: bd9ce6ea559b24446809069ef53c706f, type: 3}
-        number: 2
+        number: 1
         variantType: 0
       - enemyPrefab: {fileID: 2360520016083966940, guid: fefdc8d6c4f6ef34b94520a30c65a8f1, type: 3}
-        number: 2
+        number: 1
         variantType: 0
       - enemyPrefab: {fileID: 2995607884255851843, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
         number: 1
