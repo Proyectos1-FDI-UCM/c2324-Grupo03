@@ -158,21 +158,13 @@ public class InputManager : MonoBehaviour
 
     public void EnableInput(bool enable)
     {
-        if (enable)
-        {
-            _playerControls.Enable();
-            Debug.Log("input enabled");
-        }
-        else
-        {
-            _playerControls.Disable();
-            Debug.Log("input disabled");
-        }
-        }
-        #endregion
+        if (enable) _playerControls.Enable();
+        else _playerControls.Disable();
+    }
+    #endregion
 
-        #region enable/disable
-        private void OnEnable()
+    #region enable/disable
+    private void OnEnable()
     {
         _playerControls.Enable();
 
