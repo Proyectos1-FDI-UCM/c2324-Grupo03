@@ -5125,8 +5125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fcb5a4b321af3b439cd5a8709d4a68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 8
-  _currentHealth: 8
+  _maxHealth: 12
+  _currentHealth: 12
   _inmTime: 0.1
   _OnHurt:
     m_PersistentCalls:
@@ -5199,7 +5199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e7a382721ad3144854f9f5a12b1088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 3
+  _movementSpeed: 4.5
   _knockBackSpeed: 10
   _knockBackTime: 0.2
   _unpauseLoopableMovingSound:
@@ -5331,7 +5331,7 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0

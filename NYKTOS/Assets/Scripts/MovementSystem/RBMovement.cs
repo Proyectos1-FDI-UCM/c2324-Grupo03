@@ -74,11 +74,8 @@ public class RBMovement : MonoBehaviour
     {
         vector = vector.normalized;
 
-        
-        
         int x;
         int y;
-
         
         if (vector.x >-0.50f && vector.x < 0.50f)
         {

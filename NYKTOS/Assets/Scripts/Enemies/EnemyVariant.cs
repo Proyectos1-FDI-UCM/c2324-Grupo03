@@ -3,10 +3,8 @@ using UnityEngine.U2D.Animation;
 
 public class EnemyVariant : MonoBehaviour
 {
-    ///GUILLERMO Y MARIA
-
     /// <summary>
-    /// Script que se encarga de cambiar el daño del enemigo junto con el sprite y el material de las particulas 
+    /// Script que se encarga de cambiar el daño del enemigo junto con el sprite library y el material de las particulas 
     /// </summary>
 
     #region references
@@ -63,7 +61,6 @@ public class EnemyVariant : MonoBehaviour
 
     private void Awake()
     {
-       
         if (debug)
         {
             SetVariant(_attackType);
