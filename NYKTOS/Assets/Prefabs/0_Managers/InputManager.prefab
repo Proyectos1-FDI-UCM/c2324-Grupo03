@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stateChanged: {fileID: 11400000, guid: 49b121f9bca222c49b52d58b2b2e0b6b, type: 2}
+  _enableInput: {fileID: 11400000, guid: 3765ccc58d8ea99448585793865d5cee, type: 2}
   _pauseEmitter: {fileID: 11400000, guid: ad2d45fe2d0ba464291ba279121ed7dd, type: 2}
   _pauseMenuEmitter: {fileID: 11400000, guid: 1f83d2215c671924eaec39ecaf9b6244, type: 2}
   _closeMenusEmitter: {fileID: 11400000, guid: 2b9072c17d1a8b643a3d84e13cd80942, type: 2}
