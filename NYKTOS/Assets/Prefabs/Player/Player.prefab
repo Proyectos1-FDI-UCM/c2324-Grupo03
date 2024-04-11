@@ -786,8 +786,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerReviveEmitter: {fileID: 11400000, guid: 6c2195f7a528dd34c949b65262f6333c, type: 2}
   _playerDeathEmitter: {fileID: 11400000, guid: 2da8c61c32f04eb4dbe80c7a3e8054b4, type: 2}
-  _deathskin: {fileID: 0}
-  _aliveskin: {fileID: 0}
+  _deathskin: {fileID: 7108339969198208228, guid: 7007521ef2643d94486c3369eb079e09, type: 3}
+  _aliveskin: {fileID: 7108339969198208228, guid: 45a068e7a1ee17e4689d979652778836, type: 3}
 --- !u!114 &4920501686148597465
 MonoBehaviour:
   m_ObjectHideFlags: 0
