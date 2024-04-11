@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Faro
+  m_text: Baliza
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 416061d02daaf9648b22e8ff57a4bbf1, type: 2}
   m_sharedMaterial: {fileID: -8784938762923161944, guid: 416061d02daaf9648b22e8ff57a4bbf1, type: 2}
@@ -1804,18 +1804,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 2b9072c17d1a8b643a3d84e13cd80942, type: 2}
-        m_TargetAssemblyTypeName: GenericEmitter, Assembly-CSharp
-        m_MethodName: InvokePerform
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 41bf204db3d38e546a632d72b95afb04, type: 2}
         m_TargetAssemblyTypeName: GenericEmitter, Assembly-CSharp
         m_MethodName: InvokePerform
@@ -3413,18 +3401,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 2b9072c17d1a8b643a3d84e13cd80942, type: 2}
-        m_TargetAssemblyTypeName: GenericEmitter, Assembly-CSharp
-        m_MethodName: InvokePerform
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: bd66721845a72d9458e1061aec7616b9, type: 2}
         m_TargetAssemblyTypeName: GenericEmitter, Assembly-CSharp
         m_MethodName: InvokePerform
@@ -5877,18 +5853,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 2b9072c17d1a8b643a3d84e13cd80942, type: 2}
-        m_TargetAssemblyTypeName: GenericEmitter, Assembly-CSharp
-        m_MethodName: InvokePerform
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 9c3057776ab85794eb818a6c68c0dbdb, type: 2}
         m_TargetAssemblyTypeName: GenericEmitter, Assembly-CSharp
         m_MethodName: InvokePerform
