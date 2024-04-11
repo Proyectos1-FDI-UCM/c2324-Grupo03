@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5287583652475883048}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
@@ -44,11 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c0b3ab708f3454589df8b0b82c077d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _materialToChange: {fileID: 2100000, guid: 6d3d96b757f46354a8e0029f92c4f0a2, type: 2}
+  _particleMaterialToChange: {fileID: 2100000, guid: 6d3d96b757f46354a8e0029f92c4f0a2, type: 2}
+  _spriteMaterialToChange: {fileID: 2100000, guid: 6d3d96b757f46354a8e0029f92c4f0a2, type: 2}
   explosionParticleSystem: {fileID: 0}
   _emisionNormal: 3
   _speedNormal: 0.7
-  _emisionInicial: 10
-  _emisionFinal: 20
+  _sizeNormal: 0.05
+  _sizeExplosion: 0.1
+  _emisionInicial: 50
+  _emisionFinal: 60
   _speedInicial: 3
   _speedFinal: 5
