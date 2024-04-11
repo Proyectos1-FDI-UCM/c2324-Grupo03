@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,8 +48,9 @@ public class ParticleBehaviour : MonoBehaviour, IBehaviour {
 
     public void PerformBehaviour() {
         StartCoroutine(ChangeParticles());
-
+        StartCoroutine(ChangeSprites());
     }
+
     private void Start() {
         _previousParticleMaterial = GetComponentInParent<HealthComponent>().GetComponentInChildren<ParticleSystemRenderer>().material;
         _spriteRenderer = GetComponentInParent<HealthComponent>().GetComponentInChildren<SpriteRenderer>();
@@ -60,9 +62,6 @@ public class ParticleBehaviour : MonoBehaviour, IBehaviour {
 
         ParticleSystemRenderer settings = GetComponentInParent<HealthComponent>().GetComponentInChildren<ParticleSystemRenderer>();
         settings.material = _particleMaterialToChange;
-
-        
-        _spriteRenderer.material = _spriteMaterialToChange;
 
         var mainModule = explosionParticleSystem.main;
         mainModule.startSpeed = new ParticleSystem.MinMaxCurve(_speedInicial, _speedFinal);
@@ -80,8 +79,26 @@ public class ParticleBehaviour : MonoBehaviour, IBehaviour {
 
         emissionModule.rateOverTime = new ParticleSystem.MinMaxCurve(_emisionNormal);
 
-        _spriteRenderer.material = _previousSpriteMaterial;
-
         settings.material = _previousParticleMaterial;
     }
+    private IEnumerator ChangeSprites() {
+
+        int changes = 0, maxChanges=4;
+        
+
+        while (changes< maxChanges) {
+
+            _spriteRenderer.material = (changes % 2 == 0) ? _spriteMaterialToChange : _previousSpriteMaterial;
+
+            changes++;
+
+            yield return new WaitForSeconds(0.1f);
+        }
+
+
+        //_spriteRenderer.material = _previousSpriteMaterial;
+
+ 
+    }
+
 }
