@@ -73,7 +73,7 @@ public class ParticleBehaviour : MonoBehaviour, IBehaviour {
         emissionModule.rateOverTime = new ParticleSystem.MinMaxCurve(_emisionInicial, _emisionFinal);
 
        
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.4f);
 
         mainModule.startSize = _sizeNormal;
         mainModule.startSpeed = new ParticleSystem.MinMaxCurve(_speedNormal);
