@@ -3,10 +3,26 @@ using UnityEngine.U2D.Animation;
 
 public class EnemyVariant : MonoBehaviour
 {
+    ///GUILLERMO Y MARIA
+
+    /// <summary>
+    /// Script que se encarga de cambiar el daño del enemigo junto con el sprite y el material de las particulas 
+    /// </summary>
+
+    #region references
+    [Header("Sprites")] 
     [SerializeField]
     SpriteLibraryAsset _magentaSprite;
     [SerializeField]
     SpriteLibraryAsset _cyanSprite;
+
+    [Header("Materials")]
+
+    [SerializeField]
+    Material _cyanMaterial;
+    [SerializeField]
+    Material _magentaMaterial;
+    #endregion
 
     #region debug
     [Header("DEBUG")]
@@ -31,16 +47,16 @@ public class EnemyVariant : MonoBehaviour
             if (attack == AttackType.Slow)
             {
                 spriteLibrary.spriteLibraryAsset = _cyanSprite;
-                ParticleSystem.MainModule settings = GetComponentInChildren<ParticleSystem>().main;
+                ParticleSystemRenderer settings = GetComponentInChildren<ParticleSystemRenderer>();
 
-                settings.startColor = new ParticleSystem.MinMaxGradient(Color.cyan);
+                settings.material = _cyanMaterial;
             }
             else if (attack == AttackType.Fire)
             {
                 spriteLibrary.spriteLibraryAsset = _magentaSprite;
-                ParticleSystem.MainModule settings = GetComponentInChildren<ParticleSystem>().main;
+                ParticleSystemRenderer settings = GetComponentInChildren<ParticleSystemRenderer>();
 
-                settings.startColor = new ParticleSystem.MinMaxGradient(Color.magenta);
+                settings.material = _magentaMaterial;
             }
         }
     }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3632067628936819240}
   - component: {fileID: 4760056054625925972}
   m_Layer: 0
-  m_Name: Wait 0,4sCondition
+  m_Name: Wait 0.4sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5368,6 +5368,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _magentaSprite: {fileID: 7108339969198208228, guid: e7f4438e1df4e0b488eef4cbee11c517, type: 3}
   _cyanSprite: {fileID: 7108339969198208228, guid: a2aeaf089cf3c5442b226999f3f9eec9, type: 3}
+  _cyanMaterial: {fileID: 2100000, guid: 85d2ed31af302114daab651b732794ee, type: 2}
+  _magentaMaterial: {fileID: 2100000, guid: 7a0231b8fffad7d4e9766dd534c5e976, type: 2}
   debug: 1
   _attackType: 0
 --- !u!1 &3563958836088504113
@@ -5914,7 +5916,7 @@ GameObject:
   - component: {fileID: 7461280860815949787}
   - component: {fileID: 1828715075259602696}
   m_Layer: 9
-  m_Name: Wait 1,5sCondition
+  m_Name: Wait 1.5sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
