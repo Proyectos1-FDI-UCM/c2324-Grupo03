@@ -24,6 +24,12 @@ public class InteractableObjects : MonoBehaviour
         if (collision.gameObject.name == _name) _sprite.SetActive(false);
     }
 
+    public void ShowInteraction(bool value)
+    {
+        if (value) _sprite.SetActive(true);
+        else _sprite.SetActive(false);
+    }
+
     private void Start()
     {
         _name = _collider.name;

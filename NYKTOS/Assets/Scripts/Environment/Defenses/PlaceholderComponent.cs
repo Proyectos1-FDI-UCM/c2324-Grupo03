@@ -9,6 +9,7 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
 
     #region references
     private BuildingStateMachine _state;
+
     #endregion
 
     #region emitters

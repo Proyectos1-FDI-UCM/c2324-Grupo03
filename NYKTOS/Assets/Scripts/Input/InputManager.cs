@@ -17,7 +17,9 @@ public class InputManager : MonoBehaviour
     [SerializeField]
     private VoidEmitter _stateChanged;
     [SerializeField]
-    private BoolEmitter _enableInput;
+    private BoolEmitter _enablePlayerInput;
+    [SerializeField]
+    private BoolEmitter _enableUIInput;
 
     [SerializeField]
     private BoolEmitter _pauseEmitter;
@@ -156,10 +158,16 @@ public class InputManager : MonoBehaviour
         playerControls.Player.Enable();
     }
 
-    public void EnableInput(bool enable)
+    public void EnablePlayerInput(bool enable)
     {
-        if (enable) _playerControls.Enable();
-        else _playerControls.Disable();
+        if (enable) _playerControls.Player.Enable();
+        else _playerControls.Player.Disable();
+    }
+
+    public void EnableUIInput(bool enable)
+    {
+        if (enable) _playerControls.UI.Enable();
+        else _playerControls.UI.Disable();
     }
     #endregion
 
@@ -218,12 +226,15 @@ public class InputManager : MonoBehaviour
     {
         OnStateLoad();
         _stateChanged.Perform.AddListener(OnStateLoad);
-        _enableInput.Perform.AddListener(EnableInput);
+        _enablePlayerInput.Perform.AddListener(EnablePlayerInput);
+        _enableUIInput.Perform.AddListener(EnableUIInput);
     }
 
     void OnDestroy()
     {
         _stateChanged.Perform.RemoveListener(OnStateLoad);
-        _enableInput.Perform.RemoveListener(EnableInput);
+        _enablePlayerInput.Perform.RemoveListener(EnablePlayerInput);
+        _enableUIInput.Perform.RemoveListener(EnableUIInput);
+
     }
 }   
