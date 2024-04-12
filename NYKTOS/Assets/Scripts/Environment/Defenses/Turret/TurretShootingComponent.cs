@@ -6,6 +6,7 @@ public class TurretShootingComponent : MonoBehaviour
 {
     private TurretTargetingComponent _turretTargetingComponent;
     private Vector3 _DirectionToEnemy;
+    private Transform _enemyTransform;
     [SerializeField]
     private GameObject _proyectil;
     private Transform _myTransform;
@@ -27,8 +28,9 @@ public class TurretShootingComponent : MonoBehaviour
     void Update()
     {
         _DirectionToEnemy = _turretTargetingComponent.DirectionToEnemy();
+        _enemyTransform = _turretTargetingComponent.EnemyTransform();
 
-        if (_DirectionToEnemy != Vector3.zero && _DirectionToEnemy != null)
+        if (_enemyTransform != null && _DirectionToEnemy != null)
         {
             RechargeTime -= Time.deltaTime;
 
