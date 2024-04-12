@@ -22,6 +22,11 @@ public class TurretTargetingComponent : MonoBehaviour
         return directionToEnemy;
     }
 
+    public Transform EnemyTransform()
+    {
+        return _enemyTransform;
+    }
+
     void Update()
     {
         if (_enemyTransform != null)
@@ -34,10 +39,10 @@ public class TurretTargetingComponent : MonoBehaviour
 
             _myTransform.rotation = Quaternion.RotateTowards(_myTransform.rotation, targetRotation, RotationVelocity);
         }
-        else
+        /*else
         {
             directionToEnemy = Vector3.zero;
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
