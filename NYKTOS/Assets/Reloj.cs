@@ -47,7 +47,7 @@ public class Reloj : MonoBehaviour
         if(_currentTime < 0)
         {
             _timerOn = false;
-            angle = 135;
+            ResetTimer();
             
         }
     }
