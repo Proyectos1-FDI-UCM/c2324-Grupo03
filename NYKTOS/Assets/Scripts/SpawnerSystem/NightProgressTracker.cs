@@ -5,7 +5,10 @@ using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "GameProgressTracker", menuName = "Manager/GameProgress")]
 public class NightProgressTracker : ScriptableObject
-{   
+{
+    [SerializeField]
+    private FloatEmitter _nightTimeEmitter;
+
     [SerializeField]
     private GameStateMachine _stateMachine;
 
@@ -21,6 +24,7 @@ public class NightProgressTracker : ScriptableObject
     public void InvokeStartNight()
     {
         _startNight.Invoke(_nightList[_night]);
+        _nightTimeEmitter.Perform.Invoke(_nightList[_night].NightLength);
     }
 
     public void AdvanceNight()
