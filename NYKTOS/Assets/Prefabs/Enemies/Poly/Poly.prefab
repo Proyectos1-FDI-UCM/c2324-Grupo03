@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 2511592493935305881}
   - component: {fileID: 3650540130266404871}
   - component: {fileID: 7461357559534789397}
+  - component: {fileID: 2240412041881206351}
   m_Layer: 9
   m_Name: DefaultPolySR
   m_TagString: Untagged
@@ -5046,6 +5047,28 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2240412041881206351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2174821432676138821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c0b3ab708f3454589df8b0b82c077d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _particleMaterialToChange: {fileID: 2100000, guid: 6d3d96b757f46354a8e0029f92c4f0a2, type: 2}
+  _spriteMaterialToChange: {fileID: 2100000, guid: 6d3d96b757f46354a8e0029f92c4f0a2, type: 2}
+  _emisionNormal: 3
+  _speedNormal: 0.7
+  _sizeNormal: 0.05
+  _sizeExplosion: 0.1
+  _emisionInicial: 50
+  _emisionFinal: 60
+  _speedInicial: 3
+  _speedFinal: 5
 --- !u!1 &2493683621264805030
 GameObject:
   m_ObjectHideFlags: 0
@@ -5172,7 +5195,6 @@ Transform:
   - {fileID: 897409071784632817}
   - {fileID: 881895065971421999}
   - {fileID: 3937069955608706822}
-  - {fileID: 4776719303936617520}
   m_Father: {fileID: 4261393046184380584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2995607884255851843
@@ -5259,6 +5281,18 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: 91db806eb91d7fc42b928f9bb40f47a5, type: 2}
         m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2240412041881206351}
+        m_TargetAssemblyTypeName: EnemyParticleEffect, Assembly-CSharp
+        m_MethodName: PlayEffect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5905,7 +5939,6 @@ MonoBehaviour:
   _whereToLookAt: 0
   enterBehaviours:
   - _behaviour: {fileID: 8711176540936773688}
-  - _behaviour: {fileID: 7279674351609774156}
   updateBehaviours: []
   exitBehaviours: []
   possibleStates:
@@ -6043,74 +6076,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3deff16d5a520244953178b22934fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &3199768029294874212
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2554053919625979666}
-    m_Modifications:
-    - target: {fileID: 51357085095625121, guid: 56a52f91f1a34e842ab5efaf74e17a7f, type: 3}
-      propertyPath: explosionParticleSystem
-      value: 
-      objectReference: {fileID: 3650540130266404871}
-    - target: {fileID: 5287583652475883048, guid: 56a52f91f1a34e842ab5efaf74e17a7f, type: 3}
-      propertyPath: m_Name
-      value: ParticleChanger
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939156714285261396, guid: 56a52f91f1a34e842ab5efaf74e17a7f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939156714285261396, guid: 56a52f91f1a34e842ab5efaf74e17a7f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939156714285261396, guid: 56a52f91f1a34e842ab5efaf74e17a7f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939156714285261396, guid: 56a52f91f1a34e842ab5efaf74e17a7f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939156714285261396, guid: 56a52f91f1a34e842ab5efaf74e17a7f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939156714285261396, guid: 56a52f91f1a34e842ab5efaf74e17a7f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939156714285261396, guid: 56a52f91f1a34e842ab5efaf74e17a7f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939156714285261396, guid: 56a52f91f1a34e842ab5efaf74e17a7f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939156714285261396, guid: 56a52f91f1a34e842ab5efaf74e17a7f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939156714285261396, guid: 56a52f91f1a34e842ab5efaf74e17a7f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 56a52f91f1a34e842ab5efaf74e17a7f, type: 3}
---- !u!4 &4776719303936617520 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7939156714285261396, guid: 56a52f91f1a34e842ab5efaf74e17a7f, type: 3}
-  m_PrefabInstance: {fileID: 3199768029294874212}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7279674351609774156 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5287583652475883048, guid: 56a52f91f1a34e842ab5efaf74e17a7f, type: 3}
-  m_PrefabInstance: {fileID: 3199768029294874212}
-  m_PrefabAsset: {fileID: 0}

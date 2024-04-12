@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticleBehaviour : MonoBehaviour, IBehaviour {
+public class EnemyParticleEffect : MonoBehaviour {
 
     /// <summary>
     /// Cambio del material de la particulas cuando sea atacado
@@ -19,7 +19,6 @@ public class ParticleBehaviour : MonoBehaviour, IBehaviour {
     private Material _spriteMaterialToChange;
     private Material _previousSpriteMaterial;
 
-    [SerializeField]
     private ParticleSystem explosionParticleSystem;
     //Anteriores
     [Header("Before")]
@@ -46,21 +45,23 @@ public class ParticleBehaviour : MonoBehaviour, IBehaviour {
     private float _speedFinal = 5f;
 
 
-    public void PerformBehaviour() {
+    public void PlayEffect() {
         StartCoroutine(ChangeParticles());
+        Debug.Log("sprite");
         StartCoroutine(ChangeSprites());
     }
 
     private void Start() {
-        _previousParticleMaterial = GetComponentInParent<HealthComponent>().GetComponentInChildren<ParticleSystemRenderer>().material;
-        _spriteRenderer = GetComponentInParent<HealthComponent>().GetComponentInChildren<SpriteRenderer>();
+        _previousParticleMaterial = GetComponent<ParticleSystemRenderer>().material;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _previousSpriteMaterial = _spriteRenderer.material;
+        explosionParticleSystem = GetComponent<ParticleSystem>();
     }
 
     private IEnumerator ChangeParticles() 
     {
 
-        ParticleSystemRenderer settings = GetComponentInParent<HealthComponent>().GetComponentInChildren<ParticleSystemRenderer>();
+        ParticleSystemRenderer settings = GetComponent<ParticleSystemRenderer>();
         settings.material = _particleMaterialToChange;
 
         var mainModule = explosionParticleSystem.main;
@@ -84,8 +85,8 @@ public class ParticleBehaviour : MonoBehaviour, IBehaviour {
     private IEnumerator ChangeSprites() {
 
         int changes = 0, maxChanges=4;
-        
 
+        Debug.Log("sprite");
         while (changes< maxChanges) {
 
             _spriteRenderer.material = (changes % 2 == 0) ? _spriteMaterialToChange : _previousSpriteMaterial;
