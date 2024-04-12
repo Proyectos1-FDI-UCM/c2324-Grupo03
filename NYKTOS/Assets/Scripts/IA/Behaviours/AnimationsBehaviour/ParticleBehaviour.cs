@@ -47,7 +47,7 @@ public class EnemyParticleEffect : MonoBehaviour {
 
     public void PlayEffect() {
         StartCoroutine(ChangeParticles());
-        Debug.Log("sprite");
+
         StartCoroutine(ChangeSprites());
     }
 
@@ -86,7 +86,7 @@ public class EnemyParticleEffect : MonoBehaviour {
 
         int changes = 0, maxChanges=4;
 
-        Debug.Log("sprite");
+
         while (changes< maxChanges) {
 
             _spriteRenderer.material = (changes % 2 == 0) ? _spriteMaterialToChange : _previousSpriteMaterial;

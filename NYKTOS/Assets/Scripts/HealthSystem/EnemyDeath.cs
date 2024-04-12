@@ -7,6 +7,8 @@ using UnityEngine;
 [System.Serializable]
 public class EnemyDeath : MonoBehaviour, IDeath
 {
+    private bool _isDead = false;
+    public bool isDead { get { return _isDead; } }
     [SerializeField]
     private SpawnLimit _spawnLimit;
 
@@ -15,13 +17,13 @@ public class EnemyDeath : MonoBehaviour, IDeath
 
     public void Death()
     {
+        _isDead = true;
         if(TryGetComponent<CrystalBag>(out CrystalBag enemyBag))
         {
             enemyBag.InstantiateCrystal(transform.position);
         }
 
         _spawnLimit?.RemoveConcurrentEnemy();
-        Destroy(gameObject);
     }
 
     void Start(){
