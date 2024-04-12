@@ -10,6 +10,8 @@ public class Reloj : MonoBehaviour
 
     private bool _timerOn = false;
     private float _currentTime;
+    float angle;
+    float timeVelocity;
 
     private RectTransform _clockTransform;
 
@@ -35,12 +37,16 @@ public class Reloj : MonoBehaviour
 
     private void ChangeTime()
     {
+        angle = angle -timeVelocity * Time.deltaTime;
         _currentTime -= Time.deltaTime;
+        _clockTransform.rotation = Quaternion.Euler (0,0,angle);
+        
 
         if(_currentTime < 0)
         {
             _timerOn = false;
-            _clockTransform.rotation = Quaternion.identity;
+            angle = 135;
+            
         }
     }
 
@@ -48,9 +54,18 @@ public class Reloj : MonoBehaviour
     {
         _currentTime = maxTime;
         _timerOn = true;
+        angle = 45;
+        timeVelocity = (270 / maxTime);
         
     }
-   
+
+    public void ResetTimer()
+    {
+        angle = 90;
+        _timerOn = false;
+        _clockTransform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
 
 
 
