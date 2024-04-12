@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Reloj : MonoBehaviour
 {
-
+    [SerializeField]
+    private FloatEmitter _timerStart;
     //clock variables
 
     private bool _timerOn = false;
@@ -20,6 +21,7 @@ public class Reloj : MonoBehaviour
     void Start()
     {
         _clockTransform = GetComponent<RectTransform>();
+        _timerStart.Perform.AddListener(ActivateTimer);
     }
 
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class Reloj : MonoBehaviour
         if(_currentTime < 0)
         {
             _timerOn = false;
-            angle = 135;
+            ResetTimer();
             
         }
     }
