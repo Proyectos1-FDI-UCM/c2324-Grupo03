@@ -15,6 +15,8 @@ public class WeaponHandler : MonoBehaviour
     #region references
     [SerializeField] private WeaponSOEmmiter _weaponUpgrade;
     #endregion
+
+    #region properties
     [System.Serializable]
     struct weaponStruct
     {
@@ -28,17 +30,37 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField] private weaponStruct weapons = new weaponStruct();
 
     private GameObject instantiatedPrefab;
-    
+
+    //cooldowns
+    private Cooldown primaryCooldown = new Cooldown(0);
+
+    private Cooldown secondaryCooldown = new Cooldown(0);
+
+    #endregion
+
     public void CallPrimaryUse(Vector2 direction)
     {
-        CheckChildren();
-        instantiatedPrefab.GetComponent<Weapon>().PrimaryUse(direction, weapons.scriptableWeapon.damage, weapons.attackType);
+        if (!primaryCooldown.IsCooling())
+        {
+            CheckChildren();
+            instantiatedPrefab.GetComponent<Weapon>().PrimaryUse(direction, weapons.scriptableWeapon.damage, weapons.attackType);
+
+            primaryCooldown = new Cooldown(weapons.scriptableWeapon.primaryAttackCooldown);
+            primaryCooldown.StartCooldown();
+        }
+        
     }
 
     public void CallSecondaryUse(Vector2 direction)
     {
-        CheckChildren();
-        instantiatedPrefab.GetComponent<Weapon>().SecondaryUse(direction, weapons.scriptableWeapon.damage, weapons.attackType);
+        if(!secondaryCooldown.IsCooling())
+        {
+            CheckChildren();
+            instantiatedPrefab.GetComponent<Weapon>().SecondaryUse(direction, weapons.scriptableWeapon.damage, weapons.attackType);
+            secondaryCooldown = new Cooldown(weapons.scriptableWeapon.secondaryAttackCooldown);
+            secondaryCooldown.StartCooldown();
+        }
+        
     }
 
     private void CheckChildren()
