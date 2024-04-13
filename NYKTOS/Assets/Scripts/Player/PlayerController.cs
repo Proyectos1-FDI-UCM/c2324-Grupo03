@@ -20,9 +20,9 @@ public class PlayerController : MonoBehaviour, IKnockback
     [SerializeField]
     private Cooldown _BlinkCooldown;
     [SerializeField]
-    private Cooldown _PrimaryAttackCooldown;
+    private float _PrimaryMovementSlowingCooldown;
     [SerializeField]
-    private Cooldown _SecondaryAttackCooldown;
+    private float _SecondaryMovementSlowingCooldown;
 
     private PlayerStateMachine _playerState;
     #endregion
@@ -116,33 +116,29 @@ public class PlayerController : MonoBehaviour, IKnockback
     public void PrimaryAttack()
     {
         TutorialBuild.InvokePerform();
-        if (PlayerStateMachine.playerState == PlayerState.Idle && !_PrimaryAttackCooldown.IsCooling()&& PlayerStateMachine.playerState != PlayerState.Dead)
+        if (PlayerStateMachine.playerState == PlayerState.Idle && PlayerStateMachine.playerState != PlayerState.Dead)
         {
             _weaponHandler.CallPrimaryUse(_lookDirection.lookDirection);
-            
-            _PrimaryAttackCooldown.StartCooldown();
 
-
-            _playerMovement.AddSpeed(-_playerMovement.movementSpeed /1.5f, _PrimaryAttackCooldown.cooldownTime);
+            _playerMovement.AddSpeed(-_playerMovement.movementSpeed /1.5f, _PrimaryMovementSlowingCooldown);
             CallMove(_privateMovement);
 
             _playerState.SetState(PlayerState.Attacking);
-            _playerState.Invoke(nameof(_playerState.SetIdleState), _PrimaryAttackCooldown.cooldownTime);
+            _playerState.Invoke(nameof(_playerState.SetIdleState), _PrimaryMovementSlowingCooldown);
         }
     }
 
     public void SecondaryAttack()
     {
-        if (PlayerStateMachine.playerState == PlayerState.Idle && !_SecondaryAttackCooldown.IsCooling() && PlayerStateMachine.playerState != PlayerState.Dead)
+        if (PlayerStateMachine.playerState == PlayerState.Idle && PlayerStateMachine.playerState != PlayerState.Dead)
         {
             _weaponHandler.CallSecondaryUse( _lookDirection.lookDirection);
-            _SecondaryAttackCooldown.StartCooldown();
 
-            _playerMovement.AddSpeed(-_playerMovement.movementSpeed / 1.5f, _SecondaryAttackCooldown.cooldownTime);
+            _playerMovement.AddSpeed(-_playerMovement.movementSpeed / 1.5f, _SecondaryMovementSlowingCooldown);
             CallMove(_privateMovement);
 
             _playerState.SetState(PlayerState.Attacking);
-            _playerState.Invoke(nameof(_playerState.SetIdleState), _SecondaryAttackCooldown.cooldownTime);
+            _playerState.Invoke(nameof(_playerState.SetIdleState), _SecondaryMovementSlowingCooldown);
         }
     }
 

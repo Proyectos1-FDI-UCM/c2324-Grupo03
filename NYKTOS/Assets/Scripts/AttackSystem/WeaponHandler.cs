@@ -14,7 +14,9 @@ public class WeaponHandler : MonoBehaviour
 {
     #region references
     [SerializeField] private WeaponSOEmmiter _weaponUpgrade;
-    #endregion
+    #endregion\
+
+    #region properties
     [System.Serializable]
     struct weaponStruct
     {
@@ -28,17 +30,32 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField] private weaponStruct weapons = new weaponStruct();
 
     private GameObject instantiatedPrefab;
-    
+
+
+    private bool primaryOnCooldown = false;
+    private bool secondaryOnCooldown = false;
+    #endregion
+
     public void CallPrimaryUse(Vector2 direction)
     {
-        CheckChildren();
-        instantiatedPrefab.GetComponent<Weapon>().PrimaryUse(direction, weapons.scriptableWeapon.damage, weapons.attackType);
+        if (!primaryOnCooldown)
+        {
+            CheckChildren();
+            instantiatedPrefab.GetComponent<Weapon>().PrimaryUse(direction, weapons.scriptableWeapon.damage, weapons.attackType);
+            StartCoroutine(PrimaryCooldown());
+        }
+        
     }
 
     public void CallSecondaryUse(Vector2 direction)
     {
-        CheckChildren();
-        instantiatedPrefab.GetComponent<Weapon>().SecondaryUse(direction, weapons.scriptableWeapon.damage, weapons.attackType);
+        if (!secondaryOnCooldown)
+        {
+            CheckChildren();
+            instantiatedPrefab.GetComponent<Weapon>().SecondaryUse(direction, weapons.scriptableWeapon.damage, weapons.attackType);
+            StartCoroutine (SecondaryCooldown());
+        }
+        
     }
 
     private void CheckChildren()
@@ -50,7 +67,6 @@ public class WeaponHandler : MonoBehaviour
         }
         else if (instantiatedPrefab.name != weapons.scriptableWeapon.weaponPrefab.name)
         {
-            print("a");
             Destroy(instantiatedPrefab);
             instantiatedPrefab = Instantiate(weapons.scriptableWeapon.weaponPrefab, transform);
             instantiatedPrefab.name = weapons.scriptableWeapon.weaponPrefab.name;
@@ -71,5 +87,19 @@ public class WeaponHandler : MonoBehaviour
     {
         if (_weaponUpgrade != null)
         _weaponUpgrade.Perform.AddListener(SetWeapon);
+    }
+
+    private IEnumerator PrimaryCooldown()
+    {
+        primaryOnCooldown = true;
+        yield return new WaitForSeconds(weapons.scriptableWeapon.primaryAttackCooldown);
+        primaryOnCooldown = false;
+    }
+
+    private IEnumerator SecondaryCooldown()
+    {
+        secondaryOnCooldown = true;
+        yield return new WaitForSeconds(weapons.scriptableWeapon.secondaryAttackCooldown);
+        secondaryOnCooldown = false;
     }
 }

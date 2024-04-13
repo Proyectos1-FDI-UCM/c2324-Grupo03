@@ -402,10 +402,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _BlinkCooldown:
     _cooldownTime: 1
-  _PrimaryAttackCooldown:
-    _cooldownTime: 0.3
-  _SecondaryAttackCooldown:
-    _cooldownTime: 0.3
+  _PrimaryMovementSlowingCooldown: 0.3
+  _SecondaryMovementSlowingCooldown: 0.5
   TutorialMovement: {fileID: 11400000, guid: a27dddf68839c3c4481e6eb73d3ef2ea, type: 2}
   TutorialBlink: {fileID: 11400000, guid: 1afac494d7f101046b3f657927d76952, type: 2}
   TutorialAttack: {fileID: 11400000, guid: b1da115a8ab028f438a295715950f9b9, type: 2}
