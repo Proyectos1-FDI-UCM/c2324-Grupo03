@@ -14,7 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponName: Club
   _damage: 3
-  _primaryAttackCooldown: 0.3
-  _secondaryAttackCooldown: 0
   _weaponImage: {fileID: -1280224887, guid: 3b0773167421e9947847348d536e6811, type: 3}
   _weaponPrefab: {fileID: 7229351717378091717, guid: 61de4f1061ba53e4eb189355e9fa69a7, type: 3}

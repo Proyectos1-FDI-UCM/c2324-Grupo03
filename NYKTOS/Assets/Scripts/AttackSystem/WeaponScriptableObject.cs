@@ -18,14 +18,6 @@ public class WeaponScriptableObject : ScriptableObject
     private int _damage = 0;
 
     [SerializeField]
-    private float _primaryAttackCooldown = 0f;
-    [SerializeField]
-    private float _secondaryAttackCooldown = 0f;
-    public float primaryAttackCooldown { get { return _primaryAttackCooldown; } }
-    public float secondaryAttackCooldown { get { return _secondaryAttackCooldown; } }
-    
-
-    [SerializeField]
     private Sprite _weaponImage;
     public Sprite weaponImage {  get { return _weaponImage; } }
 
