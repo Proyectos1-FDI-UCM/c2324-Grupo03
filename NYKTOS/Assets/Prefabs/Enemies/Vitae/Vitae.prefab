@@ -5576,6 +5576,7 @@ Transform:
   - {fileID: 9033634003699553645}
   - {fileID: 6778249153887512471}
   - {fileID: 5301501047313706599}
+  - {fileID: 3252261506007638699}
   m_Father: {fileID: 6731947301556039481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2832651098790204141
@@ -5843,6 +5844,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waitTime: 0.4
+--- !u!1 &5544842621648056773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3252261506007638699}
+  - component: {fileID: 8360681675334427207}
+  m_Layer: 0
+  m_Name: DisableHitboxes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3252261506007638699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5544842621648056773}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.15600014, y: 0.14599991, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3269263185523594360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8360681675334427207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5544842621648056773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930d46f6f17a50d4782ba4f050ed7781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6210605561509811148
 GameObject:
   m_ObjectHideFlags: 0
@@ -6165,6 +6210,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3286285227843049611, guid: b956f0aad0bb69141a65708826231b8e, type: 3}
+      propertyPath: enterBehaviours.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3286285227843049611, guid: b956f0aad0bb69141a65708826231b8e, type: 3}
       propertyPath: exitBehaviours.Array.data[0]._behaviour
       value: 
       objectReference: {fileID: 663456342002386360}
@@ -6172,6 +6221,10 @@ PrefabInstance:
       propertyPath: enterBehaviours.Array.data[0]._behaviour
       value: 
       objectReference: {fileID: 7495377011902058311}
+    - target: {fileID: 3286285227843049611, guid: b956f0aad0bb69141a65708826231b8e, type: 3}
+      propertyPath: enterBehaviours.Array.data[1]._behaviour
+      value: 
+      objectReference: {fileID: 5544842621648056773}
     - target: {fileID: 3286285227843049611, guid: b956f0aad0bb69141a65708826231b8e, type: 3}
       propertyPath: possibleStates.Array.data[0].enterConditions.Array.data[0]._condition
       value: 

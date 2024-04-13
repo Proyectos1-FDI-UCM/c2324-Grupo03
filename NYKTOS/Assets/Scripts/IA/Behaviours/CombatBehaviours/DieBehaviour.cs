@@ -9,5 +9,6 @@ public class DieBejaviour : MonoBehaviour, IBehaviour
     {
         Debug.Log("morir");
         Destroy(GetComponentInParent<HealthComponent>().gameObject);
+        
     }
 }

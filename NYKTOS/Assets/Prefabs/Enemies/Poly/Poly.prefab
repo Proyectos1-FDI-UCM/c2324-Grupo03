@@ -5205,6 +5205,7 @@ Transform:
   - {fileID: 881895065971421999}
   - {fileID: 3937069955608706822}
   - {fileID: 4735370971240045314}
+  - {fileID: 4858427674810756590}
   m_Father: {fileID: 4261393046184380584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2995607884255851843
@@ -5767,6 +5768,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69e2f5bbf5c05047b95992305a26259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7171816723125351543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4858427674810756590}
+  - component: {fileID: 476160999928854209}
+  m_Layer: 0
+  m_Name: DisableHitboxes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4858427674810756590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171816723125351543}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.22105394, y: 0.106571615, z: -0.17436773}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2554053919625979666}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &476160999928854209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171816723125351543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930d46f6f17a50d4782ba4f050ed7781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7177590641927233733
 GameObject:
   m_ObjectHideFlags: 0
@@ -6140,6 +6185,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3286285227843049611, guid: b956f0aad0bb69141a65708826231b8e, type: 3}
+      propertyPath: enterBehaviours.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3286285227843049611, guid: b956f0aad0bb69141a65708826231b8e, type: 3}
       propertyPath: exitBehaviours.Array.data[0]._behaviour
       value: 
       objectReference: {fileID: 76789708004487389}
@@ -6147,6 +6196,10 @@ PrefabInstance:
       propertyPath: enterBehaviours.Array.data[0]._behaviour
       value: 
       objectReference: {fileID: 7617789740012206592}
+    - target: {fileID: 3286285227843049611, guid: b956f0aad0bb69141a65708826231b8e, type: 3}
+      propertyPath: enterBehaviours.Array.data[1]._behaviour
+      value: 
+      objectReference: {fileID: 7171816723125351543}
     - target: {fileID: 3286285227843049611, guid: b956f0aad0bb69141a65708826231b8e, type: 3}
       propertyPath: possibleStates.Array.data[0].enterConditions.Array.data[0]._condition
       value: 
