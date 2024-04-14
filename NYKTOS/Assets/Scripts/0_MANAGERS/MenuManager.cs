@@ -57,7 +57,9 @@ public class MenuManager : MonoBehaviour
     private GameObject _weaponUpgradeMenu;
 
     [SerializeField]
-    private GameObject _weaponEffectMenu;
+    private GameObject _weaponEffectMenu; 
+    [SerializeField]
+    private GameObject _settingsMenu;
 
     // Si los settings son solo el sonido, podemos poner un slider en el menu de pausa y ya
     //[SerializeField] 
@@ -81,15 +83,15 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private Button _weaponEffectButton;
 
-    //[SerializeField]
-    //private Button _settingsButton;
+    [SerializeField]
+    private Button _settingsButton;
 
     #endregion
 
     #endregion
 
     #region properties
-    private GameObject[] _menuList = new GameObject[5];
+    private GameObject[] _menuList = new GameObject[6];
     #endregion
 
     #region events
@@ -147,6 +149,7 @@ public class MenuManager : MonoBehaviour
         _menuList[2] = _defenseMenu;
         _menuList[3] = _weaponUpgradeMenu;
         _menuList[4] = _weaponEffectMenu;
+        _menuList[5] = _settingsMenu;
 
     }
 
@@ -164,7 +167,7 @@ public class MenuManager : MonoBehaviour
     public void OpenDefenseMenu() => OpenMenu(_defenseMenu, _defenseButton);
     public void OpenWeaponUpgradeMenu() => OpenMenu(_weaponUpgradeMenu, _weaponUpgradeButton);
     public void OpenWeaponEffectMenu() => OpenMenu(_weaponEffectMenu, _weaponEffectButton);
-
+    public void OpenSettingsMenu() => OpenMenu(_settingsMenu, _settingsButton);
     #endregion
 
     #region close menus

@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 public class VolumeSettings : MonoBehaviour
 {
-    //Configuracion del sonido
+    //Configuracion del sonido de Maria
 
     [SerializeField]
     private AudioMixer _audioMixer;
@@ -36,7 +36,7 @@ public class VolumeSettings : MonoBehaviour
                 break;
             case VolumeType.Effects:
                 _audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
-                Debug.Log("Efectos");
+                
                 break;
             case VolumeType.Music:
                 _audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
