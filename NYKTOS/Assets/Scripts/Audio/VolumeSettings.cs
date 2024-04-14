@@ -5,14 +5,50 @@ using UnityEngine.Audio;
 
 public class VolumeSettings : MonoBehaviour
 {
+    //Configuracion del sonido
+
     [SerializeField]
     private AudioMixer _audioMixer;
+
+    
+
     private void Start() {
-        SetVolume(0.01f);
+        SetVolume(0.01f, VolumeType.Master);
+        SetVolume(0.01f, VolumeType.Effects);
+        SetVolume(0.01f, VolumeType.Music);
     }
-    public void SetVolume(float volume) 
-    {
-        _audioMixer.SetFloat("Volume", Mathf.Log10(volume)*20);
-        //Debug.Log(volume);
+    public void SetMasterVolumeSlider(float volume) {
+        SetVolume(volume, VolumeType.Master);
+    }
+
+    public void SetEffectsVolumeSlider(float volume) {
+        SetVolume(volume, VolumeType.Effects);
+    }
+
+    public void SetMusicVolumeSlider(float volume) {
+        SetVolume(volume, VolumeType.Music);
+    }
+    public void SetVolume(float volume, VolumeType type) {
+        switch (type) {
+            case VolumeType.Master:
+                _audioMixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
+                
+                break;
+            case VolumeType.Effects:
+                _audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
+                Debug.Log("Efectos");
+                break;
+            case VolumeType.Music:
+                _audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+                break;
+        }
     }
 }
+public enum VolumeType {
+    Master,
+    Effects,
+    Music
+}
+
+
+

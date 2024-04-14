@@ -15,7 +15,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 2155678276868800397}
-  m_UserColorIndex: 0
+  m_UserColorIndex: 2
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
@@ -34,7 +34,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: -2853072486684105464}
-  m_UserColorIndex: 0
+  m_UserColorIndex: 6
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
@@ -70,6 +70,10 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: 3cdabd846dadb234dba8b06829fd8055
     name: Volume
+  - guid: 917f54d393d83a74ea42b63630b97bd5
+    name: MusicVolume
+  - guid: 0377cd832a485464088f6e21f92b5326
+    name: SFXVolume
   m_AudioMixerGroupViews:
   - guids:
     - e8b6e1aeefdd2bd4aa6b83efd30e7411
@@ -124,8 +128,10 @@ AudioMixerSnapshotController:
   m_SnapshotID: 25fd5b282b8cb9c4a904d4663bc45285
   m_FloatValues:
     1cfade33810ad4a45845d40ba3138fbb: 1
+    0377cd832a485464088f6e21f92b5326: -39.703533
     2de5fbc30360c424c9d874bf23e6a1fa: 0.742
-    3cdabd846dadb234dba8b06829fd8055: -14.4
+    917f54d393d83a74ea42b63630b97bd5: -39.703533
+    3cdabd846dadb234dba8b06829fd8055: -39.97503
     67842488b41a5a940bebac4d10e1411d: 7.33
     a27a2faa9a464e64885a7c1a6b3ed4d0: 0.885
     2578785c9ade35549b8404258d2a72d1: 1
