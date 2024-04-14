@@ -26,12 +26,14 @@ public class AudioPlayer : ScriptableObject
     [SerializeField]
     private ReproductionType _reproductionType = ReproductionType.First;
 
-    private enum AudioType
+    public enum AudioType
     {
         FX, Music
     }
     [SerializeField]
     private AudioType _audioType = AudioType.Music;
+
+    public AudioType audioType { get { return _audioType; } }
     #endregion
 
     #region events

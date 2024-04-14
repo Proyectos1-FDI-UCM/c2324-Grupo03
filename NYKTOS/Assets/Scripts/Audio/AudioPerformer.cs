@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing.Text;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Events;
 
 public class AudioPerformer : MonoBehaviour
 {
     static private AudioPerformer instance;
     AudioPlayer[] players;
+
+    [SerializeField] AudioMixerGroup sfxMixer;
+    [SerializeField] AudioMixerGroup musicMixer;
     void Awake()
     {
         
@@ -24,18 +28,35 @@ public class AudioPerformer : MonoBehaviour
             for (int i = 0; i < players.Length; i++)
             {
                 AudioSource currentSource = gameObject.AddComponent<AudioSource>();
+                
                 if (players[i] != null)
                 {
+                    
+                    if (players[i].audioType == AudioPlayer.AudioType.Music)
+                    {
+                        currentSource.clip = players[i].clip[0];
+                        currentSource.volume = players[i].volume;
+                        currentSource.loop = players[i].loop;
+
+                        currentSource.outputAudioMixerGroup = musicMixer;
+                    }
+                    else currentSource.outputAudioMixerGroup = sfxMixer;
+
+                    //suscripcion a eventos
                     players[i].playAudio.AddListener((AudioClip clip, float volume, bool loop, bool isMusic) =>
                     {
-                        currentSource.clip = clip;
-                        currentSource.volume = volume;
-                        currentSource.loop = loop;
                         if (isMusic)
                         {
                             currentSource.Play();
                         }
-                        else currentSource.PlayOneShot(clip, volume);
+                        else
+                        {
+                            currentSource.clip = clip;
+                            currentSource.volume = volume;
+                            currentSource.loop = loop;
+                            currentSource.PlayOneShot(clip, volume);
+                        }
+                        
 
                     });
 
