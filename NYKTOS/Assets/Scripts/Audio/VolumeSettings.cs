@@ -10,12 +10,10 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField]
     private AudioMixer _audioMixer;
 
-    
-
     private void Start() {
-        SetVolume(0.01f, VolumeType.Master);
-        SetVolume(0.01f, VolumeType.Effects);
-        SetVolume(0.01f, VolumeType.Music);
+        SetVolume(0.5f, VolumeType.Master);
+        SetVolume(0.5f, VolumeType.Effects);
+        SetVolume(0.5f, VolumeType.Music);
     }
     public void SetMasterVolumeSlider(float volume) {
         SetVolume(volume, VolumeType.Master);

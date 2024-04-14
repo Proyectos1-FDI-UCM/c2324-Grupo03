@@ -8602,6 +8602,7 @@ GameObject:
   - component: {fileID: 3440641815732349696}
   - component: {fileID: 3395090818351271059}
   - component: {fileID: 8618545276459786791}
+  - component: {fileID: 6640208229080656664}
   m_Layer: 5
   m_Name: UI Gameplay
   m_TagString: Untagged
@@ -8730,6 +8731,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6640208229080656664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8276733419907818334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c96133b0595b824a98ad8e53fc9be05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioMixer: {fileID: 24100000, guid: 8684f367318ac9b4cb9e74c6da49b530, type: 2}
 --- !u!1 &8364398961299018337
 GameObject:
   m_ObjectHideFlags: 0
@@ -9926,6 +9940,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2797524090894805987, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6640208229080656664}
+    - target: {fileID: 2797524090894805987, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetEffectsVolumeSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006699132524864587, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6640208229080656664}
+    - target: {fileID: 3006699132524864587, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolumeSlider
+      objectReference: {fileID: 0}
     - target: {fileID: 3134458165628800449, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -9941,6 +9971,14 @@ PrefabInstance:
     - target: {fileID: 4318965539054862159, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160762920535131096, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6640208229080656664}
+    - target: {fileID: 7160762920535131096, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMasterVolumeSlider
       objectReference: {fileID: 0}
     - target: {fileID: 8376954796408823986, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
       propertyPath: m_Pivot.x
@@ -10042,7 +10080,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 544309210391698333, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
