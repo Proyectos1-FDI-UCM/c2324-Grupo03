@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 08869261340916e4dabecfda02954c14
+guid: bcdc24bc887355f43ac1b616847fdad3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hemera_0
+      name: Hemera 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
-        width: 32
-        height: 48
+        x: 4
+        y: 53
+        width: 25
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cefe46a836ec9e845869463c82e76560
-      internalID: 1008187958
+      spriteID: da89e8c0d61f39845a9b9a85cf1527dc
+      internalID: 1191222721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hemera_1
+      name: Hemera 1_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
-        width: 32
-        height: 48
+        x: 36
+        y: 53
+        width: 24
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9da273cc948b63d4f846a0c86ceb5137
-      internalID: -1521145871
+      spriteID: c64a992225b8f1246a00aaffacc8c6cf
+      internalID: 1278997498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hemera_2
+      name: Hemera 1_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 48
-        width: 32
-        height: 48
+        x: 70
+        y: 53
+        width: 24
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abf31a12fff9e1347b569607237ed95a
-      internalID: 1109689012
+      spriteID: 107fc8dd1775c684b853d06b196f013d
+      internalID: -1116518262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hemera_3
+      name: Hemera 1_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 48
-        width: 32
-        height: 48
+        x: 99
+        y: 53
+        width: 24
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be6462868e0193d46a6880447b6dfa3c
-      internalID: 1005809646
+      spriteID: ad9113fdeef8c6a4c9e449b45e125138
+      internalID: 33099253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hemera_4
+      name: Hemera 1_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 48
+        x: 5
+        y: 6
+        width: 25
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 900eead6b30f6334d9a10ca35330125e
-      internalID: 220112218
+      spriteID: abfa189fadbe13b46ad413d769fa9ba6
+      internalID: -2145551424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hemera_5
+      name: Hemera 1_5
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 48
+        x: 37
+        y: 6
+        width: 25
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb0f9a90295e79547a50360235d6ae76
-      internalID: -1385932667
+      spriteID: da756b4ff721a2f4cac983020b3b926e
+      internalID: 413421658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hemera_6
+      name: Hemera 1_6
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 48
+        x: 71
+        y: 6
+        width: 24
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 597aeeafcf55dfa4a90a12eb1c4a4a62
-      internalID: 1218071478
+      spriteID: 053b286dd656b4c43a21ecd51e71eb3f
+      internalID: 945492435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hemera_7
+      name: Hemera 1_7
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 48
+        x: 100
+        y: 6
+        width: 24
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7045c0a7654eeb747b062ecc38efa5f6
-      internalID: 1664574469
+      spriteID: 6730ad7e026ee4c41a73a5afbeb1ca25
+      internalID: 969694672
       vertices: []
       indices: 
       edges: []
@@ -288,14 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hemera_0: 1008187958
-      Hemera_1: -1521145871
-      Hemera_2: 1109689012
-      Hemera_3: 1005809646
-      Hemera_4: 220112218
-      Hemera_5: -1385932667
-      Hemera_6: 1218071478
-      Hemera_7: 1664574469
+      Hemera 1_0: 1191222721
+      Hemera 1_1: 1278997498
+      Hemera 1_2: -1116518262
+      Hemera 1_3: 33099253
+      Hemera 1_4: -2145551424
+      Hemera 1_5: 413421658
+      Hemera 1_6: 945492435
+      Hemera 1_7: 969694672
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
