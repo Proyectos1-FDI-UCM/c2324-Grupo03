@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] GameObject textBox;
 
     [SerializeField] private BoolEmitter enablePlayerActions;
+
+    [SerializeField] GameObject HUD;
     #endregion
     private void Awake()
     {
@@ -64,6 +67,7 @@ public class DialogueSystem : MonoBehaviour
     {
         enablePlayerActions?.InvokePerform(false);
 
+        StartCoroutine(EnableHUD(false));
         onDialogue = true;
         textBox.SetActive(true);
         for (int i = 0; i < boxes.Length; i++)
@@ -90,6 +94,7 @@ public class DialogueSystem : MonoBehaviour
         textBox.SetActive(false);
         onDialogue = false;
         enablePlayerActions?.InvokePerform(true);
+        StartCoroutine(EnableHUD(true)) ;
         dialogue.PlayFinishEvent();
     }
 
@@ -136,6 +141,26 @@ public class DialogueSystem : MonoBehaviour
         if (player != null && c != '.' && c != ' ')
         {
             player.Play();
+        }
+    }
+
+    private IEnumerator EnableHUD(bool b)
+    {
+        if (HUD != null)
+        {
+            CanvasGroup canvas = HUD.GetComponent<CanvasGroup>();
+            for (int i =0; i*0.01f < 1; i = i + 10)
+            {
+                if (b == true)
+                {
+                    canvas.alpha = i * 0.01f;
+                }
+                else
+                {
+                    canvas.alpha = 1 - (0.01f * i);
+                }
+                yield return new WaitForEndOfFrame();
+            }
         }
     }
 }
