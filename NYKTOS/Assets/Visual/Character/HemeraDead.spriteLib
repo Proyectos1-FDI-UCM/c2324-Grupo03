@@ -19,9 +19,9 @@ MonoBehaviour:
     m_OverrideEntries:
     - m_Name: New Label
       m_Hash: 259326342
-      m_Sprite: {fileID: 1005809646, guid: 08869261340916e4dabecfda02954c14, type: 3}
+      m_Sprite: {fileID: 33099253, guid: bcdc24bc887355f43ac1b616847fdad3, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: 1664574469, guid: 08869261340916e4dabecfda02954c14, type: 3}
+      m_SpriteOverride: {fileID: 969694672, guid: bcdc24bc887355f43ac1b616847fdad3, type: 3}
     m_FromMain: 1
     m_EntryOverrideCount: 1
   - m_Name: IdleUp
@@ -30,9 +30,9 @@ MonoBehaviour:
     m_OverrideEntries:
     - m_Name: New Label
       m_Hash: 259326342
-      m_Sprite: {fileID: -1521145871, guid: 08869261340916e4dabecfda02954c14, type: 3}
+      m_Sprite: {fileID: 1278997498, guid: bcdc24bc887355f43ac1b616847fdad3, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: -1385932667, guid: 08869261340916e4dabecfda02954c14, type: 3}
+      m_SpriteOverride: {fileID: 413421658, guid: bcdc24bc887355f43ac1b616847fdad3, type: 3}
     m_FromMain: 1
     m_EntryOverrideCount: 1
   - m_Name: IdleLeft
@@ -41,9 +41,9 @@ MonoBehaviour:
     m_OverrideEntries:
     - m_Name: a
       m_Hash: 683130435
-      m_Sprite: {fileID: 1109689012, guid: 08869261340916e4dabecfda02954c14, type: 3}
+      m_Sprite: {fileID: -1116518262, guid: bcdc24bc887355f43ac1b616847fdad3, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: 1218071478, guid: 08869261340916e4dabecfda02954c14, type: 3}
+      m_SpriteOverride: {fileID: 945492435, guid: bcdc24bc887355f43ac1b616847fdad3, type: 3}
     m_FromMain: 1
     m_EntryOverrideCount: 1
   - m_Name: IdleDown
@@ -52,11 +52,11 @@ MonoBehaviour:
     m_OverrideEntries:
     - m_Name: New Label
       m_Hash: 259326342
-      m_Sprite: {fileID: 1008187958, guid: 08869261340916e4dabecfda02954c14, type: 3}
+      m_Sprite: {fileID: 1191222721, guid: bcdc24bc887355f43ac1b616847fdad3, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: 220112218, guid: 08869261340916e4dabecfda02954c14, type: 3}
+      m_SpriteOverride: {fileID: -2145551424, guid: bcdc24bc887355f43ac1b616847fdad3, type: 3}
     m_FromMain: 1
     m_EntryOverrideCount: 1
   m_PrimaryLibraryGUID: 45a068e7a1ee17e4689d979652778836
-  m_ModificationHash: 638481318869333429
+  m_ModificationHash: 638488019998054007
   m_Version: 1
