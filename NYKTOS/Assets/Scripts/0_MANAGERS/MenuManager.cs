@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEditor;
 
 public class MenuManager : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField]
     private VoidEmitter _pauseMenuEmitter;
+    [SerializeField]
+    private VoidEmitter _settingsMenuEmitter;
+
     [SerializeField]
     private VoidEmitter _nexusMenuEmitter;
     [SerializeField] 
@@ -89,7 +93,7 @@ public class MenuManager : MonoBehaviour
     private Button _weaponEffectButton;
 
     [SerializeField]
-    private Button _settingsButton;
+    private Slider _settingsButton;
 
     #endregion
 
@@ -174,7 +178,13 @@ public class MenuManager : MonoBehaviour
     public void OpenDefenseMenu() => OpenMenu(_defenseMenu, _defenseButton);
     public void OpenWeaponUpgradeMenu() => OpenMenu(_weaponUpgradeMenu, _weaponUpgradeButton);
     public void OpenWeaponEffectMenu() => OpenMenu(_weaponEffectMenu, _weaponEffectButton);
-    public void OpenSettingsMenu() => OpenMenu(_settingsMenu, _settingsButton);
+    public void OpenSettingsMenu()
+    {
+        PlayOpenedSound();
+        _settingsMenu.SetActive(true);
+        _settingsButton.Select();
+        SwitchToUIControls();
+    }
     #endregion
 
     #region close menus
@@ -207,6 +217,8 @@ public class MenuManager : MonoBehaviour
         _closeMenusEmitter.Perform.AddListener(CloseAllMenus);
 
         _pauseMenuEmitter.Perform.AddListener(OpenPauseMenu);
+        _settingsMenuEmitter.Perform.AddListener(OpenSettingsMenu);
+
         _nexusMenuEmitter.Perform.AddListener(OpenNexusMenu);
         _tutorialNexusMenuEmitter.Perform.AddListener(OpenTutorialNexusMenu);
         _defenseMenuEmitter.Perform.AddListener(OpenDefenseMenu);
@@ -223,7 +235,11 @@ public class MenuManager : MonoBehaviour
         _closeMenusEmitter.Perform.RemoveListener(CloseAllMenus);
 
         _pauseMenuEmitter.Perform.RemoveListener(OpenPauseMenu);
+        _settingsMenuEmitter.Perform.RemoveListener(OpenSettingsMenu);
+
         _nexusMenuEmitter.Perform.RemoveListener(OpenNexusMenu);
+        _tutorialNexusMenuEmitter.Perform.RemoveListener(OpenTutorialNexusMenu);
+
         _defenseMenuEmitter.Perform.RemoveListener(OpenDefenseMenu);
         _weaponUpgradeMenuEmitter.Perform.RemoveListener(OpenWeaponUpgradeMenu);
         _weaponEffectMenuEmitter.Perform.RemoveListener(OpenWeaponEffectMenu);
