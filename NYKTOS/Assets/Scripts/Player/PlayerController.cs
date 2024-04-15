@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     #endregion
 
     #region tutorials
+    [Header("EMITTERS DEL TUTORIAL")]
     [SerializeField]
     private VoidEmitter TutorialMovement;
     [SerializeField]
