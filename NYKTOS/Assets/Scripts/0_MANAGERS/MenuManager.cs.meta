@@ -7,22 +7,27 @@ MonoImporter:
   - _closeMenusEmitter: {fileID: 11400000, guid: 2b9072c17d1a8b643a3d84e13cd80942, type: 2}
   - _pauseMenuEmitter: {fileID: 11400000, guid: 1f83d2215c671924eaec39ecaf9b6244, type: 2}
   - _nexusMenuEmitter: {fileID: 11400000, guid: 7dee2853a844893449043eaac068bb2b, type: 2}
-  - _altarMenuEmitter: {fileID: 11400000, guid: 3b8e74d1ebfd67546a1f216abfd2eba3, type: 2}
+  - _tutorialNexusMenuEmitter: {fileID: 11400000, guid: 83eb0bb03fa9bf44f96a567d0495d74f, type: 2}
   - _defenseMenuEmitter: {fileID: 11400000, guid: 61d01db8c8f871a4684fcf3b82b8a031, type: 2}
   - _weaponUpgradeMenuEmitter: {fileID: 11400000, guid: 1e1cdcdcf5f368941b553f87e0b31b2e, type: 2}
   - _weaponEffectMenuEmitter: {fileID: 11400000, guid: 343c80a31b148424bbb6e6f14b65b1cc, type: 2}
+  - _beaconBuildEmitter: {fileID: 11400000, guid: bd66721845a72d9458e1061aec7616b9, type: 2}
+  - _wallBuildEmitter: {fileID: 11400000, guid: 41bf204db3d38e546a632d72b95afb04, type: 2}
+  - _turretBuildEmitter: {fileID: 11400000, guid: 9c3057776ab85794eb818a6c68c0dbdb, type: 2}
   - _pauseMenu: {instanceID: 0}
   - _nexusMenu: {instanceID: 0}
-  - _altarMenu: {instanceID: 0}
+  - _tutorialNexusMenu: {instanceID: 0}
   - _defenseMenu: {instanceID: 0}
   - _weaponUpgradeMenu: {instanceID: 0}
   - _weaponEffectMenu: {instanceID: 0}
+  - _settingsMenu: {instanceID: 0}
   - _pauseButton: {instanceID: 0}
   - _nexusButton: {instanceID: 0}
-  - _altarButton: {instanceID: 0}
+  - _tutorialNexusButton: {instanceID: 0}
   - _defenseButton: {instanceID: 0}
   - _weaponUpgradeButton: {instanceID: 0}
   - _weaponEffectButton: {instanceID: 0}
+  - _settingsButton: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

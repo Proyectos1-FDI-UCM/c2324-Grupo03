@@ -5,7 +5,7 @@ using UnityEngine;
 public class NexusComponent : MonoBehaviour, IBuilding
 {
     
-    #region emmiters
+    #region emitters
     [SerializeField]
     private VoidEmitter _playerDeathEmitter;
     [SerializeField]
