@@ -8734,6 +8734,7 @@ GameObject:
   - component: {fileID: 128703830896465111}
   - component: {fileID: 1984820098967060961}
   - component: {fileID: 8065363311226161487}
+  - component: {fileID: 7132586548013730553}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -8883,6 +8884,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timerStart: {fileID: 11400000, guid: ee4e5df36de1a6249ba2dc81292fc4f6, type: 2}
+--- !u!225 &7132586548013730553
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7435931973371276927}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7466826258614604566
 GameObject:
   m_ObjectHideFlags: 0
@@ -11588,6 +11601,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6385838387607079583, guid: 572a4e2795d606c4f88148c59814273c, type: 3}
+      propertyPath: HUD
+      value: 
+      objectReference: {fileID: 7435931973371276927}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
