@@ -8,6 +8,10 @@ public class DialogueScriptableObject : ScriptableObject
 {
     [SerializeField]
     private string[] _dialogueBoxes;
+
+    [SerializeField] private AudioPlayer _voice;
+    public AudioPlayer voice { get { return _voice; } }
+
     [SerializeField] private UnityEvent _onDialogueFinish = new UnityEvent();
 
     public string[] dialogueBoxes { get { return _dialogueBoxes; } }

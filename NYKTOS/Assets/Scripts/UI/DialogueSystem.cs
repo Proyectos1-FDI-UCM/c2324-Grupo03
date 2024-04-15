@@ -74,11 +74,13 @@ public class DialogueSystem : MonoBehaviour
                 if (resumeDialogue)
                 {
                     text.text = boxes[i];
+                    PlayVoice(dialogue.voice, 'a');
                     resumeDialogue = false;
                 }
                 else
                 {
                     text.text = text.text + boxes[i][j];
+                    PlayVoice(dialogue.voice, boxes[i][j]);
                     yield return new WaitForSeconds(0.05f);
                 }
             }
@@ -99,6 +101,9 @@ public class DialogueSystem : MonoBehaviour
         for (int i = 0; i < box.Length; i++)
         {
             text.text = text.text + box[i];
+
+            PlayVoice(dialogue.voice, box[i]);
+
             yield return new WaitForSeconds(0.05f);
         }
 
@@ -126,4 +131,11 @@ public class DialogueSystem : MonoBehaviour
         else resumeDialogue = false;
     }
 
+    private void PlayVoice(AudioPlayer player, char c)
+    {
+        if (player != null && c != '.' && c != ' ')
+        {
+            player.Play();
+        }
+    }
 }

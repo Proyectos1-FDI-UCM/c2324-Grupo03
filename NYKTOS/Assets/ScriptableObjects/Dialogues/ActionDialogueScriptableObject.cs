@@ -9,6 +9,9 @@ public class ActionDialogueScriptableObject : ScriptableObject
     [SerializeField]
     private string _dialogueBox;
 
+    [SerializeField] private AudioPlayer _voice;
+    public AudioPlayer voice { get { return _voice; } }
+
     [SerializeField] private UnityEvent _onDialogueFinish = new UnityEvent();
 
     public string dialogueBox { get { return _dialogueBox; } }

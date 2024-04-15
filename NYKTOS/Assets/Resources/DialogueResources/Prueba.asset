@@ -19,6 +19,7 @@ MonoBehaviour:
   - es a su vez causa y efecto
   - a volar
   - AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueFinish:
     m_PersistentCalls:
       m_Calls:
