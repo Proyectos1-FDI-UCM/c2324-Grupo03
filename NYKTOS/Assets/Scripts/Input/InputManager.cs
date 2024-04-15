@@ -160,8 +160,8 @@ public class InputManager : MonoBehaviour
 
     public void EnablePlayerInput(bool enable)
     {
-        if (enable) _playerControls.Player.Enable();
-        else _playerControls.Player.Disable();
+        if (enable) this.enabled = true;
+        else this.enabled = false;
     }
 
     public void EnableUIInput(bool enable)

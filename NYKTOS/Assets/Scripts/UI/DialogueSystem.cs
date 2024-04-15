@@ -6,14 +6,22 @@ using UnityEngine;
 
 public class DialogueSystem : MonoBehaviour
 {
+    #region controles de dialogo
     private bool onDialogue = false;
-    private DialogueScriptableObject[] dialogues;
+    private bool resumeDialogue = false;
+    #endregion
 
+    #region properties
+    private DialogueScriptableObject[] dialogues;
+    #endregion
+
+    #region references
     [SerializeField] private TextMeshProUGUI text;
 
     [SerializeField] GameObject textBox;
 
     [SerializeField] private BoolEmitter enablePlayerActions;
+    #endregion
     private void Awake()
     {
         textBox.SetActive(false);
@@ -33,6 +41,7 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
+    
     private IEnumerator StartDialogue(string[] boxes, bool canMove)
     {
         if (!canMove)
@@ -45,12 +54,21 @@ public class DialogueSystem : MonoBehaviour
         for (int i = 0;i < boxes.Length;i++)
         {
             text.text = "";
-            for (int j =0; j < boxes[i].Length;j++)
+            for (int j =0; j < boxes[i].Length && text.text != boxes[i] ;j++)
             {
-                text.text = text.text + boxes[i][j];
-                yield return new WaitForSeconds(0.05f);
+                if (resumeDialogue)
+                {
+                    text.text = boxes[i];
+                    resumeDialogue = false;
+                }
+                else
+                {
+                    text.text = text.text + boxes[i][j];
+                    yield return new WaitForSeconds(0.05f);
+                }
             }
-            yield return new WaitForSeconds(1f);
+            yield return new WaitUntil(() => resumeDialogue);
+            resumeDialogue = false;
         }
         textBox.SetActive(false);
         onDialogue = false;
@@ -68,6 +86,12 @@ public class DialogueSystem : MonoBehaviour
         {
             dialogues[i].dialogueStarted.RemoveAllListeners();
         }
+    }
+
+    public void ResumeDialogue()
+    {
+        if (onDialogue) resumeDialogue = true;
+        else resumeDialogue = false;
     }
 
 }
