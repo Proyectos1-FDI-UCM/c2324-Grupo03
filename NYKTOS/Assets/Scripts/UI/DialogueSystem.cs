@@ -1,18 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogueSystem : MonoBehaviour
 {
     #region controles de dialogo
     private bool onDialogue = false;
     private bool resumeDialogue = false;
+
+    private bool performedEvent = false;
     #endregion
 
     #region properties
-    private DialogueScriptableObject[] dialogues;
+    private DialogueScriptableObject[] talkingDialogues;
+    private ActionDialogueScriptableObject[] actionDialogues;
     #endregion
 
     #region references
@@ -25,36 +27,49 @@ public class DialogueSystem : MonoBehaviour
     private void Awake()
     {
         textBox.SetActive(false);
-        dialogues = Resources.LoadAll<DialogueScriptableObject>("DialogueResources");
+        talkingDialogues = Resources.LoadAll<DialogueScriptableObject>("DialogueResources");
+        actionDialogues = Resources.LoadAll<ActionDialogueScriptableObject>("DialogueResources");
 
-        for (int i = 0; i < dialogues.Length; i++)
+        //Suscripcion de metodo de TALKING DIALOGUES
+        for (int i = 0; i < talkingDialogues.Length; i++)
         {
-            dialogues[i].dialogueStarted.AddListener((string[] dialogueBoxes, bool canMove)=>
+            talkingDialogues[i].dialogueStarted.AddListener((string[] dialogueBoxes, DialogueScriptableObject dialogue) =>
             {
                 if (!onDialogue)
                 {
-                    StartCoroutine(StartDialogue(dialogueBoxes, canMove));
+                    StartCoroutine(StartTalkingDialogue(dialogueBoxes, dialogue));
+                    
                 }
-                else Debug.LogError("Se ha intentado reproducir un dialogo mientras el jugador ya se encuentra en uno.");
-                
-            }) ;
+                else Debug.LogError("Se ha intentado reproducir un dialogo normal mientras el jugador ya se encuentra en uno.");
+
+            });
+        }
+
+        //Suscripcion de metodo de ACTION DIALOGUES
+        for (int i = 0;i < actionDialogues.Length; i++)
+        {
+            actionDialogues[i].dialogueStarted.AddListener((string dialogueBox, ActionDialogueScriptableObject dialogue, VoidEmitter emitter) =>
+            {
+                if (!onDialogue)
+                {
+                    StartCoroutine(StartActionDialogue(dialogueBox, dialogue, emitter));
+                }
+                else Debug.LogError("Se ha intentado reproducir un dialogo de accion mientras el jugador ya se encuentra en uno.");
+            });
         }
     }
 
-    
-    private IEnumerator StartDialogue(string[] boxes, bool canMove)
+
+    private IEnumerator StartTalkingDialogue(string[] boxes, DialogueScriptableObject dialogue)
     {
-        if (!canMove)
-        {
-            enablePlayerActions?.InvokePerform(false);
-        }
-        
+        enablePlayerActions?.InvokePerform(false);
+
         onDialogue = true;
         textBox.SetActive(true);
-        for (int i = 0;i < boxes.Length;i++)
+        for (int i = 0; i < boxes.Length; i++)
         {
             text.text = "";
-            for (int j =0; j < boxes[i].Length && text.text != boxes[i] ;j++)
+            for (int j = 0; j < boxes[i].Length && text.text != boxes[i]; j++)
             {
                 if (resumeDialogue)
                 {
@@ -72,19 +87,36 @@ public class DialogueSystem : MonoBehaviour
         }
         textBox.SetActive(false);
         onDialogue = false;
+        enablePlayerActions?.InvokePerform(true);
+        dialogue.PlayFinishEvent();
+    }
 
-        if (!canMove)
+    private IEnumerator StartActionDialogue(string box, ActionDialogueScriptableObject dialogue, VoidEmitter emitter)
+    {
+        text.text = "";
+        onDialogue = true;
+        textBox.SetActive(true);
+        for (int i = 0; i < box.Length; i++)
         {
-            enablePlayerActions?.InvokePerform(true);
+            text.text = text.text + box[i];
+            yield return new WaitForSeconds(0.05f);
         }
-        
+
+        emitter.Perform.AddListener(() => performedEvent = true);
+        yield return new WaitUntil(()=> performedEvent);
+
+
+        performedEvent = false;
+        textBox.SetActive(false);
+        onDialogue = false;
+        dialogue.PlayFinishEvent();
     }
 
     private void OnDestroy()
     {
-        for (int i=0;i < dialogues.Length; i++)
+        for (int i = 0; i < talkingDialogues.Length; i++)
         {
-            dialogues[i].dialogueStarted.RemoveAllListeners();
+            talkingDialogues[i].dialogueStarted.RemoveAllListeners();
         }
     }
 
