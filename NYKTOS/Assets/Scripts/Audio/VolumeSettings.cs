@@ -29,15 +29,15 @@ public class VolumeSettings : MonoBehaviour
     public void SetVolume(float volume, VolumeType type) {
         switch (type) {
             case VolumeType.Master:
-                _audioMixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
+                _audioMixer.SetFloat("Volume", Mathf.Log10(volume*2f)*20f);
                 
                 break;
             case VolumeType.Effects:
-                _audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
+                _audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume*2f)*20f);
                 
                 break;
             case VolumeType.Music:
-                _audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+                _audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume *2f) * 20f);
                 break;
         }
     }
