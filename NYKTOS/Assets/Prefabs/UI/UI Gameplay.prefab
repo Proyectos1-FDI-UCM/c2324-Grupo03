@@ -7030,6 +7030,7 @@ GameObject:
   - component: {fileID: 6556901313655901207}
   - component: {fileID: 8732144109271720814}
   - component: {fileID: 6675259035911767822}
+  - component: {fileID: 1649526536567883925}
   m_Layer: 5
   m_Name: DialogueMenu
   m_TagString: Untagged
@@ -7120,6 +7121,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1649526536567883925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6754540328667431770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91165164935eda641a3236ff9c8de922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 7976783426615290292}
+  textBox: {fileID: 5714337675103215899}
+  enablePlayerActions: {fileID: 11400000, guid: efc370fa782c3e849847404e8bdf48cc, type: 2}
 --- !u!1 &6780464174303355538
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
 
     [SerializeField] GameObject textBox;
+
+    [SerializeField] private BoolEmitter enablePlayerActions;
     private void Awake()
     {
         textBox.SetActive(false);
@@ -33,6 +35,7 @@ public class DialogueSystem : MonoBehaviour
 
     private IEnumerator StartDialogue(string[] boxes)
     {
+        enablePlayerActions?.InvokePerform(false);
         onDialogue = true;
         textBox.SetActive(true);
         for (int i = 0;i < boxes.Length;i++)
@@ -47,6 +50,7 @@ public class DialogueSystem : MonoBehaviour
         }
         textBox.SetActive(false);
         onDialogue = false;
+        enablePlayerActions?.InvokePerform(true);
     }
 
 
