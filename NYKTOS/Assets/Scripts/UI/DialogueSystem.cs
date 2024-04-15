@@ -85,7 +85,7 @@ public class DialogueSystem : MonoBehaviour
                 {
                     text.text = text.text + boxes[i][j];
                     PlayVoice(dialogue.voice, boxes[i][j]);
-                    yield return new WaitForSeconds(0.05f);
+                    yield return new WaitForSeconds(0.075f);
                 }
             }
             yield return new WaitUntil(() => resumeDialogue);
@@ -109,7 +109,7 @@ public class DialogueSystem : MonoBehaviour
 
             PlayVoice(dialogue.voice, box[i]);
 
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.075f);
         }
 
         emitter.Perform.AddListener(() => performedEvent = true);
@@ -138,7 +138,7 @@ public class DialogueSystem : MonoBehaviour
 
     private void PlayVoice(AudioPlayer player, char c)
     {
-        if (player != null && c != '.' && c != ' ')
+        if (player != null && c != '.' && c != ' ' && c!= ',')
         {
             player.Play();
         }
