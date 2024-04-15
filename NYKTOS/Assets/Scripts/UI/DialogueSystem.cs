@@ -1,8 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -29,32 +28,30 @@ public class DialogueSystem : MonoBehaviour
 
         for (int i = 0; i < dialogues.Length; i++)
         {
-            dialogues[i].dialogueStarted.AddListener((string[] dialogueBoxes, bool canMove)=>
+            dialogues[i].dialogueStarted.AddListener((string[] dialogueBoxes, DialogueScriptableObject dialogue) =>
             {
                 if (!onDialogue)
                 {
-                    StartCoroutine(StartDialogue(dialogueBoxes, canMove));
+                    StartCoroutine(StartDialogue(dialogueBoxes, dialogue));
+                    
                 }
                 else Debug.LogError("Se ha intentado reproducir un dialogo mientras el jugador ya se encuentra en uno.");
-                
-            }) ;
+
+            });
         }
     }
 
-    
-    private IEnumerator StartDialogue(string[] boxes, bool canMove)
+
+    private IEnumerator StartDialogue(string[] boxes, DialogueScriptableObject dialogue)
     {
-        if (!canMove)
-        {
-            enablePlayerActions?.InvokePerform(false);
-        }
-        
+        enablePlayerActions?.InvokePerform(false);
+
         onDialogue = true;
         textBox.SetActive(true);
-        for (int i = 0;i < boxes.Length;i++)
+        for (int i = 0; i < boxes.Length; i++)
         {
             text.text = "";
-            for (int j =0; j < boxes[i].Length && text.text != boxes[i] ;j++)
+            for (int j = 0; j < boxes[i].Length && text.text != boxes[i]; j++)
             {
                 if (resumeDialogue)
                 {
@@ -72,17 +69,13 @@ public class DialogueSystem : MonoBehaviour
         }
         textBox.SetActive(false);
         onDialogue = false;
-
-        if (!canMove)
-        {
-            enablePlayerActions?.InvokePerform(true);
-        }
-        
+        enablePlayerActions?.InvokePerform(true);
+        dialogue.PlayFinishEvent();
     }
 
     private void OnDestroy()
     {
-        for (int i=0;i < dialogues.Length; i++)
+        for (int i = 0; i < dialogues.Length; i++)
         {
             dialogues[i].dialogueStarted.RemoveAllListeners();
         }

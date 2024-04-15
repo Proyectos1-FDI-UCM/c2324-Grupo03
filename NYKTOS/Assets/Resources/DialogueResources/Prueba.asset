@@ -19,4 +19,6 @@ MonoBehaviour:
   - es a su vez causa y efecto
   - a volar
   - AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  playerCanMove: 0
+  _onDialogueFinish:
+    m_PersistentCalls:
+      m_Calls: []
