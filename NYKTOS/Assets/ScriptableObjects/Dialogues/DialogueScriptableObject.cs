@@ -9,13 +9,15 @@ public class DialogueScriptableObject : ScriptableObject
     [SerializeField]
     private string[] _dialogueBoxes;
 
+    [SerializeField] private bool playerCanMove = true;
+
     public string[] dialogueBoxes { get { return _dialogueBoxes; } }
 
-    private UnityEvent<string[]> _dialogueStarted = new UnityEvent<string[]>();
-    public UnityEvent<string[]> dialogueStarted { get { return _dialogueStarted; } }
+    private UnityEvent<string[], bool> _dialogueStarted = new UnityEvent<string[], bool>();
+    public UnityEvent<string[], bool> dialogueStarted { get { return _dialogueStarted; } }
 
     public void StartDialogue()
     {
-        _dialogueStarted?.Invoke(_dialogueBoxes);
+        _dialogueStarted?.Invoke(_dialogueBoxes, playerCanMove);
     }
 }

@@ -21,11 +21,11 @@ public class DialogueSystem : MonoBehaviour
 
         for (int i = 0; i < dialogues.Length; i++)
         {
-            dialogues[i].dialogueStarted.AddListener((string[] dialogueBoxes)=>
+            dialogues[i].dialogueStarted.AddListener((string[] dialogueBoxes, bool canMove)=>
             {
                 if (!onDialogue)
                 {
-                    StartCoroutine(StartDialogue(dialogueBoxes));
+                    StartCoroutine(StartDialogue(dialogueBoxes, canMove));
                 }
                 else Debug.LogError("Se ha intentado reproducir un dialogo mientras el jugador ya se encuentra en uno.");
                 
@@ -33,9 +33,13 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    private IEnumerator StartDialogue(string[] boxes)
+    private IEnumerator StartDialogue(string[] boxes, bool canMove)
     {
-        enablePlayerActions?.InvokePerform(false);
+        if (!canMove)
+        {
+            enablePlayerActions?.InvokePerform(false);
+        }
+        
         onDialogue = true;
         textBox.SetActive(true);
         for (int i = 0;i < boxes.Length;i++)
@@ -50,8 +54,20 @@ public class DialogueSystem : MonoBehaviour
         }
         textBox.SetActive(false);
         onDialogue = false;
-        enablePlayerActions?.InvokePerform(true);
+
+        if (!canMove)
+        {
+            enablePlayerActions?.InvokePerform(true);
+        }
+        
     }
 
+    private void OnDestroy()
+    {
+        for (int i=0;i < dialogues.Length; i++)
+        {
+            dialogues[i].dialogueStarted.RemoveAllListeners();
+        }
+    }
 
 }
