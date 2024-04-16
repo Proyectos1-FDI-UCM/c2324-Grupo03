@@ -5,11 +5,6 @@ using UnityEngine.InputSystem;
 
 public class PlaceholderComponent : MonoBehaviour, IBuilding
 {
-    public enum placeholderType
-    {
-        yellow, magenta, cyan
-    }
-
     #region references
     private BuildingStateMachine _state;
     #endregion
@@ -22,6 +17,7 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     #region emitters
     [SerializeField] private BoolEmitter _placeholderInteract;
     [SerializeField] private VoidEmitter _defenseMenu;
+    [SerializeField] private PhTypeEmitter _phTypeEmitter;
 
     [SerializeField]
     private VoidEmitter TutorialConfirm;
@@ -39,6 +35,7 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
         {
             _defenseMenu.InvokePerform();
             UpdateCurrentPlaceHolder();
+            UpdateDefenseMenu();
         }
     }
 
@@ -47,6 +44,11 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     private void UpdateCurrentPlaceHolder()
     {
         BuildingManager.Instance.CurrentPlaceholder = gameObject;
+    }
+
+    private void UpdateDefenseMenu()
+    {
+        _phTypeEmitter.InvokePerform(_type);
     }
 
     void Start()

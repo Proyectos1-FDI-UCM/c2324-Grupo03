@@ -353,6 +353,7 @@ MonoBehaviour:
   _type: 2
   _placeholderInteract: {fileID: 11400000, guid: d1d07e2e43b1030418d35278e36be01e, type: 2}
   _defenseMenu: {fileID: 11400000, guid: 61d01db8c8f871a4684fcf3b82b8a031, type: 2}
+  _phTypeEmitter: {fileID: 11400000, guid: 0893552f948a58341927cb437b49a0b7, type: 2}
   TutorialConfirm: {fileID: 11400000, guid: 32b5c165183a9a94ebfc3a6aea4c474e, type: 2}
 --- !u!114 &5466663901839577672
 MonoBehaviour:
@@ -366,7 +367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758b961723d2f13449fdadf391e7d4c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 2
   _registerPlaceholder: {fileID: 11400000, guid: fa0c530c6e0fed44284b183b9310e9a3, type: 2}
   _placeholderBuilt: {fileID: 11400000, guid: e55c14055672c704dbedc47494f6e280, type: 2}
 --- !u!114 &8708895035124243018

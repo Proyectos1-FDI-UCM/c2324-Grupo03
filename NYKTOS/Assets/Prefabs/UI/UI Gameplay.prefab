@@ -8311,6 +8311,7 @@ GameObject:
   - component: {fileID: 5095162890755933700}
   - component: {fileID: 6118144557772077372}
   - component: {fileID: 3575125053166827482}
+  - component: {fileID: 270822958741597677}
   m_Layer: 5
   m_Name: Icono
   m_TagString: Untagged
@@ -8375,6 +8376,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &270822958741597677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7231101582264694737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45858f0a93bb22341b5e079a1f7b6598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _crystalColor: {fileID: 11400000, guid: 0893552f948a58341927cb437b49a0b7, type: 2}
+  _yellowCrystal: {fileID: 818453920, guid: c968038defd8c614e8da7b2c85c5ac6c, type: 3}
+  _cyanCrystal: {fileID: -1660247839, guid: c968038defd8c614e8da7b2c85c5ac6c, type: 3}
+  _magentaCrystal: {fileID: 1369962793, guid: c968038defd8c614e8da7b2c85c5ac6c, type: 3}
 --- !u!1 &7303406542231964190
 GameObject:
   m_ObjectHideFlags: 0
@@ -9694,6 +9711,7 @@ GameObject:
   - component: {fileID: 2984478340341538830}
   - component: {fileID: 3165338275159187128}
   - component: {fileID: 189728439975754376}
+  - component: {fileID: 521304228496404412}
   m_Layer: 5
   m_Name: Icono
   m_TagString: Untagged
@@ -9758,6 +9776,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &521304228496404412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225084711162606658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45858f0a93bb22341b5e079a1f7b6598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _crystalColor: {fileID: 11400000, guid: 0893552f948a58341927cb437b49a0b7, type: 2}
+  _yellowCrystal: {fileID: 818453920, guid: c968038defd8c614e8da7b2c85c5ac6c, type: 3}
+  _cyanCrystal: {fileID: -1660247839, guid: c968038defd8c614e8da7b2c85c5ac6c, type: 3}
+  _magentaCrystal: {fileID: 1369962793, guid: c968038defd8c614e8da7b2c85c5ac6c, type: 3}
 --- !u!1 &8235626243919245735
 GameObject:
   m_ObjectHideFlags: 0
@@ -10491,6 +10525,7 @@ GameObject:
   - component: {fileID: 8440274811682135784}
   - component: {fileID: 5571240806851275188}
   - component: {fileID: 8671092792521860040}
+  - component: {fileID: 3720568190007101986}
   m_Layer: 5
   m_Name: Icono
   m_TagString: Untagged
@@ -10555,6 +10590,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3720568190007101986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869362784919979021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45858f0a93bb22341b5e079a1f7b6598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _crystalColor: {fileID: 11400000, guid: 0893552f948a58341927cb437b49a0b7, type: 2}
+  _yellowCrystal: {fileID: 818453920, guid: c968038defd8c614e8da7b2c85c5ac6c, type: 3}
+  _cyanCrystal: {fileID: -1660247839, guid: c968038defd8c614e8da7b2c85c5ac6c, type: 3}
+  _magentaCrystal: {fileID: 1369962793, guid: c968038defd8c614e8da7b2c85c5ac6c, type: 3}
 --- !u!1 &8957359906777447792
 GameObject:
   m_ObjectHideFlags: 0

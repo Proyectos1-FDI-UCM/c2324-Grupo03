@@ -102,40 +102,103 @@ public class BuildingManager : MonoBehaviour
     
     public void BuildBeacon()
     {
-        // El faro cuesta x cristales amarillos
-        if (_inventory.Amarillo >= _beaconPrice)
+        switch(_currentPlaceholder.GetComponent<PlaceholderComponent>().type)
         {
-            _inventory.Amarillo -= _beaconPrice;
-            SetBuilding(_beacon);
-            BuildDefense();
+            case placeholderType.yellow:
+                if (_inventory.Amarillo >= _beaconPrice)
+                {
+                    _inventory.Amarillo -= _beaconPrice;
+                    SetBuilding(_beacon);
+                    BuildDefense();
+                }
+                break;
+
+            case placeholderType.cyan:
+                if (_inventory.Cian >= _beaconPrice)
+                {
+                    _inventory.Cian -= _beaconPrice;
+                    SetBuilding(_beacon);
+                    BuildDefense();
+                }
+                break;
+
+            case placeholderType.magenta:
+                if (_inventory.Magenta >= _beaconPrice)
+                {
+                    _inventory.Magenta -= _beaconPrice;
+                    SetBuilding(_beacon);
+                    BuildDefense();
+                }
+                break;
         }
-        // else => Mensaje de no suficientes cristales? -> Por eventos!
-    }    
-    
+    }
+
     public void BuildWall()
     {
-        if(_inventory.Amarillo >= _wallPrice)
+        switch (_currentPlaceholder.GetComponent<PlaceholderComponent>().type)
         {
-            _inventory.Amarillo -= _wallPrice;
-            SetBuilding(_wall);
-            BuildDefense();
+            case placeholderType.yellow:
+                if (_inventory.Amarillo >= _wallPrice)
+                {
+                    _inventory.Amarillo -= _wallPrice;
+                    SetBuilding(_wall);
+                    BuildDefense();
+                }
+                break;
+
+            case placeholderType.cyan:
+                if (_inventory.Cian >= _wallPrice)
+                {
+                    _inventory.Cian -= _wallPrice;
+                    SetBuilding(_wall);
+                    BuildDefense();
+                }
+                break;
+
+            case placeholderType.magenta:
+                if (_inventory.Magenta >= _wallPrice)
+                {
+                    _inventory.Magenta -= _wallPrice;
+                    SetBuilding(_wall);
+                    BuildDefense();
+                }
+                break;
         }
-        // else => Mensaje de no suficientes cristales?
     }
 
     public void BuildTurret()
     {
-        if(_inventory.Amarillo >= _turretPrice)
+        switch (_currentPlaceholder.GetComponent<PlaceholderComponent>().type)
         {
-            _inventory.Amarillo -= _turretPrice;
-            SetBuilding(_turret);
-            BuildDefense();
+            case placeholderType.yellow:
+                if (_inventory.Amarillo >= _turretPrice)
+                {
+                    _inventory.Amarillo -= _turretPrice;
+                    SetBuilding(_turret);
+                    BuildDefense();
+                }
+                break;
+
+            case placeholderType.cyan:
+                if (_inventory.Cian >= _turretPrice)
+                {
+                    _inventory.Cian -= _turretPrice;
+                    SetBuilding(_turret);
+                    BuildDefense();
+                }
+                break;
+
+            case placeholderType.magenta:
+                if (_inventory.Magenta >= _turretPrice)
+                {
+                    _inventory.Magenta -= _turretPrice;
+                    SetBuilding(_turret);
+                    BuildDefense();
+                }
+                break;
         }
-        // else => Mensaje de no suficientes cristales?
     }
     #endregion
-
-
 
     #endregion
 
