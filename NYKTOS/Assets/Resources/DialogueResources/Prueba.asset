@@ -13,12 +13,8 @@ MonoBehaviour:
   m_Name: Prueba
   m_EditorClassIdentifier: 
   _dialogueBoxes:
-  - por que el efecto causa efecto
-  - causa efecto?????
-  - pues porque la causa del efecto causa efecto
-  - es a su vez causa y efecto
-  - a volar
-  - AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  - hola. quien eres??
+  - si, me llamo felipe. Y tu?
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueFinish:
     m_PersistentCalls:
