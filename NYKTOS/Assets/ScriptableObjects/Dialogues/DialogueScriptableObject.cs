@@ -12,6 +12,7 @@ public class DialogueScriptableObject : ScriptableObject
     [SerializeField] private AudioPlayer _voice;
     public AudioPlayer voice { get { return _voice; } }
 
+    [SerializeField] private UnityEvent _onDialogueStart = new UnityEvent();
     [SerializeField] private UnityEvent _onDialogueFinish = new UnityEvent();
 
     public string[] dialogueBoxes { get { return _dialogueBoxes; } }
@@ -27,5 +28,10 @@ public class DialogueScriptableObject : ScriptableObject
     public void PlayFinishEvent()
     {
         _onDialogueFinish?.Invoke();
+    }
+
+    public void PlayEnterEvent()
+    {
+        _onDialogueStart?.Invoke();
     }
 }

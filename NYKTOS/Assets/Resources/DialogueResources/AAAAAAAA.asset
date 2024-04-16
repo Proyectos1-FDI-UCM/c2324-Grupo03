@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogueBoxes:
   - eyeyeyeyeyeyeye
-  _voice: {fileID: 0}
+  _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
+  _onDialogueStart:
+    m_PersistentCalls:
+      m_Calls: []
   _onDialogueFinish:
     m_PersistentCalls:
       m_Calls: []
