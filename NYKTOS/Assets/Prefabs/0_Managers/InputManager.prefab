@@ -50,3 +50,5 @@ MonoBehaviour:
   _pauseEmitter: {fileID: 11400000, guid: ad2d45fe2d0ba464291ba279121ed7dd, type: 2}
   _pauseMenuEmitter: {fileID: 11400000, guid: 1f83d2215c671924eaec39ecaf9b6244, type: 2}
   _closeMenusEmitter: {fileID: 11400000, guid: 2b9072c17d1a8b643a3d84e13cd80942, type: 2}
+  _setDialogueEmitter: {fileID: 11400000, guid: 70ca63d85e784d94d9785fecac0bfe0b, type: 2}
+  _resumeDialogueEmitter: {fileID: 11400000, guid: a6f96831abb32284295a8dd9353001aa, type: 2}

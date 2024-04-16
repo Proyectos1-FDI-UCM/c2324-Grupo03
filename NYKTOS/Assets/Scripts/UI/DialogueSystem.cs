@@ -25,12 +25,16 @@ public class DialogueSystem : MonoBehaviour
 
     [SerializeField] GameObject textBox;
 
-    [SerializeField] private BoolEmitter enablePlayerActions;
+    [SerializeField] private BoolEmitter enableDialogueActions;
 
     [SerializeField] GameObject HUD;
+
+    [SerializeField] private VoidEmitter _resumeDialogueEmitter;
     #endregion
     private void Start()
     {
+        _resumeDialogueEmitter.Perform.AddListener(ResumeDialogue);
+
         textBox.SetActive(false);
         talkingDialogues = Resources.LoadAll<DialogueScriptableObject>("DialogueResources");
         actionDialogues = Resources.LoadAll<ActionDialogueScriptableObject>("DialogueResources");
@@ -78,7 +82,7 @@ public class DialogueSystem : MonoBehaviour
             text.text = "";
             for (int j = 0; j < boxes[i].Length && text.text != boxes[i]; j++)
             {
-                enablePlayerActions?.InvokePerform(false);
+                enableDialogueActions?.InvokePerform(true);
                 if (resumeDialogue)
                 {
                     text.text = boxes[i];
@@ -102,7 +106,7 @@ public class DialogueSystem : MonoBehaviour
         }
         textBox.SetActive(false);
         onDialogue = false;
-        enablePlayerActions?.InvokePerform(true);
+        enableDialogueActions?.InvokePerform(false);
         StartCoroutine(EnableHUD(true)) ;
         dialogue.PlayFinishEvent();
     }
@@ -140,6 +144,7 @@ public class DialogueSystem : MonoBehaviour
 
     private void OnDestroy()
     {
+        _resumeDialogueEmitter.Perform.RemoveListener(ResumeDialogue);
         for (int i = 0; i < talkingDialogues.Length; i++)
         {
             talkingDialogues[i].dialogueStarted.RemoveAllListeners();

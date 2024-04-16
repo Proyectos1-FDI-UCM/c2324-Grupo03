@@ -6,6 +6,7 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "New Action Dialogue", menuName = "Dialogue/Action Dialogue")]
 public class ActionDialogueScriptableObject : ScriptableObject
 {
+    [TextArea(5, 20)]
     [SerializeField]
     private string _dialogueBox;
 

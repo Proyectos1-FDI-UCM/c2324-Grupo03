@@ -28,6 +28,12 @@ public class InputManager : MonoBehaviour
     [SerializeField]
     private VoidEmitter _closeMenusEmitter;
 
+    [SerializeField]
+    private BoolEmitter _setDialogueEmitter;
+
+    [SerializeField]
+    private VoidEmitter _resumeDialogueEmitter;
+
 
     private PlayerController _player;
     private PlayerInput _playerInput;
@@ -113,13 +119,22 @@ public class InputManager : MonoBehaviour
     public void SetDialogueInput(bool value)
     {
         EnablePlayerInput(!value);
-        if(value) _playerControls.Player.NextDialogue.Enable();
+        EnableDialogueActions(value);
+    }
+
+    private void EnableDialogueActions(bool value)
+    {
+        if (value)
+        {
+            _playerControls.Player.NextDialogue.Enable();
+        }
         else _playerControls.Player.NextDialogue.Disable();
     }
 
     private void NextDialogue(InputAction.CallbackContext context)
     {
-
+        print('a');
+        _resumeDialogueEmitter.InvokePerform();
     }
 
     private void PauseGame(InputAction.CallbackContext context)
@@ -248,6 +263,8 @@ public class InputManager : MonoBehaviour
         _stateChanged.Perform.AddListener(OnStateLoad);
         _enablePlayerInput.Perform.AddListener(EnablePlayerInput);
         _enableUIInput.Perform.AddListener(EnableUIInput);
+
+        _setDialogueEmitter.Perform.AddListener(SetDialogueInput);
     }
 
     void OnDestroy()
@@ -256,5 +273,7 @@ public class InputManager : MonoBehaviour
         _enablePlayerInput.Perform.RemoveListener(EnablePlayerInput);
         _enableUIInput.Perform.RemoveListener(EnableUIInput);
 
+        _setDialogueEmitter.Perform.AddListener(SetDialogueInput);
     }
+
 }   
