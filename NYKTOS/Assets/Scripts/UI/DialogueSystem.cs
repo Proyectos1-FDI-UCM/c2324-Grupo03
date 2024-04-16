@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class DialogueSystem : MonoBehaviour
 {
     #region controles de dialogo
+    [SerializeField] float ReadingTime = 0.075f;
+
     private bool onDialogue = false;
     private bool resumeDialogue = false;
 
@@ -85,7 +87,12 @@ public class DialogueSystem : MonoBehaviour
                 {
                     text.text = text.text + boxes[i][j];
                     PlayVoice(dialogue.voice, boxes[i][j]);
-                    yield return new WaitForSeconds(0.075f);
+
+                    if (boxes[i][j] == '.' || boxes[i][j] == ',')
+                    {
+                        yield return new WaitForSeconds(3 * ReadingTime);
+                    }
+                    else yield return new WaitForSeconds(ReadingTime);
                 }
             }
             yield return new WaitUntil(() => resumeDialogue);
@@ -109,7 +116,12 @@ public class DialogueSystem : MonoBehaviour
 
             PlayVoice(dialogue.voice, box[i]);
 
-            yield return new WaitForSeconds(0.075f);
+            if (box[i] == '.' || box[i] == ',')
+            {
+                yield return new WaitForSeconds(3*ReadingTime);
+            }
+            else yield return new WaitForSeconds(ReadingTime);
+
         }
 
         emitter.Perform.AddListener(() => performedEvent = true);
