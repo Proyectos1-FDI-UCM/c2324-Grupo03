@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e0c04246ba850449a5d104a9bb481c, type: 3}
+  m_Name: Dialogo01Tutorial
+  m_EditorClassIdentifier: 
+  _dialogueBoxes:
+  - Al fin has despertado.
+  - Bien. Me alegro profundamente.
+  - Como puedes ver, todo lo que una vez fue conocido ha sido sucumbido por las sombras.
+  - "La oscuridad est\xE1 al acecho, observando cada movimiento que haces."
+  - "H\xE9mera..."
+  - "Tu misi\xF3n es proteger el nexo del templo de las hordas de las sombras,"
+  - 'Por favor... restaura la luz del Templo Olvidado... '
+  _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
+  _onDialogueStart:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDialogueFinish:
+    m_PersistentCalls:
+      m_Calls: []

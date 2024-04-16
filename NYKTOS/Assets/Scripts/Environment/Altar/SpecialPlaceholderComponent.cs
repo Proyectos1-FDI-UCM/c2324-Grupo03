@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class SpecialPlaceholderComponent : MonoBehaviour
 {
-    public enum placeholderType
-    {
-        yellow, magenta, cyan
-    }
-
-    [SerializeField]
-    private placeholderType _type;
-    public placeholderType type { get { return _type; } }
-
     [SerializeField]
     private VoidEmitter _registerPlaceholder;
 
@@ -25,6 +16,7 @@ public class SpecialPlaceholderComponent : MonoBehaviour
 
     void Start()
     {
+
         _registerPlaceholder.InvokePerform();
     }
 

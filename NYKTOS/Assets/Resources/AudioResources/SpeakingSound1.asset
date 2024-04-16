@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SpeakingSound1
   m_EditorClassIdentifier: 
   _clip:
-  - {fileID: 8300000, guid: ede3c1cd1780b9d499b8ad73b0b91695, type: 3}
+  - {fileID: 8300000, guid: 7801deeb837ebb74ea20903993ffbd74, type: 3}
   _volume: 1
   _loop: 0
   _reproductionType: 0

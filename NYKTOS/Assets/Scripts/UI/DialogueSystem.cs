@@ -29,7 +29,7 @@ public class DialogueSystem : MonoBehaviour
 
     [SerializeField] GameObject HUD;
     #endregion
-    private void Awake()
+    private void Start()
     {
         textBox.SetActive(false);
         talkingDialogues = Resources.LoadAll<DialogueScriptableObject>("DialogueResources");
@@ -68,10 +68,11 @@ public class DialogueSystem : MonoBehaviour
     private IEnumerator StartTalkingDialogue(string[] boxes, DialogueScriptableObject dialogue)
     {
         
-
         StartCoroutine(EnableHUD(false));
         onDialogue = true;
         textBox.SetActive(true);
+        dialogue.PlayEnterEvent();
+
         for (int i = 0; i < boxes.Length; i++)
         {
             text.text = "";
@@ -111,6 +112,8 @@ public class DialogueSystem : MonoBehaviour
         text.text = "";
         onDialogue = true;
         textBox.SetActive(true);
+
+        dialogue.PlayEnterEvent();
         for (int i = 0; i < box.Length; i++)
         {
             text.text = text.text + box[i];

@@ -350,6 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c0abb319d0d2b478714b5f15e4a7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _type: 2
   _placeholderInteract: {fileID: 11400000, guid: d1d07e2e43b1030418d35278e36be01e, type: 2}
   _defenseMenu: {fileID: 11400000, guid: 61d01db8c8f871a4684fcf3b82b8a031, type: 2}
   TutorialConfirm: {fileID: 11400000, guid: 32b5c165183a9a94ebfc3a6aea4c474e, type: 2}

@@ -11629,10 +11629,6 @@ PrefabInstance:
       propertyPath: HUD
       value: 
       objectReference: {fileID: 7435931973371276927}
-    - target: {fileID: 6660814576495718255, guid: 572a4e2795d606c4f88148c59814273c, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
