@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 3.8181912e-37
-  m_labelHash: 9.905548e-25
+  m_labelHash: 3.9796247e-33
   m_SpriteKey: 0
   m_SpriteHash: 715221114
 --- !u!95 &6700535784219507712
@@ -5131,7 +5131,7 @@ GameObject:
   - component: {fileID: 5762319876495903544}
   - component: {fileID: 1201533573838173569}
   m_Layer: 9
-  m_Name: Wait 1,5sCondition
+  m_Name: Wait 1,2sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5164,7 +5164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3da0bdaa3417541a8cdc57e69aa60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waitTime: 1.5
+  _waitTime: 1.2
 --- !u!1 &2360520016083966940
 GameObject:
   m_ObjectHideFlags: 0
@@ -5475,7 +5475,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.18}
+  m_Offset: {x: 0, y: -0.25}
   serializedVersion: 2
   m_Radius: 0.50388914
 --- !u!114 &2307084527367948577
@@ -6093,7 +6093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c60bf4ddcefb246ba84d924d223a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 1
+  attackRange: 1.25
 --- !u!1001 &521836798458935613
 PrefabInstance:
   m_ObjectHideFlags: 0
