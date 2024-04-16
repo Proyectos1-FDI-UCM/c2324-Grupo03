@@ -4,42 +4,37 @@ using UnityEngine.Playables;
 
 public class ControlCinemachine : MonoBehaviour
 {
+    [SerializeField]
+    private VoidEmitter FirstCinematicEmitter;
     public CinemachineVirtualCamera cinematicCamera;
     public PlayableDirector timeline;
-    private float Timer = 40f;
-    private float ActualTimer = 0f;
-    private float ActualTimerStart;
-    private bool CinematicActive = false;
+    private float AnimationDuration = 5f;
     void Start()
     {
         cinematicCamera.enabled = false;
         timeline.Stop();
+        FirstCinematicEmitter.Perform.AddListener(FirstCinematicOn);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (timeline.time >= AnimationDuration)
         {
-            // Activa la cámara cinemática
-            cinematicCamera.enabled = true;
-            timeline.Play();
-            CinematicActive = true;
-            ActualTimer = Timer;
-            ActualTimer -= Time.deltaTime;
+            FirstCinematicOff();
         }
+    }
 
-        if (CinematicActive) { ActualTimer += Time.deltaTime; }
+    public void FirstCinematicOn()
+    {
+        // Activa la cámara cinemática
+        timeline.Play();
+        cinematicCamera.enabled = true;
+    }
 
-
-        if (ActualTimer <= 0 || Input.GetKeyDown(KeyCode.Escape))
-        {
-            cinematicCamera.enabled = false;
-            timeline.Stop();
-            timeline.time = 0f;
-            CinematicActive = false;
-            ActualTimer = 0f;
-        }
-
-
+    private void FirstCinematicOff()
+    {
+        cinematicCamera.enabled = false;
+        timeline.Stop();
+        timeline.time = 0f;
     }
 }
