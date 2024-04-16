@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: AAAAAAAA
   m_EditorClassIdentifier: 
   _dialogueBoxes:
-  - eyeyeyeyeyeyeye
+  - Lorem ipsum dolor sit amet consectetur adipiscing elit hendrerit, sodales eros
+    fringilla magnis cum imperdiet euismod, cursus orci lacus cras ad egestas quis.
+    Turpis magnis dapibus nascetur eleifend urna dictum nec lacus suscipit proin
+    congue, consequat aliquam velit pharetra mattis lobortis habitant odio luctus.
+    Fringilla auctor potenti nullam orci per dapibus volutpat pharetra fusce sodales
+    nisl rutrum nostra ac euismod, facilisi faucibus id cursus pulvinar congue non
+    condimentum tristique ornare posuere purus luctus nunc.
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
     m_PersistentCalls:
