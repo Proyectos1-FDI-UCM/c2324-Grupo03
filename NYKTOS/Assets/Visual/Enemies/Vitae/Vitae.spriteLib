@@ -29,236 +29,116 @@ MonoBehaviour:
     m_Hash: 50457891
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: Vitae Walk Right_0
-      m_Hash: 395921387
-      m_Sprite: {fileID: 993997549, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
+    - m_Name: Vitae Walk Right Official_0
+      m_Hash: 161828513
+      m_Sprite: {fileID: 1513451949, guid: 78f9530eb1c4ec14994d5238d2a37064, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 993997549, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-    - m_Name: Vitae Walk Right_1
-      m_Hash: 547256189
-      m_Sprite: {fileID: 2032122273, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
+      m_SpriteOverride: {fileID: 1513451949, guid: 78f9530eb1c4ec14994d5238d2a37064, type: 3}
+    - m_Name: Vitae Walk Right Official_1
+      m_Hash: 1050836535
+      m_Sprite: {fileID: 1018769899, guid: 78f9530eb1c4ec14994d5238d2a37064, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 2032122273, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-    - m_Name: Vitae Walk Right_2
-      m_Hash: 966207175
-      m_Sprite: {fileID: -640987672, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
+      m_SpriteOverride: {fileID: 1018769899, guid: 78f9530eb1c4ec14994d5238d2a37064, type: 3}
+    - m_Name: Vitae Walk Right Official_2
+      m_Hash: 665530253
+      m_Sprite: {fileID: 1610007043, guid: 78f9530eb1c4ec14994d5238d2a37064, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -640987672, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-    - m_Name: Vitae Walk Right_3
-      m_Hash: 244323921
-      m_Sprite: {fileID: 1503336484, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
+      m_SpriteOverride: {fileID: 1610007043, guid: 78f9530eb1c4ec14994d5238d2a37064, type: 3}
+    - m_Name: Vitae Walk Right Official_3
+      m_Hash: 279715611
+      m_Sprite: {fileID: -538814053, guid: 78f9530eb1c4ec14994d5238d2a37064, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 1503336484, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-    - m_Name: Vitae Walk Right_4
-      m_Hash: 284460018
-      m_Sprite: {fileID: -366958870, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -366958870, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-    - m_Name: Vitae Walk Right_5
-      m_Hash: 670282596
-      m_Sprite: {fileID: -1959282909, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -1959282909, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-    - m_Name: Vitae Walk Right_6
-      m_Hash: 1056629470
-      m_Sprite: {fileID: 1270092325, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 1270092325, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-    - m_Name: Vitae Walk Right_7
-      m_Hash: 167629384
-      m_Sprite: {fileID: 801762323, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 801762323, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-    - m_Name: Vitae Walk Right_8
-      m_Hash: 423808985
-      m_Sprite: {fileID: 1805731718, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 1805731718, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-    - m_Name: Vitae Walk Right_9
-      m_Hash: 776339279
-      m_Sprite: {fileID: 1024740337, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 1024740337, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-    - m_Name: Vitae Walk Right_10
-      m_Hash: 445598935
-      m_Sprite: {fileID: 2135992020, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 2135992020, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-    - m_Name: Vitae Walk Right_11
-      m_Hash: 763919425
-      m_Sprite: {fileID: 1199088519, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 1199088519, guid: 4c1a9742c488d0b499d1c00d37e875ce, type: 3}
+      m_SpriteOverride: {fileID: -538814053, guid: 78f9530eb1c4ec14994d5238d2a37064, type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 12
+    m_EntryOverrideCount: 4
   - m_Name: WalkLeft
     m_Hash: 1036352720
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: Vitae Walk Left_0
-      m_Hash: 1042620710
-      m_Sprite: {fileID: -1531834391, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
+    - m_Name: Vitae Walk Left Official_0
+      m_Hash: 299856552
+      m_Sprite: {fileID: -1396699412, guid: 7d17e50ef29792142824beaf2e185ec1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -1531834391, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-    - m_Name: Vitae Walk Left_1
-      m_Hash: 153227696
-      m_Sprite: {fileID: 849514066, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
+      m_SpriteOverride: {fileID: -1396699412, guid: 7d17e50ef29792142824beaf2e185ec1, type: 3}
+    - m_Name: Vitae Walk Left Official_1
+      m_Hash: 651706942
+      m_Sprite: {fileID: 834368651, guid: 7d17e50ef29792142824beaf2e185ec1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 849514066, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-    - m_Name: Vitae Walk Left_2
-      m_Hash: 271269898
-      m_Sprite: {fileID: 96112376, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
+      m_SpriteOverride: {fileID: 834368651, guid: 7d17e50ef29792142824beaf2e185ec1, type: 3}
+    - m_Name: Vitae Walk Left Official_2
+      m_Hash: 1070666628
+      m_Sprite: {fileID: -665010167, guid: 7d17e50ef29792142824beaf2e185ec1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 96112376, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-    - m_Name: Vitae Walk Left_3
-      m_Hash: 657223836
-      m_Sprite: {fileID: -236798274, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
+      m_SpriteOverride: {fileID: -665010167, guid: 7d17e50ef29792142824beaf2e185ec1, type: 3}
+    - m_Name: Vitae Walk Left Official_3
+      m_Hash: 148251410
+      m_Sprite: {fileID: 1756239685, guid: 7d17e50ef29792142824beaf2e185ec1, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -236798274, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-    - m_Name: Vitae Walk Left_4
-      m_Hash: 961078591
-      m_Sprite: {fileID: -271435820, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -271435820, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-    - m_Name: Vitae Walk Left_5
-      m_Hash: 240113065
-      m_Sprite: {fileID: -541282092, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -541282092, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-    - m_Name: Vitae Walk Left_6
-      m_Hash: 390497299
-      m_Sprite: {fileID: 2140490739, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 2140490739, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-    - m_Name: Vitae Walk Left_7
-      m_Hash: 541176965
-      m_Sprite: {fileID: 1692183530, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 1692183530, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-    - m_Name: Vitae Walk Left_8
-      m_Hash: 821995796
-      m_Sprite: {fileID: 10923969, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 10923969, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-    - m_Name: Vitae Walk Left_9
-      m_Hash: 133798274
-      m_Sprite: {fileID: 1684000819, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 1684000819, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-    - m_Name: Vitae Walk Left_10
-      m_Hash: 1064521404
-      m_Sprite: {fileID: -857498066, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -857498066, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-    - m_Name: Vitae Walk Left_11
-      m_Hash: 141852202
-      m_Sprite: {fileID: -1440659807, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -1440659807, guid: abc61b6f117a25744945a0028cc8f83d, type: 3}
+      m_SpriteOverride: {fileID: 1756239685, guid: 7d17e50ef29792142824beaf2e185ec1, type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 12
+    m_EntryOverrideCount: 4
   - m_Name: AttackRigth
     m_Hash: 736060707
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: Vitae Attack Right_0
-      m_Hash: 488106298
-      m_Sprite: {fileID: 952027102, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
+    - m_Name: Vitae Attack Right Official_0
+      m_Hash: 303843444
+      m_Sprite: {fileID: 544041797, guid: e7847d1c49c318b4db41c64103be6e0f, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 952027102, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
-    - m_Name: Vitae Attack Right_1
-      m_Hash: 705747372
-      m_Sprite: {fileID: 1273698029, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
+      m_SpriteOverride: {fileID: 544041797, guid: e7847d1c49c318b4db41c64103be6e0f, type: 3}
+    - m_Name: Vitae Attack Right Official_1
+      m_Hash: 622557410
+      m_Sprite: {fileID: 597878727, guid: e7847d1c49c318b4db41c64103be6e0f, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 1273698029, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
-    - m_Name: Vitae Attack Right_2
-      m_Hash: 857311254
-      m_Sprite: {fileID: -1897349914, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
+      m_SpriteOverride: {fileID: 597878727, guid: e7847d1c49c318b4db41c64103be6e0f, type: 3}
+    - m_Name: Vitae Attack Right Official_2
+      m_Hash: 1007823192
+      m_Sprite: {fileID: -1263451213, guid: e7847d1c49c318b4db41c64103be6e0f, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -1897349914, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
-    - m_Name: Vitae Attack Right_3
-      m_Hash: 69122176
-      m_Sprite: {fileID: -401213325, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
+      m_SpriteOverride: {fileID: -1263451213, guid: e7847d1c49c318b4db41c64103be6e0f, type: 3}
+    - m_Name: Vitae Attack Right Official_3
+      m_Hash: 185932238
+      m_Sprite: {fileID: -1502770575, guid: e7847d1c49c318b4db41c64103be6e0f, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -401213325, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
-    - m_Name: Vitae Attack Right_4
-      m_Hash: 444214563
-      m_Sprite: {fileID: -880845355, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
+      m_SpriteOverride: {fileID: -1502770575, guid: e7847d1c49c318b4db41c64103be6e0f, type: 3}
+    - m_Name: Vitae Attack Right Official_4
+      m_Hash: 359763053
+      m_Sprite: {fileID: 276282988, guid: e7847d1c49c318b4db41c64103be6e0f, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -880845355, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
-    - m_Name: Vitae Attack Right_5
-      m_Hash: 763174325
-      m_Sprite: {fileID: -505800919, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -505800919, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
-    - m_Name: Vitae Attack Right_6
-      m_Hash: 880036879
-      m_Sprite: {fileID: 1183249653, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 1183249653, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
-    - m_Name: Vitae Attack Right_7
-      m_Hash: 57900185
-      m_Sprite: {fileID: 17387955, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 17387955, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
-    - m_Name: Vitae Attack Right_8
-      m_Hash: 332161288
-      m_Sprite: {fileID: -1035975360, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -1035975360, guid: 782af5acbfae5f0478d5977fc0d25d94, type: 3}
+      m_SpriteOverride: {fileID: 276282988, guid: e7847d1c49c318b4db41c64103be6e0f, type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 9
+    m_EntryOverrideCount: 5
   - m_Name: AttackLeft
     m_Hash: 569762536
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: Vitae Attack Left_0
-      m_Hash: 356654141
-      m_Sprite: {fileID: -1784027604, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
+    - m_Name: Vitae Attack Left Official_0
+      m_Hash: 319844738
+      m_Sprite: {fileID: 377556597, guid: c059847566621284d8a2430d3db95caf, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -1784027604, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
-    - m_Name: Vitae Attack Left_1
-      m_Hash: 574958763
-      m_Sprite: {fileID: -1994424924, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
+      m_SpriteOverride: {fileID: 377556597, guid: c059847566621284d8a2430d3db95caf, type: 3}
+    - m_Name: Vitae Attack Left Official_1
+      m_Hash: 605503764
+      m_Sprite: {fileID: -146550197, guid: c059847566621284d8a2430d3db95caf, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -1994424924, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
-    - m_Name: Vitae Attack Left_2
-      m_Hash: 994868497
-      m_Sprite: {fileID: 43986848, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
+      m_SpriteOverride: {fileID: -146550197, guid: c059847566621284d8a2430d3db95caf, type: 3}
+    - m_Name: Vitae Attack Left Official_2
+      m_Hash: 1025380526
+      m_Sprite: {fileID: 829792301, guid: c059847566621284d8a2430d3db95caf, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 43986848, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
-    - m_Name: Vitae Attack Left_3
-      m_Hash: 206261639
-      m_Sprite: {fileID: 1146911751, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
+      m_SpriteOverride: {fileID: 829792301, guid: c059847566621284d8a2430d3db95caf, type: 3}
+    - m_Name: Vitae Attack Left Official_3
+      m_Hash: 169418808
+      m_Sprite: {fileID: 2077263724, guid: c059847566621284d8a2430d3db95caf, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 1146911751, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
-    - m_Name: Vitae Attack Left_4
-      m_Hash: 305125412
-      m_Sprite: {fileID: 1749830252, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
+      m_SpriteOverride: {fileID: 2077263724, guid: c059847566621284d8a2430d3db95caf, type: 3}
+    - m_Name: Vitae Attack Left Official_4
+      m_Hash: 343782811
+      m_Sprite: {fileID: -1904857000, guid: c059847566621284d8a2430d3db95caf, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 1749830252, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
-    - m_Name: Vitae Attack Left_5
-      m_Hash: 623438002
-      m_Sprite: {fileID: -664967558, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -664967558, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
-    - m_Name: Vitae Attack Left_6
-      m_Hash: 1008843016
-      m_Sprite: {fileID: -227871559, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -227871559, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
-    - m_Name: Vitae Attack Left_7
-      m_Hash: 187074974
-      m_Sprite: {fileID: 752694378, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 752694378, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
-    - m_Name: Vitae Attack Left_8
-      m_Hash: 463049743
-      m_Sprite: {fileID: -1059567760, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -1059567760, guid: 6632ebbccb5289744b06937bb43f3904, type: 3}
+      m_SpriteOverride: {fileID: -1904857000, guid: c059847566621284d8a2430d3db95caf, type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 9
+    m_EntryOverrideCount: 5
   - m_Name: Dying
     m_Hash: 315139327
     m_CategoryList: []
@@ -266,5 +146,5 @@ MonoBehaviour:
     m_FromMain: 0
     m_EntryOverrideCount: 0
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 638478747614409468
+  m_ModificationHash: 638488862994413830
   m_Version: 1
