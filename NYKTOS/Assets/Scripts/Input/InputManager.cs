@@ -110,6 +110,18 @@ public class InputManager : MonoBehaviour
     //}
     #endregion
 
+    public void SetDialogueInput(bool value)
+    {
+        EnablePlayerInput(!value);
+        if(value) _playerControls.Player.NextDialogue.Enable();
+        else _playerControls.Player.NextDialogue.Disable();
+    }
+
+    private void NextDialogue(InputAction.CallbackContext context)
+    {
+
+    }
+
     private void PauseGame(InputAction.CallbackContext context)
     {
         _pauseEmitter.InvokePerform(true);
@@ -176,6 +188,8 @@ public class InputManager : MonoBehaviour
     {
         _playerControls.Enable();
 
+        _playerControls.Player.NextDialogue.Disable();
+
         _playerControls.Player.Move.performed += Move;
         _playerControls.Player.Move.canceled += Move;
         _playerControls.Player.Blink.performed += Blink;
@@ -184,6 +198,9 @@ public class InputManager : MonoBehaviour
         _playerControls.Player.PrimaryAttack.performed += PrimaryAttack;
         _playerControls.Player.SecondaryAttack.performed += SecondaryAttack;
         _playerControls.Player.Interact.performed += Interact;
+        
+        _playerControls.Player.NextDialogue.performed += NextDialogue;
+
         _playerControls.Player.Pause.performed += PauseGame;
 
         _playerControls.UI.CloseMenu.performed += CloseMenu;
@@ -203,6 +220,9 @@ public class InputManager : MonoBehaviour
             _playerControls.Player.PrimaryAttack.performed -= PrimaryAttack;
             _playerControls.Player.SecondaryAttack.performed -= SecondaryAttack;
             _playerControls.Player.Interact.performed -= Interact;
+            
+            _playerControls.Player.NextDialogue.performed -= NextDialogue;
+
             _playerControls.Player.Pause.performed -= PauseGame;
 
             _playerInput.onControlsChanged -= OnControlsChanged;
