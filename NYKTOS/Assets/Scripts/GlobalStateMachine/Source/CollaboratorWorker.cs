@@ -20,13 +20,19 @@ public abstract class CollaboratorWorker : MonoBehaviour
 
     protected abstract IEnumerator Perform();
 
+    protected abstract void WorkerAwake();
+
+    protected abstract void WorkerOnDestroy();
+
     void Awake()
     {
+        WorkerAwake();
         _collaboratorEvent.WorkStart.AddListener(StartWorker);
     }
 
     void OnDestroy()
     {
+        WorkerOnDestroy();
         _collaboratorEvent.WorkStart.RemoveListener(StartWorker);
     }
 }

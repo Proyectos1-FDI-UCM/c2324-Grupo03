@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlaceholderSaveComponent : MonoBehaviour
 {
     [SerializeField]
-    private PlaceholderBuilding _currentBuilding = PlaceholderBuilding.None; 
+    private PlaceholderDefense _currentDefense = PlaceholderDefense.None; 
 
     [SerializeField]
     private PlaceholderSaveData _saveData;
@@ -20,9 +20,26 @@ public class PlaceholderSaveComponent : MonoBehaviour
 
     void OnValidate()
     {
-        if(_placeholderId == -1)
+        if(_saveData != null)
         {
-            _placeholderId = _saveData.AddPlaceholder(_currentBuilding);
+            if(_saveData.CheckPlaceholder(_placeholderId))
+            {
+                _saveData.SetPlaceholderDefense(_placeholderId, _currentDefense);
+            }
+            else
+            {
+                _placeholderId = _saveData.AddPlaceholder(_currentDefense);
+            }
         }
+    }
+
+    void OnDestroy()
+    {
+        #if UNITY_EDITOR 
+            if(_placeholderId != -1 && _saveData != null)
+            {
+                _saveData.RemovePlaceholder(_placeholderId);
+            }
+        #endif
     }
 }
