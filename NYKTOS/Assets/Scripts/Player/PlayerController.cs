@@ -37,16 +37,13 @@ public class PlayerController : MonoBehaviour, IKnockback
     private float _interactionRange;
     #endregion
 
-    #region tutorials
-    [Header("EMITTERS DEL TUTORIAL")]
-    [SerializeField]
-    private VoidEmitter TutorialMovement;
-    [SerializeField]
-    private VoidEmitter TutorialBlink;
-    [SerializeField]
-    private VoidEmitter TutorialAttack;
-    [SerializeField]
-    private VoidEmitter TutorialBuild;
+    #region playerEmitters
+    [Header("Player Emitters")]
+    [SerializeField] VoidEmitter _playerMoved;
+    [SerializeField] VoidEmitter _playerBlinked;
+    [SerializeField] VoidEmitter _playerInteracted;
+    [SerializeField] VoidEmitter _playerPrimaryAttacked;
+    [SerializeField] VoidEmitter _playerSecondaryAttacked;
     #endregion
 
     #region actions
@@ -56,8 +53,8 @@ public class PlayerController : MonoBehaviour, IKnockback
     {
         if (PlayerStateMachine.playerState == PlayerState.Idle && !_BlinkCooldown.IsCooling())
         {
+            _playerBlinked?.InvokePerform();
             _blinkComponent.Blink();
-            TutorialAttack.InvokePerform();
             _BlinkCooldown.StartCooldown();
         }
     }
@@ -68,8 +65,8 @@ public class PlayerController : MonoBehaviour, IKnockback
 
         if (PlayerStateMachine.playerState == PlayerState.Idle || PlayerStateMachine.playerState == PlayerState.Dead)
         {
+            _playerMoved?.InvokePerform();
             CallMove(direction);
-            TutorialBlink.InvokePerform();
         }
 
     }
@@ -116,9 +113,9 @@ public class PlayerController : MonoBehaviour, IKnockback
     #region combat
     public void PrimaryAttack()
     {
-        TutorialBuild.InvokePerform();
         if (PlayerStateMachine.playerState == PlayerState.Idle && PlayerStateMachine.playerState != PlayerState.Dead)
         {
+            _playerPrimaryAttacked.InvokePerform();
             _weaponHandler.CallPrimaryUse(_lookDirection.lookDirection);
 
 
@@ -134,6 +131,7 @@ public class PlayerController : MonoBehaviour, IKnockback
     {
         if (PlayerStateMachine.playerState == PlayerState.Idle && PlayerStateMachine.playerState != PlayerState.Dead)
         {
+            _playerSecondaryAttacked.InvokePerform();
             _weaponHandler.CallSecondaryUse( _lookDirection.lookDirection);
 
             _playerMovement.AddSpeed(-_playerMovement.movementSpeed / 1.5f, _SecondaryUseSlowingCooldown);
@@ -157,6 +155,7 @@ public class PlayerController : MonoBehaviour, IKnockback
         {
             if (hitColliders[i].gameObject.TryGetComponent(out IInteractable interactableObject))
             {
+                _playerInteracted?.InvokePerform();
                 interactableObject.Interact();
                 // Desde el objeto, lanzar un evento para cambiar el estado del player a OnMenu o algo as�
             }

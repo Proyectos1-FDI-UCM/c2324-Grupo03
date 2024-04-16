@@ -404,10 +404,11 @@ MonoBehaviour:
     _cooldownTime: 1
   _PrimaryUseSlowingCooldown: 0.3
   _SecondaryUseSlowingCooldown: 0.3
-  TutorialMovement: {fileID: 11400000, guid: a27dddf68839c3c4481e6eb73d3ef2ea, type: 2}
-  TutorialBlink: {fileID: 11400000, guid: 1afac494d7f101046b3f657927d76952, type: 2}
-  TutorialAttack: {fileID: 11400000, guid: b1da115a8ab028f438a295715950f9b9, type: 2}
-  TutorialBuild: {fileID: 11400000, guid: 48188d69af5c4974782ad40cf1806e7d, type: 2}
+  _playerMoved: {fileID: 11400000, guid: 0d1c40cdea66ca447a9e35006a92cbff, type: 2}
+  _playerBlinked: {fileID: 11400000, guid: 37927cc0998dede4b88135f91b04cfe6, type: 2}
+  _playerInteracted: {fileID: 11400000, guid: 02dc72bad3eecff419a264d83f465e52, type: 2}
+  _playerPrimaryAttacked: {fileID: 11400000, guid: 04a7becb67a45d84faaa81feee465e4d, type: 2}
+  _playerSecondaryAttacked: {fileID: 11400000, guid: 2ff0d4f1c03eb5f4f95f1d436d99cb96, type: 2}
 --- !u!114 &5023334086552178363
 MonoBehaviour:
   m_ObjectHideFlags: 0

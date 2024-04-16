@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 618a24d2f6a54ca448b68a09eece292d, type: 3}
   m_Name: Dialogo02 Tutorial
   m_EditorClassIdentifier: 
-  _dialogueBox: "Muevete con <>, <>, <>, <>\nPresiona <> en la direcci\xF3n de movimiento"
+  _dialogueBox: "Mu\xE9vete con <>, <>, <>, <>.\nPresiona <> en la direcci\xF3n de
+    movimiento."
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
     m_PersistentCalls:
@@ -20,4 +21,4 @@ MonoBehaviour:
   _onDialogueFinish:
     m_PersistentCalls:
       m_Calls: []
-  _voidEmitterAction: {fileID: 0}
+  _voidEmitterAction: {fileID: 11400000, guid: 37927cc0998dede4b88135f91b04cfe6, type: 2}
