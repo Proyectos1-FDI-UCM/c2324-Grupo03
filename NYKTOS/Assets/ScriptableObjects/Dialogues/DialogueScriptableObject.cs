@@ -6,6 +6,7 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "New Talking Dialogue", menuName = "Dialogue/Talking Dialogue")]
 public class DialogueScriptableObject : ScriptableObject
 {
+    [TextArea(5, 20)]
     [SerializeField]
     private string[] _dialogueBoxes;
 

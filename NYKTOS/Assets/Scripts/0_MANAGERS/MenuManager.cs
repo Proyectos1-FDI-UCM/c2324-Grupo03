@@ -93,7 +93,7 @@ public class MenuManager : MonoBehaviour
     private Button _weaponEffectButton;
 
     [SerializeField]
-    private Slider _settingsButton;
+    private Button _settingsButton;
 
     #endregion
 
@@ -178,13 +178,7 @@ public class MenuManager : MonoBehaviour
     public void OpenDefenseMenu() => OpenMenu(_defenseMenu, _defenseButton);
     public void OpenWeaponUpgradeMenu() => OpenMenu(_weaponUpgradeMenu, _weaponUpgradeButton);
     public void OpenWeaponEffectMenu() => OpenMenu(_weaponEffectMenu, _weaponEffectButton);
-    public void OpenSettingsMenu()
-    {
-        PlayOpenedSound();
-        _settingsMenu.SetActive(true);
-        _settingsButton.Select();
-        SwitchToUIControls();
-    }
+    public void OpenSettingsMenu() => OpenMenu(_settingsMenu, _settingsButton);
     #endregion
 
     #region close menus

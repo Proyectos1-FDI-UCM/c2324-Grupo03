@@ -28,6 +28,12 @@ public class InputManager : MonoBehaviour
     [SerializeField]
     private VoidEmitter _closeMenusEmitter;
 
+    [SerializeField]
+    private BoolEmitter _setDialogueEmitter;
+
+    [SerializeField]
+    private VoidEmitter _resumeDialogueEmitter;
+
 
     private PlayerController _player;
     private PlayerInput _playerInput;
@@ -60,7 +66,8 @@ public class InputManager : MonoBehaviour
         _playerInput = player.GetComponent<PlayerInput>();
         //_playerState = player.GetComponent<PlayerStateMachine>();
 
-        ControlsStart();  
+        ControlsStart();
+        SwitchToPlayerControls();
     }
 
     private void ControlsStart()
@@ -113,13 +120,14 @@ public class InputManager : MonoBehaviour
     public void SetDialogueInput(bool value)
     {
         EnablePlayerInput(!value);
-        if(value) _playerControls.Player.NextDialogue.Enable();
-        else _playerControls.Player.NextDialogue.Disable();
+        if (value) _playerControls.Dialogues.Enable();
+        else _playerControls.Dialogues.Disable();
     }
 
     private void NextDialogue(InputAction.CallbackContext context)
     {
-
+        print('a');
+        _resumeDialogueEmitter.InvokePerform();
     }
 
     private void PauseGame(InputAction.CallbackContext context)
@@ -130,10 +138,6 @@ public class InputManager : MonoBehaviour
 
     private void CloseMenu(InputAction.CallbackContext context)
     {
-        //[Marco] Deprecated
-        //MenuManager.Instance.CloseMenu();
-
-        //esto es lo guay esto se queda
         _pauseEmitter.InvokePerform(false);
         _closeMenusEmitter.InvokePerform();
     }
@@ -156,6 +160,8 @@ public class InputManager : MonoBehaviour
     public void SwitchToUIControls()
     {
         playerControls.Player.Disable();
+        playerControls.Dialogues.Disable();
+
         // Lanzar evento de cambio de estado
         //_playerState.SetState(PlayerState.OnMenu);
         playerControls.UI.Enable();
@@ -167,13 +173,14 @@ public class InputManager : MonoBehaviour
         // Lanzar evento cambio de estado
         //_playerState.SetState(PlayerState.Idle);
         playerControls.UI.Disable();
+        playerControls.Dialogues.Disable();
         playerControls.Player.Enable();
     }
 
     public void EnablePlayerInput(bool enable)
     {
-        if (enable) this.enabled = true;
-        else this.enabled = false;
+        if (enable) _playerControls.Player.Enable();
+        else _playerControls.Player.Disable();
     }
 
     public void EnableUIInput(bool enable)
@@ -188,8 +195,6 @@ public class InputManager : MonoBehaviour
     {
         _playerControls.Enable();
 
-        _playerControls.Player.NextDialogue.Disable();
-
         _playerControls.Player.Move.performed += Move;
         _playerControls.Player.Move.canceled += Move;
         _playerControls.Player.Blink.performed += Blink;
@@ -199,11 +204,12 @@ public class InputManager : MonoBehaviour
         _playerControls.Player.SecondaryAttack.performed += SecondaryAttack;
         _playerControls.Player.Interact.performed += Interact;
         
-        _playerControls.Player.NextDialogue.performed += NextDialogue;
+        _playerControls.Dialogues.NextDialogue.performed += NextDialogue;
 
         _playerControls.Player.Pause.performed += PauseGame;
 
         _playerControls.UI.CloseMenu.performed += CloseMenu;
+        _playerControls.UI.Cancel.performed += CloseMenu;
     }
 
     private void OnDisable()
@@ -221,7 +227,7 @@ public class InputManager : MonoBehaviour
             _playerControls.Player.SecondaryAttack.performed -= SecondaryAttack;
             _playerControls.Player.Interact.performed -= Interact;
             
-            _playerControls.Player.NextDialogue.performed -= NextDialogue;
+            _playerControls.Dialogues.NextDialogue.performed -= NextDialogue;
 
             _playerControls.Player.Pause.performed -= PauseGame;
 
@@ -248,6 +254,8 @@ public class InputManager : MonoBehaviour
         _stateChanged.Perform.AddListener(OnStateLoad);
         _enablePlayerInput.Perform.AddListener(EnablePlayerInput);
         _enableUIInput.Perform.AddListener(EnableUIInput);
+
+        _setDialogueEmitter.Perform.AddListener(SetDialogueInput);
     }
 
     void OnDestroy()
@@ -256,5 +264,8 @@ public class InputManager : MonoBehaviour
         _enablePlayerInput.Perform.RemoveListener(EnablePlayerInput);
         _enableUIInput.Perform.RemoveListener(EnableUIInput);
 
+        _setDialogueEmitter.Perform.AddListener(SetDialogueInput);
+
     }
+
 }   
