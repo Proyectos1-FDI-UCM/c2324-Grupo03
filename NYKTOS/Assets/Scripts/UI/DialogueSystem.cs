@@ -67,7 +67,7 @@ public class DialogueSystem : MonoBehaviour
 
     private IEnumerator StartTalkingDialogue(string[] boxes, DialogueScriptableObject dialogue)
     {
-        enablePlayerActions?.InvokePerform(false);
+        
 
         StartCoroutine(EnableHUD(false));
         onDialogue = true;
@@ -77,6 +77,7 @@ public class DialogueSystem : MonoBehaviour
             text.text = "";
             for (int j = 0; j < boxes[i].Length && text.text != boxes[i]; j++)
             {
+                enablePlayerActions?.InvokePerform(false);
                 if (resumeDialogue)
                 {
                     text.text = boxes[i];
