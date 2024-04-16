@@ -81949,6 +81949,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nexus_tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 4147693682886960302, guid: 36483d1ac5abead4cbec7ffedca5f97a, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5532897
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147693682886960302, guid: 36483d1ac5abead4cbec7ffedca5f97a, type: 3}
+      propertyPath: m_Size.y
+      value: 4.466508
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147693682886960302, guid: 36483d1ac5abead4cbec7ffedca5f97a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147693682886960302, guid: 36483d1ac5abead4cbec7ffedca5f97a, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.3743725
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -82089,6 +82105,10 @@ PrefabInstance:
       propertyPath: _spawnMarker
       value: 
       objectReference: {fileID: 11400000, guid: efc9b240a144bca4b9295a474e1fe87b, type: 2}
+    - target: {fileID: 5265521018662020170, guid: 64a242fa460722d47a278480195ff466, type: 3}
+      propertyPath: _spawnTimeMax
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9208304117144434517, guid: 64a242fa460722d47a278480195ff466, type: 3}
       propertyPath: _spawnerRegion
       value: 0

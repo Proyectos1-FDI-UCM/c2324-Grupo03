@@ -23768,6 +23768,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nexus
       objectReference: {fileID: 0}
+    - target: {fileID: 4147693682886960302, guid: 6a3a5d72acb4d6741a802ab73e866861, type: 3}
+      propertyPath: m_Size.x
+      value: 2.623345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147693682886960302, guid: 6a3a5d72acb4d6741a802ab73e866861, type: 3}
+      propertyPath: m_Size.y
+      value: 4.5044327
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147693682886960302, guid: 6a3a5d72acb4d6741a802ab73e866861, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.00000023841858
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147693682886960302, guid: 6a3a5d72acb4d6741a802ab73e866861, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.361103
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
