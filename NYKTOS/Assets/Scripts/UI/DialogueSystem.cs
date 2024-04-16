@@ -29,7 +29,7 @@ public class DialogueSystem : MonoBehaviour
 
     [SerializeField] GameObject HUD;
     #endregion
-    private void Awake()
+    private void Start()
     {
         textBox.SetActive(false);
         talkingDialogues = Resources.LoadAll<DialogueScriptableObject>("DialogueResources");
