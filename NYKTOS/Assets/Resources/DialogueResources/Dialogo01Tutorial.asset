@@ -18,7 +18,7 @@ MonoBehaviour:
   - Como puedes ver, todo lo que una vez fue conocido ha sido sucumbido por las sombras.
   - "La oscuridad est\xE1 al acecho, observando cada movimiento que haces."
   - "H\xE9mera..."
-  - "Tu misi\xF3n es proteger el nexo del templo de las hordas de las sombras,"
+  - "Tu misi\xF3n es proteger el nexo de las hordas de las sombras."
   - 'Por favor... restaura la luz del Templo Olvidado... '
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
