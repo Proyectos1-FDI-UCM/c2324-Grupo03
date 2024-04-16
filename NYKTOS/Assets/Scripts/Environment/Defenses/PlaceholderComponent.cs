@@ -5,11 +5,18 @@ using UnityEngine.InputSystem;
 
 public class PlaceholderComponent : MonoBehaviour, IBuilding
 {
-    //[Andrea] Review
+    public enum placeholderType
+    {
+        yellow, magenta, cyan
+    }
 
     #region references
     private BuildingStateMachine _state;
-
+    #endregion
+    #region properties
+    [SerializeField]
+    private placeholderType _type;
+    public placeholderType type { get { return _type; } }
     #endregion
 
     #region emitters
