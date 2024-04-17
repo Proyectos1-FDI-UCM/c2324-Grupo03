@@ -43,33 +43,34 @@ public class DialogueSystem : MonoBehaviour
         //Suscripcion de metodo de TALKING DIALOGUES
         for (int i = 0; i < talkingDialogues.Length; i++)
         {
-            talkingDialogues[i].dialogueStarted.AddListener((string[] dialogueBoxes, DialogueScriptableObject dialogue) =>
-            {
-                if (!onDialogue)
-                {
-                    StartCoroutine(StartTalkingDialogue(dialogueBoxes, dialogue));
-                    
-                }
-                else Debug.LogError("Se ha intentado reproducir un dialogo normal mientras el jugador ya se encuentra en uno.");
-
-            });
+            talkingDialogues[i].dialogueStarted.AddListener(TalkingDialogueStarted);
         }
 
         //Suscripcion de metodo de ACTION DIALOGUES
         for (int i = 0;i < actionDialogues.Length; i++)
         {
-            actionDialogues[i].dialogueStarted.AddListener((string dialogueBox, ActionDialogueScriptableObject dialogue, VoidEmitter emitter) =>
-            {
-                if (!onDialogue)
-                {
-                    StartCoroutine(StartActionDialogue(dialogueBox, dialogue, emitter));
-                }
-                else Debug.LogError("Se ha intentado reproducir un dialogo de accion mientras el jugador ya se encuentra en uno.");
-            });
+            actionDialogues[i].dialogueStarted.AddListener(ActionDialogueStarted);
         }
     }
 
+    private void TalkingDialogueStarted(string[] dialogueBoxes, DialogueScriptableObject dialogue)
+    {
+        if (!onDialogue)
+        {
+            StartCoroutine(StartTalkingDialogue(dialogueBoxes, dialogue));
 
+        }
+        else Debug.LogError("Se ha intentado reproducir un dialogo normal mientras el jugador ya se encuentra en uno.");
+    }
+
+    private void ActionDialogueStarted(string dialogueBox, ActionDialogueScriptableObject dialogue, VoidEmitter emitter)
+    {
+        if (!onDialogue)
+        {
+            StartCoroutine(StartActionDialogue(dialogueBox, dialogue, emitter));
+        }
+        else Debug.LogError("Se ha intentado reproducir un dialogo de accion mientras el jugador ya se encuentra en uno.");
+    }
     private IEnumerator StartTalkingDialogue(string[] boxes, DialogueScriptableObject dialogue)
     {
         
@@ -172,10 +173,22 @@ public class DialogueSystem : MonoBehaviour
     private void OnDestroy()
     {
         _resumeDialogueEmitter.Perform.RemoveListener(ResumeDialogue);
-        for (int i = 0; i < talkingDialogues.Length; i++)
+        if (talkingDialogues != null)
         {
-            talkingDialogues[i].dialogueStarted.RemoveAllListeners();
+            for (int i = 0; i < talkingDialogues.Length; i++)
+            {
+                talkingDialogues[i].dialogueStarted.RemoveListener(TalkingDialogueStarted);
+            }
         }
+        
+        if (actionDialogues != null)
+        {
+            for (int i = 0; i < actionDialogues.Length; i++)
+            {
+                actionDialogues[i].dialogueStarted.RemoveListener(ActionDialogueStarted);
+            }
+        }
+        
     }
 
     public void ResumeDialogue()
