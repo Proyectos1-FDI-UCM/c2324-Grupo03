@@ -13,8 +13,13 @@ public class ControlCinemachine : MonoBehaviour
     [SerializeField]
     private float waitToStart = 2f;
     private float AnimationDuration = 65f;
+
+    [SerializeField]
+    private GameObject _UIGameplay;
+
     void Start()
     {
+        _UIGameplay.SetActive(true);
         cinematicCamera.enabled = false;
         timeline.Stop();
         FirstCinematicEmitter.Perform.AddListener(FirstCinematicOn);
@@ -43,6 +48,7 @@ public class ControlCinemachine : MonoBehaviour
     {
         if (oneTimeCinematic && waitToStart <= 0)
         {
+            _UIGameplay.SetActive(false);
             timeline.Play();
             cinematicCamera.enabled = true;
         }
@@ -55,6 +61,7 @@ public class ControlCinemachine : MonoBehaviour
 
     private void FirstCinematicOff()
     {
+        _UIGameplay.SetActive(true);
         oneTimeCinematic = false;
         cinematicCamera.enabled = false;
         timeline.Stop();

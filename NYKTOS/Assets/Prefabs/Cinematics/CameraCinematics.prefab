@@ -125,6 +125,7 @@ MonoBehaviour:
   cinematicCamera: {fileID: 6414313528364685277}
   timeline: {fileID: 6590314419426457884}
   waitToStart: 2
+  _UIGameplay: {fileID: 0}
 --- !u!1 &7367381428383103139
 GameObject:
   m_ObjectHideFlags: 0
