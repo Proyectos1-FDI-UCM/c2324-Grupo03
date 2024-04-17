@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -113,6 +114,18 @@ public class DialogueSystem : MonoBehaviour
 
     private IEnumerator StartActionDialogue(string box, ActionDialogueScriptableObject dialogue, VoidEmitter emitter)
     {
+        string[] iconsArray = box.Split('<', '>');
+        List<string> icons = new List<string>();
+        for (int i = 0; i < iconsArray.Length; i++)
+        {
+            if (i % 2 != 0)
+            {
+                icons.Add('<'+iconsArray[i] +'>');
+            }
+        }
+
+        int iconsPosition = 0;
+
         text.text = "";
         onDialogue = true;
         textBox.SetActive(true);
@@ -122,7 +135,14 @@ public class DialogueSystem : MonoBehaviour
         emitter.Perform.AddListener(PerformedEvent);
         for (int i = 0; i < box.Length && !performedEvent; i++)
         {
-            text.text = text.text + box[i];
+            if (box[i] == '<' && icons.Count > 0)
+            {
+                text.text = text.text + icons[iconsPosition];
+                i = i + icons[iconsPosition].Length - 1;
+                iconsPosition++;
+                
+            }
+            else text.text = text.text + box[i];
 
             PlayVoice(dialogue.voice, box[i]);
 
