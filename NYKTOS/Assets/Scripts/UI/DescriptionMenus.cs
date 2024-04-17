@@ -1,24 +1,29 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using TMPro;
 
-public class DescriptionMenus : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
-    
+public class DescriptionMenus : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler {
+
     [SerializeField]
-    private TMP_Text _descriptionText;
-    [SerializeField]
-    private RawImage _backGround;
+    private GameObject _description;
 
     public void OnPointerEnter(PointerEventData eventData) {
-        
-        _descriptionText.gameObject.SetActive(true);
-        _backGround.gameObject.SetActive(true);
+
+        _description.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData) {
 
-        _descriptionText.gameObject.SetActive(false);
-        _backGround.gameObject.SetActive(false);
+        _description.SetActive(false);
+    }
+
+    public void OnSelect(BaseEventData eventData)
+    {
+        _description.SetActive(true);
+    }
+
+    public void OnDeselect(BaseEventData eventData)
+    {
+        _description.SetActive(false);
     }
 }
