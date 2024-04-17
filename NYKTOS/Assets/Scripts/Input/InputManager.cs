@@ -22,14 +22,20 @@ public class InputManager : MonoBehaviour
     private BoolEmitter _enableUIInput;
 
     [SerializeField]
+    private VoidEmitter _switchToPlayerControls;
+    [SerializeField]
+    private VoidEmitter _switchToUIControls;
+    [SerializeField]
+    private VoidEmitter _switchToDialogueControls;
+
+    [SerializeField]
     private BoolEmitter _pauseEmitter;
     [SerializeField]
     private VoidEmitter _pauseMenuEmitter;
     [SerializeField]
     private VoidEmitter _closeMenusEmitter;
 
-    [SerializeField]
-    private BoolEmitter _setDialogueEmitter;
+
 
     [SerializeField]
     private VoidEmitter _resumeDialogueEmitter;
@@ -117,12 +123,7 @@ public class InputManager : MonoBehaviour
     //}
     #endregion
 
-    public void SetDialogueInput(bool value)
-    {
-        EnablePlayerInput(!value);
-        if (value) _playerControls.Dialogues.Enable();
-        else _playerControls.Dialogues.Disable();
-    }
+
 
     private void NextDialogue(InputAction.CallbackContext context)
     {
@@ -175,6 +176,18 @@ public class InputManager : MonoBehaviour
         playerControls.UI.Disable();
         playerControls.Dialogues.Disable();
         playerControls.Player.Enable();
+    }
+
+    public void SwitchToDialogueControls()
+    {
+        playerControls.Player.Disable();
+        playerControls.UI.Disable();
+        playerControls.Dialogues.Enable();
+    }
+    public void EnableDialogueInput(bool value)
+    {
+        if (value) _playerControls.Dialogues.Enable();
+        else _playerControls.Dialogues.Disable();
     }
 
     public void EnablePlayerInput(bool enable)
@@ -255,7 +268,9 @@ public class InputManager : MonoBehaviour
         _enablePlayerInput.Perform.AddListener(EnablePlayerInput);
         _enableUIInput.Perform.AddListener(EnableUIInput);
 
-        _setDialogueEmitter.Perform.AddListener(SetDialogueInput);
+        _switchToPlayerControls.Perform.AddListener(SwitchToPlayerControls);
+        _switchToUIControls.Perform.AddListener(SwitchToUIControls);
+        _switchToDialogueControls.Perform.AddListener(SwitchToDialogueControls);
     }
 
     void OnDestroy()
@@ -264,8 +279,9 @@ public class InputManager : MonoBehaviour
         _enablePlayerInput.Perform.RemoveListener(EnablePlayerInput);
         _enableUIInput.Perform.RemoveListener(EnableUIInput);
 
-        _setDialogueEmitter.Perform.AddListener(SetDialogueInput);
-
+        _switchToPlayerControls.Perform.RemoveListener(SwitchToPlayerControls);
+        _switchToUIControls.Perform.RemoveListener(SwitchToUIControls);
+        _switchToDialogueControls.Perform.RemoveListener(SwitchToDialogueControls);
     }
 
 }   
