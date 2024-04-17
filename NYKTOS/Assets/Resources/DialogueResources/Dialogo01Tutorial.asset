@@ -15,10 +15,14 @@ MonoBehaviour:
   _dialogueBoxes:
   - Al fin has despertado.
   - Bien. Me alegro profundamente.
-  - Como puedes ver, todo lo que una vez fue conocido ha sido sucumbido por las sombras.
-  - "La oscuridad est\xE1 al acecho, observando cada movimiento que haces."
+  - Como puedes ver, no queda nada del antiguo esplendor del Templo Olvidado.
+  - "Durante tu letargo, la oscuridad ha ido engullendo lentamente este santuario,
+    apagando poco a poco la Luz albergada en su coraz\xF3n, el Nexo."
+  - Las sombras acechan en cada esquina, observan cada movimiento que haces esperando
+    el momento oportuno.
   - "H\xE9mera..."
-  - "Tu misi\xF3n es proteger el nexo de las hordas de las sombras."
+  - "Tu misi\xF3n es proteger el Nexo de las hordas de sombras que amenazan con extinguir
+    su luz para siempre."
   - 'Por favor... restaura la luz del Templo Olvidado... '
   - "Para empezar, \xBFeres capaz de moverte?"
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
