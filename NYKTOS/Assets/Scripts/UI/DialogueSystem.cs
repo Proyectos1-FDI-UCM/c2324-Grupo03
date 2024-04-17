@@ -135,7 +135,7 @@ public class DialogueSystem : MonoBehaviour
         emitter.Perform.AddListener(() => performedEvent = true);
         yield return new WaitUntil(()=> performedEvent);
 
-
+        emitter.Perform.RemoveAllListeners();
         performedEvent = false;
         textBox.SetActive(false);
         onDialogue = false;
