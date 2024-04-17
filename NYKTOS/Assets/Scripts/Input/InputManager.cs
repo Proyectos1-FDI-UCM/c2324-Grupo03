@@ -12,8 +12,6 @@ public class InputManager : MonoBehaviour
         get { return _instance; }
     }
 
-    private InputActionMap _previousMap;
-
     #region references
     [Header("Emitters")]
     [SerializeField]
@@ -60,6 +58,11 @@ public class InputManager : MonoBehaviour
     private const string gamepadScheme = "Gamepad";
     private const string mouseScheme = "Keyboard&Mouse";
     private string _currentScheme;
+
+    private const string playerActionMap = "Player";
+    private const string UIactionMap = "UI";
+    private string _currentActionMap;
+
     #endregion
 
     private void OnStateLoad()
@@ -75,16 +78,16 @@ public class InputManager : MonoBehaviour
         //_playerState = player.GetComponent<PlayerStateMachine>();
 
         ControlsStart();
-        SwitchToPlayerControls();
     }
 
     private void ControlsStart()
     {
         _currentScheme = _playerInput.currentControlScheme;
-        _previousMap = _playerInput.currentActionMap;
 
         OnControlsChanged(_playerInput);
         _playerInput.onControlsChanged += OnControlsChanged;
+
+        SwitchToPlayerControls();
     }
 
     #region player actions
@@ -172,7 +175,7 @@ public class InputManager : MonoBehaviour
         playerControls.UI.Enable();
         _player.CallMove(Vector2.zero);
 
-        _previousMap = _playerInput.currentActionMap;
+        _currentActionMap = UIactionMap;
     }
 
     public void SwitchToPlayerControls()
@@ -183,7 +186,7 @@ public class InputManager : MonoBehaviour
         playerControls.Dialogues.Disable();
         playerControls.Player.Enable();
 
-        _previousMap = _playerInput.currentActionMap;
+        _currentActionMap = playerActionMap;
     }
 
     public void SwitchToDialogueControls()
@@ -194,27 +197,18 @@ public class InputManager : MonoBehaviour
     }
     public void EnableDialogueInput(bool value)
     {
-        if (value)
-        {
-            if(_playerControls.Player.enabled)
-            {
-                _previousMap = _playerControls.Player;
-                _playerControls.Player.Disable();
-            }
-            else if (_playerControls.UI.enabled)
-            {
-                _previousMap = _playerControls.UI;
-                _playerControls.UI.Disable();
-            }
-
-            _playerControls.Dialogues.Enable();
-
-        }
+        _playerControls.Disable();
+        if (value) _playerControls.Dialogues.Enable();
         else
         {
-            _playerControls.Dialogues.Disable();
-            _previousMap.Enable();
-            Debug.Log(_previousMap);
+
+            if (_currentActionMap == playerActionMap)
+            {
+                _playerControls.Player.Enable();
+                Debug.Log("no entiendo");
+            }
+            else if (_currentActionMap == UIactionMap) _playerControls.UI.Enable();
+            Debug.Log($"{_currentActionMap} es {_playerInput.currentActionMap.ToString()}");
             Debug.Log("previous map enabled " + _playerControls.Player.enabled);
         }
     }
