@@ -12,6 +12,8 @@ public class InputManager : MonoBehaviour
         get { return _instance; }
     }
 
+    private InputActionMap _previousMap;
+
     #region references
     [Header("Emitters")]
     [SerializeField]
@@ -20,13 +22,13 @@ public class InputManager : MonoBehaviour
     private BoolEmitter _enablePlayerInput;
     [SerializeField]
     private BoolEmitter _enableUIInput;
+    [SerializeField]
+    private BoolEmitter _enableDialogueInput;
 
-    [SerializeField]
-    private VoidEmitter _switchToPlayerControls;
-    [SerializeField]
-    private VoidEmitter _switchToUIControls;
-    [SerializeField]
-    private VoidEmitter _switchToDialogueControls;
+    // No se usan
+    //[SerializeField] private VoidEmitter _switchToPlayerControls;
+    //[SerializeField] private VoidEmitter _switchToUIControls;
+    //[SerializeField] private VoidEmitter _switchToDialogueControls;
 
     [SerializeField]
     private BoolEmitter _pauseEmitter;
@@ -79,6 +81,7 @@ public class InputManager : MonoBehaviour
     private void ControlsStart()
     {
         _currentScheme = _playerInput.currentControlScheme;
+        _previousMap = _playerInput.currentActionMap;
 
         OnControlsChanged(_playerInput);
         _playerInput.onControlsChanged += OnControlsChanged;
@@ -158,6 +161,7 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    // Estos métodos activan un mapa de acción y desactivan el resto
     public void SwitchToUIControls()
     {
         playerControls.Player.Disable();
@@ -167,6 +171,8 @@ public class InputManager : MonoBehaviour
         //_playerState.SetState(PlayerState.OnMenu);
         playerControls.UI.Enable();
         _player.CallMove(Vector2.zero);
+
+        _previousMap = _playerInput.currentActionMap;
     }
 
     public void SwitchToPlayerControls()
@@ -176,6 +182,8 @@ public class InputManager : MonoBehaviour
         playerControls.UI.Disable();
         playerControls.Dialogues.Disable();
         playerControls.Player.Enable();
+
+        _previousMap = _playerInput.currentActionMap;
     }
 
     public void SwitchToDialogueControls()
@@ -186,10 +194,32 @@ public class InputManager : MonoBehaviour
     }
     public void EnableDialogueInput(bool value)
     {
-        if (value) _playerControls.Dialogues.Enable();
-        else _playerControls.Dialogues.Disable();
+        if (value)
+        {
+            if(_playerControls.Player.enabled)
+            {
+                _previousMap = _playerControls.Player;
+                _playerControls.Player.Disable();
+            }
+            else if (_playerControls.UI.enabled)
+            {
+                _previousMap = _playerControls.UI;
+                _playerControls.UI.Disable();
+            }
+
+            _playerControls.Dialogues.Enable();
+
+        }
+        else
+        {
+            _playerControls.Dialogues.Disable();
+            _previousMap.Enable();
+            Debug.Log(_previousMap);
+            Debug.Log("previous map enabled " + _playerControls.Player.enabled);
+        }
     }
 
+    // Estos métodos des/activan un mapa de acción, independientemente del resto de mapas activos
     public void EnablePlayerInput(bool enable)
     {
         if (enable) _playerControls.Player.Enable();
@@ -268,9 +298,7 @@ public class InputManager : MonoBehaviour
         _enablePlayerInput.Perform.AddListener(EnablePlayerInput);
         _enableUIInput.Perform.AddListener(EnableUIInput);
 
-        _switchToPlayerControls.Perform.AddListener(SwitchToPlayerControls);
-        _switchToUIControls.Perform.AddListener(SwitchToUIControls);
-        _switchToDialogueControls.Perform.AddListener(SwitchToDialogueControls);
+        _enableDialogueInput.Perform.AddListener(EnableDialogueInput);
     }
 
     void OnDestroy()
@@ -279,9 +307,7 @@ public class InputManager : MonoBehaviour
         _enablePlayerInput.Perform.RemoveListener(EnablePlayerInput);
         _enableUIInput.Perform.RemoveListener(EnableUIInput);
 
-        _switchToPlayerControls.Perform.RemoveListener(SwitchToPlayerControls);
-        _switchToUIControls.Perform.RemoveListener(SwitchToUIControls);
-        _switchToDialogueControls.Perform.RemoveListener(SwitchToDialogueControls);
+        _enableDialogueInput.Perform.RemoveListener(EnableDialogueInput);
     }
 
 }   

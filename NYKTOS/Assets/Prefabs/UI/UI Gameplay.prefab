@@ -11562,6 +11562,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3440641815732349696}
     m_Modifications:
+    - target: {fileID: 1357849799656129796, guid: 572a4e2795d606c4f88148c59814273c, type: 3}
+      propertyPath: m_IgnoreReversedGraphics
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1425309221635735888, guid: 572a4e2795d606c4f88148c59814273c, type: 3}
       propertyPath: m_Name
       value: DialogueMenu
@@ -11650,6 +11654,10 @@ PrefabInstance:
       propertyPath: HUD
       value: 
       objectReference: {fileID: 7435931973371276927}
+    - target: {fileID: 6385838387607079583, guid: 572a4e2795d606c4f88148c59814273c, type: 3}
+      propertyPath: enableDialogueActions
+      value: 
+      objectReference: {fileID: 11400000, guid: d4ba1988355dd334b99b924f317a6f1e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
