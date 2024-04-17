@@ -21,21 +21,20 @@ public class ControlCinemachine : MonoBehaviour
 
     void Update()
     {
-        if (startTimer && waitToStart >= 0)
+        if (startTimer && oneTimeCinematic)
         {
             waitToStart -= Time.deltaTime;
-            Debug.Log("Espera, espera");
         }
 
-        if (waitToStart <= 0)
+        if (waitToStart <= 0 && oneTimeCinematic)
         {
             StartCinematic();
-            Debug.Log("Cinematica activada");
         }
 
-        if (timeline.time >= AnimationDuration)
+        if (timeline.time >= AnimationDuration && oneTimeCinematic)
         {
             FirstCinematicOff();
+            startTimer = false;
         }
     }
 
@@ -55,9 +54,6 @@ public class ControlCinemachine : MonoBehaviour
 
     private void FirstCinematicOff()
     {
-        cinematicCamera.enabled = false;
-        timeline.Stop();
-        timeline.time = 0f;
         oneTimeCinematic = false;
         Debug.Log(oneTimeCinematic);
     }
