@@ -207,6 +207,14 @@ PrefabInstance:
       value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
+      propertyPath: field of view
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: orthographic size
       value: 4.5
       objectReference: {fileID: 0}
@@ -1107,7 +1115,10 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2145952794260721401, guid: 8e0b178f5674b7b42bafd310c644f852, type: 3}
+    - {fileID: 6981536231509013257, guid: 8e0b178f5674b7b42bafd310c644f852, type: 3}
+    - {fileID: 2476926375628064611, guid: 8e0b178f5674b7b42bafd310c644f852, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1974405853425215581, guid: 8e0b178f5674b7b42bafd310c644f852, type: 3}
       insertIndex: -1
