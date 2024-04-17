@@ -47,8 +47,8 @@ MonoBehaviour:
   _stateChanged: {fileID: 11400000, guid: 49b121f9bca222c49b52d58b2b2e0b6b, type: 2}
   _enablePlayerInput: {fileID: 11400000, guid: efc370fa782c3e849847404e8bdf48cc, type: 2}
   _enableUIInput: {fileID: 11400000, guid: a96e42d0ba5fb5542b06b77708a031d2, type: 2}
+  _enableDialogueInput: {fileID: 11400000, guid: d4ba1988355dd334b99b924f317a6f1e, type: 2}
   _pauseEmitter: {fileID: 11400000, guid: ad2d45fe2d0ba464291ba279121ed7dd, type: 2}
   _pauseMenuEmitter: {fileID: 11400000, guid: 1f83d2215c671924eaec39ecaf9b6244, type: 2}
   _closeMenusEmitter: {fileID: 11400000, guid: 2b9072c17d1a8b643a3d84e13cd80942, type: 2}
-  _setDialogueEmitter: {fileID: 11400000, guid: 70ca63d85e784d94d9785fecac0bfe0b, type: 2}
   _resumeDialogueEmitter: {fileID: 11400000, guid: a6f96831abb32284295a8dd9353001aa, type: 2}

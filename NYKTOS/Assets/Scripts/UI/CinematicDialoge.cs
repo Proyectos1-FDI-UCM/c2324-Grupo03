@@ -2,41 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class CinematicDialoge : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI _text;
-    [SerializeField]
-    private string[] _lines;
-    [SerializeField]
-    private float _textSpeed = 0.1f;
+    [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private string[] _lines;
+    [SerializeField] private float _textSpeed = 0.2f;
+    [SerializeField] private float _lineSpeed = 3f;
 
-    int index;
-    
-    void Start()
+    [SerializeField] private float _waitForStart = 2f;
+
+    [SerializeField] private UnityEvent voice = new UnityEvent();
+
+    private int _index;
+
+    private void Start()
     {
-        
+        _text.text = string.Empty;
+        _index = 0;
+        StartCoroutine(StartDialogueAfterDelay(_waitForStart));
     }
 
-   
-    void Update()
+    private IEnumerator StartDialogueAfterDelay(float delay)
     {
-        
+        yield return new WaitForSeconds(delay); 
+        StartCoroutine(StartDialogue());
     }
 
-    public void StartDialoge()
+        private IEnumerator StartDialogue()
     {
-        index = 0;
-        StartCoroutine(WriteLine());
+
+        while (_index < _lines.Length)
+        {
+            _text.text = string.Empty;
+            yield return StartCoroutine(WriteLine(_lines[_index]));
+            yield return new WaitForSeconds(_lineSpeed);//Espera entre líneas
+            _index++;
+        }
+
+        //Fin
+        gameObject.SetActive(false);
     }
 
-    IEnumerator WriteLine()
+    private IEnumerator WriteLine(string line)
     {
-        foreach (char letter in _lines[index].ToCharArray())
+        foreach (char letter in line)
         {
             _text.text += letter;
+            voice?.Invoke();
             yield return new WaitForSeconds(_textSpeed);
         }
     }
 }
+
