@@ -164,15 +164,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.0637207
+      value: 5.03833
       objectReference: {fileID: 0}
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4285889
+      value: 28.134552
       objectReference: {fileID: 0}
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -374.27634
+      value: -1.0536542
       objectReference: {fileID: 0}
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalRotation.w
@@ -220,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.0037174725
+      value: 0.0037002775
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -228,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.99178714
+      value: 0.99236286
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -971,6 +971,27 @@ PrefabInstance:
     - target: {fileID: 1974405853425215581, guid: be7c3165b6343374dbcdfd1ef51a4fb4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154618956157001855, guid: be7c3165b6343374dbcdfd1ef51a4fb4, type: 3}
+      propertyPath: m_fontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154618956157001855, guid: be7c3165b6343374dbcdfd1ef51a4fb4, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6300259409876753642, guid: be7c3165b6343374dbcdfd1ef51a4fb4, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866591248903890041, guid: be7c3165b6343374dbcdfd1ef51a4fb4, type: 3}
+      propertyPath: _lineSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866591248903890041, guid: be7c3165b6343374dbcdfd1ef51a4fb4, type: 3}
+      propertyPath: _lines.Array.data[6]
+      value: "Cuando la oscuridad ataque una de dichas ubicaciones, aparecer\xE1
+        una alerta del color correspondiente"
       objectReference: {fileID: 0}
     - target: {fileID: 7866591248903890041, guid: be7c3165b6343374dbcdfd1ef51a4fb4, type: 3}
       propertyPath: _lines.Array.data[8]
