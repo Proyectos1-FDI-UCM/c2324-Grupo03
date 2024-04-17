@@ -39,6 +39,10 @@ public class BuildingManager : MonoBehaviour
 
     #region parameters
     private float _offsetNotWall = 0.9f;
+    public float OffsetNotWall
+    {
+        get { return _offsetNotWall;}
+    }
 
     [SerializeField]
     private int _beaconPrice = 0;
@@ -53,12 +57,15 @@ public class BuildingManager : MonoBehaviour
     #region building prefabs
     [SerializeField]
     private GameObject _beacon;
+    public GameObject Beacon { get { return _beacon; } }
 
     [SerializeField]
     private GameObject _wall;
+    public GameObject Wall { get { return _wall; } }  
 
     [SerializeField]
     private GameObject _turret;
+    public GameObject Turret { get { return _turret; } }
     #endregion
 
     #region methods
@@ -102,6 +109,8 @@ public class BuildingManager : MonoBehaviour
     
     public void BuildBeacon()
     {
+        _currentPlaceholder.GetComponent<PlaceholderSaveComponent>().CurrentDefense = PlaceholderDefense.Beacon;
+
         switch(_currentPlaceholder.GetComponent<PlaceholderComponent>().type)
         {
             case placeholderType.yellow:
@@ -135,6 +144,8 @@ public class BuildingManager : MonoBehaviour
 
     public void BuildWall()
     {
+        _currentPlaceholder.GetComponent<PlaceholderSaveComponent>().CurrentDefense = PlaceholderDefense.Wall;
+
         switch (_currentPlaceholder.GetComponent<PlaceholderComponent>().type)
         {
             case placeholderType.yellow:
@@ -168,6 +179,8 @@ public class BuildingManager : MonoBehaviour
 
     public void BuildTurret()
     {
+        _currentPlaceholder.GetComponent<PlaceholderSaveComponent>().CurrentDefense = PlaceholderDefense.Turret;
+
         switch (_currentPlaceholder.GetComponent<PlaceholderComponent>().type)
         {
             case placeholderType.yellow:

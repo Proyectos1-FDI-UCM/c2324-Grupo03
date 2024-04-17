@@ -27,12 +27,13 @@ public abstract class CollaboratorWorker : MonoBehaviour
     void Awake()
     {
         WorkerAwake();
-        _collaboratorEvent.WorkStart.AddListener(StartWorker);
+        _collaboratorEvent.WorkStart?.AddListener(StartWorker);
     }
 
+    [ExecuteInEditMode]
     void OnDestroy()
     {
         WorkerOnDestroy();
-        _collaboratorEvent.WorkStart.RemoveListener(StartWorker);
+        _collaboratorEvent.WorkStart?.RemoveListener(StartWorker);
     }
 }

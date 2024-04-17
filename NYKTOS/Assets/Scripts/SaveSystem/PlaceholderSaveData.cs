@@ -7,15 +7,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Placeholder Save Data", menuName = "SaveSystem/Placeholder Data", order = 1)]
 public class PlaceholderSaveData : ScriptableObject
 {
-    private bool _newGame = false;
-
-    public void EnableNewGame()
-    {
-        _newGame = true;
-    }
-
-    public Dictionary<int, PlaceholderDefense> _currentPlaceholders = 
+    private Dictionary<int, PlaceholderDefense> _currentPlaceholders = 
         new Dictionary<int, PlaceholderDefense>();
+    public Dictionary<int, PlaceholderDefense> CurrentPlaceholders
+    {
+        get { return _currentPlaceholders;}
+        set { _currentPlaceholders = value; }
+    }
+    
     private int _idCount = 0;
 
     public int AddPlaceholder(PlaceholderDefense newPlaceholder)
@@ -58,14 +57,24 @@ public class PlaceholderSaveData : ScriptableObject
 
         string elementsInDictionary = "";
         foreach(var element in _currentPlaceholders)
-        {
+        {   
             elementsInDictionary = elementsInDictionary + "\n" + "(" + element.Key + ", " + element.Value + ")";
         }
         Debug.Log(elementsInDictionary);
     }
+
+    public PlaceholderDefense GetPlaceholderDefense(int id)
+    {
+        if (_currentPlaceholders.TryGetValue(id, out PlaceholderDefense value))
+        {
+            return value;
+        }
+        else
+        {
+            return PlaceholderDefense.None;
+        }
+    }
 }
-
-
 
 public enum PlaceholderDefense
 {

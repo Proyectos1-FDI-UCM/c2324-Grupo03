@@ -4,6 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - _collaboratorEvent: {fileID: 11400000, guid: 066c94bd9a170934490d3e8a777e1f76, type: 2}
   - _saveData: {fileID: 11400000, guid: 8e5e25c7d62aac545a67a67a489d258d, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
