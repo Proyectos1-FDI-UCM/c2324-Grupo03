@@ -15,7 +15,7 @@ public class LoadButtonEnabler : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(_placeholderData.SaveFileExists());
+            //gameObject.SetActive(_placeholderData.SaveFileExists());
         }
     }
 }

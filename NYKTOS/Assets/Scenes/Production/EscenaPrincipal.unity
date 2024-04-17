@@ -164,15 +164,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.59552
+      value: 5.0637207
       objectReference: {fileID: 0}
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.272705
+      value: -1.4285889
       objectReference: {fileID: 0}
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -348.31845
+      value: -374.27634
       objectReference: {fileID: 0}
     - target: {fileID: 919640852400110012, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_LocalRotation.w
@@ -892,22 +892,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TextCinematics
       objectReference: {fileID: 0}
-    - target: {fileID: 1327059805351588230, guid: be7c3165b6343374dbcdfd1ef51a4fb4, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327059805351588230, guid: be7c3165b6343374dbcdfd1ef51a4fb4, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327059805351588230, guid: be7c3165b6343374dbcdfd1ef51a4fb4, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327059805351588230, guid: be7c3165b6343374dbcdfd1ef51a4fb4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1974405853425215581, guid: be7c3165b6343374dbcdfd1ef51a4fb4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -988,9 +972,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6154618956157001855, guid: be7c3165b6343374dbcdfd1ef51a4fb4, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
+    - target: {fileID: 7866591248903890041, guid: be7c3165b6343374dbcdfd1ef51a4fb4, type: 3}
+      propertyPath: _lines.Array.data[8]
+      value: "No permitas que nada se acerque al nexo del templo, o ser\xE1 tu perdici\xF3n"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

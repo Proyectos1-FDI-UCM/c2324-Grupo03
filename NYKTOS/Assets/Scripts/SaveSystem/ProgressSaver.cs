@@ -14,7 +14,7 @@ public class ProgressSaver : CollaboratorWorker
 
     protected override IEnumerator Perform()
     {
-        _placeholderData.SavePlaceholderData();
+        //_placeholderData.SavePlaceholderData();
         
         yield return null;
     }
