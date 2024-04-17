@@ -19,5 +19,17 @@ MonoBehaviour:
       m_Calls: []
   _onDialogueFinish:
     m_PersistentCalls:
-      m_Calls: []
-  _voidEmitterAction: {fileID: 0}
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 98590d85b5d68e34cbb1e76c0cc352e6, type: 2}
+        m_TargetAssemblyTypeName: DialogueScriptableObject, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _voidEmitterAction: {fileID: 11400000, guid: 02dc72bad3eecff419a264d83f465e52, type: 2}

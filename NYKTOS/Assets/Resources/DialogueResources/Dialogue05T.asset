@@ -10,14 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94e0c04246ba850449a5d104a9bb481c, type: 3}
-  m_Name: Dialogue03T
+  m_Name: Dialogue05T
   m_EditorClassIdentifier: 
   _dialogueBoxes:
-  - Recuerdas parte de tus habilidades. Bien.
-  - "F\xEDjate abajo a la izquierda."
-  - "Ah\xED se encuentran los cristales que est\xE1n en tu posesi\xF3n. Con ellos,
-    puedes crear un gran n\xFAmero de \xFAtiles."
-  - Ahora, observa la base a tu derecha. Prueba a manipularla.
+  - Muy bien. Prueba a construir una baliza.
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
     m_PersistentCalls:
@@ -25,7 +21,7 @@ MonoBehaviour:
   _onDialogueFinish:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 9a4fb24de80316441aed7a4851dfdffd, type: 2}
+      - m_Target: {fileID: 11400000, guid: 1c7f475cfc5bb234698e9428ae7adcca, type: 2}
         m_TargetAssemblyTypeName: ActionDialogueScriptableObject, Assembly-CSharp
         m_MethodName: StartDialogue
         m_Mode: 1
