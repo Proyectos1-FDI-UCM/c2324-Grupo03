@@ -10,17 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94e0c04246ba850449a5d104a9bb481c, type: 3}
-  m_Name: Dialogue06T
+  m_Name: Dialogue11T
   m_EditorClassIdentifier: 
   _dialogueBoxes:
-  - "Las defensas mantendr\xE1n a raya a las sombras, y te ayudar\xE1n a defender
-    el nexo."
-  - "Recuerda que tus recursos son limitados, y que s\xF3lo ser\xE1s capaz de construir
-    defensas bajo la luz del d\xEDa."
-  - Vaya... No me hab'ia percatado.
-  - "\xBFVes ese edificio derruido a la izquierda? Vamos a intentar reconstruirlo."
-  - "Intenta construir en las bases de su respectivo color. Qui\xE9n sabe, quiz\xE1s
-    recuperen su antiguo poder."
+  - 'Ha anochecido. Esto quiere decir que somos vulnerables. '
+  - "No temas, puesto que las defensas distraer\xE1n a los enemigos y nos iluminar\xE1n."
+  - Ahora, acaba con las sombras y defiende el nexo.
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
     m_PersistentCalls:
@@ -28,7 +23,19 @@ MonoBehaviour:
   _onDialogueFinish:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: b91796e436441db4695865f789956031, type: 2}
+      - m_Target: {fileID: 11400000, guid: 85b501d9779dbc2479e4472a07d19f51, type: 2}
+        m_TargetAssemblyTypeName: NightProgressTracker, Assembly-CSharp
+        m_MethodName: InvokeStartNight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 5612a3f6f8561964d93443188a6d8ce7, type: 2}
         m_TargetAssemblyTypeName: ActionDialogueScriptableObject, Assembly-CSharp
         m_MethodName: StartDialogue
         m_Mode: 1
