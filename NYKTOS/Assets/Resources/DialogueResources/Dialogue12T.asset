@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 618a24d2f6a54ca448b68a09eece292d, type: 3}
   m_Name: Dialogue12T
   m_EditorClassIdentifier: 
-  _dialogueBox: Ataque primario con <>
+  _dialogueBox: 'Apunta con <sprite index=7> / <sprite index=10>
+
+    Ataque primario
+    con <sprite index=8> / <sprite index=9>'
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
     m_PersistentCalls:
