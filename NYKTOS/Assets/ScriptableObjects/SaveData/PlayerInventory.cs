@@ -5,6 +5,7 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "PlayerInventory", menuName = "PlayerInventory", order = 1)]
 public class PlayerInventory : ScriptableObject
 {
+
     [SerializeField]
     private int amarilloCristales = 10;
     public int Amarillo
@@ -49,6 +50,9 @@ public class PlayerInventory : ScriptableObject
             InvokeInventoryUpdate();
         }
     }
+
+    [SerializeField]
+    private ScriptableObject _currentWeapon;
 
     private UnityEvent inventoryUpdateEvent = new UnityEvent();
     public UnityEvent InventoryUpdate => inventoryUpdateEvent;

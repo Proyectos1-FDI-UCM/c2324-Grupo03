@@ -18,7 +18,7 @@ public class WeaponHandler : MonoBehaviour
 
     #region properties
     [System.Serializable]
-    struct weaponStruct
+    public struct weaponStruct
     {
         [SerializeField]
         public WeaponScriptableObject scriptableWeapon;
@@ -27,7 +27,12 @@ public class WeaponHandler : MonoBehaviour
         public AttackType attackType;
     }
 
-    [SerializeField] private weaponStruct weapons = new weaponStruct();
+    [SerializeField] 
+    private weaponStruct weapons = new weaponStruct();
+    public weaponStruct MyWeapons
+    {
+        get{return weapons;}
+    }
 
     private GameObject instantiatedPrefab;
 

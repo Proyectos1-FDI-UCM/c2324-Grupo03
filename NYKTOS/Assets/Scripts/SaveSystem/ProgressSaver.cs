@@ -9,9 +9,13 @@ public class ProgressSaver : CollaboratorWorker
     [SerializeField]
     private PlaceholderSaveData _placeholderData;
 
+    [SerializeField]
+    private CollaboratorEvent _placeholderSaveEvent;
+
     protected override IEnumerator Perform()
     {
         _placeholderData.SavePlaceholderData();
+        
         yield return null;
     }
 

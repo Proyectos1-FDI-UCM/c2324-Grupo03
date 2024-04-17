@@ -14,7 +14,7 @@ public class PlaceholderSaveData : ScriptableObject
         _newGame = true;
     }
 
-    private Dictionary<int, PlaceholderDefense> _currentPlaceholders = 
+    public Dictionary<int, PlaceholderDefense> _currentPlaceholders = 
         new Dictionary<int, PlaceholderDefense>();
     private int _idCount = 0;
 
@@ -62,44 +62,6 @@ public class PlaceholderSaveData : ScriptableObject
             elementsInDictionary = elementsInDictionary + "\n" + "(" + element.Key + ", " + element.Value + ")";
         }
         Debug.Log(elementsInDictionary);
-    }
-
-    public void SavePlaceholderData()
-    {
-        string dataPath = Application.persistentDataPath + "/" + name + ".save";
-        FileStream fileStream = new FileStream(dataPath, FileMode.Create);
-        BinaryFormatter binaryFormatter = new BinaryFormatter();
-        binaryFormatter.Serialize(fileStream, _currentPlaceholders);
-        fileStream.Close();
-    }
-
-    public void LoadPlaceholderData()
-    {
-        if(_newGame)
-        {
-            string dataPath = Application.persistentDataPath + "/" + name + ".save";
-
-            if(File.Exists(dataPath))
-            {
-                FileStream fileStream = new FileStream(dataPath, FileMode.Open);
-                BinaryFormatter binaryFormatter = new BinaryFormatter();
-                _currentPlaceholders = (Dictionary<int, PlaceholderDefense>) binaryFormatter.Deserialize(fileStream);
-                fileStream.Close();
-            }
-            else
-            {
-                Debug.Log("PATH NOT FOUND" + Application.persistentDataPath + "/" + name + ".save");
-            }
-
-            _newGame = false;
-        }
-    }
-
-    public bool SaveFileExists()
-    {
-        string dataPath = Application.persistentDataPath + "/" + name + ".save";
-
-        return File.Exists(dataPath);
     }
 }
 

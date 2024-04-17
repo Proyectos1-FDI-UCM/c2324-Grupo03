@@ -24,7 +24,7 @@ public class NightProgressTracker : ScriptableObject
     public void InvokeStartNight()
     {
         _startNight.Invoke(_nightList[_night]);
-        _nightTimeEmitter.Perform.Invoke(_nightList[_night].NightLength);
+        _nightTimeEmitter.Perform.Invoke((float)_nightList[_night].NightLength);
     }
 
     public void AdvanceNight()
