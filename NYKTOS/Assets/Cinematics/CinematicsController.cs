@@ -12,7 +12,7 @@ public class ControlCinemachine : MonoBehaviour
     private bool startTimer = false;
     [SerializeField]
     private float waitToStart = 2f;
-    private float AnimationDuration = 45f;
+    private float AnimationDuration = 120f;
     void Start()
     {
         cinematicCamera.enabled = false;
