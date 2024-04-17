@@ -11,7 +11,7 @@ public class CinematicDialoge : MonoBehaviour
     [SerializeField] private float _textSpeed = 0.2f;
     [SerializeField] private float _lineSpeed = 3f;
 
-    [SerializeField] private float _waitForStat = 2f;
+    [SerializeField] private float _waitForStart = 2f;
 
     [SerializeField] private UnityEvent voice = new UnityEvent();
 
@@ -21,7 +21,7 @@ public class CinematicDialoge : MonoBehaviour
     {
         _text.text = string.Empty;
         _index = 0;
-        StartCoroutine(StartDialogueAfterDelay(_waitForStat));
+        StartCoroutine(StartDialogueAfterDelay(_waitForStart));
     }
 
     private IEnumerator StartDialogueAfterDelay(float delay)
