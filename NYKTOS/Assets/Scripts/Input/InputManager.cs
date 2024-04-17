@@ -23,11 +23,6 @@ public class InputManager : MonoBehaviour
     [SerializeField]
     private BoolEmitter _enableDialogueInput;
 
-    // No se usan
-    //[SerializeField] private VoidEmitter _switchToPlayerControls;
-    //[SerializeField] private VoidEmitter _switchToUIControls;
-    //[SerializeField] private VoidEmitter _switchToDialogueControls;
-
     [SerializeField]
     private BoolEmitter _pauseEmitter;
     [SerializeField]
@@ -35,7 +30,8 @@ public class InputManager : MonoBehaviour
     [SerializeField]
     private VoidEmitter _closeMenusEmitter;
 
-
+    [SerializeField]
+    private VoidEmitter _mapEmitter;
 
     [SerializeField]
     private VoidEmitter _resumeDialogueEmitter;
@@ -122,11 +118,10 @@ public class InputManager : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext context) => _player.Interact();
 
-    //private void Interact(InputAction.CallbackContext context)
-    //{
-    //    _player.Interact();
-    //    Debug.Log("Interactuando");
-    //}
+    private void OpenCloseMap(InputAction.CallbackContext context)
+    {
+        _mapEmitter.InvokePerform();
+    }
     #endregion
 
 
@@ -232,10 +227,10 @@ public class InputManager : MonoBehaviour
         _playerControls.Player.Move.canceled += Move;
         _playerControls.Player.Blink.performed += Blink;
         _playerControls.Player.Look.performed += Look;
-
         _playerControls.Player.PrimaryAttack.performed += PrimaryAttack;
         _playerControls.Player.SecondaryAttack.performed += SecondaryAttack;
         _playerControls.Player.Interact.performed += Interact;
+        _playerControls.Player.Map.performed += OpenCloseMap;
         
         _playerControls.Dialogues.NextDialogue.performed += NextDialogue;
 
@@ -255,11 +250,12 @@ public class InputManager : MonoBehaviour
             _playerControls.Player.Move.canceled -= Move;
             _playerControls.Player.Blink.performed -= Blink;
             _playerControls.Player.Look.performed -= Look;
-
             _playerControls.Player.PrimaryAttack.performed -= PrimaryAttack;
             _playerControls.Player.SecondaryAttack.performed -= SecondaryAttack;
             _playerControls.Player.Interact.performed -= Interact;
-            
+            _playerControls.Player.Map.performed -= OpenCloseMap;
+
+
             _playerControls.Dialogues.NextDialogue.performed -= NextDialogue;
 
             _playerControls.Player.Pause.performed -= PauseGame;

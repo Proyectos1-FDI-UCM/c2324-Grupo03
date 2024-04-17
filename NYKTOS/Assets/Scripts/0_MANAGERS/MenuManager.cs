@@ -42,6 +42,9 @@ public class MenuManager : MonoBehaviour
     private VoidEmitter _weaponEffectMenuEmitter;
 
     [SerializeField]
+    private VoidEmitter _mapEmitter;
+
+    [SerializeField]
     private VoidEmitter _beaconBuildEmitter;
     [SerializeField]
     private VoidEmitter _wallBuildEmitter;
@@ -97,6 +100,9 @@ public class MenuManager : MonoBehaviour
 
     #endregion
 
+    [Header("Other")]
+    [SerializeField]
+    private GameObject _map;
     #endregion
 
     #region properties
@@ -196,6 +202,11 @@ public class MenuManager : MonoBehaviour
     }
     #endregion
 
+    private void OpenCloseMap()
+    {
+        _map.SetActive(!_map.activeSelf);
+    }
+
     #endregion
 
     void Awake()
@@ -219,6 +230,8 @@ public class MenuManager : MonoBehaviour
         _weaponUpgradeMenuEmitter.Perform.AddListener(OpenWeaponUpgradeMenu);
         _weaponEffectMenuEmitter.Perform.AddListener(OpenWeaponEffectMenu);
 
+        _mapEmitter.Perform.AddListener(OpenCloseMap);
+
         _beaconBuildEmitter.Perform.AddListener(BuildBeacon);
         _wallBuildEmitter.Perform.AddListener(BuildWall);
         _turretBuildEmitter.Perform.AddListener(BuildTurret);
@@ -237,6 +250,9 @@ public class MenuManager : MonoBehaviour
         _defenseMenuEmitter.Perform.RemoveListener(OpenDefenseMenu);
         _weaponUpgradeMenuEmitter.Perform.RemoveListener(OpenWeaponUpgradeMenu);
         _weaponEffectMenuEmitter.Perform.RemoveListener(OpenWeaponEffectMenu);
+
+        _mapEmitter.Perform.RemoveListener(OpenCloseMap);
+
 
         _beaconBuildEmitter.Perform.RemoveListener(BuildBeacon);
         _wallBuildEmitter.Perform.RemoveListener(BuildWall);
