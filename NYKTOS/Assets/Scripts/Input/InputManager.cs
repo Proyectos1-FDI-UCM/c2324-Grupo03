@@ -171,8 +171,6 @@ public class InputManager : MonoBehaviour
         //_playerState.SetState(PlayerState.OnMenu);
         playerControls.UI.Enable();
         _player.CallMove(Vector2.zero);
-
-        _previousMap = _playerInput.currentActionMap;
     }
 
     public void SwitchToPlayerControls()
@@ -182,8 +180,6 @@ public class InputManager : MonoBehaviour
         playerControls.UI.Disable();
         playerControls.Dialogues.Disable();
         playerControls.Player.Enable();
-
-        _previousMap = _playerInput.currentActionMap;
     }
 
     public void SwitchToDialogueControls()

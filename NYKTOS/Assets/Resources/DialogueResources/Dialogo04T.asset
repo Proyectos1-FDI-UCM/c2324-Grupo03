@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 618a24d2f6a54ca448b68a09eece292d, type: 3}
   m_Name: Dialogo04T
   m_EditorClassIdentifier: 
-  _dialogueBox: "Interact\xFAa con tu entorno con <>"
+  _dialogueBox: "Interact\xFAa con tu entorno con <>."
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
     m_PersistentCalls:
@@ -20,8 +20,8 @@ MonoBehaviour:
   _onDialogueFinish:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 98590d85b5d68e34cbb1e76c0cc352e6, type: 2}
-        m_TargetAssemblyTypeName: DialogueScriptableObject, Assembly-CSharp
+      - m_Target: {fileID: 11400000, guid: 1c7f475cfc5bb234698e9428ae7adcca, type: 2}
+        m_TargetAssemblyTypeName: ActionDialogueScriptableObject, Assembly-CSharp
         m_MethodName: StartDialogue
         m_Mode: 1
         m_Arguments:
