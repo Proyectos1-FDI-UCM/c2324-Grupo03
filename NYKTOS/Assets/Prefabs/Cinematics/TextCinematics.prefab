@@ -104,6 +104,23 @@ MonoBehaviour:
   - "No permitas que nada se acerqu\xE9 al nexo del templo, o ser\xE1 tu perdici\xF3n"
   - "Que la suerte est\xE9 de tu parte y la luz te ampare"
   _textSpeed: 0.1
+  _lineSpeed: 3
+  _waitForStart: 2
+  voice:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &953434180956258805
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +186,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5853f5e1e619d04396257551e1062f9, type: 2}
   m_sharedMaterial: {fileID: 2378778316072397435, guid: b5853f5e1e619d04396257551e1062f9, type: 2}
