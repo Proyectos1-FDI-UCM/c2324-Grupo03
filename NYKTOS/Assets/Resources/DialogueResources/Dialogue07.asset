@@ -20,4 +20,4 @@ MonoBehaviour:
   _onDialogueFinish:
     m_PersistentCalls:
       m_Calls: []
-  _voidEmitterAction: {fileID: 0}
+  _voidEmitterAction: {fileID: 11400000, guid: efe0690e9f5518144be708e0d5082d3d, type: 2}
