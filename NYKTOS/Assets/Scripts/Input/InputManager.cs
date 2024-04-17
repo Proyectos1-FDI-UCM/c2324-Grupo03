@@ -201,15 +201,11 @@ public class InputManager : MonoBehaviour
         if (value) _playerControls.Dialogues.Enable();
         else
         {
-
             if (_currentActionMap == playerActionMap)
             {
                 _playerControls.Player.Enable();
-                Debug.Log("no entiendo");
             }
             else if (_currentActionMap == UIactionMap) _playerControls.UI.Enable();
-            Debug.Log($"{_currentActionMap} es {_playerInput.currentActionMap.ToString()}");
-            Debug.Log("previous map enabled " + _playerControls.Player.enabled);
         }
     }
 

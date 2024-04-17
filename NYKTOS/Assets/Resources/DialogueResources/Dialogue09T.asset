@@ -9,18 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94e0c04246ba850449a5d104a9bb481c, type: 3}
-  m_Name: Dialogue06T
+  m_Script: {fileID: 11500000, guid: 618a24d2f6a54ca448b68a09eece292d, type: 3}
+  m_Name: Dialogue09T
   m_EditorClassIdentifier: 
-  _dialogueBoxes:
-  - "Las defensas mantendr\xE1n a raya a las sombras, y te ayudar\xE1n a defender
-    el nexo."
-  - "Recuerda que tus recursos son limitados, y que s\xF3lo ser\xE1s capaz de construir
-    defensas bajo la luz del d\xEDa."
-  - "Vaya... No lo hab\xEDa visto."
-  - "\xBFVes ese edificio derruido a la izquierda? Vamos a intentar reconstruirlo."
-  - "Intenta construir en las bases de su respectivo color. Qui\xE9n sabe, quiz\xE1s
-    recuperen su antiguo poder."
+  _dialogueBox: "Interact\xFAa con el nexo."
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
     m_PersistentCalls:
@@ -28,7 +20,7 @@ MonoBehaviour:
   _onDialogueFinish:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: b91796e436441db4695865f789956031, type: 2}
+      - m_Target: {fileID: 11400000, guid: 737622e1fdb295344a89172846ff5d0d, type: 2}
         m_TargetAssemblyTypeName: ActionDialogueScriptableObject, Assembly-CSharp
         m_MethodName: StartDialogue
         m_Mode: 1
@@ -40,3 +32,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _voidEmitterAction: {fileID: 11400000, guid: 7dee2853a844893449043eaac068bb2b, type: 2}
