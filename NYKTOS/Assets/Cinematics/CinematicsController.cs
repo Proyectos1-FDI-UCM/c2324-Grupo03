@@ -8,7 +8,10 @@ public class ControlCinemachine : MonoBehaviour
     private VoidEmitter FirstCinematicEmitter;
     public CinemachineVirtualCamera cinematicCamera;
     public PlayableDirector timeline;
-    private float AnimationDuration = 48f;
+    private bool oneTimeCinematic = true;
+    private bool startTimer = false;
+    private float waitToStart = 2f;
+    private float AnimationDuration = 45f;
     void Start()
     {
         cinematicCamera.enabled = false;
@@ -18,23 +21,40 @@ public class ControlCinemachine : MonoBehaviour
 
     void Update()
     {
-        if (timeline.time >= AnimationDuration)
+        if (startTimer && oneTimeCinematic)
+        {
+            waitToStart -= Time.deltaTime;
+        }
+
+        if (waitToStart <= 0 && oneTimeCinematic)
+        {
+            StartCinematic();
+        }
+
+        if (timeline.time >= AnimationDuration && oneTimeCinematic)
         {
             FirstCinematicOff();
+            startTimer = false;
+        }
+    }
+
+    private void StartCinematic()
+    {
+        if (oneTimeCinematic && waitToStart <= 0)
+        {
+            timeline.Play();
+            cinematicCamera.enabled = true;
         }
     }
 
     public void FirstCinematicOn()
     {
-        // Activa la cámara cinemática
-        timeline.Play();
-        cinematicCamera.enabled = true;
+        startTimer = true;
     }
 
     private void FirstCinematicOff()
     {
-        cinematicCamera.enabled = false;
-        timeline.Stop();
-        timeline.time = 0f;
+        oneTimeCinematic = false;
+        Debug.Log(oneTimeCinematic);
     }
 }

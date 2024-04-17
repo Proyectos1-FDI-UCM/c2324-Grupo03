@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 618a24d2f6a54ca448b68a09eece292d, type: 3}
-  m_Name: Dialogo02 Tutorial
+  m_Name: Dialogo04T
   m_EditorClassIdentifier: 
-  _dialogueBox: "Mu\xE9vete con <>, <>, <>, <>.\nPresiona <> en la direcci\xF3n de
-    movimiento."
+  _dialogueBox: "Interact\xFAa con tu entorno con <>"
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
     m_PersistentCalls:
@@ -21,7 +20,7 @@ MonoBehaviour:
   _onDialogueFinish:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 46acea00dd6de384f971421eb56cf66d, type: 2}
+      - m_Target: {fileID: 11400000, guid: 98590d85b5d68e34cbb1e76c0cc352e6, type: 2}
         m_TargetAssemblyTypeName: DialogueScriptableObject, Assembly-CSharp
         m_MethodName: StartDialogue
         m_Mode: 1
@@ -33,4 +32,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _voidEmitterAction: {fileID: 11400000, guid: 37927cc0998dede4b88135f91b04cfe6, type: 2}
+  _voidEmitterAction: {fileID: 11400000, guid: 02dc72bad3eecff419a264d83f465e52, type: 2}
