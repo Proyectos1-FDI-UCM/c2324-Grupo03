@@ -8,7 +8,7 @@ public class ControlCinemachine : MonoBehaviour
     private VoidEmitter FirstCinematicEmitter;
     public CinemachineVirtualCamera cinematicCamera;
     public PlayableDirector timeline;
-    private float AnimationDuration = 8f;
+    private float AnimationDuration = 48f;
     void Start()
     {
         cinematicCamera.enabled = false;
