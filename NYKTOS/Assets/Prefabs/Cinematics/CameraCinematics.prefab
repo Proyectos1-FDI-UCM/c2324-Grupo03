@@ -57,13 +57,13 @@ MonoBehaviour:
     roll: 0
   - position: {x: 0, y: 39.6, z: -80}
     roll: 0
-  - position: {x: -18, y: 10, z: -150}
-    roll: 0
-  - position: {x: -18, y: 10, z: -80}
-    roll: 0
   - position: {x: 18, y: 10, z: -150}
     roll: 0
   - position: {x: 18, y: 10, z: -80}
+    roll: 0
+  - position: {x: -18, y: 10, z: -150}
+    roll: 0
+  - position: {x: -18, y: 10, z: -80}
     roll: 0
   - position: {x: 0, y: 39.6, z: -150}
     roll: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   FirstCinematicEmitter: {fileID: 11400000, guid: ec44c8171d39ad24ab1a43193c4c3584, type: 2}
   cinematicCamera: {fileID: 6414313528364685277}
   timeline: {fileID: 6590314419426457884}
+  waitToStart: 2
 --- !u!1 &7367381428383103139
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 3079362399544435665}
-  m_PathPosition: 1.16666
+  m_PathPosition: 0.9914783
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0

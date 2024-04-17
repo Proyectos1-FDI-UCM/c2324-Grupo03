@@ -10,10 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94e0c04246ba850449a5d104a9bb481c, type: 3}
-  m_Name: Dialogue05T
+  m_Name: Dialogue06T
   m_EditorClassIdentifier: 
   _dialogueBoxes:
-  - Muy bien. Prueba a construir una baliza.
+  - "Las defensas mantendr\xE1n a raya a las sombras, y te ayudar\xE1n a defender
+    el nexo."
+  - "Recuerda que tus recursos son limitados, y que s\xF3lo ser\xE1s capaz de construir
+    defensas bajo la luz del d\xEDa."
+  - "Una \xFAltima cosa."
+  - "\xBFVes ese edificio derruido a la izquierda? Vamos a intentar reconstruirlo."
+  - "Intenta construir en las bases de su respectivo color. Qui\xE9n sabe, quiz\xE1s
+    recuperen su antiguo poder."
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
     m_PersistentCalls:
@@ -21,7 +28,7 @@ MonoBehaviour:
   _onDialogueFinish:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 1c7f475cfc5bb234698e9428ae7adcca, type: 2}
+      - m_Target: {fileID: 11400000, guid: b91796e436441db4695865f789956031, type: 2}
         m_TargetAssemblyTypeName: ActionDialogueScriptableObject, Assembly-CSharp
         m_MethodName: StartDialogue
         m_Mode: 1

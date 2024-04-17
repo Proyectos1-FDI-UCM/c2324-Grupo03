@@ -118,7 +118,9 @@ public class DialogueSystem : MonoBehaviour
         textBox.SetActive(true);
 
         dialogue.PlayEnterEvent();
-        for (int i = 0; i < box.Length; i++)
+
+        emitter.Perform.AddListener(() => performedEvent = true);
+        for (int i = 0; i < box.Length && !performedEvent; i++)
         {
             text.text = text.text + box[i];
 
@@ -132,7 +134,7 @@ public class DialogueSystem : MonoBehaviour
 
         }
 
-        emitter.Perform.AddListener(() => performedEvent = true);
+        
         yield return new WaitUntil(()=> performedEvent);
 
         emitter.Perform.RemoveAllListeners();
