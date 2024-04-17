@@ -10,6 +10,7 @@ public class ControlCinemachine : MonoBehaviour
     public PlayableDirector timeline;
     private bool oneTimeCinematic = true;
     private bool startTimer = false;
+    [SerializeField]
     private float waitToStart = 2f;
     private float AnimationDuration = 45f;
     void Start()
