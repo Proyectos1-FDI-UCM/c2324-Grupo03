@@ -98,13 +98,13 @@ MonoBehaviour:
   - Al este la cian
   - Y al oeste la magenta
   - "Cuando la oscuridad ataque una de dichas ubicaciones, aparecer\xE1 una alerta
-    del color respectivo"
+    del color correspondiente"
   - "Aqu\xED podr\xE1s mejorar tu armamento para enfrentar a las criaturas que acechan
     en la oscuridad"
-  - "No permitas que nada se acerqu\xE9 al nexo del templo, o ser\xE1 tu perdici\xF3n"
+  - "No permitas que nada se acerque al nexo del templo, o ser\xE1 tu perdici\xF3n"
   - "Que la suerte est\xE9 de tu parte y la luz te ampare"
   _textSpeed: 0.1
-  _lineSpeed: 3
+  _lineSpeed: 1.5
   _waitForStart: 2
   voice:
     m_PersistentCalls:
@@ -213,8 +213,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -306,7 +306,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
