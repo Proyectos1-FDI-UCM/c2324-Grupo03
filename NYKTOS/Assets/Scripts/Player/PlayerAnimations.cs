@@ -83,6 +83,9 @@ public class PlayerAnimations : MonoBehaviour {
 
     #endregion
 
+    private bool _playingPart = false;
+
+
     private void Start() {
 
         _animator = GetComponent<Animator>();
@@ -95,7 +98,7 @@ public class PlayerAnimations : MonoBehaviour {
     #region Die
     public void StartDie() {
         StartCoroutine(DieAnimation());
-        StartCoroutine(PlayerDeadParticles());
+        if (!_playingPart) StartCoroutine(PlayerDeadParticles());
 
     }
     private IEnumerator DieAnimation() {
@@ -107,7 +110,9 @@ public class PlayerAnimations : MonoBehaviour {
     }
 
     public IEnumerator PlayerDeadParticles() {
-
+        _explosionParticleSystem.Clear();
+        _explosionParticleSystem.Stop();
+        _playingPart = true;
         var mainModule = _explosionParticleSystem.main;
         mainModule.startSpeed = _speedDead;
         mainModule.duration = _durationDead;
@@ -116,6 +121,7 @@ public class PlayerAnimations : MonoBehaviour {
 
         _explosionParticleSystem.Play();
         yield return new WaitForSeconds(_durationDead);
+        _playingPart = false;
         _explosionParticleSystem.Stop();
     }
 
@@ -125,11 +131,11 @@ public class PlayerAnimations : MonoBehaviour {
     #region Hurt
     public void StartHurt() {
         StartCoroutine(HurtAnimation());
-        StartCoroutine(PlayerHurtParticles());
+        if(!_playingPart)StartCoroutine(PlayerHurtParticles());
     }
 
     private IEnumerator HurtAnimation() {
-        
+       
         Color color = _spriteRenderer.color;
         float opacityAnterior = color.a;
         
@@ -143,7 +149,8 @@ public class PlayerAnimations : MonoBehaviour {
     }
 
     public IEnumerator PlayerHurtParticles() {
-
+        _explosionParticleSystem.Clear();
+        _explosionParticleSystem.Stop();
         var mainModule = _explosionParticleSystem.main;
         mainModule.startSpeed = _speedDead;
 
@@ -176,10 +183,11 @@ public class PlayerAnimations : MonoBehaviour {
 
     #region Blink
     public void StartBlink() {
-        StartCoroutine(BlinkAnim());
+        if (!_playingPart) StartCoroutine(BlinkAnim());
     }
     private IEnumerator BlinkAnim() {
-
+        _explosionParticleSystem.Clear();
+        _explosionParticleSystem.Stop();
         var mainModule = _explosionParticleSystem.main;
         mainModule.startSpeed = _speedBlink;
         mainModule.duration = _durationBlink;
