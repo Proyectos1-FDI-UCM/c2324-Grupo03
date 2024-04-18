@@ -72,7 +72,7 @@ public class GameStateMachine : ScriptableObject
 
     public void SetStateToLose()
     {
-        SetState(GlobalStateIdentifier.Lose);
+        SetState(GlobalStateIdentifier.LoseSceneLoad);
     }
 
     void OnValidate()
