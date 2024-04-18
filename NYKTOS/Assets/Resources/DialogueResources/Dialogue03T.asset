@@ -17,7 +17,7 @@ MonoBehaviour:
   - "F\xEDjate abajo a la izquierda."
   - "Ah\xED se encuentran los cristales que est\xE1n en tu posesi\xF3n. Con ellos,
     puedes crear un gran n\xFAmero de \xFAtiles."
-  - Ahora, observa la base a tu derecha. Prueba a manipularla.
+  - Ahora, observa los cimientos a tu derecha. Prueba a manipularla.
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
     m_PersistentCalls:
