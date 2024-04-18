@@ -19,6 +19,7 @@ public class IndividualInteraction : MonoBehaviour
         _state = GetComponent<BuildingStateMachine>();
 
         _canInteractEmitter.Perform.AddListener(CanInteract);
+        Debug.Log("puedo interactuar " +  _state.isInteractable);
     }
 
 }

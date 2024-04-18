@@ -33,9 +33,9 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
             && _state.isInteractable
         )
         {
-            _defenseMenu.InvokePerform();
             UpdateCurrentPlaceHolder();
             UpdateDefenseMenu();
+            _defenseMenu.InvokePerform();
         }
     }
 
