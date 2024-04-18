@@ -28,8 +28,8 @@ public abstract class CollaboratorWorker : MonoBehaviour
 
     void Awake()
     {
-        WorkerAwake();
         _collaboratorEvent.WorkStart?.AddListener(StartWorker);
+        WorkerAwake();
     }
 
     [ExecuteInEditMode]
