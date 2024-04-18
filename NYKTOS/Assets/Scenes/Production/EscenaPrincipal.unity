@@ -220,15 +220,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.0031347962
+      value: 0.0027777778
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.99999994
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9920536
+      value: 0.9922481
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1058,22 +1058,6 @@ PrefabInstance:
     - target: {fileID: 4218664648413793107, guid: d979f4ad42934fd46a45e73ba5ce5d0d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8888032247187860291, guid: d979f4ad42934fd46a45e73ba5ce5d0d, type: 3}
-      propertyPath: m_Size.x
-      value: 2.5926018
-      objectReference: {fileID: 0}
-    - target: {fileID: 8888032247187860291, guid: d979f4ad42934fd46a45e73ba5ce5d0d, type: 3}
-      propertyPath: m_Size.y
-      value: 4.2822914
-      objectReference: {fileID: 0}
-    - target: {fileID: 8888032247187860291, guid: d979f4ad42934fd46a45e73ba5ce5d0d, type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8888032247187860291, guid: d979f4ad42934fd46a45e73ba5ce5d0d, type: 3}
-      propertyPath: m_Offset.y
-      value: 2.3505154
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
