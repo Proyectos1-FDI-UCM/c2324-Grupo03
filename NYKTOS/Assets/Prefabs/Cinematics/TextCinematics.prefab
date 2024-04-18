@@ -97,11 +97,10 @@ MonoBehaviour:
   - En el norte la amarilla
   - Al este la cian
   - Y al oeste la magenta
-  - "Cuando la oscuridad ataque una de dichas ubicaciones, aparecer\xE1 una alerta
-    del color correspondiente"
-  - "Aqu\xED podr\xE1s mejorar tu armamento para enfrentar a las criaturas que acechan
-    en la oscuridad"
-  - "No permitas que nada se acerque al nexo del templo, o ser\xE1 tu perdici\xF3n"
+  - "Una alerta del color correspondiente aparecer\xE1 cuando se acerquen amenazas"
+  - "Aqu\xED podr\xE1s mejorar tu armamento para enfrentar a las criaturas de las
+    sombras"
+  - "No permitas que nada se acerque al nexo, o ser\xE1 tu perdici\xF3n"
   - "Que la suerte est\xE9 de tu parte y la luz te ampare"
   _textSpeed: 0.1
   _lineSpeed: 1.5
@@ -273,7 +272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1974405853425215581
 RectTransform:
   m_ObjectHideFlags: 0
