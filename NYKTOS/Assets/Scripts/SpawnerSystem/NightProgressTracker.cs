@@ -44,7 +44,7 @@ public class NightProgressTracker : ScriptableObject
             }
             else
             {
-                _stateMachine?.SetState(GlobalStateIdentifier.Lose);
+                _stateMachine?.SetState(GlobalStateIdentifier.LoseSceneLoad);
             }
         }
         else if(_stateMachine.GetCurrentState == GlobalStateIdentifier.TutorialNight)

@@ -15,6 +15,7 @@ public class CollaboratorEvent: ScriptableObject
     public void AddWorker()
     {
         _subscribedWorkers++;
+        Debug.Log("SUBSCRIBED WORKERS: " + _subscribedWorkers);
     }
 
     public void DeleteWorker()

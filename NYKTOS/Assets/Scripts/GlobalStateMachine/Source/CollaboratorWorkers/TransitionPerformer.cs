@@ -88,6 +88,7 @@ public class TransitionPerformer : MonoBehaviour
     [ContextMenu("TransitionToTransparent")]
     private void TransitionToTransparent()
     {
+        Debug.Log("TRANSICION");
         StopAllCoroutines();
         
         _transitionToTransparentEvent.AddWorker();
