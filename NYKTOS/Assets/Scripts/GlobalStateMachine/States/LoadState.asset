@@ -61,4 +61,5 @@ MonoBehaviour:
   _onStateInstantExit:
     m_PersistentCalls:
       m_Calls: []
-  _onStateExitCollaborators: []
+  _onStateExitCollaborators:
+  - {fileID: 11400000, guid: f9cc91595a9907a44b73d4cc7a19a96d, type: 2}

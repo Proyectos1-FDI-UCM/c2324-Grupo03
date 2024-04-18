@@ -14,4 +14,9 @@ public class GlobalMethods: ScriptableObject
     {
         Application.Quit();
     }
+
+    public void ActivateNewGame()
+    {
+        ProgressLoader.ActivateNewGameFlag();
+    }
 }

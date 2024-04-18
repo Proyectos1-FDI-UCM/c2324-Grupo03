@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class ResetStateMachineOnGameStart : MonoBehaviour
 {
-    public GameStateMachine _scriptableObject;
+    public GameStateMachine _gameStateMachine;
     private static bool _gameStarted = false;
 
     void Start()
     {
         if (!_gameStarted)
         {
-            if (_scriptableObject != null)
+            if (_gameStateMachine != null)
             {
-                _scriptableObject.ResetCurrentState();
+                _gameStateMachine.ResetCurrentState();
             }
             _gameStarted = true;
         }

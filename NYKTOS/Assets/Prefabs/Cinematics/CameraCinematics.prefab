@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 803291579201829849}
   - component: {fileID: 3079362399544435665}
   m_Layer: 0
-  m_Name: Dolly Track (1)
+  m_Name: Dolly Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,11 +113,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 084aaac67804b4d4a962f6d4018c3686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstCinematicEmitter: {fileID: 11400000, guid: ec44c8171d39ad24ab1a43193c4c3584, type: 2}
-  cinematicCamera: {fileID: 6414313528364685277}
-  timeline: {fileID: 6590314419426457884}
-  waitToStart: 2
-  _UIGameplay: {fileID: 0}
+  _firstCinematicEmitter: {fileID: 11400000, guid: ec44c8171d39ad24ab1a43193c4c3584, type: 2}
+  _cinematicCamera: {fileID: 6414313528364685277}
+  _timeline: {fileID: 6590314419426457884}
+  _waitToStart: 2
+  _uiGameplay: {fileID: 0}
 --- !u!1 &7367381428383103139
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 6590314419426457884}
   - component: {fileID: 6656326344784949707}
   m_Layer: 0
-  m_Name: Virtual Camera (1)
+  m_Name: Virtual Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

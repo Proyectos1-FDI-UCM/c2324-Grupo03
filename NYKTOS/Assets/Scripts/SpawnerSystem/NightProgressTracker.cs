@@ -14,6 +14,11 @@ public class NightProgressTracker : ScriptableObject
 
     [SerializeField]
     private int _night = 0;
+    public int Night 
+    { 
+        get { return _night; } 
+        set { _night = value; }
+    }
 
     [SerializeField]
     private List<NightWave> _nightList = new List<NightWave>();

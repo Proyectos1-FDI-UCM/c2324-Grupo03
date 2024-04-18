@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 
 
-
+[System.Serializable]
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
 public class WeaponScriptableObject : ScriptableObject
 {

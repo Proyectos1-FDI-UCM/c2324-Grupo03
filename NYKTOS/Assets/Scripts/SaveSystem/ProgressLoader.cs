@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ProgressLoader : CollaboratorWorker
 {
@@ -7,6 +8,9 @@ public class ProgressLoader : CollaboratorWorker
     private float _waitTime = 5.0f;
 
     private static ProgressLoader _instance;
+
+    [SerializeField]
+    private NightProgressTracker _nightProgressTracker;
 
     [SerializeField]
     private PlaceholderSaveData _placeholderData;
@@ -17,10 +21,14 @@ public class ProgressLoader : CollaboratorWorker
     [SerializeField]
     private CollaboratorEvent _placeholderLoadEvent;
 
-    private bool _newGameFlag = false;
-    public void SetNewGameFlag(bool val)
+    [SerializeField]
+    private UnityEvent _upgradeWeapon = new UnityEvent();
+    public UnityEvent UpgradeWeapon { get { return _upgradeWeapon; } }
+
+    private static bool _newGameFlag = false;
+    public static void ActivateNewGameFlag()
     {
-        _newGameFlag = val;
+        _newGameFlag = true;
     }
 
     private bool _workCompletedCondition = false;
@@ -35,16 +43,21 @@ public class ProgressLoader : CollaboratorWorker
             
             yield return null;
 
+            if (loadedData != null)
+            {
+
+            _nightProgressTracker.Night = loadedData.Night;
             _placeholderData.CurrentPlaceholders = loadedData.PlaceholderData;
             _playerInventory.Amarillo = loadedData.Yellow;
             _playerInventory.Magenta = loadedData.Magenta;
             _playerInventory.Cian = loadedData.Cyan;
 
-            PlayerController
-                .playerTransform
-                .gameObject
-                .GetComponent<WeaponHandler>()
-                .SetWeapon(loadedData.Weapon);
+            if (loadedData.UpgradedWeapon)
+            {
+                _upgradeWeapon.Invoke();
+            }
+
+            ControlCinemachine.OneTimeCinematic = loadedData.CinematicPlayed;
 
             _workCompletedCondition = false;
             _placeholderLoadEvent.InvokeWorkStart();
@@ -56,11 +69,14 @@ public class ProgressLoader : CollaboratorWorker
             {
                 yield return new WaitForSeconds(0.1f);
             }
+
+            }
         }
         else
         {
             _newGameFlag = false;
         }
+        
         yield return null;
     }
 
@@ -81,6 +97,4 @@ public class ProgressLoader : CollaboratorWorker
             _instance = this;
         }
     }
-
-    protected override void WorkerOnDestroy(){}
 }

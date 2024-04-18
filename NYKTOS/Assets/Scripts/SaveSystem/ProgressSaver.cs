@@ -9,32 +9,43 @@ public class ProgressSaver : CollaboratorWorker
     private static ProgressSaver _instance;
 
     [SerializeField]
+    private NightProgressTracker _nightProgress;
+
+    [SerializeField]
     private PlaceholderSaveData _placeholderData;
 
     [SerializeField]
     private PlayerInventory _playerInventory;
 
     [SerializeField]
-    private CollaboratorEvent _placeholderSaveEvent;
-
+    private WeaponScriptableObject _defaultWeapon;
 
     protected override IEnumerator Perform()
     {
         yield return new WaitForSeconds(_waitTime);
 
-        ProgressData.Save
+        bool upgradedCheck =
         (
-            _placeholderData.CurrentPlaceholders, 
-            _playerInventory.Amarillo, 
-            _playerInventory.Magenta, 
-            _playerInventory.Cian,
             PlayerController
                 .playerTransform
                 .gameObject
                 .GetComponent<WeaponHandler>()
                 .Weapon
+            != 
+            _defaultWeapon
         );
 
+        ProgressData.Save
+        (
+            _nightProgress.Night,
+            _placeholderData.CurrentPlaceholders, 
+            _playerInventory.Amarillo, 
+            _playerInventory.Magenta, 
+            _playerInventory.Cian,
+            upgradedCheck,
+            ControlCinemachine.OneTimeCinematic
+        );
+        
         yield return null;
     }
 
@@ -49,6 +60,4 @@ public class ProgressSaver : CollaboratorWorker
             _instance = this;
         }
     }
-
-    protected override void WorkerOnDestroy(){}
 }

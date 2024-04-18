@@ -59,4 +59,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86be17d7002b65e47bdc06d663ff7df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scriptableObject: {fileID: 11400000, guid: 26cd137f8c89dcd4d8bc981a37f3e83f, type: 2}
+  _gameStateMachine: {fileID: 11400000, guid: 26cd137f8c89dcd4d8bc981a37f3e83f, type: 2}

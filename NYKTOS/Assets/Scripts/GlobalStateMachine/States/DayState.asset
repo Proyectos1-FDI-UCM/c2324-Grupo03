@@ -147,3 +147,4 @@ MonoBehaviour:
         m_CallState: 2
   _onStateExitCollaborators:
   - {fileID: 11400000, guid: 63b63dadbb7b50243977a009c8fb9325, type: 2}
+  - {fileID: 11400000, guid: 82e32577b03d28d499266be53a6a8bf3, type: 2}

@@ -5,65 +5,76 @@ using UnityEngine.Playables;
 public class ControlCinemachine : MonoBehaviour
 {
     [SerializeField]
-    private VoidEmitter FirstCinematicEmitter;
-    public CinemachineVirtualCamera cinematicCamera;
-    public PlayableDirector timeline;
-    private bool oneTimeCinematic = true;
-    private bool startTimer = false;
+    private VoidEmitter _firstCinematicEmitter;
+    public CinemachineVirtualCamera _cinematicCamera;
+    public PlayableDirector _timeline;
+    private static bool _oneTimeCinematic = true;
+    public static bool OneTimeCinematic 
+    { 
+        get { return _oneTimeCinematic; }
+        set { _oneTimeCinematic = value;}
+    }
+    private bool _startTimer = false;
+    
     [SerializeField]
-    private float waitToStart = 2f;
-    private float AnimationDuration = 60f;
+    private float _waitToStart = 2f;
+    private float _animationDuration = 60f;
 
     [SerializeField]
-    private GameObject _UIGameplay;
+    private GameObject _uiGameplay;
 
     void Start()
     {
-        _UIGameplay.SetActive(true);
-        cinematicCamera.enabled = false;
-        timeline.Stop();
-        FirstCinematicEmitter.Perform.AddListener(FirstCinematicOn);
+        _uiGameplay.SetActive(true);
+        _cinematicCamera.enabled = false;
+        _timeline.Stop();
+        _firstCinematicEmitter.Perform.AddListener(FirstCinematicOn);
     }
 
     void Update()
     {
-        if (startTimer && oneTimeCinematic)
+        if(_oneTimeCinematic)
         {
-            waitToStart -= Time.deltaTime;
-        }
+            if (_startTimer)
+            {
+                _waitToStart -= Time.deltaTime;
+            }
 
-        if (waitToStart <= 0 && oneTimeCinematic)
-        {
-            StartCinematic();
-        }
+            if (_waitToStart <= 0)
+            {
+                StartCinematic();
+            }
 
-        if (timeline.time >= AnimationDuration && oneTimeCinematic)
-        {
-            FirstCinematicOff();
-            startTimer = false;
+            if (_timeline.time >= _animationDuration)
+            {
+                FirstCinematicOff();
+                _startTimer = false;
+            }
         }
     }
 
     private void StartCinematic()
     {
-        if (oneTimeCinematic && waitToStart <= 0)
+        if (_oneTimeCinematic && _waitToStart <= 0)
         {
-            _UIGameplay.SetActive(false);
-            timeline.Play();
-            cinematicCamera.enabled = true;
+            _uiGameplay.SetActive(false);
+            _timeline.Play();
+            _cinematicCamera.enabled = true;
         }
     }
 
     public void FirstCinematicOn()
     {
-        startTimer = true;
+        _startTimer = true;
     }
 
     private void FirstCinematicOff()
     {
-        _UIGameplay.SetActive(true);
-        oneTimeCinematic = false;
-        cinematicCamera.enabled = false;
-        timeline.Stop();
+        _uiGameplay.SetActive(true);
+        _oneTimeCinematic = false;
+        _cinematicCamera.enabled = false;
+        _timeline.Stop();
+
+        gameObject.SetActive(false);
     }
 }

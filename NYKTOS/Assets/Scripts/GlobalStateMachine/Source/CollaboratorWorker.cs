@@ -15,14 +15,16 @@ public abstract class CollaboratorWorker : MonoBehaviour
     private IEnumerator WorkerCoroutine()
     {
         yield return Perform();
+
+        // Safeguard
+        yield return new WaitForSeconds(0.1f);
+        
         _collaboratorEvent.DeleteWorker();
     }
 
     protected abstract IEnumerator Perform();
 
-    protected abstract void WorkerAwake();
-
-    protected abstract void WorkerOnDestroy();
+    protected virtual void WorkerAwake(){}
 
     void Awake()
     {
@@ -33,7 +35,6 @@ public abstract class CollaboratorWorker : MonoBehaviour
     [ExecuteInEditMode]
     void OnDestroy()
     {
-        WorkerOnDestroy();
         _collaboratorEvent.WorkStart?.RemoveListener(StartWorker);
     }
 }

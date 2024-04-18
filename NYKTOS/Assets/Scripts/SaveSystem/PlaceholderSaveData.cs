@@ -15,6 +15,7 @@ public class PlaceholderSaveData : ScriptableObject
         set { _currentPlaceholders = value; }
     }
     
+    [SerializeField]
     private int _idCount = 0;
 
     public int AddPlaceholder(PlaceholderDefense newPlaceholder)
@@ -33,11 +34,6 @@ public class PlaceholderSaveData : ScriptableObject
         return _idCount;
     }
 
-    public bool CheckPlaceholder(int id)
-    {
-        return _currentPlaceholders.TryGetValue(id, out var value);
-    }
-
     public void RemovePlaceholder(int id)
     {
         _currentPlaceholders.Remove(id);
@@ -53,7 +49,16 @@ public class PlaceholderSaveData : ScriptableObject
 
     public void SetPlaceholderDefense(int id, PlaceholderDefense defense)
     {
-        _currentPlaceholders[id] = defense;
+        if(_currentPlaceholders.ContainsKey(id))
+        {
+            _currentPlaceholders[id] = defense;
+        }
+        else
+        {
+            _currentPlaceholders.Add(id, defense);
+
+            _idCount = (id > _idCount) ? id : _idCount;
+        }
 
         string elementsInDictionary = "";
         foreach(var element in _currentPlaceholders)
@@ -74,6 +79,19 @@ public class PlaceholderSaveData : ScriptableObject
             return PlaceholderDefense.None;
         }
     }
+
+    /*
+    void OnValidate()
+    {
+
+        string elementsInDictionary = "";
+        foreach(var element in _currentPlaceholders)
+        {
+            elementsInDictionary = elementsInDictionary + "\n" + "(" + element.Key + ", " + element.Value + ")";
+        }
+        Debug.Log(elementsInDictionary);
+    }
+    */
 }
 
 public enum PlaceholderDefense

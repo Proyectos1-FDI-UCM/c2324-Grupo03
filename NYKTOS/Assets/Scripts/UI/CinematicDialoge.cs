@@ -37,7 +37,7 @@ public class CinematicDialoge : MonoBehaviour
         {
             _text.text = string.Empty;
             yield return StartCoroutine(WriteLine(_lines[_index]));
-            yield return new WaitForSeconds(_lineSpeed);//Espera entre líneas
+            yield return new WaitForSeconds(_lineSpeed);//Espera entre lï¿½neas
             _index++;
         }
 

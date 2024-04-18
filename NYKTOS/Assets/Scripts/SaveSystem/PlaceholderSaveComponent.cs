@@ -61,10 +61,9 @@ public class PlaceholderSaveComponent : CollaboratorWorker
         yield return null;
 
         GameObject defense = Instantiate(selectedDefense, selectedDefense.transform.position, Quaternion.identity);
+        defense.GetComponent<DefenseComponent>().placeholder = gameObject;
 
         yield return null;
-
-        defense.GetComponent<DefenseComponent>().placeholder = gameObject;
 
         BuildingManager.Instance.AddBuilding(defense);
 
@@ -88,33 +87,17 @@ public class PlaceholderSaveComponent : CollaboratorWorker
 
     void OnValidate()
     {
-        Debug.Log("AAA");
+        Debug.Log(name + " - " + _placeholderId);
         if(_saveData != null)
         {
-            Debug.Log("BBB");
-            if (_saveData.CheckPlaceholder(_placeholderId))
+            if (_placeholderId == -1)
             {
-                Debug.Log("CCC");
-                _saveData.SetPlaceholderDefense(_placeholderId, _currentDefense);
-            }
-            else if (_placeholderId == -1)
-            {
-                Debug.Log("DDD");
                 _placeholderId = _saveData.AddPlaceholder(_currentDefense);
+            }
+            else
+            {
+                _saveData.SetPlaceholderDefense(_placeholderId, _currentDefense);
             }
         }
     }
-
-
-    protected override void WorkerOnDestroy()
-    {
-        #if UNITY_EDITOR 
-            if(_placeholderId != -1 && _saveData != null)
-            {
-                _saveData.RemovePlaceholder(_placeholderId);
-            }
-        #endif
-    }
-
-    protected override void WorkerAwake(){}
 }

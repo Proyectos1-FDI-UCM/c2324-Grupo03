@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1361064836008771850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6450916270217482924}
+  - component: {fileID: 247252611340210704}
+  - component: {fileID: 7446156412287286474}
+  m_Layer: 0
+  m_Name: Workers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6450916270217482924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361064836008771850}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6296519570934077229}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &247252611340210704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361064836008771850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8eaf6b6e6f60f42829abb2a1258ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collaboratorEvent: {fileID: 11400000, guid: f9cc91595a9907a44b73d4cc7a19a96d, type: 2}
+  _waitTime: 5
+  _nightProgressTracker: {fileID: 11400000, guid: 100c2ea44e0114a49b753e96612872fb, type: 2}
+  _placeholderData: {fileID: 11400000, guid: 8e5e25c7d62aac545a67a67a489d258d, type: 2}
+  _playerInventory: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
+  _placeholderLoadEvent: {fileID: 11400000, guid: 066c94bd9a170934490d3e8a777e1f76, type: 2}
+  _upgradeWeapon:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 65f7538582a720942ad81d46a40eb023, type: 2}
+        m_TargetAssemblyTypeName: GenericEmitter, Assembly-CSharp
+        m_MethodName: InvokePerform
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 2ed21c2ee9392f0488e3753459f2de0b, type: 2}
+        m_TargetAssemblyTypeName: GenericEmitter`1[[WeaponScriptableObject, Assembly-CSharp
+        m_MethodName: InvokePerform
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 6484b57929a82644d9f45c7420f08439, type: 2}
+          m_ObjectArgumentAssemblyTypeName: WeaponScriptableObject, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7446156412287286474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361064836008771850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff22621cef3509a438ce7e72dbbeb3df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collaboratorEvent: {fileID: 11400000, guid: 82e32577b03d28d499266be53a6a8bf3, type: 2}
+  _waitTime: 5
+  _nightProgress: {fileID: 11400000, guid: 100c2ea44e0114a49b753e96612872fb, type: 2}
+  _placeholderData: {fileID: 11400000, guid: 8e5e25c7d62aac545a67a67a489d258d, type: 2}
+  _playerInventory: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
+  _defaultWeapon: {fileID: 11400000, guid: b3929c8ff95159c46b8e63e51f093005, type: 2}
+--- !u!1 &2521425209810953528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6296519570934077229}
+  - component: {fileID: 4477173993076658964}
+  - component: {fileID: 6175869994492577181}
+  m_Layer: 0
+  m_Name: ProgressController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6296519570934077229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2521425209810953528}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6450916270217482924}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4477173993076658964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2521425209810953528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66c6fe87e811fe419613faa03993c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collaboratorEvent: {fileID: 11400000, guid: f9cc91595a9907a44b73d4cc7a19a96d, type: 2}
+  _unlockWaitTime: 0.1
+--- !u!114 &6175869994492577181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2521425209810953528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66c6fe87e811fe419613faa03993c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collaboratorEvent: {fileID: 11400000, guid: 82e32577b03d28d499266be53a6a8bf3, type: 2}
+  _unlockWaitTime: 0.1
