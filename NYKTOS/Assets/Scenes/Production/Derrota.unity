@@ -390,7 +390,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1
@@ -408,6 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f0ce5bb7fea8e344a0eb03c5a437717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _start: {fileID: 11400000, guid: 53aa34efb104e7547b90e16834bfeb72, type: 2}
   video: {fileID: 807697620}
 --- !u!1 &1331771743
 GameObject:
