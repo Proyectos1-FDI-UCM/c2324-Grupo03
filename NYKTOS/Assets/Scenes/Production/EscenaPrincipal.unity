@@ -220,15 +220,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0
+      value: 0.003717472
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.99999994
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.99024755
+      value: 0.99386185
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1320,6 +1320,34 @@ PrefabInstance:
       propertyPath: _uiGameplay
       value: 
       objectReference: {fileID: 1712029837}
+    - target: {fileID: 5600817556736685641, guid: fecc4531ccfb9a445aca65c7a65608b7, type: 3}
+      propertyPath: onCinematicFinish.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5600817556736685641, guid: fecc4531ccfb9a445aca65c7a65608b7, type: 3}
+      propertyPath: onCinematicFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5600817556736685641, guid: fecc4531ccfb9a445aca65c7a65608b7, type: 3}
+      propertyPath: onCinematicFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 380494584dc8514489ced24ea96f891f, type: 2}
+    - target: {fileID: 5600817556736685641, guid: fecc4531ccfb9a445aca65c7a65608b7, type: 3}
+      propertyPath: onCinematicFinish.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5600817556736685641, guid: fecc4531ccfb9a445aca65c7a65608b7, type: 3}
+      propertyPath: onCinematicFinish.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 5600817556736685641, guid: fecc4531ccfb9a445aca65c7a65608b7, type: 3}
+      propertyPath: onCinematicFinish.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ActionDialogueScriptableObject, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5600817556736685641, guid: fecc4531ccfb9a445aca65c7a65608b7, type: 3}
+      propertyPath: onCinematicFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6948595440657330775, guid: fecc4531ccfb9a445aca65c7a65608b7, type: 3}
       propertyPath: m_Name
       value: CameraCinematics
