@@ -211,6 +211,11 @@ public class InputManager : MonoBehaviour
         else _playerControls.Player.Disable();
     }
 
+    public void EnableDisableManager(bool enable)
+    {
+        this.enabled = enable;
+    }
+
     public void EnableUIInput(bool enable)
     {
         if (enable) _playerControls.UI.Enable();
@@ -281,7 +286,7 @@ public class InputManager : MonoBehaviour
     {
         OnStateLoad();
         _stateChanged.Perform.AddListener(OnStateLoad);
-        _enablePlayerInput.Perform.AddListener(EnablePlayerInput);
+        _enablePlayerInput.Perform.AddListener(EnableDisableManager);
         _enableUIInput.Perform.AddListener(EnableUIInput);
 
         _enableDialogueInput.Perform.AddListener(EnableDialogueInput);
@@ -290,7 +295,7 @@ public class InputManager : MonoBehaviour
     void OnDestroy()
     {
         _stateChanged.Perform.RemoveListener(OnStateLoad);
-        _enablePlayerInput.Perform.RemoveListener(EnablePlayerInput);
+        _enablePlayerInput.Perform.RemoveListener(EnableDisableManager);
         _enableUIInput.Perform.RemoveListener(EnableUIInput);
 
         _enableDialogueInput.Perform.RemoveListener(EnableDialogueInput);
