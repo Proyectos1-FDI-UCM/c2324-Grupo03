@@ -5967,6 +5967,7 @@ Transform:
   - {fileID: 2131329427740436148}
   - {fileID: 1260731866091097085}
   - {fileID: 7508541881571273522}
+  - {fileID: 4575441619731982848}
   m_Father: {fileID: 6731947301556039481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7427200026163336433
@@ -6093,6 +6094,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 1.25
+--- !u!1 &8238023270241493599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4575441619731982848}
+  - component: {fileID: 2629906085031012087}
+  m_Layer: 0
+  m_Name: Wait 1,2sCondition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4575441619731982848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8238023270241493599}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.09247112, y: 0.15284371, z: -0.0010556709}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6752446464786435604}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2629906085031012087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8238023270241493599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db3da0bdaa3417541a8cdc57e69aa60f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waitTime: 1.2
 --- !u!1001 &521836798458935613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6227,7 +6273,7 @@ PrefabInstance:
     - target: {fileID: 3286285227843049611, guid: b956f0aad0bb69141a65708826231b8e, type: 3}
       propertyPath: possibleStates.Array.data[0].enterConditions.Array.data[0]._condition
       value: 
-      objectReference: {fileID: 2269808507720967022}
+      objectReference: {fileID: 8238023270241493599}
     - target: {fileID: 4071755279975056261, guid: b956f0aad0bb69141a65708826231b8e, type: 3}
       propertyPath: m_Name
       value: DyingState
