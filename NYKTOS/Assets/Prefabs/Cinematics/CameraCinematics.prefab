@@ -83,7 +83,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3484520720167072681
 Transform:
   m_ObjectHideFlags: 0
@@ -116,8 +116,23 @@ MonoBehaviour:
   _firstCinematicEmitter: {fileID: 11400000, guid: ec44c8171d39ad24ab1a43193c4c3584, type: 2}
   _cinematicCamera: {fileID: 6414313528364685277}
   _timeline: {fileID: 6590314419426457884}
-  _waitToStart: 2
+  _waitToStart: 1
   _uiGameplay: {fileID: 0}
+  onCinematicFinish:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 380494584dc8514489ced24ea96f891f, type: 2}
+        m_TargetAssemblyTypeName: ActionDialogueScriptableObject, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7367381428383103139
 GameObject:
   m_ObjectHideFlags: 0

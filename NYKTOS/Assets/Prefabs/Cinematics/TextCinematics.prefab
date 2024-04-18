@@ -104,7 +104,7 @@ MonoBehaviour:
   - "Que la suerte est\xE9 de tu parte y la luz te ampare"
   _textSpeed: 0.1
   _lineSpeed: 1.5
-  _waitForStart: 4
+  _waitForStart: 3
   voice:
     m_PersistentCalls:
       m_Calls:
@@ -272,7 +272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1974405853425215581
 RectTransform:
   m_ObjectHideFlags: 0
