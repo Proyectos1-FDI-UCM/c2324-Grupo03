@@ -109,5 +109,7 @@ public enum GlobalStateIdentifier
     Win,
     MenuSceneLoad,
     TutorialSceneLoad,
-    MaingameSceneLoad
+    MaingameSceneLoad,
+    WinSceneLoad,
+    LoseSceneLoad
 }
