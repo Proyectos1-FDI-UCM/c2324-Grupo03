@@ -24,6 +24,7 @@ public class ControlCinemachine : MonoBehaviour
     [SerializeField]
     private GameObject _uiGameplay;
 
+    [SerializeField] private UnityEvent onCinematicStart = new UnityEvent();
     [SerializeField] private UnityEvent onCinematicFinish = new UnityEvent();
 
     void Start()
@@ -69,6 +70,7 @@ public class ControlCinemachine : MonoBehaviour
     public void FirstCinematicOn()
     {
         _startTimer = true;
+        onCinematicStart?.Invoke();
     }
 
     private void FirstCinematicOff()

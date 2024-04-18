@@ -202,9 +202,20 @@ public class MenuManager : MonoBehaviour
     }
     #endregion
 
+    bool mapOpened = false;
     private void OpenCloseMap()
     {
         _map.SetActive(!_map.activeSelf);
+        if (!mapOpened)
+        {
+            mapOpened = true;
+            PlayOpenedSound();
+        }
+        else
+        {
+            mapOpened = false;
+            PlayClosedSound();
+        }
     }
 
     #endregion
