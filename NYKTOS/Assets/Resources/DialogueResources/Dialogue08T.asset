@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Dialogue08T
   m_EditorClassIdentifier: 
   _dialogueBoxes:
-  - "Lo que supon\xEDa. Lo que se ha alzado es un altar. Cuando todas las bases de
-    su mismo color contienen alg\xFAn edificio, recuperan su poder."
-  - "Si m\xE1s adelante los ves, prior\xEDza activarlos. Puede que ocurra algo bueno."
+  - "Lo que supon\xEDa. Se ha alzado un altar. Cuando todas los cimientos de su mismo
+    color contienen alguna defensa, recuperan su poder."
+  - "Si m\xE1s adelante los ves, prioriza activarlos. Puede que ocurra algo bueno."
   - "Una \xFAltima cosa."
-  - "Dir\xEDgete al nexo e interact\xFAa con \xE9l."
+  - "Dir\xEDgete al Nexo e interact\xFAa con \xE9l."
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
     m_PersistentCalls:

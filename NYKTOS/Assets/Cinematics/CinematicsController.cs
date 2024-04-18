@@ -1,6 +1,7 @@
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.Playables;
+using UnityEngine.Events;
 
 public class ControlCinemachine : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class ControlCinemachine : MonoBehaviour
 
     [SerializeField]
     private GameObject _uiGameplay;
+
+    [SerializeField] private UnityEvent onCinematicFinish = new UnityEvent();
 
     void Start()
     {
@@ -76,5 +79,6 @@ public class ControlCinemachine : MonoBehaviour
         _timeline.Stop();
 
         gameObject.SetActive(false);
+        onCinematicFinish?.Invoke();
     }
 }

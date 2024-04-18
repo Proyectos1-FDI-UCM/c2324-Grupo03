@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 618a24d2f6a54ca448b68a09eece292d, type: 3}
   m_Name: Dialogue09T
   m_EditorClassIdentifier: 
-  _dialogueBox: "Interact\xFAa con el nexo."
+  _dialogueBox: "Interact\xFAa con el Nexo."
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
     m_PersistentCalls:

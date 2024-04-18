@@ -15,7 +15,7 @@ MonoBehaviour:
   _dialogueBoxes:
   - 'Ha anochecido. Esto quiere decir que somos vulnerables. '
   - "No temas, puesto que las defensas distraer\xE1n a los enemigos y nos iluminar\xE1n."
-  - Ahora, acaba con las sombras y defiende el nexo.
+  - Ahora, acaba con las sombras y defiende el Nexo.
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
     m_PersistentCalls:
