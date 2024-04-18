@@ -104,7 +104,7 @@ MonoBehaviour:
   - "Que la suerte est\xE9 de tu parte y la luz te ampare"
   _textSpeed: 0.1
   _lineSpeed: 1.5
-  _waitForStart: 2
+  _waitForStart: 4
   voice:
     m_PersistentCalls:
       m_Calls:
