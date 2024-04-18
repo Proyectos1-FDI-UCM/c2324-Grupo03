@@ -18,9 +18,8 @@ MonoBehaviour:
   - "Recuerda que tus recursos son limitados, y que s\xF3lo ser\xE1s capaz de construir
     defensas bajo la luz del d\xEDa."
   - "Vaya... No me hab\xEDa percatado."
-  - "\xBFVes ese edificio derruido a la izquierda? Vamos a intentar reconstruirlo."
-  - "Intenta construir en las bases de su respectivo color. Qui\xE9n sabe, quiz\xE1s
-    recuperen su antiguo poder."
+  - "\xBFVes ese edificio derruido a la izquierda? Parece un altar."
+  - Prueba a construir en los cimientos de su mismo color para activarlo.
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
     m_PersistentCalls:

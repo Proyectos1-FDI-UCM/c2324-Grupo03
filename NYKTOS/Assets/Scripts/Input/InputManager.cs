@@ -277,9 +277,8 @@ public class InputManager : MonoBehaviour
         {
             _instance = this;
             DontDestroyOnLoad(this);
+            _playerControls = new PlayerControls();
         }
-
-        _playerControls = new PlayerControls();
     }
 
     void Start()

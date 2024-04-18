@@ -16,7 +16,19 @@ MonoBehaviour:
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
   _onDialogueStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: e26010f8344c30146840b6f72da3653b, type: 2}
+        m_TargetAssemblyTypeName: GenericEmitter`1[[System.Boolean, mscorlib
+        m_MethodName: InvokePerform
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   _onDialogueFinish:
     m_PersistentCalls:
       m_Calls:
@@ -31,5 +43,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: d3c5e4ad82737534c8dcdd3cdd079c50, type: 2}
+        m_TargetAssemblyTypeName: GenericEmitter`1[[System.Boolean, mscorlib
+        m_MethodName: InvokePerform
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   _voidEmitterAction: {fileID: 11400000, guid: efe0690e9f5518144be708e0d5082d3d, type: 2}

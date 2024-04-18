@@ -32,8 +32,7 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField]
     private VoidEmitter _nexusMenuEmitter;
-    [SerializeField] 
-    private VoidEmitter _tutorialNexusMenuEmitter;
+
     [SerializeField]
     private VoidEmitter _defenseMenuEmitter;
     [SerializeField]
@@ -61,9 +60,6 @@ public class MenuManager : MonoBehaviour
     private GameObject _nexusMenu;
 
     [SerializeField]
-    private GameObject _tutorialNexusMenu;
-
-    [SerializeField]
     private GameObject _defenseMenu;
 
     [SerializeField]
@@ -82,9 +78,6 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField]
     private Button _nexusButton;
-
-    [SerializeField]
-    private Button _tutorialNexusButton;
 
     [SerializeField]
     private Button _defenseButton;
@@ -161,7 +154,6 @@ public class MenuManager : MonoBehaviour
     {
         _menuList.Add(_pauseMenu);
         _menuList.Add(_nexusMenu);
-        _menuList.Add(_tutorialNexusMenu);
         _menuList.Add(_defenseMenu);
         _menuList.Add(_weaponUpgradeMenu);
         _menuList.Add(_weaponEffectMenu);
@@ -179,8 +171,6 @@ public class MenuManager : MonoBehaviour
 
     public void OpenPauseMenu() => OpenMenu(_pauseMenu, _pauseButton);
     public void OpenNexusMenu() => OpenMenu(_nexusMenu, _nexusButton);
-
-    public void OpenTutorialNexusMenu() => OpenMenu(_tutorialNexusMenu, _tutorialNexusButton);
     public void OpenDefenseMenu() => OpenMenu(_defenseMenu, _defenseButton);
     public void OpenWeaponUpgradeMenu() => OpenMenu(_weaponUpgradeMenu, _weaponUpgradeButton);
     public void OpenWeaponEffectMenu() => OpenMenu(_weaponEffectMenu, _weaponEffectButton);
@@ -236,7 +226,6 @@ public class MenuManager : MonoBehaviour
         _settingsMenuEmitter.Perform.AddListener(OpenSettingsMenu);
 
         _nexusMenuEmitter.Perform.AddListener(OpenNexusMenu);
-        _tutorialNexusMenuEmitter.Perform.AddListener(OpenTutorialNexusMenu);
         _defenseMenuEmitter.Perform.AddListener(OpenDefenseMenu);
         _weaponUpgradeMenuEmitter.Perform.AddListener(OpenWeaponUpgradeMenu);
         _weaponEffectMenuEmitter.Perform.AddListener(OpenWeaponEffectMenu);
@@ -256,7 +245,6 @@ public class MenuManager : MonoBehaviour
         _settingsMenuEmitter.Perform.RemoveListener(OpenSettingsMenu);
 
         _nexusMenuEmitter.Perform.RemoveListener(OpenNexusMenu);
-        _tutorialNexusMenuEmitter.Perform.RemoveListener(OpenTutorialNexusMenu);
 
         _defenseMenuEmitter.Perform.RemoveListener(OpenDefenseMenu);
         _weaponUpgradeMenuEmitter.Perform.RemoveListener(OpenWeaponUpgradeMenu);

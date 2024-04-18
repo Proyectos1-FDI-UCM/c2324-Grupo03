@@ -319,7 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerDeathEmitter: {fileID: 11400000, guid: 2da8c61c32f04eb4dbe80c7a3e8054b4, type: 2}
   _playerReviveEmitter: {fileID: 11400000, guid: 6c2195f7a528dd34c949b65262f6333c, type: 2}
-  _nexusMenuEmitter: {fileID: 11400000, guid: 83eb0bb03fa9bf44f96a567d0495d74f, type: 2}
+  _nexusMenuEmitter: {fileID: 11400000, guid: 7dee2853a844893449043eaac068bb2b, type: 2}
   _nexusInteractEmitter: {fileID: 11400000, guid: 7f2dcced0862aa94092c69df3eec2da0, type: 2}
   TutorialCompleted: {fileID: 11400000, guid: 8f4af4d5459889245a15b2ba1eb1d3e5, type: 2}
 --- !u!114 &3345374428008945533

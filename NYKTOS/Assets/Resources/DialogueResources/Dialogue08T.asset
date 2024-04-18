@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Dialogue08T
   m_EditorClassIdentifier: 
   _dialogueBoxes:
-  - "Lo que supon\xEDa. Se ha alzado un altar. Cuando todas los cimientos de su mismo
-    color contienen alguna defensa, recuperan su poder."
-  - "Si m\xE1s adelante los ves, prioriza activarlos. Puede que ocurra algo bueno."
+  - "Lo que supon\xEDa. Se ha alzado un altar. "
+  - "Los altares, anta\xF1o imponentes monumentos rebosantes de poder, ahora no son
+    m\xE1s que ruinas."
+  - "Se activar\xE1n al construir en sus cimientos especiales."
+  - "Si m\xE1s adelante los ves, prioriza activarlos. Qui\xE9n sabe, quiz\xE1s recuperen
+    parte de su antiguo poder\u2026"
   - "Una \xFAltima cosa."
   - "Dir\xEDgete al Nexo e interact\xFAa con \xE9l."
   _voice: {fileID: 11400000, guid: 6d6c7293c7532b341934fe0daaf24683, type: 2}
