@@ -168,7 +168,7 @@ public class InputManager : MonoBehaviour
         // Lanzar evento de cambio de estado
         //_playerState.SetState(PlayerState.OnMenu);
         playerControls.UI.Enable();
-        _player.CallMove(Vector2.zero);
+        _player?.CallMove(Vector2.zero);
 
         _currentActionMap = UIactionMap;
     }
@@ -226,7 +226,7 @@ public class InputManager : MonoBehaviour
     #region enable/disable
     private void OnEnable()
     {
-        _playerControls.Enable();
+        //_playerControls.Enable();
 
         _playerControls.Player.Move.performed += Move;
         _playerControls.Player.Move.canceled += Move;
@@ -247,7 +247,7 @@ public class InputManager : MonoBehaviour
 
     private void OnDisable()
     {
-        _playerControls.Disable();
+        _playerControls?.Disable();
 
         if (_playerControls != null)
         {
@@ -287,6 +287,7 @@ public class InputManager : MonoBehaviour
         _stateChanged.Perform.AddListener(OnStateLoad);
         _enablePlayerInput.Perform.AddListener(EnableDisableManager);
         _enableUIInput.Perform.AddListener(EnableUIInput);
+        _enablePlayerInput.Perform.AddListener(EnablePlayerInput);
 
         _enableDialogueInput.Perform.AddListener(EnableDialogueInput);
     }
@@ -296,6 +297,8 @@ public class InputManager : MonoBehaviour
         _stateChanged.Perform.RemoveListener(OnStateLoad);
         _enablePlayerInput.Perform.RemoveListener(EnableDisableManager);
         _enableUIInput.Perform.RemoveListener(EnableUIInput);
+        _enablePlayerInput.Perform.AddListener(EnablePlayerInput);
+
 
         _enableDialogueInput.Perform.RemoveListener(EnableDialogueInput);
     }
