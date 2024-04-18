@@ -11,7 +11,7 @@ public class CinematicDialoge : MonoBehaviour
     [SerializeField] private float _textSpeed = 0.2f;
     [SerializeField] private float _lineSpeed = 3f;
 
-    [SerializeField] private float _waitForStart = 2f;
+    [SerializeField] private float _waitForStart = 2.5f;
 
     [SerializeField] private UnityEvent voice = new UnityEvent();
 
