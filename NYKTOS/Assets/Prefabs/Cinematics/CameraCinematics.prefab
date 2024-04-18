@@ -51,23 +51,15 @@ MonoBehaviour:
     width: 0.2
   m_Looped: 0
   m_Waypoints:
-  - position: {x: 0, y: 0, z: -45}
+  - position: {x: 0, y: 8, z: -45}
     roll: 0
   - position: {x: 0, y: 25.2, z: -373.77}
     roll: 0
   - position: {x: 0, y: 39.6, z: -80}
     roll: 0
-  - position: {x: 18, y: 10, z: -150}
-    roll: 0
   - position: {x: 18, y: 10, z: -80}
     roll: 0
-  - position: {x: -18, y: 10, z: -150}
-    roll: 0
   - position: {x: -18, y: 10, z: -80}
-    roll: 0
-  - position: {x: 0, y: 39.6, z: -150}
-    roll: 0
-  - position: {x: 0, y: 39.6, z: -80}
     roll: 0
   - position: {x: 0, y: 46, z: -30}
     roll: 0
@@ -125,7 +117,7 @@ MonoBehaviour:
   cinematicCamera: {fileID: 6414313528364685277}
   timeline: {fileID: 6590314419426457884}
   waitToStart: 2
-  _UIGameplay: {fileID: 8276733419907818334, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+  _UIGameplay: {fileID: 0}
 --- !u!1 &7367381428383103139
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 3079362399544435665}
-  m_PathPosition: 10.98363
+  m_PathPosition: 10.85982
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0

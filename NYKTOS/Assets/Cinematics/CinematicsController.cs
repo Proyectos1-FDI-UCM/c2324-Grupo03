@@ -12,7 +12,7 @@ public class ControlCinemachine : MonoBehaviour
     private bool startTimer = false;
     [SerializeField]
     private float waitToStart = 2f;
-    private float AnimationDuration = 62f;
+    private float AnimationDuration = 60f;
 
     [SerializeField]
     private GameObject _UIGameplay;
