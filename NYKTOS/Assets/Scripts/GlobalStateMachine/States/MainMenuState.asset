@@ -21,7 +21,19 @@ MonoBehaviour:
   _onStateEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 3765ccc58d8ea99448585793865d5cee, type: 2}
+      - m_Target: {fileID: 11400000, guid: efc370fa782c3e849847404e8bdf48cc, type: 2}
+        m_TargetAssemblyTypeName: GenericEmitter`1[[System.Boolean, mscorlib
+        m_MethodName: InvokePerform
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: a96e42d0ba5fb5542b06b77708a031d2, type: 2}
         m_TargetAssemblyTypeName: GenericEmitter`1[[System.Boolean, mscorlib
         m_MethodName: InvokePerform
         m_Mode: 6
@@ -35,17 +47,5 @@ MonoBehaviour:
         m_CallState: 2
   _onStateInstantExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 3765ccc58d8ea99448585793865d5cee, type: 2}
-        m_TargetAssemblyTypeName: GenericEmitter`1[[System.Boolean, mscorlib
-        m_MethodName: InvokePerform
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _onStateExitCollaborators: []

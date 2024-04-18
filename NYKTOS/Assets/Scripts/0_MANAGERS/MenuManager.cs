@@ -164,8 +164,11 @@ public class MenuManager : MonoBehaviour
     private void OpenMenu(GameObject menu, Button button)
     {
         PlayOpenedSound();
-        menu.SetActive(true);
-        button.Select();
+        if (menu != null)
+        {
+            menu.SetActive(true);
+            if(button != null) button.Select();
+        }
         SwitchToUIControls();
     }
 
@@ -181,7 +184,8 @@ public class MenuManager : MonoBehaviour
     public void CloseAllMenus()
     {
         PlayClosedSound();
-        foreach (GameObject menu in _menuList) menu.SetActive(false);
+        foreach (GameObject menu in _menuList) 
+            if(menu != null) menu.SetActive(false);
 
         SwitchToPlayerControls();
     }
