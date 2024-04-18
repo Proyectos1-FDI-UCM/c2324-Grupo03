@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90758ce5cfed4684da572de046ad03a5, type: 3}
   m_Name: Night 2 Crystals
   m_EditorClassIdentifier: 
-  _requiredYellow: 25
-  _requiredCyan: 6
-  _requiredMagenta: 5
-  _probabilityYellow: 8
+  _requiredYellow: 30
+  _requiredCyan: 8
+  _requiredMagenta: 8
+  _probabilityYellow: 10
   _probabilityCyan: 1
   _probabilityMagenta: 1
