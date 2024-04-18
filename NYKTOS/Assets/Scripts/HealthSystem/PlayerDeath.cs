@@ -12,22 +12,15 @@ public class PlayerDeath : MonoBehaviour, IDeath
     [SerializeField]
     private VoidEmitter _playerDeathEmitter;
 
+    private PlayerAnimations _playerAnimations;
+
     private PlayerStateMachine _playerState;
     private HealthComponent _health;
     
-    [SerializeField]
-    private SpriteLibraryAsset _deathskin;
-
-    [SerializeField]
-    private SpriteLibraryAsset _aliveskin;
-
-    SpriteLibrary spriteLibrary;
-
     #endregion
 
     public void Death()
     {
-        spriteLibrary.spriteLibraryAsset = _deathskin;
         _playerState.SetState(PlayerState.Dead);
         UIManager.Instance.DeathScreenOn();
 
@@ -36,7 +29,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
 
     public void Revive()
     {
-        spriteLibrary.spriteLibraryAsset = _aliveskin;
+        _playerAnimations.StartRevive();
         _health.MaxHealth();
         _playerState.SetState(PlayerState.Idle);
 
@@ -48,7 +41,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
     {
         _health = GetComponent<HealthComponent>();
         _playerState = GetComponent<PlayerStateMachine>();
-        spriteLibrary = GetComponentInChildren<SpriteLibrary>();
         _playerReviveEmitter.Perform.AddListener(Revive);
+        _playerAnimations = GetComponentInChildren<PlayerAnimations>();
     }
 }

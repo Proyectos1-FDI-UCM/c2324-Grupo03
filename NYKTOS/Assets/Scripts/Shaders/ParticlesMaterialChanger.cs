@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ParticlesMaterialChanger : MonoBehaviour
 {
-    //El componente de particulas los puse todos como hijos
+    //Componente respondable para que se cambie el material de las particulas como queramos, se ha utilizado principalmente para elegir si quieres o no que la particulas se vean durante la noche
+
+    //recordatorio para Maria: El componente de particulas los puse todos como hijos
     [SerializeField]
     private BoolEmitter inversionEffect;
 

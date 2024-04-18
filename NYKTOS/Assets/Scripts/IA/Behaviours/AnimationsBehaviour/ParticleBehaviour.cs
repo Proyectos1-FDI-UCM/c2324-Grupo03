@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyParticleEffect : MonoBehaviour {
 
     /// <summary>
-    /// Cambio del material de la particulas cuando sea atacado
+    /// Cambio del material/emision/etc de la particulas cuando el enemigo sea atacado
     /// </summary>
  
     private SpriteRenderer _spriteRenderer;
@@ -46,9 +46,9 @@ public class EnemyParticleEffect : MonoBehaviour {
 
 
     public void PlayEffect() {
-        StartCoroutine(ChangeParticles());
+        StartCoroutine(ChangeEnemyParticles());
 
-        StartCoroutine(ChangeSprites());
+        StartCoroutine(ChangeEnemySprites());
     }
 
     private void Start() {
@@ -58,7 +58,7 @@ public class EnemyParticleEffect : MonoBehaviour {
         explosionParticleSystem = GetComponent<ParticleSystem>();
     }
 
-    private IEnumerator ChangeParticles() 
+    private IEnumerator ChangeEnemyParticles() 
     {
 
         ParticleSystemRenderer settings = GetComponent<ParticleSystemRenderer>();
@@ -82,7 +82,10 @@ public class EnemyParticleEffect : MonoBehaviour {
 
         settings.material = _previousParticleMaterial;
     }
-    private IEnumerator ChangeSprites() {
+
+
+    //método para que los enemigos parpadeen
+    private IEnumerator ChangeEnemySprites() {
 
         int changes = 0, maxChanges=4;
 
@@ -95,10 +98,6 @@ public class EnemyParticleEffect : MonoBehaviour {
 
             yield return new WaitForSeconds(0.1f);
         }
-
-
-        //_spriteRenderer.material = _previousSpriteMaterial;
-
  
     }
 

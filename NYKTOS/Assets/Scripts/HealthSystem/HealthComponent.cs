@@ -14,6 +14,7 @@ public class HealthComponent : MonoBehaviour
     private IDeath _deathComponent;
 
     private PlayerController _playerController;
+    private PlayerAnimations _playerAnimations;
     private DefenseComponent _defenseComponent;
     private bool _isDefense = false;
     #endregion
@@ -43,6 +44,7 @@ public class HealthComponent : MonoBehaviour
         _playerController = GetComponent<PlayerController>();
 
         healthBar = GetComponentInChildren<HealthBar>();
+        _playerAnimations = GetComponentInChildren<PlayerAnimations>();
 
         if (healthBar != null)
         {
@@ -68,7 +70,7 @@ public class HealthComponent : MonoBehaviour
             if (_currentHealth <= 0)
             {
                 _currentHealth = 0;
-
+                if (_playerAnimations != null) {_playerAnimations.StartDie();}
                 _OnDying?.Invoke();
                 _deathComponent.Death();
             }
@@ -77,6 +79,8 @@ public class HealthComponent : MonoBehaviour
             if(_playerController != null)
             {
                 UIManager.Instance.Hearts(_currentHealth);
+                if (_playerAnimations != null) { _playerAnimations.StartHurt(); }
+                
             }
             
         }
