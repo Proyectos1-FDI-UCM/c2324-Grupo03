@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3632067628936819240}
   - component: {fileID: 4760056054625925972}
   m_Layer: 0
-  m_Name: Wait 0,4sCondition
+  m_Name: Wait 0.4sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5110,8 +5110,8 @@ GameObject:
   - component: {fileID: 6683147200536134821}
   - component: {fileID: 1341577736922668985}
   - component: {fileID: 3389799706100257549}
-  - component: {fileID: 351163656176553867}
   - component: {fileID: 3740492493731656902}
+  - component: {fileID: 5584843582806046218}
   m_Layer: 9
   m_Name: Aranea
   m_TagString: Enemy
@@ -5354,8 +5354,26 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b5b8014c89569f746ad3efa6fa1d8eaa, type: 2}
   - {fileID: 11400000, guid: f5c611acfb209cf49ac3f3f9b2f2274e, type: 2}
   _crystalDropsTracker: {fileID: 11400000, guid: 064f9146e25cc4e4dbdcb7d5bcb38e6f, type: 2}
---- !u!70 &351163656176553867
-CapsuleCollider2D:
+--- !u!114 &3740492493731656902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3477185432724126219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da238aa0c09043a49bd420626bfd1e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _magentaSprite: {fileID: 7108339969198208228, guid: e7f4438e1df4e0b488eef4cbee11c517, type: 3}
+  _cyanSprite: {fileID: 7108339969198208228, guid: a2aeaf089cf3c5442b226999f3f9eec9, type: 3}
+  _cyanMaterial: {fileID: 2100000, guid: 85d2ed31af302114daab651b732794ee, type: 2}
+  _magentaMaterial: {fileID: 2100000, guid: 7a0231b8fffad7d4e9766dd534c5e976, type: 2}
+  debug: 1
+  _attackType: 0
+--- !u!58 &5584843582806046218
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5366,7 +5384,7 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5386,27 +5404,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06097412, y: -0.049955696}
-  m_Size: {x: 0.3, y: 0.2}
-  m_Direction: 1
---- !u!114 &3740492493731656902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3477185432724126219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da238aa0c09043a49bd420626bfd1e74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _magentaSprite: {fileID: 7108339969198208228, guid: e7f4438e1df4e0b488eef4cbee11c517, type: 3}
-  _cyanSprite: {fileID: 7108339969198208228, guid: a2aeaf089cf3c5442b226999f3f9eec9, type: 3}
-  _cyanMaterial: {fileID: 2100000, guid: 85d2ed31af302114daab651b732794ee, type: 2}
-  _magentaMaterial: {fileID: 2100000, guid: 7a0231b8fffad7d4e9766dd534c5e976, type: 2}
-  debug: 1
-  _attackType: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.15
 --- !u!1 &3563958836088504113
 GameObject:
   m_ObjectHideFlags: 0
@@ -5850,7 +5850,7 @@ GameObject:
   - component: {fileID: 2795636838570436853}
   - component: {fileID: 1074278166659649853}
   m_Layer: 9
-  m_Name: Wait 0,9sCondition
+  m_Name: Wait 0.9sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6019,7 +6019,7 @@ GameObject:
   - component: {fileID: 7461280860815949787}
   - component: {fileID: 1828715075259602696}
   m_Layer: 9
-  m_Name: Wait 1,5sCondition
+  m_Name: Wait 1.5sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
