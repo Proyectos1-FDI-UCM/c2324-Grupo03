@@ -16,9 +16,9 @@ public class PlayerAnimations : MonoBehaviour {
 
     #region Parameters Hurt
     [Header("Hurt")]
-    [SerializeField] 
+    [SerializeField]
     private float _opacity = 0.7f;
-    [SerializeField] 
+    [SerializeField]
     private float _opacityTime = 1.0f;
 
     [Space(10)]
@@ -37,7 +37,7 @@ public class PlayerAnimations : MonoBehaviour {
 
     #region Parameters Dead
     [Header("Dead")]
-    [SerializeField] 
+    [SerializeField]
     private float _deadTime = 2f;
     [SerializeField]
     private SpriteLibraryAsset _deathskin;
@@ -58,13 +58,30 @@ public class PlayerAnimations : MonoBehaviour {
 
     #region Parameters Revive
     [Header("Revive")]
-    [SerializeField] 
+    [SerializeField]
     private float _reviveTime = 2f;
     [SerializeField]
     private SpriteLibraryAsset _aliveskin;
     #endregion
 
+    #region Parameters Blink
+    [Header("Blink")]
+    [Space(5)]
+    [Header("    Particles")]
+    [SerializeField]
+    private float _emisionBlink = 40f;
+    [SerializeField]
+    private float _durationBlink = 2f;
+    [SerializeField]
+    private float _speedBlink = 1f;
+    [SerializeField]
+    private float _lifeTimeBlink = 5f;
+    [SerializeField]
+    private float _maxParticlesBlink = 5f;
+    [SerializeField]
+    private Color _blinkColor = Color.yellow;
 
+    #endregion
 
     private void Start() {
 
@@ -154,6 +171,26 @@ public class PlayerAnimations : MonoBehaviour {
         spriteLibrary.spriteLibraryAsset = _aliveskin;
 
         yield return new WaitForSeconds(_reviveTime);
+    }
+    #endregion
+
+    #region Blink
+    public void StartBlink() {
+        StartCoroutine(BlinkAnim());
+    }
+    private IEnumerator BlinkAnim() {
+
+        var mainModule = _explosionParticleSystem.main;
+        mainModule.startSpeed = _speedBlink;
+        mainModule.duration = _durationBlink;
+        mainModule.startColor = _blinkColor;
+        var emissionModule = _explosionParticleSystem.emission;
+        emissionModule.rateOverTime = _emisionBlink;
+
+        _explosionParticleSystem.Play();
+        yield return new WaitForSeconds(_durationBlink);
+        mainModule.startColor = Color.white;
+        _explosionParticleSystem.Stop();
     }
     #endregion
 }

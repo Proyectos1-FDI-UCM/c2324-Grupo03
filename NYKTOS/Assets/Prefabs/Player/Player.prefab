@@ -310,6 +310,11 @@ MonoBehaviour:
   _maxParticlesDead: 50
   _reviveTime: 0.3
   _aliveskin: {fileID: 7108339969198208228, guid: 45a068e7a1ee17e4689d979652778836, type: 3}
+  _emisionBlink: 30
+  _durationBlink: 0.5
+  _speedBlink: 1
+  _lifeTimeBlink: 0.5
+  _maxParticlesBlink: 1
 --- !u!198 &401284804093530806
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5421,6 +5426,18 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: 1d4c58df92d185e4790c9bb7a6aa8c46, type: 2}
         m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6028970292174244405}
+        m_TargetAssemblyTypeName: PlayerAnimations, Assembly-CSharp
+        m_MethodName: StartBlink
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
