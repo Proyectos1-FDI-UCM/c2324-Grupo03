@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77f75a949d6e7b64bb3fb60da1fcbe46, type: 3}
-  m_Name: MenuSceneLoad
+  m_Name: WinSceneLoad
   m_EditorClassIdentifier: 
   _stateChanged: {fileID: 11400000, guid: 49b121f9bca222c49b52d58b2b2e0b6b, type: 2}
-  _stateIdentifier: 10
+  _stateIdentifier: 13
   _onStateInstantLoad:
     m_PersistentCalls:
       m_Calls: []
@@ -28,7 +28,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: MenuPrincipal
           m_BoolArgument: 0
