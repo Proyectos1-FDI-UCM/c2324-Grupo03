@@ -264,19 +264,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: orthographic size
-      value: 5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.119373776
+      value: 0.0039138943
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.7048458
+      value: 0.99999994
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.69903976
+      value: 0.99176264
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -411,6 +411,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1209428880890365529, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 214.90039
+      objectReference: {fileID: 0}
     - target: {fileID: 3283822749038821316, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
       propertyPath: m_Alpha
       value: 0
@@ -499,6 +503,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: f6b90d95c8ffb1a4fac304c11056fa43, type: 2}
+    - target: {fileID: 5778961985226718632, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -79
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778961985226718632, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -70.59961
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785364039125196190, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 125.30078
+      objectReference: {fileID: 0}
     - target: {fileID: 6785925138687883081, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
       propertyPath: _point1
       value: 
@@ -511,6 +527,10 @@ PrefabInstance:
       propertyPath: _playerTransform
       value: 
       objectReference: {fileID: 2026339217}
+    - target: {fileID: 6790466228577960869, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 170.30078
+      objectReference: {fileID: 0}
     - target: {fileID: 8276733419907818334, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
       propertyPath: m_Name
       value: UI Gameplay
@@ -766,6 +786,10 @@ PrefabInstance:
     - target: {fileID: 1084242728902340590, guid: 3d641c2d83f6b7d449b3d76e60559c5a, type: 3}
       propertyPath: m_Name
       value: NavMesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956265534694123477, guid: 3d641c2d83f6b7d449b3d76e60559c5a, type: 3}
+      propertyPath: m_VoxelSize
+      value: 0.16666667
       objectReference: {fileID: 0}
     - target: {fileID: 6956265534694123477, guid: 3d641c2d83f6b7d449b3d76e60559c5a, type: 3}
       propertyPath: m_NavMeshData
