@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3632067628936819240}
   - component: {fileID: 4760056054625925972}
   m_Layer: 0
-  m_Name: Wait 0,4sCondition
+  m_Name: Wait 0,2sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3da0bdaa3417541a8cdc57e69aa60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waitTime: 0.4
+  _waitTime: 0.2
 --- !u!1 &2683016789316417445
 GameObject:
   m_ObjectHideFlags: 0
