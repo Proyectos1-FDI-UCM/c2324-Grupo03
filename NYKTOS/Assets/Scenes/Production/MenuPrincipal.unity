@@ -5017,17 +5017,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0738317c8174684db4981349de89ba5, type: 3}
---- !u!114 &525032068 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 629586350119618801, guid: b706558b048464849b448b46ae5546b4, type: 3}
-  m_PrefabInstance: {fileID: 886131099}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &620084538
 GameObject:
   m_ObjectHideFlags: 0
@@ -5142,6 +5131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 629586350119618801, guid: b706558b048464849b448b46ae5546b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1140519766423347811, guid: b706558b048464849b448b46ae5546b4, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -5245,6 +5238,18 @@ PrefabInstance:
     - target: {fileID: 4176334130659324938, guid: b706558b048464849b448b46ae5546b4, type: 3}
       propertyPath: m_Name
       value: CanvasMenuPrincipal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293784350800612076, guid: b706558b048464849b448b46ae5546b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 1225504e19f4c004299fdc695b54468c, type: 2}
+    - target: {fileID: 4293784350800612076, guid: b706558b048464849b448b46ae5546b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ActivateNewGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293784350800612076, guid: b706558b048464849b448b46ae5546b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GlobalMethods, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4530396960301846955, guid: b706558b048464849b448b46ae5546b4, type: 3}
       propertyPath: m_Pivot.x
@@ -5441,58 +5446,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4176334130659324938, guid: b706558b048464849b448b46ae5546b4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 932453922}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b706558b048464849b448b46ae5546b4, type: 3}
---- !u!1 &932453915 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4176334130659324938, guid: b706558b048464849b448b46ae5546b4, type: 3}
-  m_PrefabInstance: {fileID: 886131099}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &932453922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 932453915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11e19937666ae364087806329433b131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _closeMenusEmitter: {fileID: 11400000, guid: 2b9072c17d1a8b643a3d84e13cd80942, type: 2}
-  _pauseMenuEmitter: {fileID: 11400000, guid: 1f83d2215c671924eaec39ecaf9b6244, type: 2}
-  _settingsMenuEmitter: {fileID: 11400000, guid: 8c7ab089bba90ef40a1347e980755f7a, type: 2}
-  _nexusMenuEmitter: {fileID: 11400000, guid: 7dee2853a844893449043eaac068bb2b, type: 2}
-  _defenseMenuEmitter: {fileID: 11400000, guid: 61d01db8c8f871a4684fcf3b82b8a031, type: 2}
-  _weaponUpgradeMenuEmitter: {fileID: 11400000, guid: 1e1cdcdcf5f368941b553f87e0b31b2e, type: 2}
-  _weaponEffectMenuEmitter: {fileID: 11400000, guid: 343c80a31b148424bbb6e6f14b65b1cc, type: 2}
-  _mapEmitter: {fileID: 11400000, guid: 17dd28820e0d980409b6a48dacd40ab7, type: 2}
-  _beaconBuildEmitter: {fileID: 11400000, guid: bd66721845a72d9458e1061aec7616b9, type: 2}
-  _wallBuildEmitter: {fileID: 11400000, guid: 41bf204db3d38e546a632d72b95afb04, type: 2}
-  _turretBuildEmitter: {fileID: 11400000, guid: 9c3057776ab85794eb818a6c68c0dbdb, type: 2}
-  _pauseMenu: {fileID: 0}
-  _nexusMenu: {fileID: 0}
-  _defenseMenu: {fileID: 0}
-  _weaponUpgradeMenu: {fileID: 0}
-  _weaponEffectMenu: {fileID: 0}
-  _settingsMenu: {fileID: 1092262783}
-  _pauseButton: {fileID: 0}
-  _nexusButton: {fileID: 0}
-  _defenseButton: {fileID: 0}
-  _weaponUpgradeButton: {fileID: 0}
-  _weaponEffectButton: {fileID: 0}
-  _settingsButton: {fileID: 525032068}
-  _map: {fileID: 0}
-  _menuOpened:
-    m_PersistentCalls:
-      m_Calls: []
-  _menuClosed:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &934124181
 GameObject:
   m_ObjectHideFlags: 0
