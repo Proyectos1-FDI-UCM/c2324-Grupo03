@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collaboratorEvent: {fileID: 11400000, guid: f9cc91595a9907a44b73d4cc7a19a96d, type: 2}
   _waitTime: 5
-  _nightProgressTracker: {fileID: 11400000, guid: 100c2ea44e0114a49b753e96612872fb, type: 2}
+  _nightProgressTracker: {fileID: 11400000, guid: 417934e8c98f8ca49950d3029db1b636, type: 2}
   _placeholderData: {fileID: 11400000, guid: 8e5e25c7d62aac545a67a67a489d258d, type: 2}
   _playerInventory: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
   _placeholderLoadEvent: {fileID: 11400000, guid: 066c94bd9a170934490d3e8a777e1f76, type: 2}
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collaboratorEvent: {fileID: 11400000, guid: 82e32577b03d28d499266be53a6a8bf3, type: 2}
   _waitTime: 5
-  _nightProgress: {fileID: 11400000, guid: 100c2ea44e0114a49b753e96612872fb, type: 2}
+  _nightProgress: {fileID: 11400000, guid: 417934e8c98f8ca49950d3029db1b636, type: 2}
   _placeholderData: {fileID: 11400000, guid: 8e5e25c7d62aac545a67a67a489d258d, type: 2}
   _playerInventory: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
   _defaultWeapon: {fileID: 11400000, guid: b3929c8ff95159c46b8e63e51f093005, type: 2}

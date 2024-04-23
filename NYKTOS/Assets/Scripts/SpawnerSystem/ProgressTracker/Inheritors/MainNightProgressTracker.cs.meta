@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5047d170d8a515342a076ab017ba1601
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _nightTimeEmitter: {fileID: 11400000, guid: ee4e5df36de1a6249ba2dc81292fc4f6, type: 2}
+  - _stateMachine: {fileID: 11400000, guid: 26cd137f8c89dcd4d8bc981a37f3e83f, type: 2}
+  - _dayState: {fileID: 11400000, guid: 8ea1ec361dace1646b159d2b3970ebee, type: 2}
+  - _loseSceneLoadState: {fileID: 11400000, guid: 2d1421af98ec928498acc63535b8716e, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

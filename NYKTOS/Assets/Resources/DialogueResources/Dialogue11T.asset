@@ -23,7 +23,7 @@ MonoBehaviour:
   _onDialogueFinish:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 85b501d9779dbc2479e4472a07d19f51, type: 2}
+      - m_Target: {fileID: 11400000, guid: 4b88d99a12adba643965004e7850047e, type: 2}
         m_TargetAssemblyTypeName: NightProgressTracker, Assembly-CSharp
         m_MethodName: InvokeStartNight
         m_Mode: 1

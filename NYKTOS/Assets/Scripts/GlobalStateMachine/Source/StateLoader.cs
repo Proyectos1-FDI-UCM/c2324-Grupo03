@@ -3,14 +3,14 @@ using UnityEngine;
 public class StateLoader : MonoBehaviour
 {
     [SerializeField]
-    private GameStateMachine _gameStateMachine;
+    private CustomState _state;
 
     [SerializeField]
-    private GlobalStateIdentifier _identifier;
+    private GameStateMachine _gameStateMachine;
 
     void Update()
     {
-        _gameStateMachine?.SetState(_identifier);
+        _gameStateMachine?.SetState(_state);
         gameObject.SetActive(false);
     }
 }
