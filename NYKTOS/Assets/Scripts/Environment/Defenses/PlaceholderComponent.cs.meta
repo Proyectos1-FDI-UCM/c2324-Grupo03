@@ -3,7 +3,11 @@ guid: 69c0abb319d0d2b478714b5f15e4a7b4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _placeholderInteract: {instanceID: 0}
+  - _defenseMenu: {instanceID: 0}
+  - _phTypeEmitter: {fileID: 11400000, guid: 0893552f948a58341927cb437b49a0b7, type: 2}
+  - TutorialConfirm: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

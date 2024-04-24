@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Cambia el precio en el menú de defensas para ajustarse al color de cristal correspondiente
+/// </summary>
 public class CrystalSpriteChanger : MonoBehaviour
 {
     [SerializeField]
@@ -17,16 +20,13 @@ public class CrystalSpriteChanger : MonoBehaviour
 
     private void ChangeSprite(placeholderType color)
     {
-        switch(color) {
-            case placeholderType.yellow:
-                _image.sprite = _yellowCrystal; break;
-            case placeholderType.cyan:
-                _image.sprite = _cyanCrystal; break;
-            case placeholderType.magenta:
-                _image.sprite = _magentaCrystal; break;
-            default:
-                _image.sprite = _yellowCrystal; break;
-        }
+        _image.sprite = color switch
+        {
+            placeholderType.yellow => _yellowCrystal,
+            placeholderType.cyan => _cyanCrystal,
+            placeholderType.magenta => _magentaCrystal,
+            _ => _yellowCrystal,
+        };
     }
 
     void Start()

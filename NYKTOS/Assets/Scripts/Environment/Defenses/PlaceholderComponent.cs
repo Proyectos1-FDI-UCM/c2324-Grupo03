@@ -48,6 +48,8 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
 
     private void UpdateDefenseMenu()
     {
+        Debug.Log("cambio de color");
+        Debug.Log(_type);
         _phTypeEmitter.InvokePerform(_type);
     }
 
