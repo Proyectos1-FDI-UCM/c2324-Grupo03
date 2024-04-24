@@ -15,7 +15,7 @@ public class CollaboratorEvent: ScriptableObject
     public void AddWorker()
     {
         _subscribedWorkers++;
-        Debug.Log("SUBSCRIBED WORKERS: " + _subscribedWorkers);
+        Debug.Log("[COLLABORATOR EVENT] (" + name + ")" + "Trabajador añadido. Total: " + _subscribedWorkers);
     }
 
     public void DeleteWorker()
@@ -24,16 +24,26 @@ public class CollaboratorEvent: ScriptableObject
         {
             _subscribedWorkers--;
 
+            Debug.Log("[COLLABORATOR EVENT] (" + name + ")" + "Trabajador finalizado. Restantes: " + _subscribedWorkers);
+
             if(_subscribedWorkers <= 0)
             {   
+                Debug.Log("[COLLABORATOR EVENT] (" + name + ")" + " Evento completado, lanzando señal de fin de trabajo");
                 _subscribedWorkers = 0;
                 _workCompleted.Invoke();
             }
+        }
+        else
+        {
+            Debug.Log("[COLLABORATOR EVENT] (" + name + ")" + " ERROR, RUTA INCORRECTA");
+            _subscribedWorkers = 0;
+            _workCompleted.Invoke();
         }
     }
 
     public void InvokeWorkStart()
     {
+        Debug.Log("[COLLABORATOR EVENT] (" + name + ")" + " Iniciando evento colaborador");
         _subscribedWorkers = 0;
         _workStart.Invoke();
     }

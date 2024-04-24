@@ -26,7 +26,7 @@ public class PlaceholderSaveComponent : CollaboratorWorker
         // [Marco] 
         //
         // Soy consciente que esto es codigo duplicado, es lo que hay, 
-        // el codigo el building manager es sin dua una cosa
+        // el codigo el building manager es sin duda una cosa
 
         _currentDefense = _saveData.GetPlaceholderDefense(_placeholderId);
         
@@ -82,12 +82,12 @@ public class PlaceholderSaveComponent : CollaboratorWorker
 
     void Start()
     {
-        Debug.Log(_placeholderId);
+        //Debug.Log(_placeholderId);
     }
 
     void OnValidate()
     {
-        Debug.Log(name + " - " + _placeholderId);
+        //Debug.Log(name + " - " + _placeholderId);
         if(_saveData != null)
         {
             if (_placeholderId == -1)

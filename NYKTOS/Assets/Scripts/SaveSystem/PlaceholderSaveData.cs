@@ -29,7 +29,7 @@ public class PlaceholderSaveData : ScriptableObject
         {
             elementsInDictionary = elementsInDictionary + "\n" + "(" + element.Key + ", " + element.Value + ")";
         }
-        Debug.Log(elementsInDictionary);
+        //Debug.Log(elementsInDictionary);
 
         return _idCount;
     }
@@ -44,7 +44,7 @@ public class PlaceholderSaveData : ScriptableObject
         {
             elementsInDictionary = elementsInDictionary + "\n" + "(" + element.Key + ", " + element.Value + ")";
         }
-        Debug.Log(elementsInDictionary);
+        //Debug.Log(elementsInDictionary);
     }
 
     public void SetPlaceholderDefense(int id, PlaceholderDefense defense)
@@ -65,7 +65,7 @@ public class PlaceholderSaveData : ScriptableObject
         {   
             elementsInDictionary = elementsInDictionary + "\n" + "(" + element.Key + ", " + element.Value + ")";
         }
-        Debug.Log(elementsInDictionary);
+        //Debug.Log(elementsInDictionary);
     }
 
     public PlaceholderDefense GetPlaceholderDefense(int id)

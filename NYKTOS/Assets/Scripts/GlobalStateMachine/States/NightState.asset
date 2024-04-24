@@ -82,8 +82,8 @@ MonoBehaviour:
   _onStateEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 100c2ea44e0114a49b753e96612872fb, type: 2}
-        m_TargetAssemblyTypeName: GameProgressTracker, Assembly-CSharp
+      - m_Target: {fileID: 11400000, guid: 4b88d99a12adba643965004e7850047e, type: 2}
+        m_TargetAssemblyTypeName: NightProgressTracker, Assembly-CSharp
         m_MethodName: InvokeStartNight
         m_Mode: 1
         m_Arguments:

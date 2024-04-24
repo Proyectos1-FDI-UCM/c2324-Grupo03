@@ -38,14 +38,13 @@ public class CustomState : ScriptableObject
     public void StateLoad()
     {
         _stateChanged?.Perform.Invoke();
-        Debug.Log(name + " STATELOAD");
+        Debug.Log("[CUSTOM STATE] (" + name + ") Inicializada fase de carga");
         ConsumeCollaboratorList(_onStateLoadCollaborators, _onStateInstantLoad, _onStateEnter);
     }
 
     public void StateExit()
     {
-        Debug.Log(name + " STATEXIT");
-    
+        Debug.Log("[CUSTOM STATE] (" + name + ") Inicializada fase de salida");
         ConsumeCollaboratorList(_onStateExitCollaborators, _onStateInstantExit, _stateEndSignal);
     }
 
@@ -55,15 +54,20 @@ public class CustomState : ScriptableObject
         UnityEvent instantEvent,
         UnityEvent collaboratorEndEvent)
     {
+        Debug.Log("[CUSTOM STATE] ("+ name + ") (" + instantEvent + ") Consumiendo colaboradores. Instantaneo: (" + instantEvent + ")" );
+
+        instantEvent.Invoke();
+
         if (collaboratorList.Count > 0)
         {
-            Debug.Log("NUMERO DE COLABORADORES = " + collaboratorList.Count);
+            Debug.Log("[CUSTOM STATE] ("+ name + ") (" + instantEvent + ") Numero de colaboradores: " + collaboratorList.Count);
+
             _currentPendingCount = collaboratorList.Count;
             
             foreach (var item in collaboratorList)
             {
                 item.InvokeWorkStart();
-                Debug.Log("COLABORADOR " + item.name);
+                Debug.Log("[CUSTOM STATE] ("+ name + ") (" + instantEvent + ") Iniciado colaborador (" + item.name + ")");
                 UnityAction completionAction = null;
                 completionAction = () =>
                 {
@@ -75,20 +79,46 @@ public class CustomState : ScriptableObject
         }
         else
         {
-            Debug.Log(name + " COLLABORADOR CON 0 ITEMS");
+            Debug.Log("[CUSTOM STATE] ("+ name + ") (" + instantEvent + ") No hay colaboradores. Iniciando (" + collaboratorEndEvent + ") - " 
+                + collaboratorEndEvent.GetPersistentEventCount());
+
             collaboratorEndEvent.Invoke();
         }
-        instantEvent.Invoke();
     }
 
     private void TryComplete(UnityEvent targetEvent)
     {
         _currentPendingCount--;
-        Debug.Log(name + " TRYCOMPLETE COMPLETED, QUEDAN " + _currentPendingCount);
+        Debug.Log
+        (
+            "[CUSTOM STATE] ("+ name + ") Se ha completado un colaborador para poder iniciar (" + targetEvent +"). Quedan: " 
+                + _currentPendingCount
+        );
         if (_currentPendingCount == 0)
         {
-            Debug.Log(name + " FIN DE COLABORADOR");
+            Debug.Log("[CUSTOM STATE] ("+ name + ") Colaboradores agotados. Iniciando (" + targetEvent +") - " 
+                + targetEvent.GetPersistentEventCount());
             targetEvent.Invoke();
         }
     }
+}
+
+[System.Serializable]
+public enum GlobalStateIdentifier
+{
+    None,
+    Quit,
+    Load,
+    MainMenu,
+    TutorialDay,
+    TutorialNight,
+    Day,
+    Night,
+    Lose,
+    Win,
+    MenuSceneLoad,
+    TutorialSceneLoad,
+    MaingameSceneLoad,
+    WinSceneLoad,
+    LoseSceneLoad
 }

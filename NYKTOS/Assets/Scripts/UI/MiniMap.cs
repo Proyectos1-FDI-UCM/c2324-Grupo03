@@ -21,7 +21,6 @@ public class MiniMap : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        Debug.Log(_playerTransform.position.x);
         _playerMiniMap.anchoredPosition = _miniMapPoint1.anchoredPosition + new Vector2((_playerTransform.position.x - _point1.position.x) * miniMapRatio, (_playerTransform.position.y - _point1.position.y) * miniMapRatio);
     }
 
