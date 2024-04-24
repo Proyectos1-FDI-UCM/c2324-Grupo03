@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Clase universal para mover entidades. Todo lo que cuente con esto y tenga un rigidbody se puede mover de varias formas gracias a los metodos que hay.
+/// </summary>
 public class RBMovement : MonoBehaviour
 {
     #region references
