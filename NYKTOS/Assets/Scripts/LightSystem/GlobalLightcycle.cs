@@ -18,6 +18,11 @@ public class GlobalLightcycle : MonoBehaviour
         _inversionEffect.Perform.AddListener(Invert);
     }
 
+    void OnDestroy()
+    {
+        _inversionEffect.Perform.RemoveListener(Invert);
+    }
+
     private void Invert(bool inversionStatus)
     {
         if(inversionStatus)

@@ -13,8 +13,7 @@ public class AudioPerformer : MonoBehaviour
     [SerializeField] AudioMixerGroup sfxMixer;
     [SerializeField] AudioMixerGroup musicMixer;
     void Awake()
-    {
-        
+    {   
         if (instance != null)
         {
             Destroy(gameObject);
@@ -31,7 +30,6 @@ public class AudioPerformer : MonoBehaviour
                 
                 if (players[i] != null)
                 {
-                    
                     if (players[i].audioType == AudioPlayer.AudioType.Music)
                     {
                         currentSource.clip = players[i].clip[0];
@@ -77,10 +75,9 @@ public class AudioPerformer : MonoBehaviour
         {
             for (int i = 0; i < players.Length; i++)
             {
+                players[i].playAudio.RemoveAllListeners();
                 players[i].stopAudio.RemoveAllListeners();
-
                 players[i].pauseAudio.RemoveAllListeners();
-
                 players[i].unPauseAudio.RemoveAllListeners();
             }
         }

@@ -16,6 +16,11 @@ public class UIImageChanger : MonoBehaviour
         image = GetComponent<Image>();
     }
 
+    void OnDestroy()
+    {
+        _emitter.Perform.RemoveListener(ChangeImage);
+    }
+
     private void ChangeImage(WeaponScriptableObject weapon)
     {
         image.sprite = weapon.weaponImage;

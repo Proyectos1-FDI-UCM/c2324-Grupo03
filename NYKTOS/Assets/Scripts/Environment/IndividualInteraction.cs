@@ -21,4 +21,8 @@ public class IndividualInteraction : MonoBehaviour
         _canInteractEmitter.Perform.AddListener(CanInteract);
     }
 
+    void OnDestroy()
+    {
+        _canInteractEmitter.Perform.RemoveListener(CanInteract);
+    }
 }

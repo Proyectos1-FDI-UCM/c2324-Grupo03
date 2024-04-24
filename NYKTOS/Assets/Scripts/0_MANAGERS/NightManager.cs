@@ -87,7 +87,6 @@ public class NightManager : MonoBehaviour
             _instance = this;
         }
         _progressTracker.StartNight.AddListener(StartNight);
-        _progressTracker.StartNight.AddListener(StartNight => {Debug.Log(_progressTracker.name);});
     }
 
     void Start()

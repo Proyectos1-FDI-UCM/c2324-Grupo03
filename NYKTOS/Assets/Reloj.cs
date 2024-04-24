@@ -37,6 +37,11 @@ public class Reloj : MonoBehaviour
         }
     }
 
+    void OnDestroy()
+    {
+        _timerStart.Perform.RemoveListener(ActivateTimer);
+    }
+
     private void ChangeTime()
     {
         angle = angle -timeVelocity * Time.deltaTime;

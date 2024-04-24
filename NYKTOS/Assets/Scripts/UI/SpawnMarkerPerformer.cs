@@ -16,6 +16,11 @@ public class SpawnMarkerPerformer : MonoBehaviour
         _spawnMarkerEmitter.Perform.AddListener(ToggleMarker);
     }
 
+    void OnDestroy()
+    {
+        _spawnMarkerEmitter.Perform.RemoveListener(ToggleMarker);
+    }
+
     private void ToggleMarker(bool toggle)
     {
         _image.enabled = toggle;

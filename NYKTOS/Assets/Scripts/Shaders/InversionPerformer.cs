@@ -32,6 +32,11 @@ public class InversionPerformer : MonoBehaviour
         inversionEffect.Perform.AddListener(ChangeMaterial);
     }
 
+    void OnDestroy()
+    {
+        inversionEffect.Perform.RemoveListener(ChangeMaterial);
+    }
+
     private void ChangeMaterial(bool swapCondition)
     {
         if (swapCondition) 

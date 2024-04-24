@@ -4,11 +4,19 @@ using UnityEngine.Events;
 public abstract class GenericEmitter<T> : ScriptableObject
 {
     [SerializeField]
+    private bool debug = false;
+
+    [SerializeField]
     private UnityEvent<T> _perform = new UnityEvent<T>();
     public UnityEvent<T> Perform{get{return _perform;}}
 
     public void InvokePerform(T eventData)
     {
+        if (debug) 
+        {
+            Debug.LogError("[EMITTER] (" + name + ") Emitter lanzado");
+        }
+        
         _perform.Invoke(eventData);
     }
 }
@@ -21,6 +29,7 @@ public abstract class GenericEmitter : ScriptableObject
 
     public void InvokePerform()
     {
+        Debug.LogError("[EMITTER] (" + name + ") Emitter lanzado");
         _perform.Invoke();
     }
 }

@@ -44,4 +44,9 @@ public class PlayerDeath : MonoBehaviour, IDeath
         _playerReviveEmitter.Perform.AddListener(Revive);
         _playerAnimations = GetComponentInChildren<PlayerAnimations>();
     }
+
+    void OnDestroy()
+    {
+        _playerReviveEmitter.Perform.RemoveListener(Revive);
+    }
 }

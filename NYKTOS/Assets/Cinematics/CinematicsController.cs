@@ -57,6 +57,11 @@ public class ControlCinemachine : MonoBehaviour
         }
     }
 
+    void OnDestroy()
+    {
+        _firstCinematicEmitter.Perform.RemoveListener(FirstCinematicOn);
+    }
+
     private void StartCinematic()
     {
         if (_oneTimeCinematic && _waitToStart <= 0)
