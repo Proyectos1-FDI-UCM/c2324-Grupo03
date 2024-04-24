@@ -16,17 +16,17 @@ public class GameStateMachine : ScriptableObject
 
     public void SetState(CustomState newState)
     {
-        Debug.Log("[STATE MACHINE] Iniciada orden de cambio del estado (" + _currentState + ") al estado (" + newState + ")");
+        Debug.LogError("[STATE MACHINE] Iniciada orden de cambio del estado (" + _currentState + ") al estado (" + newState + ")");
 
         if(_currentState != null)
         {
-            Debug.Log("[STATE MACHINE] Existe el estado previo (" + _currentState + "), finalizando estado previo");
+            Debug.LogError("[STATE MACHINE] Existe el estado previo (" + _currentState + "), finalizando estado previo");
             _currentState.StateEndSignal.AddListener(() => StateHasFinalised(_currentState, newState));
             _currentState.StateExit();
         }
         else
         {
-            Debug.Log("[STATE MACHINE] No hay estado previo, cargando estado (" + newState + ")");
+            Debug.LogError("[STATE MACHINE] No hay estado previo, cargando estado (" + newState + ")");
             newState.StateLoad();
         }
         _currentState = newState;
@@ -35,7 +35,7 @@ public class GameStateMachine : ScriptableObject
     private void StateHasFinalised(CustomState oldstate, CustomState newState)
     {
         oldstate.StateEndSignal.RemoveAllListeners();
-        Debug.Log("[STATE MACHINE] El estado (" + oldstate.name + ") ha finalizado");
+        Debug.LogError("[STATE MACHINE] El estado (" + oldstate.name + ") ha finalizado");
         newState.StateLoad();
     }
 
@@ -46,7 +46,7 @@ public class GameStateMachine : ScriptableObject
     /// <param name="_state"></param>
     public void SetStateTo(CustomState _state)
     {
-        Debug.Log("[STATE MACHINE] Orden EXTERNA de cambio a " + _state);
+        Debug.LogError("[STATE MACHINE] DEPRECATED Orden EXTERNA de cambio a " + _state);
         SetState(_state);
     }
 
@@ -55,7 +55,7 @@ public class GameStateMachine : ScriptableObject
     /// </summary>
     public void SetStateToDay()
     {
-        Debug.Log("[STATE MACHINE] Orden EXTERNA de cambio a DAY");
+        Debug.LogError("[STATE MACHINE] DEPRECATED Orden EXTERNA de cambio a DAY");
         //SetState(GlobalStateIdentifier.Day);
     }
 
@@ -64,7 +64,7 @@ public class GameStateMachine : ScriptableObject
     /// </summary>
     public void SetStateToNight()
     {
-        Debug.Log("[STATE MACHINE] Orden EXTERNA de cambio a NIGHT");
+        Debug.LogError("[STATE MACHINE] DEPRECATED Orden EXTERNA de cambio a NIGHT");
         //SetState(GlobalStateIdentifier.Night);
     }
 
@@ -73,7 +73,7 @@ public class GameStateMachine : ScriptableObject
     /// </summary>
     public void SetStateToQuit()
     {
-        Debug.Log("[STATE MACHINE] Orden EXTERNA de cambio a QUIT");
+        Debug.LogError("[STATE MACHINE] DEPRECATED Orden EXTERNA de cambio a QUIT");
         //SetState(GlobalStateIdentifier.Quit);
     }
 
@@ -82,7 +82,7 @@ public class GameStateMachine : ScriptableObject
     /// </summary>
     public void SetStateToLose()
     {
-        Debug.Log("[STATE MACHINE] Orden EXTERNA de cambio a LOSE");
+        Debug.LogError("[STATE MACHINE] DEPRECATED Orden EXTERNA de cambio a LOSE");
         //SetState(GlobalStateIdentifier.LoseSceneLoad);
     }
 }

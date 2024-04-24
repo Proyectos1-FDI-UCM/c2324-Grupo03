@@ -59,17 +59,19 @@ public class TransitionPerformer : MonoBehaviour
         if (_animator != null)
         {
             _animator.Play(animationHash);
-
             yield return new WaitForSeconds(animationDuration);
         }
-        
+
         collaboratorEvent.DeleteWorker();
+
         yield return null;
     }
 
     [ContextMenu("TransitionToDark")]
     private void TransitionToDark()
     {
+        Time.timeScale = 1.0f;
+
         StopAllCoroutines();
         
         _transitionToDarkEvent.AddWorker();
@@ -83,12 +85,15 @@ public class TransitionPerformer : MonoBehaviour
                 _transitionToDarkEvent
             )
         );
+
+
     }
 
     [ContextMenu("TransitionToTransparent")]
     private void TransitionToTransparent()
     {
-        Debug.Log("TRANSICION");
+        Time.timeScale = 1.0f;
+
         StopAllCoroutines();
         
         _transitionToTransparentEvent.AddWorker();
@@ -107,6 +112,8 @@ public class TransitionPerformer : MonoBehaviour
     [ContextMenu("ResetTransition")]
     private void ResetTransition()
     {
+        Time.timeScale = 1.0f;
+
         StopAllCoroutines();
         
         _transitionResetEvent.AddWorker();

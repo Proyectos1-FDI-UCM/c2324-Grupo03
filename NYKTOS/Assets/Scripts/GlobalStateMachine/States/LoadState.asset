@@ -17,18 +17,6 @@ MonoBehaviour:
   _onStateInstantLoad:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 100c2ea44e0114a49b753e96612872fb, type: 2}
-        m_TargetAssemblyTypeName: NightProgressTracker, Assembly-CSharp
-        m_MethodName: ResetNights
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
         m_TargetAssemblyTypeName: PlayerInventory, Assembly-CSharp
         m_MethodName: Reset
