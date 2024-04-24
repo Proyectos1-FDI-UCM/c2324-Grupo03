@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Clase universal para mover entidades. Todo lo que cuente con esto y tenga un rigidbody se puede mover de varias formas gracias a los metodos que hay.
+/// </summary>
 public class RBMovement : MonoBehaviour
 {
     #region references
@@ -61,7 +64,7 @@ public class RBMovement : MonoBehaviour
         Move();
     }
     /// <summary>
-    ///Ajustar el movimiento en yAxis (-1,0,1)
+    /// Ajustar el movimiento en yAxis (-1,0,1)
     /// </summary>
     /// <param name="num"></param>
     public void yAxisMovement(float num)
@@ -70,6 +73,11 @@ public class RBMovement : MonoBehaviour
 
         Move();
     }
+
+    /// <summary>
+    /// Aproximación de dirección del movimiento en ocho direcciones. Se usa principalmente en enemigos.
+    /// </summary>
+    /// <param name="vector"></param>
     public void OrthogonalMovement(Vector2 vector)
     {
         vector = vector.normalized;
@@ -104,6 +112,9 @@ public class RBMovement : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Aplica la dirección provista en xAxis y yAxis al objeto y lo mueve. También reproduce sonido de caminar en bucle.
+    /// </summary>
     public void Move() 
     {
         _movementDirection = new Vector2(xAxis, yAxis).normalized;
@@ -119,6 +130,10 @@ public class RBMovement : MonoBehaviour
         else _pauseLoopableMovingSound?.Invoke();
     }
 
+    /// <summary>
+    /// Teletransporta a la entidad a la posición que se le pasa. Se usa para el blink.
+    /// </summary>
+    /// <param name="position"></param>
     public void TeleportTo(Vector2 position) //Pone la posicion del jugador en las coordenadas que se le pasan
     {
         _myTransform.position = position;
@@ -130,6 +145,12 @@ public class RBMovement : MonoBehaviour
         _myRigidbody = GetComponent<Rigidbody2D>();
     }
     #region cambios de velocidad
+
+    /// <summary>
+    /// Se le aplica una velocidad añadida al objeto por un tiempo determinado. Al terminar, la velocidad añadida vuelve a ser 0.
+    /// </summary>
+    /// <param name="addSpeed"></param>
+    /// <param name="time"></param>
     public void AddSpeed(float addSpeed, float time)
     {
         if (addSpeed > -_movementSpeed)
@@ -147,10 +168,20 @@ public class RBMovement : MonoBehaviour
     }
     #endregion
 
+    /// <summary>
+    /// Para por completo la entidad.
+    /// </summary>
     public void StopVelocity()
     {
         _myRigidbody.velocity = Vector2.zero;
     }
+
+    /// <summary>
+    /// Aplica knockback a la entidad dependiendo de sus parametros de velocidad de knockback y duración de knockback.
+    /// </summary>
+    /// <param name="pushPosition">
+    /// Lugar desde donde se aplica knockback. Normalmente suele ser el transform.position del que lo produce.
+    /// </param>
     public void Knockback(Vector2 pushPosition)
     {
         Vector2 knockbackDirection = (new Vector2 (_myTransform.position.x, _myTransform.position.y) - pushPosition).normalized;
@@ -161,6 +192,7 @@ public class RBMovement : MonoBehaviour
     }
 
     #region fixes
+    //basicamente si detecta que ha dejado de colisionar con una pared se vuelve a llamar a Move para que se imponga la velocidad correcta.
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<Collider2D>() != null)

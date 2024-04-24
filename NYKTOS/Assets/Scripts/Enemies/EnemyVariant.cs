@@ -1,16 +1,15 @@
 using UnityEngine;
 using UnityEngine.U2D.Animation;
-
+/// <summary>
+/// Script que se encarga de cambiar el daño del enemigo y como consecuencia su sprite library y el material de las particulas 
+/// </summary>
 public class EnemyVariant : MonoBehaviour
 {
-    /// <summary>
-    /// Script que se encarga de cambiar el daño del enemigo junto con el sprite library y el material de las particulas 
-    /// </summary>
-
     #region references
     [Header("Sprites")] 
     [SerializeField]
     SpriteLibraryAsset _magentaSprite;
+
     [SerializeField]
     SpriteLibraryAsset _cyanSprite;
 
@@ -18,6 +17,7 @@ public class EnemyVariant : MonoBehaviour
 
     [SerializeField]
     Material _cyanMaterial;
+
     [SerializeField]
     Material _magentaMaterial;
     #endregion
@@ -31,7 +31,10 @@ public class EnemyVariant : MonoBehaviour
     [SerializeField]
     AttackType _attackType = AttackType.Default;
     #endregion
-
+  /// <summary>
+  /// Método responsable de asignar el tipo de ataque, cambiar la library y el material de las particulas
+  /// </summary>
+  /// <param name="attack"></param>
     public void SetVariant(AttackType attack)
     {
         if(TryGetComponent<WeaponHandler>(out WeaponHandler weaponHandler))
