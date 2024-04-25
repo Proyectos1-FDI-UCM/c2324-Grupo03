@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: -1231885529
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 123384511, guid: 85d94013dcc9a38498dbad31e0487e9e, type: 3}
+  m_Sprite: {fileID: 1513451949, guid: 78f9530eb1c4ec14994d5238d2a37064, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_CategoryHash: 1.2662449e-27
   m_labelHash: 1.2079726e-29
   m_SpriteKey: 0
-  m_SpriteHash: 65303818
+  m_SpriteHash: 715221114
 --- !u!95 &6700535784219507712
 Animator:
   serializedVersion: 5
@@ -5131,7 +5131,7 @@ GameObject:
   - component: {fileID: 5762319876495903544}
   - component: {fileID: 1201533573838173569}
   m_Layer: 9
-  m_Name: Wait 1,2sCondition
+  m_Name: Wait 1.2sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5810,7 +5810,7 @@ GameObject:
   - component: {fileID: 7062306405854059666}
   - component: {fileID: 3150835721332936813}
   m_Layer: 9
-  m_Name: Wait 0,2sCondition
+  m_Name: Wait 0.2sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
