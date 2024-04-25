@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5047d170d8a515342a076ab017ba1601, type: 3}
+  m_Name: TestCristalsProgressTracker
+  m_EditorClassIdentifier: 
+  _nightTimeEmitter: {fileID: 11400000, guid: ee4e5df36de1a6249ba2dc81292fc4f6, type: 2}
+  _stateMachine: {fileID: 11400000, guid: 26cd137f8c89dcd4d8bc981a37f3e83f, type: 2}
+  _night: 0
+  _nightList:
+  - {fileID: 11400000, guid: a7dfaf61ed9732f499c1cd74f7d238b2, type: 2}
+  - {fileID: 11400000, guid: 51dc92158e88cd541bfd6c0b5dbb2057, type: 2}
+  - {fileID: 11400000, guid: 36f7da17e417f6f4bafe7060215f1722, type: 2}
+  _dayState: {fileID: 11400000, guid: 8ea1ec361dace1646b159d2b3970ebee, type: 2}
+  _loseSceneLoadState: {fileID: 11400000, guid: 2d1421af98ec928498acc63535b8716e, type: 2}

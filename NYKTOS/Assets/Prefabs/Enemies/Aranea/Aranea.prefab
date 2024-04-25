@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3632067628936819240}
   - component: {fileID: 4760056054625925972}
   m_Layer: 0
-  m_Name: Wait 0,2sCondition
+  m_Name: Wait 0.2sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5151,6 +5151,7 @@ MonoBehaviour:
   _maxHealth: 12
   _currentHealth: 12
   _inmTime: 0.1
+  alwaysInmune: 0
   _OnHurt:
     m_PersistentCalls:
       m_Calls:
@@ -5850,7 +5851,7 @@ GameObject:
   - component: {fileID: 2795636838570436853}
   - component: {fileID: 1074278166659649853}
   m_Layer: 9
-  m_Name: Wait 0,9sCondition
+  m_Name: Wait 0.9sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6019,7 +6020,7 @@ GameObject:
   - component: {fileID: 7461280860815949787}
   - component: {fileID: 1828715075259602696}
   m_Layer: 9
-  m_Name: Wait 1,5sCondition
+  m_Name: Wait 1.5sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

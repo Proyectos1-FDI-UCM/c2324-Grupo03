@@ -5243,6 +5243,7 @@ MonoBehaviour:
   _maxHealth: 30
   _currentHealth: 30
   _inmTime: 0.1
+  alwaysInmune: 0
   _OnHurt:
     m_PersistentCalls:
       m_Calls:

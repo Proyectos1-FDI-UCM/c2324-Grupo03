@@ -6017,7 +6017,7 @@ GameObject:
   - component: {fileID: 72912881869878435}
   - component: {fileID: 9149878608490046069}
   m_Layer: 9
-  m_Name: Wait 0,4sCondition
+  m_Name: Wait 0.4sCondition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

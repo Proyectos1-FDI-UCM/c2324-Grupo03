@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2754ec2fc757c244879b4eab2001418, type: 3}
+  m_Name: tNight_2
+  m_EditorClassIdentifier: 
+  _nightLength: 60
+  _waveList:
+  - time: 5
+    subWaveList: []
+  - time: 20
+    subWaveList:
+    - spawnerRegion: 0
+      enemyPool:
+      - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
+        number: 10
+        variantType: 0
+      - enemyPrefab: {fileID: 3477185432724126219, guid: bd9ce6ea559b24446809069ef53c706f, type: 3}
+        number: 1
+        variantType: 0
+      - enemyPrefab: {fileID: 2360520016083966940, guid: fefdc8d6c4f6ef34b94520a30c65a8f1, type: 3}
+        number: 1
+        variantType: 0
+      - enemyPrefab: {fileID: 2995607884255851843, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
+        number: 1
+        variantType: 0
+  - time: 20
+    subWaveList:
+    - spawnerRegion: 0
+      enemyPool:
+      - enemyPrefab: {fileID: 2995607884255851843, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
+        number: 2
+        variantType: 1
+      - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
+        number: 12
+        variantType: 0
+      - enemyPrefab: {fileID: 3477185432724126219, guid: bd9ce6ea559b24446809069ef53c706f, type: 3}
+        number: 3
+        variantType: 1
+  - time: 25
+    subWaveList:
+    - spawnerRegion: 0
+      enemyPool:
+      - enemyPrefab: {fileID: 2995607884255851843, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
+        number: 1
+        variantType: 0
+      - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
+        number: 7
+        variantType: 0
+      - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
+        number: 2
+        variantType: 1
+      - enemyPrefab: {fileID: 2360520016083966940, guid: fefdc8d6c4f6ef34b94520a30c65a8f1, type: 3}
+        number: 2
+        variantType: 1
+      - enemyPrefab: {fileID: 2995607884255851843, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
+        number: 2
+        variantType: 1
+  _nightCrystalDrops: {fileID: 11400000, guid: 211bb7010b86b4b49b312d9545aa609a, type: 2}
