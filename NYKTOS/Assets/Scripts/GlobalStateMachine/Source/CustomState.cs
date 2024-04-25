@@ -52,7 +52,8 @@ public class CustomState : ScriptableObject
     (
         List<CollaboratorEvent> collaboratorList, 
         UnityEvent instantEvent,
-        UnityEvent collaboratorEndEvent)
+        UnityEvent collaboratorEndEvent
+    )
     {
         string debugPhase = (instantEvent == _onStateInstantExit) ? "Exit" : "Load";
         string debugNext = (collaboratorEndEvent == _stateEndSignal) ? "StateEndSignal" : "StateEnter";

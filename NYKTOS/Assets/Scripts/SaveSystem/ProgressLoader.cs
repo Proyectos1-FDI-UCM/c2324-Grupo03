@@ -45,31 +45,29 @@ public class ProgressLoader : CollaboratorWorker
 
             if (loadedData != null)
             {
+                _nightProgressTracker.Night = loadedData.Night;
+                _placeholderData.CurrentPlaceholders = loadedData.PlaceholderData;
+                _playerInventory.Amarillo = loadedData.Yellow;
+                _playerInventory.Magenta = loadedData.Magenta;
+                _playerInventory.Cian = loadedData.Cyan;
 
-            _nightProgressTracker.Night = loadedData.Night;
-            _placeholderData.CurrentPlaceholders = loadedData.PlaceholderData;
-            _playerInventory.Amarillo = loadedData.Yellow;
-            _playerInventory.Magenta = loadedData.Magenta;
-            _playerInventory.Cian = loadedData.Cyan;
+                if (loadedData.UpgradedWeapon)
+                {
+                    _upgradeWeapon.Invoke();
+                }
 
-            if (loadedData.UpgradedWeapon)
-            {
-                _upgradeWeapon.Invoke();
-            }
+                ControlCinemachine.OneTimeCinematic = loadedData.CinematicPlayed;
 
-            ControlCinemachine.OneTimeCinematic = loadedData.CinematicPlayed;
+                _workCompletedCondition = false;
+                _placeholderLoadEvent.InvokeWorkStart();
+                _placeholderLoadEvent.WorkCompleted.AddListener(TriggerWorkCompleted);
 
-            _workCompletedCondition = false;
-            _placeholderLoadEvent.InvokeWorkStart();
-            _placeholderLoadEvent.WorkCompleted.AddListener(TriggerWorkCompleted);
+                yield return null;
 
-            yield return null;
-
-            while(!_workCompletedCondition)
-            {
-                yield return new WaitForSeconds(0.1f);
-            }
-
+                while(!_workCompletedCondition)
+                {
+                    yield return new WaitForSeconds(0.1f);
+                }
             }
         }
         else
