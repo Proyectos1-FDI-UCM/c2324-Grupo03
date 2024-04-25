@@ -12118,6 +12118,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: ad2d45fe2d0ba464291ba279121ed7dd, type: 2}
     - target: {fileID: 727683430867824556, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 727683430867824556, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: InvokePerform
       objectReference: {fileID: 0}
