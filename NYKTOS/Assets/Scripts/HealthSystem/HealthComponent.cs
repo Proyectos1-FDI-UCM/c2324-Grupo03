@@ -27,6 +27,13 @@ public class HealthComponent : MonoBehaviour
     private bool _inmune = false;
     [SerializeField]
     private float _inmTime;
+
+
+    #endregion
+
+    #region testing
+    [SerializeField]
+    private bool alwaysInmune = false;
     #endregion
 
     #region events
@@ -60,7 +67,7 @@ public class HealthComponent : MonoBehaviour
         if (!_inmune)
         {
             _OnHurt?.Invoke();
-            _currentHealth -= damage;
+            if (!alwaysInmune) _currentHealth -= damage;
             _inmune = true;
             if (HealthBarGameObject != null)
             {
