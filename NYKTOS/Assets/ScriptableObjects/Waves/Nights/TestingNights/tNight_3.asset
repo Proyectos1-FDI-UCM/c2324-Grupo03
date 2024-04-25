@@ -80,4 +80,4 @@ MonoBehaviour:
       - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
         number: 1
         variantType: 1
-  _nightCrystalDrops: {fileID: 11400000, guid: 17e7cf835c6881048ae00b6e4e468c0d, type: 2}
+  _nightCrystalDrops: {fileID: 11400000, guid: db05454099ec05749b2bea181a1b2a5e, type: 2}
