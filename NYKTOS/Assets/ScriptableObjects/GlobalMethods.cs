@@ -15,16 +15,15 @@ public class GlobalMethods: ScriptableObject
 
     public void PauseAction(bool condition)
     {
-        Debug.LogError("[GLOBAL METHODS] Funcionalidad de pausa: " + condition);
+        //Debug.LogError("[GLOBAL METHODS] Funcionalidad de pausa: " + condition);
         Time.timeScale = condition ? 0.0f : 1.0f;
     }
 
     public void Quit()
     {
         Time.timeScale = 1.0f;
-        Debug.LogError("[GLOBAL METHODS] Saliendo de la aplicacion");
+        //Debug.LogError("[GLOBAL METHODS] Saliendo de la aplicacion");
         Application.Quit();
-        Debug.LogError("[GLOBAL METHODS] ERROR, NOT POSSIBLE");
     }
 
     /// <summary>

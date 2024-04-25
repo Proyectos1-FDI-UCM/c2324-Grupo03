@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c29afa77a3fd894faf700e4cca6e8c4, type: 3}
   m_Name: StartTimer
   m_EditorClassIdentifier: 
+  debug: 1
   _perform:
     m_PersistentCalls:
       m_Calls: []
