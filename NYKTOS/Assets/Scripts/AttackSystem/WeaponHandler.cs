@@ -103,6 +103,7 @@ public class WeaponHandler : MonoBehaviour
 
     void OnDestroy()
     {
+        if(_weaponUpgrade != null)
         _weaponUpgrade.Perform.RemoveListener(SetWeapon);
     }
 }
