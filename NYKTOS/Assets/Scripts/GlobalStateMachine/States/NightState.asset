@@ -77,11 +77,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _onStateLoadCollaborators:
-  - {fileID: 11400000, guid: 56ae15cb68065a347905d1cb090e9f25, type: 2}
-  _onStateEnter:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 11400000, guid: efc370fa782c3e849847404e8bdf48cc, type: 2}
         m_TargetAssemblyTypeName: GenericEmitter`1[[System.Boolean, mscorlib
         m_MethodName: InvokePerform
@@ -94,6 +89,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  _onStateLoadCollaborators:
+  - {fileID: 11400000, guid: 56ae15cb68065a347905d1cb090e9f25, type: 2}
+  _onStateEnter:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 11400000, guid: 417934e8c98f8ca49950d3029db1b636, type: 2}
         m_TargetAssemblyTypeName: NightProgressTracker, Assembly-CSharp
         m_MethodName: InvokeStartNight
