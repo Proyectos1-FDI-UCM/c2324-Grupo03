@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nightLength: 40
   _waveList:
-  - time: 5
+  - time: 1
     subWaveList: []
   - time: 20
     subWaveList:

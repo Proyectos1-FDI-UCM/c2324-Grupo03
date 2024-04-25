@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nightTimeEmitter: {fileID: 11400000, guid: ee4e5df36de1a6249ba2dc81292fc4f6, type: 2}
   _stateMachine: {fileID: 11400000, guid: 26cd137f8c89dcd4d8bc981a37f3e83f, type: 2}
-  _night: 0
+  _night: 1
   _nightList:
-  - {fileID: 11400000, guid: 91ceccb45f774c043aeae1db67749daf, type: 2}
+  - {fileID: 11400000, guid: a7dfaf61ed9732f499c1cd74f7d238b2, type: 2}
   - {fileID: 11400000, guid: 81d0588b26ea1b042b3a75596bce2d1a, type: 2}
   - {fileID: 11400000, guid: 90ebb37cf4bb7be43bf039b078446fe2, type: 2}
   _dayState: {fileID: 11400000, guid: 8ea1ec361dace1646b159d2b3970ebee, type: 2}
