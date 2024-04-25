@@ -20,7 +20,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Production/Victoria.unity
     guid: 752f41f4710b8174ba0655a62f781776
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing/t_Centelle.unity
     guid: c71e297e709eaff45b1aee785fa3b1fe
+  - enabled: 1
+    path: Assets/Scenes/Testing/t_HUD.unity
+    guid: 4ef4d0721376d29459786e929a0edc7f
   m_configObjects: {}
