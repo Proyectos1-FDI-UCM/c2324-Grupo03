@@ -7,8 +7,8 @@ using UnityEngine;
 [System.Serializable]
 public class EnemyDeath : MonoBehaviour, IDeath
 {
-    private bool _isDead = false;
-    public bool isDead { get { return _isDead; } }
+    private bool _isDead = false; // bool para que la StateMachine sepa cuando ele enemigo ha muerto
+    public bool isDead { get { return _isDead; } } // acceso publico al bool _isDead
     [SerializeField]
     private SpawnLimit _spawnLimit;
 

@@ -4,10 +4,11 @@ using System.Drawing.Text;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
-
+/// <summary>
+/// La clase se encarga de calcular el camino del jugador y el del edificio mas cercano
+/// </summary>
 public class EnemyPriorityComponent : MonoBehaviour
 {
-    //la funcion de este script es de calcular el camino del jugador y el del edificio mas cercano
     #region properties
     private List<GameObject> _buildingArray { get { return BuildingManager.Instance.buildingArray; } }  
 

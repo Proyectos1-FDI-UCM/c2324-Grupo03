@@ -12,7 +12,7 @@ public class PlayerDeath : MonoBehaviour, IDeath
     [SerializeField]
     private VoidEmitter _playerDeathEmitter;
 
-    private PlayerAnimations _playerAnimations;
+    private PlayerAnimations _playerAnimations; // para las animaciones de muerte y de revivir
 
     private PlayerStateMachine _playerState;
     private HealthComponent _health;

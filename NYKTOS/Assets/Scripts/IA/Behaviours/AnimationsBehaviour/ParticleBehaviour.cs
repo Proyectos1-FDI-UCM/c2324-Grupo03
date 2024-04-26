@@ -3,29 +3,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Cambio del material/emision/etc de la particulas cuando el enemigo sea atacado
+/// </summary>
 public class EnemyParticleEffect : MonoBehaviour {
 
-    /// <summary>
-    /// Cambio del material/emision/etc de la particulas cuando el enemigo sea atacado
-    /// </summary>
- 
-    private SpriteRenderer _spriteRenderer;
-
-    [Header("Materials")]
+	  #region references
+	  private SpriteRenderer _spriteRenderer;
+	  #region materials
+	  [Header("Materials")]
     [SerializeField]
     private Material _particleMaterialToChange;
+
     private Material _previousParticleMaterial;
+
     [SerializeField]
     private Material _spriteMaterialToChange;
+
     private Material _previousSpriteMaterial;
 
     private ParticleSystem explosionParticleSystem;
-    //Anteriores
-    [Header("Before")]
+
+	  #endregion
+
+	  #endregion
+
+	  #region ParametersBeforeChange
+	  //Anteriores
+	  [Header("Before")]
     [SerializeField]
     private float _emisionNormal = 10f;
+
     [SerializeField]
     private float _speedNormal = 1f;
+
     [SerializeField]
     private float _sizeNormal = 10f;
     
@@ -33,21 +44,30 @@ public class EnemyParticleEffect : MonoBehaviour {
     [SerializeField]
     private float _sizeExplosion = 1f;
 
+	  #endregion
 
-    [Header("Changes")]
+	  #region ParametersAfterChange
+  
+	  [Header("After")]
     [SerializeField]
     private float _emisionInicial = 10f;
+
     [SerializeField]
     private float _emisionFinal = 20f;
+
     [SerializeField]
     private float _speedInicial = 1f;
+
     [SerializeField]
     private float _speedFinal = 5f;
 
+	  #endregion
 
-    public void PlayEffect() {
+    /// <summary>
+    /// Método que inicia las dos corrutinas
+    /// </summary>
+	  public void PlayEffect() {
         StartCoroutine(ChangeEnemyParticles());
-
         StartCoroutine(ChangeEnemySprites());
     }
 
@@ -58,7 +78,10 @@ public class EnemyParticleEffect : MonoBehaviour {
         explosionParticleSystem = GetComponent<ParticleSystem>();
     }
 
-    private IEnumerator ChangeEnemyParticles() 
+	  /// <summary>
+	  /// Coruutina responsable de cambiar las caracteristicas de la particula
+	  /// </summary>
+	  private IEnumerator ChangeEnemyParticles() 
     {
 
         ParticleSystemRenderer settings = GetComponent<ParticleSystemRenderer>();
@@ -83,9 +106,10 @@ public class EnemyParticleEffect : MonoBehaviour {
         settings.material = _previousParticleMaterial;
     }
 
-
-    //método para que los enemigos parpadeen
-    private IEnumerator ChangeEnemySprites() {
+	  /// <summary>
+	  /// Coruutina responsable de cambiar el color del sprite del enemigo
+	  /// </summary>
+	  private IEnumerator ChangeEnemySprites() {
 
         int changes = 0, maxChanges=4;
 

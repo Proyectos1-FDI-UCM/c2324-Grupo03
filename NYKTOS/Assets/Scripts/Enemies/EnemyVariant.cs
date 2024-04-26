@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 /// <summary>
-/// Script que se encarga de cambiar el daño del enemigo y como consecuencia su sprite library y el material de las particulas 
+/// Clase que se encarga de cambiar el daño del enemigo y como consecuencia su sprite library y el material de las particulas 
 /// </summary>
 public class EnemyVariant : MonoBehaviour
 {
@@ -31,10 +31,11 @@ public class EnemyVariant : MonoBehaviour
     [SerializeField]
     AttackType _attackType = AttackType.Default;
     #endregion
-  /// <summary>
-  /// Método responsable de asignar el tipo de ataque, cambiar la library y el material de las particulas
-  /// </summary>
-  /// <param name="attack"></param>
+
+    /// <summary>
+    /// Método responsable de asignar el tipo de ataque, cambiar la library y el material de las particulas
+    /// </summary>
+    /// <param name="attack"> Es el tipo de ataque (normal, fire o slow)</param>
     public void SetVariant(AttackType attack)
     {
         if(TryGetComponent<WeaponHandler>(out WeaponHandler weaponHandler))
