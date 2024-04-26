@@ -14,7 +14,7 @@ public abstract class GenericEmitter<T> : ScriptableObject
     {
         if (debug) 
         {
-            Debug.LogError("[EMITTER] (" + name + ") Emitter lanzado: " + eventData.ToString());
+            Debug.Log("[EMITTER] (" + name + ") Emitter lanzado: " + eventData.ToString());
         }
         
         _perform.Invoke(eventData);
@@ -34,7 +34,7 @@ public abstract class GenericEmitter : ScriptableObject
     {
         if (debug) 
         {
-            Debug.LogError("[EMITTER] (" + name + ") Emitter lanzado");
+            Debug.Log("[EMITTER] (" + name + ") Emitter lanzado");
         }
 
         _perform.Invoke();

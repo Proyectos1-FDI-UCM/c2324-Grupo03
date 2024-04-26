@@ -7,10 +7,13 @@ public class NexusDeath : MonoBehaviour, IDeath
     [SerializeField]
     private GameStateMachine _gameStateMachine;
 
+    [SerializeField]
+    private CustomState _loseState;
+
     public void Death()
     {
         //Cambiar sprite
         // Lanzar evento de perder
-        _gameStateMachine.SetStateToLose();
+        _gameStateMachine.SetState(_loseState);
     }
 }

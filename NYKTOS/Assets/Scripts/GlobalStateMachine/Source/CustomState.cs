@@ -38,7 +38,7 @@ public class CustomState : ScriptableObject
     public void StateLoad()
     {
         _stateChanged?.Perform.Invoke();
-        Debug.LogError("[CUSTOM STATE] (" + name + ") Inicializada fase de carga");
+        Debug.Log("[CUSTOM STATE] (" + name + ") Inicializada fase de carga");
         ConsumeCollaboratorList(_onStateLoadCollaborators, _onStateInstantLoad, _onStateEnter);
     }
 
@@ -64,7 +64,7 @@ public class CustomState : ScriptableObject
 
         if (collaboratorList.Count > 0)
         {
-            Debug.LogError("[CUSTOM STATE] ("+ name + ") (" + debugPhase + ") Numero de colaboradores: " + collaboratorList.Count);
+            Debug.Log("[CUSTOM STATE] ("+ name + ") (" + debugPhase + ") Numero de colaboradores: " + collaboratorList.Count);
 
             _currentPendingCount = collaboratorList.Count;
             
@@ -83,7 +83,7 @@ public class CustomState : ScriptableObject
         }
         else
         {
-            Debug.LogError("[CUSTOM STATE] ("+ name + ") (" + debugPhase + ") No hay colaboradores. Iniciando (" + debugNext + ") - " 
+            Debug.Log("[CUSTOM STATE] ("+ name + ") (" + debugPhase + ") No hay colaboradores. Iniciando (" + debugNext + ") - " 
                 + collaboratorEndEvent.GetPersistentEventCount());
 
             collaboratorEndEvent.Invoke();
@@ -95,14 +95,14 @@ public class CustomState : ScriptableObject
         string debugNext = (targetEvent == _stateEndSignal) ? "StateEndSignal" : "StateEnter";
 
         _currentPendingCount--;
-        Debug.LogError
+        Debug.Log
         (
             "[CUSTOM STATE] ("+ name + ") Se ha completado un colaborador para poder iniciar (" + debugNext +"). Quedan: " 
                 + _currentPendingCount
         );
         if (_currentPendingCount == 0)
         {
-            Debug.LogError("[CUSTOM STATE] ("+ name + ") Colaboradores agotados. Iniciando (" + debugNext +") - " 
+            Debug.Log("[CUSTOM STATE] ("+ name + ") Colaboradores agotados. Iniciando (" + debugNext +") - " 
                 + targetEvent.GetPersistentEventCount());
             targetEvent.Invoke();
         }
