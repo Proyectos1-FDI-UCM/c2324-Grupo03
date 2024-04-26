@@ -66,12 +66,14 @@ public class EnemyParticleEffect : MonoBehaviour {
     /// <summary>
     /// Método que inicia las dos corrutinas
     /// </summary>
-	  public void PlayEffect() {
+	  public void PlayEffect() 
+    {
         StartCoroutine(ChangeEnemyParticles());
         StartCoroutine(ChangeEnemySprites());
     }
 
-    private void Start() {
+    private void Start() 
+    {
         _previousParticleMaterial = GetComponent<ParticleSystemRenderer>().material;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _previousSpriteMaterial = _spriteRenderer.material;
@@ -109,20 +111,14 @@ public class EnemyParticleEffect : MonoBehaviour {
 	  /// <summary>
 	  /// Coruutina responsable de cambiar el color del sprite del enemigo
 	  /// </summary>
-	  private IEnumerator ChangeEnemySprites() {
-
+	  private IEnumerator ChangeEnemySprites()  
+    {
         int changes = 0, maxChanges=4;
-
-
-        while (changes< maxChanges) {
-
+        while (changes< maxChanges)  
+        {
             _spriteRenderer.material = (changes % 2 == 0) ? _spriteMaterialToChange : _previousSpriteMaterial;
-
             changes++;
-
             yield return new WaitForSeconds(0.1f);
         }
- 
     }
-
 }

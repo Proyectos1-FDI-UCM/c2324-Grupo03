@@ -36,15 +36,15 @@ public class SpawnAraneasBehaviour : MonoBehaviour, IBehaviour
     /// <summary>
     /// Método que se encarga de spawnear las Araneas Hijas
     /// </summary>
-    private void SpawnSpider() {
-        if (_araneaHijaPrefab != null && _araneaMadreTransform != null) {
-            Instantiate(_araneaHijaPrefab, _araneaMadreTransform.position, Quaternion.identity);
-        } else {
-            Debug.LogWarning("No hay prefab");
-        }
+    private void SpawnSpider() 
+    {
+        if (_araneaHijaPrefab != null && _araneaMadreTransform != null) Instantiate(_araneaHijaPrefab, _araneaMadreTransform.position, Quaternion.identity);
+        else Debug.LogWarning("No hay prefab");
+        
     }
 
-    private void Awake() {
+    private void Awake() 
+    {
         _araneaMadreTransform = GetComponentInParent<Transform>();
     }
 }
