@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2754ec2fc757c244879b4eab2001418, type: 3}
   m_Name: tNight_2
   m_EditorClassIdentifier: 
-  _nightLength: 60
+  _nightLength: 80
   _waveList:
   - time: 5
     subWaveList: []
@@ -64,4 +64,6 @@ MonoBehaviour:
       - enemyPrefab: {fileID: 2995607884255851843, guid: 441e9e7703f2c394ca79646f3ccb9994, type: 3}
         number: 2
         variantType: 1
+  - time: 20
+    subWaveList: []
   _nightCrystalDrops: {fileID: 11400000, guid: 5de7d9e13e41eca48b4b62b418035aa3, type: 2}
