@@ -21,10 +21,12 @@ public class SpawnerPerformer : MonoBehaviour
     {
         if(waveData.TryGetValue(_spawnerRegion, out Enemy[] enemyPool))
         {
+            Debug.Log("[SPAWNER PERFORMER] (" + gameObject.name + ") Spawner listado en la wave. Iniciando spawneo...");
             _enemySpawner.SetupSpawner(enemyPool);
         }
         else
         {
+            Debug.Log("[SPAWNER PERFORMER] (" + gameObject.name + ") Spawner no presente en la wave. Parando...");
             _enemySpawner.Stop();
         }
     }

@@ -15,14 +15,14 @@ public class GlobalMethods: ScriptableObject
 
     public void PauseAction(bool condition)
     {
-        //Debug.LogError("[GLOBAL METHODS] Funcionalidad de pausa: " + condition);
+        //Debug.Log("[GLOBAL METHODS] Funcionalidad de pausa: " + condition);
         Time.timeScale = condition ? 0.0f : 1.0f;
     }
 
     public void Quit()
     {
         Time.timeScale = 1.0f;
-        //Debug.LogError("[GLOBAL METHODS] Saliendo de la aplicacion");
+        Debug.Log("[GLOBAL METHODS] Saliendo de la aplicacion");
         Application.Quit();
     }
 
@@ -34,12 +34,12 @@ public class GlobalMethods: ScriptableObject
     /// </summary>
     public void ActivateNewGame()
     {
-        Debug.LogError("[GLOBAL METHODS] Activando bandera de nueva partida");
+        Debug.Log("[GLOBAL METHODS] Activando bandera de nueva partida");
         ProgressLoader.ActivateNewGameFlag();
     }
 
     public void DebugText(string text)
     {
-        Debug.LogError(text);
+        Debug.Log(text);
     }
 }
