@@ -14,7 +14,6 @@ public class ButtonInteract : MonoBehaviour
     private void CanInteract(bool value)
     {
         _button.interactable = value;
-        Debug.Log("hola");
     }
 
     void Start()

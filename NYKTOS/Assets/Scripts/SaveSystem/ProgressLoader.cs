@@ -72,6 +72,8 @@ public class ProgressLoader : CollaboratorWorker
         }
         else
         {
+
+            
             _newGameFlag = false;
         }
         

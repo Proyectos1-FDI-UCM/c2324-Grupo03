@@ -74,7 +74,7 @@ public class ProgressData
     public static ProgressData Load()
     {
         string dataPath = Application.persistentDataPath + SAVEPATH;
-        Debug.Log(dataPath);
+        Debug.Log("[PROGRESS DATA]" + dataPath);
 
         ProgressData loadedData;
 

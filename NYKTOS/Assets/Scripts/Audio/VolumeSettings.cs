@@ -18,7 +18,7 @@ public class VolumeSettings : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Método para cambiar el volumen del master, es llamado por el slider General del SettingsMenu
+	/// Mï¿½todo para cambiar el volumen del master, es llamado por el slider General del SettingsMenu
 	/// </summary>
 	/// <param name="volume"> parametro float que se recibe del slider del Settings Menu </param>
 	public void SetMasterVolumeSlider(float volume)
@@ -27,7 +27,7 @@ public class VolumeSettings : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Método para cambiar el volumen de los efectos, es llamado por el slider SFX del SettingsMenu
+	/// Mï¿½todo para cambiar el volumen de los efectos, es llamado por el slider SFX del SettingsMenu
 	/// </summary>
 	/// <param name="volume"> parametro float que se recibe del slider del Settings Menu </param>
 	public void SetEffectsVolumeSlider(float volume)
@@ -35,7 +35,7 @@ public class VolumeSettings : MonoBehaviour
 		SetVolume(volume, VolumeType.Effects);
 	}
 	/// <summary>
-	/// Método para cambiar el volumen de la musica, es llamado por el slider Musica del SettingsMenu
+	/// Mï¿½todo para cambiar el volumen de la musica, es llamado por el slider Musica del SettingsMenu
 	/// </summary>
 	/// <param name="volume"> parametro float que se recibe del slider del Settings Menu </param>
 	public void SetMusicVolumeSlider(float volume)
@@ -44,7 +44,7 @@ public class VolumeSettings : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Método que cambia el volumen en función del tipo del audio
+	/// Metodo que cambia el volumen en funcion del tipo del audio
 	/// </summary>
 	/// <param name="volume"> parametro float que se recibe del slider del Settings Menu </param>
 	/// <param name="type"> el tipo de volumen (Master, Effects o Music) que estan definidos por el Enum VolumeType </param>

@@ -268,7 +268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.002754821
+      value: 0.005025125
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -276,7 +276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810956413232778441, guid: 9f408d3e518f4664989a86b4043157ef, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9917356
+      value: 0.9928713
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -505,9 +505,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3684016067497718864, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684016067497718864, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetState
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684016067497718864, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameStateMachine, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684016067497718864, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: f6b90d95c8ffb1a4fac304c11056fa43, type: 2}
+    - target: {fileID: 3684016067497718864, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: CustomState, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5778961985226718632, guid: 9016269124ec657478d7ebd8f31cefe0, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -79
@@ -1011,7 +1027,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1361064836008771850, guid: fa2d35e302b1ff342b39c88cfad8f7c6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2521425209810953528, guid: fa2d35e302b1ff342b39c88cfad8f7c6, type: 3}
       propertyPath: m_Name

@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing.Text;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.Events;
 
 public class AudioPerformer : MonoBehaviour
 {
@@ -23,7 +19,7 @@ public class AudioPerformer : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             players = Resources.LoadAll<AudioPlayer>("AudioResources");
-            Debug.Log("[AUDIO PERFORMER]" + players.Length);
+
             for (int i = 0; i < players.Length; i++)
             {
                 AudioSource currentSource = gameObject.AddComponent<AudioSource>();

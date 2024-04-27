@@ -24,7 +24,7 @@ public class ScrollBackGround : MonoBehaviour
         if (_myTransform.position.x < _previousTransform.x - _distanceToScroll) 
         {
             _myTransform.position = _previousTransform;
-            Debug.Log(_myTransform.position.x);
+            Debug.Log("[SCROLL BACKGROUND] " + _myTransform.position.x);
         }
     }
 }

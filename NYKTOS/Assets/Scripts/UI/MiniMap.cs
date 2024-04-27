@@ -36,7 +36,7 @@ public class MiniMap : MonoBehaviour {
         
         float distanciaMiniMap = (_miniMapPoint1.anchoredPosition -_miniMapPoint2.anchoredPosition).magnitude;
         miniMapRatio = distanciaMiniMap / distanciaWorld;
-        Debug.Log(miniMapRatio);
+        Debug.Log("[MINIMAP RATIO] " + miniMapRatio);
 
 
     }

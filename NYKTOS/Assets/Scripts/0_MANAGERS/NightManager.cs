@@ -48,12 +48,12 @@ public class NightManager : MonoBehaviour
 
         foreach(var item in currentWave.WaveData)
         {
-            Debug.Log(item.Key);
+            Debug.Log("DEBUG NIGHT WAVE: " + item.Key);
         }
 
         _spawnerEmitter.InvokePerform(currentWave.WaveData);
 
-        Debug.Log("[NightManager] Inicializada wave - " + _currentNightData.WaveList[_currentWaveNumber]);
+        Debug.Log("[NightManager] Inicializada wave - " + _currentWaveNumber);
 
         if(_currentWaveNumber+1 < _currentNightData.WaveList.Length)     
         {

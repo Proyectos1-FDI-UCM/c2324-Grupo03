@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670c2310f45342e4baffd7fb12df225e, type: 3}
   m_Name: SpawnMarkerMagenta
   m_EditorClassIdentifier: 
+  debug: 1
   _perform:
     m_PersistentCalls:
       m_Calls: []

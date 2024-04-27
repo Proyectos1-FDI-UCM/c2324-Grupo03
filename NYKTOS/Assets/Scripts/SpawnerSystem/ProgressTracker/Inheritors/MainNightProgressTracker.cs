@@ -14,13 +14,11 @@ public class MainNightProgressTracker : NightProgressTracker
     public override void AdvanceNight()
     {
         if( _night+1 < _nightList.Count)
-            {
-                _night++;
-                _stateMachine?.SetState(_dayState);
-            }
-            else
-            {
-                _stateMachine?.SetState(_loseSceneLoadState);
-            }
+        {
+            _night++;
+            _stateMachine?.SetState(_dayState);
+        }
+        
+        _stateMachine?.SetState(_dayState);
     }
 }

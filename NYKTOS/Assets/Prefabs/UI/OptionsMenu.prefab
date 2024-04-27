@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 2422558374764233827}
   - component: {fileID: 4318965539054862159}
   - component: {fileID: 3251466975815914563}
-  - component: {fileID: 544309210391698333}
+  - component: {fileID: 4115593648253279130}
   m_Layer: 5
   m_Name: OptionsMenu
   m_TagString: Untagged
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &3251466975815914563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &544309210391698333
+--- !u!114 &4115593648253279130
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1542,14 +1542,14 @@ MonoBehaviour:
   m_FillRect: {fileID: 1681154422203554607}
   m_HandleRect: {fileID: 969978050827076926}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 544309210391698333}
+      - m_Target: {fileID: 4115593648253279130}
         m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
         m_MethodName: SetMusicVolumeSlider
         m_Mode: 0
@@ -1681,14 +1681,14 @@ MonoBehaviour:
   m_FillRect: {fileID: 2701831923267539775}
   m_HandleRect: {fileID: 1838017043248628359}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 544309210391698333}
+      - m_Target: {fileID: 4115593648253279130}
         m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
         m_MethodName: SetEffectsVolumeSlider
         m_Mode: 0
@@ -2236,14 +2236,14 @@ MonoBehaviour:
   m_FillRect: {fileID: 8808396069845765569}
   m_HandleRect: {fileID: 3134458165628800449}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 544309210391698333}
+      - m_Target: {fileID: 4115593648253279130}
         m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
         m_MethodName: SetMasterVolumeSlider
         m_Mode: 0

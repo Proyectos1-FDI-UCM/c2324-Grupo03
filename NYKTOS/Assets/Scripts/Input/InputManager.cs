@@ -260,11 +260,11 @@ public class InputManager : MonoBehaviour
             _playerControls.Player.Interact.performed -= Interact;
             _playerControls.Player.Map.performed -= OpenCloseMap;
 
-
             _playerControls.Dialogues.NextDialogue.performed -= NextDialogue;
 
             _playerControls.Player.Pause.performed -= PauseGame;
 
+            // ESO DA UN NULLREFERENCE EXCEPTION
             _playerInput.onControlsChanged -= OnControlsChanged;
         }
     }
