@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Permite suscribirse a un evento de tipo booleano que cambia el estado de interacción/// 
+/// </summary>
 public class IndividualInteraction : MonoBehaviour
 {
     [SerializeField]

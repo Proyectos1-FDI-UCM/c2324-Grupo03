@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -265,7 +262,7 @@ public class InputManager : MonoBehaviour
             _playerControls.Player.Pause.performed -= PauseGame;
 
             // ESO DA UN NULLREFERENCE EXCEPTION
-            _playerInput.onControlsChanged -= OnControlsChanged;
+            //_playerInput.onControlsChanged -= OnControlsChanged;
         }
     }
     

@@ -1,7 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Máquina de estados de los edificios
+/// 2 estados posibles: construido y no construido
+/// Además, determina si son interactuables o no
+/// </summary>
 public class BuildingStateMachine : MonoBehaviour
 {
     public enum BuildingState

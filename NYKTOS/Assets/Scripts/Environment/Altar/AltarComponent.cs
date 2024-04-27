@@ -1,16 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
+/// <summary>
+/// Componente que tienen los altares. Determina su tipo (magenta, amarillo, cian)
+/// Almacena el número de cimientos especiales asociados a esta estructura (nº total y construidos)
+/// </summary>
 public class AltarComponent : MonoBehaviour
 {
     public enum altarType
     {
         yellow, magenta, cyan
     }
-
-    // [Andrea]
 
     #region references
     private BuildingStateMachine _state;
@@ -42,7 +41,7 @@ public class AltarComponent : MonoBehaviour
     #endregion
 
     #region properties
-    // Cuando se instancian los pc especiales, lanzan un evento para registrar su numero total que se guarda en _totalPlaceholders
+    // Cuando se instancian los ph especiales, lanzan un evento para registrar su numero total que se guarda en _totalPlaceholders
     private int _totalPlaceholders = 0;
 
     // Cada vez que uno de ellos es construido/destruido, lanza un evento para sumarse/restarse
@@ -60,11 +59,13 @@ public class AltarComponent : MonoBehaviour
     }
     #endregion
 
+    // Registra un cimiento
     private void RegisterPlaceholder()
     {
         _totalPlaceholders++;
     }
 
+    // Actualiza la cuenta de cimientos construidos y el estado del altar
     private void PlaceholderCount(bool value)
     {
         if(value)
@@ -80,10 +81,9 @@ public class AltarComponent : MonoBehaviour
         }        
     }
 
+    // Actualiza el estado, iluminación y apariencia del altar en función del nº de cimientos construidos
     private void ChangeState()
     {
-        // Actualizar apariencia en funcion de numero de _currentPlaceholders
-
         if (_currentPlaceholders == _totalPlaceholders)
         {
             _state.SetState(BuildingStateMachine.BuildingState.Built);
@@ -92,62 +92,16 @@ public class AltarComponent : MonoBehaviour
 
             _altarActivated.InvokePerform();
             _NexusTutorial.InvokePerform();
-
         }
         else if (_state.buildingState == BuildingStateMachine.BuildingState.Built)
         {
             _state.SetState(BuildingStateMachine.BuildingState.NotBuilt);
             _light.lightRadius = _inactiveLightRadius;
-            _light.UpdateLightarea();
-            Debug.Log("Altar desactivado");
-            // Lanzar evento que desactive comportamiento especial
-            
+            _light.UpdateLightarea();            
         }
 
         _altarSprite.InvokePerform();
-
-
     }
-
-    #region no borrar esto aun
-    // De momento esto no hace falta
-    //private void CanInteract(bool canInteract) => _state.isInteractable = canInteract;
-
-    //public void OpenMenu()
-    //{
-
-    //    if
-    //    (
-    //        _state.buildingState == BuildingStateMachine.BuildingState.NotBuilt && 
-    //        _state.isInteractable)
-    //    {
-    //        MenuManager.Instance.OpenAltarMenu();
-    //    }
-    //    else if (_state.isInteractable) 
-    //    { 
-    //        // Comportamiento en función del tipo de altar. ESTO VA A CAMBIAR
-    //        // Ahora actuan todos los altares por igual. Cuando se activa uno, lanzar evento de mejorar armas
-    //        switch(_type)
-    //        {
-    //            case altarType.yellow:
-    //                MenuManager.Instance.OpenWeaponUpgradeMenu();
-    //                break; 
-
-    //            case altarType.magenta:
-    //                MenuManager.Instance.OpenWeaponEffectMenu();
-    //                break;
-
-    //            case altarType.cyan:
-    //                MenuManager.Instance.OpenWeaponEffectMenu();
-    //                break;
-    //        }
-    //    } 
-
-    //}
-
-    // Cambiar a emitter
-    //public void CloseMenu() => MenuManager.Instance.CloseAllMenus();
-    #endregion
 
     private void Awake()
     {

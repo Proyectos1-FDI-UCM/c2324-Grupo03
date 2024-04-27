@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
+/// <summary>
+/// Todos los objetos interactuables del juego muestran un símbolo de interacción cuando el jugador está cerca
+/// Este script activa/desactiva dicho símbolo
+/// </summary>
 public class InteractableObjects : MonoBehaviour
 {
     [SerializeField]

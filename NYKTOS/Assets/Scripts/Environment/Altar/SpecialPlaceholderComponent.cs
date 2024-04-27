@@ -1,7 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Clase responsable del comportamiento de los cimientos especiales (los de colores)
+/// Permite que se registren al ser instanciados
+/// Se lanza un evento cuando se construye o destruye una defensa construida en ellos
+/// </summary>
 public class SpecialPlaceholderComponent : MonoBehaviour
 {
     [SerializeField]
@@ -16,7 +19,6 @@ public class SpecialPlaceholderComponent : MonoBehaviour
 
     void Start()
     {
-
         _registerPlaceholder.InvokePerform();
     }
 
