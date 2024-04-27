@@ -159,7 +159,7 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    // Estos métodos activan un mapa de acción y desactivan el resto
+    // Estos mï¿½todos activan un mapa de acciï¿½n y desactivan el resto
     public void SwitchToUIControls()
     {
         playerControls.Player.Disable();
@@ -204,7 +204,7 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    // Estos métodos des/activan un mapa de acción, independientemente del resto de mapas activos
+    // Estos mï¿½todos des/activan un mapa de acciï¿½n, independientemente del resto de mapas activos
     public void EnablePlayerInput(bool enable)
     {
         if (enable) _playerControls.Player.Enable();
@@ -276,7 +276,7 @@ public class InputManager : MonoBehaviour
         else
         {
             _instance = this;
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(gameObject);
             _playerControls = new PlayerControls();
         }
     }
