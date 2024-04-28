@@ -11,7 +11,7 @@ public class CinematicDialoge : MonoBehaviour
     [SerializeField] private float _textSpeed = 0.2f;
     [SerializeField] private float _lineSpeed = 3f;
 
-    [SerializeField] private float _waitForStart = 2.5f;
+    //[SerializeField] private float _waitForStart = 2.5f;
 
     [SerializeField] private UnityEvent voice = new UnityEvent();
 
@@ -21,16 +21,21 @@ public class CinematicDialoge : MonoBehaviour
     {
         _text.text = string.Empty;
         _index = 0;
-        StartCoroutine(StartDialogueAfterDelay(_waitForStart));
+        //StartCoroutine(StartDialogueAfterDelay(_waitForStart));
     }
 
-    private IEnumerator StartDialogueAfterDelay(float delay)
+    public void InitializeCoroutineDialogue()
     {
-        yield return new WaitForSeconds(delay); 
         StartCoroutine(StartDialogue());
     }
 
-        private IEnumerator StartDialogue()
+    //private IEnumerator StartDialogueAfterDelay(float delay)
+    //{
+    //    yield return new WaitForSeconds(delay); 
+    //    StartCoroutine(StartDialogue());
+    //}
+
+    private IEnumerator StartDialogue()
     {
 
         while (_index < _lines.Length)

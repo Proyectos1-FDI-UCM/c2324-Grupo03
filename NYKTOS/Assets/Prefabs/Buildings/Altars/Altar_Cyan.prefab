@@ -623,6 +623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _registerPlaceholder: {fileID: 11400000, guid: fa0c530c6e0fed44284b183b9310e9a3, type: 2}
   _placeholderBuilt: {fileID: 11400000, guid: e55c14055672c704dbedc47494f6e280, type: 2}
+  _altarBuilt: {fileID: 11400000, guid: a3efaa145c50b2a4b824152234bea782, type: 2}
   _altarSprite: {fileID: 11400000, guid: 1cf974035ad0dad498519b61527cc0a4, type: 2}
   _altarActivated: {fileID: 11400000, guid: efe0690e9f5518144be708e0d5082d3d, type: 2}
   _NexusTutorial: {fileID: 11400000, guid: e19494d92af74a842af665fe3a7b1a53, type: 2}

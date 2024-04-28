@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Reloj : MonoBehaviour
 {
@@ -22,14 +19,15 @@ public class Reloj : MonoBehaviour
     {
         _clockTransform = GetComponent<RectTransform>();
         _timerStart.Perform.AddListener(ActivateTimer);
+
+        ResetTimer();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (_currentTime >=0)
         {
-            
+            // Aqui falta algo
         }
         if ( _timerOn)
         {
@@ -39,12 +37,12 @@ public class Reloj : MonoBehaviour
 
     void OnDestroy()
     {
-        _timerStart.Perform.RemoveListener(ActivateTimer);
+        _timerStart.Perform.RemoveAllListeners();
     }
 
     private void ChangeTime()
     {
-        angle = angle -timeVelocity * Time.deltaTime;
+        angle = angle - timeVelocity * Time.deltaTime;
         _currentTime -= Time.deltaTime;
         _clockTransform.rotation = Quaternion.Euler (0,0,angle);
         
@@ -53,16 +51,17 @@ public class Reloj : MonoBehaviour
         {
             _timerOn = false;
             ResetTimer();
-            
         }
     }
 
     public void ActivateTimer(float maxTime)
     {
+        Debug.Log($"[RELOJ] Activado ");
+
         _currentTime = maxTime;
         _timerOn = true;
         angle = 45;
-        timeVelocity = (270 / maxTime);
+        timeVelocity = 270 / maxTime;
         
     }
 
@@ -72,8 +71,4 @@ public class Reloj : MonoBehaviour
         _timerOn = false;
         _clockTransform.rotation = Quaternion.Euler(0, 0, angle);
     }
-
-
-
-
 }

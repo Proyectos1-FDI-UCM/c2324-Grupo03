@@ -23,6 +23,8 @@ public class AltarComponent : MonoBehaviour
     // Se invoca cuando se construye un ph (true) y cuando se destruye (false)
     [SerializeField] private BoolEmitter _placeholderBuilt;
 
+    [SerializeField] private BoolEmitter _altarBuilt;
+
     //Sprites
     [SerializeField] private VoidEmitter _altarSprite;
 
@@ -77,7 +79,6 @@ public class AltarComponent : MonoBehaviour
         {
             _currentPlaceholders--;
             ChangeState();
-            
         }        
     }
 
@@ -92,6 +93,7 @@ public class AltarComponent : MonoBehaviour
 
             _altarActivated.InvokePerform();
             _NexusTutorial.InvokePerform();
+
         }
         else if (_state.buildingState == BuildingStateMachine.BuildingState.Built)
         {
@@ -101,6 +103,8 @@ public class AltarComponent : MonoBehaviour
         }
 
         _altarSprite.InvokePerform();
+
+        _altarBuilt.InvokePerform(_state.buildingState == BuildingStateMachine.BuildingState.Built);
     }
 
     private void Awake()

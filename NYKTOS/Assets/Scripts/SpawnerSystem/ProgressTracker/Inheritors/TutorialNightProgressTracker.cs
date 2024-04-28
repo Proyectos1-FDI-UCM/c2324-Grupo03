@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "TutorialNightProgressTracker", menuName = "Progress Trackers/Tutorial")]
-public class TutorialNight : NightProgressTracker
+public class TutorialNightProgressTacker : NightProgressTracker
 {
     [SerializeField]
     private CustomState _maingameSceneLoadState;

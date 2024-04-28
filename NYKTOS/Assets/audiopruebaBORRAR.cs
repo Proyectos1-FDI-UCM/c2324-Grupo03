@@ -13,7 +13,6 @@ public class audiopruebaBORRAR : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            print("xd");
             a.Invoke();
         }
     }

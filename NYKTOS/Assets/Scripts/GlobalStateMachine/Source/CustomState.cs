@@ -37,7 +37,7 @@ public class CustomState : ScriptableObject
 
     public void StateLoad()
     {
-        _stateChanged?.Perform.Invoke();
+        _stateChanged?.InvokePerform();
         Debug.Log("[CUSTOM STATE] (" + name + ") Inicializada fase de carga");
         ConsumeCollaboratorList(_onStateLoadCollaborators, _onStateInstantLoad, _onStateEnter);
     }

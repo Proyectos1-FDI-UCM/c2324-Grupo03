@@ -46,7 +46,8 @@ public class ProgressData
         _cinematicPlayed = cinematicPlayed;
     }
 
-    private const string SAVEPATH = "/mondongo.save";
+    private const string SAVEPATH = "/savefile.save";
+    public static string SavePath { get { return SAVEPATH;}}
 
     public static void Save
     (

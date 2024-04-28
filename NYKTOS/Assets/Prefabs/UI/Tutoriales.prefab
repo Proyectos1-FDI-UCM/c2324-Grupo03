@@ -1808,7 +1808,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6339856687970926922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1829,6 +1829,7 @@ MonoBehaviour:
   - {fileID: 5572715266764179399}
   - {fileID: 7506329209884107763}
   - {fileID: 1825579236115015080}
+  _playerInventory: {fileID: 11400000, guid: c43b0d1d07d26874e9e8f58a12863fe9, type: 2}
   TutorialMovement: {fileID: 11400000, guid: 2efb9384e4ebbe445ac551cf647c1ffe, type: 2}
   TutorialBlink: {fileID: 11400000, guid: 1afac494d7f101046b3f657927d76952, type: 2}
   TutorialAttack: {fileID: 11400000, guid: b1da115a8ab028f438a295715950f9b9, type: 2}

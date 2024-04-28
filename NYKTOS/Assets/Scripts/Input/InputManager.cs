@@ -125,7 +125,6 @@ public class InputManager : MonoBehaviour
 
     private void NextDialogue(InputAction.CallbackContext context)
     {
-        print('a');
         _resumeDialogueEmitter.InvokePerform();
     }
 

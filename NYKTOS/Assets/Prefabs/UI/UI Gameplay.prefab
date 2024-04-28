@@ -9612,7 +9612,6 @@ GameObject:
   - component: {fileID: 8761018099674674225}
   - component: {fileID: 128703830896465111}
   - component: {fileID: 1984820098967060961}
-  - component: {fileID: 8065363311226161487}
   - component: {fileID: 2881554584958591032}
   m_Layer: 5
   m_Name: HUD
@@ -9750,19 +9749,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8065363311226161487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7435931973371276927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d70be83dd6a86cc4c93eaac9bf87d2db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timerStart: {fileID: 11400000, guid: ee4e5df36de1a6249ba2dc81292fc4f6, type: 2}
 --- !u!225 &2881554584958591032
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -12490,6 +12476,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3440641815732349696}
     m_Modifications:
+    - target: {fileID: 198096744679393566, guid: 91303e8e2beb2844da4002d9e438f916, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1556543904418801975, guid: 91303e8e2beb2844da4002d9e438f916, type: 3}
       propertyPath: m_Name
       value: Tutoriales

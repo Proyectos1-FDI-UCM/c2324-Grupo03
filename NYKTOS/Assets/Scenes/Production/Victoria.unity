@@ -513,7 +513,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 26cd137f8c89dcd4d8bc981a37f3e83f, type: 2}
         m_TargetAssemblyTypeName: GameStateMachine, Assembly-CSharp
-        m_MethodName: SetStateTo
+        m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 79c39dd797c15a24ab6ef7092cb75442, type: 2}

@@ -27,16 +27,16 @@ public class GameStateMachine : ScriptableObject
         else
         {
             Debug.Log("[STATE MACHINE] No hay estado previo, cargando estado (" + newState + ")");
-            newState.StateLoad();
             _currentState = newState;
+            _currentState.StateLoad();
         }
     }
 
     private void StateHasFinalised(CustomState oldstate, CustomState newState)
     {
-        oldstate.StateEndSignal.RemoveAllListeners();
         Debug.Log("[STATE MACHINE] El estado (" + oldstate.name + ") ha finalizado");
         _currentState = newState;
         _currentState.StateLoad();
+        oldstate.StateEndSignal.RemoveAllListeners();
     }
 }

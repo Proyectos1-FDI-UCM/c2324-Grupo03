@@ -78,7 +78,6 @@ public class WeaponHandler : MonoBehaviour
         }
         else if (instantiatedPrefab.name != weapons.scriptableWeapon.weaponPrefab.name)
         {
-            print("a");
             Destroy(instantiatedPrefab);
             instantiatedPrefab = Instantiate(weapons.scriptableWeapon.weaponPrefab, transform);
             instantiatedPrefab.name = weapons.scriptableWeapon.weaponPrefab.name;

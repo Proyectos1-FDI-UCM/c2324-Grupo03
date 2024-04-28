@@ -7,7 +7,7 @@ public class DieBejaviour : MonoBehaviour, IBehaviour
 {
     public void PerformBehaviour()
     {
-        Debug.Log("morir");
+        //Debug.Log("[DIE BEHAVIOUR] Muerte]");
         Destroy(GetComponentInParent<HealthComponent>().gameObject);
         
     }

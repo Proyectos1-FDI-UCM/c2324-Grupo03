@@ -1,8 +1,8 @@
 using UnityEngine;
 
 /// <summary>
-/// Todos los objetos interactuables del juego muestran un símbolo de interacción cuando el jugador está cerca
-/// Este script activa/desactiva dicho símbolo
+/// Todos los objetos interactuables del juego muestran un sï¿½mbolo de interacciï¿½n cuando el jugador estï¿½ cerca
+/// Este script activa/desactiva dicho sï¿½mbolo
 /// </summary>
 public class InteractableObjects : MonoBehaviour
 {

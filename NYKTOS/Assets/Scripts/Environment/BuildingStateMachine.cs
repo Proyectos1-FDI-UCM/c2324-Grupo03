@@ -1,9 +1,9 @@
 using UnityEngine;
 
 /// <summary>
-/// Máquina de estados de los edificios
+/// Mï¿½quina de estados de los edificios
 /// 2 estados posibles: construido y no construido
-/// Además, determina si son interactuables o no
+/// Ademï¿½s, determina si son interactuables o no
 /// </summary>
 public class BuildingStateMachine : MonoBehaviour
 {
@@ -13,6 +13,7 @@ public class BuildingStateMachine : MonoBehaviour
         Built
     }
 
+    [SerializeField]
     private BuildingState _buildingState = BuildingState.NotBuilt;
     public BuildingState buildingState
     {
@@ -24,6 +25,7 @@ public class BuildingStateMachine : MonoBehaviour
         _buildingState = state;
     }
 
+    [SerializeField]
     private bool _isInteractable = true;
 
     public bool isInteractable { 

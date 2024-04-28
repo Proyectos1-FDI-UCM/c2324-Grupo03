@@ -9,7 +9,7 @@ public class ControlCinemachine : MonoBehaviour
     private VoidEmitter _firstCinematicEmitter;
     public CinemachineVirtualCamera _cinematicCamera;
     public PlayableDirector _timeline;
-    private static bool _oneTimeCinematic = true;
+    private static bool _oneTimeCinematic = false;
     public static bool OneTimeCinematic 
     { 
         get { return _oneTimeCinematic; }
@@ -74,8 +74,12 @@ public class ControlCinemachine : MonoBehaviour
 
     public void FirstCinematicOn()
     {
-        _startTimer = true;
-        onCinematicStart?.Invoke();
+        if (_oneTimeCinematic)
+        {
+            _startTimer = true;
+            Debug.Log("[CINEMATICS CONTROLLER] DEBUG");
+            onCinematicStart?.Invoke();
+        }
     }
 
     private void FirstCinematicOff()

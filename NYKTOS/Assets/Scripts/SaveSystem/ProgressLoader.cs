@@ -28,15 +28,17 @@ public class ProgressLoader : CollaboratorWorker
     private static bool _newGameFlag = false;
     public static void ActivateNewGameFlag()
     {
-        _newGameFlag = true;
+        _newGameFlag = false;
     }
 
     private bool _workCompletedCondition = false;
 
     protected override IEnumerator Perform()
     {
+        Debug.Log($"[PROGRESS LOADER] Cargando");
         if (!_newGameFlag)
         {
+            Debug.Log($"[PROGRESS LOADER] NO es una nueva partida");
             yield return new WaitForSeconds(_waitTime);
 
             ProgressData loadedData = ProgressData.Load();
@@ -50,6 +52,10 @@ public class ProgressLoader : CollaboratorWorker
                 _playerInventory.Amarillo = loadedData.Yellow;
                 _playerInventory.Magenta = loadedData.Magenta;
                 _playerInventory.Cian = loadedData.Cyan;
+
+                Debug.Log($"[PROGRESS LOADER] Datos encontrados: {_nightProgressTracker.Night} - " +
+                    $"{_placeholderData.CurrentPlaceholders} - {_playerInventory.Amarillo} -" + 
+                    $"{_playerInventory.Magenta} - {_playerInventory.Cian}");
 
                 if (loadedData.UpgradedWeapon)
                 {
@@ -72,7 +78,7 @@ public class ProgressLoader : CollaboratorWorker
         }
         else
         {
-
+            Debug.Log($"[PROGRESS LOADER] Nueva partida");
             
             _newGameFlag = false;
         }

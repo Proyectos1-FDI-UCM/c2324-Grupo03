@@ -36,6 +36,7 @@ public class GlobalMethods: ScriptableObject
     {
         Debug.Log("[GLOBAL METHODS] Activando bandera de nueva partida");
         ProgressLoader.ActivateNewGameFlag();
+        ControlCinemachine.OneTimeCinematic = true;
     }
 
     public void DebugText(string text)

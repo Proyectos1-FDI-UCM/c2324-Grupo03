@@ -54,6 +54,7 @@ public class EnemySpawner : MonoBehaviour
         _remainingEnemyPool = new List<Enemy>();
 
         enabled = false;
+        _spawnMarker?.InvokePerform(false);
     }
 
     private void EnemyPoolChecker()
@@ -68,9 +69,6 @@ public class EnemySpawner : MonoBehaviour
         else
         {
             Stop();
-            enabled = false;
-
-            _spawnMarker?.InvokePerform(false);
         }
     }
 

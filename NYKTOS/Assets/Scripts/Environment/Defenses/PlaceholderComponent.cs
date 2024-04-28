@@ -23,7 +23,17 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
     private VoidEmitter TutorialConfirm;
     #endregion
 
-    private void CanInteract(bool canInteract) => _state.isInteractable = canInteract;
+    private void CanInteract(bool canInteract)
+    {
+        if(_state.buildingState == BuildingStateMachine.BuildingState.NotBuilt)
+        {
+            _state.isInteractable = canInteract;
+        }
+        else
+        {
+            _state.isInteractable = false;
+        }
+    }
     public void OpenMenu()
     {
         TutorialConfirm.InvokePerform();
@@ -48,8 +58,8 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
 
     private void UpdateDefenseMenu()
     {
-        Debug.Log("cambio de color");
-        Debug.Log(_type);
+        //Debug.Log("[PLACEHOLDER COMPONENT] cambio de color");
+        //Debug.Log("[PLACEHOLDER COMPONENT] " + _type);
         _phTypeEmitter.InvokePerform(_type);
     }
 

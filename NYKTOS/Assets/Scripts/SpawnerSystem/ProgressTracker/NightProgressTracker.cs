@@ -26,9 +26,9 @@ public abstract class NightProgressTracker : ScriptableObject
 
     public void InvokeStartNight()
     {
-        Debug.Log("[NIGHT PROGRESS TRACKER] Inicializada noche " + _night);
+        Debug.Log($"[NIGHT PROGRESS TRACKER] Inicializada noche {_night} - {_nightList[_night].NightLength}");
         _startNight.Invoke(_nightList[_night]);
-        _nightTimeEmitter.Perform.Invoke(_nightList[_night].NightLength);
+        _nightTimeEmitter.InvokePerform(_nightList[_night].NightLength);
     }
 
     public abstract void AdvanceNight();
