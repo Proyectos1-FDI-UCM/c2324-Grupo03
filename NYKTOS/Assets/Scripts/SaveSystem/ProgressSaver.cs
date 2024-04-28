@@ -5,7 +5,7 @@ public class ProgressSaver : CollaboratorWorker
 {
     [SerializeField]
     private float _waitTime = 5.0f;
-
+ 
     private static ProgressSaver _instance;
 
     [SerializeField]

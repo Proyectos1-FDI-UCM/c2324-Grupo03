@@ -1,8 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlaceholderSaveComponent : CollaboratorWorker
+public class PlaceholderLoadComponent : CollaboratorWorker
 {
+    private Transform _myTransform;
+
     [SerializeField]
     private PlaceholderDefense _currentDefense = PlaceholderDefense.None; 
     public PlaceholderDefense CurrentDefense 
@@ -18,7 +20,13 @@ public class PlaceholderSaveComponent : CollaboratorWorker
     [SerializeField]
     private PlaceholderSaveData _saveData;
 
+    [SerializeField]
     private int _placeholderId = -1;
+
+    void Start()
+    {
+        _myTransform = transform;
+    }
 
     protected override IEnumerator Perform()
     {
@@ -46,24 +54,20 @@ public class PlaceholderSaveComponent : CollaboratorWorker
                     selectedDefense = BuildingManager.Instance.Wall;
                     break;
             }
-            
+
             if (_currentDefense == PlaceholderDefense.Turret)
             {
-                Debug.Log($"{selectedDefense} - {selectedDefense.transform.position} - {transform.position}");
-                selectedDefense.transform.position = new Vector2(transform.position.x, transform.position.y + BuildingManager.Instance.OffsetNotWall);
+                selectedDefense.transform.position = new Vector2(_myTransform.position.x, _myTransform.position.y + BuildingManager.Instance.OffsetNotWall);
             }
             else
             {
-                Debug.Log($"{selectedDefense} - {selectedDefense.transform.position} - {transform.position}");
-                selectedDefense.transform.position = new Vector2(transform.position.x, transform.position.y + BuildingManager.Instance.OffsetNotWall / 2);
+                selectedDefense.transform.position = new Vector2(_myTransform.position.x, _myTransform.position.y + BuildingManager.Instance.OffsetNotWall / 2);
             }
 
-            yield return null;
+            Debug.Log($"({gameObject.name}) [Instanciandome en]: {_myTransform.transform.position}");
 
             GameObject defense = Instantiate(selectedDefense, selectedDefense.transform.position, Quaternion.identity);
             defense.GetComponent<DefenseComponent>().placeholder = gameObject;
-
-            yield return null;
 
             BuildingManager.Instance.AddBuilding(defense);
 
@@ -76,7 +80,6 @@ public class PlaceholderSaveComponent : CollaboratorWorker
             {
                 specialPh.PlaceholderBuilt();
             }
-            yield return null;
         }
         yield return null;
     }

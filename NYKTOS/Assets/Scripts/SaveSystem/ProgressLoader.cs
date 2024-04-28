@@ -53,10 +53,6 @@ public class ProgressLoader : CollaboratorWorker
                 _playerInventory.Magenta = loadedData.Magenta;
                 _playerInventory.Cian = loadedData.Cyan;
 
-                Debug.Log($"[PROGRESS LOADER] Datos encontrados: {_nightProgressTracker.Night} - " +
-                    $"{_placeholderData.CurrentPlaceholders} - {_playerInventory.Amarillo} -" + 
-                    $"{_playerInventory.Magenta} - {_playerInventory.Cian}");
-
                 if (loadedData.UpgradedWeapon)
                 {
                     _upgradeWeapon.Invoke();

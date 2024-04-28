@@ -65,7 +65,6 @@ public class PlaceholderSaveData : ScriptableObject
         {   
             elementsInDictionary = elementsInDictionary + "\n" + "(" + element.Key + ", " + element.Value + ")";
         }
-        //Debug.Log(elementsInDictionary);
     }
 
     public PlaceholderDefense GetPlaceholderDefense(int id)

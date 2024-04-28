@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb0f34026fc1a7e4fb6ac65326d4d43d, type: 3}
   m_Name: Main Placeholder Save Data
   m_EditorClassIdentifier: 
-  _placeholderCount: 0
+  _idCount: 0

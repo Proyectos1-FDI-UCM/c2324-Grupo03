@@ -109,7 +109,7 @@ public class BuildingManager : MonoBehaviour
     
     public void BuildBeacon()
     {
-        if (_currentPlaceholder.TryGetComponent<PlaceholderSaveComponent>(out PlaceholderSaveComponent save))
+        if (_currentPlaceholder.TryGetComponent<PlaceholderLoadComponent>(out PlaceholderLoadComponent save))
         {
             save.CurrentDefense = PlaceholderDefense.Beacon;
         }
@@ -147,7 +147,7 @@ public class BuildingManager : MonoBehaviour
 
     public void BuildWall()
     {
-        if (_currentPlaceholder.TryGetComponent<PlaceholderSaveComponent>(out PlaceholderSaveComponent save))
+        if (_currentPlaceholder.TryGetComponent<PlaceholderLoadComponent>(out PlaceholderLoadComponent save))
         {
             save.CurrentDefense = PlaceholderDefense.Wall;
         }
@@ -185,7 +185,7 @@ public class BuildingManager : MonoBehaviour
 
     public void BuildTurret()
     {
-        if (_currentPlaceholder.TryGetComponent<PlaceholderSaveComponent>(out PlaceholderSaveComponent save))
+        if (_currentPlaceholder.TryGetComponent<PlaceholderLoadComponent>(out PlaceholderLoadComponent save))
         {
             save.CurrentDefense = PlaceholderDefense.Turret;
         }
