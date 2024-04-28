@@ -1,81 +1,75 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 /// <summary>
 /// Clase responsable del ajuste de volumen
 /// </summary>
-public class VolumeSettings : MonoBehaviour
-{
-	#region references
-	[SerializeField]
-	private AudioMixer _audioMixer;
-	#endregion
+public class VolumeSettings : MonoBehaviour {
+    #region references
 
-	private void Start()
-	{
-		SetVolume(0.5f, VolumeType.Master);
-		SetVolume(0.5f, VolumeType.Effects);
-		SetVolume(0.5f, VolumeType.Music);
-	}
+    private float _originalMasterVolume = 0.5f;
+    private float _originalSFXVolume = 0.5f;
+    private float _originalMusicVolume = 0.5f;
 
-	/// <summary>
-	/// M�todo para cambiar el volumen del master, es llamado por el slider General del SettingsMenu
-	/// </summary>
-	/// <param name="volume"> parametro float que se recibe del slider del Settings Menu </param>
-	public void SetMasterVolumeSlider(float volume)
-	{
-		SetVolume(volume, VolumeType.Master);
-	}
+    [SerializeField]
+    private AudioMixer _audioMixer;
 
-	/// <summary>
-	/// M�todo para cambiar el volumen de los efectos, es llamado por el slider SFX del SettingsMenu
-	/// </summary>
-	/// <param name="volume"> parametro float que se recibe del slider del Settings Menu </param>
-	public void SetEffectsVolumeSlider(float volume)
-	{
-		SetVolume(volume, VolumeType.Effects);
-	}
-	/// <summary>
-	/// M�todo para cambiar el volumen de la musica, es llamado por el slider Musica del SettingsMenu
-	/// </summary>
-	/// <param name="volume"> parametro float que se recibe del slider del Settings Menu </param>
-	public void SetMusicVolumeSlider(float volume)
-	{
-		SetVolume(volume, VolumeType.Music);
-	}
+    [SerializeField]
+    private VolumeSettingsScriptable _volumeSettingsScriptable;
 
-	/// <summary>
-	/// Metodo que cambia el volumen en funcion del tipo del audio
-	/// </summary>
-	/// <param name="volume"> parametro float que se recibe del slider del Settings Menu </param>
-	/// <param name="type"> el tipo de volumen (Master, Effects o Music) que estan definidos por el Enum VolumeType </param>
-	public void SetVolume(float volume, VolumeType type)
-	{
-		switch (type)
-		{
-			case VolumeType.Master:
-				_audioMixer.SetFloat("Volume", Mathf.Log10(volume * 2f) * 20f);
+    [SerializeField]
+    private Slider _masterSlider;
 
-				break;
-			case VolumeType.Effects:
-				_audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume * 2f) * 20f);
+    [SerializeField]
+    private Slider _SFXSlider;
 
-				break;
-			case VolumeType.Music:
-				_audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume * 2f) * 20f);
-				break;
-		}
-	}
+    [SerializeField]
+    private Slider _musicSlider;
+    #endregion
+
+    void Awake() {
+
+        LoadVolumeSettings();
+    }
+
+    public void LoadVolumeSettings() {
+        _masterSlider.value = _volumeSettingsScriptable.masterVolume;
+        _SFXSlider.value = _volumeSettingsScriptable.SFXVolume;
+        _musicSlider.value = _volumeSettingsScriptable.musicVolume;
+
+        ApplyVolumeSettings();
+
+        Debug.Log("Master Volume: " + _volumeSettingsScriptable.masterVolume);
+        Debug.Log("SFX Volume: " + _volumeSettingsScriptable.SFXVolume);
+        Debug.Log("Music Volume: " + _volumeSettingsScriptable.musicVolume);
+    }
+    public void SetMasterVolume(float volume) {
+        _audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20f);
+
+        _volumeSettingsScriptable.masterVolume = _masterSlider.value;
+    }
+    public void SetMusicVolume(float volume) {
+        _audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20f);
+        _volumeSettingsScriptable.musicVolume = _musicSlider.value;
+    }
+    public void SetSFXVolume(float volume) {
+        _audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20f);
+        _volumeSettingsScriptable.SFXVolume = _SFXSlider.value;
+    }
+    public void ApplyVolumeSettings() {
+        _audioMixer.SetFloat("MasterVolume", Mathf.Log10(_volumeSettingsScriptable.masterVolume) * 20f);
+        _audioMixer.SetFloat("SFXVolume", Mathf.Log10(_volumeSettingsScriptable.SFXVolume) * 20f);
+        _audioMixer.SetFloat("MusicVolume", Mathf.Log10(_volumeSettingsScriptable.musicVolume) * 20f);
+    }
+
+    void OnApplicationQuit() {
+        _volumeSettingsScriptable.masterVolume = _originalMasterVolume;
+        _volumeSettingsScriptable.SFXVolume = _originalSFXVolume;
+        _volumeSettingsScriptable.musicVolume = _originalMusicVolume;
+    }
+
 }
 
-/// <summary>
-/// Enum de los distintos tipos de audio
-/// </summary>
-public enum VolumeType
-{
-	Master, // Volumen general
-	Effects,
-	Music
-}
 
 
 

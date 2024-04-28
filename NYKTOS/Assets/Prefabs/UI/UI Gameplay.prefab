@@ -10875,6 +10875,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioMixer: {fileID: 24100000, guid: 8684f367318ac9b4cb9e74c6da49b530, type: 2}
+  _volumeSettingsScriptable: {fileID: 11400000, guid: dd15d738bf0cb7d469884485a4e6e310, type: 2}
+  _masterSlider: {fileID: 5453305189080428901}
+  _SFXSlider: {fileID: 1016941140714592606}
+  _musicSlider: {fileID: 105794101197756150}
 --- !u!1 &8364398961299018337
 GameObject:
   m_ObjectHideFlags: 0
@@ -12181,7 +12185,7 @@ PrefabInstance:
       objectReference: {fileID: 6640208229080656664}
     - target: {fileID: 2797524090894805987, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetEffectsVolumeSlider
+      value: SetSFXVolume
       objectReference: {fileID: 0}
     - target: {fileID: 3006699132524864587, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -12189,7 +12193,7 @@ PrefabInstance:
       objectReference: {fileID: 6640208229080656664}
     - target: {fileID: 3006699132524864587, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetMusicVolumeSlider
+      value: SetMusicVolume
       objectReference: {fileID: 0}
     - target: {fileID: 3134458165628800449, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
       propertyPath: m_AnchorMax.x
@@ -12217,7 +12221,7 @@ PrefabInstance:
       objectReference: {fileID: 6640208229080656664}
     - target: {fileID: 7160762920535131096, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetMasterVolumeSlider
+      value: SetMasterVolume
       objectReference: {fileID: 0}
     - target: {fileID: 8376954796408823986, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
       propertyPath: m_Pivot.x
@@ -12321,10 +12325,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 544309210391698333, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
+    - {fileID: 4115593648253279130, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
+--- !u!114 &105794101197756150 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3006699132524864587, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
+  m_PrefabInstance: {fileID: 2940335722729042621}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1016941140714592606 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2797524090894805987, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
+  m_PrefabInstance: {fileID: 2940335722729042621}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2510594045017300241 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 727683430867824556, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
@@ -12341,6 +12368,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1174067754665755648, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
   m_PrefabInstance: {fileID: 2940335722729042621}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5453305189080428901 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7160762920535131096, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
+  m_PrefabInstance: {fileID: 2940335722729042621}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6669487742723035663 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8376954796408823986, guid: b850087e23ea07845bf32d9064b6e501, type: 3}
