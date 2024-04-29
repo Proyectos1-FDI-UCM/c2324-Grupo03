@@ -21,27 +21,24 @@ MonoBehaviour:
     - spawnerRegion: 0
       enemyPool:
       - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
-        number: 10
+        number: 8
         variantType: 0
   - time: 40
     subWaveList:
     - spawnerRegion: 0
       enemyPool:
       - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
-        number: 8
+        number: 10
         variantType: 0
       - enemyPrefab: {fileID: 2360520016083966940, guid: fefdc8d6c4f6ef34b94520a30c65a8f1, type: 3}
-        number: 1
-        variantType: 0
-      - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
-        number: 15
+        number: 2
         variantType: 0
   - time: 55
     subWaveList:
     - spawnerRegion: 0
       enemyPool:
       - enemyPrefab: {fileID: 2995607884255851843, guid: 24251535301804b4fb158da86df63da5, type: 3}
-        number: 15
+        number: 12
         variantType: 0
       - enemyPrefab: {fileID: 2360520016083966940, guid: fefdc8d6c4f6ef34b94520a30c65a8f1, type: 3}
         number: 2
