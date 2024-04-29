@@ -45,7 +45,7 @@ public class VolumeSettings : MonoBehaviour {
     }
     public void SetMasterVolume(float volume) {
         _audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20f);
-
+        Debug.Log("master: " + volume);
         _volumeSettingsScriptable.masterVolume = _masterSlider.value;
     }
     public void SetMusicVolume(float volume) {
