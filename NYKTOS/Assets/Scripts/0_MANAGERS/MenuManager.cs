@@ -4,15 +4,14 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 
 /// <summary>
-/// Contiene referencias a todos los men�s de la UI
+/// Contiene referencias a todos los menús de la UI
 /// Se encarga de abrirlos y cerrarlos
-/// Tambi�n gestiona las acciones de algunos botones
+/// También gestiona las acciones de algunos botones
 /// </summary>
 public class MenuManager : MonoBehaviour
 {
     // [Andrea]
     // - Cambiar el registro de menus a eventos
-    // - Destruir MenuManager al salir al men� principal
 
     private static MenuManager _instance;
     public static MenuManager Instance

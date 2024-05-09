@@ -9,33 +9,72 @@
     <title>NYKTOS</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
     <!-- Custom styles for this template -->
     <link href="./css/videogame.css" rel="stylesheet">
     <link href="./css/media.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
   </head>
   <body>
-
+    <!-- HEADER -->
     <header>
-      <div class="header"></div>
-          <img class="logo studio-logo" src="#" alt="Studio logo">
-        <div class="logo game-logo">
-             <!-- Imagen del logo del juego -->
-        </div>
-        <img class="logo hemera-logo" src="#" alt="Hemera image">
+      <div class="logos">
+          <a href="#"><img class="logo studio-logo" id="cooperativa-rapaz-logo" src="/img/CooperativaRapaz.png" alt="Cooperativa rapaz logo"></a>
+          <a href="#"><img class="logo game-logo" src="/img/NYKTOSlogo.png" alt="NYKTOS logo"></a>
+          <a href="#"><img class="logo hemera-logo" src="/img/Hemera_pixel.png" alt="Hemera"></a>
       </div>
-
+      <hr class="header-divider">
       <nav class="header-nav">
-        <a class="header-link">Inicio</a>
-        <a class="header-link">Enemigos</a>
-        <a class="header-link">Defensas</a>
-        <a class="header-link">Sobre nosotros</a>
+        <a href="#" class="header-link">Inicio</a>
+        <a href="#" class="header-link">Enemigos</a>
+        <a href="#" class="header-link">Defensas</a>
+        <a href="#" class="header-link">Sobre nosotros</a>
+        <a href="#" class="header-link"><span class="text-highlight">¡Juega ya!</span></a>
       </nav>
+      <hr class="header-divider">
     </header>
 
+    <!-- MAIN BODY -->
+    <main>
+      <!-- INICIO -->
+      <div class="section home-section" id="home">
+        <div class="game-info">
+          <h2 class="section-title">EXPLORA. CONSTRUYE. DEFIENDE</h2>
+          
+          <div class="content">
+            <div class="description">
+              <p>
+                <span class="text-highlight">NYKTOS</span> es un juego <i>tower defense</i> donde encarnas a Hémera, una pequeña hada cuya misión es defender el Nexo del Templo Olvidado 
+              de las hordas de enemigos que lo atacan por la noche.
+              </p>
+              <p>
+                Para ello, deberás colocar defensas en lugares estratégicos y combatir contra las sombras.
+                ¿Serás capaz de vencer a la oscuridad?
+              </p>
+            </div>
 
-    <main role="main">
+            <img src="/img/HemeraConcept.png" alt="Hémera">
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <div class="section enemies-section" id="enemies"></div>
+      <div class="section defenses-section" id="defenses"></div>
+      <div class="section about-section" id="about"></div>
+
+
+    </main>
+
+
+
+    <!-- <main role="main"> -->
       <!-- HEADER SECTION 
         Change image path in src="..."
       -->
@@ -47,13 +86,13 @@
       <!-- Marketing messaging 
       ================================================== -->
       <!-- Wrap the rest of the page in another container to center all the content. -->
-
+<!-- 
       <div class="container marketing">
 
-        <div class="row">
+        <div class="row"> -->
 
           <!-- Left column -->
-          <div class="col-md-7">
+          <!-- <div class="col-md-7">
             
             <h2>Descripción</h2>
             <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
@@ -65,15 +104,15 @@
               <li>Desarrollador 1</li>
               <li>Desarrollador 2</li>
               <li>...</li>
-            </ul>
+            </ul> -->
            
            <!-- Paste URL between "" in href="" -->
-           <a href="" class="btn btn-primary" role="button" aria-pressed="true">Download now</a> 
+           <!-- <a href="" class="btn btn-primary" role="button" aria-pressed="true">Download now</a> 
 
           </div>
-          
+           -->
           <!-- Right column -->
-          <div class="col-md-5">
+          <!-- <div class="col-md-5"> -->
 
             <!-- IMAGES AND YOUTUBE VIDEOS
               Duplicate the following elements to add new images and/or videos
@@ -81,30 +120,31 @@
             -->
             
             <!-- Youtube Video -->
-            <div class="media-item">
+            <!-- <div class="media-item">
               <div class="embed-responsive embed-responsive-16by9">
                 <iframe src="https://www.youtube.com/embed/YZzydHgojMc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
               </div>
-            </div>
+            </div> -->
 
             <!-- Images -->
-            <div class="media-item">
+            <!-- <div class="media-item">
               <a href="img/screenshot.jpg">
                 <img src="img/screenshot.jpg" alt="Screenshot 1" class="img-thumbnail">
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
       <!-- /END MARKETING -->
 
-      </div><!-- /.container -->
+      <!-- </div> -->
+      <!-- /.container -->
 
 
       <!-- FOOTER -->
       <footer class="container">
         <hr class="footer-divider">
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <p>Proyectos 1. Curso 2017-2018</p>
+        <p class="float-right"><a href="#home">Back to top</a></p>
+        <p>Proyectos 1. Curso 20234/2024</p>
         <p>Grado en Desarrollo de Videojuegos &middot; <a target="_blank" href="http://informatica.ucm.es">Facultad de Informática</a> &middot; <a target="_blank" href="http://www.ucm.es">UCM</a></p>
       </footer>
     </main>
