@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 public class UIManager : MonoBehaviour
 {
@@ -96,6 +93,7 @@ public class UIManager : MonoBehaviour
 
         if (health % 2 != 0)
         {
+            Debug.Log($"[UI MANAGER] (HEARTS) health: {health} - health/2 = {health/ 2} - Hearts array len: {_hearts.Length}");
             _hearts[health/ 2].sprite = _halfHeart;
         }
     }

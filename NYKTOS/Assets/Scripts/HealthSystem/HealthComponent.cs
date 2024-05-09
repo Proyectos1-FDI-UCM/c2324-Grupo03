@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 using UnityEngine.Events;
 
 public class HealthComponent : MonoBehaviour
@@ -119,10 +116,15 @@ public class HealthComponent : MonoBehaviour
     public void MaxHealth()
     {
         _currentHealth = _maxHealth;
-        UIManager.Instance.Hearts(_currentHealth);
-        if (HealthBarGameObject != null)
+
+        if (GetComponent<PlayerController>() != null) 
         {
-            HealthBarGameObject.SetActive(false);
+            UIManager.Instance.Hearts(_currentHealth);
+
+            if (HealthBarGameObject != null)
+            {
+                HealthBarGameObject.SetActive(false);
+            }
         }
     }
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "MainNightProgressTracker", menuName = "Progress Trackers/Main")]
@@ -13,10 +11,12 @@ public class MainNightProgressTracker : NightProgressTracker
 
     public override void AdvanceNight()
     {
-        if( _night+1 < _nightList.Count)
+        Debug.Log($"[MAIN NIGHT PROGRESS TRACKER] Advance night - This night: {_night} - Night count: {_nightList.Count}");
+        if( _night + 1 < _nightList.Count)
         {
             _night++;
-            _stateMachine?.SetState(_dayState);
+
+            Debug.Log($"[MAIN NIGHT PROGRESS TRACKER] night+1 < nightList.Count IS TRUE - This night: {_night} - Night count: {_nightList.Count}");
         }
         
         _stateMachine?.SetState(_dayState);
