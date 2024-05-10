@@ -1,199 +1,24 @@
-/* xs devices */
-@media (max-width: 575px) {
-    #skills-description-desktop {
-        display: none;
-    }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px)  {
 
-     #contactform-inside-cont {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        /* justify-content: center; */
-    }
-
-    #contactform-inside-cont, .form-heading {
-        margin-left: 10%;
-    }
-
-    .submit-btn {
-        margin-left: 15%;
-    }
-
-    .sm-icon {
-        width: 20%;
-    }  
 }
 
-/* small devices (landscape phones) */
-@media (min-width: 576px) {
-    #skills-description-desktop {
-        display: none;
-    }
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
 
-    .submit-btn {
-        align-self: center;
-        width: 15%;
-        height: 8vh;
-    }
-
-    .footer-flex { 
-        padding: 5vh 10vw;
-    }
-
-    .sm-icon {
-        margin-left: 3vw;
-    }
-    
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /* DESCOMENTAR CUANDO TENGA CONTENIDO PARA LA SIDEBAR */
+    /* .section-and-sidebar {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 300px;
+        gap: 40px;
+        margin: 0 auto;
+      } */
 }
 
-/* medium devices (tablets) */
-@media (min-width: 768px) {
-    .skill {
-        width: 70%;
-    }
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
 
-    #skills-description-desktop {
-        display: none;
-    }
-    
-    .submit-btn {
-        align-self: center;
-        width: 15%;
-        height: 5vh;
-    }
-
-    .form-col {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        width: 50%;
-    }
-
-    #contactform-inside-cont {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-}
-
-/* large devices (desktops) */
-@media (min-width: 992px) {
-    .header-nav .link {
-        padding: 3vh 4vh;
-        font-size: large;
-    }
-
-    .skill {
-        width: 35%;
-    }
-
-    #skills-description-mobile {
-       display: none;
-    }
-
-    #skills-description-desktop {
-        display: contents;
-    }
-
-    .form-cont {
-        margin: 10vh 4vw;
-    }
-
-    .submit-btn {
-        align-self: center;
-        width: 15%;
-        height: 8vh;
-    }
-
-    .form-heading {
-        padding-left: 2vw;
-    }
-
-    .form-col {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        width: 50%;
-    }
-
-    #contactform-inside-cont {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-    
-}
-
-/* XL devices (large desktops) */
-@media (min-width: 1200px) {
-    .header-nav .link {
-        padding: 3vh 4vh;
-        font-size: large;
-    }
-
-    #skills-description-mobile {
-        display: none;
-    }
-
-    .submit-btn {
-        align-self: center;
-        width: 15%;
-        height: 8vh;
-    }
-
-    .form-heading {
-        padding-left: 2vw;
-    }
-
-    .form-col {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        width: 50%;
-    }
-
-    #contactform-inside-cont {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-}
-
-/* XXL devices (larger desktops) */
-@media (min-width: 1400px) {
-    .header-nav .link {
-        padding: 3vh 4vh;
-        font-size: large;
-    }
-
-    #skills-description-mobile {
-        display: none;
-    }
-
-    .submit-btn {
-        align-self: center;
-        width: 15%;
-        height: 8vh;
-    }
-
-    .form-heading {
-        padding-left: 2vw;
-    }
-
-    .form-col {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        width: 50%;
-    }
-
-    #contactform-inside-cont {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

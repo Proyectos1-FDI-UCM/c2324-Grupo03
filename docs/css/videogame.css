@@ -9,7 +9,6 @@
 
 /* GLOBAL STYLES
 -------------------------------------------------- */
-/* Padding below the footer and lighter body text */
 
 html,body {
   font-size: 25px;
@@ -19,15 +18,14 @@ body {
   padding: 1rem;
   background-color: var(--background-color-1);
   color: var(--font-color-1);
-  font-family: "Jersey 10", sans-serif;
+  font-family: "Jersey 15", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-main {
-  padding: 0 3rem 1rem 3rem;
+p {
+  margin-top: auto;
 }
-
 
 a {
   color: var(--cyan);
@@ -40,6 +38,10 @@ a:hover {
 
 nav a {
   color: var(--font-color-1);
+}
+
+iframe {
+  width: 100%;
 }
 
 .text-highlight {
@@ -64,7 +66,7 @@ img.logo {
 
 .header-nav {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-evenly;
   /* padding-top: 1rem; */
 }
@@ -72,22 +74,22 @@ img.logo {
 
 /* MAIN BODY 
 -------------------------------------------------- */
+.section-and-sidebar {
+  display: block;
+  margin: 0 auto;
+}
+
+.sidebar {
+  display: none;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
 
 .description {
-  max-width: 40%;
   text-align: justify;
-  text-justify: inter-word;
-}
-
-.section img {
-  max-width: 30%;
-}
-
-.game-info .content {
-  display: flex;
-  justify-content: start;
-  align-items:flex-start;
-  column-gap: 3rem;
 }
 
 
