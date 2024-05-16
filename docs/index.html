@@ -10,9 +10,6 @@
 
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
-    <!-- Bootstrap core CSS -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-
     <!-- Custom styles for this template -->
     <link href="./css/videogame.css" rel="stylesheet">
     <link href="./css/media.css" rel="stylesheet">
@@ -24,17 +21,19 @@
   <body>
     <!-- HEADER -->
     <header id="top">
-      <div class="logos">
-          <a href="#"><img class="logo studio-logo" id="cooperativa-rapaz-logo" src="img/CooperativaRapaz.png" alt="Cooperativa rapaz logo"></a>
-          <a href="#"><img class="logo game-logo" src="img/NYKTOSlogo.png" alt="NYKTOS logo"></a>
-          <a href="#"><img class="logo hemera-logo" src="img/Hemera.png" alt="Hemera"></a>
+      <div class="header-logos">
+        <div class="header-logo studio-logo"><a href="#about"><img src="img/CooperativaRapaz.png" alt="Cooperativa rapaz logo"></a></div>
+        
+        <div class="header-logo game-logo"><a href="#home"><img src="img/NYKTOSlogo.png" alt="NYKTOS logo"></a></div>
+
+        <div class="header-logo hemera-logo"><a href="#"><img src="img/Hemera.png" alt="Hemera"></a></div>
       </div>
       <hr class="header-divider">
       <nav class="header-nav">
-        <a href="#" class="header-link">Inicio</a>
+        <a href="#home" class="header-link">Inicio</a>
         <a href="#" class="header-link">Enemigos</a>
         <a href="#" class="header-link">Defensas</a>
-        <a href="#" class="header-link">Sobre nosotros</a>
+        <a href="#about" class="header-link">Sobre nosotros</a>
         <a href="https://aloy5.itch.io/nyktos" target="_blank" rel="noopener" class="header-link"><span class="text-highlight">¡Juega ya!</span></a>
       </nav>
       <hr class="header-divider">
@@ -43,21 +42,51 @@
     <!-- MAIN BODY -->
     <main>
       <!-- INICIO -->
-      <div class="section-and-sidebar">
+      <div class="content-and-sidebar">
+        <div class="sidebar"></div>
+
+        <div class="content">
         <div class="section home-section" id="home">
             <h2 class="section-title">EXPLORA. CONSTRUYE. DEFIENDE</h2>
-            <div class="description">
-                <p>
-                  <span class="text-highlight">NYKTOS</span> es un juego <i>tower defense</i> donde encarnas a Hémera, una pequeña hada cuya misión es defender el Nexo del Templo Olvidado 
-                de las hordas de enemigos que lo atacan por la noche.
-                </p>
-                <p>
-                  Para ello, deberás colocar defensas en lugares estratégicos y combatir contra las sombras.
-                  ¿Serás capaz de vencer a la oscuridad?
-                </p>
+            <div class="display-row">     
+              <div class="description content-item">
+                  <p>
+                    <span class="text-highlight">NYKTOS</span> es un juego <i>tower defense</i> donde encarnas a Hémera, una pequeña hada cuya misión es defender el Nexo del Templo Olvidado 
+                  de las hordas de enemigos que lo atacan por la noche.
+                  </p>
+                  <p>
+                    Para ello, deberás colocar defensas en lugares estratégicos y combatir contra las sombras.
+                    ¿Serás capaz de vencer a la oscuridad?
+                  </p>
+              </div>
+              <iframe width="560" height="315" class="content-item" src="https://www.youtube-nocookie.com/embed/qCu2UsMZ7Po?si=a30KOUDvRbgbJR44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <!-- <img src="img/HemeraConcept.png" alt="Hémera"> -->
             </div>
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/qCu2UsMZ7Po?si=a30KOUDvRbgbJR44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <!-- <img src="img/HemeraConcept.png" alt="Hémera"> -->
+        </div>
+
+        <div class="section about-section" id="about">
+          <h2 class="section-title">QUIÉNES SOMOS</h2>
+            <div class="display-row">     
+              <div class="description content-item">
+                  <p>
+                    <span class="text-highlight">Cooperativa Rapaz</span> es el equipo de desarrollo detrás de NYKTOS. Sus integrantes son:
+                  </p>                
+                    <ul>
+                      <li><a href="https://aloy5.itch.io/">Andrea Aparicio</a></li>
+                      <li>Marco González</li>
+                      <li><a href="https://itch.io/profile/guillermosanchez">Guillermo Sánchez</a></li>
+                      <li><a href="https://itch.io/profile/maeduardab">María Eduarda Beckers</a></li>
+                      <li><a href="https://ikerjum.itch.io/">Iker Martínez</a></li>
+                      <li><a href="https://itch.io/profile/stardust-asher">Asher Carrero</a></li>
+                    </ul>
+                  
+              </div>
+              <div class="content-item limit-width justify-center"><img class="studio-logo limit-width" src="img/CooperativaRapaz.png" alt="Cooperativa rapaz logo"></div>
+              
+
+        </div>
+
+        </div>
         </div>
 
         <div class="sidebar"></div>
@@ -66,7 +95,7 @@
 
       <div class="section enemies-section" id="enemies"></div>
       <div class="section defenses-section" id="defenses"></div>
-      <div class="section about-section" id="about"></div>
+
 
 
     </main>

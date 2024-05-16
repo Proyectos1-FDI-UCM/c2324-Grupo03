@@ -1,9 +1,9 @@
 :root {
   --background-color-1: black;
   --font-color-1: white;
-  --magenta: magenta;
-  --cyan: cyan;
-  --yellow: yellow;
+  --magenta: rgb(218, 46, 218);
+  --cyan: rgb(44, 236, 236);
+  --yellow: rgb(233, 233, 23);
 }
 
 
@@ -27,13 +27,17 @@ p {
   margin-top: auto;
 }
 
+li {
+  line-height: 30px;
+}
+
 a {
   color: var(--cyan);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--magenta);
+  color: var(--magenta); 
 }
 
 nav a {
@@ -48,33 +52,71 @@ iframe {
   color: var(--yellow);
 }
 
+a .text-highlight:hover {
+  color: var(--magenta); 
+}
+
+/* For content in sections */
+.display-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: max(30px);
+  align-items: center;
+}
+
+
 
 /* CUSTOMIZE THE HEADER
 -------------------------------------------------- */
 
-
-.logos {
+.header-logos {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  width: 100%;
+  align-items: center;
 }
 
-img.logo {
-  height: 4rem;
+/* .header-logos img {
+  flex:1;
+  max-height: max(80px, 10vw);
+} */
+.header-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header-logo img {
+  max-height: max(80px, 10vw);
+  /* max-width: 100%; */
+}
+
+.header-logo.game-logo {
+  flex: 2;
+}
+
+.header-logo.studio-logo {
+  justify-content: flex-start;
+}
+
+.header-logo.hemera-logo {
+  justify-content: flex-end;
 }
 
 .header-nav {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  /* padding-top: 1rem; */
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top:0;
 }
 
 
 /* MAIN BODY 
 -------------------------------------------------- */
-.section-and-sidebar {
+.content-and-sidebar {
   display: block;
   margin: 0 auto;
 }
@@ -83,16 +125,39 @@ img.logo {
   display: none;
 }
 
+.content {  
+  scroll-snap-type: y proximity;
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+}
+
 .section {
   display: flex;
   flex-direction: column;
+  scroll-snap-align: center;
+}
+
+.home-section {
+  margin-top: 0;
+}
+
+.about-section .display-row {
+  flex-direction: row-reverse;
+}
+
+.content-item {
+  flex:1;
+  min-width: max(200px);
+}
+
+.content-item img.limit-width {
+  max-width: min(400px, 100%);
 }
 
 .description {
   text-align: justify;
 }
-
-
 
 
 
