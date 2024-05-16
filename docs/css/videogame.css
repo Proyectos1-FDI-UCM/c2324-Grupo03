@@ -88,8 +88,7 @@ a .text-highlight:hover {
 }
 
 .header-logo img {
-  max-height: max(80px, 10vw);
-  /* max-width: 100%; */
+  max-height: max(80px, 6vw);
 }
 
 .header-logo.game-logo {
