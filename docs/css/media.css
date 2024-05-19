@@ -14,16 +14,20 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   
-    .content-and-sidebar {
-      display: grid;
-      grid-template-columns: 100px minmax(0, 1fr) 100px;
-      gap: 40px;
-      margin: 0 auto;
-    }
+  html {
+    scroll-padding-top: 25vh;
+  }
 
-    .sidebar {
-      display: flex;
-    }
+  .content-and-sidebar {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr) 100px;
+    gap: 40px;
+    margin: 0 auto;
+  }
+
+  .sidebar {
+    display: flex;
+  }
 
 }
 
