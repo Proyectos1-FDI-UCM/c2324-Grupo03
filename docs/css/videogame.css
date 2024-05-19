@@ -9,11 +9,9 @@
 
 /* GLOBAL STYLES
 -------------------------------------------------- */
-
 html,body {
   font-size: 25px;
-  scroll-padding-top: 20vh; /* height of sticky header */
-
+  scroll-padding-top: 50px;
 }
 
 body {
@@ -26,20 +24,19 @@ body {
 }
 
 header {
-  padding: 8px 1rem;
-  position: -webkit-sticky; /* Safari */
   position: sticky;
-  top:0;
+  top: 0;
   background-color: var(--background-color-1);
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-flow: row wrap;
 }
 
-main {
+main, footer {
   padding: 0 1rem;
 }
 
-footer {
-  padding: 1rem;
-}
 
 p {
   margin-top: auto;
@@ -64,6 +61,16 @@ nav a {
 
 iframe {
   width: 100%;
+}
+
+svg {
+  width: 30px;
+  stroke: var(--background-color-1);
+  fill: var(--font-color-1);
+}
+
+svg:hover {
+  fill: var(--magenta)
 }
 
 .text-highlight {
@@ -97,18 +104,62 @@ a .text-highlight:hover {
 /* CUSTOMIZE THE HEADER
 -------------------------------------------------- */
 
-.header-logos {
+.header-left, .header-right {
+  max-width: 50%;
+  height: 50px;
+  flex: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 5px;
+  background-color:rgb(39, 39, 39);
+}
+
+.header-left {
+  padding: 0 8px;
+}
+
+header img {
+  max-height: 40px;
+  max-width: 100%;
+}
+
+header .hemera-logo {
+  margin-left: auto;
+}
+header .game-logo {
+  margin-right: auto;
+}
+
+
+.header-link {
+  width: 100%;
+  height: 100%;
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--font-color-1);
+  transition: 0.25s;
+}
+
+.header-link:hover {
+  background-color: var(--font-color-1);
+  color: var(--yellow);
+}
+
+/* .header-logos {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
 /* .header-logos img {
   flex:1;
   max-height: max(80px, 10vw);
 } */
-.header-logo {
+/* .header-logo {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -116,9 +167,9 @@ a .text-highlight:hover {
 
 .header-logo img {
   max-height: max(80px, 6vw);
-}
+} */
 
-.header-logo.game-logo {
+/* .header-logo.game-logo {
   flex: 2;
 }
 
@@ -134,7 +185,7 @@ a .text-highlight:hover {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-}
+} */
 
 
 /* MAIN BODY 
@@ -152,10 +203,12 @@ a .text-highlight:hover {
   scroll-snap-type: y mandatory;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 80px;
   max-width: 1000px;
   justify-self: center;
 }
+
+/* CONTENT SECTIONS */
 
 .section {
   display: flex;
@@ -163,16 +216,9 @@ a .text-highlight:hover {
   scroll-snap-align: center;
 }
 
-.section-divider {
-  width: 100%;
-}
 
 .home-section {
   margin-top: 0;
-}
-
-.about-section .display-row {
-  flex-direction: row-reverse;
 }
 
 .content-item {
@@ -196,28 +242,29 @@ a .text-highlight:hover {
   gap: 60px;
 }
 
-.picture {
+.picture, .picture img {
   max-width: 100%;
 }
 
-/* MARKETING CONTENT
--------------------------------------------------- */
 
-/* Center align the text within the three columns below the carousel */
-/* .marketing {
-  margin-top: 1rem;
+/* DIVIDER */
+.section-divider {
+  width: 100%;
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
-.marketing h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 1rem 0;
-
+.section-divider hr {
+  width: 100%;
+  height: 2px;
 }
 
-.media-item {
-  margin: 1rem;
-} */
+.section-divider img {
+  max-width: 50vw;
+}
 
 
 /* Featurettes
