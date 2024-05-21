@@ -1,3 +1,13 @@
+:root {
+  --background-color-1: black;
+  --background-color-2: rgb(39, 39, 39);
+  --font-color-1: white;
+  --magenta: rgb(218, 46, 218);
+  --cyan: rgb(44, 236, 236);
+  --yellow: rgb(233, 233, 23);
+}
+
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px)  {
 
@@ -13,21 +23,52 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  
-  html {
-    scroll-padding-top: 25vh;
+    
+  /* HEADER */
+  .hamburguer {
+    display: none;
+  }
+  .header-left {
+    order: 1;
+    /* justify-content: flex-start; */
+  }
+  .header-right {
+    order: 3;
   }
 
+
+  .navigation-menu {
+    order: 2;
+    height: 50px;
+    width: fit-content;
+    padding: 0 2rem;
+    justify-self: center;
+    background-color: var(--background-color-2);
+  }
+
+  .navigation-menu.active {
+    height: initial;
+  }
+
+  .navigation-menu nav {
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+  }
+
+  /* CONTENT */
   .content-and-sidebar {
     display: grid;
     grid-template-columns: 100px minmax(0, 1fr) 100px;
     gap: 40px;
-    margin: 0 auto;
   }
 
   .sidebar {
     display: flex;
   }
+
+
 
 }
 

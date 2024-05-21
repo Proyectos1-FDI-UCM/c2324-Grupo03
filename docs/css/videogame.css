@@ -1,10 +1,11 @@
-:root {
-  --background-color-1: black;
-  --font-color-1: white;
-  --magenta: rgb(218, 46, 218);
-  --cyan: rgb(44, 236, 236);
-  --yellow: rgb(233, 233, 23);
-}
+  :root {
+    --background-color-1: black;
+    --background-color-2: rgb(39, 39, 39);
+    --font-color-1: white;
+    --magenta: rgb(218, 46, 218);
+    --cyan: rgb(44, 236, 236);
+    --yellow: rgb(233, 233, 23);
+  }
 
 
 /* GLOBAL STYLES
@@ -24,9 +25,10 @@ body {
 }
 
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  background-color: var(--background-color-1);
+  background-color: var(--background-color-2);
+  box-shadow: 0 -3px 20px white;
   width: 100%;
   max-width: 100%;
   display: flex;
@@ -67,6 +69,7 @@ svg {
   width: 30px;
   stroke: var(--background-color-1);
   fill: var(--font-color-1);
+  transition: .5s;
 }
 
 svg:hover {
@@ -96,6 +99,16 @@ a .text-highlight:hover {
   align-items: center;
 }
 
+.display-column {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 30px;
+}
+
+.align-left {
+  align-items: left;
+}
+
 .flex-2 {
   flex:2 !important; 
 }
@@ -112,7 +125,7 @@ a .text-highlight:hover {
   flex-flow: row nowrap;
   align-items: center;
   gap: 5px;
-  background-color:rgb(39, 39, 39);
+  background-color:var(--background-color-2);
 }
 
 .header-left {
@@ -123,14 +136,6 @@ header img {
   max-height: 40px;
   max-width: 100%;
 }
-
-header .hemera-logo {
-  margin-left: auto;
-}
-header .game-logo {
-  margin-right: auto;
-}
-
 
 .header-link {
   width: 100%;
@@ -148,59 +153,64 @@ header .game-logo {
   color: var(--yellow);
 }
 
-/* .header-logos {
+/* Nav on Small screen*/
+header .hemera-logo {
+  margin-left: auto;
+}
+header .game-logo {
+  margin-right: auto;
+}
+
+.hamburguer .close-button {
+  display: none;
+}
+.hamburguer .close-button.active {
+  display: block;
+}
+.hamburguer .bars-button.active {
+  display: none;
+}
+
+.navigation-menu {
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--background-color-1);
+  color: var(--font-color-1);
+  transition: .3s ease;
+  scroll-behavior: n;
+}
+
+.navigation-menu.active {
+  height: 100vh;  
+  overflow: hidden;
+}
+
+.navigation-menu nav {
+  padding: 1rem 0;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-} */
-
-/* .header-logos img {
-  flex:1;
-  max-height: max(80px, 10vw);
-} */
-/* .header-logo {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  flex-flow: column nowrap;
+  gap: 30px;
 }
 
-.header-logo img {
-  max-height: max(80px, 6vw);
-} */
-
-/* .header-logo.game-logo {
-  flex: 2;
+.navigation-menu a {
+  padding: 0 1rem;
 }
 
-.header-logo.studio-logo {
-  justify-content: flex-start;
-}
-
-.header-logo.hemera-logo {
-  justify-content: flex-end;
-}
-
-.header-nav {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-} */
 
 
 /* MAIN BODY 
 -------------------------------------------------- */
 .content-and-sidebar {
   display: block;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .sidebar {
   display: none;
 }
 
-.content {  
-  scroll-snap-type: y mandatory;
+.content {
   display: flex;
   flex-direction: column;
   gap: 80px;
@@ -213,12 +223,11 @@ header .game-logo {
 .section {
   display: flex;
   flex-direction: column;
-  scroll-snap-align: center;
 }
 
 
 .home-section {
-  margin-top: 0;
+  padding-top: 1rem;
 }
 
 .content-item {

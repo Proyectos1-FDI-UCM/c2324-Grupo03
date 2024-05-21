@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Cooperativa Rapaz">
 
     <title>NYKTOS</title>
 
@@ -20,46 +20,38 @@
   </head>
   <body>
     <!-- HEADER -->
-    <!-- <header>
-      <div class="header-logos">
-        <div class="header-logo studio-logo"><a href="#about"><img src="img/CooperativaRapaz.png" alt="Cooperativa rapaz logo"></a></div>
-        <div class="header-logo game-logo"><a href="#home"><img src="img/NYKTOSlogo.png" alt="NYKTOS logo"></a></div>
-
-        <div class="header-logo hemera-logo"><a href="#"><img src="img/Hemera.png" alt="Hemera"></a></div>
-      </div>
-      <hr class="header-divider">
-      <nav class="header-nav">
-        <a href="#home" class="header-link">Inicio</a>
-        <a href="#enemies" class="header-link">Enemigos</a>
-        <a href="#defenses" class="header-link">Defensas</a>
-        <a href="#about" class="header-link">Sobre nosotros</a>
-        <a href="https://aloy5.itch.io/nyktos" target="_blank" rel="noopener" class="header-link"><span class="text-highlight">¡Juega ya!</span></a>
-      </nav>
-      <hr class="header-divider">
-    </header> -->
-
     <header>
       <div class="header-left">
-        <div class="hamburguer display-row">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
-          <!-- <svg  viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M8 24h16v-4h-16v4zM8 18.016h16v-4h-16v4zM8 12h16v-4h-16v4z"></path></svg> -->
+        <div class="hamburguer display-row" onclick="ToggleActiveClass('navigation-menu'), ToggleActiveClass('ham-bars'), ToggleActiveClass('ham-close')">
+          <svg class="bars-button" id="ham-bars" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+          <svg class="close-button" id="ham-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
         </div>
         <div class="hemera-logo"><a href="#home"><img src="img/Hemera.png" alt="Hemera"></a></div>
         <div class="game-logo"><a href="#home" class="display-row"><img src="img/NYKTOSlogo.png" alt="NYKTOS logo"></a></div>
       </div>
+
       <div class="header-right">
         <a href="https://aloy5.itch.io/nyktos" target="_blank" rel="noopener" class="header-link">¡JUEGA YA!</a>
       </div>
-      <div class="navigation-main"></div>
+
+      <div class="navigation-menu" id="navigation-menu">
+        <nav >
+          <a href="#home" onclick="RemoveActiveClass('navigation-menu')">INICIO</a>
+          <a href="#enemies" onclick="RemoveActiveClass('navigation-menu')">ENEMIGOS</a>
+          <a href="#defenses" onclick="RemoveActiveClass('navigation-menu')">DEFENSAS</a>
+          <a href="#about" onclick="RemoveActiveClass('navigation-menu')">SOBRE NOSOTROS</a>
+        </nav>
+      </div>
     </header>
+
 
     <!-- MAIN BODY -->
     <main>
-      <!-- INICIO -->
       <div class="content-and-sidebar">
         <div class="sidebar"></div>
 
         <div class="content">
+          <!-- INICIO -->
           <div class="section home-section" id="home">
               <h2 class="section-title">EXPLORA. CONSTRUYE. DEFIENDE</h2>
               <div class="display-row">     
@@ -84,6 +76,7 @@
             <hr class="item">
           </div>
 
+          <!-- ENEMIGOS -->
           <div class="section enemies-section" id="enemies">
             <h2 class="section-title">ENEMIGOS</h2>
             <div class="cards enemy-cards">
@@ -138,6 +131,7 @@
             <hr class="item">
           </div>
 
+          <!-- DEFENSAS -->
           <div class="section defenses-section" id="defenses">
             <h2 class="section-title">DEFENSAS</h2>
             <div class="cards defense-cards">
@@ -182,6 +176,7 @@
             <hr class="item">
           </div>
 
+          <!-- ABOUT -->
           <div class="section about-section" id="about">
             <h2 class="section-title">QUIÉNES SOMOS</h2>
               <div class="display-row-reverse">     
@@ -191,7 +186,7 @@
                   </p>                
                   <ul>
                     <li><a href="https://aloy5.itch.io/">Andrea Aparicio</a></li>
-                    <li>Marco González</li>
+                    <li><a href="https://itch.io/profile/marco-1337">Marco González</a></li>
                     <li><a href="https://itch.io/profile/guillermosanchez">Guillermo Sánchez</a></li>
                     <li><a href="https://itch.io/profile/maeduardab">María Eduarda Beckers</a></li>
                     <li><a href="https://ikerjum.itch.io/">Iker Martínez</a></li>
@@ -225,5 +220,7 @@
       <p>Proyectos 1. Curso 2023/2024</p>
       <p>Grado en Desarrollo de Videojuegos &middot; <a target="_blank" href="http://informatica.ucm.es">Facultad de Informática</a> &middot; <a target="_blank" href="http://www.ucm.es">UCM</a></p>
     </footer>
+
+    <script src="index.js"></script>
   </body>
 </html>
