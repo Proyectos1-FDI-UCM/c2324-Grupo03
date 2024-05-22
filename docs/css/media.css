@@ -30,7 +30,6 @@
   }
   .header-left {
     order: 1;
-    /* justify-content: flex-start; */
   }
   .header-right {
     order: 3;
@@ -69,6 +68,14 @@
   }
 
 
+  /* FOOTER */
+  footer .info {
+    gap: 30px;
+  }
+  
+  footer .course-info {
+    align-items: flex-start;
+  }
 
 }
 
