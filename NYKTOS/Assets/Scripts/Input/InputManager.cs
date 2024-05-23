@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Gestiona todo el input del jugador
+/// </summary>
 public class InputManager : MonoBehaviour
 {
     private static InputManager _instance;
@@ -63,16 +66,23 @@ public class InputManager : MonoBehaviour
         mainCamera = Camera.main;
     }
 
-    //Se llama desde el player controller
+    /// <summary>
+    /// Se llama desde el script player controller para registrar al jugador
+    /// Inicializa los controles
+    /// </summary>
+    /// <param name="player">Jugador</param>
     public void RegisterPlayer(GameObject player)
     {
         _player = player.GetComponent<PlayerController>();
         _playerInput = player.GetComponent<PlayerInput>();
-        //_playerState = player.GetComponent<PlayerStateMachine>();
 
         ControlsStart();
     }
 
+    /// <summary>
+    /// Registra el esquema de control del jugador
+    /// Se suscribe al evento de cambio de controles
+    /// </summary>
     private void ControlsStart()
     {
         _currentScheme = _playerInput.currentControlScheme;
@@ -84,6 +94,9 @@ public class InputManager : MonoBehaviour
     }
 
     #region player actions
+    /// <summary>
+    /// En esta región están los métodos que recogen el input del mapa de acciones del jugador
+    /// </summary>
     private void Move(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();
@@ -141,6 +154,10 @@ public class InputManager : MonoBehaviour
     }
 
     #region controls
+    /// <summary>
+    /// Guarda el esquema de control actual, y en función de su valor hace visible o no el cursor
+    /// </summary>
+    /// <param name="input">Componente de input del jugador</param>
     private void OnControlsChanged(PlayerInput input)
     {
         if (_playerInput.currentControlScheme == gamepadScheme && _currentScheme != gamepadScheme)
@@ -155,7 +172,7 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    // Estos m�todos activan un mapa de acci�n y desactivan el resto
+    // Estos métodos activan un mapa de acción y desactivan el resto
     public void SwitchToUIControls()
     {
         playerControls.Player.Disable();
@@ -200,7 +217,7 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    // Estos m�todos des/activan un mapa de acci�n, independientemente del resto de mapas activos
+    // Estos métodos activan o desactivan un mapa de acción, independientemente del resto de mapas activos
     public void EnablePlayerInput(bool enable)
     {
         if (enable) _playerControls.Player.Enable();
@@ -222,8 +239,7 @@ public class InputManager : MonoBehaviour
     #region enable/disable
     private void OnEnable()
     {
-        //_playerControls.Enable();
-
+        // Suscripción a los eventos de input
         _playerControls.Player.Move.performed += Move;
         _playerControls.Player.Move.canceled += Move;
         _playerControls.Player.Blink.performed += Blink;
@@ -245,6 +261,7 @@ public class InputManager : MonoBehaviour
     {
         _playerControls?.Disable();
 
+        // Desuscripción de los eventos de input
         if (_playerControls != null)
         {
             _playerControls.Player.Move.performed -= Move;
@@ -259,9 +276,6 @@ public class InputManager : MonoBehaviour
             _playerControls.Dialogues.NextDialogue.performed -= NextDialogue;
 
             _playerControls.Player.Pause.performed -= PauseGame;
-
-            // ESO DA UN NULLREFERENCE EXCEPTION
-            //_playerInput.onControlsChanged -= OnControlsChanged;
         }
     }
     

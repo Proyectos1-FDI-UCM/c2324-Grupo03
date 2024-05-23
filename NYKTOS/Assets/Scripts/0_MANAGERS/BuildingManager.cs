@@ -1,8 +1,10 @@
-using JetBrains.Annotations;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Gestiona la construcción de defensas
+/// </summary>
 public class BuildingManager : MonoBehaviour
 {
     private static BuildingManager _instance;
@@ -71,11 +73,18 @@ public class BuildingManager : MonoBehaviour
     #region methods
 
     #region build defenses
+    /// <summary>
+    /// Establece la defensa seleccionada
+    /// </summary>
+    /// <param name="building">Prefab de la defensa seleccionada</param>
     private void SetBuilding(GameObject building)
     {
         _selectedDefense = building;
     }
 
+    /// <summary>
+    /// Construye la defensa seleccionada en la posicion de currentPlaceholder (cimiento seleccionado)
+    /// </summary>
     private void BuildDefense()
     {
         if (_selectedDefense == _turret)
@@ -107,6 +116,9 @@ public class BuildingManager : MonoBehaviour
         MenuManager.Instance.CloseAllMenus();
     }
     
+    /// <summary>
+    /// Construye una baliza si se tienen cristales suficientes
+    /// </summary>
     public void BuildBeacon()
     {
         if (_currentPlaceholder.TryGetComponent<PlaceholderLoadComponent>(out PlaceholderLoadComponent save))
@@ -145,6 +157,9 @@ public class BuildingManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Construye un señuelo si se tienen cristales suficientes
+    /// </summary>
     public void BuildWall()
     {
         if (_currentPlaceholder.TryGetComponent<PlaceholderLoadComponent>(out PlaceholderLoadComponent save))
@@ -183,6 +198,10 @@ public class BuildingManager : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// Construye una torreta si se tienen cristales suficientes
+    /// </summary>
     public void BuildTurret()
     {
         if (_currentPlaceholder.TryGetComponent<PlaceholderLoadComponent>(out PlaceholderLoadComponent save))
@@ -225,12 +244,14 @@ public class BuildingManager : MonoBehaviour
     #endregion
 
     #region buildingArray
+    /// <summary>
+    /// Lista con los edificios construidos
+    /// </summary>
     public List<GameObject> buildingArray { get { return _buildingArray; } }
     private List<GameObject> _buildingArray = new List<GameObject>();
 
     public void AddBuilding(GameObject obj)
     {
-        //print(obj);
         _buildingArray.Add(obj);
     }
 

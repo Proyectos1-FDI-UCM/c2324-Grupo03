@@ -1,7 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Gestiona el estado del Nexo (si se puede o no interactuar, si el jugador puede o no revivir)
+/// </summary>
 public class NexusComponent : MonoBehaviour, IBuilding
 {
     
@@ -31,9 +33,6 @@ public class NexusComponent : MonoBehaviour, IBuilding
     {
         if (_state.isInteractable)
         {
-            //[Marco] Deprecated
-            //MenuManager.Instance.OpenNexusMenu();
-
             _nexusMenuEmitter.InvokePerform();
             TutorialCompleted?.InvokePerform();
         }

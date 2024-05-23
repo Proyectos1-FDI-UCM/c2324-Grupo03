@@ -1,9 +1,9 @@
 using UnityEngine;
 
 /// <summary>
-/// M�quina de estados de los edificios
+/// Máquina de estados de los edificios
 /// 2 estados posibles: construido y no construido
-/// Adem�s, determina si son interactuables o no
+/// Además, determina si son interactuables o no
 /// </summary>
 public class BuildingStateMachine : MonoBehaviour
 {

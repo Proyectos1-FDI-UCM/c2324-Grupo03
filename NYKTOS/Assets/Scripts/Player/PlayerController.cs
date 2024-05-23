@@ -3,7 +3,12 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-
+/// <summary>
+/// Script encargado de controlar al jugador
+/// Define todas las acciones realizables por el jugador (de movimieno, ataque e interacción). 
+/// Estos métodos se llaman desde el InputManager según el input del usuario
+/// También incluye otros métodos que alteran el control, como el desplazamiento por knockback al recibir daño
+/// </summary>
 public class PlayerController : MonoBehaviour, IKnockback
 {
     

@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Cuando el Nexo es destruido, se llama al método Death(), que cambia el estado del juego
+/// </summary>
 public class NexusDeath : MonoBehaviour, IDeath
 {
     [SerializeField]
@@ -12,7 +13,6 @@ public class NexusDeath : MonoBehaviour, IDeath
 
     public void Death()
     {
-        // Lanzar evento de perder
         _gameStateMachine.SetState(_loseState);
     }
 }

@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Componente genérico que tienen todos los placeholders
+/// Tiene acceso a su estado de construcción y de interacción (_state), y los actualiza en función de los eventos que reciba
+/// También filtra cuándo puede abrirse el menú de construcción, y lo actualiza en función de su tipo
+/// </summary>
 public class PlaceholderComponent : MonoBehaviour, IBuilding
 {
     #region references
     private BuildingStateMachine _state;
     #endregion
+
     #region properties
     [SerializeField]
     private placeholderType _type;
@@ -58,8 +64,6 @@ public class PlaceholderComponent : MonoBehaviour, IBuilding
 
     private void UpdateDefenseMenu()
     {
-        //Debug.Log("[PLACEHOLDER COMPONENT] cambio de color");
-        //Debug.Log("[PLACEHOLDER COMPONENT] " + _type);
         _phTypeEmitter.InvokePerform(_type);
     }
 

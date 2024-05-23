@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable] // Esto creo que es para editar los parámetros serializados desde el script que tenga a este referenciado
+/// <summary>
+/// Clase temporizador
+/// </summary>
+[System.Serializable]
 public class Cooldown
 {
     public Cooldown(float time)

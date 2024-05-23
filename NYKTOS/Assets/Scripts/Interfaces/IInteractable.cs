@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+// Interfaz implementada por todos los objetos interactuables
 public interface IInteractable
 {
     public void Interact();

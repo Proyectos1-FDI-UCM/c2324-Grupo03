@@ -10,8 +10,6 @@ using UnityEngine.Events;
 /// </summary>
 public class MenuManager : MonoBehaviour
 {
-    // [Andrea]
-    // - Cambiar el registro de menus a eventos
 
     private static MenuManager _instance;
     public static MenuManager Instance
@@ -101,6 +99,8 @@ public class MenuManager : MonoBehaviour
 
     #region properties
     private List<GameObject> _menuList = new List<GameObject>();
+
+    bool mapOpened = false;
     #endregion
 
     #region events
@@ -112,7 +112,9 @@ public class MenuManager : MonoBehaviour
     #endregion
 
     #region menuActions
-
+    /// <summary>
+    /// Acciones que se pueden realizar desde distintos menús en el juego
+    /// </summary>
     public void ExitGame()
     {
         PlayClosedSound();
@@ -162,6 +164,12 @@ public class MenuManager : MonoBehaviour
     }
 
     #region open menus
+    /// <summary>
+    /// Método genérico para abrir un menú en el juego y seleccionar uno de sus botones por defecto
+    /// Cambia el mapa de acciones del jugador al de la UI
+    /// </summary>
+    /// <param name="menu">Canvas que se quiere abrir</param>
+    /// <param name="button">Botón que se va a seleccionar</param>
     private void OpenMenu(GameObject menu, Button button)
     {
         PlayOpenedSound();
@@ -173,6 +181,9 @@ public class MenuManager : MonoBehaviour
         SwitchToUIControls();
     }
 
+    /// <summary>
+    /// Métodos específicos para cada menú del juego
+    /// </summary>
     public void OpenPauseMenu() => OpenMenu(_pauseMenu, _pauseButton);
     public void OpenNexusMenu() => OpenMenu(_nexusMenu, _nexusButton);
     public void OpenDefenseMenu() => OpenMenu(_defenseMenu, _defenseButton);
@@ -182,6 +193,10 @@ public class MenuManager : MonoBehaviour
     #endregion
 
     #region close menus
+    /// <summary>
+    /// Recorre la lista de menús y los cierra todos
+    /// Cambia el mapa de acciones activo de la UI al jugador
+    /// </summary>
     public void CloseAllMenus()
     {
         PlayClosedSound();
@@ -197,7 +212,9 @@ public class MenuManager : MonoBehaviour
     }
     #endregion
 
-    bool mapOpened = false;
+    /// <summary>
+    /// Abre/Cierra el mapa
+    /// </summary>
     private void OpenCloseMap()
     {
         _map.SetActive(!_map.activeSelf);

@@ -1,8 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Activa / Desactiva la interacción de un botón en la UI
+/// Se emplea para restringir las acciones del jugador en el tutorial
+/// </summary>
 public class ButtonInteract : MonoBehaviour
 {
     [SerializeField]
@@ -10,11 +12,7 @@ public class ButtonInteract : MonoBehaviour
 
     private Button _button;
 
-    //private void CanInteract(bool value) => _button.interactable = value;
-    private void CanInteract(bool value)
-    {
-        _button.interactable = value;
-    }
+    private void CanInteract(bool value) => _button.interactable = value;
 
     void Start()
     {

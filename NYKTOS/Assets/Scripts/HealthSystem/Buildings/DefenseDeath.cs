@@ -1,7 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Al destruir una defensa, ésta se quita de la lista del Building Manager 
+/// y se actualiza el estado de construcción del placeholder
+/// </summary>
 public class DefenseDeath : MonoBehaviour, IDeath
 {
     #region references

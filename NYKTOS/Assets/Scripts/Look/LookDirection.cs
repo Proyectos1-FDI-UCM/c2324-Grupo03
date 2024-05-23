@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Establece la dirección a la que mira/apunta el jugador
+/// </summary>
 public class LookDirection : MonoBehaviour
 {
     public Vector2 lookDirection = Vector2.down;

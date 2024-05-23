@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+// No se usa
 
 [CreateAssetMenu(fileName = "New SelectedDefense", menuName = "SelectedDefense")]
 public class SelectedDefense : ScriptableObject

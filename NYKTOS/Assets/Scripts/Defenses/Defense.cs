@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Plantilla de scriptable para las defensas
 public enum Defensetype { beacon, wall, turret };
 
 [CreateAssetMenu(fileName = "New Defense", menuName = "Defense")]

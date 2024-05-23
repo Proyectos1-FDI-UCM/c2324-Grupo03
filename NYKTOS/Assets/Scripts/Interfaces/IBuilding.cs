@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.InputSystem;
-
+/// <summary>
+/// Interfaz implementada por todos los edificios interactuables
+/// </summary>
 public interface IBuilding
 {
     public void OpenMenu();
