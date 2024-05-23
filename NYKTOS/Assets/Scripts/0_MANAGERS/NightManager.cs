@@ -1,21 +1,43 @@
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
+/// <summary>
+/// La función de esta clase es ir lanzando las waves poco a poco
+/// según el tiempo de cada wave
+/// 
+/// <para>
+/// Esta clase es un singleton
+/// </para>
+/// </summary>
 public class NightManager : MonoBehaviour
 {
+    // Noche en curso
     private NightWave _currentNightData;
+
     private int _currentWaveNumber;
 
+    // Tracker de progreso de la partida, lo suyo sería que esto fuera un ScriptableSingleton global
+    // Aunque de esta forma se podrían considerear diferentes "niveles"
     [SerializeField]
     private NightProgressTracker _progressTracker;
+
+    // Contenedor donde se guardan los datos de los cristales a dropear, debería ser un singleton global
     [SerializeField]
     private CrystalDrops _dropTracker;
+
+    // Evento de inicio de spawneo
     [SerializeField]
     private SpawndataEmitter _spawnerEmitter;
 
     static private NightManager _instance;
 
+    /// <summary>
+    /// Inicializa la noche proveida, si contiene alguna wave inicializa la primera wave
+    /// 
+    /// <para>
+    /// Se llamará al método EndNight cuando pasen los segundos de duración de la noche
+    /// </para>
+    /// </summary>
+    /// <param name="night"> Datos de la noche a inicializar </param>
     public void StartNight(NightWave night)
     {
         Debug.Log("Nightmanager: STARTNIGHT");
@@ -40,7 +62,14 @@ public class NightManager : MonoBehaviour
         }
     }
 
-    void InitializeWave()
+    /// <summary>
+    /// Inicializa la wave en _currentWaveNumber lanzando el evento de spawneo.
+    /// 
+    /// <para>
+    /// Si hay una wave después de esta se lanzará después del tiempo de la actual.
+    /// </para>
+    /// </summary>
+    private void InitializeWave()
     {
         Wave currentWave = _currentNightData.WaveList[_currentWaveNumber];
 
@@ -61,13 +90,19 @@ public class NightManager : MonoBehaviour
         }
     }
 
-    void AdvanceWave()
+    /// <summary>
+    /// Avanzar la wave en 1 e inicializarla
+    /// </summary>
+    private void AdvanceWave()
     {
         Debug.Log("[NightManager] Se lanza una wave");
         _currentWaveNumber ++;
         InitializeWave();    
     }
 
+    /// <summary>
+    /// Se llama al fin de la noche en el progress tracker
+    /// </summary>
     public void EndNight()
     {
         _progressTracker.AdvanceNight();
@@ -76,7 +111,9 @@ public class NightManager : MonoBehaviour
         Debug.Log("[NightManager] Se completó la noche");
     }
 
-    // Aplicación de singletón
+    /// <summary>
+    /// Aplicación de singletón
+    /// </summary>
     void Awake()
     {
         if (_instance != null)
@@ -88,10 +125,6 @@ public class NightManager : MonoBehaviour
             _instance = this;
         }
         _progressTracker.StartNight.AddListener(StartNight);
-    }
-
-    void Start()
-    {
     }
 
     void OnDestroy()

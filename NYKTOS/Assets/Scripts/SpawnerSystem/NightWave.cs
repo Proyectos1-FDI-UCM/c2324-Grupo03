@@ -1,8 +1,9 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//MARIA
+
+/// <summary>
+/// Datos de generación de una noche. Contiene únicamente datos
+/// </summary>
 [CreateAssetMenu(fileName = "New Night", menuName = "Wave System/Night", order = 1)]
 public class NightWave : ScriptableObject {
 
@@ -10,10 +11,16 @@ public class NightWave : ScriptableObject {
     private int _nightLength = 180;
     public int NightLength{get{return _nightLength;}}
 
+    /// <summary>
+    /// Waves de la noche
+    /// </summary>
     [SerializeField]
     private Wave[] _waveList;
     public Wave[] WaveList{get{return _waveList;}}
 
+    /// <summary>
+    /// Cristales a dropear en la noche
+    /// </summary>
     [SerializeField]
     private CrystalDrops _nightCrystalDrops;
     public CrystalDrops NightCrystalDrops {get{return _nightCrystalDrops;}}
@@ -27,6 +34,9 @@ public class NightWave : ScriptableObject {
     }
 }
 
+/// <summary>
+/// Datos de una wave de spawneo. Contiene únicamente datos
+/// </summary>
 [System.Serializable]
 public struct Wave
 {
