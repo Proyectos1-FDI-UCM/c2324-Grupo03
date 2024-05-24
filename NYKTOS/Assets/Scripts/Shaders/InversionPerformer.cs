@@ -28,7 +28,7 @@ public class InversionPerformer : MonoBehaviour
         currentRenderer = GetComponent<Renderer>();
         currentRenderer.material = defaultMaterial;
 
-        // Suscribe el método ChangeMaterial al evento del scriptable object en inversionEffect
+        ///Suscribe el método ChangeMaterial al evento del scriptable object en inversionEffect
         inversionEffect.Perform.AddListener(ChangeMaterial);
     }
 
@@ -37,6 +37,10 @@ public class InversionPerformer : MonoBehaviour
         inversionEffect.Perform.RemoveListener(ChangeMaterial);
     }
 
+    /// <summary>
+    /// Dependiendo de un booleano, se cambiará el material al normal o al invertido, aplicable a todos los elementos que queramos que se inviertan, como los elementos del entorno.
+    /// </summary>
+    /// <param name="swapCondition"></param>
     private void ChangeMaterial(bool swapCondition)
     {
         if (swapCondition) 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Codigo de Iker
 public class TurretShootingComponent : MonoBehaviour
 {
     private TurretTargetingComponent _turretTargetingComponent;
@@ -16,7 +17,10 @@ public class TurretShootingComponent : MonoBehaviour
     private float RechargeTime = 1f;
     private float RechargeTimePrincipal;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Se toma el componente de apuntado de la torreta, para obtener la posición de los enemigos
+    /// Se toma el componente de apuntado de la torreta, para obtener la posición de los enemigos
+    /// </summary>e tenga que volver a generar la bala.
     void Start()
     {
         _turretTargetingComponent = GetComponent<TurretTargetingComponent>();
@@ -24,12 +28,18 @@ public class TurretShootingComponent : MonoBehaviour
         _myTransform = transform;
     }
 
-    // Update is called once per frame
+    ///<summary>
+    /// Se toma la dirección al enemigo
+    /// Se toma el transform del enemigo
+    /// En caso de que ninguno de estos dos sea null, es decir, la torreta tiene un objetivo por el turretTargetingComponent:
+    /// Se procede a recargar la torreta, cuando el tiempo de recarga sea menor que 0, se instanciara una bala, que se destruira en función de un tiempo dado.
+    /// </summary>
     void Update()
     {
+        
         _DirectionToEnemy = _turretTargetingComponent.DirectionToEnemy();
         _enemyTransform = _turretTargetingComponent.EnemyTransform();
-
+        
         if (_enemyTransform != null && _DirectionToEnemy != null)
         {
             RechargeTime -= Time.deltaTime;
