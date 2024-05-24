@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Almacena informacion de los action dialogues. El Dialogue System coge todo lo que necesita de aqui.
+/// Se encuentran cosas como el texto que se reproduce, la accion que se necesita para cumplir con el dialogo, la voz que suena...
+/// </summary>
 [CreateAssetMenu(fileName = "New Action Dialogue", menuName = "Dialogue/Action Dialogue")]
 public class ActionDialogueScriptableObject : ScriptableObject
 {

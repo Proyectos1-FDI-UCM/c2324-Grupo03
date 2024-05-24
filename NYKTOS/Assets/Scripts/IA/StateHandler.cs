@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Se encarga de cambiar de estados y reproducir sus comportamientos.
+/// </summary>
 public class StateHandler : MonoBehaviour
 {
     [SerializeField]

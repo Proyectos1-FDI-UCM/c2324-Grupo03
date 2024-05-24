@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-
+/// <summary>
+/// Clase que registra todos los Scriptables de tipo Dialogue. Cuando recibe que un dialogo ha comenzado, reproduce la informacion que esta contenida en el Scriptable
+/// Reproduce con un sonido cada letra que va apareciendo progresivamente, y detecta cuando se ha pulsado la tecla correspondiente para continuar con el dialogo.
+/// 
+/// </summary>
 public class DialogueSystem : MonoBehaviour
 {
     #region controles de dialogo
@@ -52,6 +56,11 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Metodo que comienza un dialogo de habla cuando se le llama
+    /// </summary>
+    /// <param name="dialogueBoxes"></param>
+    /// <param name="dialogue"></param>
     private void TalkingDialogueStarted(string[] dialogueBoxes, DialogueScriptableObject dialogue)
     {
         if (!onDialogue)
@@ -61,7 +70,12 @@ public class DialogueSystem : MonoBehaviour
         }
         else Debug.LogError("Se ha intentado reproducir un dialogo normal mientras el jugador ya se encuentra en uno.");
     }
-
+    /// <summary>
+    /// Metodo que comienza un dialogo de accion cuando se le llama
+    /// </summary>
+    /// <param name="dialogueBox"></param>
+    /// <param name="dialogue"></param>
+    /// <param name="emitter"></param>
     private void ActionDialogueStarted(string dialogueBox, ActionDialogueScriptableObject dialogue, VoidEmitter emitter)
     {
         if (!onDialogue)
@@ -70,6 +84,13 @@ public class DialogueSystem : MonoBehaviour
         }
         else Debug.LogError("Se ha intentado reproducir un dialogo de accion mientras el jugador ya se encuentra en uno.");
     }
+
+    /// <summary>
+    /// Reproduce letra por letra la informacion del dialogo, y espera a que se reciba una bandera para poder borrar el texto entero y comenzar a escribir el siguiente texto
+    /// </summary>
+    /// <param name="boxes"></param>
+    /// <param name="dialogue"></param>
+    /// <returns></returns>
     private IEnumerator StartTalkingDialogue(string[] boxes, DialogueScriptableObject dialogue)
     {
         
@@ -112,6 +133,13 @@ public class DialogueSystem : MonoBehaviour
         dialogue.PlayFinishEvent();
     }
 
+    /// <summary>
+    /// Reproduce letra por letra la informacion del dialogo, y espera a que se reciba una bandera, en forma de evento de unity recibido, para poder borrar el texto y terminar el dialogo.
+    /// </summary>
+    /// <param name="box"></param>
+    /// <param name="dialogue"></param>
+    /// <param name="emitter"></param>
+    /// <returns></returns>
     private IEnumerator StartActionDialogue(string box, ActionDialogueScriptableObject dialogue, VoidEmitter emitter)
     {
         string[] iconsArray = box.Split('<', '>');
@@ -164,6 +192,9 @@ public class DialogueSystem : MonoBehaviour
         dialogue.PlayFinishEvent();
     }
 
+    /// <summary>
+    /// Activa la bandera para el dialogo de accion
+    /// </summary>
     private void PerformedEvent()
     {
         performedEvent = true;
@@ -190,12 +221,20 @@ public class DialogueSystem : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Setea a true el booleano resumeDialogue
+    /// </summary>
     public void ResumeDialogue()
     {
         if (onDialogue) resumeDialogue = true;
         else resumeDialogue = false;
     }
 
+    /// <summary>
+    /// Reproduce el sonido de hablar
+    /// </summary>
+    /// <param name="player"></param>
+    /// <param name="c"></param>
     private void PlayVoice(AudioPlayer player, char c)
     {
         if (player != null && c != '.' && c != ' ' && c!= ',')
@@ -204,6 +243,11 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Activa o desactiva el HUD al entrar o salir de un dialogo respectivamente
+    /// </summary>
+    /// <param name="b"></param>
+    /// <returns></returns>
     private IEnumerator EnableHUD(bool b)
     {
         if (HUD != null)

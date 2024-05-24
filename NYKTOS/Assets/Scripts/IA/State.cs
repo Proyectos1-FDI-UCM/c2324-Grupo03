@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Drawing.Text;
 using UnityEngine;
 
+/// <summary>
+/// Struct que contiene el estado al que se quiere ir como las condiciones que se deben cumplir para ello.
+/// </summary>
 [System.Serializable]
 struct stateAndConditions
 {
@@ -11,6 +14,12 @@ struct stateAndConditions
     public ConditionChecker[] enterConditions;
 }
 
+/// <summary>
+/// Almacena las propiedades del estado:
+/// -Los comportamientos que se van a realizar al entrar al estado, durante el estado, y al salir del estado
+/// -Posibles estados de salida y sus condiciones
+/// -Animaciones que se van a ejecutar a traves de strings
+/// </summary>
 public class State : MonoBehaviour
 {
     #region animations
@@ -102,6 +111,11 @@ public class State : MonoBehaviour
         return condition;
     }
 
+    /// <summary>
+    /// Reproduce la animacion
+    /// Dependiendo de el estado en el que se encuentre se reproduce mirando al jugador, mirando a la torre mas cercana o mirando en direccion a su ruta de movimiento.
+    /// </summary>
+    /// <param name="clip"></param>
     private void PlayAnimation(string clip)
     {
         if (clip != null && GetComponentInParent<HealthComponent>().GetComponentInChildren<Animator>() != null)

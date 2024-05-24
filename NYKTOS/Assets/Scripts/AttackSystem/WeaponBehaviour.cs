@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Clase abstracta que heredan los componentes del arma que aplican las colisiones y el daño. Hay metodos como el de aplicar knockback, tipo de daño...
+/// </summary>
 public abstract class WeaponBehaviour : MonoBehaviour
 {
     private int weaponDamage = 0;

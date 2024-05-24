@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Se le asigna un GameObject con un script IBehaviour, lee su contenido y reproduce lo que haya en Perform
+/// </summary>
 [System.Serializable]
 public class BehaviourPerformer
 {

@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
+/// <summary>
+/// Se encuentra en su propio objeto, y lo que hace es leer todos los AudioPlayers de la carpeta Resources y crear un AudioSource de unity para cada uno de ellos.
+/// A traves de su suscripcion de eventos, se pueden controlar de forma remota los sonidos que se reproducen desde aqui.
+/// </summary>
 public class AudioPerformer : MonoBehaviour
 {
     static private AudioPerformer instance;
@@ -65,6 +69,9 @@ public class AudioPerformer : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Se quitan todas las referencias.
+    /// </summary>
     void OnDestroy()
     {
         if(players != null)

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Se le asigna un GameObject con un script ICondition, lee su contenido y valida dependiendo del contenido.
+/// </summary>
 [System.Serializable]
 public class ConditionChecker
 {

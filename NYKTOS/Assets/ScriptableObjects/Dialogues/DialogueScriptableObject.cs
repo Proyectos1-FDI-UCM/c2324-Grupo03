@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Scriptable que almacena la informacion del Talking Dialogue. Lanza eventos al entrar y al salir del dialogo.
+/// </summary>
 [CreateAssetMenu(fileName = "New Talking Dialogue", menuName = "Dialogue/Talking Dialogue")]
 public class DialogueScriptableObject : ScriptableObject
 {

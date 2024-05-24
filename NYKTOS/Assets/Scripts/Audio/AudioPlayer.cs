@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Scriptable que almacena la informacion del tipo de sonido que se va a repdroducir.
+/// </summary>
 [CreateAssetMenu(fileName = "New Sound", menuName = "Sound")]
 public class AudioPlayer : ScriptableObject
 {
@@ -49,6 +52,9 @@ public class AudioPlayer : ScriptableObject
     public UnityEvent unPauseAudio => _unPauseAudio;
     #endregion
 
+    /// <summary>
+    /// Metodo que invoca un evento de unity que recibe el AudioPerformer.
+    /// </summary>
     public void Play()
     {
         bool isMusic = _audioType == AudioType.Music;
@@ -67,16 +73,25 @@ public class AudioPlayer : ScriptableObject
         }
     }
 
+    /// <summary>
+    /// Metodo que invoca un evento de unity que recibe el AudioPerformer.
+    /// </summary>
     public void Stop()
     {
         _stopAudio?.Invoke();
     }
 
+    /// <summary>
+    /// Metodo que invoca un evento de unity que recibe el AudioPerformer.
+    /// </summary>
     public void Pause()
     {
         _pauseAudio?.Invoke();
     }
 
+    /// <summary>
+    /// Metodo que invoca un evento de unity que recibe el AudioPerformer.
+    /// </summary>
     public void UnPause()
     {
         _unPauseAudio?.Invoke();

@@ -4,12 +4,17 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-
+/// <summary>
+/// Tipo de ataque elemental que existe en el juego
+/// </summary>
 public enum AttackType
 {
     Default, Fire, Slow
 }
 
+/// <summary>
+/// Procesa la informacion del scriptable object de tipo weapon que tiene referenciado. Controla los cooldowns del arma, los prefabs que instancia, su daño...
+/// </summary>
 public class WeaponHandler : MonoBehaviour
 {
     #region references
@@ -44,6 +49,10 @@ public class WeaponHandler : MonoBehaviour
 
     #endregion
 
+    /// <summary>
+    /// Procesa el ataque primario del arma y lo aplica hacia el vector direccion
+    /// </summary>
+    /// <param name="direction"></param>
     public void CallPrimaryUse(Vector2 direction)
     {
         if (!primaryCooldown.IsCooling())
@@ -56,7 +65,10 @@ public class WeaponHandler : MonoBehaviour
         }
         
     }
-
+    /// <summary>
+    /// Procesa el ataque secundario del arma y lo aplica hacia el vector direccion
+    /// </summary>
+    /// <param name="direction"></param>
     public void CallSecondaryUse(Vector2 direction)
     {
         if(!secondaryCooldown.IsCooling())
@@ -69,6 +81,10 @@ public class WeaponHandler : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Se generan gameobjects hijo en el jugador que contienen los scripts que logica del arma como tal.
+    /// Si se ha cambiado de arma, se borra el hijo con la logica del arma anterior y se instancia uno nuevo.
+    /// </summary>
     private void CheckChildren()
     {
         if (instantiatedPrefab == null)
@@ -84,11 +100,19 @@ public class WeaponHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Cambia la referencia del arma que se le asigna
+    /// </summary>
+    /// <param name="setWeapon"></param>
     public void SetWeapon(WeaponScriptableObject setWeapon)
     {
         weapons.scriptableWeapon = setWeapon;
     }
 
+    /// <summary>
+    /// Cambia el tipo de daño del arma
+    /// </summary>
+    /// <param name="attackType"></param>
     public void SetDamageType(AttackType attackType)
     {
         weapons.attackType = attackType;

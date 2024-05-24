@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Cuenta con el bool isColliding. Aqui se calcula si el objeto kinematico que cuenta con este script esta colisionando con pared o no
+/// </summary>
 public class BlinkHitbox : MonoBehaviour
 {
     #region references

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Gestiona la accion de blinkear, valiendose de la clase BlinkHitbox
+/// </summary>
 public class BlinkComponent : MonoBehaviour
 {
     #region references
@@ -29,6 +32,9 @@ public class BlinkComponent : MonoBehaviour
     [SerializeField] UnityEvent _hasBlinked;
     #endregion
 
+    /// <summary>
+    /// Si blinkHitbox no esta colisionando, se teletransporta ahi. Si no, lanza un raycast y se teleptransporta hacia el punto mas factible donde puede aparecer el jugador.
+    /// </summary>
     public void Blink()
     {
         if (blinkHitbox != null)
@@ -61,7 +67,10 @@ public class BlinkComponent : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// Desactiva la hitbox del jugador por un tiempo despues del blink
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator ActivatePlayerHitbox()
     {
         entityHitbox.enabled = false;
@@ -78,6 +87,9 @@ public class BlinkComponent : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Actualiza el rayo del raycast. Actualiza la direccion del blink.
+    /// </summary>
     private void Update()
     {
         ray = new Ray2D(_myTransform.position, rbMovement.movementDirection);
