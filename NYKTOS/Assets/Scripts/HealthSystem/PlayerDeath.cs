@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 
+/// <summary>
+/// Script que controla la muerte del jugador
+/// </summary>
+
 public class PlayerDeath : MonoBehaviour, IDeath
 {
     #region references
@@ -16,27 +20,9 @@ public class PlayerDeath : MonoBehaviour, IDeath
 
     private PlayerStateMachine _playerState;
     private HealthComponent _health;
-    
+
     #endregion
 
-    public void Death()
-    {
-        _playerState.SetState(PlayerState.Dead);
-        UIManager.Instance.DeathScreenOn();
-
-        _playerDeathEmitter.InvokePerform();
-    }
-
-    public void Revive()
-    {
-        _playerAnimations.StartRevive();
-        _health.MaxHealth();
-        _playerState.SetState(PlayerState.Idle);
-
-        // [Andrea] Not optimal
-        UIManager.Instance.DeathScreenOff();
-    }
-    
     void Start()
     {
         _health = GetComponent<HealthComponent>();
@@ -44,6 +30,25 @@ public class PlayerDeath : MonoBehaviour, IDeath
         _playerReviveEmitter.Perform.AddListener(Revive);
         _playerAnimations = GetComponentInChildren<PlayerAnimations>();
     }
+
+    public void Death() //Cambia es estado del jugador a muerto y activa la pantalla con las indicaciones para revivir
+    {
+        _playerState.SetState(PlayerState.Dead);
+        UIManager.Instance.DeathScreenOn();
+
+        _playerDeathEmitter.InvokePerform();
+    }
+
+    public void Revive() //Oculta la pantalla de muerte y cambia el estado del jugador a vivo con toda la vida recuperada.
+    {
+        _playerAnimations.StartRevive();
+        _health.MaxHealth();
+        _playerState.SetState(PlayerState.Idle);
+
+        UIManager.Instance.DeathScreenOff();
+    }
+    
+    
 
     void OnDestroy()
     {

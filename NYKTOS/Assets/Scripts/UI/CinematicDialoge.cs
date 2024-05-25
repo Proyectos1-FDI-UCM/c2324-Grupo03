@@ -4,6 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
 
+/// <summary>
+/// Script que controla los diálogos de la cinemática que se ejecuta tras el cambio de escena.
+/// </summary>
 public class CinematicDialoge : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _text;
@@ -11,7 +14,6 @@ public class CinematicDialoge : MonoBehaviour
     [SerializeField] private float _textSpeed = 0.2f;
     [SerializeField] private float _lineSpeed = 3f;
 
-    //[SerializeField] private float _waitForStart = 2.5f;
 
     [SerializeField] private UnityEvent voice = new UnityEvent();
 
@@ -21,7 +23,7 @@ public class CinematicDialoge : MonoBehaviour
     {
         _text.text = string.Empty;
         _index = 0;
-        //StartCoroutine(StartDialogueAfterDelay(_waitForStart));
+       
     }
 
     public void InitializeCoroutineDialogue()
@@ -29,13 +31,8 @@ public class CinematicDialoge : MonoBehaviour
         StartCoroutine(StartDialogue());
     }
 
-    //private IEnumerator StartDialogueAfterDelay(float delay)
-    //{
-    //    yield return new WaitForSeconds(delay); 
-    //    StartCoroutine(StartDialogue());
-    //}
 
-    private IEnumerator StartDialogue()
+    private IEnumerator StartDialogue() //Inicia el diálogo y controla la velocidad entre líneas
     {
 
         while (_index < _lines.Length)
@@ -50,7 +47,7 @@ public class CinematicDialoge : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private IEnumerator WriteLine(string line)
+    private IEnumerator WriteLine(string line) //Controla la aparición de las letras y el sonido del diálogo
     {
         foreach (char letter in line)
         {

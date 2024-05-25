@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Script que controla la vida de las entidades del juego
+/// </summary>
+
 public class HealthComponent : MonoBehaviour
 {
     #region references
@@ -58,7 +62,7 @@ public class HealthComponent : MonoBehaviour
 
     }
 
-    public void Damage(int damage)
+    public void Damage(int damage) //Controla si se hace daño a la entidad (no tiene inmunidad) y la cantidad de daño que se hace.
     {
 
         if (!_inmune)
@@ -71,7 +75,7 @@ public class HealthComponent : MonoBehaviour
                 HealthBarGameObject.SetActive(true);
             }
 
-            if (_currentHealth <= 0)
+            if (_currentHealth <= 0) //Llama a la muerte de la entidad si se queda sin puntos de vida.
             {
                 _currentHealth = 0;
                 if (_playerAnimations != null) {_playerAnimations.StartDie();}
@@ -97,7 +101,7 @@ public class HealthComponent : MonoBehaviour
 
     }
 
-    public void Heal(int heal)
+    public void Heal(int heal) //Controla la cantidad de vida que se recupera y que esta no sobrepase el límite de vida de la entidad
     {
         _currentHealth += heal;
 
@@ -113,7 +117,7 @@ public class HealthComponent : MonoBehaviour
         
     }
 
-    public void MaxHealth()
+    public void MaxHealth() //Recupera toda la vida del jugador
     {
         _currentHealth = _maxHealth;
 
@@ -128,7 +132,7 @@ public class HealthComponent : MonoBehaviour
         }
     }
 
-    void DisableInm()
+    void DisableInm() 
     {
         _inmune = false;
     }

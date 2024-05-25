@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Video;
 
+/// <summary>
+/// Script que controla los videos de derrota y victoria. Se inician automáticamente al cambiar de escena cuando se cumplen las condiciones para ganar o perder.
+/// </summary>
+/// 
+
 public class VideoTimer : MonoBehaviour
 {
     [SerializeField]
@@ -33,14 +38,14 @@ public class VideoTimer : MonoBehaviour
         video.Play();
     }
 
-    void End (VideoPlayer vp) 
+    void End (VideoPlayer vp) //Cuando termine el vídeo, este se queda pausado en el último frame y espera un tiempo antes de volver a la escena del Manú principal
     {
         video.Pause();
         
         Invoke(nameof(ChangeScene), _exitWaitTime);
     }
 
-    private void ChangeScene()
+    private void ChangeScene() //Cambio de escena al menú principal
     {
         _exitEvent.Invoke();
     }

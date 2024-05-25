@@ -1,11 +1,15 @@
 using UnityEngine;
 
+/// <summary>
+/// Script que controla el reloj del HUD.
+/// </summary>
+/// 
 public class Reloj : MonoBehaviour
 {
     [SerializeField]
     private FloatEmitter _timerStart;
-    //clock variables
-
+    
+    //Clock variables
     private bool _timerOn = false;
     private float _currentTime;
     float angle;
@@ -25,10 +29,6 @@ public class Reloj : MonoBehaviour
 
     void Update()
     {
-        if (_currentTime >=0)
-        {
-            // Aqui falta algo
-        }
         if ( _timerOn)
         {
             ChangeTime();
@@ -40,7 +40,7 @@ public class Reloj : MonoBehaviour
         _timerStart.Perform.RemoveAllListeners();
     }
 
-    private void ChangeTime()
+    private void ChangeTime() //Actualiza el ángulo y el tiempo restante del temporizador, y resetea el temporizador cuando el tiempo llega a cero
     {
         angle = angle - timeVelocity * Time.deltaTime;
         _currentTime -= Time.deltaTime;
@@ -54,18 +54,18 @@ public class Reloj : MonoBehaviour
         }
     }
 
-    public void ActivateTimer(float maxTime)
+    public void ActivateTimer(float maxTime) //Activa el reloj con un tiempo máximo específico (que se le pasa desde un evento).
     {
-        Debug.Log($"[RELOJ] Activado ");
-
+        
         _currentTime = maxTime;
         _timerOn = true;
         angle = 45;
-        timeVelocity = 270 / maxTime;
+        timeVelocity = 270 / maxTime; //Calcula a la velocidad que tiene que ir el reloj para terminar su vuelta en el tiempo especificado.
         
     }
 
-    public void ResetTimer()
+
+    public void ResetTimer() 
     {
         angle = 90;
         _timerOn = false;
