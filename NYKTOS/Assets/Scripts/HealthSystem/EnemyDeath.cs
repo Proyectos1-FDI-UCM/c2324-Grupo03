@@ -4,10 +4,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/// <summary>
+/// Script que controla la muerte de los enemigos
+/// </summary>
+
 [System.Serializable]
 public class EnemyDeath : MonoBehaviour, IDeath
 {
-    private bool _isDead = false; // bool para que la StateMachine sepa cuando ele enemigo ha muerto
+    private bool _isDead = false; // bool para que la StateMachine sepa cuando el enemigo ha muerto
     public bool isDead { get { return _isDead; } } // acceso publico al bool _isDead
     [SerializeField]
     private SpawnLimit _spawnLimit;
@@ -15,15 +19,15 @@ public class EnemyDeath : MonoBehaviour, IDeath
     [SerializeField]
     private VoidEmitter _enemyDeathEmitter;
 
-    public void Death()
+    public void Death() //Cambia el estado del enemigo a muerto
     {
         _isDead = true;
-        if(TryGetComponent<CrystalBag>(out CrystalBag enemyBag))
+        if(TryGetComponent<CrystalBag>(out CrystalBag enemyBag)) //Drop de cristales
         {
             enemyBag.InstantiateCrystal(transform.position);
         }
 
-        _spawnLimit?.RemoveConcurrentEnemy();
+        _spawnLimit?.RemoveConcurrentEnemy(); //Deja de contar a este enemigo para que puedan spawnear más
     }
 
     void Start(){

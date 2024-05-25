@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Clase temporizador
+/// Clase temporizador 
 /// </summary>
 [System.Serializable]
 public class Cooldown

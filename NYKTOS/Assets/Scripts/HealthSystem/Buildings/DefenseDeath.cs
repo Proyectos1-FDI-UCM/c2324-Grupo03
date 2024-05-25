@@ -19,7 +19,7 @@ public class DefenseDeath : MonoBehaviour, IDeath
     }
 
 
-    public void Death()
+    public void Death() //Destruye la defensa y cambia el estado del placeholder a Sin Construir
     {
         BuildingManager.Instance.RemoveBuilding(gameObject);
         _placeholderState.SetState(BuildingStateMachine.BuildingState.NotBuilt);

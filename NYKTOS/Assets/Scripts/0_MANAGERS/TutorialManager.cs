@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.Rendering;
 
+/// <summary>
+/// Manager de la escena del tutorial
+/// </summary>
+
 public class ImageControllerScript : MonoBehaviour
 {
 
@@ -88,7 +92,9 @@ public class ImageControllerScript : MonoBehaviour
     //Si el jugador interactua con el altar, el tutorial se skipea instantaneamente
     private bool OneTimeCompleted = true;
 
-    private void DisableTutorials()
+
+
+    private void DisableTutorials() 
     {
         foreach (GameObject tutorial in Tutorials)
         {
@@ -96,6 +102,7 @@ public class ImageControllerScript : MonoBehaviour
         }
     }
 
+    //Todas las partes del tutorial que se quedan en pantalla hasta que se realiza la acción indicada:
 
     [ContextMenu("ShowTutorialMovement")]
     private void ShowTutorialMovement(bool value)
