@@ -1,36 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Clase que hereda de IBehaviour y es un behaviour de la maquina de estados de la aranea, se encarga de spawnear las Araneas Hijas
+/// Clase que hereda de IBehaviour y es un behaviour especifico de la maquina de estados de la aranea, se encarga de spawnear las Araneas Hijas
 /// </summary>
 public class SpawnAraneasBehaviour : MonoBehaviour, IBehaviour 
 {
-	  #region references
-	  [SerializeField] 
+    
+    #region references
+    [SerializeField] 
     private GameObject _araneaHijaPrefab;
-
     private Transform _araneaMadreTransform;
-	  #endregion
+    #endregion
 
-	  #region parameters
-	  [SerializeField] 
+    #region parameters
+    [SerializeField]
     private int _maxHijas = 3;
-
     private int _currentHijas;
-	  #endregion
+    #endregion
 
-	  /// <summary>
-	  /// Método heredado de IBehaviour que se encarga de llamar el método SpawnSpider si aun no se ha sobrepasado el núumero de hijas maximo
-	  /// </summary>
-	  public void PerformBehaviour() 
+    /// <summary>
+    /// Método heredado de IBehaviour que se encarga de llamar el método SpawnSpider si aun no se ha sobrepasado el núumero de hijas maximo
+    /// </summary>
+    public void PerformBehaviour() 
     {
-        if (_currentHijas < _maxHijas)
+        if (_currentHijas < _maxHijas) 
         {
             _currentHijas++;
             SpawnSpider();
         }
-
     }
 
     /// <summary>
@@ -40,7 +36,6 @@ public class SpawnAraneasBehaviour : MonoBehaviour, IBehaviour
     {
         if (_araneaHijaPrefab != null && _araneaMadreTransform != null) Instantiate(_araneaHijaPrefab, _araneaMadreTransform.position, Quaternion.identity);
         else Debug.LogWarning("No hay prefab");
-        
     }
 
     private void Awake() 

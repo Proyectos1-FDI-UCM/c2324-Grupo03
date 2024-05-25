@@ -15,7 +15,6 @@ public class LookDirection : MonoBehaviour
         if (dir != Vector2.zero)
         {
             Wait(dir); 
-            
             lookDirection = dir;
         }
     }
@@ -25,7 +24,10 @@ public class LookDirection : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
     }
 
-    // método 0para la animacion
+    /// <summary>
+    /// metodo que se encarga de decir la direccion al animator para que el sprite de hemera siga al raton
+    /// </summary>
+    /// <param name="dir"> Vector de donde el player esta mirando </param>
     void Wait(Vector2 dir) 
     {
         dir = dir.normalized;

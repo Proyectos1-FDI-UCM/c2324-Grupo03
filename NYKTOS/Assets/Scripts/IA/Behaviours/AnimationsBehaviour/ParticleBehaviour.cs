@@ -4,7 +4,8 @@ using UnityEngine;
 /// <summary>
 /// Cambio del material/emision/etc de la particulas cuando el enemigo sea atacado
 /// </summary>
-public class EnemyParticleEffect : MonoBehaviour {
+public class EnemyParticleEffect : MonoBehaviour 
+{
 
     #region references
     private SpriteRenderer _spriteRenderer;
@@ -83,7 +84,6 @@ public class EnemyParticleEffect : MonoBehaviour {
     /// </summary>
     private IEnumerator ChangeEnemyParticles()
     {
-
         ParticleSystemRenderer settings = GetComponent<ParticleSystemRenderer>();
         settings.material = _particleMaterialToChange;
 

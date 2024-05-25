@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
 /// Clase respondable para que se cambie el material de las particulas como queramos, se ha utilizado principalmente para elegir si quieres o no que la particulas se vean durante la noche
@@ -17,21 +15,25 @@ public class ParticlesMaterialChanger : MonoBehaviour
 
     ParticleSystemRenderer currentRenderer;
 
-    void Start() {
-
+    void Start() 
+    {
         currentRenderer = GetComponentInChildren<ParticleSystemRenderer>();
         currentRenderer.material = defaultMaterial;
-
-        inversionEffect.Perform.AddListener(ChangeSprite);
+        inversionEffect.Perform.AddListener(ChangeMaterial);
     }
 
     void OnDestroy()
     {
-        inversionEffect.Perform.RemoveListener(ChangeSprite);
+        inversionEffect.Perform.RemoveListener(ChangeMaterial);
     }
 
-    private void ChangeSprite(bool swapCondition) {
-        if (swapCondition) {
+    /// <summary>
+    /// Cambia de material en funcion de si es de dia o de noche de las particulas
+    /// </summary>
+    /// <param name="swapCondition"></param>
+    private void ChangeMaterial(bool swapCondition) {
+        if (swapCondition) 
+        {
             currentRenderer.material = inversionMaterial;
         } else {
             currentRenderer.material = defaultMaterial;
