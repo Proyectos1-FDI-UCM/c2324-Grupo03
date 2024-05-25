@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 /// <summary>
@@ -13,9 +10,9 @@ public class EnemyDeath : MonoBehaviour, IDeath
 {
     private bool _isDead = false; // bool para que la StateMachine sepa cuando el enemigo ha muerto
     public bool isDead { get { return _isDead; } } // acceso publico al bool _isDead
+    
     [SerializeField]
     private SpawnLimit _spawnLimit;
-
     [SerializeField]
     private VoidEmitter _enemyDeathEmitter;
 
@@ -26,17 +23,16 @@ public class EnemyDeath : MonoBehaviour, IDeath
         {
             enemyBag.InstantiateCrystal(transform.position);
         }
-
         _spawnLimit?.RemoveConcurrentEnemy(); //Deja de contar a este enemigo para que puedan spawnear más
     }
 
-    void Start(){
+    void Start()
+    {
         _enemyDeathEmitter.Perform.AddListener(Death);
     }
 
     void OnDestroy() 
     {
         _enemyDeathEmitter.Perform.RemoveListener(Death);
-
     }
 }

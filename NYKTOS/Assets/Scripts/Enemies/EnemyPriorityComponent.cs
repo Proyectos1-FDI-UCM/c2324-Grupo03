@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Drawing.Text;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Rendering;
 /// <summary>
 /// La clase se encarga de calcular el camino del jugador y el del edificio mas cercano
 /// </summary>
