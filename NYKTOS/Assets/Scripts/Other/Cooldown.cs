@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Clase temporizador 
+/// Clase temporizador, se usa en los diferentes cooldowns del juego
 /// </summary>
 [System.Serializable]
 public class Cooldown

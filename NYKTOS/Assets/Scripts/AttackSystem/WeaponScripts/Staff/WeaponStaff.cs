@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script que controla el comportamiento del cetro.
+/// </summary>
 public class WeaponStaff : Weapon
 {
     #region parameters
@@ -18,11 +21,11 @@ public class WeaponStaff : Weapon
     private GameObject _staffPrefab;
     #endregion
 
-    public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType)
+    public override void PrimaryUse(Vector2 direction, int damage, AttackType attackType) //Ataque principal
     {
         _primaryUsePerformed?.Invoke();
         GameObject current =
-        Instantiate(_bullet, transform.position + (Vector3)direction.normalized * 0.5f, Quaternion.identity);
+        Instantiate(_bullet, transform.position + (Vector3)direction.normalized * 0.5f, Quaternion.identity); //Instancia la bala con la dirección, posición y velocidad necesarias
 
         current.TryGetComponent<BulletComponent>(out BulletComponent bullet);
 
@@ -37,7 +40,7 @@ public class WeaponStaff : Weapon
     }
 
     #region secondaryuse
-    public override void SecondaryUse(Vector2 direction, int damage, AttackType attackType)
+    public override void SecondaryUse(Vector2 direction, int damage, AttackType attackType) //Ataque secundario
     {
         StartCoroutine(KnockbackArea(transform));
         _secondaryUsePerformed?.Invoke();
@@ -51,6 +54,7 @@ public class WeaponStaff : Weapon
         if (current.TryGetComponent<KnockbackAreaStaff>(out KnockbackAreaStaff a))
         {
             a.SetKnockbackArea(_knockbackRadius);
+            
         }
 
         yield return new WaitForSeconds(0.5f);

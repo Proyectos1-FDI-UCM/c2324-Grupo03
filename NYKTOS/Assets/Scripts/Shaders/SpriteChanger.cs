@@ -1,4 +1,10 @@
 using UnityEngine;
+
+/// <summary>
+/// Script que controla la inversión de colores de los objetos en el ciclo de día/noche
+/// </summary>
+
+
 [RequireComponent(typeof(SpriteRenderer))]
 public class NexusSpriteChanger : MonoBehaviour
 {
@@ -23,7 +29,8 @@ public class NexusSpriteChanger : MonoBehaviour
         inversionEffect.Perform.RemoveListener(ChangeSprite);
     }
 
-    private void ChangeSprite(bool swapCondition) {
+    private void ChangeSprite(bool swapCondition) //Cambio de color
+    {
         if (swapCondition) {
             currentRenderer.sprite = inversionSprite;
         } else {
