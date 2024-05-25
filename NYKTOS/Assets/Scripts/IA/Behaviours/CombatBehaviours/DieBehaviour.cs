@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-
-public class DieBejaviour : MonoBehaviour, IBehaviour
+/// <summary>
+/// Behaviour de muerte que se encarga de destruir el objeto
+/// </summary>
+public class DieBehaviour : MonoBehaviour, IBehaviour
 {
     public void PerformBehaviour()
     {

@@ -27,42 +27,55 @@ public class VolumeSettings : MonoBehaviour {
     private Slider _musicSlider;
     #endregion
 
-    void Awake() {
-
+    void Awake() 
+    {
         LoadVolumeSettings();
     }
 
-    public void LoadVolumeSettings() {
+    /// <summary>
+    /// Método que carga el volumen la primera vez que entra en una escena y para que el volumen no se cambie cuando se cambia de escena
+    /// </summary>
+    public void LoadVolumeSettings() 
+    {
         _masterSlider.value = _volumeSettingsScriptable.masterVolume;
         _SFXSlider.value = _volumeSettingsScriptable.SFXVolume;
         _musicSlider.value = _volumeSettingsScriptable.musicVolume;
 
         ApplyVolumeSettings();
 
-        Debug.Log("Master Volume: " + _volumeSettingsScriptable.masterVolume);
-        Debug.Log("SFX Volume: " + _volumeSettingsScriptable.SFXVolume);
-        Debug.Log("Music Volume: " + _volumeSettingsScriptable.musicVolume);
+        //Debug.Log("Master Volume: " + _volumeSettingsScriptable.masterVolume);
+        //Debug.Log("SFX Volume: " + _volumeSettingsScriptable.SFXVolume);
+        //Debug.Log("Music Volume: " + _volumeSettingsScriptable.musicVolume);
     }
-    public void SetMasterVolume(float volume) {
+    public void SetMasterVolume(float volume) 
+    {
         _audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20f);
-        Debug.Log("master: " + volume);
+        //Debug.Log("master: " + volume);
         _volumeSettingsScriptable.masterVolume = _masterSlider.value;
     }
-    public void SetMusicVolume(float volume) {
+    public void SetMusicVolume(float volume) 
+    {
         _audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20f);
         _volumeSettingsScriptable.musicVolume = _musicSlider.value;
     }
-    public void SetSFXVolume(float volume) {
+    public void SetSFXVolume(float volume) 
+    {
         _audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20f);
         _volumeSettingsScriptable.SFXVolume = _SFXSlider.value;
     }
-    public void ApplyVolumeSettings() {
+
+    /// <summary>
+    /// Aplicaicion del volumen en el audioMixer 
+    /// </summary>
+    public void ApplyVolumeSettings() 
+    {
         _audioMixer.SetFloat("MasterVolume", Mathf.Log10(_volumeSettingsScriptable.masterVolume) * 20f);
         _audioMixer.SetFloat("SFXVolume", Mathf.Log10(_volumeSettingsScriptable.SFXVolume) * 20f);
         _audioMixer.SetFloat("MusicVolume", Mathf.Log10(_volumeSettingsScriptable.musicVolume) * 20f);
     }
 
-    void OnApplicationQuit() {
+    void OnApplicationQuit() 
+    {
         _volumeSettingsScriptable.masterVolume = _originalMasterVolume;
         _volumeSettingsScriptable.SFXVolume = _originalSFXVolume;
         _volumeSettingsScriptable.musicVolume = _originalMusicVolume;

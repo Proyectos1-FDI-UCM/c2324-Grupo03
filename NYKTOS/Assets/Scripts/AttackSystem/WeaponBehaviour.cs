@@ -28,7 +28,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out HealthComponent health)) //QUITAR VIDA
         {
             health.Damage(weaponDamage);
-            //Javi ha hecho una corrección a este código para que sea más limpio. Dejo este de ejemplo :)
+            
         }
 
         if (attackType == AttackType.Fire && collision.gameObject.TryGetComponent(out SetOnFireDebuff setOnFire)) //DAÑO DE FUEGO
