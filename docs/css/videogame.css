@@ -4,7 +4,7 @@
     --font-color-1: white;
     --magenta: rgb(218, 46, 218);
     --cyan: rgb(44, 236, 236);
-    --yellow: rgb(233, 233, 23);
+    --yellow: rgb(214, 214, 22);
   }
 
 
@@ -91,6 +91,13 @@ a .text-highlight:hover {
   gap: 30px;
 }
 
+.justify-center {
+  justify-content: center;
+}
+.justify-space-between {
+  justify-content: space-between;
+}
+
 .align-left {
   align-items: left;
 }
@@ -98,6 +105,8 @@ a .text-highlight:hover {
 .flex-2 {
   flex:2 !important; 
 }
+
+
 
 
 /* CUSTOMIZE THE HEADER
@@ -244,6 +253,15 @@ header .game-logo {
 }
 
 
+.download-section {
+  max-width: 100%;
+  justify-content: center;
+}
+
+.download-section .game iframe:first-child {
+  display: none;
+}
+
 
 .cards {
   display: flex;
@@ -259,12 +277,7 @@ header .game-logo {
   align-items: end;
 }
 
-/* .enemy-card .picture {
-  border: 2px dashed aquamarine;
-} */
-
 .defense-card .picture {
-  /* border: 2px dashed magenta; */
   background-color: var(--background-color-2);
   padding: 10px;
   border-radius: 1rem;

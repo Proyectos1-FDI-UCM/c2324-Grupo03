@@ -1,10 +1,5 @@
 :root {
-  --background-color-1: black;
   --background-color-2: rgb(39, 39, 39);
-  --font-color-1: white;
-  --magenta: rgb(218, 46, 218);
-  --cyan: rgb(44, 236, 236);
-  --yellow: rgb(233, 233, 23);
 }
 
 
@@ -22,6 +17,17 @@
   .picture {
     align-items: center;
   }
+
+  .download-section {
+    justify-content: space-between;
+  }
+  .download-section .game iframe:first-child {
+    display: block;
+  }
+  .download-section .game iframe:last-child {
+    display: none;
+  }
+
 
 }
 
