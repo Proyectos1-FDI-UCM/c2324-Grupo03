@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Nota: a lo mejor esto debería ser un scriptable singleton
+/// <summary>
+/// Maquina de estados global que gestiona todos los estados de juego.
+/// 
+/// <para>
+/// Almacena el estado en curso y provee los metodos para cambiar de estado
+/// </para>
+/// </summary>
 [CreateAssetMenu(fileName = "Game State Machine", menuName = "GameStateMachine/State Machine")]
 public class GameStateMachine : ScriptableObject
 {

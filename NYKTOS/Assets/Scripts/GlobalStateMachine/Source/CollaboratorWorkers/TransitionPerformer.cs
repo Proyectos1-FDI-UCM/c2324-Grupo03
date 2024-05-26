@@ -1,6 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Ejecuta las transiciones de fade in y fade out. 
+/// Funciona como un collaborator worker, debería de ser cambiado en el futuro 
+/// para que herede de CollaboratorWorker
+/// </summary>
 public class TransitionPerformer : MonoBehaviour
 {
     private Animator _animator;

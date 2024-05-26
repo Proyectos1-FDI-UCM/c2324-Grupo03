@@ -1,5 +1,20 @@
 using UnityEngine;
 
+/// <summary>
+/// Tracker para el juego principal (es decir, lo que no es el tutorial). 
+/// 
+/// <para>
+/// Si al terminar una noche quedan mas a las que avanzar se avanza y se 
+/// pasa al día, en caso de que no queden mas noches no se avanza la noche 
+/// y se pasa al día también.
+/// </para>
+/// 
+/// <para>
+/// Esto significa que una vez se llegue a la última noche disponible esta
+/// se repetirá indefinidamente hasta que se gane o pierda
+/// </para>
+/// 
+/// </summary>
 [CreateAssetMenu(fileName = "MainNightProgressTracker", menuName = "Progress Trackers/Main")]
 public class MainNightProgressTracker : NightProgressTracker
 {

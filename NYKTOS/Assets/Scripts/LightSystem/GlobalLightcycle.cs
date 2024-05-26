@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-
-
+/// <summary>
+/// Escucha al evento de cambio día a noche.
+/// 
+/// Según si es de día o de noche la luz global es 1 o 0
+/// </summary>
 [RequireComponent(typeof(Light2D))]
 public class GlobalLightcycle : MonoBehaviour
 {
@@ -13,7 +16,7 @@ public class GlobalLightcycle : MonoBehaviour
     private BoolEmitter _inversionEffect;
 
     private Light2D _globalLight;
-    // Start is called before the first frame update
+
     void Start()
     {
         _globalLight = GetComponent<Light2D>();

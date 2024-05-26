@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Contenedor global de información que se utiliza para acceder globalmente a un listado de cristales 
+/// para spawnear requeridos y cuando se agoten los requerido se utiliza una probabilidad
+/// </summary>
 [CreateAssetMenu(fileName = "CrystalDrops", menuName = "Config/CrystalDrops")]
 public class CrystalDrops : ScriptableObject
 {   

@@ -1,9 +1,11 @@
 using UnityEngine;
 
 /// <summary>
-/// Script que controla la inversión de colores de los objetos en el ciclo de día/noche
+/// Script que controla la inversiï¿½n de colores de los objetos en el ciclo de dï¿½a/noche.
+/// 
+/// Esto se aplica a objetos que en la noche cambia su sprite y no cambia simplemente sus colores
+/// 
 /// </summary>
-
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class NexusSpriteChanger : MonoBehaviour

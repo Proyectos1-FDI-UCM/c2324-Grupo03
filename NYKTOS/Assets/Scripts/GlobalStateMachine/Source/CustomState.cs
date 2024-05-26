@@ -2,6 +2,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+// (Ver abajo la lista de estados posibles)
+
+/// <summary>
+/// Estado de juego, contiene una serie de eventos serializados donde se podran
+/// arrastrar por editor diferentes acciones del evento al ejecutarse cada fase del estado.
+/// 
+/// <para>
+/// Un estado contiene los siguientes eventos en este orden: 
+/// InstantLoad, LoadCollaborators, Enter, InstantExit y ExitCollaborators
+/// </para>
+/// 
+/// <para>
+/// Los eventos se ejecutan en ese orden y tanto load collaborators como exit collaborators
+/// bloquea el avance hasta que se completen todos los collaborators
+/// </para>
+/// </summary>
 [CreateAssetMenu(fileName = "New State", menuName = "GlobalStateMachine/State")]
 public class CustomState : ScriptableObject
 {
@@ -109,6 +125,9 @@ public class CustomState : ScriptableObject
     }
 }
 
+/// <summary>
+/// Identificadores de estado
+/// </summary>
 [System.Serializable]
 public enum GlobalStateIdentifier
 {

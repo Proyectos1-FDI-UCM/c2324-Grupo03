@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Resetea la maquina de estados al iniciar la partida en caso de que por 
+/// alguna razón de guarde un estado residual.
+/// </summary>
 public class ResetStateMachineOnGameStart : MonoBehaviour
 {
     public GameStateMachine _gameStateMachine;
